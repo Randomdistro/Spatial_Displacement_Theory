@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "Spatial_Displacement_Theory",
+			"path": ".."
+		},
+		{
+			"name": "spectral validations",
+			"path": "../../spectral validations"
+		},
+		{
+			"name": "SDT papers",
+			"path": "../../SDT papers"
+		},
+		{
+			"name": "SDT docs",
+			"path": "../../SDT docs"
+		}
+	],
+	"settings": {}
+}

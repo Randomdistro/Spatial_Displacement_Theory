@@ -1,0 +1,97 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+\Large{\textbf{Appendix E: Calibration and Validation Protocol for the SDT Cosmological Model}}
+\end{center}
+
+\vspace{1em}
+
+\textbf{Objective:}
+To provide a complete, data-driven protocol for calibrating and validating the Spatial Displacement Theory (SDT) model of cosmological redshift.  
+The procedure reconstructs the spation-strain rate $\sigma(z)$ and angle-coupling $\beta(z)$ functions from observational data and tests their consistency against the three canonical probes of cosmology: Supernovae Type Ia (SNe Ia), Baryon Acoustic Oscillations (BAO), and the Cosmic Microwave Background (CMB).
+
+\vspace{1em}
+
+\section*{1. Theoretical Framework}
+
+Redshift and angular magnification are expressed as path integrals over affine distance $L$:
+\begin{equation}
+\ln(1+z)=\int_{0}^{L}\sigma(r)\,dr,
+\qquad
+\ln(A)=\int_{0}^{L}\beta(r)\sigma(r)\,dr.
+\end{equation}
+For the galaxy regime ($z\lesssim4$) where $\beta=1$, the derived measures are
+\begin{equation}
+L(z)=\int_{0}^{z}\frac{dz'}{(1+z')\sigma(z')},
+\qquad
+D_A(z)=(1+z)L(z),
+\qquad
+D_L(z)=(1+z)^3L(z).
+\end{equation}
+At the Clearing (CMB), $\beta\!\to\!\beta_\infty\!\ll\!1$ preserves the acoustic-peak contrast.
+
+\vspace{1em}
+
+\section*{2. Calibration Procedure}
+
+\subsection*{Step 1: Anchor the Local Strain Rate ($\sigma_0$)}
+\textbf{Data:} Low-redshift SNe Ia ($z<0.1$).  
+\textbf{Procedure:} Fit a straight line to $z(L)$ to obtain the baseline void strain $\sigma_0=H_0/c$.  
+\textbf{Typical Value:} $\sigma_0\approx2.33\times10^{-4}\,\mathrm{Mpc^{-1}}$.
+
+\subsection*{Step 2: Reconstruct $\sigma(z)$ from BAO Data}
+\textbf{Principle:} The radial BAO spacing constrains the dimensionless interval
+\[
+\Delta\ln(1+z)_{\rm BAO}(z)\propto\sigma(z).
+\]
+\textbf{Procedure:} Derive relative strain points from the observed $\Delta z$ values, then fit a smooth, positive function (e.g. cubic-spline or Gaussian-process fit) for $\sigma(z)/\sigma_0$.
+
+\subsection*{Step 3: Cross-Validate with SNe Ia and Angular BAO Data}
+\textbf{Data:} Pantheon+ SNe Ia and transverse BAO.  
+\textbf{Procedure:}
+\begin{enumerate}
+\item Integrate Eq.\,(2) to predict $D_L(z)$ and compare with SNe Ia magnitudes.
+\item Compute $D_A(z)$ assuming $A(z)=1+z$ and compare with transverse BAO scales.
+\end{enumerate}
+\textbf{Criterion:} A single, smooth $\sigma(z)$ must yield $\chi^2/\mathrm{dof}\!\approx\!1$ for both datasets.
+
+\subsection*{Step 4: Calibrate the CMB Spike and Decoupling}
+\textbf{Data:} Planck 2018 CMB acoustic spectrum.  
+\textbf{Procedure:}
+\begin{enumerate}
+\item Introduce a narrow spike $\sigma_{\rm CLS}$ satisfying  
+      $\int_{0}^{L_{\rm CMB}}\sigma(r)\,dr=\ln(1101)\approx7.004$.
+\item Use $\beta(r)=1$ for $z\le z_c$ ($z_c\!\approx\!3$) and $\beta(r)\!\to\!\beta_\infty$ for $z>z_c$;  
+      adjust $\beta_\infty\!\sim\!10^{-3}$ to match the observed few-percent smoothing of CMB peaks.
+\end{enumerate}
+
+\vspace{1em}
+
+\section*{3. Falsification Checklist}
+
+The SDT cosmological model is valid only if all conditions below are met:
+\begin{itemize}
+\item[\checkmark] A single, smooth, positive $\sigma(z)$ fits radial BAO, transverse BAO, and SNe Ia data simultaneously.  
+\item[\checkmark] SNe Ia light-curve dilation follows $s=1+z$.  
+\item[\checkmark] Tolman surface-brightness relation obeys $\Sigma\propto(1+z)^{-4}$.  
+\item[\checkmark] CMB peak contrast reproduced with small non-zero $\beta_\infty$.  
+\item[\checkmark] CMB blackbody spectrum remains achromatic.  
+\end{itemize}
+Failure of any criterion constitutes falsification in its present form.
+
+\vspace{1em}
+
+\section*{4. Interpretation}
+
+The calibration connects all cosmological observables to a single mechanical variable $\sigma(z)$—the cumulative strain of the spation lattice.  
+This replaces the ad-hoc curvature and dark-energy parameters of metric models with a directly measurable physical quantity.  
+The success of this fit will decisively determine whether large-scale cosmology is best described as metric expansion or spatial displacement.
+
+\end{document}

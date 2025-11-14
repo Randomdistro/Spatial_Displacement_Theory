@@ -1,0 +1,84 @@
+Appendix A — Fundamental Equations of the Spation Medium (v1.2)
+
+Objective. Define the mechanical field equations of the spation medium, its displacement under matter, and conservation of total movement, with dimensional consistency and closed flux forms.
+
+A.0 Conventions (minimal but crucial)
+
+Let t be the affine evolution parameter with units of time (seconds).
+
+Let P(r,t) be the spation pressure (Pa = J·m⁻³).
+
+Let ρₛ(r,t) be the effective spation density (kg·m⁻³).
+
+Let v(r,t) be the spation velocity field (m·s⁻¹).
+
+The characteristic transmission speed is c (m·s⁻¹) with barotropic closure c² = ∂P/∂ρₛ (sound-speed relation for the medium).
+
+If you insist on using a non-time affine parameter s, set s = t (recommended), or define s = t explicitly; otherwise extra scale factors creep into the wave equation.
+
+A.1 Continuity (well-posed)
+
+Two equivalent, dimensionally clean options. Pick one and use it consistently.
+
+Option 1 (mass-like continuity on ρₛ):
+
+∂ρₛ/∂t + ∇·(ρₛ v) = 0
+
+Option 2 (your “pressure continuity” recast on Π ≡ P/c²):
+1′) ∂Π/∂t + ∇·(Π v) = 0, where Π ≡ P/c²
+
+(Using Π fixes the units in your original ∂P/∂s + ∇·(P v) = 0.)
+
+A.2 Pressure–acceleration coupling (as you wrote, dimensionally OK)
+
+∇P = −ρₛ a, with a ≡ Dv/Dt (material acceleration)
+
+Integral (with the correct sign and vector form):
+3) ∮ P n dA = − ∫_V ρₛ a dV
+
+(Your draft missed the minus sign and vector notation on the surface integral.)
+
+A.3 Wave propagation of the medium (small-perturbation limit)
+
+Linearizing about a uniform state (ρₛ₀,P₀) with barotropic closure c² = ∂P/∂ρₛ:
+
+∇²P − (1/c²) ∂²P/∂t² = 0
+
+(This is your Eq. (4) but now with t as the evolution variable; no extra scale factors.)
+
+A.4 Movement-budget (energy-like) conservation in flux form
+
+Define the “movement density” 𝓑 and its flux 𝓕 (inviscid, source-free):
+
+𝓑 ≡ ½ ρₛ |v|² + U(P), with dU/dP = 1/ρₛ (barotropic internal-movement term)
+𝓕 ≡ (½ ρₛ |v|² + h) v, where h ≡ U + P/ρₛ (specific enthalpy)
+
+Then the local conservation law is:
+5) ∂𝓑/∂t + ∇·𝓕 = 0
+
+If you prefer your original “all energy is kinetic” statement, you can set U(P) ≡ P (in units where ρₛ is normalized) but keep the ½ in the kinetic part and the flux divergence structure; dropping them breaks standard balances.
+
+A.5 Matter boundary (exclusion) conditions
+
+Let Ω_M be the matter region (spation excluded). On ∂Ω_M:
+
+6a) P|_{∂Ω_M} = P₀ + ΔP_M
+6b) n·∇P = −κ_M P₀
+
+Dimensions: [n·∇P] = Pa·m⁻¹; [κ_M P₀] = m⁻¹·Pa → consistent.
+
+A.6 Summary (drop-in index)
+
+(1) ∂ρₛ/∂t + ∇·(ρₛ v) = 0 or ∂(P/c²)/∂t + ∇·[(P/c²) v] = 0
+
+(2) ∇P = −ρₛ a
+
+(3) ∮ P n dA = − ∫_V ρₛ a dV
+
+(4) ∇²P − (1/c²) ∂²P/∂t² = 0
+
+(5) ∂/∂t [½ ρₛ|v|² + U(P)] + ∇·[(½ ρₛ|v|² + h) v] = 0, with h = U + P/ρₛ
+
+(6) P|_{∂Ω_M} = P₀ + ΔP_M, n·∇P = −κ_M P₀
+
+These are now dimensionally homogeneous, have the right global signs, and reduce to your original forms under the intended assumptions. They also dovetail cleanly with your orbital results (z·k² = 1) once you specialize to steady, spherically symmetric configurations.

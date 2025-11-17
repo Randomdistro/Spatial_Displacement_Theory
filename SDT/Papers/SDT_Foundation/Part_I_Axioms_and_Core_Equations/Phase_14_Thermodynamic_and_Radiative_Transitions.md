@@ -1,6 +1,6 @@
 # Phase 14
 
-Phase 10 — Thermodynamic & Radiative Transitions in SDT:
+Thermodynamic & Radiative Transitions in SDT:
 Temperature as RMS spation displacement; radiation as tether collapse pulses
 and walk it through the 8 sections.
 ________________________________________

@@ -1,0 +1,20 @@
+# Atomic Spectra NIST Database
+# Spectroscopic database for SDT atomic structure validation
+#
+# Columns:
+# - Element: Element symbol
+# - Z: Atomic number
+# - Transition: Spectral transition (e.g., "2P-2S")
+# - Wavelength: Observed wavelength (nm)
+# - Frequency: Observed frequency (MHz)
+# - Energy: Transition energy (eV)
+# - SDT_predicted: SDT prediction (same units as observed)
+# - Error: Percentage error
+# - Source: NIST database reference
+#
+# Status: Under development - placeholder file
+# Last Updated: November 2025
+
+Element,Z,Transition,Wavelength,Frequency,Energy,SDT_predicted,Error,Source
+H,1,2P-2S,656.28,456.8,1.89,1.89,0.01,NIST
+

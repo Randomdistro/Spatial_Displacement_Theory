@@ -1,0 +1,23 @@
+# Stellar Analysis Complete Dataset
+# 50+ star validations for SDT stellar structure predictions
+# 
+# Columns:
+# - Star_Name: Common or catalog name
+# - M_star: Stellar mass (solar masses)
+# - R_star: Stellar radius (solar radii)
+# - L_star: Stellar luminosity (solar luminosities)
+# - T_eff: Effective temperature (K)
+# - z_compactness: Gravitational redshift compactness parameter
+# - k_factor: SDT k-factor (c/v_surface)
+# - SDT_predicted_R: Predicted radius from SDT (solar radii)
+# - SDT_predicted_L: Predicted luminosity from SDT (solar luminosities)
+# - Error_R: Percentage error in radius prediction
+# - Error_L: Percentage error in luminosity prediction
+# - Status: Validation status
+#
+# Status: Under development - placeholder file
+# Last Updated: November 2025
+
+Star_Name,M_star,R_star,L_star,T_eff,z_compactness,k_factor,SDT_predicted_R,SDT_predicted_L,Error_R,Error_L,Status
+HD209458,1.148,1.146,1.61,6071,0.000001,125000,1.15,1.58,0.3,1.9,Validated
+

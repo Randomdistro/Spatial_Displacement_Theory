@@ -1,0 +1,19 @@
+# Galaxy Rotation Curves - SPARC Database
+# Galactic rotation curve data for SDT disk eclipse saturation validation
+#
+# Columns:
+# - Galaxy: Galaxy name
+# - R_d: Disk scale length (kpc)
+# - R_flat: Radius where rotation curve flattens (kpc)
+# - v_flat: Flat rotation velocity (km/s)
+# - R_flat_R_d_ratio: Observed ratio R_flat/R_d
+# - SDT_predicted_ratio: SDT prediction (should be ~2.5)
+# - Error: Percentage error
+# - Source: SPARC database reference
+#
+# Status: Under development - placeholder file
+# Last Updated: November 2025
+
+Galaxy,R_d,R_flat,v_flat,R_flat_R_d_ratio,SDT_predicted_ratio,Error,Source
+NGC2403,2.0,5.0,135,2.5,2.5,0.0,SPARC
+

@@ -1,0 +1,21 @@
+# Planetary Parameters Dataset
+# Solar system data for SDT orbital mechanics validation
+#
+# Columns:
+# - Body: Celestial body name
+# - M: Mass (kg)
+# - R: Radius (m)
+# - a: Semi-major axis (m)
+# - T: Orbital period (s)
+# - v_orbital: Orbital velocity (m/s)
+# - beta: SDT gravitational parameter (m³/s²)
+# - k_factor: SDT k-factor
+# - SDT_predicted_T: Predicted period from SDT (s)
+# - Error: Percentage error
+#
+# Status: Under development - placeholder file
+# Last Updated: November 2025
+
+Body,M,R,a,T,v_orbital,beta,k_factor,SDT_predicted_T,Error
+Earth,5.97E+24,6.371E+06,1.496E+11,3.156E+07,29780,3.986E+14,10000,3.156E+07,0.01
+

@@ -1,0 +1,17 @@
+build/
+*.o
+*.so
+*.dylib
+*.exe
+*.dll
+*.a
+*.out
+simulation_output.csv
+*.log
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+

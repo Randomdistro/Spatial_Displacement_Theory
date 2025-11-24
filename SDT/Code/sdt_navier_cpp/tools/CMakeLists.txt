@@ -1,0 +1,9 @@
+add_executable(simulate_deuteron simulate_deuteron.cpp)
+target_link_libraries(simulate_deuteron PRIVATE sdt_navier)
+
+add_executable(simulate_nuclear simulate_nuclear.cpp)
+target_link_libraries(simulate_nuclear PRIVATE sdt_navier)
+
+add_executable(analyze_results analyze_results.cpp)
+target_link_libraries(analyze_results PRIVATE sdt_navier)
+

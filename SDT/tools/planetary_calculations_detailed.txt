@@ -1,0 +1,1049 @@
+================================================================================
+PLANETARY PARAMETERS - k_factor DIRECT CALCULATIONS
+================================================================================
+
+Formula: T = 2*pi*k_factor*sqrt(a^3/R_primary)/c
+From orbital velocity law: v = (c/k_factor)*sqrt(R_primary/r)
+
+
+Sun:
+  R = 6.957E+08 m
+  k_factor = 686.42 (from Phase 16)
+  v_surface = c/k = 436758.84 m/s = 436.76 km/s
+
+Mercury (orbits Sun):
+  R = 2.439E+06 m
+  a = 5.791E+10 m
+  T_observed = 7.600E+06 s
+  v_orbital = 2*pi*a/T = 47876.22 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((5.791E+10)^3 / 6.957E+08)
+    = sqrt(1.942E+32 / 6.957E+08)
+    = sqrt(2.792E+23)
+    = 5.283E+11
+    T = 2*pi*686.42*5.283E+11 / 2.998E+08
+    T = 2.279E+15 / 2.998E+08
+    T = 7.601E+06 s
+  Error = 0.01%
+
+Venus (orbits Sun):
+  R = 6.052E+06 m
+  a = 1.082E+11 m
+  T_observed = 1.941E+07 s
+  v_orbital = 2*pi*a/T = 35025.28 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((1.082E+11)^3 / 6.957E+08)
+    = sqrt(1.267E+33 / 6.957E+08)
+    = sqrt(1.821E+24)
+    = 1.349E+12
+    T = 2*pi*686.42*1.349E+12 / 2.998E+08
+    T = 5.820E+15 / 2.998E+08
+    T = 1.941E+07 s
+  Error = 0.01%
+
+Earth (orbits Sun):
+  R = 6.371E+06 m
+  a = 1.496E+11 m
+  T_observed = 3.156E+07 s
+  v_orbital = 2*pi*a/T = 29783.41 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((1.496E+11)^3 / 6.957E+08)
+    = sqrt(3.348E+33 / 6.957E+08)
+    = sqrt(4.813E+24)
+    = 2.194E+12
+    T = 2*pi*686.42*2.194E+12 / 2.998E+08
+    T = 9.461E+15 / 2.998E+08
+    T = 3.156E+07 s
+  Error = 0.00%
+
+Mars (orbits Sun):
+  R = 3.390E+06 m
+  a = 2.279E+11 m
+  T_observed = 5.935E+07 s
+  v_orbital = 2*pi*a/T = 24127.01 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((2.279E+11)^3 / 6.957E+08)
+    = sqrt(1.184E+34 / 6.957E+08)
+    = sqrt(1.701E+25)
+    = 4.125E+12
+    T = 2*pi*686.42*4.125E+12 / 2.998E+08
+    T = 1.779E+16 / 2.998E+08
+    T = 5.934E+07 s
+  Error = 0.02%
+
+Jupiter (orbits Sun):
+  R = 6.991E+07 m
+  a = 7.785E+11 m
+  T_observed = 3.743E+08 s
+  v_orbital = 2*pi*a/T = 13068.29 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((7.785E+11)^3 / 6.957E+08)
+    = sqrt(4.718E+35 / 6.957E+08)
+    = sqrt(6.782E+26)
+    = 2.604E+13
+    T = 2*pi*686.42*2.604E+13 / 2.998E+08
+    T = 1.123E+17 / 2.998E+08
+    T = 3.746E+08 s
+  Error = 0.09%
+
+Saturn (orbits Sun):
+  R = 5.823E+07 m
+  a = 1.433E+12 m
+  T_observed = 9.293E+08 s
+  v_orbital = 2*pi*a/T = 9688.80 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((1.433E+12)^3 / 6.957E+08)
+    = sqrt(2.943E+36 / 6.957E+08)
+    = sqrt(4.230E+27)
+    = 6.504E+13
+    T = 2*pi*686.42*6.504E+13 / 2.998E+08
+    T = 2.805E+17 / 2.998E+08
+    T = 9.356E+08 s
+  Error = 0.68%
+
+Uranus (orbits Sun):
+  R = 2.536E+07 m
+  a = 2.867E+12 m
+  T_observed = 2.651E+09 s
+  v_orbital = 2*pi*a/T = 6795.13 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((2.867E+12)^3 / 6.957E+08)
+    = sqrt(2.357E+37 / 6.957E+08)
+    = sqrt(3.387E+28)
+    = 1.840E+14
+    T = 2*pi*686.42*1.840E+14 / 2.998E+08
+    T = 7.938E+17 / 2.998E+08
+    T = 2.648E+09 s
+  Error = 0.12%
+
+Neptune (orbits Sun):
+  R = 2.462E+07 m
+  a = 4.515E+12 m
+  T_observed = 5.200E+09 s
+  v_orbital = 2*pi*a/T = 5455.50 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.515E+12)^3 / 6.957E+08)
+    = sqrt(9.204E+37 / 6.957E+08)
+    = sqrt(1.323E+29)
+    = 3.637E+14
+    T = 2*pi*686.42*3.637E+14 / 2.998E+08
+    T = 1.569E+18 / 2.998E+08
+    T = 5.233E+09 s
+  Error = 0.63%
+
+Moon (orbits Earth):
+  R = 1.737E+06 m
+  a = 3.844E+08 m
+  T_observed = 2.361E+06 s
+  v_orbital = 2*pi*a/T = 1022.98 m/s
+  Using Earth's k_factor = 37902.41
+  R_primary = 6.371E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((3.844E+08)^3 / 6.371E+06)
+    = sqrt(5.680E+25 / 6.371E+06)
+    = sqrt(8.915E+18)
+    = 2.986E+09
+    T = 2*pi*37902.41*2.986E+09 / 2.998E+08
+    T = 7.111E+14 / 2.998E+08
+    T = 2.372E+06 s
+  Error = 0.46%
+
+ISS (orbits Earth):
+  R = 0.000E+00 m
+  a = 6.780E+06 m
+  T_observed = 5.540E+03 s
+  v_orbital = 2*pi*a/T = 7689.53 m/s
+  Using Earth's k_factor = 37902.41
+  R_primary = 6.371E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((6.780E+06)^3 / 6.371E+06)
+    = sqrt(3.117E+20 / 6.371E+06)
+    = sqrt(4.892E+13)
+    = 6.994E+06
+    T = 2*pi*37902.41*6.994E+06 / 2.998E+08
+    T = 1.666E+12 / 2.998E+08
+    T = 5.556E+03 s
+  Error = 0.29%
+
+Hubble (orbits Earth):
+  R = 0.000E+00 m
+  a = 6.918E+06 m
+  T_observed = 5.724E+03 s
+  v_orbital = 2*pi*a/T = 7593.83 m/s
+  Using Earth's k_factor = 37902.41
+  R_primary = 6.371E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((6.918E+06)^3 / 6.371E+06)
+    = sqrt(3.311E+20 / 6.371E+06)
+    = sqrt(5.197E+13)
+    = 7.209E+06
+    T = 2*pi*37902.41*7.209E+06 / 2.998E+08
+    T = 1.717E+12 / 2.998E+08
+    T = 5.726E+03 s
+  Error = 0.04%
+
+GPS_Satellite (orbits Earth):
+  R = 0.000E+00 m
+  a = 2.656E+07 m
+  T_observed = 4.320E+04 s
+  v_orbital = 2*pi*a/T = 3863.00 m/s
+  Using Earth's k_factor = 37902.41
+  R_primary = 6.371E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((2.656E+07)^3 / 6.371E+06)
+    = sqrt(1.874E+22 / 6.371E+06)
+    = sqrt(2.941E+15)
+    = 5.423E+07
+    T = 2*pi*37902.41*5.423E+07 / 2.998E+08
+    T = 1.291E+13 / 2.998E+08
+    T = 4.308E+04 s
+  Error = 0.28%
+
+Geostationary (orbits Earth):
+  R = 0.000E+00 m
+  a = 4.216E+07 m
+  T_observed = 8.616E+04 s
+  v_orbital = 2*pi*a/T = 3074.36 m/s
+  Using Earth's k_factor = 37902.41
+  R_primary = 6.371E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.216E+07)^3 / 6.371E+06)
+    = sqrt(7.494E+22 / 6.371E+06)
+    = sqrt(1.176E+16)
+    = 1.085E+08
+    T = 2*pi*37902.41*1.085E+08 / 2.998E+08
+    T = 2.583E+13 / 2.998E+08
+    T = 8.615E+04 s
+  Error = 0.01%
+
+Galileo_Satellite (orbits Earth):
+  R = 0.000E+00 m
+  a = 2.322E+07 m
+  T_observed = 5.046E+04 s
+  v_orbital = 2*pi*a/T = 2891.31 m/s
+  Using Earth's k_factor = 37902.41
+  R_primary = 6.371E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((2.322E+07)^3 / 6.371E+06)
+    = sqrt(1.252E+22 / 6.371E+06)
+    = sqrt(1.965E+15)
+    = 4.433E+07
+    T = 2*pi*37902.41*4.433E+07 / 2.998E+08
+    T = 1.056E+13 / 2.998E+08
+    T = 3.521E+04 s
+  Error = 30.22%
+
+GOES_16 (orbits Earth):
+  R = 0.000E+00 m
+  a = 4.216E+07 m
+  T_observed = 8.616E+04 s
+  v_orbital = 2*pi*a/T = 3074.36 m/s
+  Using Earth's k_factor = 37902.41
+  R_primary = 6.371E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.216E+07)^3 / 6.371E+06)
+    = sqrt(7.494E+22 / 6.371E+06)
+    = sqrt(1.176E+16)
+    = 1.085E+08
+    T = 2*pi*37902.41*1.085E+08 / 2.998E+08
+    T = 2.583E+13 / 2.998E+08
+    T = 8.615E+04 s
+  Error = 0.01%
+
+Iridium_33 (orbits Earth):
+  R = 0.000E+00 m
+  a = 7.780E+06 m
+  T_observed = 6.024E+03 s
+  v_orbital = 2*pi*a/T = 8114.74 m/s
+  Using Earth's k_factor = 37902.41
+  R_primary = 6.371E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((7.780E+06)^3 / 6.371E+06)
+    = sqrt(4.709E+20 / 6.371E+06)
+    = sqrt(7.391E+13)
+    = 8.597E+06
+    T = 2*pi*37902.41*8.597E+06 / 2.998E+08
+    T = 2.047E+12 / 2.998E+08
+    T = 6.829E+03 s
+  Error = 13.37%
+
+Tiangong (orbits Earth):
+  R = 0.000E+00 m
+  a = 6.750E+06 m
+  T_observed = 5.400E+03 s
+  v_orbital = 2*pi*a/T = 7853.98 m/s
+  Using Earth's k_factor = 37902.41
+  R_primary = 6.371E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((6.750E+06)^3 / 6.371E+06)
+    = sqrt(3.075E+20 / 6.371E+06)
+    = sqrt(4.827E+13)
+    = 6.948E+06
+    T = 2*pi*37902.41*6.948E+06 / 2.998E+08
+    T = 1.655E+12 / 2.998E+08
+    T = 5.519E+03 s
+  Error = 2.21%
+
+Starlink (orbits Earth):
+  R = 0.000E+00 m
+  a = 6.900E+06 m
+  T_observed = 5.700E+03 s
+  v_orbital = 2*pi*a/T = 7605.96 m/s
+  Using Earth's k_factor = 37902.41
+  R_primary = 6.371E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((6.900E+06)^3 / 6.371E+06)
+    = sqrt(3.285E+20 / 6.371E+06)
+    = sqrt(5.156E+13)
+    = 7.181E+06
+    T = 2*pi*37902.41*7.181E+06 / 2.998E+08
+    T = 1.710E+12 / 2.998E+08
+    T = 5.704E+03 s
+  Error = 0.07%
+
+Phobos (orbits Mars):
+  R = 1.120E+04 m
+  a = 9.377E+06 m
+  T_observed = 2.765E+04 s
+  v_orbital = 2*pi*a/T = 2130.52 m/s
+  Using Mars's k_factor = 84346.21
+  R_primary = 3.390E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((9.377E+06)^3 / 3.390E+06)
+    = sqrt(8.245E+20 / 3.390E+06)
+    = sqrt(2.432E+14)
+    = 1.560E+07
+    T = 2*pi*84346.21*1.560E+07 / 2.998E+08
+    T = 8.265E+12 / 2.998E+08
+    T = 2.757E+04 s
+  Error = 0.31%
+
+Deimos (orbits Mars):
+  R = 6.200E+03 m
+  a = 2.346E+07 m
+  T_observed = 1.089E+05 s
+  v_orbital = 2*pi*a/T = 1353.57 m/s
+  Using Mars's k_factor = 84346.21
+  R_primary = 3.390E+06 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((2.346E+07)^3 / 3.390E+06)
+    = sqrt(1.291E+22 / 3.390E+06)
+    = sqrt(3.809E+15)
+    = 6.172E+07
+    T = 2*pi*84346.21*6.172E+07 / 2.998E+08
+    T = 3.271E+13 / 2.998E+08
+    T = 1.091E+05 s
+  Error = 0.18%
+
+Io (orbits Jupiter):
+  R = 1.822E+06 m
+  a = 4.217E+08 m
+  T_observed = 1.529E+05 s
+  v_orbital = 2*pi*a/T = 17329.10 m/s
+  Using Jupiter's k_factor = 7042.64
+  R_primary = 6.991E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.217E+08)^3 / 6.991E+07)
+    = sqrt(7.499E+25 / 6.991E+07)
+    = sqrt(1.073E+18)
+    = 1.036E+09
+    T = 2*pi*7042.64*1.036E+09 / 2.998E+08
+    T = 4.583E+13 / 2.998E+08
+    T = 1.529E+05 s
+  Error = 0.02%
+
+Europa (orbits Jupiter):
+  R = 1.561E+06 m
+  a = 6.711E+08 m
+  T_observed = 3.068E+05 s
+  v_orbital = 2*pi*a/T = 13743.96 m/s
+  Using Jupiter's k_factor = 7042.64
+  R_primary = 6.991E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((6.711E+08)^3 / 6.991E+07)
+    = sqrt(3.022E+26 / 6.991E+07)
+    = sqrt(4.323E+18)
+    = 2.079E+09
+    T = 2*pi*7042.64*2.079E+09 / 2.998E+08
+    T = 9.201E+13 / 2.998E+08
+    T = 3.069E+05 s
+  Error = 0.03%
+
+Ganymede (orbits Jupiter):
+  R = 2.634E+06 m
+  a = 1.070E+09 m
+  T_observed = 6.180E+05 s
+  v_orbital = 2*pi*a/T = 10878.65 m/s
+  Using Jupiter's k_factor = 7042.64
+  R_primary = 6.991E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((1.070E+09)^3 / 6.991E+07)
+    = sqrt(1.225E+27 / 6.991E+07)
+    = sqrt(1.752E+19)
+    = 4.186E+09
+    T = 2*pi*7042.64*4.186E+09 / 2.998E+08
+    T = 1.852E+14 / 2.998E+08
+    T = 6.179E+05 s
+  Error = 0.02%
+
+Callisto (orbits Jupiter):
+  R = 2.410E+06 m
+  a = 1.883E+09 m
+  T_observed = 1.442E+06 s
+  v_orbital = 2*pi*a/T = 8204.74 m/s
+  Using Jupiter's k_factor = 7042.64
+  R_primary = 6.991E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((1.883E+09)^3 / 6.991E+07)
+    = sqrt(6.677E+27 / 6.991E+07)
+    = sqrt(9.550E+19)
+    = 9.773E+09
+    T = 2*pi*7042.64*9.773E+09 / 2.998E+08
+    T = 4.324E+14 / 2.998E+08
+    T = 1.442E+06 s
+  Error = 0.03%
+
+Titan (orbits Saturn):
+  R = 2.575E+06 m
+  a = 1.222E+09 m
+  T_observed = 1.378E+06 s
+  v_orbital = 2*pi*a/T = 5571.88 m/s
+  Using Saturn's k_factor = 11746.64
+  R_primary = 5.823E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((1.222E+09)^3 / 5.823E+07)
+    = sqrt(1.825E+27 / 5.823E+07)
+    = sqrt(3.134E+19)
+    = 5.598E+09
+    T = 2*pi*11746.64*5.598E+09 / 2.998E+08
+    T = 4.132E+14 / 2.998E+08
+    T = 1.378E+06 s
+  Error = 0.01%
+
+Enceladus (orbits Saturn):
+  R = 2.525E+05 m
+  a = 2.380E+08 m
+  T_observed = 1.184E+05 s
+  v_orbital = 2*pi*a/T = 12630.05 m/s
+  Using Saturn's k_factor = 11746.64
+  R_primary = 5.823E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((2.380E+08)^3 / 5.823E+07)
+    = sqrt(1.348E+25 / 5.823E+07)
+    = sqrt(2.315E+17)
+    = 4.812E+08
+    T = 2*pi*11746.64*4.812E+08 / 2.998E+08
+    T = 3.551E+13 / 2.998E+08
+    T = 1.185E+05 s
+  Error = 0.05%
+
+Mimas (orbits Saturn):
+  R = 1.985E+05 m
+  a = 1.855E+08 m
+  T_observed = 8.122E+04 s
+  v_orbital = 2*pi*a/T = 14350.29 m/s
+  Using Saturn's k_factor = 11746.64
+  R_primary = 5.823E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((1.855E+08)^3 / 5.823E+07)
+    = sqrt(6.383E+24 / 5.823E+07)
+    = sqrt(1.096E+17)
+    = 3.311E+08
+    T = 2*pi*11746.64*3.311E+08 / 2.998E+08
+    T = 2.444E+13 / 2.998E+08
+    T = 8.151E+04 s
+  Error = 0.36%
+
+Tethys (orbits Saturn):
+  R = 5.310E+05 m
+  a = 2.947E+08 m
+  T_observed = 1.888E+05 s
+  v_orbital = 2*pi*a/T = 9807.49 m/s
+  Using Saturn's k_factor = 11746.64
+  R_primary = 5.823E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((2.947E+08)^3 / 5.823E+07)
+    = sqrt(2.559E+25 / 5.823E+07)
+    = sqrt(4.395E+17)
+    = 6.630E+08
+    T = 2*pi*11746.64*6.630E+08 / 2.998E+08
+    T = 4.893E+13 / 2.998E+08
+    T = 1.632E+05 s
+  Error = 13.55%
+
+Dione (orbits Saturn):
+  R = 5.610E+05 m
+  a = 3.774E+08 m
+  T_observed = 2.737E+05 s
+  v_orbital = 2*pi*a/T = 8663.77 m/s
+  Using Saturn's k_factor = 11746.64
+  R_primary = 5.823E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((3.774E+08)^3 / 5.823E+07)
+    = sqrt(5.375E+25 / 5.823E+07)
+    = sqrt(9.231E+17)
+    = 9.608E+08
+    T = 2*pi*11746.64*9.608E+08 / 2.998E+08
+    T = 7.091E+13 / 2.998E+08
+    T = 2.365E+05 s
+  Error = 13.58%
+
+Rhea (orbits Saturn):
+  R = 7.648E+05 m
+  a = 5.271E+08 m
+  T_observed = 4.518E+05 s
+  v_orbital = 2*pi*a/T = 7330.38 m/s
+  Using Saturn's k_factor = 11746.64
+  R_primary = 5.823E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((5.271E+08)^3 / 5.823E+07)
+    = sqrt(1.464E+26 / 5.823E+07)
+    = sqrt(2.515E+18)
+    = 1.586E+09
+    T = 2*pi*11746.64*1.586E+09 / 2.998E+08
+    T = 1.170E+14 / 2.998E+08
+    T = 3.904E+05 s
+  Error = 13.59%
+
+Iapetus (orbits Saturn):
+  R = 7.345E+05 m
+  a = 3.561E+09 m
+  T_observed = 7.933E+06 s
+  v_orbital = 2*pi*a/T = 2820.42 m/s
+  Using Saturn's k_factor = 11746.64
+  R_primary = 5.823E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((3.561E+09)^3 / 5.823E+07)
+    = sqrt(4.516E+28 / 5.823E+07)
+    = sqrt(7.755E+20)
+    = 2.785E+10
+    T = 2*pi*11746.64*2.785E+10 / 2.998E+08
+    T = 2.055E+15 / 2.998E+08
+    T = 6.856E+06 s
+  Error = 13.58%
+
+Miranda (orbits Uranus):
+  R = 2.359E+05 m
+  a = 1.299E+08 m
+  T_observed = 1.224E+05 s
+  v_orbital = 2*pi*a/T = 6668.18 m/s
+  Using Uranus's k_factor = 19834.31
+  R_primary = 2.536E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((1.299E+08)^3 / 2.536E+07)
+    = sqrt(2.192E+24 / 2.536E+07)
+    = sqrt(8.643E+16)
+    = 2.940E+08
+    T = 2*pi*19834.31*2.940E+08 / 2.998E+08
+    T = 3.664E+13 / 2.998E+08
+    T = 1.222E+05 s
+  Error = 0.16%
+
+Ariel (orbits Uranus):
+  R = 5.789E+05 m
+  a = 1.912E+08 m
+  T_observed = 2.172E+05 s
+  v_orbital = 2*pi*a/T = 5531.05 m/s
+  Using Uranus's k_factor = 19834.31
+  R_primary = 2.536E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((1.912E+08)^3 / 2.536E+07)
+    = sqrt(6.990E+24 / 2.536E+07)
+    = sqrt(2.756E+17)
+    = 5.250E+08
+    T = 2*pi*19834.31*5.250E+08 / 2.998E+08
+    T = 6.543E+13 / 2.998E+08
+    T = 2.182E+05 s
+  Error = 0.48%
+
+Umbriel (orbits Uranus):
+  R = 5.849E+05 m
+  a = 2.662E+08 m
+  T_observed = 3.584E+05 s
+  v_orbital = 2*pi*a/T = 4666.81 m/s
+  Using Uranus's k_factor = 19834.31
+  R_primary = 2.536E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((2.662E+08)^3 / 2.536E+07)
+    = sqrt(1.886E+25 / 2.536E+07)
+    = sqrt(7.438E+17)
+    = 8.625E+08
+    T = 2*pi*19834.31*8.625E+08 / 2.998E+08
+    T = 1.075E+14 / 2.998E+08
+    T = 3.585E+05 s
+  Error = 0.03%
+
+Titania (orbits Uranus):
+  R = 7.886E+05 m
+  a = 4.362E+08 m
+  T_observed = 7.522E+05 s
+  v_orbital = 2*pi*a/T = 3643.61 m/s
+  Using Uranus's k_factor = 19834.31
+  R_primary = 2.536E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.362E+08)^3 / 2.536E+07)
+    = sqrt(8.300E+25 / 2.536E+07)
+    = sqrt(3.273E+18)
+    = 1.809E+09
+    T = 2*pi*19834.31*1.809E+09 / 2.998E+08
+    T = 2.255E+14 / 2.998E+08
+    T = 7.520E+05 s
+  Error = 0.03%
+
+Oberon (orbits Uranus):
+  R = 7.614E+05 m
+  a = 5.836E+08 m
+  T_observed = 1.194E+06 s
+  v_orbital = 2*pi*a/T = 3071.08 m/s
+  Using Uranus's k_factor = 19834.31
+  R_primary = 2.536E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((5.836E+08)^3 / 2.536E+07)
+    = sqrt(1.988E+26 / 2.536E+07)
+    = sqrt(7.838E+18)
+    = 2.800E+09
+    T = 2*pi*19834.31*2.800E+09 / 2.998E+08
+    T = 3.489E+14 / 2.998E+08
+    T = 1.164E+06 s
+  Error = 2.53%
+
+Triton (orbits Neptune):
+  R = 1.353E+06 m
+  a = 3.548E+08 m
+  T_observed = 5.077E+05 s
+  v_orbital = 2*pi*a/T = 4390.93 m/s
+  Using Neptune's k_factor = 17991.80
+  R_primary = 2.462E+07 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((3.548E+08)^3 / 2.462E+07)
+    = sqrt(4.466E+25 / 2.462E+07)
+    = sqrt(1.814E+18)
+    = 1.347E+09
+    T = 2*pi*17991.80*1.347E+09 / 2.998E+08
+    T = 1.523E+14 / 2.998E+08
+    T = 5.079E+05 s
+  Error = 0.03%
+
+Ceres (orbits Sun):
+  R = 4.700E+05 m
+  a = 4.139E+11 m
+  T_observed = 1.360E+08 s
+  v_orbital = 2*pi*a/T = 19122.14 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.139E+11)^3 / 6.957E+08)
+    = sqrt(7.091E+34 / 6.957E+08)
+    = sqrt(1.019E+26)
+    = 1.010E+13
+    T = 2*pi*686.42*1.010E+13 / 2.998E+08
+    T = 4.354E+16 / 2.998E+08
+    T = 1.452E+08 s
+  Error = 6.79%
+
+Vesta (orbits Sun):
+  R = 2.630E+05 m
+  a = 3.534E+11 m
+  T_observed = 1.325E+08 s
+  v_orbital = 2*pi*a/T = 16758.32 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((3.534E+11)^3 / 6.957E+08)
+    = sqrt(4.414E+34 / 6.957E+08)
+    = sqrt(6.344E+25)
+    = 7.965E+12
+    T = 2*pi*686.42*7.965E+12 / 2.998E+08
+    T = 3.435E+16 / 2.998E+08
+    T = 1.146E+08 s
+  Error = 13.52%
+
+Pallas (orbits Sun):
+  R = 2.720E+05 m
+  a = 4.145E+11 m
+  T_observed = 1.686E+08 s
+  v_orbital = 2*pi*a/T = 15447.10 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.145E+11)^3 / 6.957E+08)
+    = sqrt(7.122E+34 / 6.957E+08)
+    = sqrt(1.024E+26)
+    = 1.012E+13
+    T = 2*pi*686.42*1.012E+13 / 2.998E+08
+    T = 4.364E+16 / 2.998E+08
+    T = 1.456E+08 s
+  Error = 13.67%
+
+Hygiea (orbits Sun):
+  R = 2.070E+05 m
+  a = 4.701E+11 m
+  T_observed = 2.030E+08 s
+  v_orbital = 2*pi*a/T = 14550.37 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.701E+11)^3 / 6.957E+08)
+    = sqrt(1.039E+35 / 6.957E+08)
+    = sqrt(1.493E+26)
+    = 1.222E+13
+    T = 2*pi*686.42*1.222E+13 / 2.998E+08
+    T = 5.270E+16 / 2.998E+08
+    T = 1.758E+08 s
+  Error = 13.40%
+
+Interamnia (orbits Sun):
+  R = 1.580E+05 m
+  a = 4.750E+11 m
+  T_observed = 2.050E+08 s
+  v_orbital = 2*pi*a/T = 14558.60 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.750E+11)^3 / 6.957E+08)
+    = sqrt(1.072E+35 / 6.957E+08)
+    = sqrt(1.540E+26)
+    = 1.241E+13
+    T = 2*pi*686.42*1.241E+13 / 2.998E+08
+    T = 5.353E+16 / 2.998E+08
+    T = 1.786E+08 s
+  Error = 12.90%
+
+Europa_asteroid (orbits Sun):
+  R = 1.560E+05 m
+  a = 4.630E+11 m
+  T_observed = 1.980E+08 s
+  v_orbital = 2*pi*a/T = 14692.50 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.630E+11)^3 / 6.957E+08)
+    = sqrt(9.925E+34 / 6.957E+08)
+    = sqrt(1.427E+26)
+    = 1.194E+13
+    T = 2*pi*686.42*1.194E+13 / 2.998E+08
+    T = 5.151E+16 / 2.998E+08
+    T = 1.718E+08 s
+  Error = 13.22%
+
+Davida (orbits Sun):
+  R = 1.630E+05 m
+  a = 4.750E+11 m
+  T_observed = 2.050E+08 s
+  v_orbital = 2*pi*a/T = 14558.60 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.750E+11)^3 / 6.957E+08)
+    = sqrt(1.072E+35 / 6.957E+08)
+    = sqrt(1.540E+26)
+    = 1.241E+13
+    T = 2*pi*686.42*1.241E+13 / 2.998E+08
+    T = 5.353E+16 / 2.998E+08
+    T = 1.786E+08 s
+  Error = 12.90%
+
+Sylvia (orbits Sun):
+  R = 1.430E+05 m
+  a = 5.150E+11 m
+  T_observed = 2.380E+08 s
+  v_orbital = 2*pi*a/T = 13595.97 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((5.150E+11)^3 / 6.957E+08)
+    = sqrt(1.366E+35 / 6.957E+08)
+    = sqrt(1.963E+26)
+    = 1.401E+13
+    T = 2*pi*686.42*1.401E+13 / 2.998E+08
+    T = 6.043E+16 / 2.998E+08
+    T = 2.016E+08 s
+  Error = 15.30%
+
+Cybele (orbits Sun):
+  R = 1.190E+05 m
+  a = 5.290E+11 m
+  T_observed = 2.510E+08 s
+  v_orbital = 2*pi*a/T = 13242.25 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((5.290E+11)^3 / 6.957E+08)
+    = sqrt(1.480E+35 / 6.957E+08)
+    = sqrt(2.128E+26)
+    = 1.459E+13
+    T = 2*pi*686.42*1.459E+13 / 2.998E+08
+    T = 6.291E+16 / 2.998E+08
+    T = 2.099E+08 s
+  Error = 16.39%
+
+Eunomia (orbits Sun):
+  R = 1.270E+05 m
+  a = 4.950E+11 m
+  T_observed = 2.200E+08 s
+  v_orbital = 2*pi*a/T = 14137.17 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.950E+11)^3 / 6.957E+08)
+    = sqrt(1.213E+35 / 6.957E+08)
+    = sqrt(1.743E+26)
+    = 1.320E+13
+    T = 2*pi*686.42*1.320E+13 / 2.998E+08
+    T = 5.695E+16 / 2.998E+08
+    T = 1.899E+08 s
+  Error = 13.66%
+
+Juno (orbits Sun):
+  R = 1.230E+05 m
+  a = 3.999E+11 m
+  T_observed = 1.593E+08 s
+  v_orbital = 2*pi*a/T = 15773.04 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((3.999E+11)^3 / 6.957E+08)
+    = sqrt(6.395E+34 / 6.957E+08)
+    = sqrt(9.192E+25)
+    = 9.588E+12
+    T = 2*pi*686.42*9.588E+12 / 2.998E+08
+    T = 4.135E+16 / 2.998E+08
+    T = 1.379E+08 s
+  Error = 13.42%
+
+Psyche (orbits Sun):
+  R = 1.130E+05 m
+  a = 4.370E+11 m
+  T_observed = 1.820E+08 s
+  v_orbital = 2*pi*a/T = 15086.55 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.370E+11)^3 / 6.957E+08)
+    = sqrt(8.345E+34 / 6.957E+08)
+    = sqrt(1.200E+26)
+    = 1.095E+13
+    T = 2*pi*686.42*1.095E+13 / 2.998E+08
+    T = 4.724E+16 / 2.998E+08
+    T = 1.576E+08 s
+  Error = 13.43%
+
+Themis (orbits Sun):
+  R = 1.080E+05 m
+  a = 4.750E+11 m
+  T_observed = 2.050E+08 s
+  v_orbital = 2*pi*a/T = 14558.60 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.750E+11)^3 / 6.957E+08)
+    = sqrt(1.072E+35 / 6.957E+08)
+    = sqrt(1.540E+26)
+    = 1.241E+13
+    T = 2*pi*686.42*1.241E+13 / 2.998E+08
+    T = 5.353E+16 / 2.998E+08
+    T = 1.786E+08 s
+  Error = 12.90%
+
+Hebe (orbits Sun):
+  R = 9.700E+04 m
+  a = 4.620E+11 m
+  T_observed = 1.970E+08 s
+  v_orbital = 2*pi*a/T = 14735.19 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.620E+11)^3 / 6.957E+08)
+    = sqrt(9.861E+34 / 6.957E+08)
+    = sqrt(1.417E+26)
+    = 1.191E+13
+    T = 2*pi*686.42*1.191E+13 / 2.998E+08
+    T = 5.135E+16 / 2.998E+08
+    T = 1.713E+08 s
+  Error = 13.06%
+
+Metis (orbits Sun):
+  R = 9.500E+04 m
+  a = 4.680E+11 m
+  T_observed = 2.010E+08 s
+  v_orbital = 2*pi*a/T = 14629.51 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((4.680E+11)^3 / 6.957E+08)
+    = sqrt(1.025E+35 / 6.957E+08)
+    = sqrt(1.473E+26)
+    = 1.214E+13
+    T = 2*pi*686.42*1.214E+13 / 2.998E+08
+    T = 5.235E+16 / 2.998E+08
+    T = 1.746E+08 s
+  Error = 13.12%
+
+Halley_Comet (orbits Sun):
+  R = 5.500E+03 m
+  a = 2.668E+12 m
+  T_observed = 2.376E+09 s
+  v_orbital = 2*pi*a/T = 7055.36 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((2.668E+12)^3 / 6.957E+08)
+    = sqrt(1.899E+37 / 6.957E+08)
+    = sqrt(2.730E+28)
+    = 1.652E+14
+    T = 2*pi*686.42*1.652E+14 / 2.998E+08
+    T = 7.126E+17 / 2.998E+08
+    T = 2.377E+09 s
+  Error = 0.04%
+
+Hale_Bopp (orbits Sun):
+  R = 6.000E+03 m
+  a = 2.783E+13 m
+  T_observed = 7.993E+10 s
+  v_orbital = 2*pi*a/T = 2187.68 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((2.783E+13)^3 / 6.957E+08)
+    = sqrt(2.155E+40 / 6.957E+08)
+    = sqrt(3.098E+31)
+    = 5.566E+15
+    T = 2*pi*686.42*5.566E+15 / 2.998E+08
+    T = 2.401E+19 / 2.998E+08
+    T = 8.008E+10 s
+  Error = 0.18%
+
+67P_Churyumov (orbits Sun):
+  R = 1.850E+03 m
+  a = 5.290E+11 m
+  T_observed = 2.040E+08 s
+  v_orbital = 2*pi*a/T = 16293.16 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((5.290E+11)^3 / 6.957E+08)
+    = sqrt(1.480E+35 / 6.957E+08)
+    = sqrt(2.128E+26)
+    = 1.459E+13
+    T = 2*pi*686.42*1.459E+13 / 2.998E+08
+    T = 6.291E+16 / 2.998E+08
+    T = 2.099E+08 s
+  Error = 2.87%
+
+Encke (orbits Sun):
+  R = 2.400E+03 m
+  a = 3.210E+11 m
+  T_observed = 1.042E+08 s
+  v_orbital = 2*pi*a/T = 19356.07 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((3.210E+11)^3 / 6.957E+08)
+    = sqrt(3.308E+34 / 6.957E+08)
+    = sqrt(4.754E+25)
+    = 6.895E+12
+    T = 2*pi*686.42*6.895E+12 / 2.998E+08
+    T = 2.974E+16 / 2.998E+08
+    T = 9.919E+07 s
+  Error = 4.80%
+
+Hyakutake (orbits Sun):
+  R = 2.100E+03 m
+  a = 2.540E+12 m
+  T_observed = 5.365E+09 s
+  v_orbital = 2*pi*a/T = 2974.70 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((2.540E+12)^3 / 6.957E+08)
+    = sqrt(1.639E+37 / 6.957E+08)
+    = sqrt(2.355E+28)
+    = 1.535E+14
+    T = 2*pi*686.42*1.535E+14 / 2.998E+08
+    T = 6.619E+17 / 2.998E+08
+    T = 2.208E+09 s
+  Error = 58.85%
+
+Borrelly (orbits Sun):
+  R = 4.000E+03 m
+  a = 1.031E+12 m
+  T_observed = 2.180E+09 s
+  v_orbital = 2*pi*a/T = 2971.54 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((1.031E+12)^3 / 6.957E+08)
+    = sqrt(1.096E+36 / 6.957E+08)
+    = sqrt(1.575E+27)
+    = 3.969E+13
+    T = 2*pi*686.42*3.969E+13 / 2.998E+08
+    T = 1.712E+17 / 2.998E+08
+    T = 5.710E+08 s
+  Error = 73.81%
+
+Wild_2 (orbits Sun):
+  R = 2.000E+03 m
+  a = 3.380E+11 m
+  T_observed = 1.100E+08 s
+  v_orbital = 2*pi*a/T = 19306.51 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((3.380E+11)^3 / 6.957E+08)
+    = sqrt(3.861E+34 / 6.957E+08)
+    = sqrt(5.550E+25)
+    = 7.450E+12
+    T = 2*pi*686.42*7.450E+12 / 2.998E+08
+    T = 3.213E+16 / 2.998E+08
+    T = 1.072E+08 s
+  Error = 2.57%
+
+Tempel_1 (orbits Sun):
+  R = 3.000E+03 m
+  a = 3.120E+11 m
+  T_observed = 1.020E+08 s
+  v_orbital = 2*pi*a/T = 19219.16 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((3.120E+11)^3 / 6.957E+08)
+    = sqrt(3.037E+34 / 6.957E+08)
+    = sqrt(4.366E+25)
+    = 6.607E+12
+    T = 2*pi*686.42*6.607E+12 / 2.998E+08
+    T = 2.850E+16 / 2.998E+08
+    T = 9.505E+07 s
+  Error = 6.81%
+
+Hartley_2 (orbits Sun):
+  R = 1.200E+03 m
+  a = 3.460E+11 m
+  T_observed = 1.130E+08 s
+  v_orbital = 2*pi*a/T = 19238.78 m/s
+  Using Sun's k_factor = 686.42
+  R_primary = 6.957E+08 m
+  Calculation:
+    sqrt(a^3/R_primary) = sqrt((3.460E+11)^3 / 6.957E+08)
+    = sqrt(4.142E+34 / 6.957E+08)
+    = sqrt(5.954E+25)
+    = 7.716E+12
+    T = 2*pi*686.42*7.716E+12 / 2.998E+08
+    T = 3.328E+16 / 2.998E+08
+    T = 1.110E+08 s
+  Error = 1.77%

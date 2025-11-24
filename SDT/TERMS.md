@@ -31,9 +31,6 @@ Geometric locus where local tangential speed reaches c. Related to Ϟ by: ϟ = R
 ### K_bulk
 Bulk modulus of spation (4.6×10¹¹³ Pa)
 
-### β (Beta)
-Gravitational parameter: β = κ V_disp c²/(4π). Replaces GM in orbital mechanics.
-
 ### ξ (Xi)
 Screening factor: ξ = N_eff/N_total. Explains why gravity is weak (~10⁻⁹).
 

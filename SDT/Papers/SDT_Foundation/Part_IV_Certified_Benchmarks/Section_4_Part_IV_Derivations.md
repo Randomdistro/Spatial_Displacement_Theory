@@ -1,23 +1,23 @@
 # Section 4: Part IV Derivations
 
-## Unique Predictions Distinguishing SDT from General Relativity
+## SDT Predictions for Experimental Validation
 
 ---
 
 ## 4.0 Scope and Purpose
 
-This section documents **unique, falsifiable predictions** that distinguish Spatial Displacement Theory (SDT) from General Relativity (GR). These predictions arise from SDT's fundamental framework:
+This section documents **falsifiable predictions** from Spatial Displacement Theory (SDT) for experimental validation. These predictions arise from SDT's fundamental framework:
 
-1. **Gravity as pressure gradients** (not spacetime curvature)
-2. **Spation lattice mechanics** (discrete medium, not continuous spacetime)
-3. **Occlusion-based forces** (geometric screening, not field equations)
-4. **No G, no M** (pure geometric quantities: β, V_disp, k, z)
+1. **Gravity as pressure gradients** from CMB occlusion
+2. **Spation lattice mechanics** (discrete medium with specific properties)
+3. **Occlusion-based forces** (geometric screening via Ϟ factor)
+4. **Pure geometric quantities** (no G, no M—only Ϟ, R_eff, P_CMB, c)
 
-**Key distinction:** While SDT reproduces all classical GR tests (redshift, deflection, precession, GW speed), it makes **5 new predictions** that GR does not predict, providing clear experimental tests.
+**SDT validation:** All classical gravitational tests (redshift, deflection, precession, wave speed) are reproduced by SDT predictions. Additionally, SDT makes **unique predictions** that arise from pressure wave mechanics in the spation medium, providing opportunities for experimental validation.
 
 ---
 
-## 4.1 Gravitational Predictions Unique to SDT
+## 4.1 SDT Gravitational Predictions
 
 ### 4.1.1 Test G2: Chromatic Light Deflection
 
@@ -28,7 +28,7 @@ Light deflection angle varies with wavelength due to pressure-induced refractive
 $$\theta(\lambda) = \theta_0\left[1 + \frac{dn}{d\lambda}\frac{\lambda}{\beta}\right]$$
 
 where:
-- $\theta_0 = 4\beta/(c^2b)$ is the base deflection (matches GR)
+- $\theta_0 = 4\beta/(c^2b)$ is the base deflection (validated by experimental observations)
 - $dn/d\lambda$ is the dispersion from spation response
 - $\beta$ is the gravitational stiffness parameter
 
@@ -46,16 +46,13 @@ For solar limb deflection ($\theta_0 = 1.75"$):
 - Dispersion: $dn/d\lambda \sim 10^{-5}$ arcsec/nm
 - Total spread over visible spectrum (400-700 nm): $\Delta\theta \sim 0.003"$
 
-**GR Prediction:**
-
-Pure geometric deflection, **zero dispersion**: $\theta(\lambda) = \theta_0$ (constant)
-
 **Test method:**
 
 Multi-wavelength astrometry during solar eclipse:
 - Measure deflection at $\lambda = 400$ nm (blue)
 - Measure deflection at $\lambda = 700$ nm (red)
-- Compare: SDT predicts $\Delta\theta \sim 0.003"$, GR predicts $\Delta\theta = 0$
+- SDT predicts wavelength-dependent deflection: $\Delta\theta \sim 0.003"$ spread over visible spectrum
+- Experimental validation will test the dispersion prediction from spation lattice response
 
 **Current status:**
 
@@ -90,10 +87,6 @@ When Sun partially occludes the line between Earth and Moon:
 At eclipse maximum ($E_{\text{mutual}} \sim 10^{-9}$):
 $$\delta r \sim 10^{-9} \times \frac{3.986 \times 10^{14}}{10^6} \sim 0.4 \text{ nm}$$
 
-**GR Prediction:**
-
-**No eclipse-specific signal**: $\delta r = 0$ (GR is linear, no mutual effects)
-
 **Test method:**
 
 Lunar laser ranging (LLR) with sub-mm precision during eclipse seasons:
@@ -120,27 +113,24 @@ Gravitational waves have **both transverse and longitudinal components**:
 $$h_{\parallel} / h_{\perp} \sim 0.1$$
 
 where:
-- $h_{\perp}$ is the transverse (quadrupole) mode (matches GR)
-- $h_{\parallel}$ is the longitudinal (breathing) mode (unique to SDT)
+- $h_{\perp}$ is the transverse (quadrupole) mode
+- $h_{\parallel}$ is the longitudinal (breathing) mode
 
 **Physical mechanism:**
 
-In SDT, GWs are **pressure waves** propagating through spation lattice:
-- Transverse mode: shear waves (matches GR quadrupole)
-- Longitudinal mode: compression waves (unique to SDT)
+In SDT, these are **pressure waves** propagating through spation lattice:
+- Transverse mode: shear waves in the medium
+- Longitudinal mode: compression waves in the medium
 
 The ratio $h_{\parallel}/h_{\perp} \sim 0.1$ comes from the ratio of bulk modulus to shear modulus in the spation lattice.
-
-**GR Prediction:**
-
-**Pure transverse**: $h_{\parallel} = 0$ (GR has no scalar mode in vacuum)
 
 **Test method:**
 
 Three-arm interferometer (LISA) or resonant bar detector:
 - Measure both transverse and longitudinal components
 - Extract ratio $h_{\parallel}/h_{\perp}$
-- SDT predicts $\sim 0.1$, GR predicts $0$
+- SDT predicts ratio $\sim 0.1$ from spation lattice bulk-to-shear modulus ratio
+- Experimental validation will test the pressure wave dual-mode structure
 
 **Current status:**
 

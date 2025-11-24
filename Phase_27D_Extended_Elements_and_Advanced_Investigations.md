@@ -38,31 +38,35 @@ This phase extends the geometric atomic structure investigation to multi-electro
 
 ### 0.9.1: Six-Electron Configuration Space
 
-**Geometric Constraints:**
+#### Geometric Constraints
+
 - Two electrons in K-shell (1s²): r₁, r₂ ≈ a₀/Z_eff,1s
 - Four electrons in L-shell (2s²2p²): r₃, r₄, r₅, r₆ with angular distribution
 - Collision avoidance: d_ij ≥ d_eff for all electron pairs
 - Wake interactions: Helical wake coupling between electrons
 
-**Configuration Variables:**
+#### Configuration Variables
+
 - Radial positions: r₁, r₂ (K-shell), r₃, r₄ (2s), r₅, r₆ (2p)
 - Angular positions: θ_ij for all pairs
 - Circulation directions: γ_circ,i for each electron (parallel/antiparallel)
 
-**Energy Components:**
+#### Energy Components
+
 1. **Pressure field energy**: E_pressure = Σᵢ (V_disp,e / rᵢ²) from displacement field
 2. **Kinetic energy**: E_kinetic = Σᵢ (pᵢ²/(2m_e)) from wake quantization
 3. **Wake interaction**: E_wake = Σᵢ<ⱼ E_wake,ij(θ_ij, γ_circ,i, γ_circ,j)
 4. **Occlusion screening**: E_screen = Σᵢ<ⱼ E_occlusion,ij(d_ij, θ_ij)
 
-**Total Energy:**
+#### Total Energy
+
 ```
 E_total = E_pressure + E_kinetic + E_wake + E_screen
 ```
 
 ### 0.9.2: L-Shell Geometry — Tetrahedral vs Square Planar
 
-**Four-Electron L-Shell Arrangements:**
+#### Four-Electron L-Shell Arrangements
 
 **Option 1: Tetrahedral Geometry**
 - Four electrons at vertices of regular tetrahedron
@@ -76,7 +80,8 @@ E_total = E_pressure + E_kinetic + E_wake + E_screen
 - Symmetry: D_4h point group
 - Wake coupling: In-plane coupling stronger, out-of-plane weaker
 
-**Geometric Selection Criterion:**
+#### Geometric Selection Criterion
+
 The arrangement that minimizes total energy while satisfying:
 - Collision constraints: d_ij ≥ d_eff
 - Wake quantization: L_wake,i = n_i ℏ for each electron
@@ -88,12 +93,13 @@ The arrangement that minimizes total energy while satisfying:
 
 **Hund's First Rule:** Maximum multiplicity (parallel spins) for ground state.
 
-**Geometric Interpretation:**
+#### Geometric Interpretation
 - **Parallel circulation** (γ_circ,i = γ_circ,j): Wake fields constructively interfere
 - **Antiparallel circulation** (γ_circ,i = -γ_circ,j): Wake fields destructively interfere
 - **Energy difference**: ΔE_circ = E_wake(parallel) - E_wake(antiparallel) < 0
 
-**Calculation:**
+#### Calculation
+
 For two electrons with angular separation θ:
 ```
 E_wake(θ, γ_1, γ_2) = (γ_1 γ_2) × f_wake(θ) × (L_wake,1 L_wake,2) / (r₁ r₂)
@@ -106,34 +112,37 @@ Where:
 
 **Hund's Second Rule:** Maximum orbital angular momentum for given multiplicity.
 
-**Geometric Interpretation:**
+#### Geometric Interpretation
 - Larger angular separation → reduced occlusion screening
 - Maximum L → maximum θ_min → minimum E_screen
 - Energy ordering: ³P < ³D < ³F (for carbon-like systems)
 
 **Hund's Third Rule:** Maximum total angular momentum J for less-than-half-filled shells.
 
-**Geometric Interpretation:**
+#### Geometric Interpretation
 - J = L + S (vector sum)
 - Circulation coupling optimized when J maximized
 - Energy: E(³P₂) < E(³P₁) < E(³P₀) for carbon
 
 ### 0.9.4: Carbon Ground State — ³P₀ Configuration
 
-**Target Experimental Values:**
+#### Target Experimental Values
+
 - Ground state term: ³P₀
 - Energy: E_ground ≈ -1024.5 eV (total energy)
 - Term separation: E(³P₁) - E(³P₀) ≈ 0.002 eV
 - Term separation: E(³P₂) - E(³P₀) ≈ 0.005 eV
 
-**Geometric Configuration:**
+#### Geometric Configuration
+
 - K-shell: r₁ = r₂ ≈ a₀/6.0 (Z_eff,1s ≈ 6.0)
 - 2s electrons: r₃ = r₄ ≈ a₀/3.7 (Z_eff,2s ≈ 3.7)
 - 2p electrons: r₅, r₆ with tetrahedral-like angular distribution
 - Circulation: All L-shell electrons parallel (γ_circ = +1)
 - Angular momentum: L_total = 1 (P state), S_total = 1 (triplet)
 
-**Energy Minimization:**
+#### Energy Minimization
+
 ```
 Minimize: E_total(r₁...r₆, θ_ij, γ_circ,i)
 Subject to:
@@ -142,7 +151,8 @@ Subject to:
   E_total = minimum
 ```
 
-**Predicted Configuration:**
+#### Predicted Configuration
+
 - r₁ = r₂ = 0.0885 a₀ (K-shell)
 - r₃ = r₄ = 0.144 a₀ (2s)
 - r₅ = r₆ = 0.152 a₀ (2p, slightly larger)
@@ -157,12 +167,14 @@ Subject to:
 - Energy gap: E(¹D₂) - E(³P₀) ≈ 1.3 eV
 - Singlet-triplet splitting: Large compared to fine structure
 
-**Geometric Configuration:**
+#### Geometric Configuration
+
 - Same radial positions as ground state
 - Circulation: Antiparallel pairs (γ_circ,3 = -γ_circ,4, γ_circ,5 = -γ_circ,6)
 - Angular momentum: L_total = 2 (D state), S_total = 0 (singlet)
 
-**Energy Calculation:**
+#### Energy Calculation
+
 ```
 E(¹D₂) = E_total(antiparallel circulation) - E_total(parallel circulation)
         = ΔE_circ + ΔE_angular
@@ -176,7 +188,7 @@ Where:
 
 ### 0.9.6: Carbon Spectral Validation
 
-**Major Spectral Lines (Carbon I):**
+#### Major Spectral Lines (Carbon I)
 
 | Transition | Experimental λ (nm) | Calculated λ (nm) | Error (%) |
 |------------|---------------------|-------------------|-----------|
@@ -194,35 +206,41 @@ Where:
 
 ### 0.10.1: Beryllium (Z=4) — 1s²2s² Configuration
 
-**Configuration:**
+#### Configuration
+
 - K-shell: 1s² (r₁, r₂)
 - L-shell: 2s² (r₃, r₄)
 - Total: 4 electrons
 
-**Ground State:**
+#### Ground State
+
 - Term: ¹S₀ (singlet, S=0, L=0)
 - Total energy: E_total ≈ -14.67 × Z² = -234.7 eV (approximate)
 - Ionization energy: E_ion,1 = 9.32 eV (first)
 - Ionization energy: E_ion,2 = 18.21 eV (second)
 
-**Geometric Configuration:**
+#### Geometric Configuration
+
 - r₁ = r₂ ≈ a₀/4.0 (Z_eff,1s ≈ 4.0)
 - r₃ = r₄ ≈ a₀/1.95 (Z_eff,2s ≈ 1.95)
 - θ_34 = 180° (2s pair, opposite sides)
 - Circulation: Antiparallel (γ_circ,3 = -γ_circ,4) for singlet
 
-**Screening:**
+#### Screening
+
 - Z_eff,1s = Z (minimal screening from outer electrons)
 - Z_eff,2s = Z - σ_2s ≈ 4 - 2.05 = 1.95
 
-**Validation:**
+#### Validation
+
 - Ground state energy: [TBD] vs -234.7 eV
 - First ionization: [TBD] vs 9.32 eV
 - Spectral lines: [TBD]
 
 ### 0.10.2: Boron (Z=5) — 1s²2s²2p¹ Configuration
 
-**Configuration:**
+#### Configuration
+
 - K-shell: 1s² (r₁, r₂)
 - L-shell: 2s²2p¹ (r₃, r₄, r₅)
 - Total: 5 electrons
@@ -251,7 +269,8 @@ Where:
 
 ### 0.10.3: Nitrogen (Z=7) — 1s²2s²2p³ Configuration
 
-**Configuration:**
+#### Configuration
+
 - K-shell: 1s² (r₁, r₂)
 - L-shell: 2s²2p³ (r₃, r₄, r₅, r₆, r₇)
 - Total: 7 electrons
@@ -269,7 +288,8 @@ Where:
 - Angular distribution: Trigonal planar or pyramidal
 - Circulation: All three 2p electrons parallel (S=3/2)
 
-**Hund's Rule Validation:**
+#### Hund's Rule Validation
+
 - ⁴S₃/₂ (S=3/2) lower than ²D (S=1/2) or ²P (S=1/2)
 - Energy difference: ΔE(Hund) ≈ 2-3 eV (to be calculated)
 
@@ -281,7 +301,8 @@ Where:
 
 ### 0.10.4: Oxygen (Z=8) — 1s²2s²2p⁴ Configuration
 
-**Configuration:**
+#### Configuration
+
 - K-shell: 1s² (r₁, r₂)
 - L-shell: 2s²2p⁴ (r₃, r₄, r₅, r₆, r₇, r₈)
 - Total: 8 electrons
@@ -307,12 +328,14 @@ Where:
 
 ### 0.10.5: Neon (Z=10) — Closed Shell Validation
 
-**Configuration:**
+#### Configuration
+
 - K-shell: 1s² (r₁, r₂)
 - L-shell: 2s²2p⁶ (r₃...r₁₀)
 - Total: 10 electrons (closed shell)
 
-**Ground State:**
+#### Ground State
+
 - Term: ¹S₀ (singlet, S=0, L=0)
 - Closed shell: Maximum stability
 - Total energy: E_total ≈ -14.67 × Z² = -1467.0 eV (approximate)
@@ -325,7 +348,8 @@ Where:
 - Angular distribution: Octahedral or symmetric arrangement
 - Circulation: All pairs antiparallel (S=0, closed shell)
 
-**Closed Shell Validation:**
+#### Closed Shell Validation
+
 - Maximum ionization energy (shell closure)
 - Minimum total energy per electron
 - Spherical symmetry (L=0)
@@ -363,12 +387,14 @@ Where:
 
 ### 0.11.1: Relativistic Corrections
 
-**When v/c > 0.1:**
+#### When v/c > 0.1
+
 - Electron velocity: v = √(2E_kinetic/m_e)
 - Relativistic factor: γ = 1/√(1 - v²/c²)
 - Mass correction: m_rel = γ m_e
 
-**Correction to Energy:**
+#### Correction to Energy
+
 ```
 E_rel = E_nonrel + ΔE_rel
 ```
@@ -378,34 +404,40 @@ Where:
 ΔE_rel = (γ - 1) m_e c² - (p²/(2m_e)) × (γ - 1)/γ
 ```
 
-**Application:**
+#### Application
+
 - Inner shell electrons (K-shell, high Z)
 - Heavy elements (Z > 20)
 - Fine structure splitting
 
-**Geometric Interpretation:**
+#### Geometric Interpretation
+
 - Wake length contraction: L_wake,rel = L_wake/γ
 - Toroid deformation: d_e,rel = d_e/γ (Lorentz contraction)
 - Pressure field modification: V_disp,rel = V_disp × γ
 
-**Validation:**
+#### Validation
+
 - Compare with experimental fine structure
 - Check against Dirac equation predictions
 - Document geometric origin of relativistic effects
 
 ### 0.11.2: Helical Wake Asymmetry — Lamb Shift Connection
 
-**Lamb Shift Origin:**
+#### Lamb Shift Origin
+
 - Quantum electrodynamic correction
 - Vacuum fluctuations
 - Self-energy of electron
 
-**Geometric Interpretation (Phase 4):**
+#### Geometric Interpretation (Phase 4)
+
 - Helical wake asymmetry: L_wake,forward ≠ L_wake,backward
 - Wake field self-interaction: E_wake,self
 - Displacement field modification: ΔV_disp from wake asymmetry
 
-**Calculation:**
+#### Calculation
+
 ```
 E_Lamb = E_wake,self + ΔE_displacement
 ```
@@ -414,7 +446,8 @@ Where:
 - E_wake,self = self-energy from wake field
 - ΔE_displacement = correction from asymmetric displacement
 
-**Hydrogen 2s-2p Splitting:**
+#### Hydrogen 2s-2p Splitting
+
 - Experimental: ΔE_Lamb ≈ 1057.8 MHz ≈ 4.37 × 10⁻⁶ eV
 - Geometric calculation: [TBD]
 
@@ -425,11 +458,13 @@ Where:
 
 ### 0.11.3: Nuclear Volume Effects
 
-**Finite Nuclear Size:**
-- Nuclear radius: R_nuc ≈ r₀ A^(1/3), r₀ ≈ 1.2 fm
-- Electron penetration: r_e < R_nuc for inner shells
+#### Finite Nuclear Size
 
-**Energy Correction:**
+- Nuclear radius: R_nuc ≈ r₀ A^(1/3), r₀ ≈ 1.2 fm
+- Electron core interaction: r_e < R_nuc for inner shells (antiparallel drag regime)
+
+#### Energy Correction
+
 ```
 ΔE_nuc = ∫[V_displacement(r) - V_point(r)] ρ_e(r) d³r
 ```
@@ -439,28 +474,33 @@ Where:
 - V_point(r) = displacement field for point nucleus
 - ρ_e(r) = electron density
 
-**Geometric Calculation:**
+#### Geometric Calculation
+
 - Modify displacement field inside R_nuc
 - Calculate energy shift for K-shell electrons
 - Document geometric origin
 
-**Isotope Dependence:**
+#### Isotope Dependence
+
 - Different A → different R_nuc
 - Energy shift: ΔE(A₁) - ΔE(A₂)
 - Measurable as isotope shift
 
 ### 0.11.4: Isotope Shifts
 
-**Mass Effect:**
+#### Mass Effect
+
 - Reduced mass: μ = m_e m_nuc/(m_e + m_nuc)
 - Energy scaling: E ∝ μ
 - Shift: ΔE_mass = E(μ₁) - E(μ₂)
 
-**Volume Effect:**
+#### Volume Effect
+
 - Nuclear size: R_nuc(A) = r₀ A^(1/3)
 - Energy shift: ΔE_volume = ΔE_nuc(A₁) - ΔE_nuc(A₂)
 
-**Total Isotope Shift:**
+#### Total Isotope Shift
+
 ```
 ΔE_isotope = ΔE_mass + ΔE_volume
 ```
@@ -490,7 +530,8 @@ Where:
 | L_wake | [TBD] | ±1% | [TBD] | Wake angular momentum |
 | V_disp,e | [TBD] | ±1% | [TBD] | Displacement velocity |
 
-**Sensitivity Calculation:**
+#### Sensitivity Calculation
+
 ```
 Sensitivity = (E(p + Δp) - E(p - Δp)) / (2Δp)
 ```
@@ -511,7 +552,8 @@ Sensitivity = (E(p + Δp) - E(p - Δp)) / (2Δp)
 | O | 1 | [TBD] | [TBD] | [TBD] | [TBD] |
 | Ne | 1 | [TBD] | [TBD] | [TBD] | [TBD] |
 
-**Convergence Criteria:**
+#### Convergence Criteria
+
 - ΔE < 0.01 eV between iterations
 - |d_ij - d_eff| < 0.001 a₀ for all pairs
 - Energy gradient < 0.001 eV/a₀
@@ -529,7 +571,8 @@ Sensitivity = (E(p + Δp) - E(p - Δp)) / (2Δp)
 | O | 2p⁴³P₂→2p³3s³S | 130.2 | [TBD] | [TBD] | [TBD] | O I |
 | Ne | 2p⁶¹S→2p⁵3s¹P | 74.37 | [TBD] | [TBD] | [TBD] | Ne I |
 
-**Error Sources:**
+#### Error Sources
+
 1. Parameter uncertainty: [TBD]%
 2. Numerical integration: [TBD]%
 3. Approximation errors: [TBD]%
@@ -549,7 +592,8 @@ Sensitivity = (E(p + Δp) - E(p - Δp)) / (2Δp)
 | O | 8 | 1s²2s²2p⁴ | [TBD] | -939.0 | [TBD] | 13.62 | 13.62 | [TBD] | [TBD] |
 | Ne | 10 | 1s²2s²2p⁶ | [TBD] | -1467.0 | [TBD] | 21.56 | 21.56 | [TBD] | [TBD] |
 
-**Validation Criteria:**
+#### Validation Criteria
+
 - ✓ = Validated (< 1% error)
 - [TBD] = To be determined
 - Target: All elements < 1% error
@@ -560,31 +604,36 @@ Sensitivity = (E(p + Δp) - E(p - Δp)) / (2Δp)
 
 ### 0.13.1: What "Quantum Numbers" Actually Count Geometrically
 
-**Principal Quantum Number n:**
+#### Principal Quantum Number n
+
 - **Geometric meaning**: Radial shell index
 - **What it counts**: Number of wake quantization nodes
 - **Emergence**: From wake quantization condition L_wake = n ℏ
 - **No postulate**: Arises from helical wake structure (Phase 19)
 
-**Angular Momentum Quantum Number l:**
+#### Angular Momentum Quantum Number l
+
 - **Geometric meaning**: Angular distribution pattern
 - **What it counts**: Angular nodes in wake field
 - **Emergence**: From wake field angular structure
 - **No postulate**: Arises from toroidal geometry (Phase 17)
 
-**Magnetic Quantum Number m_l:**
+#### Magnetic Quantum Number m_l
+
 - **Geometric meaning**: Orientation of angular pattern
 - **What it counts**: Azimuthal nodes
 - **Emergence**: From wake field orientation
 - **No postulate**: Arises from 3D geometry
 
-**Spin Quantum Number s:**
+#### Spin Quantum Number s
+
 - **Geometric meaning**: Circulation direction (γ_circ)
 - **What it counts**: Parallel vs antiparallel wake coupling
 - **Emergence**: From wake field circulation (Phase 19)
 - **No postulate**: Arises from helical wake structure
 
-**Total Angular Momentum J:**
+#### Total Angular Momentum J
+
 - **Geometric meaning**: Vector sum of L and S
 - **What it counts**: Combined circulation and angular momentum
 - **Emergence**: From wake coupling optimization
@@ -592,7 +641,8 @@ Sensitivity = (E(p + Δp) - E(p - Δp)) / (2Δp)
 
 ### 0.13.2: Shell Structure Emergence from Collisions
 
-**2n² Capacity Rule:**
+#### 2n² Capacity Rule
+
 - **Geometric origin**: Maximum packing with collision avoidance
 - **What it counts**: Maximum electrons at radius r_n = n² a₀/Z_eff
 - **Emergence**: From d_ij ≥ d_eff constraint
@@ -601,32 +651,37 @@ Sensitivity = (E(p + Δp) - E(p - Δp)) / (2Δp)
   - Electron volume: V_e ≈ (4π/3) d_eff³
   - Maximum: N_max = V_shell/V_e ≈ 2n²
 
-**Shell Filling Order:**
+#### Shell Filling Order
+
 - **Geometric origin**: Energy minimization with collision constraints
 - **1s before 2s**: r_1s < r_2s → lower energy
 - **2s before 2p**: Screening effects favor 2s
 - **Emergence**: From pressure field E ∝ 1/r²
 
-**Closed Shell Stability:**
+#### Closed Shell Stability
+
 - **Geometric origin**: Maximum symmetry, minimum wake coupling energy
 - **What it achieves**: All pairs antiparallel (S=0), spherical (L=0)
 - **Emergence**: From energy minimization
 
 ### 0.13.3: Hund's Rules from Vortex Circulation
 
-**Hund's First Rule (Maximum Multiplicity):**
+#### Hund's First Rule (Maximum Multiplicity)
+
 - **Geometric origin**: Parallel circulation minimizes wake coupling energy
 - **Energy difference**: ΔE_circ = E_wake(parallel) - E_wake(antiparallel) < 0
 - **Emergence**: From wake field constructive interference
 - **No postulate**: Pure geometry
 
-**Hund's Second Rule (Maximum L):**
+#### Hund's Second Rule (Maximum L)
+
 - **Geometric origin**: Larger angular separation → reduced occlusion
 - **Energy**: E_screen decreases with θ_min
 - **Emergence**: From occlusion screening (Phase 27B)
 - **No postulate**: Pure geometry
 
-**Hund's Third Rule (Maximum J for < half-filled):**
+#### Hund's Third Rule (Maximum J for < half-filled)
+
 - **Geometric origin**: J = L + S optimization
 - **Energy**: E_wake minimized when J maximized
 - **Emergence**: From wake coupling geometry
@@ -634,13 +689,15 @@ Sensitivity = (E(p + Δp) - E(p - Δp)) / (2Δp)
 
 ### 0.13.4: Fine Structure Constant from Geometry
 
-**Emergence of α:**
+#### Emergence of α
+
 - **Geometric origin**: α = h/(2π m_e a₀ c)
 - **What it represents**: Ratio of wake quantization to displacement scale
 - **Calculation**: From calibrated parameters (Phase 27A)
 - **Validation**: α_calc vs α_exp = 1/137.036
 
-**Connection to k-values:**
+#### Connection to k-values
+
 - **Atomic k**: k_atomic = 1/(α√Z)
 - **Stellar k**: k_stellar = k(ρ, R) from Phase 22
 - **Universal function**: k(ρ, R) connects atomic to stellar scales
@@ -648,22 +705,26 @@ Sensitivity = (E(p + Δp) - E(p - Δp)) / (2Δp)
 
 ### 0.13.5: Periodic Table from Pure Geometry
 
-**Period Structure:**
+#### Period Structure
+
 - **Geometric origin**: Shell filling with collision constraints
 - **Period length**: 2, 8, 8, 18, 18, 32... (2n² rule)
 - **Emergence**: From maximum packing geometry
 
-**Group Structure:**
+#### Group Structure
+
 - **Geometric origin**: Similar outer shell configurations
 - **Valence electrons**: Outer shell geometry determines properties
 - **Emergence**: From energy minimization
 
-**Transition Metals:**
+#### Transition Metals
+
 - **Geometric origin**: d-shell filling with complex angular distributions
 - **Properties**: Arise from d-shell geometry
 - **Emergence**: From collision avoidance in 3D
 
-**Rare Earths:**
+#### Rare Earths
+
 - **Geometric origin**: f-shell filling
 - **Properties**: Arise from f-shell geometry
 - **Emergence**: From maximum packing with angular constraints

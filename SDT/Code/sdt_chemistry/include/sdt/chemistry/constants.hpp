@@ -10,12 +10,16 @@ namespace sdt::chemistry::constants {
     inline constexpr double hbar = 1.054571817e-34;  // Reduced Planck constant (J·s)
     inline constexpr double alpha = 7.2973525693e-3;  // Fine structure constant
     inline constexpr double e_charge = 1.602176634e-19;  // Elementary charge (C)
+    inline constexpr double epsilon_0 = 8.8541878128e-12; // Vacuum permittivity (F/m)
     
     // CMB Pressure (from recombination) - Atomic/Molecular scale
     inline constexpr double P_CMB = 2.036e-2;  // Pa (CMB radiation pressure at z=1089.9)
     
-    // Nuclear-scale pressure (from Phase 19)
-    inline constexpr double P_infinity_nuclear = 1.65e31;  // Pa (effective pressure at nuclear scale for toroidal geometry)
+    // Nuclear-scale pressure (Spation Pressure Scale)
+    // Origin: Cosmic Reverberation of Bulk Modulus (K_bulk) focused by Inverse Square Law.
+    // Relation: P_nuc = K_bulk * (R_proton / R_universe)^2.
+    // This links the Spation Matrix Stiffness (10^113 Pa) to the Nuclear Operating Pressure (10^31 Pa).
+    inline constexpr double P_nuclear = ((e_charge * e_charge) / (32.0 * std::numbers::pi_v<double> * std::numbers::pi_v<double> * epsilon_0 * 8.40e-16 * 8.40e-16 * 8.40e-16 * 8.40e-16)) * (15.0/16.0);
     
     // Spation Lattice Properties
     inline constexpr double r_Planck = 1.616255e-35;  // Planck radius (m)

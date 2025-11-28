@@ -1,0 +1,128 @@
+{
+  "scenario": "A_simply_connected",
+  "relaxed": false,
+  "initial_variance": 2.7241132780437806e+52,
+  "final_variance": 2.7241132780437806e+52,
+  "history": [
+    {
+      "step": 0,
+      "time": 4.9999999999999996e-26,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 5.628743287304038e-77
+    },
+    {
+      "step": 1,
+      "time": 9.999999999999999e-26,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 5.902011655542295e-73
+    },
+    {
+      "step": 2,
+      "time": 1.5e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 6.194861445768417e-69
+    },
+    {
+      "step": 3,
+      "time": 1.9999999999999998e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 6.572455248509431e-65
+    },
+    {
+      "step": 4,
+      "time": 2.5e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 8.20945011654489e-61
+    },
+    {
+      "step": 5,
+      "time": 3e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 1.049176133213778e-56
+    },
+    {
+      "step": 6,
+      "time": 3.4999999999999997e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 1.3678006639501938e-52
+    },
+    {
+      "step": 7,
+      "time": 3.9999999999999997e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 1.8130943904445982e-48
+    },
+    {
+      "step": 8,
+      "time": 4.5e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 2.436223693724251e-44
+    },
+    {
+      "step": 9,
+      "time": 5.0000000000000005e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 3.3223110207900473e-40
+    },
+    {
+      "step": 10,
+      "time": 5.500000000000001e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 4.630988620371028e-36
+    },
+    {
+      "step": 11,
+      "time": 6.000000000000001e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 6.481108330283237e-32
+    },
+    {
+      "step": 12,
+      "time": 6.500000000000002e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 9.1034240935691e-28
+    },
+    {
+      "step": 13,
+      "time": 7.000000000000002e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 1.2829310740988905e-23
+    },
+    {
+      "step": 14,
+      "time": 7.500000000000003e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 1.8135302127623274e-19
+    },
+    {
+      "step": 15,
+      "time": 8.000000000000003e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 2.5757484007017545e-15
+    },
+    {
+      "step": 16,
+      "time": 8.500000000000003e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 3.664357924407451e-11
+    },
+    {
+      "step": 17,
+      "time": 9.000000000000004e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 5.213297767176005e-07
+    },
+    {
+      "step": 18,
+      "time": 9.500000000000004e-25,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 0.007430605463163658
+    },
+    {
+      "step": 19,
+      "time": 1.0000000000000005e-24,
+      "pressure_variance": 2.7241132780437806e+52,
+      "max_velocity": 106.29756765276704
+    }
+  ]
+}

@@ -9,8 +9,13 @@ Implements time-stepping for SDT-Navier field equations with:
 
 import numpy as np
 from typing import Optional, Callable
-from scipy.sparse import csc_matrix
-from scipy.sparse.linalg import spsolve
+
+try:  # SciPy is optional for the simplified projection used here
+    from scipy.sparse import csc_matrix  # type: ignore
+    from scipy.sparse.linalg import spsolve  # type: ignore
+except ImportError:  # pragma: no cover - fallback for lightweight environments
+    csc_matrix = None  # type: ignore
+    spsolve = None  # type: ignore
 
 from .fields import FieldSystem
 from .equations import (

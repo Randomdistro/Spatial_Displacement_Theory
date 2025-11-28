@@ -1,0 +1,486 @@
+{
+  "decomposable": {
+    "case": "a+b harmonic",
+    "coefficients": {
+      "a": 1.0,
+      "b": 1.0
+    },
+    "non_harmonic_noise": false,
+    "history": [
+      {
+        "step": 1,
+        "divergence": 4.201983173076942e-70,
+        "mean_eta": 0.633320312499997,
+        "mean_energy": 8.301688272688232e-15
+      },
+      {
+        "step": 2,
+        "divergence": 9.789038461538589e-56,
+        "mean_eta": 0.6333203124999938,
+        "mean_energy": 1.660337647268923e-14
+      },
+      {
+        "step": 3,
+        "divergence": 2.335673959585376e-41,
+        "mean_eta": 0.6333203124999907,
+        "mean_energy": 2.490506467269123e-14
+      },
+      {
+        "step": 4,
+        "divergence": 5.623500670213084e-27,
+        "mean_eta": 0.6333203124999875,
+        "mean_energy": 3.320675287269422e-14
+      },
+      {
+        "step": 5,
+        "divergence": 1.35819214895692e-12,
+        "mean_eta": 0.6333203124999843,
+        "mean_energy": 4.150844107269822e-14
+      },
+      {
+        "step": 6,
+        "divergence": 328.68191252819446,
+        "mean_eta": 0.6333203124999811,
+        "mean_energy": 4.981012927270322e-14
+      },
+      {
+        "step": 7,
+        "divergence": 7.973021151234872e+16,
+        "mean_eta": 0.6333203124999777,
+        "mean_energy": 5.811181747271003e-14
+      },
+      {
+        "step": 8,
+        "divergence": 9.091011698412126e+31,
+        "mean_eta": 0.6151751935153082,
+        "mean_energy": 2.669240322853347e-13
+      },
+      {
+        "step": 9,
+        "divergence": 1.7022705506066126e+62,
+        "mean_eta": 0.6219394655146249,
+        "mean_energy": 396.346864138628
+      },
+      {
+        "step": 10,
+        "divergence": 5.017246212410248e+122,
+        "mean_eta": 0.5929687499999288,
+        "mean_energy": 4.773696473292521e+48
+      },
+      {
+        "step": 11,
+        "divergence": NaN,
+        "mean_eta": 0.6105147797810238,
+        "mean_energy": 1.0451716321572377e+155
+      },
+      {
+        "step": 12,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 13,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 14,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 15,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 16,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 17,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 18,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 19,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 20,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 21,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 22,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 23,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 24,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 25,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 26,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 27,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 28,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 29,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 30,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 31,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 32,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 33,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 34,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 35,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      }
+    ],
+    "per_cycle": {
+      "a": {
+        "throughput_J_per_s": NaN,
+        "mean_eta": NaN,
+        "mean_kappa": NaN
+      },
+      "b": {
+        "throughput_J_per_s": NaN,
+        "mean_eta": NaN,
+        "mean_kappa": NaN
+      },
+      "a+b": {
+        "throughput_J_per_s": NaN,
+        "mean_eta": NaN,
+        "mean_kappa": NaN
+      }
+    },
+    "total_throughput_J_per_s": NaN,
+    "divergence_final": NaN,
+    "ratio_checks": {
+      "E_a_over_E_b": NaN
+    }
+  },
+  "perturbed": {
+    "case": "a + 0.5 b + noise",
+    "coefficients": {
+      "a": 1.0,
+      "b": 0.5
+    },
+    "non_harmonic_noise": true,
+    "history": [
+      {
+        "step": 1,
+        "divergence": 4.201983173076942e-70,
+        "mean_eta": 0.635877875270129,
+        "mean_energy": 7.422516424365346e-15
+      },
+      {
+        "step": 2,
+        "divergence": 9.789038461538589e-56,
+        "mean_eta": 0.6358778752701258,
+        "mean_energy": 1.4845032783741346e-14
+      },
+      {
+        "step": 3,
+        "divergence": 2.335673959585376e-41,
+        "mean_eta": 0.6358778752701226,
+        "mean_energy": 2.2267549143118344e-14
+      },
+      {
+        "step": 4,
+        "divergence": 5.623500670213084e-27,
+        "mean_eta": 0.6358778752701195,
+        "mean_energy": 2.9690065502496336e-14
+      },
+      {
+        "step": 5,
+        "divergence": 1.35819214895692e-12,
+        "mean_eta": 0.6358778752701163,
+        "mean_energy": 3.711258186187534e-14
+      },
+      {
+        "step": 6,
+        "divergence": 328.68191252819446,
+        "mean_eta": 0.6358778752701132,
+        "mean_energy": 4.453509822125534e-14
+      },
+      {
+        "step": 7,
+        "divergence": 7.973021151234872e+16,
+        "mean_eta": 0.6358778752701096,
+        "mean_energy": 5.195761458063717e-14
+      },
+      {
+        "step": 8,
+        "divergence": 9.091011698412126e+31,
+        "mean_eta": 0.6163344515989605,
+        "mean_energy": 2.6931069670102347e-13
+      },
+      {
+        "step": 9,
+        "divergence": 1.7022705506066126e+62,
+        "mean_eta": 0.5432117492061268,
+        "mean_energy": 392.62672806286093
+      },
+      {
+        "step": 10,
+        "divergence": 5.017246212410248e+122,
+        "mean_eta": 0.5054300587882059,
+        "mean_energy": 4.774052129344369e+48
+      },
+      {
+        "step": 11,
+        "divergence": NaN,
+        "mean_eta": 0.5270048984327883,
+        "mean_energy": 1.0448081205374158e+155
+      },
+      {
+        "step": 12,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 13,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 14,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 15,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 16,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 17,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 18,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 19,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 20,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 21,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 22,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 23,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 24,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 25,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 26,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 27,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 28,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 29,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 30,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 31,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 32,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 33,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 34,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      },
+      {
+        "step": 35,
+        "divergence": NaN,
+        "mean_eta": NaN,
+        "mean_energy": NaN
+      }
+    ],
+    "per_cycle": {
+      "a": {
+        "throughput_J_per_s": NaN,
+        "mean_eta": NaN,
+        "mean_kappa": NaN
+      },
+      "b": {
+        "throughput_J_per_s": NaN,
+        "mean_eta": NaN,
+        "mean_kappa": NaN
+      },
+      "a+b": {
+        "throughput_J_per_s": NaN,
+        "mean_eta": NaN,
+        "mean_kappa": NaN
+      }
+    },
+    "total_throughput_J_per_s": NaN,
+    "divergence_final": NaN,
+    "ratio_checks": {
+      "E_a_over_E_b": NaN
+    }
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "decomposable": {
+    "case": "a+b harmonic",
+    "coefficients": {
+      "a": 1.0,
+      "b": 1.0
+    },
+    "non_harmonic_noise": false,
+    "history": [
+      {
+        "step": 1,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5366894531249999,
+        "mean_energy": 6.150275183455659e-26
+      },
+      {
+        "step": 2,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5253222656249998,
+        "mean_energy": 2.4921984656437634e-25
+      },
+      {
+        "step": 3,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.51689453125,
+        "mean_energy": 2.8968687458305545e-25
+      },
+      {
+        "step": 4,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5100097656249999,
+        "mean_energy": 3.1754138175450307e-25
+      },
+      {
+        "step": 5,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5295898437500003,
+        "mean_energy": 2.451196631087392e-25
+      },
+      {
+        "step": 6,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.51474609375,
+        "mean_energy": 3.231122831887926e-25
+      },
+      {
+        "step": 7,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5235351562499997,
+        "mean_energy": 3.008286774516348e-25
+      },
+      {
+        "step": 8,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5057617187500012,
+        "mean_energy": 2.6740326884589746e-25
+      },
+      {
+        "step": 9,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5023925781250029,
+        "mean_energy": 3.2311228318879647e-25
+      },
+      {
+        "step": 10,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5036621093750059,
+        "mean_energy": 3.3982498749174716e-25
+      },
+      {
+        "step": 11,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5191894531243588,
+        "mean_energy": 3.3425408605946505e-25
+      },
+      {
+        "step": 12,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5205078124952327,
+        "mean_energy": 3.1754138177197987e-25
+      },
+      {
+        "step": 13,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.4911621094074075,
+        "mean_energy": 3.7882129752677265e-25
+      },
+      {
+        "step": 14,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.514843750170489,
+        "mean_energy": 4.122467061374257e-25
+      },
+      {
+        "step": 15,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5266601579545962,
+        "mean_energy": 4.45672105017509e-25
+      },
+      {
+        "step": 16,
+        "divergence": 2e+17,
+        "mean_eta": 0.4873535855202801,
+        "mean_energy": 4.846684247811901e-25
+      },
+      {
+        "step": 17,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.49868450610397497,
+        "mean_energy": 5.069356848287693e-25
+      },
+      {
+        "step": 18,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5219436506294883,
+        "mean_energy": 5.403774402749385e-25
+      },
+      {
+        "step": 19,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5069824260888103,
+        "mean_energy": 5.570901549319755e-25
+      },
+      {
+        "step": 20,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5061035111898904,
+        "mean_energy": 5.626610458397546e-25
+      },
+      {
+        "step": 21,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.495654296809957,
+        "mean_energy": 5.013811290590328e-25
+      },
+      {
+        "step": 22,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5439941452824659,
+        "mean_energy": 4.0110490173133043e-25
+      },
+      {
+        "step": 23,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.530468751802486,
+        "mean_energy": 4.568139161993126e-25
+      },
+      {
+        "step": 24,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5640136772486226,
+        "mean_energy": 5.292356215065757e-25
+      },
+      {
+        "step": 25,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5093262123678155,
+        "mean_energy": 5.682317969300152e-25
+      },
+      {
+        "step": 26,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5029302199362311,
+        "mean_energy": 5.51519153765789e-25
+      },
+      {
+        "step": 27,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5048780997217784,
+        "mean_energy": 5.459483405517818e-25
+      },
+      {
+        "step": 28,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.4841655394688309,
+        "mean_energy": 5.682319462972009e-25
+      },
+      {
+        "step": 29,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.45605468805886396,
+        "mean_energy": 5.459483404389003e-25
+      },
+      {
+        "step": 30,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.47949219323200676,
+        "mean_energy": 5.960864536852012e-25
+      },
+      {
+        "step": 31,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5185547774004897,
+        "mean_energy": 5.125220523944049e-25
+      },
+      {
+        "step": 32,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5283280843777635,
+        "mean_energy": 5.12475237059828e-25
+      },
+      {
+        "step": 33,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5040127263138372,
+        "mean_energy": 5.570901434288295e-25
+      },
+      {
+        "step": 34,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.4951358892244401,
+        "mean_energy": 4.958102276526037e-25
+      },
+      {
+        "step": 35,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.4736328196605821,
+        "mean_energy": 5.403774386978863e-25
+      }
+    ],
+    "per_cycle": {
+      "a": {
+        "throughput_J_per_s": 2.6060800000000002e-43,
+        "mean_eta": 0.40909090908730994,
+        "mean_kappa": 1818.1818181818182
+      },
+      "b": {
+        "throughput_J_per_s": 0.0,
+        "mean_eta": 0.2222222222222222,
+        "mean_kappa": 1666.6666666666667
+      },
+      "a+b": {
+        "throughput_J_per_s": 0.0,
+        "mean_eta": 0.5,
+        "mean_kappa": 2500.0
+      }
+    },
+    "total_throughput_J_per_s": 6.319743994992203e-42,
+    "divergence_final": 1.5e+17,
+    "ratio_checks": {
+      "E_a_over_E_b": 2.60608e-13
+    }
+  },
+  "perturbed": {
+    "case": "a + 0.5 b + noise",
+    "coefficients": {
+      "a": 1.0,
+      "b": 0.5
+    },
+    "non_harmonic_noise": true,
+    "history": [
+      {
+        "step": 1,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5389094839788666,
+        "mean_energy": 5.940809289526372e-26
+      },
+      {
+        "step": 2,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5250731204682642,
+        "mean_energy": 2.481725170947299e-25
+      },
+      {
+        "step": 3,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5096097430697318,
+        "mean_energy": 2.8755761282865726e-25
+      },
+      {
+        "step": 4,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5116671161453651,
+        "mean_energy": 3.036168075001999e-25
+      },
+      {
+        "step": 5,
+        "divergence": 1.5e+17,
+        "mean_eta": 0.5285872176570972,
+        "mean_energy": 2.144797052201469e-25
+      },
+      {
+        "step": 6,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5002157462497621,
+        "mean_energy": 2.8690142386591387e-25
+      },
+      {
+        "step": 7,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5067886348236406,
+        "mean_energy": 2.639214554494679e-25
+      },
+      {
+        "step": 8,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5013404531937237,
+        "mean_energy": 2.8063415975233415e-25
+      },
+      {
+        "step": 9,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.4908117300117556,
+        "mean_energy": 3.161486563961555e-25
+      },
+      {
+        "step": 10,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.4984716433990893,
+        "mean_energy": 3.0570321620685955e-25
+      },
+      {
+        "step": 11,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.49729098193114357,
+        "mean_energy": 3.140595683357215e-25
+      },
+      {
+        "step": 12,
+        "divergence": 2e+17,
+        "mean_eta": 0.4904734257544604,
+        "mean_energy": 3.203268324703369e-25
+      },
+      {
+        "step": 13,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.49618530279568884,
+        "mean_energy": 3.356468113134919e-25
+      },
+      {
+        "step": 14,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.4846191408159449,
+        "mean_energy": 3.7951766122010665e-25
+      },
+      {
+        "step": 15,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.48168948409756646,
+        "mean_energy": 4.045867143512759e-25
+      },
+      {
+        "step": 16,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.4874267797746142,
+        "mean_energy": 4.394048506271939e-25
+      },
+      {
+        "step": 17,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.49133302165523685,
+        "mean_energy": 4.51939376701532e-25
+      },
+      {
+        "step": 18,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5095215247007482,
+        "mean_energy": 5.264502473045525e-25
+      },
+      {
+        "step": 19,
+        "divergence": 2e+17,
+        "mean_eta": 0.4981710402512399,
+        "mean_energy": 5.18091274901847e-25
+      },
+      {
+        "step": 20,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.4973129969322551,
+        "mean_energy": 5.104338992208087e-25
+      },
+      {
+        "step": 21,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.4958508191626338,
+        "mean_energy": 5.626609848405398e-25
+      },
+      {
+        "step": 22,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.4788816342664098,
+        "mean_energy": 5.570871461307174e-25
+      },
+      {
+        "step": 23,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5108876865774274,
+        "mean_energy": 5.487337926690842e-25
+      },
+      {
+        "step": 24,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5040241544326295,
+        "mean_energy": 5.731011440907534e-25
+      },
+      {
+        "step": 25,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.4921164903650419,
+        "mean_energy": 5.696255277037062e-25
+      },
+      {
+        "step": 26,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5013496281521858,
+        "mean_energy": 5.682324036112699e-25
+      },
+      {
+        "step": 27,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.49233611021127965,
+        "mean_energy": 5.6892833125323775e-25
+      },
+      {
+        "step": 28,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.49594726895831015,
+        "mean_energy": 5.418556943059717e-25
+      },
+      {
+        "step": 29,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5133634413095214,
+        "mean_energy": 5.550008830089261e-25
+      },
+      {
+        "step": 30,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5116170462365854,
+        "mean_energy": 5.710173644024009e-25
+      },
+      {
+        "step": 31,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.4995128189752899,
+        "mean_energy": 5.758915807785834e-25
+      },
+      {
+        "step": 32,
+        "divergence": 2e+17,
+        "mean_eta": 0.498291168432824,
+        "mean_energy": 5.570901293675608e-25
+      },
+      {
+        "step": 33,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.5184345956263365,
+        "mean_energy": 5.876887702861808e-25
+      },
+      {
+        "step": 34,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.49642235102801413,
+        "mean_energy": 6.095956940454899e-25
+      },
+      {
+        "step": 35,
+        "divergence": 1.75e+17,
+        "mean_eta": 0.49364606856441373,
+        "mean_energy": 6.002709025060125e-25
+      }
+    ],
+    "per_cycle": {
+      "a": {
+        "throughput_J_per_s": 3.4204800000000074e-43,
+        "mean_eta": 0.5511363636867969,
+        "mean_kappa": 2585.2272727272725
+      },
+      "b": {
+        "throughput_J_per_s": 2.2803199999996812e-43,
+        "mean_eta": 0.48610747843800844,
+        "mean_kappa": 2222.222222222222
+      },
+      "a+b": {
+        "throughput_J_per_s": 9.772800000000001e-44,
+        "mean_eta": 0.4375,
+        "mean_kappa": 1562.5
+      }
+    },
+    "total_throughput_J_per_s": 7.020201362629096e-42,
+    "divergence_final": 1.75e+17,
+    "ratio_checks": {
+      "E_a_over_E_b": 3.420480000000007e-13
+    }
+  }
+}

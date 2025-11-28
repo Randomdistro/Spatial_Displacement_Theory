@@ -14,6 +14,11 @@ Also implements force functionals with minimal but physically interpretable form
 import numpy as np
 from typing import Tuple, Optional
 from .fields import FieldSystem, compute_diversion_density
+from sdt_core.constants import (
+    RHO_S, ALPHA_CURV, BETA_SLIP, GAMMA_CREATE, 
+    DELTA_DESTROY, EPSILON_STRAIN, ZETA_HEAL
+)
+from sdt_core.physics import compute_navier_forces
 
 
 class SDTNavierEquations:
@@ -23,13 +28,13 @@ class SDTNavierEquations:
     
     def __init__(
         self,
-        rho_s: float = 5.2e96,  # Spation density (kg/m³) from Phase 15
-        alpha_curv: float = 1.0e-10,  # Curvature force coefficient (N·m²)
-        beta_slip: float = 1.0e15,  # Slip damping coefficient (kg/(m³·s))
-        gamma_create: float = 1.0e-24,  # Curvature creation coefficient (m²/s)
-        delta_destroy: float = 1.0e-9,  # Curvature destruction coefficient (1/s)
-        epsilon_strain: float = 1.0e-24,  # Slip strain coefficient (m²/s)
-        zeta_heal: float = 1.0e-9,  # Slip healing coefficient (m/s)
+        rho_s: float = RHO_S,
+        alpha_curv: float = ALPHA_CURV,
+        beta_slip: float = BETA_SLIP,
+        gamma_create: float = GAMMA_CREATE,
+        delta_destroy: float = DELTA_DESTROY,
+        epsilon_strain: float = EPSILON_STRAIN,
+        zeta_heal: float = ZETA_HEAL,
     ):
         """
         Initialize SDT-Navier equations with force functional parameters.
@@ -108,8 +113,10 @@ class SDTNavierEquations:
             for b in range(3):
                 v_advect[:, :, :, a] += fields.v[:, :, :, b] * grad_v[:, :, :, a, b]
         
-        # Total acceleration
-        dv_dt = (-grad_P + F_curv + F_slip - self.rho_s * v_advect) / self.rho_s
+        # Total acceleration using unified physics core
+        dv_dt = compute_navier_forces(
+            grad_P, F_curv, F_slip, v_advect, self.rho_s
+        )
         
         return dv_dt
     

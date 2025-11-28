@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SDT Void Engine: Alpha Build</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        #canvas {
+            display: block;
+            margin: 0 auto;
+        }
+
+        #hud {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            pointer-events: none;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .stat {
+            font-size: 14px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hud">
+        <div class="title">SDT Void Engine</div>
+        <div class="stat">Spation Lattice: Active</div>
+        <div class="stat">Gravity: Phase 15 (No G, No Mass, No Beta)</div>
+        <div class="stat" id="timer">Solar Day: 0</div>
+    </div>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        // ==============================================================================
+        // SPATIAL DISPLACEMENT THEORY (SDT) CONSTANTS
+        // ==============================================================================
+
+        // Phase 15 Parameters: R_eff (Effective Radius) and Kappa (Velocity Factor)
+        // No G, No Mass, No Beta.
+        const C_LATTICE = 299792458.0;
+
+        const CELESTIAL_BODIES = {
+            'Sun': { r_eff: 6.957e8, kappa: 6.86398e2 },
+            'Mercury': { r_eff: 2.4397e6, kappa: 9.97613e4 },
+            'Venus': { r_eff: 6.0518e6, kappa: 4.09181e4 },
+            'Earth': { r_eff: 6.371e6, kappa: 3.79014e4 },
+            'Mars': { r_eff: 3.390e6, kappa: 8.43441e4 },
+            'Jupiter': { r_eff: 6.991e7, kappa: 7.04247e3 },
+            'Saturn': { r_eff: 5.8232e7, kappa: 1.17464e4 }
+        };
+
+        // Initial States (x, y in meters | vx, vy in m/s)
+        const BODIES = [
+            { name: 'Sun', params: CELESTIAL_BODIES.Sun, x: 0, y: 0, vx: 0, vy: 0, color: '#ffff00', size: 10 },
+            { name: 'Mercury', params: CELESTIAL_BODIES.Mercury, x: 5.79e10, y: 0, vx: 0, vy: 47400, color: '#aaaaaa', size: 3 },
+            { name: 'Venus', params: CELESTIAL_BODIES.Venus, x: 1.082e11, y: 0, vx: 0, vy: 35020, color: '#ffcc00', size: 4 },
+            { name: 'Earth', params: CELESTIAL_BODIES.Earth, x: 1.496e11, y: 0, vx: 0, vy: 29780, color: '#0000ff', size: 4 },
+            { name: 'Mars', params: CELESTIAL_BODIES.Mars, x: 2.279e11, y: 0, vx: 0, vy: 24070, color: '#ff0000', size: 3 },
+            { name: 'Jupiter', params: CELESTIAL_BODIES.Jupiter, x: 7.786e11, y: 0, vx: 0, vy: 13070, color: '#ffaa00', size: 8 },
+            { name: 'Saturn', params: CELESTIAL_BODIES.Saturn, x: 1.433e12, y: 0, vx: 0, vy: 9680, color: '#cc9966', size: 7 }
+        ];
+
+        // Simulation State
+        let time = 0;
+        const dt = 3600 * 6; // 6 Hour timesteps (Speed)
+        const scale = 3.5e9; // Pixels per Meter scale factor
+
+        // Trails buffer
+        BODIES.forEach(b => b.trail = []);
+
+        // ==============================================================================
+        // THE PHYSICS KERNEL (NO FORCE, ONLY ACCELERATION)
+        // ==============================================================================
+
+        function computeGradients() {
+            // Reset acceleration vectors
+            BODIES.forEach(b => { b.ax = 0; b.ay = 0; });
+
+            for (let i = 0; i < BODIES.length; i++) {
+                for (let j = 0; j < BODIES.length; j++) {
+                    if (i === j) continue;
+
+                    let bi = BODIES[i];
+                    let bj = BODIES[j];
+
+                    let dx = bj.x - bi.x;
+                    let dy = bj.y - bi.y;
+                    let distSq = dx * dx + dy * dy;
+                    let dist = Math.sqrt(distSq);
+
+                    // SDT FORMULA (Phase 15): a = c^2 * R_eff / (Kappa^2 * r^2)
+                    // Direction is normalized vector (dx/dist, dy/dist)
+
+                    let r_eff = bj.params.r_eff;
+                    let kappa = bj.params.kappa;
+
+                    let accel = (C_LATTICE * C_LATTICE * r_eff) / (kappa * kappa * distSq);
+
+                    bi.ax += (dx / dist) * accel;
+                    bi.ay += (dy / dist) * accel;
+                }
+            }
+        }
+
+        function stepPhysics() {
+            // Velocity Verlet Integrator
+
+            // 1. Half-step Velocity
+            BODIES.forEach(b => {
+                b.vx += b.ax * 0.5 * dt;
+                b.vy += b.ay * 0.5 * dt;
+            });
+
+            // 2. Full-step Position
+            BODIES.forEach(b => {
+                b.x += b.vx * dt;
+                b.y += b.vy * dt;
+
+                // Update Trail
+                if (time % 10 === 0) {
+                    // Save trail every 10 ticks
+                    b.trail.push({ x: b.x, y: b.y });
+                    if (b.trail.length > 300) b.trail.shift();
+                }
+            });
+
+            // 3. Recalculate Pressure Field (Acceleration)
+            computeGradients();
+
+            // 4. Half-step Velocity
+            BODIES.forEach(b => {
+                b.vx += b.ax * 0.5 * dt;
+                b.vy += b.ay * 0.5 * dt;
+            });
+
+            time += dt;
+        }
+
+        // ==============================================================================
+        // RENDERING
+        // ==============================================================================
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        function draw() {
+            // Run physics faster than framerate
+            for (let i = 0; i < 10; i++) stepPhysics();
+
+            // Clear Screen
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; // Fade effect
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Center View
+            let cx = canvas.width / 2;
+            let cy = canvas.height / 2;
+            // Auto-zoom: Scale so Jupiter fits
+            let zoom = Math.min(canvas.width, canvas.height) / (BODIES[5].x * 2.5) * 0.8;
+
+            BODIES.forEach(b => {
+                // Draw Trail
+                ctx.beginPath();
+                ctx.strokeStyle = b.color;
+                ctx.lineWidth = 1;
+
+                b.trail.forEach((p, idx) => {
+                    if (idx === 0) ctx.moveTo(cx + p.x * zoom, cy + p.y * zoom);
+                    else ctx.lineTo(cx + p.x * zoom, cy + p.y * zoom);
+                });
+                ctx.stroke();
+
+                // Draw Body
+                ctx.beginPath();
+                ctx.fillStyle = b.color;
+                ctx.arc(cx + b.x * zoom, cy + b.y * zoom, b.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            // Update HUD
+            document.getElementById('timer').innerText = `Solar Day: ${Math.floor(time / 86400)}`;
+
+            requestAnimationFrame(draw);
+        }
+
+        // Start (Initialize Accelerations first)
+        computeGradients();
+        draw();
+
+    </script>
+</body>
+
+</html>

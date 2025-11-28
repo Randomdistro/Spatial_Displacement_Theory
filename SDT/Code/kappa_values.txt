@@ -1,0 +1,11 @@
+CELESTIAL_BODIES = {
+    'Sun': {'R_eff': 695700000.0, 'Kappa': 6.86398e+02},
+    'Mercury': {'R_eff': 2439700.0, 'Kappa': 9.97613e+04},
+    'Venus': {'R_eff': 6051800.0, 'Kappa': 4.09181e+04},
+    'Earth': {'R_eff': 6371000.0, 'Kappa': 3.79014e+04},
+    'Mars': {'R_eff': 3390000.0, 'Kappa': 8.43441e+04},
+    'Jupiter': {'R_eff': 69910000.0, 'Kappa': 7.04247e+03},
+    'Saturn': {'R_eff': 58232000.0, 'Kappa': 1.17464e+04},
+    'Uranus': {'R_eff': 25362000.0, 'Kappa': 1.98347e+04},
+    'Neptune': {'R_eff': 24622000.0, 'Kappa': 1.79914e+04},
+}

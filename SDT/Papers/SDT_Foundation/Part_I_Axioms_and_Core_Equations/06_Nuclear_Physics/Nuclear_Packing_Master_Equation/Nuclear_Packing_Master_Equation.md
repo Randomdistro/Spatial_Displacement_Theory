@@ -67,22 +67,25 @@ $$E_e = 5.846 \times 10^{14} \times 9.400 \times 10^{-24} = 5.495 \times 10^{-9}
 ---
 
 ### 2.3 Neutron Turbine (Composite)
+> **Update (Phase 6 Supplement):** The fundamental nature of the Neutron is defined in **[The_Neutron_Genesis.md](../The_Neutron_Genesis.md)** as an "Overtightened" state at $v \approx 1.84c$ on the proton surface. The following analysis treats the neutron in its "Effective Subluminal Projection" to apply the standard Master Equation fluid dynamics.
 
 | Parameter | Symbol | Value |
 |-----------|--------|-------|
 | Radius | $R_n$ | $8.70 \times 10^{-16}$ m |
-| Internal e⁻ orbit | $r_{e,n}$ | $3.00 \times 10^{-15}$ m |
-| e⁻ velocity in n | $v_{e,n}$ | $1.592 \times 10^8$ m/s |
+| Internal e⁻ orbit | $r_{e,n}$ | $3.00 \times 10^{-15}$ m (Effective) |
+| e⁻ velocity in n | $v_{e,n}$ | $1.592 \times 10^8$ m/s (Effective) |
 | e⁻ circulation | $\Gamma_{e,n}$ | 0.531 |
 | e⁻ traction (bound) | $(1-\eta_{e,n})$ | 0.0019 |
 | Rest energy | $E_n$ | 939.565 MeV |
 | Free lifetime | $\tau_n$ | 879.4 s |
 
-**Internal electron throughput:**
+**Internal electron throughput (Effective):**
 
 $$\dot{E}_{e,n} = 1.65 \times 10^{31} \times 3.718 \times 10^{-29} \times 0.531 \times 3.333 \times 10^{14} \times 0.0019$$
 
 $$\dot{E}_{e,n} = 2.063 \times 10^{11} \text{ W} \tag{2.8}$$
+
+**Note:** The "Effective" velocity $v_{e,n} \approx 0.53c$ represents the time-averaged interaction of the superluminal ($1.84c$) electron with the subluminal spation flow. The "Overtightened" state is the physical reality; the "Turbine" is the flow-dynamic equivalent.
 
 ---
 

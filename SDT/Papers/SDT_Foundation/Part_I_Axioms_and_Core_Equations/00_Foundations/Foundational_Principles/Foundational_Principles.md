@@ -74,8 +74,8 @@ This document is being developed in **4 parallel work streams**:
 ## Quick Reference: The Four Ingredients
 
 ### 1. **SPACE (Spation)**
-- **What it is:** Incompressible medium filling all space
-- **Properties:** Incompressible, deformable, fills all space, supports propagation at c
+- **What it is:** Incompressible, Inviscid Superfluid filling all space
+- **Properties:** Zero Viscosity (No Drag), Incompressible, Deformable, supports propagation at c
 - **Key parameter:** K_bulk = 4.6×10¹¹³ Pa (bulk modulus)
 - **Mathematical:** Pressure field Π(x) = ∫ I_∞(n̂)[1 - E(x,n̂)] dΩ
 

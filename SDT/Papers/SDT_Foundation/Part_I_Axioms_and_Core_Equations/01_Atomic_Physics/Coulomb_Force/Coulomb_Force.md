@@ -58,6 +58,8 @@ No additional assumptions regarding probability, relativity, or field theory are
 3. Force must be geometric and causal (no action at a distance)
 4. All constants from CODATA 2018 or direct observation
 
+> **Phase 2 Update (Geometric Electron):** The "Exclusion Radius" $R_e \approx 10^{-21}$ m used here represents the **transverse cross-section** of the electron's spation displacement rod. The **longitudinal length** of the electron is defined as the Compton Wavelength ($\lambda_C$) in **[The_Geometric_Electron.md](../../The_Geometric_Electron.md)**. The Coulomb Force arises from the *occlusion* (transverse), while the Binding Energy arises from the *contraction* (longitudinal).
+
 ---
 
 ## 3. Axiomatic Foundation

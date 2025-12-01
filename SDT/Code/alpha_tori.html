@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Particle Geometry (SDT)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #1a1a2e;
+            color: #eee;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            justify-content: center;
+        }
+        #canvas-container {
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 1;
+            background: #0d0d1a;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 12px;
+        }
+        button {
+            background: #3a3a5c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #4a4a7c;
+        }
+        button.active {
+            background: #6a6aac;
+        }
+        label {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+    </div>
+    
+    <div class="controls">
+        <button id="rotateBtn" class="active">Auto Rotate</button>
+        <button id="pathBtn" class="active">Show Paths</button>
+        <button id="resetBtn">Reset View</button>
+        <div style="display: flex; align-items: center; gap: 10px; margin-left: 20px;">
+            <label for="pathModeSelect">Path Mode:</label>
+            <select id="pathModeSelect" style="background: #3a3a5c; color: #fff; border: none; padding: 5px; border-radius: 4px;">
+                <option value="orthogonal" selected>Orthogonal (Lock)</option>
+                <option value="parallel">Parallel (Self)</option>
+            </select>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-left: 20px;">
+            <label for="spreadSlider">Spread:</label>
+            <input type="range" id="spreadSlider" min="0.5" max="2.0" step="0.1" value="0.8">
+            <span id="spreadValue">0.8</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-left: 20px;">
+            <label for="rollSlider">Red Roll:</label>
+            <input type="range" id="rollSlider" min="0" max="90" step="1" value="0">
+            <span id="rollValue">0</span>°
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-left: 20px;">
+            <label for="rollSlider">Cyan Roll:</label>
+            <input type="range" id="rollCyanSlider" min="0" max="90" step="1" value="0">
+            <span id="rollCyanValue">0</span>°
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-left: 20px;">
+            <label for="bendRedSlider">Red Bend:</label>
+            <input type="range" id="bendRedSlider" min="-45" max="45" step="1" value="0">
+            <span id="bendRedValue">0</span>°
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-left: 20px;">
+            <label for="bendCyanSlider">Cyan Bend:</label>
+            <input type="range" id="bendCyanSlider" min="-45" max="45" step="1" value="0">
+            <span id="bendCyanValue">0</span>°
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const container = document.getElementById('canvas-container');
+        const spreadSlider = document.getElementById('spreadSlider');
+        const spreadValue = document.getElementById('spreadValue');
+        const rollSlider = document.getElementById('rollSlider');
+        const rollValue = document.getElementById('rollValue');
+        const rollRedSlider = document.getElementById('rollRedSlider');
+        const rollRedValue = document.getElementById('rollRedValue');
+        const rollCyanSlider = document.getElementById('rollCyanSlider');
+        const rollCyanValue = document.getElementById('rollCyanValue');
+        const bendRedSlider = document.getElementById('bendRedSlider');
+        const bendRedValue = document.getElementById('bendRedValue');
+        const bendCyanSlider = document.getElementById('bendCyanSlider');
+        const bendCyanValue = document.getElementById('bendCyanValue');
+        const pathModeSelect = document.getElementById('pathModeSelect');
+        
+        let width, height;
+        let autoRotate = true;
+        let showPaths = true;
+        let angleX = 0.5;
+        let angleY = 0;
+        let angleZ = 0;
+        let offset = 0.8;
+        let rollRed = 0;
+        let rollCyan = 0;
+        let bendRed = 0;
+        let bendCyan = 0;
+        let pathMode = 'orthogonal';
+        
+        function resize() {
+            const rect = container.getBoundingClientRect();
+            width = rect.width * window.devicePixelRatio;
+            height = rect.height * window.devicePixelRatio;
+            canvas.width = width;
+            canvas.height = height;
+            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+        }
+        
+        resize();
+        window.addEventListener('resize', resize);
+        
+        // 3D rotation matrices
+        function rotateX(p, a) {
+            const cos = Math.cos(a), sin = Math.sin(a);
+            return [p[0], p[1]*cos - p[2]*sin, p[1]*sin + p[2]*cos];
+        }
+        
+        function rotateY(p, a) {
+            const cos = Math.cos(a), sin = Math.sin(a);
+            return [p[0]*cos + p[2]*sin, p[1], -p[0]*sin + p[2]*cos];
+        }
+        
+        function rotateZ(p, a) {
+            const cos = Math.cos(a), sin = Math.sin(a);
+            return [p[0]*cos - p[1]*sin, p[0]*sin + p[1]*cos, p[2]];
+        }
+        
+        // Rotate a list of points around X axis (local rotation)
+        function rotatePointsX(points, angleDeg) {
+            const rad = angleDeg * Math.PI / 180;
+            const cos = Math.cos(rad);
+            const sin = Math.sin(rad);
+            return points.map(ring => ring.map(p => {
+                return [p[0], p[1]*cos - p[2]*sin, p[1]*sin + p[2]*cos];
+            }));
+        }
+
+        // Rotate a list of points around Y axis (local rotation)
+        function rotatePointsY(points, angleDeg) {
+            const rad = angleDeg * Math.PI / 180;
+            const cos = Math.cos(rad);
+            const sin = Math.sin(rad);
+            return points.map(ring => ring.map(p => {
+                return [p[0]*cos + p[2]*sin, p[1], -p[0]*sin + p[2]*cos];
+            }));
+        }
+
+        // Rotate a list of points around Z axis (local rotation)
+        function rotatePointsZ(points, angleDeg) {
+            const rad = angleDeg * Math.PI / 180;
+            const cos = Math.cos(rad);
+            const sin = Math.sin(rad);
+            return points.map(ring => ring.map(p => {
+                return [p[0]*cos - p[1]*sin, p[0]*sin + p[1]*cos, p[2]];
+            }));
+        }
+        
+        function project(p) {
+            const scale = 150;
+            const perspective = 4;
+            const z = p[2] / perspective + 1;
+            return [
+                width/(2*window.devicePixelRatio) + p[0] * scale / z,
+                height/(2*window.devicePixelRatio) + p[1] * scale / z,
+                p[2]
+            ];
+        }
+        
+        function transform(p) {
+            let pt = rotateX(p, angleX);
+            pt = rotateY(pt, angleY);
+            pt = rotateZ(pt, angleZ);
+            return pt;
+        }
+        
+        function generateTorus(R, r, segments, tubes, offsetX, offsetY, offsetZ, rotAxis) {
+            const points = [];
+            for (let i = 0; i <= segments; i++) {
+                const ring = [];
+                const u = (i / segments) * Math.PI * 2;
+                for (let j = 0; j <= tubes; j++) {
+                    const v = (j / tubes) * Math.PI * 2;
+                    let x = (R + r * Math.cos(v)) * Math.cos(u);
+                    let y = (R + r * Math.cos(v)) * Math.sin(u);
+                    let z = r * Math.sin(v);
+                    
+                    // Rotate torus based on orientation
+                    if (rotAxis === 'x') {
+                        [y, z] = [z, -y];
+                    } else if (rotAxis === 'z') {
+                        [x, y] = [y, -x];
+                    }
+                    
+                    ring.push([x + offsetX, y + offsetY, z + offsetZ]);
+                }
+                points.push(ring);
+            }
+            return points;
+        }
+        
+        function generateThreadingPath(isVertical, segments = 2000, bendRedDeg = 0, bendCyanDeg = 0) {
+            const points = [];
+            const torusR = 0.7;  // Major radius of tori
+            // Make paths HUGE and BULBOUS
+            const pathR = 1.8 + (offset - 0.5);  // Increased radius for "huge"
+            const bendRedRad = bendRedDeg * Math.PI / 180;
+            const bendCyanRad = bendCyanDeg * Math.PI / 180;
+            
+            for (let i = 0; i <= segments; i++) {
+                const t = (i / segments) * Math.PI * 2;
+                let x, y, z;
+                
+                // Bulbous Factor: Expands the path at the poles (where sin(t) is +/- 1)
+                // sin(t)^2 peaks at poles.
+                const bulbousFactor = 1 + 0.6 * Math.pow(Math.sin(t), 2);
+
+                // Determine which pair we are threading based on mode
+                let threadingVerticalPair = false;
+                if (pathMode === 'orthogonal') {
+                    threadingVerticalPair = !isVertical; 
+                } else {
+                    threadingVerticalPair = isVertical;
+                }
+                
+                if (threadingVerticalPair) {
+                    // Threading Vertical Pair (Red)
+                    const phase = t;
+                    // Motion along Y (through holes) - constricted at center
+                    y = (pathR * 0.6) * Math.sin(phase); 
+                    
+                    // Motion in Z (looping around top/bottom) - main orbit
+                    z = (offset * 1.2) * Math.cos(phase); 
+                    
+                    // Weave in X - This creates the "Bulb" width
+                    // Scale X by bulbousFactor to make it wide at poles
+                    x = (0.6 * bulbousFactor) * Math.sin(phase * 2); 
+                    
+                    // Apply Bend Warping (Red Bend)
+                    const sinT = Math.sin(t); 
+                    const angleX = bendRedRad * sinT; 
+                    
+                    // Apply X rotation
+                    let ty = y * Math.cos(angleX) - z * Math.sin(angleX);
+                    let tz = y * Math.sin(angleX) + z * Math.cos(angleX);
+                    y = ty; z = tz;
+                    
+                } else {
+                    // Threading Horizontal Pair (Cyan)
+                    const phase = t;
+                    // Motion along Z (through holes)
+                    z = (pathR * 0.6) * Math.sin(phase);
+                    
+                    // Motion in X (looping around left/right)
+                    x = (offset * 1.2) * Math.cos(phase);
+                    
+                    // Weave in Y - Bulbous width
+                    y = (0.6 * bulbousFactor) * Math.sin(phase * 2); 
+                    
+                    // Apply Bend Warping (Cyan Bend)
+                    const cosT = Math.cos(t);
+                    const angleY = -bendCyanRad * cosT;
+                    
+                    // Apply Y rotation
+                    let tx = x * Math.cos(angleY) + z * Math.sin(angleY);
+                    let tz = -x * Math.sin(angleY) + z * Math.cos(angleY);
+                    x = tx; z = tz;
+                }
+                
+                points.push([x, y, z]);
+            }
+            return points;
+        }
+        
+        function drawTorus(torusPoints, color, alpha = 0.6) {
+            const allLines = [];
+            for (let i = 0; i < torusPoints.length - 1; i++) {
+                for (let j = 0; j < torusPoints[i].length - 1; j++) {
+                    const p1 = transform(torusPoints[i][j]);
+                    const p2 = transform(torusPoints[i+1][j]);
+                    const p3 = transform(torusPoints[i][j+1]);
+                    allLines.push({ from: project(p1), to: project(p2), z: (p1[2] + p2[2]) / 2 });
+                    allLines.push({ from: project(p1), to: project(p3), z: (p1[2] + p3[2]) / 2 });
+                }
+            }
+            allLines.sort((a, b) => a.z - b.z);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 1;
+            ctx.globalAlpha = alpha;
+            for (const line of allLines) {
+                ctx.beginPath();
+                ctx.moveTo(line.from[0], line.from[1]);
+                ctx.lineTo(line.to[0], line.to[1]);
+                ctx.stroke();
+            }
+            ctx.globalAlpha = 1;
+        }
+        
+        function drawPath(points, color, width=2) {
+            ctx.beginPath();
+            const start = project(transform(points[0]));
+            ctx.moveTo(start[0], start[1]);
+            
+            for (let i = 1; i < points.length; i++) {
+                const p = project(transform(points[i]));
+                ctx.lineTo(p[0], p[1]);
+            }
+            
+            ctx.strokeStyle = color;
+            ctx.lineWidth = width;
+            ctx.stroke();
+        }
+        
+        function draw() {
+            ctx.clearRect(0, 0, width/window.devicePixelRatio, height/window.devicePixelRatio);
+            
+            const R = 0.7;  // Torus major radius
+            const r = 0.25; // Torus minor radius (tube thickness)
+            
+            // Generate four tori
+            // Vertical pair (p1 top, n1 bottom) - axis along Y
+            let torus_p1 = generateTorus(R, r, 24, 12, 0, 0, offset, 'x');
+            let torus_n1 = generateTorus(R, r, 24, 12, 0, 0, -offset, 'x');
+            
+            // Horizontal pair (p2 left, n2 right) - axis along Z  
+            let torus_p2 = generateTorus(R, r, 24, 12, -offset, 0, 0, 'z');
+            let torus_n2 = generateTorus(R, r, 24, 12, offset, 0, 0, 'z');
+            
+            // Apply Red Roll Rotation (Global X rotation for Red pair)
+            if (rollRed !== 0) {
+                torus_p1 = rotatePointsX(torus_p1, rollRed);
+                torus_n1 = rotatePointsX(torus_n1, rollRed);
+            }
+
+            // Apply Red Bend (Symmetric tilting for Red pair)
+            if (bendRed !== 0) {
+                // Red Pair: Rotate around X (Top +, Bottom -)
+                torus_p1 = rotatePointsX(torus_p1, bendRed);
+                torus_n1 = rotatePointsX(torus_n1, -bendRed);
+            }
+            
+            // Apply Cyan Bend (Symmetric tilting for Cyan pair)
+            if (bendCyan !== 0) {
+                // Cyan Pair: Rotate around Y (Right +, Left -) -> Inverted to oppose Red
+                torus_n2 = rotatePointsY(torus_n2, bendCyan);
+                torus_p2 = rotatePointsY(torus_p2, -bendCyan);
+            }
+            
+            // Apply Cyan Roll (Global Z rotation for Cyan pair)
+            if (rollCyan !== 0) {
+                torus_p2 = rotatePointsZ(torus_p2, rollCyan);
+                torus_n2 = rotatePointsZ(torus_n2, rollCyan);
+            }
+            
+            // Draw tori
+            drawTorus(torus_p1, '#ff6b6b', 0.5);
+            drawTorus(torus_n1, '#ff6b6b', 0.5);
+            drawTorus(torus_p2, '#4ecdc4', 0.5);
+            drawTorus(torus_n2, '#4ecdc4', 0.5);
+            
+            // Draw electron paths
+            if (showPaths) {
+                let verticalPath = generateThreadingPath(true, 150, bendRed, bendCyan);
+                let horizontalPath = generateThreadingPath(false, 150, bendRed, bendCyan);
+                
+                // Apply Red Roll to vertical path
+                if (rollRed !== 0) {
+                    const rad = rollRed * Math.PI / 180;
+                    const cos = Math.cos(rad);
+                    const sin = Math.sin(rad);
+                    verticalPath = verticalPath.map(p => [p[0], p[1]*cos - p[2]*sin, p[1]*sin + p[2]*cos]);
+                }
+
+                // Apply Cyan Roll to horizontal path
+                if (rollCyan !== 0) {
+                    const rad = rollCyan * Math.PI / 180;
+                    const cos = Math.cos(rad);
+                    const sin = Math.sin(rad);
+                    horizontalPath = horizontalPath.map(p => [p[0]*cos - p[1]*sin, p[0]*sin + p[1]*cos, p[2]]);
+                }
+                
+                // Draw with glow effect
+                ctx.shadowBlur = 15;
+                
+                ctx.shadowColor = '#ff0000';
+                drawPath(verticalPath, '#ff0000', 4);
+                
+                ctx.shadowColor = '#000';
+                drawPath(horizontalPath, '#222', 4);
+                
+                ctx.shadowBlur = 0;
+            }
+            
+            if (autoRotate) {
+                angleY += 0.01;
+            }
+            
+            requestAnimationFrame(draw);
+        }
+        
+        // Controls
+        document.getElementById('rotateBtn').addEventListener('click', function() {
+            autoRotate = !autoRotate;
+            this.classList.toggle('active');
+        });
+        
+        document.getElementById('pathBtn').addEventListener('click', function() {
+            showPaths = !showPaths;
+            this.classList.toggle('active');
+        });
+        
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            angleX = 0.5;
+            angleY = 0;
+            angleZ = 0;
+            rollRed = 0;
+            bendRed = 0;
+            bendCyan = 0;
+            offset = 0.8;
+            pathMode = 'orthogonal';
+            spreadSlider.value = 0.8;
+            spreadValue.textContent = 0.8;
+            rollSlider.value = 0;
+            rollValue.textContent = 0;
+            bendRedSlider.value = 0;
+            bendRedValue.textContent = 0;
+            rollCyanSlider.value = 0;
+            rollCyanValue.textContent = 0;
+            bendCyanSlider.value = 0;
+            bendCyanValue.textContent = 0;
+            pathModeSelect.value = 'orthogonal';
+        });
+        
+        spreadSlider.addEventListener('input', function() {
+            offset = parseFloat(this.value);
+            spreadValue.textContent = offset;
+        });
+        
+        rollSlider.addEventListener('input', function() {
+            rollRed = parseInt(this.value);
+            rollValue.textContent = rollRed;
+        });
+        
+        bendRedSlider.addEventListener('input', function() {
+            bendRed = parseInt(this.value);
+            bendRedValue.textContent = bendRed;
+        });
+
+        rollCyanSlider.addEventListener('input', function() {
+            rollCyan = parseInt(this.value);
+            rollCyanValue.textContent = rollCyan;
+        });
+        
+        bendCyanSlider.addEventListener('input', function() {
+            bendCyan = parseInt(this.value);
+            bendCyanValue.textContent = bendCyan;
+        });
+        
+        pathModeSelect.addEventListener('change', function() {
+            pathMode = this.value;
+        });
+        
+        // Mouse drag rotation
+        let isDragging = false;
+        let lastX, lastY;
+        
+        canvas.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            lastX = e.clientX;
+            lastY = e.clientY;
+            autoRotate = false;
+            document.getElementById('rotateBtn').classList.remove('active');
+        });
+        
+        canvas.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const dx = e.clientX - lastX;
+            const dy = e.clientY - lastY;
+            angleY += dx * 0.01;
+            angleX += dy * 0.01;
+            lastX = e.clientX;
+            lastY = e.clientY;
+        });
+        
+        canvas.addEventListener('mouseup', () => isDragging = false);
+        canvas.addEventListener('mouseleave', () => isDragging = false);
+        
+        // Touch support
+        canvas.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            lastX = e.touches[0].clientX;
+            lastY = e.touches[0].clientY;
+            autoRotate = false;
+            document.getElementById('rotateBtn').classList.remove('active');
+        });
+        
+        canvas.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const dx = e.touches[0].clientX - lastX;
+            const dy = e.touches[0].clientY - lastY;
+            angleY += dx * 0.01;
+            angleX += dy * 0.01;
+            lastX = e.touches[0].clientX;
+            lastY = e.touches[0].clientY;
+        });
+        
+        canvas.addEventListener('touchend', () => isDragging = false);
+        
+        draw();
+    </script>
+</body>
+</html>

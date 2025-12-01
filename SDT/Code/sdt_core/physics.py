@@ -84,3 +84,58 @@ def compute_navier_forces(
     """
     # dv/dt = (-grad_P + F_curv + F_slip - rho_s * v_advect) / rho_s
     return (-grad_P + F_curv + F_slip - rho_s * v_advect) / rho_s
+
+def calculate_neutron_contraction(
+    v_phase: float,
+    c: float = 299792458.0
+) -> float:
+    """
+    Calculates the geometric contraction factor (Gamma) for the Neutron state.
+    
+    In SDT, v > c is interpreted as "Overtightened Phase Velocity".
+    The contraction is driven by the tension: gamma = 1 / sqrt(1 - v^2/c^2)
+    For v > c, this becomes imaginary in SR, but in SDT geometry it represents
+    internal winding density. We use the magnitude |gamma|.
+    
+    Parameters
+    ----------
+    v_phase : float
+        Phase velocity at the proton surface (approx 1.84c).
+    c : float
+        Speed of light.
+        
+    Returns
+    -------
+    float
+        Contraction factor (magnitude).
+    """
+    # Use absolute difference for geometric tension magnitude
+    # gamma = 1 / sqrt(|1 - (v/c)^2|)
+    beta = v_phase / c
+    return 1.0 / np.sqrt(np.abs(1.0 - beta**2))
+
+def calculate_geometric_anomaly(
+    r_inner: float,
+    circumference_outer: float
+) -> float:
+    """
+    Calculates the Geometric Anomaly (a_e) as a pitch ratio.
+    
+    a_e = r_inner / L_outer
+    
+    Parameters
+    ----------
+    r_inner : float
+        Inner radius (e.g., Classical Electron Radius).
+    circumference_outer : float
+        Outer circulation length (e.g., Compton Wavelength).
+        
+    Returns
+    -------
+    float
+        Anomaly ratio.
+    """
+    if circumference_outer == 0:
+        return 0.0
+    return r_inner / circumference_outer
+

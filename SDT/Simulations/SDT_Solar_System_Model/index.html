@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDT Solar System Model</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="ui-layer">
+        <div id="header">
+            <h1>SDT Solar System Model</h1>
+            <div class="subtitle">Top-Down Geometric Wireframe • No Masses</div>
+        </div>
+        
+        <div id="controls">
+            <div class="control-group">
+                <label>Zoom Level</label>
+                <input type="range" id="zoomSlider" min="0.1" max="100" step="0.1" value="1">
+            </div>
+            <div class="control-group">
+                <label>Time Speed</label>
+                <input type="range" id="speedSlider" min="0" max="100" step="1" value="10">
+            </div>
+            <div class="control-group">
+                <label>Focus</label>
+                <select id="focusSelect">
+                    <option value="Sun">Sun</option>
+                    <option value="Mercury">Mercury</option>
+                    <option value="Venus">Venus</option>
+                    <option value="Earth">Earth</option>
+                    <option value="Mars">Mars</option>
+                    <option value="Jupiter">Jupiter</option>
+                    <option value="Saturn">Saturn</option>
+                    <option value="Uranus">Uranus</option>
+                    <option value="Neptune">Neptune</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Simulation</label>
+                <button id="togglePause">Pause</button>
+            </div>
+            <div class="control-group">
+                <label>Toggle Features</label>
+                <button id="toggleWireframe" class="active">Wireframes</button>
+                <button id="toggleFlow" class="active">Orbital Flows</button>
+                <button id="toggleGrid" class="active">Pressure Grid</button>
+                <button id="toggleMoons" class="active">Moons</button>
+                <button id="toggleCompass" class="active">Sag A*</button>
+            </div>
+        </div>
+
+        <div id="data-panel" class="hidden">
+            <div class="panel-header">
+                <h2 id="panel-title">System Data</h2>
+                <button id="close-panel">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="data-row">
+                    <span class="label">Body A:</span>
+                    <span class="value" id="val-body-a">-</span>
+                </div>
+                <div class="data-row">
+                    <span class="label">Body B:</span>
+                    <span class="value" id="val-body-b">-</span>
+                </div>
+                <div class="separator"></div>
+                <div class="data-row">
+                    <span class="label">Radius (r):</span>
+                    <span class="value" id="val-r">-</span>
+                </div>
+                <div class="data-row">
+                    <span class="label">Velocity (v):</span>
+                    <span class="value" id="val-v">-</span>
+                </div>
+                <div class="data-row highlight">
+                    <span class="label">Velocity Factor (k):</span>
+                    <span class="value" id="val-k">-</span>
+                </div>
+                <div class="data-row">
+                    <span class="label">Effective Radius (R_eff):</span>
+                    <span class="value" id="val-reff">-</span>
+                </div>
+                <div class="data-row highlight">
+                    <span class="label">SDT Check (z·k²):</span>
+                    <span class="value" id="val-check">-</span>
+                </div>
+                <div class="separator"></div>
+                <div class="data-row">
+                    <span class="label">Lagrange Point (L1):</span>
+                    <span class="value" id="val-l1">-</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="tooltip" class="hidden"></div>
+    </div>
+
+    <canvas id="simCanvas"></canvas>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

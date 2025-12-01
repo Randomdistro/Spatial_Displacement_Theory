@@ -59,3 +59,16 @@ EPSILON_STRAIN = 1.0e-24
 # Slip healing coefficient (m/s)
 # Slip decrease from stable curvature
 ZETA_HEAL = 1.0e-9
+
+# ==============================================================================
+# ATOMIC & NUCLEAR PARAMETERS (Neutron Regime)
+# ==============================================================================
+
+# Neutron Genesis Velocity (Phase Velocity at Proton Surface)
+# v = c * sqrt(r_e / R_p)
+NEUTRON_GENESIS_VELOCITY = 1.836 * C_LATTICE
+
+# Geometric Anomaly Ratio (Schwinger Term)
+# a_e = r_e / lambda_C = alpha / 2pi
+ANOMALY_RATIO = 0.00116140973
+

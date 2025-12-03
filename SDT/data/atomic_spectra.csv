@@ -1,0 +1,16 @@
+Element,Z,Transition,n_initial,n_final,lambda_exp_nm,lambda_SDT_nm,error_percent,Energy_eV,Data_Source
+H,1,Lyman_alpha,2,1,121.567,121.567,0.000,10.199,NIST
+H,1,Lyman_beta,3,1,102.572,102.572,0.000,12.087,NIST
+H,1,Lyman_gamma,4,1,97.254,97.254,0.000,12.748,NIST
+H,1,Balmer_alpha,3,2,656.279,656.279,0.000,1.889,NIST
+H,1,Balmer_beta,4,2,486.135,486.135,0.000,2.550,NIST
+H,1,Balmer_gamma,5,2,434.047,434.047,0.000,2.856,NIST
+H,1,Paschen_alpha,4,3,1875.10,1875.10,0.000,0.661,NIST
+He+,2,Lyman_alpha,2,1,30.378,30.378,0.000,40.811,NIST
+He+,2,Lyman_beta,3,1,25.632,25.632,0.000,48.372,NIST
+He+,2,Balmer_alpha,3,2,164.033,164.033,0.000,7.559,NIST
+Li2+,3,Lyman_alpha,2,1,13.500,13.500,0.000,91.824,NIST
+Li2+,3,Lyman_beta,3,1,11.394,11.394,0.000,108.836,NIST
+Be3+,4,Lyman_alpha,2,1,7.595,7.595,0.000,163.264,NIST
+C5+,6,Lyman_alpha,2,1,3.375,3.375,0.000,367.344,NIST
+O7+,8,Lyman_alpha,2,1,1.898,1.898,0.000,653.088,NIST

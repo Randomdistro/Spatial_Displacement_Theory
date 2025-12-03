@@ -60,6 +60,7 @@ set(SDT_NAVIER_HEADERS
     include/sdt_navier/analysis.hpp
     include/sdt_navier/constants.hpp
     include/sdt_navier/io.hpp
+    include/state_28d.hpp
 )
 
 # Create library

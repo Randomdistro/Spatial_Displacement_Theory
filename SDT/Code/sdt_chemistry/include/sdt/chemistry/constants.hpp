@@ -1,9 +1,11 @@
 #pragma once
 
-#include <numbers>
-#include <cmath>
-
-namespace sdt::chemistry::constants {
+namespace sdt::chemistry::constants
+{
+    // Mathematical Constants (defined first for use in other constants)
+    inline constexpr double pi = 3.14159265358979323846;
+    inline constexpr double two_pi = 2.0 * pi;
+    inline constexpr double four_pi = 4.0 * pi;
 
     // CODATA 2018 Fundamental Constants
     inline constexpr double c = 299792458.0;  // Speed of light (m/s), exact
@@ -19,7 +21,7 @@ namespace sdt::chemistry::constants {
     // Origin: Cosmic Reverberation of Bulk Modulus (K_bulk) focused by Inverse Square Law.
     // Relation: P_nuc = K_bulk * (R_proton / R_universe)^2.
     // This links the Spation Matrix Stiffness (10^113 Pa) to the Nuclear Operating Pressure (10^31 Pa).
-    inline constexpr double P_nuclear = ((e_charge * e_charge) / (32.0 * std::numbers::pi_v<double> * std::numbers::pi_v<double> * epsilon_0 * 8.40e-16 * 8.40e-16 * 8.40e-16 * 8.40e-16)) * (15.0/16.0);
+    inline constexpr double P_nuclear = ((e_charge * e_charge) / (32.0 * pi * pi * epsilon_0 * 8.40e-16 * 8.40e-16 * 8.40e-16 * 8.40e-16)) * (15.0/16.0);
     
     // Spation Lattice Properties
     inline constexpr double r_Planck = 1.616255e-35;  // Planck radius (m)
@@ -34,11 +36,6 @@ namespace sdt::chemistry::constants {
     
     // Bohr radius
     inline constexpr double a_0 = 5.29177210903e-11;  // m (Bohr radius)
-    
-    // Mathematical Constants
-    inline constexpr double pi = std::numbers::pi_v<double>;
-    inline constexpr double two_pi = 2.0 * pi;
-    inline constexpr double four_pi = 4.0 * pi;
     
     // Unit Conversions
     inline constexpr double eV_to_J = 1.602176634e-19;  // J/eV

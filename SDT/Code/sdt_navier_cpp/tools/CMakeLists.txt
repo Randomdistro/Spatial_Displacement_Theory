@@ -1,9 +1,59 @@
-add_executable(simulate_deuteron simulate_deuteron.cpp)
-target_link_libraries(simulate_deuteron PRIVATE sdt_navier)
+# SDT Calculator Tools - CMake Build Configuration
 
-add_executable(simulate_nuclear simulate_nuclear.cpp)
-target_link_libraries(simulate_nuclear PRIVATE sdt_navier)
+cmake_minimum_required(VERSION 3.20)
 
-add_executable(analyze_results analyze_results.cpp)
-target_link_libraries(analyze_results PRIVATE sdt_navier)
+# World-class C++20 calculator tools
+add_executable(stellar_calculator stellar_calculator.cpp)
+add_executable(atomic_calculator atomic_calculator.cpp)
+add_executable(galactic_rotation galactic_rotation.cpp)
+add_executable(validate_lk2_relation validate_lk2_relation.cpp)
 
+# Set C++20 with std::format support
+target_compile_features(stellar_calculator PRIVATE cxx_std_20)
+target_compile_features(atomic_calculator PRIVATE cxx_std_20)
+target_compile_features(galactic_rotation PRIVATE cxx_std_20)
+target_compile_features(validate_lk2_relation PRIVATE cxx_std_20)
+
+# Include header directories
+target_include_directories(stellar_calculator PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(atomic_calculator PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(galactic_rotation PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(validate_lk2_relation PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
+# Compiler-specific options for optimal performance
+if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    target_compile_options(stellar_calculator PRIVATE /W4 /O2)
+    target_compile_options(atomic_calculator PRIVATE /W4 /O2)
+    target_compile_options(galactic_rotation PRIVATE /W4 /O2)
+    target_compile_options(validate_lk2_relation PRIVATE /W4 /O2)
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(stellar_calculator PRIVATE -Wall -Wextra -O3 -march=native)
+    target_compile_options(atomic_calculator PRIVATE -Wall -Wextra -O3 -march=native)
+    target_compile_options(galactic_rotation PRIVATE -Wall -Wextra -O3 -march=native)
+    target_compile_options(validate_lk2_relation PRIVATE -Wall -Wextra -O3 -march=native)
+endif()
+
+# Install executables
+install(TARGETS stellar_calculator atomic_calculator galactic_rotation validate_lk2_relation
+    RUNTIME DESTINATION bin
+)
+
+# Create convenience launcher scripts
+if(WIN32)
+    file(WRITE "${CMAKE_BINARY_DIR}/run_stellar_calc.bat"
+        "@echo off\n\"${CMAKE_BINARY_DIR}/tools/stellar_calculator.exe\" %*\n")
+    file(WRITE "${CMAKE_BINARY_DIR}/run_atomic_calc.bat"
+        "@echo off\n\"${CMAKE_BINARY_DIR}/tools/atomic_calculator.exe\" %*\n")
+    file(WRITE "${CMAKE_BINARY_DIR}/run_galactic_rot.bat"
+        "@echo off\n\"${CMAKE_BINARY_DIR}/tools/galactic_rotation.exe\" %*\n")
+else()
+    file(WRITE "${CMAKE_BINARY_DIR}/run_stellar_calc.sh"
+        "#!/bin/bash\n\"${CMAKE_BINARY_DIR}/tools/stellar_calculator\" \"$@\"\n")
+    file(WRITE "${CMAKE_BINARY_DIR}/run_atomic_calc.sh"
+        "#!/bin/bash\n\"${CMAKE_BINARY_DIR}/tools/atomic_calculator\" \"$@\"\n")
+    file(WRITE "${CMAKE_BINARY_DIR}/run_galactic_rot.sh"
+        "#!/bin/bash\n\"${CMAKE_BINARY_DIR}/tools/galactic_rotation\" \"$@\"\n")
+    file(CHMOD "${CMAKE_BINARY_DIR}/run_stellar_calc.sh" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+    file(CHMOD "${CMAKE_BINARY_DIR}/run_atomic_calc.sh" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+    file(CHMOD "${CMAKE_BINARY_DIR}/run_galactic_rot.sh" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+endif()

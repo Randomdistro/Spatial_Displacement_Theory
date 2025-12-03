@@ -433,24 +433,6 @@ This single constant, derived from hexagonal close-packing geometry, appears acr
     → Same pressure equation describes atoms, planets, galaxies, cosmology
 
 ✓ **An occlusion-based theory**  
-    → All interactions arise from mutual shadowing E(x,n̂)
-
-✓ **A scale-invariant framework**  
-    → Same physics, different compactness regimes
-
-### Core Principles
-
-1. **Space is a medium** (spation) with finite incompressible bulk modulus K_bulk
-2. **Matter is displacement** — particles exclude spation volume
-3. **Forces are pressure gradients** — no fields, no curvature
-4. **Occlusion creates hierarchy** — weak/strong, electromagnetic/gravitational all from E(x)
-5. **Speed of light is not universal** — c is EM limit, not mechanical limit
-6. **Constants are consequences** — G, α, etc. emerge from geometry
-
----
-
-## FAQ
-
 ### Isn't this just putting old wine in new bottles?
 
 **No.** While SDT reproduces quantum mechanical predictions for atoms and Newtonian predictions for planets, the *mechanisms* are completely different:

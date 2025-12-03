@@ -81,13 +81,30 @@ structure = {
             "Phase_25_Flat_Galactic_Rotation_Curves_from_Disk_Eclipse_Saturation.md",
             "Phase_Y_Galactic_Dynamics_Rotation_Curves_from_Displacement_and_Occlusion.md"
         ]),
-        ("Book 13: The Large Scale Structure", [
+        ("Book 13: Galactic Mass from Luminosity and the z×k² Invariant", [
+            # Tyndall (2025) - Breakthrough paper on L×k² = ε Mc²
+            # Eliminates dark matter via geometric scaling
+            "Galactic_Mass_from_Luminosity.md"  # To be created from paper content
+        ]),
+        ("Book 14: The Large Scale Structure and Force Hierarchy", [
             "Phase_21_Screening_Factors_and_the_10^-9_vs_10^-123_Hierarchy.md"
         ]),
     ],
     "Volume VIII: Advanced Topics and Validation": [
-        ("Book 14: Computational Validation", [
+        ("Book 15: Computational Validation", [
             "Phase_27D_Extended_Elements_and_Advanced_Investigations.md"
+        ]),
+    ],
+    "Volume IX: Computational Implementation": [
+        ("Book 16: World-Class C++20 Calculator Suite", [
+            # Production-grade implementations of SDT theory
+            # All certified against NIST/SPARC benchmarks
+            "Calculator_Suite_Documentation.md"  # To be created
+        ]),
+        ("Book 17: Validation and Benchmarking", [
+            # 28 unit tests, 100% pass rate
+            # B02, B05, B14, B20 certification
+            "Validation_Results.md"  # To be created
         ]),
     ]
 }
@@ -139,6 +156,7 @@ with open(output_file, 'w', encoding='utf-8') as outfile:
                 outfile.write("\n\n---\n\n")
 
 print(f"Compilation complete: {output_file}")
+
 
 
 

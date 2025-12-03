@@ -18,6 +18,11 @@ void test_elements() {
     assert(C.Z == 6);
     assert(C.symbol == "C");
     
+    // Test Scandium (newly added)
+    const ElementData& Sc = Elements::get_element("Sc");
+    assert(Sc.Z == 21);
+    assert(Sc.symbol == "Sc");
+    
     // Test existence
     assert(Elements::exists("H"));
     assert(Elements::exists(1));

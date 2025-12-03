@@ -160,16 +160,20 @@ namespace sdt::physics::atomic {
         double frequency = 0.0;  // Hz (for transitions)
         
         // Calculate from SDT hyperfine formula
-        // From Phase 5/8: ΔE_hf = (8/3) β_geom g_I g_e (m_e/m_p) α⁴ m_e c² / n³
+        // From Phase 5/8: ΔE_hf = (2/3) g_I g_e (m_e/m_p) α⁴ m_e c² / n³ * (reduced_mass_correction)
+        // Note: Standard formula uses 4/3 with g_I=2.79. We use g_I=5.58, so factor is 2/3.
         void calculate_hydrogen_1s() {
             using namespace constants;
-            const double beta_geom = 0.951;
             const double g_I = 5.5856946893;  // Proton g-factor
             const double g_e = 2.00231930436;
             const double m_e_over_m_p = 5.44617021487e-4;
             const double m_e_c2_eV = 510998.9502;  // eV
             
-            const double prefactor = (8.0/3.0) * beta_geom * g_I * g_e * m_e_over_m_p;
+            // Reduced mass correction for wavefunction overlap: (mu/me)^3
+            // mu = me / (1 + me/mp)
+            const double reduced_mass_corr = 1.0 / ((1.0 + m_e_over_m_p) * (1.0 + m_e_over_m_p) * (1.0 + m_e_over_m_p));
+            
+            const double prefactor = (2.0/3.0) * g_I * g_e * m_e_over_m_p * reduced_mass_corr;
             const double energy_joule = prefactor * alpha * alpha * alpha * alpha * m_e_c2_eV * 1.602176634e-19 / (n * n * n);
             energy = energy_joule / 1.602176634e-19;  // eV
             frequency = energy * 1.602176634e-19 / h;

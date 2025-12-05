@@ -123,6 +123,7 @@ header = """# De Rerum Todo Existens
 def read_file_content(filename):
     # Try multiple locations
     paths_to_try = [
+        os.path.join(output_dir, filename),  # NEW: Check output directory first!
         os.path.join(source_dir, filename),
         os.path.join(r"SDT/Papers/SDT_Foundation/Part_I_Axioms_and_Core_Equations", filename), # Redundant but safe
         os.path.join(r"SDT/Papers/SDT_Foundation", filename),

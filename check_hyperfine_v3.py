@@ -21,3 +21,4 @@ print(f"New Code Logic Frequency: {frequency/1e6} MHz")
 print(f"Target: 1420.40575 MHz")
 print(f"Error: {(frequency/1e6 - 1420.40575) / 1420.40575 * 100:.4f}%")
 
+

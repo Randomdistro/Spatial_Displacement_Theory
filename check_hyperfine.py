@@ -26,3 +26,4 @@ energy_joule_std = prefactor_std * alpha**4 * (m_e_c2_eV * e_charge)
 freq_std = energy_joule_std / h
 print(f"Standard Formula Frequency (approx): {freq_std/1e6} MHz")
 
+

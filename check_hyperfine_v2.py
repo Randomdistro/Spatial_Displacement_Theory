@@ -56,3 +56,4 @@ print(f"Factor needed relative to Standard: {factor_needed}")
 freq_half_g = freq_std * (2.79284735 / 5.5856946893)
 print(f"Standard with g_I=2.79: {freq_half_g/1e6} MHz")
 
+

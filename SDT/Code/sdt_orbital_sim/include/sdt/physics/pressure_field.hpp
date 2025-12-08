@@ -112,6 +112,64 @@ namespace sdt::physics {
             const scalar_t solid_angle_fraction = (R_combined * R_combined) / (4.0 * r * r);
             return std::max(0.0, std::min(1.0, solid_angle_fraction));
         }
+
+        // Galactic Screening Factor (Phase 22)
+        // xi_gal(r) = xi_0 * (r / R_gal)^alpha
+        static scalar_t galactic_screening_factor(
+            const Vec3d& position,
+            scalar_t xi_0,
+            scalar_t R_gal,
+            scalar_t alpha
+        ) {
+            const scalar_t r = position.norm();
+            if (r <= 0.0 || R_gal <= 0.0) return 0.0;
+            
+            return xi_0 * std::pow(r / R_gal, alpha);
+        }
+
+        // Calculate net acceleration from multiple sources with optional Galactic Screening
+        static Vec3d net_acceleration(
+            const Vec3d& position,
+            const std::vector<CelestialBody>& sources,
+            index_t exclude_index = static_cast<index_t>(-1),
+            bool apply_galactic_screening = false,
+            scalar_t xi_0 = 0.0,
+            scalar_t R_gal = 1.0,
+            scalar_t alpha = 1.0
+        ) {
+            Vec3d total_accel = Vec3d::Zero();
+            
+            // Pre-calculate screening for this position if enabled (scalar field approximation)
+            scalar_t screening_factor = 0.0;
+            if (apply_galactic_screening) {
+                screening_factor = galactic_screening_factor(position, xi_0, R_gal, alpha);
+                if (screening_factor > 0.99) screening_factor = 0.99; // Cap to avoid singularity
+            }
+
+            for (size_t i = 0; i < sources.size(); ++i) {
+                if (i == exclude_index) {
+                    continue;
+                }
+                
+                const Vec3d r_vec = position - sources[i].position;
+                const scalar_t r = r_vec.norm();
+                
+                if (r <= 0.0) {
+                    continue;
+                }
+                
+                // Acceleration from pressure gradient: a = -∇Π / ρ_s
+                // Simplified to: a = -β / r² * r_hat
+                const Vec3d r_hat = r_vec.normalized();
+                
+                // Apply screening: effective acceleration is reduced
+                // a_eff = a_raw * (1 - screening_factor)
+                const scalar_t accel_mag = (sources[i].sdt_params.beta / (r * r)) * (1.0 - screening_factor);
+                total_accel -= accel_mag * r_hat;
+            }
+            
+            return total_accel;
+        }
     };
 
 } // namespace sdt::physics

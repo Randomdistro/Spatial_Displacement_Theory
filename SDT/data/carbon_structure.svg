@@ -1,0 +1,62 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="400" fill="#1e1e1e" />
+
+    <defs>
+        <radialGradient id="protonGrad" cx="30%" cy="30%" r="50%">
+            <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#b71c1c;stop-opacity:1" />
+        </radialGradient>
+        <radialGradient id="neutronGrad" cx="30%" cy="30%" r="50%">
+            <stop offset="0%" style="stop-color:#4fc3f7;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0277bd;stop-opacity:1" />
+        </radialGradient>
+        <radialGradient id="electronGrad" cx="30%" cy="30%" r="50%">
+            <stop offset="0%" style="stop-color:#ffd54f;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#ff6f00;stop-opacity:1" />
+        </radialGradient>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+<circle cx="200.0" cy="200.0" r="140" stroke="#333" stroke-width="1" fill="none" stroke-dasharray="5,5" />
+<circle cx="200.0" cy="200.0" r="80" stroke="#444" stroke-width="1" fill="none" />
+<circle cx="192.0" cy="152.0" r="8" fill="url(#protonGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="208.0" cy="168.0" r="8" fill="url(#protonGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="208.0" cy="152.0" r="8" fill="url(#neutronGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="192.0" cy="168.0" r="8" fill="url(#neutronGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="208.0" cy="152.0" r="2" fill="#ffd54f" />
+<circle cx="192.0" cy="168.0" r="2" fill="#ffd54f" />
+<circle cx="226.64101615137756" cy="212.0" r="8" fill="url(#protonGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="242.64101615137756" cy="228.0" r="8" fill="url(#protonGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="242.64101615137756" cy="212.0" r="8" fill="url(#neutronGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="226.64101615137756" cy="228.0" r="8" fill="url(#neutronGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="242.64101615137756" cy="212.0" r="2" fill="#ffd54f" />
+<circle cx="226.64101615137756" cy="228.0" r="2" fill="#ffd54f" />
+<circle cx="157.35898384862244" cy="212.0" r="8" fill="url(#protonGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="173.35898384862244" cy="228.0" r="8" fill="url(#protonGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="173.35898384862244" cy="212.0" r="8" fill="url(#neutronGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="157.35898384862244" cy="228.0" r="8" fill="url(#neutronGrad)" stroke="#fff" stroke-width="0.5" />
+<circle cx="173.35898384862244" cy="212.0" r="2" fill="#ffd54f" />
+<circle cx="157.35898384862244" cy="228.0" r="2" fill="#ffd54f" />
+<line x1="200.0" y1="160.0" x2="234.64101615137756" y2="220.0" stroke="#00e676" stroke-width="2" stroke-opacity="0.6" stroke-dasharray="2,2" />
+<line x1="234.64101615137756" y1="220.0" x2="165.35898384862244" y2="220.0" stroke="#00e676" stroke-width="2" stroke-opacity="0.6" stroke-dasharray="2,2" />
+<line x1="165.35898384862244" y1="220.0" x2="200.0" y2="160.0" stroke="#00e676" stroke-width="2" stroke-opacity="0.6" stroke-dasharray="2,2" />
+<line x1="200.0" y1="200.0" x2="291.9238815542512" y2="291.9238815542512" stroke="#ffd54f" stroke-width="1" stroke-dasharray="4,4" opacity="0.5" />
+<circle cx="291.9238815542512" cy="291.9238815542512" r="8" fill="url(#electronGrad)" filter="url(#glow)" />
+<text x="303.9238815542512" y="295.9238815542512" fill="#ffd54f" font-family="Arial" font-size="12">e-</text>
+<line x1="200.0" y1="200.0" x2="108.07611844574883" y2="291.9238815542512" stroke="#ffd54f" stroke-width="1" stroke-dasharray="4,4" opacity="0.5" />
+<circle cx="108.07611844574883" cy="291.9238815542512" r="8" fill="url(#electronGrad)" filter="url(#glow)" />
+<text x="120.07611844574883" y="295.9238815542512" fill="#ffd54f" font-family="Arial" font-size="12">e-</text>
+<line x1="200.0" y1="200.0" x2="108.0761184457488" y2="108.07611844574883" stroke="#ffd54f" stroke-width="1" stroke-dasharray="4,4" opacity="0.5" />
+<circle cx="108.0761184457488" cy="108.07611844574883" r="8" fill="url(#electronGrad)" filter="url(#glow)" />
+<text x="120.0761184457488" y="112.07611844574883" fill="#ffd54f" font-family="Arial" font-size="12">e-</text>
+<line x1="200.0" y1="200.0" x2="291.9238815542511" y2="108.0761184457488" stroke="#ffd54f" stroke-width="1" stroke-dasharray="4,4" opacity="0.5" />
+<circle cx="291.9238815542511" cy="108.0761184457488" r="8" fill="url(#electronGrad)" filter="url(#glow)" />
+<text x="303.9238815542511" y="112.0761184457488" fill="#ffd54f" font-family="Arial" font-size="12">e-</text>
+<text x="20" y="30" fill="#eee" font-family="Arial" font-size="16" font-weight="bold">Carbon-12: Core-Valence Alignment</text>
+</svg>

@@ -60,6 +60,15 @@ target_link_libraries(sdt_sim
     sdt_orbital
 )
 
+# Galaxy Rotation Curve Simulator (Phase 22)
+add_executable(galaxy_sim
+    ${CMAKE_SOURCE_DIR}/src/galaxy_sim.cpp
+)
+
+target_link_libraries(galaxy_sim
+    sdt_orbital
+)
+
 # Create visualization executable
 add_executable(sdt_viewer
     ${CMAKE_SOURCE_DIR}/src/visualization/main_viewer.cpp

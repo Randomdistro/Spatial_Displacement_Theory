@@ -1,0 +1,341 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Papers" description="SDT research papers, the complete treatise, and benchmark validation reports">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header -->
+    <div class="max-w-3xl mb-12">
+      <h1 class="text-4xl font-display font-bold text-slate-900 mb-4">
+        Research Papers
+      </h1>
+      <p class="text-xl text-slate-600">
+        Complete mathematical derivations, journal-ready submissions, and validated benchmarks.
+        All work is open-access under MIT license.
+      </p>
+    </div>
+
+    <!-- Featured: De Rerum -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-3xl overflow-hidden shadow-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-5">
+          <!-- Cover image -->
+          <div class="lg:col-span-2 p-8 flex items-center justify-center bg-black/20">
+            <div class="relative">
+              <!-- Book representation -->
+              <div class="w-64 h-80 bg-gradient-to-br from-blue-800 to-slate-900 rounded-lg shadow-2xl transform rotate-3 border border-white/10">
+                <div class="absolute inset-4 border border-white/20 rounded flex flex-col items-center justify-center text-center p-4">
+                  <div class="text-amber-400 text-4xl mb-4">⚛</div>
+                  <h3 class="font-display font-bold text-white text-lg leading-tight mb-2">
+                    De Rerum Todo Existens
+                  </h3>
+                  <p class="text-slate-400 text-xs">
+                    On the Nature of<br />All Things That Exist
+                  </p>
+                  <div class="mt-4 pt-4 border-t border-white/10 w-full">
+                    <p class="text-slate-500 text-xs">J.C. Harvey</p>
+                    <p class="text-slate-600 text-xs">2025</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Shadow book -->
+              <div class="absolute -right-2 top-2 w-64 h-80 bg-slate-800 rounded-lg -z-10 transform rotate-6"></div>
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="lg:col-span-3 p-8 lg:p-12 text-white">
+            <div class="inline-flex items-center gap-2 bg-amber-500/20 rounded-full px-3 py-1 mb-4">
+              <span class="text-amber-400 text-sm font-medium">Complete Treatise</span>
+            </div>
+
+            <h2 class="text-3xl font-display font-bold mb-4">
+              De Rerum Todo Existens
+            </h2>
+            <p class="text-slate-400 italic mb-4">On the Nature of All Things That Exist</p>
+
+            <p class="text-slate-300 mb-6 leading-relaxed">
+              The comprehensive 410KB treatise containing the complete mathematical framework of SDT.
+              Organized into volumes covering foundations, atomic physics, gravitation, and cosmology.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+              <div class="bg-white/5 rounded-lg p-3 text-center">
+                <div class="text-2xl font-bold text-white">410</div>
+                <div class="text-xs text-slate-400">KB</div>
+              </div>
+              <div class="bg-white/5 rounded-lg p-3 text-center">
+                <div class="text-2xl font-bold text-white">7</div>
+                <div class="text-xs text-slate-400">Volumes</div>
+              </div>
+              <div class="bg-white/5 rounded-lg p-3 text-center">
+                <div class="text-2xl font-bold text-white">52+</div>
+                <div class="text-xs text-slate-400">Derivations</div>
+              </div>
+              <div class="bg-white/5 rounded-lg p-3 text-center">
+                <div class="text-2xl font-bold text-white">24</div>
+                <div class="text-xs text-slate-400">Benchmarks</div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+              <a href="/papers/de-rerum" class="btn-gold">
+                Read Online
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </a>
+              <a href="/papers/de-rerum/pdf" class="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium transition-colors inline-flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journal-Ready Papers -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-display font-bold text-slate-900 mb-6">
+        Journal-Ready Papers
+      </h2>
+      <p class="text-slate-600 mb-8">
+        These papers are formatted for submission to peer-reviewed journals.
+        Target journals: PLOS ONE, Scientific Reports, Foundations of Physics.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Gravitational Paper -->
+        <div class="card border-2 border-emerald-200 bg-emerald-50/50">
+          <div class="flex items-start justify-between mb-4">
+            <span class="badge-certified">Ready for Submission</span>
+            <span class="text-sm text-slate-500">2025</span>
+          </div>
+          <h3 class="font-display font-semibold text-xl mb-3">
+            Gravitational Acceleration from Geometric Pressure Screening
+          </h3>
+          <p class="text-slate-600 text-sm mb-4">
+            Derives planetary accelerations for all 8 Solar System planets without using G or M.
+            Shows that the gravitational parameter β = GM = c²R/k² is purely geometric.
+          </p>
+          <div class="flex items-center gap-4 text-sm mb-4">
+            <span class="text-emerald-600 font-mono">Error: &lt;0.5%</span>
+            <span class="text-slate-500">|</span>
+            <span class="text-slate-500">8 planets validated</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="/papers/gravitational-acceleration" class="text-sdt-primary-600 font-medium hover:underline">
+              Read paper →
+            </a>
+            <a href="/papers/gravitational-acceleration/pdf" class="text-slate-500 hover:text-slate-700">
+              PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- CMB Paper -->
+        <div class="card border-2 border-emerald-200 bg-emerald-50/50">
+          <div class="flex items-start justify-between mb-4">
+            <span class="badge-certified">Ready for Submission</span>
+            <span class="text-sm text-slate-500">2025</span>
+          </div>
+          <h3 class="font-display font-semibold text-xl mb-3">
+            CMB as the Cause of Gravitation
+          </h3>
+          <p class="text-slate-600 text-sm mb-4">
+            Proposes that gravity arises from pressure screening of the Cosmic Microwave Background.
+            Reproduces GR tests (Mercury perihelion, gravitational lensing) from geometric principles.
+          </p>
+          <div class="flex items-center gap-4 text-sm mb-4">
+            <span class="text-emerald-600 font-mono">z = 1089 exact</span>
+            <span class="text-slate-500">|</span>
+            <span class="text-slate-500">GR equivalence shown</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="/papers/cmb-gravitation" class="text-sdt-primary-600 font-medium hover:underline">
+              Read paper →
+            </a>
+            <a href="/papers/cmb-gravitation/pdf" class="text-slate-500 hover:text-slate-700">
+              PDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benchmark Reports -->
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-display font-bold text-slate-900">
+          Benchmark Validation Reports
+        </h2>
+        <a href="/papers/benchmarks" class="text-sdt-primary-600 font-medium hover:underline">
+          View all 24 →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Sample benchmarks -->
+        <a href="/papers/benchmarks/B2" class="card hover:shadow-lg transition-shadow group">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+            <span class="font-mono text-sm text-slate-500">B2</span>
+          </div>
+          <h4 class="font-semibold mb-1 group-hover:text-sdt-primary-600">Rydberg Spectrum</h4>
+          <p class="text-xs text-slate-500">Helical standing waves</p>
+          <div class="mt-2 text-emerald-600 font-mono text-sm">&lt;0.01%</div>
+        </a>
+
+        <a href="/papers/benchmarks/B3" class="card hover:shadow-lg transition-shadow group">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+            <span class="font-mono text-sm text-slate-500">B3</span>
+          </div>
+          <h4 class="font-semibold mb-1 group-hover:text-sdt-primary-600">Fine Structure</h4>
+          <p class="text-xs text-slate-500">Spectral splittings</p>
+          <div class="mt-2 text-emerald-600 font-mono text-sm">&lt;0.1%</div>
+        </a>
+
+        <a href="/papers/benchmarks/B7" class="card hover:shadow-lg transition-shadow group">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+            <span class="font-mono text-sm text-slate-500">B7</span>
+          </div>
+          <h4 class="font-semibold mb-1 group-hover:text-sdt-primary-600">k-Law Universality</h4>
+          <p class="text-xs text-slate-500">53 orders of magnitude</p>
+          <div class="mt-2 text-emerald-600 font-mono text-sm">&lt;0.8%</div>
+        </a>
+
+        <a href="/papers/benchmarks/B13" class="card hover:shadow-lg transition-shadow group">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+            <span class="font-mono text-sm text-slate-500">B13</span>
+          </div>
+          <h4 class="font-semibold mb-1 group-hover:text-sdt-primary-600">CMB Redshift</h4>
+          <p class="text-xs text-slate-500">Pressure horizon</p>
+          <div class="mt-2 text-emerald-600 font-mono text-sm">Exact</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- By Topic -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-display font-bold text-slate-900 mb-6">
+        Papers by Topic
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Foundations -->
+        <div class="card">
+          <h3 class="font-display font-semibold text-lg mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">📐</span>
+            Foundations
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/papers/foundations/master-equation" class="text-slate-600 hover:text-sdt-primary-600">Master Equation Derivation</a></li>
+            <li><a href="/papers/foundations/spation-medium" class="text-slate-600 hover:text-sdt-primary-600">Spation Medium Properties</a></li>
+            <li><a href="/papers/foundations/occlusion-function" class="text-slate-600 hover:text-sdt-primary-600">Occlusion Function E(x,n̂)</a></li>
+            <li><a href="/papers/foundations/force-hierarchy" class="text-slate-600 hover:text-sdt-primary-600">Force Hierarchy from k-Values</a></li>
+          </ul>
+        </div>
+
+        <!-- Atomic Physics -->
+        <div class="card">
+          <h3 class="font-display font-semibold text-lg mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">⚛️</span>
+            Atomic Physics
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/papers/atomic/coulomb-force" class="text-slate-600 hover:text-sdt-primary-600">Coulomb Force Derivation</a></li>
+            <li><a href="/papers/atomic/rydberg-spectrum" class="text-slate-600 hover:text-sdt-primary-600">Rydberg Spectrum</a></li>
+            <li><a href="/papers/atomic/fine-structure" class="text-slate-600 hover:text-sdt-primary-600">Fine Structure</a></li>
+            <li><a href="/papers/atomic/multi-electron" class="text-slate-600 hover:text-sdt-primary-600">Multi-Electron Atoms</a></li>
+          </ul>
+        </div>
+
+        <!-- Gravitation -->
+        <div class="card">
+          <h3 class="font-display font-semibold text-lg mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">🌍</span>
+            Gravitation
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/papers/gravitation/pressure-gradients" class="text-slate-600 hover:text-sdt-primary-600">Gravity from Pressure Gradients</a></li>
+            <li><a href="/papers/gravitation/orbital-mechanics" class="text-slate-600 hover:text-sdt-primary-600">Orbital Mechanics</a></li>
+            <li><a href="/papers/gravitation/stellar-structure" class="text-slate-600 hover:text-sdt-primary-600">Stellar Structure</a></li>
+            <li><a href="/papers/gravitation/gr-tests" class="text-slate-600 hover:text-sdt-primary-600">GR Test Equivalence</a></li>
+          </ul>
+        </div>
+
+        <!-- Cosmology -->
+        <div class="card">
+          <h3 class="font-display font-semibold text-lg mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">🌌</span>
+            Cosmology
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/papers/cosmology/cmb-horizon" class="text-slate-600 hover:text-sdt-primary-600">CMB as Pressure Horizon</a></li>
+            <li><a href="/papers/cosmology/galactic-rotation" class="text-slate-600 hover:text-sdt-primary-600">Galactic Rotation Curves</a></li>
+            <li><a href="/papers/cosmology/bao-scale" class="text-slate-600 hover:text-sdt-primary-600">BAO Scale Derivation</a></li>
+            <li><a href="/papers/cosmology/dark-matter" class="text-slate-600 hover:text-sdt-primary-600">Dark Matter Alternative</a></li>
+          </ul>
+        </div>
+
+        <!-- Nuclear -->
+        <div class="card">
+          <h3 class="font-display font-semibold text-lg mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">☢️</span>
+            Nuclear Physics
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/papers/nuclear/proton-engine" class="text-slate-600 hover:text-sdt-primary-600">The Proton Engine</a></li>
+            <li><a href="/papers/nuclear/deuteron-alpha" class="text-slate-600 hover:text-sdt-primary-600">Deuteron and Alpha</a></li>
+            <li><a href="/papers/nuclear/alpha-architecture" class="text-slate-600 hover:text-sdt-primary-600">Alpha Architecture</a></li>
+            <li><a href="/papers/nuclear/periodic-table" class="text-slate-600 hover:text-sdt-primary-600">Geometric Periodic Table</a></li>
+          </ul>
+        </div>
+
+        <!-- Chemistry -->
+        <div class="card">
+          <h3 class="font-display font-semibold text-lg mb-3 flex items-center gap-2">
+            <span class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">🧪</span>
+            Chemistry
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/papers/chemistry/covalent-bonding" class="text-slate-600 hover:text-sdt-primary-600">Covalent Bonding</a></li>
+            <li><a href="/papers/chemistry/ionic-bonding" class="text-slate-600 hover:text-sdt-primary-600">Ionic Bonding</a></li>
+            <li><a href="/papers/chemistry/crystal-structures" class="text-slate-600 hover:text-sdt-primary-600">Crystal Structures</a></li>
+            <li><a href="/papers/chemistry/organic" class="text-slate-600 hover:text-sdt-primary-600">Organic Chemistry</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Citation -->
+    <section class="bg-slate-50 rounded-xl p-8">
+      <h2 class="text-xl font-display font-bold text-slate-900 mb-4">
+        How to Cite
+      </h2>
+      <p class="text-slate-600 mb-4">
+        If you use SDT in your research, please cite:
+      </p>
+      <div class="bg-white rounded-lg p-4 font-mono text-sm text-slate-700 border border-slate-200">
+        Harvey, J.C. (2025). Spatial Displacement Theory: A Complete Derivation of Physics from Geometric Pressure Dynamics. Self-published. https://sdt-theory.org
+      </div>
+      <div class="mt-4 flex gap-4">
+        <button class="text-sdt-primary-600 text-sm font-medium hover:underline">
+          Copy BibTeX
+        </button>
+        <button class="text-sdt-primary-600 text-sm font-medium hover:underline">
+          Copy APA
+        </button>
+        <a href="/about/cite" class="text-slate-500 text-sm hover:underline">
+          More formats →
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

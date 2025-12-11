@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ToroidalElectron from '../../components/ToroidalElectron';
+---
+
+<BaseLayout title="Visualizations" description="Interactive 3D visualizations of SDT concepts - toroidal electrons, pressure fields, and orbital dynamics">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header -->
+    <div class="max-w-3xl mb-12">
+      <h1 class="text-4xl font-display font-bold text-slate-900 mb-4">
+        Interactive Visualizations
+      </h1>
+      <p class="text-xl text-slate-600">
+        See SDT concepts in action. These aren't just illustrations—they're accurate
+        representations of the theory's geometric structures.
+      </p>
+    </div>
+
+    <!-- Featured: Toroidal Electron -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <!-- 3D Visualization -->
+          <div class="relative h-[500px] lg:h-auto">
+            <ToroidalElectron client:visible className="rounded-none lg:rounded-l-3xl" />
+
+            <!-- Controls overlay -->
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+              <div class="bg-black/50 backdrop-blur-sm rounded-lg px-3 py-2 text-white text-sm">
+                <span class="text-slate-400">Drag to rotate</span>
+              </div>
+              <div class="flex gap-2">
+                <button class="bg-white/10 hover:bg-white/20 rounded-lg p-2 text-white transition-colors">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                  </svg>
+                </button>
+                <button class="bg-white/10 hover:bg-white/20 rounded-lg p-2 text-white transition-colors">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info panel -->
+          <div class="p-8 lg:p-12 text-white">
+            <div class="inline-flex items-center gap-2 bg-blue-500/20 rounded-full px-3 py-1 mb-4">
+              <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
+              <span class="text-blue-400 text-sm font-medium">Featured</span>
+            </div>
+
+            <h2 class="text-3xl font-display font-bold mb-4">
+              The Toroidal Electron
+            </h2>
+
+            <p class="text-slate-300 mb-6 leading-relaxed">
+              In SDT, the electron is <strong class="text-white">not a point particle</strong>.
+              It's a stable toroidal vortex in the spation medium, approximately 10<sup>-21</sup> meters
+              in size—smaller than anything we can currently probe, yet with definite structure.
+            </p>
+
+            <div class="space-y-4 mb-8">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-blue-400">1</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white">Toroidal Body</h4>
+                  <p class="text-sm text-slate-400">The blue torus represents the electron's displaced volume</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-amber-400">2</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white">Helical Wake</h4>
+                  <p class="text-sm text-slate-400">The spiral particles show the helical pressure wake that creates "spin"</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-emerald-400">3</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white">Circulation</h4>
+                  <p class="text-sm text-slate-400">The gold lines show poloidal circulation generating the magnetic moment</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="/theory/atomic-physics/electron-structure" class="btn-gold">
+              Learn the Theory
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- More Visualizations -->
+    <h2 class="text-2xl font-display font-bold text-slate-900 mb-6">
+      More Visualizations
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Alpha Tori -->
+      <a href="/visualizations/alpha-tori" class="group">
+        <div class="card overflow-hidden">
+          <div class="aspect-video bg-gradient-to-br from-purple-900 to-slate-900 flex items-center justify-center mb-4 -mx-6 -mt-6">
+            <div class="text-6xl">⚛️</div>
+          </div>
+          <h3 class="font-display font-semibold text-lg mb-2 group-hover:text-sdt-primary-600 transition-colors">
+            Alpha Particle Tori
+          </h3>
+          <p class="text-slate-600 text-sm">
+            Visualize the 4-nucleon helium nucleus as interlocked toroidal protons and neutrons.
+          </p>
+        </div>
+      </a>
+
+      <!-- Pressure Field -->
+      <a href="/visualizations/pressure-field" class="group">
+        <div class="card overflow-hidden">
+          <div class="aspect-video bg-gradient-to-br from-blue-900 to-slate-900 flex items-center justify-center mb-4 -mx-6 -mt-6">
+            <div class="w-24 h-24 border-4 border-blue-500/50 rounded-full relative">
+              <div class="absolute inset-2 border-2 border-blue-400/30 rounded-full"></div>
+              <div class="absolute inset-4 border border-blue-300/20 rounded-full"></div>
+            </div>
+          </div>
+          <h3 class="font-display font-semibold text-lg mb-2 group-hover:text-sdt-primary-600 transition-colors">
+            Pressure Field Visualization
+          </h3>
+          <p class="text-slate-600 text-sm">
+            See how spation pressure gradients create gravitational force around a massive body.
+          </p>
+        </div>
+      </a>
+
+      <!-- Orbital Dynamics -->
+      <a href="/visualizations/orbital-dynamics" class="group">
+        <div class="card overflow-hidden">
+          <div class="aspect-video bg-gradient-to-br from-amber-900 to-slate-900 flex items-center justify-center mb-4 -mx-6 -mt-6">
+            <div class="relative">
+              <div class="w-4 h-4 bg-amber-400 rounded-full"></div>
+              <div class="absolute w-16 h-16 border-2 border-dashed border-blue-400/50 rounded-full -inset-6 animate-spin" style="animation-duration: 4s;"></div>
+              <div class="absolute w-24 h-24 border-2 border-dashed border-green-400/30 rounded-full -inset-10 animate-spin" style="animation-duration: 8s;"></div>
+            </div>
+          </div>
+          <h3 class="font-display font-semibold text-lg mb-2 group-hover:text-sdt-primary-600 transition-colors">
+            Orbital Dynamics
+          </h3>
+          <p class="text-slate-600 text-sm">
+            Watch how the k-law governs orbital velocities from atoms to galaxies.
+          </p>
+        </div>
+      </a>
+
+      <!-- Occlusion Demo -->
+      <a href="/visualizations/occlusion" class="group">
+        <div class="card overflow-hidden">
+          <div class="aspect-video bg-gradient-to-br from-rose-900 to-slate-900 flex items-center justify-center mb-4 -mx-6 -mt-6">
+            <div class="flex items-center gap-4">
+              <div class="w-8 h-8 bg-rose-500 rounded-full"></div>
+              <div class="w-16 h-0.5 bg-gradient-to-r from-rose-500/50 to-blue-500/50"></div>
+              <div class="w-6 h-6 bg-blue-500 rounded-full"></div>
+            </div>
+          </div>
+          <h3 class="font-display font-semibold text-lg mb-2 group-hover:text-sdt-primary-600 transition-colors">
+            Mutual Occlusion
+          </h3>
+          <p class="text-slate-600 text-sm">
+            See how two bodies shadow each other from CMB pressure, creating attractive force.
+          </p>
+        </div>
+      </a>
+
+      <!-- Void Engine -->
+      <a href="/visualizations/void-engine" class="group">
+        <div class="card overflow-hidden">
+          <div class="aspect-video bg-slate-900 flex items-center justify-center mb-4 -mx-6 -mt-6">
+            <div class="grid grid-cols-6 gap-1 opacity-60">
+              {Array.from({length: 36}).map((_, i) => (
+                <div class="w-2 h-2 bg-slate-600 rounded-full" style={`animation: pulse 2s ease-in-out infinite; animation-delay: ${i * 0.05}s`}></div>
+              ))}
+            </div>
+          </div>
+          <h3 class="font-display font-semibold text-lg mb-2 group-hover:text-sdt-primary-600 transition-colors">
+            Spation Medium
+          </h3>
+          <p class="text-slate-600 text-sm">
+            Visualize the incompressible spation lattice and how matter displaces it.
+          </p>
+        </div>
+      </a>
+
+      <!-- Helical Standing Wave -->
+      <a href="/visualizations/helical-wave" class="group">
+        <div class="card overflow-hidden">
+          <div class="aspect-video bg-gradient-to-br from-indigo-900 to-slate-900 flex items-center justify-center mb-4 -mx-6 -mt-6">
+            <svg class="w-32 h-16" viewBox="0 0 100 30">
+              <path d="M0,15 Q25,0 50,15 T100,15" stroke="rgba(99,102,241,0.5)" stroke-width="2" fill="none" />
+              <path d="M0,15 Q25,30 50,15 T100,15" stroke="rgba(99,102,241,0.3)" stroke-width="2" fill="none" />
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-lg mb-2 group-hover:text-sdt-primary-600 transition-colors">
+            Helical Standing Waves
+          </h3>
+          <p class="text-slate-600 text-sm">
+            See how integer wave crests around the electron orbit create quantized energy levels.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Technical note -->
+    <div class="mt-12 p-6 bg-slate-50 rounded-xl">
+      <h3 class="font-display font-semibold mb-2">Technical Note</h3>
+      <p class="text-slate-600 text-sm">
+        These visualizations are built with WebGL and Three.js for high-performance 3D rendering.
+        They run entirely in your browser and require no plugins. For the best experience, use a
+        modern browser with hardware acceleration enabled.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+  }
+</style>

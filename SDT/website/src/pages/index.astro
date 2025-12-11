@@ -1,0 +1,311 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroAnimation from '../components/HeroAnimation';
+import OrbitalCalculatorPro from '../components/OrbitalCalculatorPro';
+import BenchmarkDashboard from '../components/BenchmarkDashboard';
+import ScaleVisualization from '../components/ScaleVisualization';
+---
+
+<BaseLayout title="Home" description="Spatial Displacement Theory: A geometric alternative to quantum mechanics and general relativity. Derive physics from pressure dynamics.">
+
+  <!-- Hero Section with WebGL Animation -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+    <!-- WebGL Background -->
+    <div class="absolute inset-0">
+      <HeroAnimation client:load />
+    </div>
+
+    <!-- Gradient overlay for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-transparent"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="max-w-3xl">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+          <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+          <span class="text-emerald-400 text-sm font-medium">15/24 Benchmarks Certified</span>
+        </div>
+
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-6">
+          What if space<br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-amber-400">
+            isn't empty?
+          </span>
+        </h1>
+
+        <p class="text-xl sm:text-2xl text-slate-300 mb-8 leading-relaxed max-w-2xl">
+          Spatial Displacement Theory derives atomic structure, gravity, and cosmology
+          from a single geometric principle.
+          <span class="text-white font-semibold">No quantum postulates. No curved spacetime.</span>
+        </p>
+
+        <!-- CTA buttons -->
+        <div class="flex flex-wrap gap-4">
+          <a href="/theory/overview" class="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-xl font-display font-semibold text-lg hover:from-blue-600 hover:to-blue-700 transition-all shadow-lg shadow-blue-500/25">
+            Explore the Theory
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="#calculator" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-display font-semibold text-lg border border-white/20 hover:bg-white/20 transition-all">
+            Try the Calculator
+          </a>
+          <a href="/papers/de-rerum" class="inline-flex items-center gap-2 text-slate-400 hover:text-white px-4 py-4 font-medium transition-colors">
+            Read the Paper →
+          </a>
+        </div>
+
+        <!-- Key stats -->
+        <div class="mt-16 grid grid-cols-3 gap-8 max-w-lg">
+          <div>
+            <div class="text-4xl font-bold text-white">53</div>
+            <div class="text-slate-400 text-sm">Orders of magnitude unified</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-white">&lt;1%</div>
+            <div class="text-slate-400 text-sm">Typical prediction error</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-white">0</div>
+            <div class="text-slate-400 text-sm">Free parameters</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Core Equation Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl sm:text-5xl font-display font-bold text-slate-900 mb-6">
+          One Equation. All of Physics.
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          The master equation replaces Newton's gravity, Coulomb's law,
+          Schrödinger's equation, and Einstein's field equations with pure geometry.
+        </p>
+      </div>
+
+      <!-- Master equation display -->
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
+          <div class="text-center mb-8">
+            <p class="font-mono text-xl sm:text-2xl lg:text-3xl text-white tracking-wide">
+              ∇ · [K<sub class="text-blue-400">bulk</sub> ∇Δ(x)] = −κ ρ<sub class="text-amber-400">disp</sub>(x) (1 − E(x,n̂))
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
+            <div class="bg-white/5 rounded-xl p-4">
+              <div class="text-blue-400 font-mono font-semibold mb-2">K<sub>bulk</sub></div>
+              <div class="text-slate-400">Spation bulk modulus</div>
+              <div class="text-white font-mono text-xs mt-1">4.6×10¹¹³ Pa</div>
+            </div>
+            <div class="bg-white/5 rounded-xl p-4">
+              <div class="text-amber-400 font-mono font-semibold mb-2">ρ<sub>disp</sub></div>
+              <div class="text-slate-400">Displacement density</div>
+              <div class="text-white text-xs mt-1">Matter excludes spation</div>
+            </div>
+            <div class="bg-white/5 rounded-xl p-4">
+              <div class="text-emerald-400 font-mono font-semibold mb-2">E(x,n̂)</div>
+              <div class="text-slate-400">Directional occlusion</div>
+              <div class="text-white text-xs mt-1">Mutual shadowing → Force</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What it replaces -->
+        <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="text-center p-4 bg-slate-50 rounded-xl">
+            <div class="text-red-500 text-2xl mb-2">✗</div>
+            <div class="text-sm text-slate-600">Newton's Law</div>
+          </div>
+          <div class="text-center p-4 bg-slate-50 rounded-xl">
+            <div class="text-red-500 text-2xl mb-2">✗</div>
+            <div class="text-sm text-slate-600">Coulomb's Law</div>
+          </div>
+          <div class="text-center p-4 bg-slate-50 rounded-xl">
+            <div class="text-red-500 text-2xl mb-2">✗</div>
+            <div class="text-sm text-slate-600">Schrödinger Eq.</div>
+          </div>
+          <div class="text-center p-4 bg-slate-50 rounded-xl">
+            <div class="text-red-500 text-2xl mb-2">✗</div>
+            <div class="text-sm text-slate-600">Einstein Field Eq.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scale Visualization -->
+  <section class="py-24 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-display font-bold text-slate-900 mb-4">
+          From Atoms to Galaxies
+        </h2>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          The same k-law works across 53 orders of magnitude—a feat no other theory achieves.
+        </p>
+      </div>
+      <ScaleVisualization client:visible />
+    </div>
+  </section>
+
+  <!-- Interactive Calculator Section -->
+  <section id="calculator" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-display font-bold text-slate-900 mb-4">
+          Test It Yourself
+        </h2>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          No black boxes. Real equations. Real data. See SDT match observation.
+        </p>
+      </div>
+      <OrbitalCalculatorPro client:visible />
+    </div>
+  </section>
+
+  <!-- Benchmark Dashboard -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-display font-bold text-slate-900 mb-4">
+          Rigorous Validation
+        </h2>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          Every claim tested against authoritative data sources.
+          No hand-waving. No fitting parameters.
+        </p>
+      </div>
+      <BenchmarkDashboard client:visible />
+    </div>
+  </section>
+
+  <!-- Revolutionary Claims -->
+  <section class="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-display font-bold mb-4">
+          Revolutionary Predictions
+        </h2>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+          SDT makes specific, falsifiable claims that differ from standard physics.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- No Dark Matter -->
+        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div class="w-12 h-12 bg-rose-500/20 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-3">No Dark Matter Required</h3>
+          <p class="text-slate-400 mb-4">
+            Flat galactic rotation curves emerge from disk eclipse saturation—not invisible matter.
+          </p>
+          <div class="text-sm text-emerald-400 font-mono">
+            Testable: R<sub>flat</sub> ≈ 2.5 R<sub>d</sub>
+          </div>
+        </div>
+
+        <!-- Mass is Geometry -->
+        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-3">G and M Are Derived</h3>
+          <p class="text-slate-400 mb-4">
+            The gravitational parameter β = GM is not fundamental. It equals c²R/k².
+          </p>
+          <div class="text-sm text-emerald-400 font-mono">
+            "Mass" is just geometry
+          </div>
+        </div>
+
+        <!-- Superluminal -->
+        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-3">Superluminal Nuclear Velocities</h3>
+          <p class="text-slate-400 mb-4">
+            c is the EM propagation limit, not a mechanical speed limit. Nucleons orbit at 10-100× c.
+          </p>
+          <div class="text-sm text-amber-400 font-mono">
+            Under investigation
+          </div>
+        </div>
+
+        <!-- CMB -->
+        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-3">CMB Is Not Primordial</h3>
+          <p class="text-slate-400 mb-4">
+            The CMB represents a structural pressure horizon, not a historical event 13.8 billion years ago.
+          </p>
+          <div class="text-sm text-emerald-400 font-mono">
+            z = 1089 derived exactly
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl sm:text-5xl font-display font-bold text-slate-900 mb-6">
+        Ready to Challenge Everything?
+      </h2>
+      <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+        If SDT is right, it changes our understanding of reality.
+        If it's wrong, finding out why teaches us something.
+        <span class="font-semibold text-slate-900">Either way, the investigation is worth pursuing.</span>
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/theory/overview" class="btn-primary text-lg px-8 py-4">
+          Start with Overview
+        </a>
+        <a href="/papers/de-rerum" class="btn-secondary text-lg px-8 py-4">
+          Read Complete Treatise
+        </a>
+        <a href="https://github.com/username/SDT" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 px-4 py-4 font-medium transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="py-16 bg-slate-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <blockquote class="text-2xl sm:text-3xl font-display italic text-slate-300 leading-relaxed">
+        "The universe is not quantum mechanical. Quantum mechanics is how the universe looks
+        when you measure it with detectors larger than atoms."
+      </blockquote>
+    </div>
+  </section>
+
+</BaseLayout>

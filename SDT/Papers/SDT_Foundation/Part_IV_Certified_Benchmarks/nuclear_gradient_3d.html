@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDT: Nuclear Pressure Gradient Visualization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0f;
+            color: #eee;
+            overflow: hidden;
+        }
+        #container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        #info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(10, 10, 20, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #00d4ff;
+            max-width: 350px;
+            z-index: 100;
+        }
+        h1 {
+            color: #00d4ff;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        .key-insight {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 3px solid #00ff88;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        .controls {
+            margin-top: 15px;
+        }
+        button {
+            background: #00d4ff;
+            color: #0a0a0f;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        button:hover {
+            background: #00ff88;
+            transform: scale(1.05);
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        select {
+            background: #1a1a2e;
+            color: #eee;
+            border: 1px solid #00d4ff;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 5px 0;
+            width: 100%;
+        }
+        .energy-display {
+            background: rgba(0, 255, 136, 0.1);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #00ff88;
+        }
+        .energy-value {
+            font-size: 1.5em;
+            color: #00ff88;
+            font-weight: bold;
+        }
+        .legend {
+            margin-top: 15px;
+            font-size: 0.85em;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+        #instructions {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(10, 10, 20, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            max-width: 300px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    
+    <div id="info">
+        <h1>Nuclear Pressure Gradient</h1>
+        <p style="font-size: 0.9em; margin-bottom: 10px;">
+            SDT visualization showing where ionization energy resides
+        </p>
+        
+        <div class="key-insight">
+            <strong>Key Insight:</strong> The energy is stored in the <strong>nuclear pressure field geometry</strong>, 
+            not with the electron. The gradient remains after ionization!
+        </div>
+        
+        <div class="controls">
+            <label>Mode:</label>
+            <select id="modeSelect">
+                <option value="single">Single Element</option>
+                <option value="buildup" selected>Build from H → Na</option>
+            </select>
+            
+            <div id="singleMode" style="display:none;">
+                <label>Element:</label>
+                <select id="elementSelect">
+                    <option value="H">Hydrogen (H)</option>
+                    <option value="He">Helium (He)</option>
+                    <option value="Li">Lithium (Li)</option>
+                    <option value="Na">Sodium (Na)</option>
+                    <option value="K">Potassium (K)</option>
+                </select>
+            </div>
+            
+            <div id="buildupMode">
+                <div class="energy-display">
+                    <div style="font-size: 0.85em; margin-bottom: 5px;">Current Element:</div>
+                    <div id="currentElement">H (Z=1)</div>
+                    <div style="font-size: 0.85em; margin-top: 10px;">Nuclear Field Strength:</div>
+                    <div class="energy-value" id="fieldStrength">Z = 1</div>
+                </div>
+                
+                <button id="buildStepBtn">▶ Add Next Element</button>
+                <button id="buildAutoBtn">⏩ Auto Build</button>
+                <button id="buildResetBtn">⟲ Reset to H</button>
+            </div>
+            
+            <div id="ionizationMode" style="display:none; margin-top:15px;">
+                <div class="energy-display">
+                    <div style="font-size: 0.85em; margin-bottom: 5px;">Selected Shell:</div>
+                    <div id="shellInfo">-</div>
+                    <div class="energy-value" id="energyValue">- eV</div>
+                </div>
+                
+                <button id="ionizeBtn">⚡ Ionize</button>
+                <button id="recombineBtn" disabled>↓ Recombine</button>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff4444;"></div>
+                <span>Nucleus (pressure source)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(to right, #0066ff, #ff6600);"></div>
+                <span>Pressure gradient (energy well)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #00ff88;"></div>
+                <span>Electron shells</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="instructions">
+        <strong>Controls:</strong><br>
+        • Rotate: Left mouse drag<br>
+        • Zoom: Mouse wheel<br>
+        • Pan: Right mouse drag<br>
+        <br>
+        <strong>Demo:</strong><br>
+        Click electrons to select, then ionize/recombine to see energy conservation.
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        // SDT Constants and Data
+        const SDT = {
+            alpha_inv: 137.036,
+            Ry: 13.605693,
+            c: 299792458,
+            
+            // Element data (from ATOMICUS)
+            // Element data (from ATOMICUS) - build sequence
+            buildSequence: ['H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na'],
+            
+            elements: {
+                H: {
+                    name: "Hydrogen",
+                    Z: 1,
+                    levels: [
+                        {shell: "1s¹", E_i: 13.5984, koppa: 137.04, n: 1}
+                    ]
+                },
+                He: {
+                    name: "Helium",
+                    Z: 2,
+                    levels: [
+                        {shell: "1s²", E_i: 24.5874, koppa: 101.94, n: 1}
+                    ]
+                },
+                Li: {
+                    name: "Lithium",
+                    Z: 3,
+                    levels: [
+                        {shell: "2s¹", E_i: 5.3917, koppa: 217.69, n: 2},
+                        {shell: "1s²", E_i: 75.64, koppa: 58.1, n: 1}
+                    ]
+                },
+                Be: {
+                    name: "Beryllium",
+                    Z: 4,
+                    levels: [
+                        {shell: "2s²", E_i: 9.3227, koppa: 165.55, n: 2},
+                        {shell: "1s²", E_i: 153.89, koppa: 40.8, n: 1}
+                    ]
+                },
+                B: {
+                    name: "Boron",
+                    Z: 5,
+                    levels: [
+                        {shell: "2p¹", E_i: 8.2980, koppa: 175.47, n: 2},
+                        {shell: "1s²", E_i: 259.37, koppa: 31.4, n: 1}
+                    ]
+                },
+                C: {
+                    name: "Carbon",
+                    Z: 6,
+                    levels: [
+                        {shell: "2p²", E_i: 11.2603, koppa: 150.63, n: 2},
+                        {shell: "1s²", E_i: 392.1, koppa: 25.5, n: 1}
+                    ]
+                },
+                N: {
+                    name: "Nitrogen",
+                    Z: 7,
+                    levels: [
+                        {shell: "2p³", E_i: 14.5341, koppa: 132.59, n: 2},
+                        {shell: "1s²", E_i: 552.1, koppa: 21.5, n: 1}
+                    ]
+                },
+                O: {
+                    name: "Oxygen",
+                    Z: 8,
+                    levels: [
+                        {shell: "2p⁴", E_i: 13.6181, koppa: 136.97, n: 2},
+                        {shell: "1s²", E_i: 739.3, koppa: 18.6, n: 1}
+                    ]
+                },
+                F: {
+                    name: "Fluorine",
+                    Z: 9,
+                    levels: [
+                        {shell: "2p⁵", E_i: 17.4228, koppa: 121.10, n: 2},
+                        {shell: "1s²", E_i: 953.9, koppa: 16.4, n: 1}
+                    ]
+                },
+                Ne: {
+                    name: "Neon",
+                    Z: 10,
+                    levels: [
+                        {shell: "2p⁶", E_i: 21.5645, koppa: 108.85, n: 2},
+                        {shell: "1s²", E_i: 1195.8, koppa: 14.6, n: 1}
+                    ]
+                },
+                Na: {
+                    name: "Sodium",
+                    Z: 11,
+                    levels: [
+                        {shell: "3s¹", E_i: 5.1391, koppa: 222.97, n: 3},
+                        {shell: "2p⁶", E_i: 47.2864, koppa: 73.5, n: 2},
+                        {shell: "2s²", E_i: 172.18, koppa: 38.3, n: 2},
+                        {shell: "1s²", E_i: 1465.12, koppa: 13.2, n: 1}
+                    ]
+                },
+            
+            // Calculate phase space volume (ϟ²)
+            phaseSpace: (koppa) => koppa * koppa,
+            
+            // Map energy to visual radius (logarithmic for better display)
+            energyToRadius: (E_i, maxE) => {
+                const minR = 1;
+                const maxR = 15;
+                // Lower energy = larger radius (further from nucleus)
+                const ratio = Math.log(maxE / E_i) / Math.log(maxE / 1);
+                return minR + (maxR - minR) * ratio;
+            }
+        };
+
+        // Scene setup
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x0a0a0f);
+        scene.fog = new THREE.Fog(0x0a0a0f, 20, 50);
+
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(15, 10, 15);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        document.getElementById('container').appendChild(renderer.domElement);
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0x00d4ff, 1, 100);
+        pointLight.position.set(10, 10, 10);
+        scene.add(pointLight);
+
+        // Nucleus (red sphere at origin)
+        const nucleusGeo = new THREE.SphereGeometry(0.3, 32, 32);
+        const nucleusMat = new THREE.MeshPhongMaterial({ 
+            color: 0xff4444,
+            emissive: 0xff2222,
+            emissiveIntensity: 0.5
+        });
+        const nucleus = new THREE.Mesh(nucleusGeo, nucleusMat);
+        scene.add(nucleus);
+
+        // Energy gradient surface (pressure well)
+        function createGradientSurface(maxRadius) {
+            const segments = 64;
+            const geometry = new THREE.BufferGeometry();
+            const vertices = [];
+            const colors = [];
+            
+            // Create revolution surface
+            for (let i = 0; i <= segments; i++) {
+                const r = 0.3 + (maxRadius - 0.3) * (i / segments);
+                const energy = 1500 * Math.pow(0.3 / r, 2); // Simplified potential
+                const y = -energy / 150; // Scale for visibility
+                
+                for (let j = 0; j <= segments; j++) {
+                    const theta = (j / segments) * Math.PI * 2;
+                    const x = r * Math.cos(theta);
+                    const z = r * Math.sin(theta);
+                    
+                    vertices.push(x, y, z);
+                    
+                    // Color gradient (blue=deep, red=shallow)
+                    const t = i / segments;
+                    colors.push(
+                        t * 0.8 + 0.2,  // R
+                        0.4,             // G
+                        (1 - t) * 0.8 + 0.2  // B
+                    );
+                }
+            }
+            
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+            
+            // Create indices
+            const indices = [];
+            for (let i = 0; i < segments; i++) {
+                for (let j = 0; j < segments; j++) {
+                    const a = i * (segments + 1) + j;
+                    const b = a + segments + 1;
+                    indices.push(a, b, a + 1);
+                    indices.push(b, b + 1, a + 1);
+                }
+            }
+            geometry.setIndex(indices);
+            geometry.computeVertexNormals();
+            
+            const material = new THREE.MeshPhongMaterial({
+                vertexColors: true,
+                side: THREE.DoubleSide,
+                transparent: true,
+                opacity: 0.7,
+                shininess: 30
+            });
+            
+            return new THREE.Mesh(geometry, material);
+        }
+
+        let gradientSurface = createGradientSurface(20);
+        scene.add(gradientSurface);
+
+        // Grid helper
+        const gridHelper = new THREE.GridHelper(30, 30, 0x444444, 0x222222);
+        gridHelper.position.y = -10;
+        scene.add(gridHelper);
+
+        // Electron shells
+        let electrons = [];
+        let selectedElectron = null;
+        let currentElement = 'Na';
+
+        function createElectrons(elementKey) {
+            // Remove old electrons
+            electrons.forEach(e => scene.remove(e.mesh));
+            electrons = [];
+            
+            const element = SDT.elements[elementKey];
+            const maxE = Math.max(...element.levels.map(l => l.E_i));
+            
+            element.levels.forEach((level, idx) => {
+                const radius = SDT.energyToRadius(level.E_i, maxE);
+                const geo = new THREE.SphereGeometry(0.2, 16, 16);
+                const mat = new THREE.MeshPhongMaterial({
+                    color: idx === 0 ? 0x00ff88 : 0x44ffaa,
+                    emissive: 0x00ff44,
+                    emissiveIntensity: 0.3
+                });
+                const mesh = new THREE.Mesh(geo, mat);
+                mesh.position.set(radius, 0, 0);
+                scene.add(mesh);
+                
+                electrons.push({
+                    mesh,
+                    level,
+                    originalRadius: radius,
+                    ionized: false
+                });
+            });
+        }
+
+        createElectrons(currentElement);
+
+        // UI Interaction
+        document.getElementById('elementSelect').addEventListener('change', (e) => {
+            currentElement = e.target.value;
+            createElectrons(currentElement);
+            selectedElectron = electrons[0];
+            updateEnergyDisplay();
+        });
+
+        document.getElementById('ionizeBtn').addEventListener('click', () => {
+            if (selectedElectron && !selectedElectron.ionized) {
+                // Animate electron leaving
+                const targetR = 25;
+                animateElectron(selectedElectron.mesh, targetR, () => {
+                    selectedElectron.ionized = true;
+                    document.getElementById('recombineBtn').disabled = false;
+                    document.getElementById('ionizeBtn').disabled = true;
+                });
+            }
+        });
+
+        document.getElementById('recombineBtn').addEventListener('click', () => {
+            if (selectedElectron && selectedElectron.ionized) {
+                // Animate electron returning
+                animateElectron(selectedElectron.mesh, selectedElectron.originalRadius, () => {
+                    selectedElectron.ionized = false;
+                    document.getElementById('recombineBtn').disabled = true;
+                    document.getElementById('ionizeBtn').disabled = false;
+                });
+            }
+        });
+
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            createElectrons(currentElement);
+            selectedElectron = electrons[0];
+            updateEnergyDisplay();
+            document.getElementById('recombineBtn').disabled = true;
+            document.getElementById('ionizeBtn').disabled = false;
+        });
+
+        function animateElectron(mesh, targetRadius, callback) {
+            const startRadius = mesh.position.length();
+            const duration = 1000;
+            const startTime = Date.now();
+            
+            function update() {
+                const elapsed = Date.now() - startTime;
+                const t = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - t, 3);
+                const currentR = startRadius + (targetRadius - startRadius) * eased;
+                
+                mesh.position.setLength(currentR);
+                
+                if (t < 1) {
+                    requestAnimationFrame(update);
+                } else if (callback) {
+                    callback();
+                }
+            }
+            update();
+        }
+
+        function updateEnergyDisplay() {
+            if (selectedElectron) {
+                document.getElementById('shellInfo').textContent = selectedElectron.level.shell;
+                document.getElementById('energyValue').textContent = 
+                    selectedElectron.level.E_i.toFixed(2) + ' eV';
+            }
+        }
+
+        // Click to select electron
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+
+        window.addEventListener('click', (event) => {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            
+            raycaster.setFromCamera(mouse, camera);
+            const electronMeshes = electrons.map(e => e.mesh);
+            const intersects = raycaster.intersectObjects(electronMeshes);
+            
+            if (intersects.length > 0) {
+                // Deselect previous
+                if (selectedElectron) {
+                    selectedElectron.mesh.material.emissiveIntensity = 0.3;
+                }
+                // Select new
+                selectedElectron = electrons.find(e => e.mesh === intersects[0].object);
+                selectedElectron.mesh.material.emissiveIntensity = 0.8;
+                updateEnergyDisplay();
+                
+                // Update button states
+                document.getElementById('ionizeBtn').disabled = selectedElectron.ionized;
+                document.getElementById('recombineBtn').disabled = !selectedElectron.ionized;
+            }
+        });
+
+        // Select first electron by default
+        selectedElectron = electrons[0];
+        selectedElectron.mesh.material.emissiveIntensity = 0.8;
+        updateEnergyDisplay();
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            
+            // Rotate nucleus slightly
+            nucleus.rotation.y += 0.01;
+            
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>

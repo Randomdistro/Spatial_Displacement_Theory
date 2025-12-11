@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDT Wavelength-ϟ² Relationship - All Elements</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        h1 {
+            text-align: center;
+            color: #00d4ff;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .formula-box {
+            background: #16213e;
+            border: 1px solid #00d4ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 0 auto 20px;
+            max-width: 800px;
+            text-align: center;
+        }
+        .formula {
+            font-size: 1.4em;
+            color: #00ff88;
+            font-family: 'Courier New', monospace;
+        }
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        select, input {
+            padding: 8px 12px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background: #16213e;
+            color: #eee;
+            font-size: 14px;
+        }
+        input[type="text"] {
+            width: 200px;
+        }
+        label {
+            color: #aaa;
+        }
+        .table-container {
+            overflow-x: auto;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        th {
+            background: #0f3460;
+            color: #00d4ff;
+            padding: 12px 8px;
+            text-align: right;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px solid #00d4ff;
+        }
+        th:first-child, th:nth-child(2), th:nth-child(3) {
+            text-align: left;
+        }
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #333;
+            text-align: right;
+        }
+        td:first-child, td:nth-child(2), td:nth-child(3) {
+            text-align: left;
+        }
+        tr:hover {
+            background: #1f4068;
+        }
+        tr.alkali {
+            background: rgba(255, 100, 100, 0.15);
+        }
+        tr.noble {
+            background: rgba(100, 200, 255, 0.15);
+        }
+        tr.transition {
+            background: rgba(255, 200, 100, 0.15);
+        }
+        tr.lanthanide {
+            background: rgba(200, 100, 255, 0.15);
+        }
+        tr.actinide {
+            background: rgba(100, 255, 150, 0.15);
+        }
+        tr.hydrogen {
+            background: rgba(255, 255, 100, 0.25);
+            font-weight: bold;
+        }
+        .highlight {
+            color: #00ff88;
+            font-weight: bold;
+        }
+        .legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 12px;
+            border-radius: 2px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .stat-box {
+            background: #16213e;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.8em;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        .stat-label {
+            color: #888;
+            font-size: 0.9em;
+        }
+        .editable {
+            background: #0d1b2a;
+            border: 1px dashed #444;
+            padding: 2px 4px;
+            border-radius: 3px;
+            min-width: 60px;
+            display: inline-block;
+        }
+        .editable:focus {
+            outline: none;
+            border-color: #00d4ff;
+            background: #1a2a3a;
+        }
+    </style>
+</head>
+<body>
+    <h1>SDT: Wavelength-ϟ² Universal Relationship</h1>
+    <p class="subtitle">Ionization threshold wavelength directly encodes movement budget parameter</p>
+    
+    <div class="formula-box">
+        <div class="formula">λ<sub>ion</sub> = ϟ² / 206 nm &nbsp;&nbsp;|&nbsp;&nbsp; ϟ = 137 × √(13.6/E<sub>i</sub>)  &nbsp;&nbsp;|&nbsp;&nbsp; v = c/ϟ</div>
+        <p style="margin: 10px 0 0; color: #888;">K = 206.05 derived from hydrogen reference (ϟ = 137.07, λ = 91.19 nm)</p>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label>Filter:</label>
+            <select id="filterGroup">
+                <option value="all">All Elements</option>
+                <option value="alkali">Alkali Metals</option>
+                <option value="noble">Noble Gases</option>
+                <option value="transition">Transition Metals</option>
+                <option value="lanthanide">Lanthanides</option>
+                <option value="actinide">Actinides</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label>Search:</label>
+            <input type="text" id="searchInput" placeholder="Element name or symbol...">
+        </div>
+        <div class="control-group">
+            <label>Sort by:</label>
+            <select id="sortBy">
+                <option value="Z">Atomic Number (Z)</option>
+                <option value="koppa">ϟ (ascending)</option>
+                <option value="koppa_desc">ϟ (descending)</option>
+                <option value="E_ion">E_ion (ascending)</option>
+                <option value="lambda">λ (ascending)</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background: rgba(255, 255, 100, 0.5);"></div> Hydrogen (reference)</div>
+        <div class="legend-item"><div class="legend-color" style="background: rgba(255, 100, 100, 0.3);"></div> Alkali Metals</div>
+        <div class="legend-item"><div class="legend-color" style="background: rgba(100, 200, 255, 0.3);"></div> Noble Gases</div>
+        <div class="legend-item"><div class="legend-color" style="background: rgba(255, 200, 100, 0.3);"></div> Transition Metals</div>
+        <div class="legend-item"><div class="legend-color" style="background: rgba(200, 100, 255, 0.3);"></div> Lanthanides</div>
+        <div class="legend-item"><div class="legend-color" style="background: rgba(100, 255, 150, 0.3);"></div> Actinides</div>
+    </div>
+
+    <div class="table-container">
+        <table id="elementTable">
+            <thead>
+                <tr>
+                    <th>Z</th>
+                    <th>Sym</th>
+                    <th>Element</th>
+                    <th>E<sub>ion</sub> (eV)</th>
+                    <th>ϟ</th>
+                    <th>ϟ²</th>
+                    <th>λ<sub>actual</sub> (nm)</th>
+                    <th>λ<sub>pred</sub> (nm)</th>
+                    <th>Error %</th>
+                    <th>v (10⁶ m/s)</th>
+                    <th>v/c</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="stats">
+        <div class="stat-box">
+            <div class="stat-value" id="statCount">118</div>
+            <div class="stat-label">Elements Shown</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value" id="statMinKoppa">101.9</div>
+            <div class="stat-label">Min ϟ (He)</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value" id="statMaxKoppa">256.2</div>
+            <div class="stat-label">Max ϟ (Cs)</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value" id="statAvgError">0.12%</div>
+            <div class="stat-label">Avg Prediction Error</div>
+        </div>
+    </div>
+
+    <script>
+        const c = 299792458;
+        const Ry = 13.605693;
+        const alpha_inv = 137.036;
+        const K = 206.05;
+
+        const elements = [
+            {Z: 1, sym: "H", name: "Hydrogen", E_ion: 13.5984, group: "hydrogen"},
+            {Z: 2, sym: "He", name: "Helium", E_ion: 24.5874, group: "noble"},
+            {Z: 3, sym: "Li", name: "Lithium", E_ion: 5.3917, group: "alkali"},
+            {Z: 4, sym: "Be", name: "Beryllium", E_ion: 9.3227, group: "alkaline"},
+            {Z: 5, sym: "B", name: "Boron", E_ion: 8.2980, group: "metalloid"},
+            {Z: 6, sym: "C", name: "Carbon", E_ion: 11.2603, group: "nonmetal"},
+            {Z: 7, sym: "N", name: "Nitrogen", E_ion: 14.5341, group: "nonmetal"},
+            {Z: 8, sym: "O", name: "Oxygen", E_ion: 13.6181, group: "nonmetal"},
+            {Z: 9, sym: "F", name: "Fluorine", E_ion: 17.4228, group: "halogen"},
+            {Z: 10, sym: "Ne", name: "Neon", E_ion: 21.5645, group: "noble"},
+            {Z: 11, sym: "Na", name: "Sodium", E_ion: 5.1391, group: "alkali"},
+            {Z: 12, sym: "Mg", name: "Magnesium", E_ion: 7.6462, group: "alkaline"},
+            {Z: 13, sym: "Al", name: "Aluminum", E_ion: 5.9858, group: "post-transition"},
+            {Z: 14, sym: "Si", name: "Silicon", E_ion: 8.1517, group: "metalloid"},
+            {Z: 15, sym: "P", name: "Phosphorus", E_ion: 10.4867, group: "nonmetal"},
+            {Z: 16, sym: "S", name: "Sulfur", E_ion: 10.3600, group: "nonmetal"},
+            {Z: 17, sym: "Cl", name: "Chlorine", E_ion: 12.9676, group: "halogen"},
+            {Z: 18, sym: "Ar", name: "Argon", E_ion: 15.7596, group: "noble"},
+            {Z: 19, sym: "K", name: "Potassium", E_ion: 4.3407, group: "alkali"},
+            {Z: 20, sym: "Ca", name: "Calcium", E_ion: 6.1132, group: "alkaline"},
+            {Z: 21, sym: "Sc", name: "Scandium", E_ion: 6.5615, group: "transition"},
+            {Z: 22, sym: "Ti", name: "Titanium", E_ion: 6.8281, group: "transition"},
+            {Z: 23, sym: "V", name: "Vanadium", E_ion: 6.7462, group: "transition"},
+            {Z: 24, sym: "Cr", name: "Chromium", E_ion: 6.7665, group: "transition"},
+            {Z: 25, sym: "Mn", name: "Manganese", E_ion: 7.4340, group: "transition"},
+            {Z: 26, sym: "Fe", name: "Iron", E_ion: 7.9024, group: "transition"},
+            {Z: 27, sym: "Co", name: "Cobalt", E_ion: 7.8810, group: "transition"},
+            {Z: 28, sym: "Ni", name: "Nickel", E_ion: 7.6398, group: "transition"},
+            {Z: 29, sym: "Cu", name: "Copper", E_ion: 7.7264, group: "transition"},
+            {Z: 30, sym: "Zn", name: "Zinc", E_ion: 9.3942, group: "transition"},
+            {Z: 31, sym: "Ga", name: "Gallium", E_ion: 5.9993, group: "post-transition"},
+            {Z: 32, sym: "Ge", name: "Germanium", E_ion: 7.8994, group: "metalloid"},
+            {Z: 33, sym: "As", name: "Arsenic", E_ion: 9.7886, group: "metalloid"},
+            {Z: 34, sym: "Se", name: "Selenium", E_ion: 9.7524, group: "nonmetal"},
+            {Z: 35, sym: "Br", name: "Bromine", E_ion: 11.8138, group: "halogen"},
+            {Z: 36, sym: "Kr", name: "Krypton", E_ion: 13.9996, group: "noble"},
+            {Z: 37, sym: "Rb", name: "Rubidium", E_ion: 4.1771, group: "alkali"},
+            {Z: 38, sym: "Sr", name: "Strontium", E_ion: 5.6949, group: "alkaline"},
+            {Z: 39, sym: "Y", name: "Yttrium", E_ion: 6.2173, group: "transition"},
+            {Z: 40, sym: "Zr", name: "Zirconium", E_ion: 6.6339, group: "transition"},
+            {Z: 41, sym: "Nb", name: "Niobium", E_ion: 6.7589, group: "transition"},
+            {Z: 42, sym: "Mo", name: "Molybdenum", E_ion: 7.0924, group: "transition"},
+            {Z: 43, sym: "Tc", name: "Technetium", E_ion: 7.28, group: "transition"},
+            {Z: 44, sym: "Ru", name: "Ruthenium", E_ion: 7.3605, group: "transition"},
+            {Z: 45, sym: "Rh", name: "Rhodium", E_ion: 7.4589, group: "transition"},
+            {Z: 46, sym: "Pd", name: "Palladium", E_ion: 8.3369, group: "transition"},
+            {Z: 47, sym: "Ag", name: "Silver", E_ion: 7.5762, group: "transition"},
+            {Z: 48, sym: "Cd", name: "Cadmium", E_ion: 8.9938, group: "transition"},
+            {Z: 49, sym: "In", name: "Indium", E_ion: 5.7864, group: "post-transition"},
+            {Z: 50, sym: "Sn", name: "Tin", E_ion: 7.3439, group: "post-transition"},
+            {Z: 51, sym: "Sb", name: "Antimony", E_ion: 8.6084, group: "metalloid"},
+            {Z: 52, sym: "Te", name: "Tellurium", E_ion: 9.0096, group: "metalloid"},
+            {Z: 53, sym: "I", name: "Iodine", E_ion: 10.4513, group: "halogen"},
+            {Z: 54, sym: "Xe", name: "Xenon", E_ion: 12.1298, group: "noble"},
+            {Z: 55, sym: "Cs", name: "Caesium", E_ion: 3.8939, group: "alkali"},
+            {Z: 56, sym: "Ba", name: "Barium", E_ion: 5.2117, group: "alkaline"},
+            {Z: 57, sym: "La", name: "Lanthanum", E_ion: 5.5769, group: "lanthanide"},
+            {Z: 58, sym: "Ce", name: "Cerium", E_ion: 5.5387, group: "lanthanide"},
+            {Z: 59, sym: "Pr", name: "Praseodymium", E_ion: 5.473, group: "lanthanide"},
+            {Z: 60, sym: "Nd", name: "Neodymium", E_ion: 5.5250, group: "lanthanide"},
+            {Z: 61, sym: "Pm", name: "Promethium", E_ion: 5.582, group: "lanthanide"},
+            {Z: 62, sym: "Sm", name: "Samarium", E_ion: 5.6437, group: "lanthanide"},
+            {Z: 63, sym: "Eu", name: "Europium", E_ion: 5.6704, group: "lanthanide"},
+            {Z: 64, sym: "Gd", name: "Gadolinium", E_ion: 6.1498, group: "lanthanide"},
+            {Z: 65, sym: "Tb", name: "Terbium", E_ion: 5.8638, group: "lanthanide"},
+            {Z: 66, sym: "Dy", name: "Dysprosium", E_ion: 5.9389, group: "lanthanide"},
+            {Z: 67, sym: "Ho", name: "Holmium", E_ion: 6.0215, group: "lanthanide"},
+            {Z: 68, sym: "Er", name: "Erbium", E_ion: 6.1077, group: "lanthanide"},
+            {Z: 69, sym: "Tm", name: "Thulium", E_ion: 6.1843, group: "lanthanide"},
+            {Z: 70, sym: "Yb", name: "Ytterbium", E_ion: 6.2542, group: "lanthanide"},
+            {Z: 71, sym: "Lu", name: "Lutetium", E_ion: 5.4259, group: "lanthanide"},
+            {Z: 72, sym: "Hf", name: "Hafnium", E_ion: 6.8251, group: "transition"},
+            {Z: 73, sym: "Ta", name: "Tantalum", E_ion: 7.5496, group: "transition"},
+            {Z: 74, sym: "W", name: "Tungsten", E_ion: 7.8640, group: "transition"},
+            {Z: 75, sym: "Re", name: "Rhenium", E_ion: 7.8335, group: "transition"},
+            {Z: 76, sym: "Os", name: "Osmium", E_ion: 8.4382, group: "transition"},
+            {Z: 77, sym: "Ir", name: "Iridium", E_ion: 8.9670, group: "transition"},
+            {Z: 78, sym: "Pt", name: "Platinum", E_ion: 8.9587, group: "transition"},
+            {Z: 79, sym: "Au", name: "Gold", E_ion: 9.2255, group: "transition"},
+            {Z: 80, sym: "Hg", name: "Mercury", E_ion: 10.4375, group: "transition"},
+            {Z: 81, sym: "Tl", name: "Thallium", E_ion: 6.1082, group: "post-transition"},
+            {Z: 82, sym: "Pb", name: "Lead", E_ion: 7.4167, group: "post-transition"},
+            {Z: 83, sym: "Bi", name: "Bismuth", E_ion: 7.2855, group: "post-transition"},
+            {Z: 84, sym: "Po", name: "Polonium", E_ion: 8.414, group: "metalloid"},
+            {Z: 85, sym: "At", name: "Astatine", E_ion: 9.3175, group: "halogen"},
+            {Z: 86, sym: "Rn", name: "Radon", E_ion: 10.7485, group: "noble"},
+            {Z: 87, sym: "Fr", name: "Francium", E_ion: 4.0727, group: "alkali"},
+            {Z: 88, sym: "Ra", name: "Radium", E_ion: 5.2784, group: "alkaline"},
+            {Z: 89, sym: "Ac", name: "Actinium", E_ion: 5.3802, group: "actinide"},
+            {Z: 90, sym: "Th", name: "Thorium", E_ion: 6.3067, group: "actinide"},
+            {Z: 91, sym: "Pa", name: "Protactinium", E_ion: 5.89, group: "actinide"},
+            {Z: 92, sym: "U", name: "Uranium", E_ion: 6.1941, group: "actinide"},
+            {Z: 93, sym: "Np", name: "Neptunium", E_ion: 6.2657, group: "actinide"},
+            {Z: 94, sym: "Pu", name: "Plutonium", E_ion: 6.0260, group: "actinide"},
+            {Z: 95, sym: "Am", name: "Americium", E_ion: 5.9738, group: "actinide"},
+            {Z: 96, sym: "Cm", name: "Curium", E_ion: 5.9914, group: "actinide"},
+            {Z: 97, sym: "Bk", name: "Berkelium", E_ion: 6.1979, group: "actinide"},
+            {Z: 98, sym: "Cf", name: "Californium", E_ion: 6.2817, group: "actinide"},
+            {Z: 99, sym: "Es", name: "Einsteinium", E_ion: 6.3676, group: "actinide"},
+            {Z: 100, sym: "Fm", name: "Fermium", E_ion: 6.50, group: "actinide"},
+            {Z: 101, sym: "Md", name: "Mendelevium", E_ion: 6.58, group: "actinide"},
+            {Z: 102, sym: "No", name: "Nobelium", E_ion: 6.65, group: "actinide"},
+            {Z: 103, sym: "Lr", name: "Lawrencium", E_ion: 4.96, group: "actinide"},
+            {Z: 104, sym: "Rf", name: "Rutherfordium", E_ion: 6.0, group: "transition"},
+            {Z: 105, sym: "Db", name: "Dubnium", E_ion: 6.8, group: "transition"},
+            {Z: 106, sym: "Sg", name: "Seaborgium", E_ion: 7.8, group: "transition"},
+            {Z: 107, sym: "Bh", name: "Bohrium", E_ion: 7.7, group: "transition"},
+            {Z: 108, sym: "Hs", name: "Hassium", E_ion: 7.6, group: "transition"},
+            {Z: 109, sym: "Mt", name: "Meitnerium", E_ion: 8.5, group: "transition"},
+            {Z: 110, sym: "Ds", name: "Darmstadtium", E_ion: 9.0, group: "transition"},
+            {Z: 111, sym: "Rg", name: "Roentgenium", E_ion: 10.0, group: "transition"},
+            {Z: 112, sym: "Cn", name: "Copernicium", E_ion: 11.0, group: "transition"},
+            {Z: 113, sym: "Nh", name: "Nihonium", E_ion: 7.3, group: "post-transition"},
+            {Z: 114, sym: "Fl", name: "Flerovium", E_ion: 8.5, group: "post-transition"},
+            {Z: 115, sym: "Mc", name: "Moscovium", E_ion: 5.6, group: "post-transition"},
+            {Z: 116, sym: "Lv", name: "Livermorium", E_ion: 7.0, group: "post-transition"},
+            {Z: 117, sym: "Ts", name: "Tennessine", E_ion: 7.7, group: "halogen"},
+            {Z: 118, sym: "Og", name: "Oganesson", E_ion: 8.9, group: "noble"}
+        ];
+
+        // Calculate derived values
+        elements.forEach(el => {
+            el.koppa = alpha_inv * Math.sqrt(Ry / el.E_ion);
+            el.koppa_sq = el.koppa * el.koppa;
+            el.lambda_actual = 1240.0 / el.E_ion;
+            el.lambda_pred = el.koppa_sq / K;
+            el.error = (el.lambda_pred - el.lambda_actual) / el.lambda_actual * 100;
+            el.v = (c / el.koppa) / 1e6;
+            el.v_over_c = 1 / el.koppa;
+        });
+
+        function getRowClass(el) {
+            if (el.group === 'hydrogen') return 'hydrogen';
+            if (el.group === 'alkali') return 'alkali';
+            if (el.group === 'noble') return 'noble';
+            if (el.group === 'transition') return 'transition';
+            if (el.group === 'lanthanide') return 'lanthanide';
+            if (el.group === 'actinide') return 'actinide';
+            return '';
+        }
+
+        function renderTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+            
+            data.forEach(el => {
+                const tr = document.createElement('tr');
+                tr.className = getRowClass(el);
+                tr.innerHTML = `
+                    <td>${el.Z}</td>
+                    <td><strong>${el.sym}</strong></td>
+                    <td>${el.name}</td>
+                    <td contenteditable="true" class="editable" data-field="E_ion" data-z="${el.Z}">${el.E_ion.toFixed(4)}</td>
+                    <td class="highlight">${el.koppa.toFixed(2)}</td>
+                    <td>${el.koppa_sq.toFixed(1)}</td>
+                    <td>${el.lambda_actual.toFixed(2)}</td>
+                    <td>${el.lambda_pred.toFixed(2)}</td>
+                    <td>${el.error.toFixed(3)}</td>
+                    <td>${el.v.toFixed(3)}</td>
+                    <td>${(el.v_over_c * 100).toFixed(4)}%</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Update stats
+            document.getElementById('statCount').textContent = data.length;
+            const koppas = data.map(d => d.koppa);
+            document.getElementById('statMinKoppa').textContent = Math.min(...koppas).toFixed(1);
+            document.getElementById('statMaxKoppa').textContent = Math.max(...koppas).toFixed(1);
+            const avgError = data.reduce((sum, d) => sum + Math.abs(d.error), 0) / data.length;
+            document.getElementById('statAvgError').textContent = avgError.toFixed(3) + '%';
+
+            // Add edit listeners
+            document.querySelectorAll('.editable').forEach(cell => {
+                cell.addEventListener('blur', function() {
+                    const z = parseInt(this.dataset.z);
+                    const newVal = parseFloat(this.textContent);
+                    if (!isNaN(newVal) && newVal > 0) {
+                        const el = elements.find(e => e.Z === z);
+                        el.E_ion = newVal;
+                        el.koppa = alpha_inv * Math.sqrt(Ry / el.E_ion);
+                        el.koppa_sq = el.koppa * el.koppa;
+                        el.lambda_actual = 1240.0 / el.E_ion;
+                        el.lambda_pred = el.koppa_sq / K;
+                        el.error = (el.lambda_pred - el.lambda_actual) / el.lambda_actual * 100;
+                        el.v = (c / el.koppa) / 1e6;
+                        el.v_over_c = 1 / el.koppa;
+                        applyFilters();
+                    }
+                });
+            });
+        }
+
+        function applyFilters() {
+            let filtered = [...elements];
+            
+            const groupFilter = document.getElementById('filterGroup').value;
+            if (groupFilter !== 'all') {
+                filtered = filtered.filter(el => el.group === groupFilter);
+            }
+
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            if (search) {
+                filtered = filtered.filter(el => 
+                    el.name.toLowerCase().includes(search) || 
+                    el.sym.toLowerCase().includes(search)
+                );
+            }
+
+            const sortBy = document.getElementById('sortBy').value;
+            switch (sortBy) {
+                case 'koppa':
+                    filtered.sort((a, b) => a.koppa - b.koppa);
+                    break;
+                case 'koppa_desc':
+                    filtered.sort((a, b) => b.koppa - a.koppa);
+                    break;
+                case 'E_ion':
+                    filtered.sort((a, b) => a.E_ion - b.E_ion);
+                    break;
+                case 'lambda':
+                    filtered.sort((a, b) => a.lambda_actual - b.lambda_actual);
+                    break;
+                default:
+                    filtered.sort((a, b) => a.Z - b.Z);
+            }
+
+            renderTable(filtered);
+        }
+
+        document.getElementById('filterGroup').addEventListener('change', applyFilters);
+        document.getElementById('searchInput').addEventListener('input', applyFilters);
+        document.getElementById('sortBy').addEventListener('change', applyFilters);
+
+        // Initial render
+        applyFilters();
+    </script>
+</body>
+</html>

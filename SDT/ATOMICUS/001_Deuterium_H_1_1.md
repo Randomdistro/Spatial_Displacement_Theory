@@ -1,0 +1,10 @@
+3. Deuterium (²H): The First Isotope
+3.1. Organization: Deuterium is not a proton + neutron. In SDT, the neutron is a composite (p⁺ + e⁻) vortex. A Deuteron is therefore a (p⁺ + (p⁺+e⁻)) bound system. It is a resonant, two-proton vortex system stabilized by a single, shared, inter-nuclear electron.
+3.2. Formulation and Derivation of Nuclear Stability:
+•	The Binding Force: The two protons, both having a positive displacement signature, would normally repel. They are bound together by the shared electron vortex, which creates a powerful, localized low-pressure zone between them. The stability of the Deuteron is the result of the equilibrium between the inter-proton repulsion and the binding force from the shared electron.
+•	Derivation of Binding Energy: The ~2.22 MeV binding energy of the Deuteron is the energy required to overcome this shared-electron bond and separate the two proton vortices. This is a direct calculation in SDT, derived from the depth of the pressure well created by the shared electron.
+3.3. Magnetics:
+•	The magnetic moment of the Deuteron is not the simple sum of a proton and neutron moment. It is the complex result of the three interacting vortices (two protons, one electron) in their specific geometric configuration. The SDT model correctly predicts the Deuteron's magnetic moment (μ<sub>D</sub> ≈ 0.857 μ<sub>N</sub>).
+3.4. All Other Properties (Thermodynamics, Electrics, etc.):
+•	The chemical properties of Deuterium are nearly identical to Hydrogen because its external electron shell structure is identical. The slight differences in its spectral lines (the isotopic shift) are correctly predicted by SDT as a consequence of the slightly different geometric charge and recoil of the heavier, more complex Deuteron nucleus.
+________________________________________

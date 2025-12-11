@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SDT Custom Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-slate-700 bg-sdt-light;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold text-slate-900;
+  }
+
+  code {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  /* Hero gradient background */
+  .hero-gradient {
+    background: linear-gradient(135deg, #1e3a8a 0%, #172554 50%, #0f172a 100%);
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply shadow-xl transform -translate-y-1;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply inline-flex items-center px-6 py-3 rounded-lg font-display font-semibold
+           bg-sdt-primary-600 text-white hover:bg-sdt-primary-700
+           transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-6 py-3 rounded-lg font-display font-semibold
+           border-2 border-sdt-primary-600 text-sdt-primary-600
+           hover:bg-sdt-primary-600 hover:text-white
+           transition-colors duration-200;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center px-6 py-3 rounded-lg font-display font-semibold
+           bg-sdt-gold-500 text-white hover:bg-sdt-gold-600
+           transition-colors duration-200;
+  }
+
+  /* Math equation styles */
+  .equation {
+    @apply my-8 p-6 bg-slate-50 rounded-lg overflow-x-auto;
+  }
+
+  .equation-inline {
+    @apply bg-slate-100 px-2 py-0.5 rounded;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-slate-600 hover:text-sdt-primary-600 font-display font-medium
+           transition-colors duration-200;
+  }
+
+  .nav-link.active {
+    @apply text-sdt-primary-600 border-b-2 border-sdt-primary-600;
+  }
+
+  /* Benchmark status badges */
+  .badge-certified {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold
+           bg-green-100 text-green-800;
+  }
+
+  .badge-investigation {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold
+           bg-yellow-100 text-yellow-800;
+  }
+
+  .badge-pending {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold
+           bg-slate-100 text-slate-600;
+  }
+
+  /* Section dividers */
+  .section-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent my-16;
+  }
+
+  /* Code blocks */
+  .code-block {
+    @apply bg-slate-900 text-slate-100 rounded-lg p-4 overflow-x-auto
+           font-mono text-sm;
+  }
+}
+
+@layer utilities {
+  /* Text gradients */
+  .text-gradient {
+    @apply bg-clip-text text-transparent
+           bg-gradient-to-r from-sdt-primary-600 to-sdt-gold-500;
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  }
+}
+
+/* KaTeX math rendering overrides */
+.katex-display {
+  @apply my-4 overflow-x-auto;
+}
+
+.katex {
+  font-size: 1.1em;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-padding-top: 80px; /* Account for fixed header */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-500;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+}

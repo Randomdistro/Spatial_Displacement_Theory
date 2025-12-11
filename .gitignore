@@ -1,0 +1,391 @@
+# =============================================================================
+# SDT Repository - Comprehensive .gitignore
+# =============================================================================
+
+# =============================================================================
+# Node.js / JavaScript / TypeScript
+# =============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build outputs
+dist/
+.output/
+.astro/
+
+# Package manager locks (optional - uncomment if you want to track them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# =============================================================================
+# Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+sdtenv/
+.env/
+*.venv
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+pytestdebug.log
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# =============================================================================
+# C / C++ / CMake
+# =============================================================================
+# Build directories
+build/
+cmake-build-*/
+out/
+Release/
+Debug/
+x64/
+x86/
+
+# Compiled object files
+*.o
+*.obj
+*.ko
+*.elf
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Compiled dynamic libraries
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Compiled static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+!*.cmake.in
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# =============================================================================
+# Visual Studio / MSVC
+# =============================================================================
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+*.ilk
+*.pdb
+*.idb
+*.ipch
+*.aps
+*.tlog
+*.lastbuildstate
+*.recipe
+*.FileListAbsolute.txt
+*.log.xml
+vcpkg.applocal.log
+
+# Visual Studio cache/options directory
+.vs/
+ipch/
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# =============================================================================
+# .NET / C#
+# =============================================================================
+bin/
+obj/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+# =============================================================================
+# IDEs and Editors
+# =============================================================================
+# VSCode (keep settings but ignore history)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Cursor
+.cursor/
+
+# Sublime Text
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =============================================================================
+# Operating System Files
+# =============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# Logs and Runtime Files
+# =============================================================================
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# =============================================================================
+# Temporary Files
+# =============================================================================
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.old
+
+# =============================================================================
+# Secrets and Environment Variables
+# =============================================================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+*.pem
+*.key
+secrets.json
+credentials.json
+
+# =============================================================================
+# Testing and Coverage
+# =============================================================================
+coverage/
+.nyc_output/
+test-results/
+junit.xml
+
+# =============================================================================
+# Documentation Build
+# =============================================================================
+docs/_build/
+site/
+
+# =============================================================================
+# LaTeX
+# =============================================================================
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.out
+*.run.xml
+*-blx.bib
+
+# =============================================================================
+# Data Files (Optional - uncomment to ignore large data files)
+# =============================================================================
+# *.csv
+# *.json
+# *.parquet
+# *.hdf5
+# *.h5
+
+# =============================================================================
+# Project-Specific Ignores
+# =============================================================================
+# Claude/AI session files
+.claude/
+
+# Investigation run logs
+hodge_run.log
+*/hodge_run.log
+
+# Large binary outputs from simulations
+*.vtk
+*.vtu
+*.pvd
+
+# Generated images (keep source, ignore generated)
+# Uncomment if needed:
+# *.png
+# *.jpg
+# *.gif
+
+# =============================================================================
+# Keep These Files (negative patterns)
+# =============================================================================
+# Keep specific config files in subdirectories
+!**/.clangd
+!**/c_cpp_properties.json

@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDT", "SDT", "{3B0BE513-AB1D-DBAC-1123-2A0CCAB951C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{4E24AD30-F069-253D-9400-D9F3C9F17238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sdt-atomic", "SDT\Code\dotnet\sdt-atomic.csproj", "{6A92F42E-95B6-CADC-4FEA-0680285A413F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A92F42E-95B6-CADC-4FEA-0680285A413F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A92F42E-95B6-CADC-4FEA-0680285A413F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A92F42E-95B6-CADC-4FEA-0680285A413F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A92F42E-95B6-CADC-4FEA-0680285A413F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4E24AD30-F069-253D-9400-D9F3C9F17238} = {3B0BE513-AB1D-DBAC-1123-2A0CCAB951C2}
+		{6A92F42E-95B6-CADC-4FEA-0680285A413F} = {4E24AD30-F069-253D-9400-D9F3C9F17238}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C43D7ADA-999F-46BF-87E7-EC7FCA69071A}
+	EndGlobalSection
+EndGlobal

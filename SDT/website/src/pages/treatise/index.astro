@@ -1,0 +1,466 @@
+---
+// De Rerum Todo Existens - Complete Treatise Reader
+// Interactive table of contents with section navigation
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const treatiseStructure = {
+  title: 'De Rerum Todo Existens',
+  subtitle: 'The Complete Treatise on Spatial Displacement Theory',
+  author: 'J.C. Harvey',
+  version: '2.0',
+  published: 'December 2025',
+  size: '410 KB (54,000+ lines)',
+  sections: [
+    {
+      volume: 'I',
+      title: 'Axioms and Core Equations',
+      chapters: [
+        {
+          number: '1',
+          title: 'Foundational Principles',
+          subsections: [
+            'The Nature of Space',
+            'Matter and Displacement',
+            'Energy and Movement',
+            'The Master Equation',
+            'Pressure as Fundamental Force',
+          ],
+          pages: '1-48',
+          keyEquations: ['∇·[K_bulk ∇Δ] = -κ ρ_disp E(x,n̂)'],
+        },
+        {
+          number: '2',
+          title: 'Spation Planck Scales',
+          subsections: [
+            'Dimensional Analysis',
+            'Fundamental Constants',
+            'Stiffness from First Principles',
+            'Pressure Scales',
+            'Global Consistency',
+          ],
+          pages: '49-96',
+          keyEquations: ['K_bulk = 4.6×10¹¹³ Pa', 'ρ_s = 5.2×10⁹⁶ kg/m³'],
+        },
+        {
+          number: '3',
+          title: 'The 28-Dimensional Framework',
+          subsections: [
+            '28D State Space Definition',
+            'Projection to Observable Reality',
+            'Phase Space Dynamics',
+            'Numerical Integration Methods',
+            'Stability Analysis',
+          ],
+          pages: '97-144',
+          keyEquations: ['State = {position, velocity, curvature, slip, energy, ...}'],
+        },
+      ],
+    },
+    {
+      volume: 'I',
+      title: 'Atomic Physics',
+      chapters: [
+        {
+          number: '4',
+          title: 'Coulomb Force from Pressure',
+          subsections: [
+            'Elementary Charge Definition',
+            'Pressure Gradient at Atomic Scale',
+            'Force Derivation',
+            'Validation Against Spectroscopy',
+            'Relation to Quantum Mechanics',
+          ],
+          pages: '145-192',
+          keyEquations: ['F = -V∇P', 'F_Coulomb = k_e q₁q₂/r²'],
+        },
+        {
+          number: '5',
+          title: 'Rydberg Spectrum from Helical Standing Waves',
+          subsections: [
+            'Electron as Toroidal Vortex',
+            'Helical Standing Wave Modes',
+            'Energy Quantization',
+            'Derivation of Rydberg Formula',
+            'Multi-Electron Atoms',
+          ],
+          pages: '193-256',
+          keyEquations: ['E_n = -13.6 eV / n²', 'λ_helix = 2πR/n'],
+        },
+        {
+          number: '6',
+          title: 'Fine Structure',
+          subsections: [
+            'Relativistic Pressure Corrections',
+            'Spin-Orbit Coupling from Geometry',
+            'Fine Structure Constant α=1/137',
+            'Spectroscopic Validation',
+            'Comparison to QED',
+          ],
+          pages: '257-304',
+          keyEquations: ['α = 1/137.036', 'ΔE ∝ α² × v²/c²'],
+        },
+        {
+          number: '7',
+          title: 'Hyperfine Structure',
+          subsections: [
+            'Nuclear Magnetic Moment Field',
+            'Pressure Field Overlap',
+            '21cm Hydrogen Line',
+            'Magnetic Moment Interactions',
+            'Radio Astronomy Applications',
+          ],
+          pages: '305-344',
+          keyEquations: ['ν_21cm = 1420.405752 MHz'],
+        },
+      ],
+    },
+    {
+      volume: 'II',
+      title: 'Electromagnetism',
+      chapters: [
+        {
+          number: '8',
+          title: 'Electricity from Pressure Deformation',
+          subsections: [
+            'Charge as Pressure Distortion',
+            'Electric Field from Pressure Gradient',
+            'Gauss\'s Law Derivation',
+            'Capacitance and Conductivity',
+            'Electrical Phenomena',
+          ],
+          pages: '345-392',
+          keyEquations: ['E = -∇V', '∮ E·dA = Q/ε₀'],
+        },
+        {
+          number: '9',
+          title: 'Magnetism from Toroidal Circulation',
+          subsections: [
+            'Magnetic Moment from Electron Circulation',
+            'Magnetic Field Generation',
+            'Ampere\'s Law Derivation',
+            'Electromagnetic Induction',
+            'Maxwell\'s Equations',
+          ],
+          pages: '393-448',
+          keyEquations: ['∇×B = μ₀J', 'μ = I × A'],
+        },
+      ],
+    },
+    {
+      volume: 'III',
+      title: 'Gravitation and Cosmology',
+      chapters: [
+        {
+          number: '10',
+          title: 'Gravity Without Curvature',
+          subsections: [
+            'Pressure Gradients as Gravitational Force',
+            'Derivation of Newton\'s Law',
+            'Einstein Equivalence from SDT',
+            'No Spacetime Curvature',
+            'Gravitational Constant G',
+          ],
+          pages: '449-504',
+          keyEquations: ['F = -V∇P', 'G = (c⁴/K_bulk) × scaling factor'],
+        },
+        {
+          number: '11',
+          title: 'Planetary Mechanics',
+          subsections: [
+            'Orbital Velocities Without G',
+            'Kepler\'s Laws from Pressure Balance',
+            'All 8 Planets Validated',
+            'Planetary Oblateness',
+            'Tidal Effects',
+          ],
+          pages: '505-560',
+          keyEquations: ['v(r) = (c/k)√(R/r)', 'J₂ from rotation'],
+        },
+        {
+          number: '12',
+          title: 'Stellar Structure',
+          subsections: [
+            'Hydrostatic Equilibrium',
+            'Mass-Luminosity Relation',
+            'Star Formation and Evolution',
+            'Stellar Interior Structure',
+            '50+ Star Validation',
+          ],
+          pages: '561-616',
+          keyEquations: ['L ∝ M³·⁵ (main sequence)'],
+        },
+        {
+          number: '13',
+          title: 'Cosmology Without Big Bang',
+          subsections: [
+            'Pressure Horizons',
+            'CMB as Horizon Signature',
+            'Galactic Rotation Without Dark Matter',
+            'No Cosmic Inflation',
+            'Flat Universe Geometry',
+            'No Dark Energy',
+          ],
+          pages: '617-696',
+          keyEquations: ['z_CMB = 1089 (pressure horizon)', 'v(r) explains flat rotation'],
+        },
+      ],
+    },
+    {
+      volume: 'IV',
+      title: 'Thermodynamics and Chemistry',
+      chapters: [
+        {
+          number: '14',
+          title: 'Thermodynamics from Contact Mechanics',
+          subsections: [
+            'Temperature as Pressure Fluctuation',
+            'Heat Transfer',
+            'Entropy from Geometry',
+            'First Law Derivation',
+            'Phase Transitions',
+          ],
+          pages: '697-752',
+          keyEquations: ['dU = δQ - δW', 'S = k ln Ω'],
+        },
+        {
+          number: '15',
+          title: 'Chemical Bonding from Occlusion',
+          subsections: [
+            'Ionic Bonding',
+            'Covalent Bonding',
+            'Metallic Bonding',
+            'Electronegativity from Geometry',
+            'Bond Energies',
+          ],
+          pages: '753-824',
+          keyEquations: ['E_bond from pressure overlap'],
+        },
+        {
+          number: '16',
+          title: 'ATOMICUS Library',
+          subsections: [
+            '118 Elements Analyzed',
+            'Electronic Configuration',
+            'Ionization Energies',
+            'Spectroscopic Properties',
+            'Chemical Reactivity',
+          ],
+          pages: '825-1024 (+)',
+          keyEquations: ['Element parameters from SDT'],
+        },
+      ],
+    },
+    {
+      volume: 'V',
+      title: 'Validation and Benchmarks',
+      chapters: [
+        {
+          number: '17',
+          title: 'Benchmark Certification',
+          subsections: [
+            'B1-B24 Complete Validation',
+            '16 Certified (<1% error)',
+            '8 Under Investigation',
+            'Methodology and Protocol',
+            'Falsification Criteria',
+          ],
+          pages: '1025-1100',
+          keyEquations: ['Error < threshold confirms benchmark'],
+        },
+        {
+          number: '18',
+          title: 'Experimental Comparison',
+          subsections: [
+            'NIST Spectroscopic Data',
+            'JPL Planetary Data',
+            'SPARC Galactic Rotation',
+            'CMB Precision Measurements',
+            'Statistical Analysis',
+          ],
+          pages: '1101-1152',
+          keyEquations: ['χ² goodness of fit'],
+        },
+      ],
+    },
+    {
+      volume: 'VI',
+      title: 'Philosophy and Implications',
+      chapters: [
+        {
+          number: '19',
+          title: 'What This Means',
+          subsections: [
+            'Determinism vs Free Will',
+            'The Nature of Quantum Mechanics',
+            'Why Relativity Works',
+            'Consciousness and Physics',
+            'The Future of Science',
+          ],
+          pages: '1153-1208',
+          keyEquations: [],
+        },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout title="De Rerum Todo Existens - Complete Treatise | SDT">
+  <div class="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Header -->
+      <div class="mb-12 text-center">
+        <div class="mb-4">
+          <h1 class="text-5xl font-bold text-slate-900 mb-2">{treatiseStructure.title}</h1>
+          <p class="text-2xl text-slate-600">{treatiseStructure.subtitle}</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 text-sm text-slate-600 mb-6">
+          <span>By {treatiseStructure.author}</span>
+          <span>•</span>
+          <span>Version {treatiseStructure.version}</span>
+          <span>•</span>
+          <span>{treatiseStructure.published}</span>
+          <span>•</span>
+          <span>{treatiseStructure.size}</span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 mb-6">
+          <a href="#download" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors">
+            Download PDF
+          </a>
+          <a href="#" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-900 rounded-lg font-semibold transition-colors">
+            Read Online
+          </a>
+          <a href="#cite" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-lg font-semibold transition-colors">
+            Citation
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick navigation -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-12 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-900 mb-4">Quick Navigate</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
+          {treatiseStructure.sections.map((section, idx) => (
+            <a href={`#volume-${section.volume}-${idx}`} class="p-3 text-center bg-slate-50 hover:bg-blue-50 rounded-lg border border-slate-200 hover:border-blue-300 transition-colors">
+              <div class="text-sm font-mono text-slate-500">Volume {section.volume}</div>
+              <div class="text-xs font-semibold text-slate-900">{section.title.split(' ')[0]}...</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="grid gap-8">
+        {treatiseStructure.sections.map((section, sectionIdx) => (
+          <div id={`volume-${section.volume}-${sectionIdx}`} class="space-y-4">
+            <div class="sticky top-0 bg-gradient-to-r from-slate-900 to-slate-800 text-white p-6 rounded-xl shadow-lg z-10">
+              <h2 class="text-2xl font-bold">Volume {section.volume}: {section.title}</h2>
+              <p class="text-slate-300 mt-2">{section.chapters.length} chapters</p>
+            </div>
+
+            <div class="grid gap-3">
+              {section.chapters.map((chapter) => (
+                <div class="bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all">
+                  <div class="flex items-start justify-between mb-3">
+                    <div>
+                      <h3 class="text-lg font-bold text-slate-900">
+                        Chapter {chapter.number}: {chapter.title}
+                      </h3>
+                      <p class="text-sm text-slate-500 mt-1">Pages {chapter.pages}</p>
+                    </div>
+                    <button class="px-3 py-1 text-sm bg-blue-100 text-blue-600 hover:bg-blue-200 rounded-lg font-semibold transition-colors">
+                      Jump to →
+                    </button>
+                  </div>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div>
+                      <h4 class="text-xs font-bold text-slate-600 uppercase mb-2">Sections</h4>
+                      <ul class="space-y-1">
+                        {chapter.subsections.map((sub) => (
+                          <li class="text-sm text-slate-600 flex items-start gap-2">
+                            <span class="text-blue-500 mt-1">•</span>
+                            {sub}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    {chapter.keyEquations.length > 0 && (
+                      <div>
+                        <h4 class="text-xs font-bold text-slate-600 uppercase mb-2">Key Equations</h4>
+                        <ul class="space-y-1">
+                          {chapter.keyEquations.map((eq) => (
+                            <li class="text-xs font-mono bg-slate-50 p-2 rounded border border-slate-200 text-slate-900">
+                              {eq}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Citation -->
+      <div id="cite" class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 mt-12 border-2 border-blue-200">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">How to Cite</h2>
+        <div class="space-y-3">
+          <div>
+            <p class="text-sm font-semibold text-slate-700 mb-1">BibTeX:</p>
+            <code class="block bg-white p-3 rounded border border-slate-200 text-xs text-slate-900 overflow-x-auto">
+{`@book{Harvey2025SDT,
+  author={Harvey, J.C.},
+  title={De Rerum Todo Existens: The Complete Treatise on Spatial Displacement Theory},
+  year={2025},
+  version={2.0},
+  url={https://spatialdisplacementtheory.com/treatise}
+}`}
+            </code>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-700 mb-1">APA:</p>
+            <p class="bg-white p-3 rounded border border-slate-200 text-sm text-slate-900">
+              Harvey, J.C. (2025). <em>De Rerum Todo Existens: The complete treatise on spatial displacement theory</em> (Version 2.0). Retrieved from https://spatialdisplacementtheory.com/treatise
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download section -->
+      <div id="download" class="bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl p-8 mt-8 border-2 border-emerald-200">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Download</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-lg p-4 border border-emerald-200">
+            <h3 class="font-bold text-slate-900 mb-2">PDF (5.3 MB)</h3>
+            <p class="text-sm text-slate-600 mb-3">Complete treatise with formatting and figures</p>
+            <a href="/downloads/DE_RERUM_TODO_EXISTENS_COMPLETE.pdf" class="inline-block px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold transition-colors">
+              Download PDF
+            </a>
+          </div>
+          <div class="bg-white rounded-lg p-4 border border-emerald-200">
+            <h3 class="font-bold text-slate-900 mb-2">Markdown (410 KB)</h3>
+            <p class="text-sm text-slate-600 mb-3">Raw source for editing or offline reading</p>
+            <a href="/downloads/DE_RERUM_TODO_EXISTENS_COMPLETE.md" class="inline-block px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold transition-colors">
+              Download Markdown
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer navigation -->
+      <div class="flex gap-4 justify-between mt-12 pt-8 border-t border-slate-200">
+        <a href="/papers" class="px-6 py-3 bg-slate-200 hover:bg-slate-300 text-slate-900 rounded-lg font-semibold transition-colors">
+          ← Back to papers
+        </a>
+        <a href="/theory" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors">
+          Theory portal →
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

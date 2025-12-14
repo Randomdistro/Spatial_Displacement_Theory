@@ -1,3 +1,5 @@
+import numpy as np
+
 import sdt_redshift as sdt
 
 # Initialize with local Hubble flow
@@ -16,3 +18,8 @@ t_lookback = calculator.lookback_time(z)  # Returns Gyr
 # Batch processing
 z_array = np.array([0.5, 1.0, 1.5, 2.0])
 D_L_array = calculator.luminosity_distance(z_array)
+
+print(f"D_L({z}) = {D_L:.2f} Mpc")
+print(f"D_A({z}) = {D_A:.2f} Mpc")
+print(f"t_L({z}) = {t_lookback:.2f} Gyr")
+print(f"D_L grid = {D_L_array}")

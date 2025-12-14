@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D SDT Solar System Simulator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            overflow: hidden;
+            background: #000;
+            color: #fff;
+        }
+        
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        
+        #ui-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 300px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        #ui-panel h1 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+        
+        .control-group {
+            margin-bottom: 15px;
+        }
+        
+        .control-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #ccc;
+        }
+        
+        .control-group input[type="range"] {
+            width: 100%;
+        }
+        
+        .control-group select {
+            width: 100%;
+            padding: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+        
+        .control-group button {
+            width: 100%;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .control-group button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .control-group button.active {
+            background: rgba(255, 215, 0, 0.3);
+            border-color: #FFD700;
+        }
+        
+        .toggle-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .info-display {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 11px;
+            color: #aaa;
+        }
+        
+        .info-display div {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    
+    <div id="ui-panel">
+        <h1>3D SDT Solar System</h1>
+        
+        <div class="control-group">
+            <label>Time Step (seconds)</label>
+            <input type="range" id="timestepSlider" min="100" max="86400" value="3600" step="100">
+            <span id="timestepValue">3600 s</span>
+        </div>
+        
+        <div class="control-group">
+            <label>Time Speed Multiplier</label>
+            <input type="range" id="speedSlider" min="0" max="1000" value="1" step="1">
+            <span id="speedValue">1x</span>
+        </div>
+        
+        <div class="control-group">
+            <label>Focus Body</label>
+            <select id="focusSelect">
+                <option value="Sun">Sun</option>
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <label>Simulation</label>
+            <button id="pauseBtn">Pause</button>
+        </div>
+        
+        <div class="control-group">
+            <label>Visualization</label>
+            <div class="toggle-group">
+                <button id="toggleMarkers" class="active">Toggle Markers</button>
+                <button id="toggleTrails" class="active">Toggle Trails</button>
+                <button id="toggleGrid">Toggle Grid</button>
+            </div>
+        </div>
+        
+        <div class="info-display">
+            <div>Simulation Time: <span id="simTime">0</span> days</div>
+            <div>Energy Error: <span id="energyError">0.00</span>%</div>
+            <div>Angular Momentum Error: <span id="angMomError">0.00</span>%</div>
+        </div>
+    </div>
+    
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    
+    <script type="module" src="sdt_physics.js"></script>
+    <script type="module" src="ephemeris_data.js"></script>
+    <script type="module" src="markers.js"></script>
+    <script type="module" src="camera.js"></script>
+    <script type="module" src="renderer.js"></script>
+    <script type="module" src="ui.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
+

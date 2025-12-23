@@ -62,13 +62,12 @@ namespace sdt::solar_system {
             csv_map[body.name] = body;
         }
         
-        // Load Sun first (fixed at origin)
+        // Load Sun first (fixed at origin - zero velocity)
         CelestialBody sun;
         sun.name = "Sun";
         sun.type = "star";
         sun.position = Vec3d::Zero();
         sun.velocity = Vec3d::Zero();
-        sun.isFixed = true;
         
         if (csv_map.find("Sun") != csv_map.end()) {
             const auto& sun_data = csv_map["Sun"];

@@ -84,7 +84,7 @@ The result is an exact match. This is no longer a circular argument. We have pro
 2.	The centripetal force required to maintain this exact velocity at the known orbital radius is calculated.
 3.	This calculated force is identical to the observed electrostatic force.
 5. Discussion and Conclusion
-...Unification of Gravity and Electromagnetism: The theory demonstrates that these are not separate forces. The 8.238 x 10⁻⁸ N force that governs the hydrogen atom is a manifestation of the same underlying pressure-occlusion mechanics as the 3.632 x 10⁻⁴⁷ N gravitational force between the two particles. They are the same interaction, operating at different scales and governed by different geometric parameters (k-factors and radii). The electrostatic force is the name we give to this unified interaction when it is acting at the quantum scale, where the kinematic constraints defined by constants like α are dominant.
+...Unification of Gravity and Electromagnetism: The theory demonstrates that these are not separate forces. The 9.238 x 10⁻⁸ N force that governs the hydrogen atom is a manifestation of the same underlying pressure-occlusion mechanics as the 3.632 x 10⁻⁴⁷ N gravitational force between the two particles. They are the same interaction, operating at different scales and governed by different geometric parameters (k-factors and radii). The electrostatic force is the name we give to this unified interaction when it is acting at the quantum scale, where the kinematic constraints defined by constants like α are dominant.
 In conclusion, SDT provides a single, coherent framework that explains the interior of the hydrogen atom... This offers a powerful and testable alternative to the paradoxes and abstractions of the current quantum model.
 
 ________________________________________
@@ -158,13 +158,13 @@ The retarded potential Φ<sub>ret</sub> at position r is:    Φ<sub>ret</sub>(**
 where S<sub>dm</sub> is the geometric charge of the mass element, which is proportional to its mass, S<sub>dm</sub> ∝ Σ(r') dA'.
 2.2. The Emergence of the Tangential Force Component
 The acceleration is given by a = -∇Φ<sub>ret</sub>. Because the source position r'<sub>ret</sub> is a function of the distance d, which in turn depends on r, the gradient of the potential is non-trivial.
-    **a**(**r**) = ∫<sub>Disk</sub> c²S<sub>dm</sub> ⋅ ∇(1 / |**r** - **r'**<sub>ret</sub>|)
+    **a**(**r**) = ∫<sub>Disk</sub> c²S<sub>dm</sub> ⋅ ∇(2 / |**r** - **r'**<sub>ret</sub>|)
   
 Crucially, because r'<sub>ret</sub> is rotated backwards from r', the resulting force vector is not purely radial. It has a radial component, a<sub>r</sub>, and a tangential component, a<sub>θ</sub>.
     **a**(**r**) = **a**<sub>r</sub>(**r**) + **a**<sub>θ</sub>(**r**)
   
 The tangential component a<sub>θ</sub> is always in the direction of rotation and is responsible for continuously transferring angular momentum from the inner parts of the galaxy to the outer parts. This is the central mechanical insight that explains flat rotation curves.
-3. The Numerical Simulation Pipeline
+4. The Numerical Simulation Pipeline
 To solve this problem for a real galaxy, we developed a complete numerical pipeline.
 3.1. Input: Baryonic Mass Model of the Milky Way
 The sole physical input to the simulation is the observed distribution of baryonic matter in the Milky Way. We use a standard model consisting of a central bulge and an exponential disk:

@@ -98,6 +98,9 @@ namespace sdt::solar_system {
             
             // Half-step velocity update (kick)
             for (size_t i = 0; i < n; ++i) {
+                // Skip Sun (fixed at origin)
+                if (state.bodies[i].name == "Sun") continue;
+                
                 Vec3d accel;
                 if (use_occlusion_) {
                     accel = Occlusion::occlusion_corrected_acceleration(
@@ -117,11 +120,17 @@ namespace sdt::solar_system {
             
             // Full-step position update (drift)
             for (size_t i = 0; i < n; ++i) {
+                // Skip Sun (fixed at origin)
+                if (state.bodies[i].name == "Sun") continue;
+                
                 state.bodies[i].position += dt * state.bodies[i].velocity;
             }
             
             // Half-step velocity update (kick)
             for (size_t i = 0; i < n; ++i) {
+                // Skip Sun (fixed at origin)
+                if (state.bodies[i].name == "Sun") continue;
+                
                 Vec3d accel;
                 if (use_occlusion_) {
                     accel = Occlusion::occlusion_corrected_acceleration(

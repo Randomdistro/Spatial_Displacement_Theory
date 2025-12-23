@@ -1,0 +1,75 @@
+# Vulkan 3D viewer CMakeLists
+# Add this to main CMakeLists.txt or build separately
+
+cmake_minimum_required(VERSION 3.20)
+project(SDT_Solar_System_Vulkan CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Find dependencies
+find_package(Eigen3 REQUIRED)
+find_package(fmt REQUIRED)
+
+# Vulkan dependencies
+find_package(Vulkan REQUIRED)
+find_package(glfw3 QUIET)
+find_package(imgui QUIET)
+
+# If packages not found, provide alternatives
+if(NOT glfw3_FOUND)
+    message(STATUS "GLFW3 not found via find_package, trying alternatives...")
+    # Could use FetchContent or manual paths
+endif()
+
+if(NOT imgui_FOUND)
+    message(STATUS "ImGui not found via find_package, trying alternatives...")
+    # Could use FetchContent or manual paths
+endif()
+
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/../include)
+include_directories(${EIGEN3_INCLUDE_DIR})
+
+# Source files for library
+file(GLOB_RECURSE LIB_SOURCES
+    "${CMAKE_SOURCE_DIR}/src/*.cpp"
+    "${CMAKE_SOURCE_DIR}/../sdt_solar_system/src/*.cpp"
+)
+
+# Create library
+add_library(sdt_solar_system_vulkan STATIC ${LIB_SOURCES})
+
+target_link_libraries(sdt_solar_system_vulkan
+    Eigen3::Eigen
+    fmt::fmt
+)
+
+# Vulkan viewer executable
+add_executable(vulkan_solar_system_viewer
+    tools/vulkan_solar_system_viewer.cpp
+)
+
+target_link_libraries(vulkan_solar_system_viewer
+    sdt_solar_system_vulkan
+    Vulkan::Vulkan
+)
+
+if(glfw3_FOUND)
+    target_link_libraries(vulkan_solar_system_viewer glfw)
+else()
+    message(WARNING "GLFW3 not found - viewer may not compile")
+endif()
+
+if(imgui_FOUND)
+    target_link_libraries(vulkan_solar_system_viewer imgui::imgui)
+else()
+    message(WARNING "ImGui not found - UI may not work")
+endif()
+
+# Include Vulkan headers
+target_include_directories(vulkan_solar_system_viewer PRIVATE
+    ${Vulkan_INCLUDE_DIRS}
+)
+

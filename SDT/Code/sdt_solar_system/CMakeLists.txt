@@ -63,6 +63,15 @@ add_executable(analysis_tool
 )
 target_link_libraries(analysis_tool sdt_solar_system)
 
+# Simple Vulkan viewer test (console version for now)
+add_executable(vulkan_solar_system_viewer_simple
+    tools/vulkan_solar_system_viewer_simple.cpp
+    src/jpl_de421_loader.cpp
+    src/camera_controller.cpp
+    src/point_particle_system.cpp
+)
+target_link_libraries(vulkan_solar_system_viewer_simple sdt_solar_system)
+
 # Tests
 enable_testing()
 add_subdirectory(tests)

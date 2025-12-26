@@ -1,0 +1,11 @@
+---
+// Integration Agent: Flower of Life Website Route
+// This is the MAIN website with path-based navigation (path1, path2, path3)
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FlowerOfLifeWalkthrough from '../../components/walkthrough/FlowerOfLifeWalkthrough';
+---
+
+<BaseLayout title="SDT Interactive Walkthrough" description="Explore Spatial Displacement Theory through an immersive 3D experience">
+  <FlowerOfLifeWalkthrough client:load />
+</BaseLayout>
+

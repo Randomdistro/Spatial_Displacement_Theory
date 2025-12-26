@@ -1,0 +1,29 @@
+{
+  "paths": [
+    {
+      "id": "path1",
+      "name": "Quick Tour",
+      "description": "A 15-minute introduction to SDT's core ideas",
+      "targetAudience": "General Public / Science Enthusiasts",
+      "tone": "Conversational, engaging, non-condescending",
+      "cameraPosition": [0, 1, 3]
+    },
+    {
+      "id": "path2",
+      "name": "Deep Dive",
+      "description": "Comprehensive exploration of all SDT concepts",
+      "targetAudience": "Deep Learners / Students",
+      "tone": "Thorough, comprehensive, well-structured",
+      "cameraPosition": [0, 0, 4]
+    },
+    {
+      "id": "path3",
+      "name": "Scientific Framework",
+      "description": "Complete mathematical and physical derivation",
+      "targetAudience": "Physicists / Researchers",
+      "tone": "Formal, precise, mathematically rigorous",
+      "cameraPosition": [0, -1, 5]
+    }
+  ]
+}
+

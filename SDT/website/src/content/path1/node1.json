@@ -1,0 +1,43 @@
+{
+  "id": "path1-node1",
+  "title": "What if Space Isn't Empty?",
+  "path": "path1",
+  "readingTime": 2,
+  "content": {
+    "main": "# What if Space Isn't Empty?\n\nFor a century, we've described atoms with probability waves and gravity as curved spacetime. But what if there's a simpler explanation?\n\n**What if space itself is a pressurized medium, and particles are stable structures within it?**\n\nThis is the core insight of Spatial Displacement Theory (SDT). Instead of empty space, imagine an ocean of tiny particles called 'spations.' When matter exists, it pushes these spations aside, creating pressure gradients. These pressure gradients are what we experience as forces—gravity, electromagnetism, everything.",
+    "expansions": {
+      "know-more": {
+        "title": "Do you want to know more?",
+        "content": "**Why does this matter?**\n\nIf space is a pressurized medium, we can explain all of physics with geometry instead of abstract fields and probabilities. This makes physics more intuitive and potentially more powerful.\n\n**How is this different from other theories?**\n\nUnlike quantum mechanics, SDT doesn't require probability waves or uncertainty. Unlike general relativity, it doesn't require curved spacetime. Everything emerges from simple geometric pressure dynamics.\n\n**What evidence supports this?**\n\nSDT has been validated against 16 benchmarks with less than 1% error, matching observations from atomic scales to galactic scales.",
+        "type": "inline"
+      },
+      "tech-specs": {
+        "title": "Technical Specifications",
+        "content": "**Spation Properties:**\n\n- Density: 5.2×10⁹⁶ kg/m³\n- Bulk Modulus: 4.6×10¹¹³ Pa\n- Incompressible: Matter excludes spation volume\n\n**Pressure Field Equation:**\n\nP(r) = P_∞ - κ·ρ_disp(r)\n\nWhere:\n- P_∞ is the ambient pressure\n- κ is the coupling constant\n- ρ_disp is the displacement density",
+        "type": "modal"
+      },
+      "simulation": {
+        "title": "Interactive Simulation",
+        "simulationId": "pressure-field",
+        "type": "embedded"
+      }
+    }
+  },
+  "narration": {
+    "script": "Imagine space not as emptiness, but as an ocean of tiny particles called 'spations.' When matter exists, it pushes these spations aside, creating pressure gradients. These pressure gradients are what we experience as forces—gravity, electromagnetism, everything.",
+    "timing": [0, 5, 10]
+  },
+  "visualizations": {
+    "3dAnimation": "spation-flow",
+    "formulas": ["pressure-field"],
+    "simulation": "pressure-field"
+  },
+  "position": [0, 1, 3],
+  "cameraTarget": [0, 0, 0],
+  "metadata": {
+    "tags": ["introduction", "core-concept"],
+    "difficulty": "beginner",
+    "prerequisites": []
+  }
+}
+

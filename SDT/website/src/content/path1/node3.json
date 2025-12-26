@@ -1,0 +1,45 @@
+{
+  "id": "path1-node3",
+  "title": "From Atoms to Galaxies",
+  "path": "path1",
+  "readingTime": 4,
+  "content": {
+    "main": "# From Atoms to Galaxies\n\nIn conventional physics, we need different laws for atoms and galaxies. But SDT shows that the same principle—pressure balance—works everywhere. The only difference is a single number, k, that changes with scale.\n\n**The Universal k-Law:**\n\nv(r) = (c/k)√(R/r)\n\nThis same equation works for:\n- **Hydrogen atom:** k ≈ 137, predicts electron velocity\n- **Earth orbit:** k ≈ 10⁵, predicts orbital velocity\n- **Galaxy rotation:** k ≈ 10⁵, predicts rotation curve\n\nThe same law works across 53 orders of magnitude—a feat no other theory achieves.",
+    "expansions": {
+      "know-more": {
+        "title": "Do you want to know more?",
+        "content": "**How does one law work at all scales?**\n\nThe k-value changes with scale, but the underlying principle—pressure balance—remains the same. At atomic scales, the pressure comes from spation exclusion. At galactic scales, it comes from CMB pressure occlusion.\n\n**What is the k-value?**\n\nThe k-value represents the scale-dependent coupling between matter and the pressure field. It's not a free parameter—it's determined by the geometry of the system.\n\n**Comparison to quantum mechanics and general relativity:**\n\n- Quantum mechanics: Different equations for different scales\n- General relativity: Breaks down at quantum scales\n- SDT: One equation, one principle, all scales",
+        "type": "inline"
+      },
+      "tech-specs": {
+        "title": "Technical Specifications",
+        "content": "**Scale-Dependent k-Values:**\n\n- Atomic scale (n = 1): k ≈ 137.036 (fine structure constant)\n- Planetary scale: k ≈ 10⁵\n- Galactic scale: k ≈ 10⁵\n\n**Error Analysis:**\n\nSDT predictions match observations with <1% error across all scales, from atomic spectra to galactic rotation curves.",
+        "type": "modal"
+      },
+      "simulation": {
+        "title": "Scale Slider",
+        "simulationId": "scale-visualization",
+        "type": "embedded"
+      }
+    }
+  },
+  "narration": {
+    "script": "In conventional physics, we need different laws for atoms and galaxies. But SDT shows that the same principle—pressure balance—works everywhere. The only difference is a single number, k, that changes with scale.",
+    "timing": [0, 10, 20]
+  },
+  "visualizations": {
+    "animation3d": "scale-comparison",
+    "formulas": ["k-law"],
+    "simulation": "scale-visualization"
+  },
+  "position": [0, 1, 9],
+  "cameraTarget": [0, 0, 0],
+  "nextNodeId": "path1-node4",
+  "previousNodeId": "path1-node2",
+  "metadata": {
+    "tags": ["universality", "scales"],
+    "difficulty": "beginner",
+    "prerequisites": ["path1-node2"]
+  }
+}
+

@@ -1,0 +1,9 @@
+{
+  "id": "path1",
+  "name": "Quick Tour",
+  "description": "A 15-minute introduction to SDT's core ideas",
+  "targetAudience": "General Public / Science Enthusiasts",
+  "tone": "Conversational, engaging, non-condescending",
+  "cameraPosition": [0, 1, 3]
+}
+

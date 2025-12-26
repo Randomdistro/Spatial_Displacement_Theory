@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDT Walkthrough App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script>
+    // Prevent layout shift
+    document.documentElement.style.height = '100%';
+    document.body.style.height = '100%';
+    document.body.style.margin = '0';
+    document.body.style.padding = '0';
+    document.body.style.overflow = 'hidden';
+  </script>
+</head>
+<body>
+  <div id="walkthrough-root" style="width: 100vw; height: 100vh; position: fixed; top: 0; left: 0;"></div>
+  
+  <script type="module">
+    import { WalkthroughApp } from '../components/walkthrough/WalkthroughApp';
+    import { createRoot } from 'react-dom/client';
+    import React from 'react';
+    
+    const root = createRoot(document.getElementById('walkthrough-root'));
+    root.render(React.createElement(WalkthroughApp, { mode: 'hybrid' }));
+  </script>
+</body>
+</html>
+
+

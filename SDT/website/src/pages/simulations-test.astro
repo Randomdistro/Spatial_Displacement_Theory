@@ -1,0 +1,150 @@
+---
+// Test page for simulations
+// Agent 4: Integration/Orchestration - Testing stub
+---
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PressureFieldSim } from '../components/simulations/PressureFieldSim';
+import { OrbitalSim } from '../components/simulations/OrbitalSim';
+import { AtomicStructureSim } from '../components/simulations/AtomicStructureSim';
+import { GalaxyRotationSim } from '../components/simulations/GalaxyRotationSim';
+import { BenchmarkVisualizer } from '../components/simulations/BenchmarkVisualizer';
+import { MasterEquation, KLawFormula, FormulaRenderer } from '../components/simulations/FormulaRenderer';
+
+---
+
+<BaseLayout title="Simulations Test" description="Testing simulation components">
+  <div class="min-h-screen bg-slate-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-8">Simulation Components Test</h1>
+      
+      <!-- Pressure Field Simulation -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Pressure Field Simulation</h2>
+        <div class="h-[600px]">
+          <PressureFieldSim
+            id="pressure-test"
+            parameters={{
+              density: 5.2e96,
+              bulkModulus: 4.6e113,
+              matterRadius: 1.0,
+              fieldResolution: 20,
+            }}
+            showFormulas={true}
+            showLabels={true}
+            client:load
+          />
+        </div>
+      </section>
+
+      <!-- Formula Rendering -->
+      <section class="mb-12 bg-slate-800 p-8 rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Formula Rendering</h2>
+        
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-xl mb-4">Master Equation</h3>
+            <MasterEquation animated={false} client:load />
+          </div>
+          
+          <div>
+            <h3 class="text-xl mb-4">k-Law Formula</h3>
+            <KLawFormula animated={false} client:load />
+          </div>
+          
+          <div>
+            <h3 class="text-xl mb-4">Inline Formula</h3>
+            <p class="text-slate-300">
+              The pressure field is given by 
+              <FormulaRenderer 
+                formula="P(r) = P_{\\infty} - \\kappa \\cdot \\rho_{disp}(r)"
+                displayMode="inline"
+                client:load
+              />
+              where κ is the coupling constant.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Orbital Simulation -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Orbital Mechanics Simulation</h2>
+        <div class="h-[600px]">
+          <OrbitalSim
+            id="orbital-test"
+            parameters={{
+              kValue: 137.036,
+              R_eff: 5.29177e-11,
+              orbitalRadius: 5.29177e-11,
+              scale: 'atomic',
+              showTrail: true,
+              showVelocityVector: true,
+            }}
+            showFormulas={true}
+            showLabels={true}
+            client:load
+          />
+        </div>
+      </section>
+
+      <!-- Atomic Structure Simulation -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Atomic Structure Simulation</h2>
+        <div class="h-[600px]">
+          <AtomicStructureSim
+            id="atomic-test"
+            parameters={{
+              element: 'H',
+              atomicNumber: 1,
+              principalQuantumNumber: 1,
+              showElectrons: true,
+              showHelicalWaves: true,
+              showNucleus: true,
+            }}
+            showFormulas={true}
+            showLabels={true}
+            client:load
+          />
+        </div>
+      </section>
+
+      <!-- Galaxy Rotation Simulation -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Galaxy Rotation Simulation</h2>
+        <div class="h-[600px]">
+          <GalaxyRotationSim
+            id="galaxy-test"
+            parameters={{
+              diskRadius: 3.0,
+              galaxyMass: 1e11,
+              showRotationCurve: true,
+              compareDarkMatter: false,
+              showDisk: true,
+            }}
+            showFormulas={true}
+            showLabels={true}
+            client:load
+          />
+        </div>
+      </section>
+
+      <!-- Benchmark Visualizer -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Benchmark Visualizer</h2>
+        <div class="h-[600px]">
+          <BenchmarkVisualizer
+            id="benchmark-test"
+            parameters={{
+              viewMode: '3d',
+              showAll: true,
+            }}
+            showLabels={true}
+            client:load
+          />
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+

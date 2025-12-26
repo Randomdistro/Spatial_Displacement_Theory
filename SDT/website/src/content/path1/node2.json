@@ -1,0 +1,45 @@
+{
+  "id": "path1-node2",
+  "title": "The Master Equation",
+  "path": "path1",
+  "readingTime": 3,
+  "content": {
+    "main": "# The Master Equation\n\nAt the heart of Spatial Displacement Theory is a single equation that describes how pressure flows through space. This equation, called the master equation, replaces all the separate laws of physics with one unified principle.\n\n**The Master Equation:**\n\n∇ · [K_bulk ∇Δ(x)] = -κ ρ_disp(x) (1 - E(x,n̂))\n\nThis one equation replaces:\n- Newton's law of gravity\n- Coulomb's law of electromagnetism\n- Schrödinger's equation\n- Einstein's field equations\n\nAll of physics emerges from this single geometric principle.",
+    "expansions": {
+      "know-more": {
+        "title": "Do you want to know more?",
+        "content": "**How was this equation derived?**\n\nThe master equation comes from four simple axioms about space and matter. Starting from these axioms, we can derive everything else.\n\n**What are the four axioms?**\n\n1. Space is an incompressible pressurized medium (spation)\n2. Matter has definitive hard shapes that exclude spation\n3. Pressure gradients create forces\n4. Time emerges from counting oscillations\n\n**What does each term mean?**\n\n- K_bulk: The bulk modulus of spation (how stiff it is)\n- Δ(x): The pressure deviation from ambient\n- ρ_disp: The density of displaced spation\n- E(x,n̂): Directional occlusion (how matter blocks pressure)",
+        "type": "inline"
+      },
+      "tech-specs": {
+        "title": "Technical Specifications",
+        "content": "**Complete Derivation:**\n\nStarting from the axioms, the master equation emerges naturally:\n\n1. Pressure gradient: ∇P = -K_bulk ∇Δ\n2. Displacement density: ρ_disp = matter volume exclusion\n3. Occlusion factor: E accounts for mutual shadowing\n4. Force balance: ∇ · (pressure flow) = -source\n\n**Numerical Values:**\n\n- K_bulk = 4.6×10¹¹³ Pa\n- κ = coupling constant\n- All values derived from first principles",
+        "type": "modal"
+      },
+      "simulation": {
+        "title": "Interactive Equation Explorer",
+        "simulationId": "master-equation",
+        "type": "embedded"
+      }
+    }
+  },
+  "narration": {
+    "script": "At the heart of Spatial Displacement Theory is a single equation that describes how pressure flows through space. This equation, called the master equation, replaces all the separate laws of physics with one unified principle.",
+    "timing": [0, 8, 15]
+  },
+  "visualizations": {
+    "animation3d": "master-equation",
+    "formulas": ["master-equation"],
+    "simulation": "master-equation"
+  },
+  "position": [0, 1, 6],
+  "cameraTarget": [0, 0, 0],
+  "nextNodeId": "path1-node3",
+  "previousNodeId": "path1-node1",
+  "metadata": {
+    "tags": ["core-equation", "unification"],
+    "difficulty": "beginner",
+    "prerequisites": ["path1-node1"]
+  }
+}
+

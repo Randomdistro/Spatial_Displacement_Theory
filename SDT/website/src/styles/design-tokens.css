@@ -1,0 +1,131 @@
+/**
+ * Design Tokens for SDT Website
+ * Created by: Creative Agent
+ * Philosophy: Subtle, subdued, visceral. The obviousness of it all.
+ */
+
+:root {
+  /* Colors - The Spation Medium */
+  --color-space-deep: #1a365d;
+  --color-space-medium: #2d5a87;
+  --color-space-light: #4299e1;
+  
+  /* Colors - The Pressure Gradient */
+  --color-gold-primary: #d69e2e;
+  --color-gold-bright: #f6ad55;
+  --color-gold-light: #fbbf24;
+  
+  /* Colors - Matter */
+  --color-silver: #cbd5e0;
+  --color-silver-dark: #a0aec0;
+  
+  /* Colors - Eclipse/Exclusion */
+  --color-eclipse: #0f172a;
+  --color-shadow: rgba(15, 23, 42, 0.8);
+  
+  /* Colors - Text */
+  --color-text-primary: #f7fafc;
+  --color-text-secondary: #cbd5e0;
+  --color-text-muted: #a0aec0;
+  
+  /* Colors - Backgrounds */
+  --color-bg-deep: #0a0e1a;
+  --color-bg-surface: #1a202c;
+  --color-bg-card: rgba(26, 54, 93, 0.6);
+  
+  /* Spacing - Geometric Harmony */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 1rem;      /* 16px */
+  --space-md: 2rem;      /* 32px */
+  --space-lg: 4rem;      /* 64px */
+  --space-xl: 8rem;      /* 128px */
+  
+  /* Typography - Scientific Precision */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', var(--font-primary);
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1.125rem; /* 18px */
+  --font-size-lg: 1.5rem;     /* 24px */
+  --font-size-xl: 1.875rem;   /* 30px */
+  --font-size-2xl: 2.5rem;    /* 40px */
+  --font-size-3xl: 3.5rem;    /* 56px */
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Timing - Organic Flow */
+  --timing-instant: 50ms;
+  --timing-fast: 150ms;
+  --timing-medium: 300ms;
+  --timing-slow: 1000ms;
+  --timing-slower: 2000ms;
+  
+  /* Easing - Natural Motion */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-organic: cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Shadows - Subtle Depth */
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-deep: 0 8px 32px rgba(0, 0, 0, 0.5);
+  
+  /* Glows - Pressure Revelation */
+  --glow-gold-subtle: 0 0 10px rgba(214, 158, 46, 0.3);
+  --glow-gold-medium: 0 0 20px rgba(214, 158, 46, 0.5);
+  --glow-gold-bright: 0 0 40px rgba(214, 158, 46, 0.7);
+  
+  --glow-blue-subtle: 0 0 10px rgba(26, 54, 93, 0.3);
+  --glow-blue-medium: 0 0 20px rgba(26, 54, 93, 0.5);
+  
+  /* Borders - Defined Boundaries */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 4px;
+  
+  --border-radius-sm: 0.25rem;  /* 4px */
+  --border-radius-md: 0.5rem;   /* 8px */
+  --border-radius-lg: 1rem;     /* 16px */
+  --border-radius-full: 9999px;
+  
+  /* 3D Material Properties */
+  --material-metallic: 0.8;
+  --material-roughness: 0.2;
+  --material-emissive: 0.1;
+  
+  /* Z-Index Layers */
+  --z-base: 0;
+  --z-elevated: 10;
+  --z-overlay: 100;
+  --z-modal: 200;
+  --z-tooltip: 300;
+}
+
+/* Dark mode (default) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Already dark, no changes needed */
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --timing-fast: 0ms;
+    --timing-medium: 0ms;
+    --timing-slow: 0ms;
+    --timing-slower: 0ms;
+  }
+}
+

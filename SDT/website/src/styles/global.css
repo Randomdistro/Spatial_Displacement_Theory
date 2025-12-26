@@ -1,15 +1,22 @@
+@import './design-tokens.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* SDT Custom Styles */
+/* SDT Custom Styles - Creative Agent Design System */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply font-body text-slate-700 bg-sdt-light;
+    @apply font-body;
+    font-family: var(--font-primary);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-deep);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {

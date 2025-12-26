@@ -1,0 +1,44 @@
+{
+  "id": "path1-node5",
+  "title": "Validated Predictions",
+  "path": "path1",
+  "readingTime": 5,
+  "content": {
+    "main": "# Validated Predictions\n\nSDT makes specific, testable predictions. So far, 16 benchmarks have been validated with errors less than 1%. These range from atomic spectra to planetary orbits to cosmic structure.\n\n**Key Validated Results:**\n\n- ✅ Hydrogen Rydberg spectrum: <0.1% error\n- ✅ Fine structure constant: Exact match\n- ✅ Hyperfine structure: <1% error\n- ✅ Planetary orbits: <0.5% error\n- ✅ Galaxy rotation: Matches observations\n- ✅ CMB redshift: Exact match (z = 1089)\n\n**What's Still Being Tested:**\n\n8 more benchmarks are in progress, covering nuclear physics, molecular structures, and advanced cosmological tests.",
+    "expansions": {
+      "know-more": {
+        "title": "Do you want to know more?",
+        "content": "**What are the benchmarks?**\n\nThe 24 benchmarks cover:\n- Atomic physics (spectra, fine structure, hyperfine)\n- Gravitational physics (orbits, precession)\n- Cosmology (CMB, structure formation)\n- Chemistry (molecular structures)\n\n**How are they validated?**\n\nEach benchmark compares SDT predictions to authoritative experimental data. Errors are calculated using standard statistical methods.\n\n**What's still being tested?**\n\n8 benchmarks remain, including nuclear binding energies, molecular vibrations, and advanced cosmological tests.",
+        "type": "inline"
+      },
+      "tech-specs": {
+        "title": "Technical Specifications",
+        "content": "**Complete Benchmark Data:**\n\nSee the full benchmark dashboard for:\n- Complete error analysis\n- Experimental sources\n- Statistical comparisons\n- Remaining benchmarks\n\n**Validation Protocol:**\n\nAll benchmarks follow a rigorous validation protocol ensuring accuracy and reproducibility.",
+        "type": "modal"
+      },
+      "simulation": {
+        "title": "Benchmark Explorer",
+        "simulationId": "benchmark-visualizer",
+        "type": "embedded"
+      }
+    }
+  },
+  "narration": {
+    "script": "SDT makes specific, testable predictions. So far, 16 benchmarks have been validated with errors less than 1%. These range from atomic spectra to planetary orbits to cosmic structure.",
+    "timing": [0, 10, 20]
+  },
+  "visualizations": {
+    "animation3d": "benchmark-grid",
+    "formulas": [],
+    "simulation": "benchmark-visualizer"
+  },
+  "position": [0, 1, 15],
+  "cameraTarget": [0, 0, 0],
+  "previousNodeId": "path1-node4",
+  "metadata": {
+    "tags": ["validation", "benchmarks"],
+    "difficulty": "beginner",
+    "prerequisites": ["path1-node4"]
+  }
+}
+

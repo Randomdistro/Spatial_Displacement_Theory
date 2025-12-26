@@ -1,0 +1,42 @@
+---
+// Standalone SDT Walkthrough App
+// Full-screen immersive experience
+---
+
+import { WalkthroughApp } from '../components/walkthrough/WalkthroughApp';
+
+---
+
+<html lang="en" style="height: 100%; margin: 0; padding: 0;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDT Walkthrough App</title>
+  <meta name="description" content="Journey through 43 orders of magnitude to understand how CMB provides all energy in the universe" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+    #app-container {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app-container">
+    <WalkthroughApp mode="hybrid" client:load />
+  </div>
+</body>
+</html>
+
+

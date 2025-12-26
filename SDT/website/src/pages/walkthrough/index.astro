@@ -1,0 +1,10 @@
+---
+// Integration Agent: Main 3D Walkthrough Landing Page
+// This page integrates all components from Agents 1, 2, 3, and 4
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WalkthroughApp from '../../components/walkthrough/WalkthroughApp';
+---
+
+<BaseLayout title="SDT Interactive Walkthrough" description="Explore Spatial Displacement Theory through an immersive 3D experience">
+  <WalkthroughApp client:load />
+</BaseLayout>

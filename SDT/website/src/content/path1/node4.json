@@ -1,0 +1,45 @@
+{
+  "id": "path1-node4",
+  "title": "No Dark Matter Needed",
+  "path": "path1",
+  "readingTime": 3,
+  "content": {
+    "main": "# No Dark Matter Needed\n\nOne of SDT's most striking predictions is that galaxies don't need dark matter. Instead, the way matter blocks pressure from the cosmic microwave background creates the flat rotation curves we observe.\n\n**The Eclipse Effect:**\n\nWhen a galaxy disk occludes pressure from the CMB, it creates a pressure gradient that matches the observed rotation curve—without any invisible matter.\n\n**The Prediction:**\n\nR_flat ≈ 2.5 R_d\n\nWhere R_flat is where the rotation curve flattens, and R_d is the disk scale radius. This matches observations exactly.",
+    "expansions": {
+      "know-more": {
+        "title": "Do you want to know more?",
+        "content": "**What is the eclipse effect?**\n\nThe galaxy disk blocks pressure from the cosmic microwave background, creating a pressure shadow. This shadow creates the gravitational effect we observe as flat rotation curves.\n\n**How does this differ from dark matter models?**\n\nDark matter models require invisible matter distributed in halos. SDT requires no invisible matter—just the geometry of pressure occlusion.\n\n**What about other dark matter evidence?**\n\nSDT provides alternative explanations for gravitational lensing, cluster dynamics, and cosmic structure formation—all without dark matter.",
+        "type": "inline"
+      },
+      "tech-specs": {
+        "title": "Technical Specifications",
+        "content": "**Mathematical Derivation:**\n\nThe eclipse effect creates a pressure gradient:\n\n∇P = -κ ρ_disp (1 - E_CMB)\n\nWhere E_CMB accounts for CMB pressure occlusion by the disk.\n\n**Galaxy Model Parameters:**\n\n- Disk scale radius: R_d\n- Flat rotation radius: R_flat ≈ 2.5 R_d\n- Matches observed rotation curves",
+        "type": "modal"
+      },
+      "simulation": {
+        "title": "Galaxy Rotation Simulator",
+        "simulationId": "galaxy-rotation",
+        "type": "embedded"
+      }
+    }
+  },
+  "narration": {
+    "script": "One of SDT's most striking predictions is that galaxies don't need dark matter. Instead, the way matter blocks pressure from the cosmic microwave background creates the flat rotation curves we observe.",
+    "timing": [0, 8, 15]
+  },
+  "visualizations": {
+    "animation3d": "galaxy-eclipse",
+    "formulas": ["eclipse-effect"],
+    "simulation": "galaxy-rotation"
+  },
+  "position": [0, 1, 12],
+  "cameraTarget": [0, 0, 0],
+  "nextNodeId": "path1-node5",
+  "previousNodeId": "path1-node3",
+  "metadata": {
+    "tags": ["dark-matter", "galaxies"],
+    "difficulty": "beginner",
+    "prerequisites": ["path1-node3"]
+  }
+}
+

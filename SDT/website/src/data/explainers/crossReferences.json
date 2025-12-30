@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-20T00:00:00Z",
+  "metadata": {
+    "totalReferences": 8,
+    "totalConcepts": 4
+  },
+  "references": [
+    {
+      "sourceId": "paper-core-engine",
+      "targetId": "rule-four-primitives",
+      "referenceType": "USES",
+      "context": "Master equation derived from four primitives",
+      "strength": 1.0
+    },
+    {
+      "sourceId": "paper-core-engine",
+      "targetId": "rule-shunt-dynamics",
+      "referenceType": "USES",
+      "context": "Circulation Γ comes from shunt dynamics",
+      "strength": 0.9
+    },
+    {
+      "sourceId": "paper-core-engine",
+      "targetId": "b07",
+      "referenceType": "VALIDATES",
+      "context": "Master equation validates k-law universality",
+      "strength": 0.8
+    },
+    {
+      "sourceId": "b07",
+      "targetId": "paper-core-engine",
+      "referenceType": "VALIDATED_BY",
+      "context": "k-Law validates master equation",
+      "strength": 0.8
+    },
+    {
+      "sourceId": "rule-shunt-dynamics",
+      "targetId": "rule-four-primitives",
+      "referenceType": "DEPENDS_ON",
+      "context": "Shunt dynamics requires matter and movement primitives",
+      "strength": 0.9
+    },
+    {
+      "sourceId": "b07",
+      "targetId": "rule-four-primitives",
+      "referenceType": "USES",
+      "context": "k-Law emerges from four primitives",
+      "strength": 0.7
+    },
+    {
+      "sourceId": "b07",
+      "targetId": "rule-shunt-dynamics",
+      "referenceType": "USES",
+      "context": "Orbital motion from shunt dynamics",
+      "strength": 0.6
+    },
+    {
+      "sourceId": "rule-four-primitives",
+      "targetId": "rule-shunt-dynamics",
+      "referenceType": "RELATED_TO",
+      "context": "Both are foundational concepts",
+      "strength": 0.5
+    }
+  ]
+}

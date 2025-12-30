@@ -1,0 +1,17 @@
+---
+// Explainer Index Page
+// Browse and search all explainers
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ExplainerBrowser from '../../components/explainers/ExplainerBrowser';
+import { ExplainerRegistryProvider } from '../../components/explainers/ExplainerRegistry';
+---
+
+<BaseLayout title="SDT Visual Explainers" description="Browse interactive visual explainers for all SDT concepts">
+  <ExplainerRegistryProvider>
+    <div class="min-h-screen bg-slate-900">
+      <ExplainerBrowser client:load />
+    </div>
+  </ExplainerRegistryProvider>
+</BaseLayout>
+

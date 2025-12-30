@@ -1,0 +1,50 @@
+---
+// Simple test to verify React is working
+---
+
+import { WalkthroughApp } from '../components/walkthrough/WalkthroughApp';
+
+---
+
+<html lang="en" style="height: 100%; margin: 0; padding: 0;">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+    #test-container {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="test-container">
+    <WalkthroughApp mode="hybrid" client:load />
+  </div>
+  <script>
+    console.log('Test page loaded');
+    window.addEventListener('load', () => {
+      console.log('Window loaded');
+      const container = document.getElementById('test-container');
+      console.log('Container:', container);
+      console.log('Container dimensions:', container?.offsetWidth, container?.offsetHeight);
+    });
+  </script>
+</body>
+</html>
+

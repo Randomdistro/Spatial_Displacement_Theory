@@ -1,0 +1,27 @@
+---
+// Explainer Viewer Page
+// Displays individual explainers with full functionality
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ExplainerViewer from '../../components/explainers/ExplainerViewer';
+import { ExplainerRegistryProvider } from '../../components/explainers/ExplainerRegistry';
+
+const { id } = Astro.params;
+
+if (!id) {
+  return Astro.redirect('/explainers');
+}
+---
+
+<BaseLayout title={`SDT Explainer: ${id}`} description="Visual explainer for SDT concepts">
+  <ExplainerRegistryProvider>
+    <div class="min-h-screen bg-slate-900 p-4 sm:p-8">
+      <ExplainerViewer 
+        client:load
+        explainerId={id}
+        showCrossReferences={true}
+      />
+    </div>
+  </ExplainerRegistryProvider>
+</BaseLayout>
+

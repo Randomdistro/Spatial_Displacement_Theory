@@ -1,0 +1,222 @@
+---
+/**
+ * Atomic Structure Gallery Page
+ * 
+ * TEKNE: The page IS the revelation
+ * 
+ * Interactive gallery of SDT nuclear structures
+ * "Necessarily false" but representative abstractions
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AtomicStructureGallery from '../../components/atomicus/AtomicStructureGallery';
+import NuclearBuildingBlocksLegend from '../../components/atomicus/NuclearBuildingBlocksLegend';
+---
+
+<BaseLayout title="Atomic Structure Gallery | ATOMICUS | SDT">
+  <main class="min-h-screen bg-slate-900">
+    <!-- Hero Section -->
+    <section class="relative py-16 px-4 bg-gradient-to-b from-slate-900 via-slate-800/50 to-slate-900">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block px-4 py-1 rounded-full bg-amber-500/20 text-amber-400 text-sm mb-6">
+          SDT Nuclear Physics
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+          <span class="block text-slate-400 text-2xl md:text-3xl mb-2">ATOMICA SENTIS</span>
+          Nuclear Architecture Gallery
+        </h1>
+        
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
+          In Spatial Displacement Theory, nuclei are geometric assemblies of turbine cells—protons 
+          and neutrons—held together by circulating neutrino flux. Each nucleus is a unique 
+          mechanical structure, and its properties emerge from its geometry.
+        </p>
+        
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="#gallery" class="px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-lg hover:from-amber-400 hover:to-orange-400 transition-all">
+            Explore Structures
+          </a>
+          <a href="#building-blocks" class="px-6 py-3 border border-amber-500/50 text-amber-400 rounded-lg hover:bg-amber-500/10 transition-all">
+            View Building Blocks
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Building Blocks Legend -->
+    <section id="building-blocks" class="py-12 px-4">
+      <div class="max-w-6xl mx-auto">
+        <NuclearBuildingBlocksLegend client:load />
+      </div>
+    </section>
+
+    <!-- 3D Gallery -->
+    <section id="gallery" class="py-12">
+      <AtomicStructureGallery client:only="react" />
+    </section>
+
+    <!-- Key Physics Insights -->
+    <section class="py-16 px-4 bg-slate-800/30">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">
+          Key SDT Nuclear Insights
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Alpha Brick Law -->
+          <div class="bg-slate-800/80 rounded-xl p-6 border border-slate-700">
+            <h3 class="text-xl font-bold text-amber-400 mb-3">The Alpha Brick Law</h3>
+            <p class="text-slate-300">
+              The fundamental unit of nuclear construction is the Alpha Particle (⁴He). 
+              The universe builds heavy nuclei by stacking these "bricks." Carbon-12 is 
+              three alphas in a triangle. Oxygen-16 is four in a tetrahedron.
+            </p>
+          </div>
+          
+          <!-- Neutron Bridges -->
+          <div class="bg-slate-800/80 rounded-xl p-6 border border-slate-700">
+            <h3 class="text-xl font-bold text-teal-400 mb-3">Neutron Bridges</h3>
+            <p class="text-slate-300">
+              Protons repel. To hold two alpha particles together, a neutron acts as a 
+              geometric "bridge" or "lug nut." Beryllium-9 exists only because a neutron 
+              bridges two repelling alphas.
+            </p>
+          </div>
+          
+          <!-- Geometric Closure -->
+          <div class="bg-slate-800/80 rounded-xl p-6 border border-slate-700">
+            <h3 class="text-xl font-bold text-violet-400 mb-3">Geometric Closure</h3>
+            <p class="text-slate-300">
+              Stable nuclei achieve geometric closure through symmetric arrangements. 
+              The tetrahedral alpha (⁴He) is maximally stable. Triangular arrangements 
+              (¹²C) and tetrahedral stacks (¹⁶O) follow this pattern.
+            </p>
+          </div>
+          
+          <!-- Binding Energy -->
+          <div class="bg-slate-800/80 rounded-xl p-6 border border-slate-700">
+            <h3 class="text-xl font-bold text-emerald-400 mb-3">Binding Energy</h3>
+            <p class="text-slate-300">
+              Binding energy comes from neutrino flux circulation. The fundamental energy 
+              quantum is <span class="font-mono text-amber-400">E<sub>ν</sub> ≈ 1.57 MeV</span>. 
+              The alpha particle has 18 neutrinos, giving 28.26 MeV (0.1% error from experiment).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Iron Peak -->
+    <section class="py-16 px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gradient-to-r from-orange-900/30 to-red-900/30 rounded-2xl p-8 border border-orange-700/30">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="text-5xl">⚛️</div>
+            <div>
+              <h3 class="text-2xl font-bold text-white">The Iron Peak</h3>
+              <p class="text-orange-300">Maximum Binding Energy per Nucleon</p>
+            </div>
+          </div>
+          
+          <p class="text-slate-300 mb-4">
+            Iron-56 (⁵⁶Fe) represents the balance point where adding more nucleons decreases 
+            binding energy per nucleon. With 14 alpha particles in a complex 3D arrangement, 
+            it has the highest binding energy per nucleon of any nucleus.
+          </p>
+          
+          <p class="text-slate-300">
+            <strong class="text-amber-400">This is why stars stop fusing at iron.</strong> Beyond iron, 
+            fusion absorbs energy rather than releasing it. All elements heavier than iron 
+            were created in supernova explosions or neutron star mergers.
+          </p>
+          
+          <div class="mt-6 grid grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-3xl font-bold text-orange-400">14</div>
+              <div class="text-sm text-slate-500">Alpha Particles</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-orange-400">~492</div>
+              <div class="text-sm text-slate-500">MeV Binding</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-orange-400">&lt;0.1%</div>
+              <div class="text-sm text-slate-500">SDT Error</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scale Comparison -->
+    <section class="py-16 px-4 bg-slate-800/30">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-white mb-8">
+          Scale Perspective
+        </h2>
+        
+        <div class="bg-slate-800/80 rounded-2xl p-8 border border-blue-700/30">
+          <div class="text-6xl mb-4">☀️ → 🔴</div>
+          <p class="text-xl text-slate-300 mb-6">
+            If a <span class="text-red-400 font-bold">proton</span> were the size of the 
+            <span class="text-amber-400 font-bold">Sun</span>...
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-slate-900/50 rounded-xl p-6">
+              <div class="text-4xl font-bold text-blue-400 mb-2">10²¹ m</div>
+              <div class="text-slate-400">
+                ~100,000 light-years<br/>
+                (Diameter of the Milky Way)
+              </div>
+            </div>
+            
+            <div class="bg-slate-900/50 rounded-xl p-6">
+              <div class="text-4xl font-bold text-amber-400 mb-2">~0.6 mm</div>
+              <div class="text-slate-400">
+                At proton-as-Sun scale<br/>
+                (Width of a grain of sand)
+              </div>
+            </div>
+          </div>
+          
+          <p class="text-sm text-slate-500 mt-6">
+            Scale factor: 1.65 × 10²⁴
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-white mb-4">
+          Explore More ATOMICUS
+        </h2>
+        <p class="text-slate-400 mb-8">
+          Dive deeper into the geometric architecture of matter.
+        </p>
+        
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/atomicus" class="px-6 py-3 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-all border border-slate-700">
+            Periodic Table
+          </a>
+          <a href="/paths" class="px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-lg hover:from-amber-400 hover:to-orange-400 transition-all">
+            Interactive Walkthrough
+          </a>
+          <a href="/theory/nuclear" class="px-6 py-3 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-all border border-slate-700">
+            Nuclear Physics Paper
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  /* Ensure 3D canvas renders properly */
+  :global(#gallery canvas) {
+    display: block;
+  }
+</style>
+

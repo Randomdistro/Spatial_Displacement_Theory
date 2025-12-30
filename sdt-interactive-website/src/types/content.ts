@@ -4,31 +4,37 @@
  */
 
 export type PathType = 'path1' | 'path2' | 'path3';
-export type ExpansionType = 'know-more' | 'tech-specs' | 'simulation';
+export type ExpansionType = 'know-more' | 'tech-specs' | 'simulation' | 'example' | 'history';
+
+export interface ExpansionContent {
+  title: string;
+  content: string;
+  simulationId?: string;
+}
 
 export interface NodeContent {
   id: string;
   title: string;
   path: PathType;
   readingTime: number; // minutes
+  hook?: string; // Starship Troopers-style hook headline
   content: {
     main: string; // Markdown content
     expansions?: {
-      [key in ExpansionType]?: string | {
-        content: string;
-        simulationId?: string;
-      };
+      [key: string]: string | ExpansionContent;
     };
   };
   narration?: {
     script: string;
     audioFile?: string;
-    timing?: number[]; // seconds
+    duration?: number; // seconds
+    timing?: number[]; // segment timestamps in seconds
   };
   visualizations?: {
     animation3d?: string;
     formulas?: string[];
     charts?: string[];
+    simulationId?: string;
   };
   position: [number, number, number]; // 3D position in scene
   cameraTarget?: [number, number, number];
@@ -49,5 +55,8 @@ export interface PathStructure {
 export interface ContentManifest {
   paths: PathStructure[];
 }
+
+
+
 
 

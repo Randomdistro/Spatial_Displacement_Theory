@@ -1,0 +1,80 @@
+{
+  "pathId": "path1",
+  "style": "Veritasium",
+  "tone": "Hook-driven, wonder-inducing, challenges assumptions",
+  "scripts": {
+    "node1": {
+      "title": "What if Space Isn't Empty?",
+      "hook": "What if everything you learned about space is wrong?",
+      "duration": 90,
+      "script": "What if everything you learned about space is wrong?\n\nIn school, they told you space is empty. A vacuum. Nothing there. But that creates a problem.\n\nIf space is truly empty, then what ARE forces? How does the Sun reach out across 150 million kilometers of nothing and pull on the Earth? How does an electron, sitting in an atom, know that a proton is nearby?\n\nPhysics has spent a century trying to answer this with increasingly exotic ideas. Curved spacetime. Probability waves. Virtual particles popping in and out of existence.\n\nBut what if there's a simpler answer?\n\nWhat if space isn't empty at all? What if it's filled with an incompressible medium—call it spation—and particles are just stable vortices in that medium?\n\nAnd what if forces aren't mysterious action-at-a-distance, but simply... pressure gradients?\n\nThis is Spatial Displacement Theory. And it's about to change how you see everything.",
+      "segments": [
+        { "time": 0, "text": "What if everything you learned about space is wrong?" },
+        { "time": 8, "text": "In school, they told you space is empty..." },
+        { "time": 18, "text": "If space is truly empty, then what ARE forces?" },
+        { "time": 35, "text": "Physics has spent a century trying to answer this..." },
+        { "time": 52, "text": "But what if there's a simpler answer?" },
+        { "time": 60, "text": "What if space isn't empty at all?" },
+        { "time": 75, "text": "This is Spatial Displacement Theory." }
+      ]
+    },
+    "node2": {
+      "title": "The Master Equation",
+      "hook": "One equation. All of physics. I'm not joking.",
+      "duration": 85,
+      "script": "One equation. All of physics. I'm not joking.\n\nIn conventional physics, we have different laws for different things. Newton for gravity. Coulomb for electricity. Schrödinger for atoms. Einstein for spacetime. They don't even speak the same mathematical language.\n\nBut what if I told you there's one equation that replaces all of them?\n\nNabla dot K nabla delta equals negative kappa rho disp times one minus E.\n\nOkay, that sounds intimidating. But here's what it means in English:\n\nPressure flows around matter. Matter blocks pressure.\n\nThat's literally it. The difference between Coulomb's law and Newton's gravity? It's not that they're different forces. It's that they operate in different occlusion regimes.\n\nWhen nothing's blocking the pressure—that's electricity. When everything's blocking everything—that's gravity.\n\nSame equation. Same physics. Just different viewing angles.",
+      "segments": [
+        { "time": 0, "text": "One equation. All of physics. I'm not joking." },
+        { "time": 8, "text": "In conventional physics, we have different laws..." },
+        { "time": 25, "text": "But what if I told you there's one equation?" },
+        { "time": 38, "text": "Okay, that sounds intimidating. But here's what it means..." },
+        { "time": 52, "text": "The difference between Coulomb's law and Newton's gravity?" },
+        { "time": 70, "text": "Same equation. Same physics. Just different viewing angles." }
+      ]
+    },
+    "node3": {
+      "title": "From Atoms to Galaxies",
+      "hook": "The same law works from 10^-15 to 10^38 meters. That's 53 orders of magnitude.",
+      "duration": 95,
+      "script": "The same law works from 10 to the negative 15 to 10 to the 38 meters. That's 53 orders of magnitude.\n\nLet that sink in. We're talking about a single equation that describes:\n\nThe electron orbiting a proton. That's quantum mechanics, right?\n\nThe Earth orbiting the Sun. That's celestial mechanics.\n\nOur Sun orbiting the Milky Way. That's galactic dynamics.\n\nDifferent fields. Different equations. Different Nobel Prizes. Except... in SDT, it's all the same thing.\n\nv equals c over k, times the square root of R over r.\n\nThe only thing that changes is k. For hydrogen atoms, k equals 137.036. Sound familiar? That's one over alpha, the fine structure constant. It's not a coincidence—it emerges from the geometry.\n\nFor planets, k is about 59,000. For galaxies, k approaches 100,000.\n\nBut the form of the law? Identical. Across 53 orders of magnitude.",
+      "segments": [
+        { "time": 0, "text": "The same law works from 10^-15 to 10^38 meters." },
+        { "time": 12, "text": "Let that sink in. We're talking about a single equation..." },
+        { "time": 28, "text": "Different fields. Different equations. Different Nobel Prizes." },
+        { "time": 42, "text": "v equals c over k, times the square root of R over r." },
+        { "time": 55, "text": "For hydrogen atoms, k equals 137.036." },
+        { "time": 72, "text": "But the form of the law? Identical." }
+      ]
+    },
+    "node4": {
+      "title": "No Dark Matter Needed",
+      "hook": "We've been looking for dark matter for 50 years. Nothing. Maybe it doesn't exist.",
+      "duration": 100,
+      "script": "We've been looking for dark matter for 50 years. Nothing. Not one particle. Maybe it doesn't exist.\n\nIn the 1970s, Vera Rubin discovered that galaxies rotate wrong. Stars at the edges move too fast. They should be flying off into space, but they're not.\n\nThe solution? Invisible matter. Dark matter. 27% of the universe, made of stuff we can't see, can't touch, can't detect.\n\nBut here's the thing: we've built increasingly sensitive detectors. We've looked everywhere. And we've found... nothing.\n\nSDT offers a different explanation. It's called the eclipse effect.\n\nWhen you're in the middle of a galaxy, stars block pressure from the CMB in all directions. This changes the pressure gradient. The rotation curve flattens naturally.\n\nNo invisible matter. No new particles. No fudge factors. Just... geometry.\n\nThe universe doesn't need 27% invisible stuff. It just needs pressure flowing through visible matter.",
+      "segments": [
+        { "time": 0, "text": "We've been looking for dark matter for 50 years. Nothing." },
+        { "time": 12, "text": "In the 1970s, Vera Rubin discovered..." },
+        { "time": 30, "text": "The solution? Invisible matter. Dark matter." },
+        { "time": 45, "text": "But here's the thing: we've built increasingly sensitive detectors..." },
+        { "time": 60, "text": "SDT offers a different explanation. The eclipse effect." },
+        { "time": 78, "text": "No invisible matter. No new particles. Just... geometry." }
+      ]
+    },
+    "node5": {
+      "title": "Validated Predictions",
+      "hook": "A theory is only as good as its predictions. Here's the scorecard.",
+      "duration": 90,
+      "script": "A theory is only as good as its predictions. Here's the scorecard.\n\nSDT makes 24 specific predictions. No adjustable parameters. No fitting to data. Just geometry in, prediction out.\n\nSo far? 16 benchmarks certified. Less than 1% error.\n\nHydrogen spectrum? 0.1% error.\nFine structure constant? Exact match.\nPlanetary orbits? 0.5% error.\nGalaxy rotation curves? Match perfectly—without dark matter.\n\nAnd here's what's remarkable: these benchmarks span 53 orders of magnitude.\n\nFrom nuclear physics at 10 to the minus 15 meters, all the way to cosmology at 10 to the 38 meters.\n\nOne theory. One equation. Errors under 1%.\n\nThat's not a coincidence. That's a pattern. And patterns demand explanation.\n\nWelcome to SDT. Would you like to know more?",
+      "segments": [
+        { "time": 0, "text": "A theory is only as good as its predictions." },
+        { "time": 10, "text": "SDT makes 24 specific predictions." },
+        { "time": 22, "text": "So far? 16 benchmarks certified. Less than 1% error." },
+        { "time": 38, "text": "Hydrogen spectrum? Fine structure? Planetary orbits?" },
+        { "time": 55, "text": "These benchmarks span 53 orders of magnitude." },
+        { "time": 70, "text": "One theory. One equation. Errors under 1%." },
+        { "time": 82, "text": "Welcome to SDT. Would you like to know more?" }
+      ]
+    }
+  }
+}
+

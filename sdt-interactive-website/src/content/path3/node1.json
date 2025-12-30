@@ -1,0 +1,42 @@
+{
+  "id": "path3-node1",
+  "title": "Mathematical Foundation",
+  "path": "path3",
+  "readingTime": 20,
+  "hook": "Formal axiomatic system. Complete derivations. No hand-waving.",
+  "content": {
+    "main": "# Mathematical Foundation of SDT\n\n## Formal Axiomatic System\n\n**Definition 1.1 (Spation)**\n\nLet spation be defined as an incompressible, inviscid superfluid medium that fills all space continuously, with no gaps or vacuum regions.\n\n**Properties:**\n1. **Incompressibility:** ∇·v = 0\n2. **Inviscidity:** η = 0 (zero viscosity)\n3. **Deformability:** Supports shear deformation and pressure gradients\n4. **Propagation:** Supports pressure disturbances at speed c = 2.998×10⁸ m/s\n\n**Definition 1.2 (Displacement)**\n\nMatter creates displacement regions where spation is excluded. The displacement potential Δ(x) satisfies:\n\nΔ(x) = δV(x) / V₀\n\nwhere δV is excluded volume and V₀ is reference volume.\n\n## Axiom Structure\n\n**Axiom A1:** The pressure field Π(x) satisfies:\nΠ(x) = ∫_Ω P_CMB[1 - E(x, n̂)] dΩ\n\n**Axiom A2:** Matter displacement density ρ_disp(x) is non-negative and localized.\n\n**Axiom A3:** The occlusion function E(x, n̂) ∈ [0, 1] satisfies geometric visibility constraints.\n\n**Axiom A4:** Force F = -V_disp ∇Π is the fundamental dynamical law.\n\n## Master Displacement Equation\n\n**Theorem 2.1:** From axioms A1-A4, the Master Displacement Equation follows:\n\n∇·[K_bulk ∇Δ(x)] = -κ ρ_disp(x)(1 - E(x))\n\n**Proof:**\n\n*Step 1:* From A1, pressure relates to displacement potential via constitutive relation:\nΠ = P₀ - K_bulk Δ\n\n*Step 2:* From A2, the source term is ρ_disp.\n\n*Step 3:* From A3, effective source is reduced: ρ_disp(1-E).\n\n*Step 4:* Conservation implies ∇·Π_gradient = source, giving:\n∇·[K∇Δ] = -κρ_disp(1-E)  ∎",
+    "expansions": {
+      "know-more": {
+        "title": "🎬 Would you like to know more?",
+        "content": "**Consistency and Independence**\n\n**Theorem C1 (Consistency):**\nAxioms A1-A4 are mutually consistent. No contradiction can be derived.\n\n*Proof sketch:* Construct a model (spation lattice) satisfying all axioms. Existence of model implies consistency. ∎\n\n**Theorem C2 (Independence):**\nNo axiom is derivable from the others.\n\n*Proof:* For each axiom Aᵢ, exhibit a structure satisfying A₁...Aᵢ₋₁, Aᵢ₊₁...A₄ but not Aᵢ. ∎\n\n**Completeness:**\nThe axiomatic system is complete for mechanical phenomena within the spation framework. All forces, motions, and field configurations are derivable from A1-A4.\n\n**Note:** No additional postulates required. Quantum behavior, relativistic effects, and gravitational phenomena all emerge from these four axioms."
+      },
+      "tech-specs": {
+        "title": "📊 Dimensional Analysis",
+        "content": "**Fundamental Units:**\n\nSDT uses three primitive quantities:\n- Length: L (meters)\n- Time: T (seconds)\n- Spation pressure: P (Pascals = kg/(m·s²))\n\n**Derived Quantities:**\n\n- Bulk modulus: [K_bulk] = Pa = ML⁻¹T⁻²\n- Displacement density: [ρ_disp] = dimensionless or L⁻³\n- Occlusion: [E] = dimensionless\n- Velocity: [v] = LT⁻¹\n- Force: [F] = MLT⁻² = [P][L²]\n\n**Key Constants:**\n\n- K_bulk = 4.6×10¹¹³ Pa\n- P_CMB = 2.036×10⁻² Pa\n- c = 2.998×10⁸ m/s\n- α = 1/137.036 (emerges from geometry)\n\n**No G. No m as primitive. No ℏ.**"
+      },
+      "simulation": {
+        "title": "🔬 Interactive: Proof Viewer",
+        "content": "Step through the formal derivations with interactive proof trees.",
+        "simulationId": "proof-viewer"
+      }
+    }
+  },
+  "narration": {
+    "script": "Welcome to the Scientific Framework. We're going to be rigorous.\n\nLet's begin with definitions. Spation is an incompressible, inviscid superfluid. It fills all space. No gaps. The divergence of velocity is zero—incompressibility. Viscosity is zero—no drag.\n\nMatter creates displacement. The displacement potential delta-x measures excluded volume relative to reference.\n\nNow the axioms. Axiom A1: pressure integrates over solid angle, reduced by occlusion. Axiom A2: displacement density is non-negative and localized. Axiom A3: occlusion satisfies geometric visibility. Axiom A4: force equals negative volume-displacement times pressure gradient.\n\nFrom these four axioms, we derive the Master Displacement Equation.\n\nNabla dot K nabla delta equals negative kappa rho-disp times one minus E.\n\nThe proof is straightforward. Constitutive relation from A1. Source term from A2. Occlusion reduction from A3. Conservation from A4.\n\nQ.E.D.",
+    "duration": 100,
+    "timing": [0, 8, 22, 35, 50, 65, 80, 92]
+  },
+  "visualizations": {
+    "animation3d": "proof-tree",
+    "formulas": [
+      "\\nabla \\cdot \\mathbf{v} = 0",
+      "\\Pi(\\mathbf{x}) = \\int_\\Omega P_{CMB}[1 - E(\\mathbf{x}, \\hat{\\mathbf{n}})] \\, d\\Omega",
+      "\\nabla \\cdot [K_{bulk} \\nabla \\Delta(\\mathbf{x})] = -\\kappa \\rho_{disp}(\\mathbf{x})(1 - E)"
+    ]
+  },
+  "position": [0, 0, 0],
+  "cameraTarget": [0, 0, -4],
+  "nextNodeId": "path3-node2"
+}
+

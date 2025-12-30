@@ -14,10 +14,27 @@ import { WalkthroughApp } from '../components/walkthrough/WalkthroughApp';
   <title>SDT Walkthrough App</title>
   <meta name="description" content="Journey through 43 orders of magnitude to understand how CMB provides all energy in the universe" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script>
+    // Immediate debug
+    console.log('App.astro: Script executing');
+    if (typeof window !== 'undefined') {
+      window.addEventListener('DOMContentLoaded', () => {
+        console.log('App.astro: DOM loaded');
+        const container = document.getElementById('app-container');
+        console.log('App.astro: Container found:', !!container);
+        if (container) {
+          console.log('App.astro: Container size:', container.offsetWidth, container.offsetHeight);
+        }
+      });
+    }
+  </script>
   <style>
-    html, body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
       width: 100%;
       height: 100%;
       overflow: hidden;
@@ -29,6 +46,7 @@ import { WalkthroughApp } from '../components/walkthrough/WalkthroughApp';
       position: fixed;
       top: 0;
       left: 0;
+      background: #0a0a0a;
     }
   </style>
 </head>
@@ -38,5 +56,6 @@ import { WalkthroughApp } from '../components/walkthrough/WalkthroughApp';
   </div>
 </body>
 </html>
+
 
 

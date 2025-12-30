@@ -202,3 +202,10 @@ export const geometryRegistry = new GeometryRegistry();
 // Register default generators
 geometryRegistry.register('toroidal-chamber', new ToroidalChamberGenerator());
 
+// Register dodecahedron generator
+import { DodecahedronGenerator } from './DodecahedronGenerator';
+geometryRegistry.register('dodecahedron', new DodecahedronGenerator());
+
+// Export dodecahedron generator
+export { DodecahedronGenerator } from './DodecahedronGenerator';
+

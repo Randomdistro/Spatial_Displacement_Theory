@@ -8,7 +8,9 @@ import { useNavigationStore, PathType } from '../../store/navigationStore';
 import { loadPathContent } from '../../utils/content-loader';
 import { NodeContent } from '../../types/content';
 import NodeRoom from './NodeRoom';
+import EnhancedNodeRoom from '../3d/EnhancedNodeRoom';
 import NodeConnector from './NodeConnector';
+import SpatialPath from '../3d/SpatialPath';
 
 export interface PathViewProps {
   pathId: PathType;
@@ -101,35 +103,61 @@ export default function PathView({ pathId, onNodeSelect }: PathViewProps) {
 
   return (
     <group>
-      {/* Render nodes */}
-      {nodes.map((node) => (
-        <NodeRoom
-          key={node.id}
-          nodeId={node.id}
-          position={node.position}
-          content={node}
-          onEnter={() => {
-            if (onNodeSelect) {
-              onNodeSelect(node.id);
-            }
-          }}
-        />
-      ))}
+      {/* Render nodes - Use EnhancedNodeRoom for better visuals */}
+      {nodes.map((node) => {
+        const isCurrent = currentNode === node.id;
+        
+        // Use EnhancedNodeRoom for current node, basic NodeRoom for others
+        if (isCurrent) {
+          return (
+            <EnhancedNodeRoom
+              key={node.id}
+              nodeId={node.id}
+              position={node.position}
+              content={node}
+              visible={true}
+              onEnter={() => {
+                if (onNodeSelect) {
+                  onNodeSelect(node.id);
+                }
+              }}
+            />
+          );
+        }
+        
+        return (
+          <NodeRoom
+            key={node.id}
+            nodeId={node.id}
+            position={node.position}
+            content={node}
+            onEnter={() => {
+              if (onNodeSelect) {
+                onNodeSelect(node.id);
+              }
+            }}
+          />
+        );
+      })}
 
-      {/* Render connections between nodes */}
+      {/* Render connections between nodes - Use SpatialPath for better visuals */}
       {nodes.map((node, index) => {
         if (!node.nextNodeId) return null;
         
         const nextNode = nodes.find((n) => n.id === node.nextNodeId);
         if (!nextNode) return null;
 
+        const isVisited = nodes.slice(0, index + 1).some(n => n.id === node.id);
+        const isCurrent = currentNode === node.id;
+
         return (
-          <NodeConnector
-            key={`${node.id}-${nextNode.id}`}
+          <SpatialPath
+            key={`path-${node.id}-${nextNode.id}`}
             from={node.position}
             to={nextNode.position}
-            color={pathColor}
-            opacity={0.2}
+            visited={isVisited}
+            current={isCurrent}
+            progress={isVisited ? 1 : 0}
           />
         );
       })}

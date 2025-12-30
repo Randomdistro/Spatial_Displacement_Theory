@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cross-Reference Schema",
+  "description": "JSON schema for cross-reference mappings between SDT concepts",
+  "type": "object",
+  "required": ["references"],
+  "properties": {
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sourceId", "targetId", "referenceType"],
+        "properties": {
+          "sourceId": {
+            "type": "string",
+            "description": "ID of source concept"
+          },
+          "targetId": {
+            "type": "string",
+            "description": "ID of target concept"
+          },
+          "referenceType": {
+            "type": "string",
+            "enum": [
+              "DERIVES",
+              "VALIDATES",
+              "USES",
+              "EXTENDS",
+              "SPECIAL_CASE",
+              "DEPENDS_ON",
+              "RELATED_TO",
+              "PART_OF",
+              "VALIDATED_BY"
+            ]
+          },
+          "context": {
+            "type": "string",
+            "description": "Optional context description"
+          },
+          "section": {
+            "type": "string",
+            "description": "Specific section/page where reference occurs"
+          },
+          "strength": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Strength of relationship (0-1)"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "totalReferences": {
+          "type": "number"
+        },
+        "totalConcepts": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,75 @@
+{
+  "id": "path1",
+  "name": "Quick Tour",
+  "tagline": "15 minutes to revolutionize your understanding of physics",
+  "targetAudience": "General public, curious non-scientists",
+  "tone": "Wonder-driven, accessible, \"wait, what?!\" moments",
+  "voStyle": "Veritasium hooks",
+  "headlines": [
+    {
+      "text": "GRAVITY ISN'T A FORCE",
+      "subtext": "Would you like to know more?",
+      "nodeId": "node1"
+    },
+    {
+      "text": "ELECTRONS MOVE FASTER THAN LIGHT",
+      "subtext": "Would you like to know more?",
+      "nodeId": "node2"
+    },
+    {
+      "text": "THERE IS NO EMPTY SPACE",
+      "subtext": "Would you like to know more?",
+      "nodeId": "node3"
+    },
+    {
+      "text": "DARK MATTER DOESN'T EXIST",
+      "subtext": "Would you like to know more?",
+      "nodeId": "node4"
+    },
+    {
+      "text": "ONE EQUATION REPLACES ALL OF PHYSICS",
+      "subtext": "Would you like to know more?",
+      "nodeId": "node5"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node1",
+      "title": "What if Space Isn't Empty?",
+      "readingTime": 2,
+      "headline": "THERE IS NO EMPTY SPACE"
+    },
+    {
+      "id": "node2",
+      "title": "The Master Equation",
+      "readingTime": 3,
+      "headline": "ONE EQUATION TO RULE THEM ALL"
+    },
+    {
+      "id": "node3",
+      "title": "From Atoms to Galaxies",
+      "readingTime": 4,
+      "headline": "53 ORDERS OF MAGNITUDE. ONE LAW."
+    },
+    {
+      "id": "node4",
+      "title": "No Dark Matter Needed",
+      "readingTime": 3,
+      "headline": "DARK MATTER DOESN'T EXIST"
+    },
+    {
+      "id": "node5",
+      "title": "Validated Predictions",
+      "readingTime": 5,
+      "headline": "16 OUT OF 24 BENCHMARKS. <1% ERROR."
+    }
+  ],
+  "simulations": [
+    "pressure-field",
+    "cmb-boundary",
+    "force-hierarchy",
+    "k-law-scale-slider",
+    "galaxy-rotation"
+  ]
+}
+

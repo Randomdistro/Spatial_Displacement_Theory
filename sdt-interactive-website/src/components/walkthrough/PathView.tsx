@@ -1,88 +1,209 @@
 /**
  * PathView - Displays the selected path's node structure
+ * 
+ * TEKNE-styled path navigation with:
+ * - Golden ratio proportions
+ * - Veritasium-style hooks
+ * - Visual hierarchy indicating content depth
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigationStore } from '../../store/navigationStore';
 import { PathType } from '../../types/content';
+import { getPathNodeSummaries, PATH_METADATA, NodeSummary } from '../../utils/content-loader';
 
 interface PathViewProps {
   pathId: PathType;
   onReturn: () => void;
 }
 
+// Path-specific styling
+const PATH_STYLES: Record<PathType, { gradient: string; icon: string; accentColor: string }> = {
+  path1: {
+    gradient: 'from-amber-500/20 to-amber-600/10',
+    icon: '⚡',
+    accentColor: 'text-amber-400',
+  },
+  path2: {
+    gradient: 'from-blue-500/20 to-blue-600/10',
+    icon: '🔬',
+    accentColor: 'text-blue-400',
+  },
+  path3: {
+    gradient: 'from-purple-500/20 to-purple-600/10',
+    icon: '📐',
+    accentColor: 'text-purple-400',
+  },
+};
+
 export default function PathView({ pathId, onReturn }: PathViewProps) {
   const { navigateToNode } = useNavigationStore();
+  const [nodes, setNodes] = useState<NodeSummary[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Path metadata
-  const pathInfo = {
-    path1: {
-      name: 'Quick Tour',
-      description: 'A 15-minute introduction to SDT\'s core ideas',
-      nodes: [
-        { id: 'node1', title: 'What if Space Isn\'t Empty?', readingTime: 2 },
-        { id: 'node2', title: 'The Master Equation', readingTime: 3 },
-        { id: 'node3', title: 'From Atoms to Galaxies', readingTime: 4 },
-        { id: 'node4', title: 'No Dark Matter Needed', readingTime: 3 },
-        { id: 'node5', title: 'Validated Predictions', readingTime: 5 },
-      ],
-    },
-    path2: {
-      name: 'Deep Dive',
-      description: 'Comprehensive exploration of all SDT concepts',
-      nodes: [
-        { id: 'node1', title: 'Complete Axiomatic Foundation', readingTime: 15 },
-        { id: 'node2', title: 'Full Derivation Tree', readingTime: 20 },
-        { id: 'node3', title: 'All 24 Benchmarks', readingTime: 30 },
-      ],
-    },
-    path3: {
-      name: 'Scientific Framework',
-      description: 'Complete mathematical and physical derivation',
-      nodes: [
-        { id: 'node1', title: 'Mathematical Foundation', readingTime: 20 },
-        { id: 'node2', title: 'Derivation Tree (Complete)', readingTime: 30 },
-        { id: 'node3', title: 'Validation Protocol', readingTime: 20 },
-      ],
-    },
-  };
+  // Load node summaries
+  useEffect(() => {
+    setIsLoading(true);
+    getPathNodeSummaries(pathId)
+      .then((summaries) => {
+        setNodes(summaries);
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
+  }, [pathId]);
 
-  const path = pathInfo[pathId || 'path1'];
+  const pathMeta = PATH_METADATA[pathId];
+  const pathStyle = PATH_STYLES[pathId];
+
+  // Fallback nodes if loading fails
+  const displayNodes = nodes.length > 0 ? nodes : [
+    { id: 'node1', title: 'Introduction', readingTime: 5 },
+  ];
 
   return (
-    <div className="absolute inset-0 bg-slate-900/95 backdrop-blur-sm text-white p-8 overflow-y-auto">
-      <div className="max-w-6xl mx-auto">
+    <div className="absolute inset-0 bg-slate-900/95 backdrop-blur-sm text-white overflow-y-auto">
+      {/* Background gradient */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${pathStyle.gradient} opacity-50`} />
+      
+      <div className="relative max-w-6xl mx-auto p-8">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-12">
           <button
             onClick={onReturn}
-            className="mb-4 text-slate-400 hover:text-white transition-colors flex items-center gap-2"
+            className="mb-6 text-slate-400 hover:text-white transition-colors flex items-center gap-2 group"
           >
-            ← Back to Landing
+            <span className="group-hover:-translate-x-1 transition-transform">←</span>
+            Back to Landing
           </button>
-          <h1 className="text-4xl font-display font-bold mb-2">{path.name}</h1>
-          <p className="text-xl text-slate-300">{path.description}</p>
+
+          <div className="flex items-start gap-4">
+            <span className="text-5xl">{pathStyle.icon}</span>
+            <div>
+              <h1 className={`text-5xl font-display font-bold mb-3 ${pathStyle.accentColor}`}>
+                {pathMeta.name}
+              </h1>
+              <p className="text-xl text-slate-300 max-w-2xl">
+                {pathMeta.description}
+              </p>
+              <div className="flex gap-4 mt-4 text-sm text-slate-400">
+                <span>🎯 {pathMeta.targetAudience}</span>
+                <span>📝 {pathMeta.tone}</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Node List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {path.nodes.map((node, index) => (
-            <button
-              key={node.id}
-              onClick={() => navigateToNode(node.id)}
-              className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-6 text-left transition-all hover:scale-105"
-            >
-              <div className="text-2xl font-bold text-slate-400 mb-2">
-                {String(index + 1).padStart(2, '0')}
+        {/* Loading state */}
+        {isLoading ? (
+          <div className="flex items-center justify-center h-48">
+            <div className="text-slate-400">Loading content...</div>
+          </div>
+        ) : (
+          <>
+            {/* Journey progress indicator */}
+            <div className="mb-8 relative">
+              <div className="h-1 bg-slate-700 rounded-full overflow-hidden">
+                <div 
+                  className={`h-full bg-gradient-to-r ${pathStyle.gradient.replace('/20', '/80').replace('/10', '/60')} rounded-full`}
+                  style={{ width: '0%' }}
+                />
               </div>
-              <h3 className="text-xl font-display font-semibold mb-2">{node.title}</h3>
-              <div className="text-sm text-slate-400">{node.readingTime} min read</div>
-            </button>
-          ))}
-        </div>
+              <div className="flex justify-between mt-2 text-xs text-slate-500">
+                <span>Start</span>
+                <span>{displayNodes.length} topics</span>
+                <span>Complete</span>
+              </div>
+            </div>
+
+            {/* Node List */}
+            <div className="space-y-4">
+              {displayNodes.map((node, index) => (
+                <button
+                  key={node.id}
+                  onClick={() => navigateToNode(node.id)}
+                  className={`
+                    w-full text-left p-6 rounded-2xl
+                    bg-white/5 hover:bg-white/10 
+                    border border-white/10 hover:border-white/20
+                    transition-all duration-300 
+                    hover:scale-[1.02] hover:shadow-lg
+                    group
+                  `}
+                >
+                  <div className="flex items-start gap-6">
+                    {/* Number */}
+                    <div className={`
+                      w-14 h-14 rounded-xl flex items-center justify-center
+                      bg-gradient-to-br ${pathStyle.gradient}
+                      ${pathStyle.accentColor} text-2xl font-bold font-display
+                      group-hover:scale-110 transition-transform
+                    `}>
+                      {String(index + 1).padStart(2, '0')}
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1">
+                      {/* Hook */}
+                      {node.hook && (
+                        <div className="text-xs text-amber-400 font-bold uppercase tracking-wider mb-1">
+                          {node.hook}
+                        </div>
+                      )}
+
+                      <h3 className="text-xl font-display font-bold mb-2 group-hover:text-white transition-colors">
+                        {node.title}
+                      </h3>
+
+                      <div className="flex items-center gap-4 text-sm text-slate-400">
+                        <span>📖 {node.readingTime} min read</span>
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity text-amber-400">
+                          Click to explore →
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className={`
+                      w-10 h-10 rounded-full flex items-center justify-center
+                      bg-white/5 group-hover:bg-white/10
+                      ${pathStyle.accentColor}
+                      transition-all group-hover:translate-x-1
+                    `}>
+                      →
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Continue journey prompt */}
+            <div className="mt-12 text-center">
+              <p className="text-slate-400 mb-4">
+                Ready to begin your journey through SDT?
+              </p>
+              <button
+                onClick={() => navigateToNode(displayNodes[0]?.id || 'node1')}
+                className={`
+                  px-8 py-4 rounded-xl font-bold text-lg
+                  bg-gradient-to-r from-amber-500 to-amber-600
+                  hover:from-amber-400 hover:to-amber-500
+                  text-slate-900 transition-all
+                  shadow-lg shadow-amber-500/20
+                  hover:shadow-xl hover:shadow-amber-500/30
+                  hover:scale-105
+                `}
+              >
+                Start with "{displayNodes[0]?.title || 'Introduction'}" →
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
 }
+
+
+
 
 

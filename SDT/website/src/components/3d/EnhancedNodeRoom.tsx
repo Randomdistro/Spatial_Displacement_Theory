@@ -22,8 +22,10 @@ import { ErrorBoundary } from '../../framework';
 // Import Creative Agent components
 import NodeRoomChamber from './NodeRoomChamber';
 import ContentCard from './ContentCard';
+import ContentRenderer3D from './ContentRenderer3D';
 import PressureFieldVisualization from './PressureFieldVisualization';
 import AtmosphericEffects from './AtmosphericEffects';
+import SimulationIntegration from './SimulationIntegration';
 
 export interface EnhancedNodeRoomProps {
   nodeId: string;
@@ -152,6 +154,32 @@ export default function EnhancedNodeRoom({
                 visible={contentVisible}
               />
             ))}
+
+            {/* 3D Content Renderer for main content */}
+            <ContentRenderer3D
+              content={content.content.main}
+              position={[0, 2, 0]}
+              maxWidth={4}
+              fontSize={0.12}
+              visible={contentVisible}
+            />
+
+            {/* Simulation integration if present */}
+            {content.content.expansions && Object.entries(content.content.expansions).map(([key, expansion]) => {
+              const expansionData = typeof expansion === 'string' ? null : expansion;
+              if (expansionData?.simulationId) {
+                return (
+                  <SimulationIntegration
+                    key={key}
+                    simulationId={expansionData.simulationId}
+                    position={[0, -1.5, 0]}
+                    visible={contentVisible}
+                    parameters={expansionData.parameters}
+                  />
+                );
+              }
+              return null;
+            })}
           </>
         )}
       </group>

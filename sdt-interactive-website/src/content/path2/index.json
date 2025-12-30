@@ -1,0 +1,64 @@
+{
+  "id": "path2",
+  "name": "Deep Dive",
+  "tagline": "45 minutes of comprehensive exploration",
+  "targetAudience": "Curious learners, science enthusiasts",
+  "tone": "Educational, builds intuition, shows the 'why'",
+  "voStyle": "Conversational guide - \"Let me show you something remarkable...\"",
+  "headlines": [
+    {
+      "text": "THE MASTER EQUATION",
+      "subtext": "One formula, all forces",
+      "nodeId": "node1"
+    },
+    {
+      "text": "OCCLUSION: HOW SHADOWS CREATE GRAVITY",
+      "subtext": "The key to unification",
+      "nodeId": "node2"
+    },
+    {
+      "text": "THE k-LAW",
+      "subtext": "53 orders of magnitude, one equation",
+      "nodeId": "node3"
+    },
+    {
+      "text": "TOROIDAL ELECTRONS",
+      "subtext": "Particles aren't points",
+      "nodeId": "node4"
+    },
+    {
+      "text": "THE SPATION LATTICE",
+      "subtext": "What is space made of?",
+      "nodeId": "node5"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node1",
+      "title": "Complete Axiomatic Foundation",
+      "readingTime": 15,
+      "headline": "FOUR AXIOMS. ONE MEDIUM. ALL OF PHYSICS."
+    },
+    {
+      "id": "node2",
+      "title": "The Master Equation Derivation",
+      "readingTime": 20,
+      "headline": "FROM AXIOMS TO UNIFIED PHYSICS"
+    },
+    {
+      "id": "node3",
+      "title": "Atomic Physics: The Toroidal Electron",
+      "readingTime": 15,
+      "headline": "ELECTRONS AREN'T POINTS. THEY'RE DONUTS."
+    }
+  ],
+  "simulations": [
+    "spation-lattice",
+    "pressure-field",
+    "force-hierarchy",
+    "toroidal-electron",
+    "cmb-boundary",
+    "k-law-scale-slider"
+  ]
+}
+

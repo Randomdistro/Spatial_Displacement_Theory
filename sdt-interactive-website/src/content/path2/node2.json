@@ -1,0 +1,41 @@
+{
+  "id": "path2-node2",
+  "title": "The Master Equation Derivation",
+  "path": "path2",
+  "readingTime": 20,
+  "hook": "Step by step, from axioms to the equation that replaces all of physics.",
+  "content": {
+    "main": "# Deriving the Master Equation\n\n## Starting from Axioms\n\n**From Axiom 1** (Pressurized Spation):\nPressure field exists: Π(x) = K_bulk ∇Δ(x)\n\nWhere K_bulk = 4.6×10¹¹³ Pa is the spation bulk modulus.\n\n**From Axiom 2** (Matter Excludes Spations):\nDisplacement density ρ_disp(x) quantifies the excluded volume at each point.\n\n**From Axiom 3** (Occlusion Creates Imbalance):\nOcclusion function E(x, n̂) reduces effective displacement based on shadowing.\n\n**From Axiom 4** (Force from Pressure Gradient):\nForce F = -V_disp ∇Π creates dynamics.\n\n## The Derivation\n\n**Step 1:** Conservation of spation (incompressibility)\n∇·v_spation = 0\n\n**Step 2:** Pressure relates to displacement\nΠ = K_bulk ∇Δ\n\n**Step 3:** Source term is displaced volume, reduced by occlusion\nSource = κ ρ_disp(x)(1 - E(x, n̂))\n\n**Step 4:** Poisson-like equation\n∇·[K_bulk ∇Δ(x)] = -κ ρ_disp(x)(1 - E(x, n̂))\n\n## The Master Equation\n\n**∇·[K_bulk ∇Δ(x)] = -κ ρ_disp(x) (1 - E(x,n̂))**\n\nThis single equation replaces:\n- Newton's gravitational law\n- Coulomb's electrostatic law\n- Schrödinger's wave equation\n- Einstein's field equations\n- All of quantum field theory",
+    "expansions": {
+      "know-more": {
+        "title": "🎬 Would you like to know more?",
+        "content": "**Why does this work?**\n\nThe Master Equation has the same mathematical structure as:\n- Poisson's equation (electrostatics)\n- Newton's gravitational potential equation\n- The wave equation (in certain limits)\n\nBut instead of multiple equations for multiple forces, it's ONE equation with different **occlusion regimes**:\n\n**E → 0 (no occlusion):**\nRecovering Coulomb's law. Charged particles don't significantly occlude each other's CMB pressure.\n\n**E → 1-η (full occlusion):**\nRecovering gravity. Massive objects fully shadow each other's CMB pressure.\n\n**Intermediate E:**\nVarious forces and effects emerge, including van der Waals, Casimir, and chemical bonding.\n\n**The key insight:**\nCoulomb and gravity are NOT different forces. They're the SAME pressure phenomenon in different geometric configurations."
+      },
+      "tech-specs": {
+        "title": "📊 Complete Derivation Steps",
+        "content": "**Step-by-step derivation:**\n\n**1. Pressure Field Definition**\nΠ(x) = P_CMB - δP(x)\nwhere δP is the pressure deficit from matter displacement.\n\n**2. Constitutive Relation**\nδP = K_bulk × (δV/V) = K_bulk × Δ(x)\nwhere Δ(x) is the displacement potential.\n\n**3. Continuity (Incompressibility)**\n∇·v = 0 implies pressure disturbances propagate at c.\n\n**4. Source Term**\nMatter creates displacement: ρ_disp(x)\nBut occlusion reduces effective source: ρ_disp(x)(1 - E)\n\n**5. Field Equation**\n∇²Π = source → ∇·[K∇Δ] = -κρ_disp(1-E)\n\n**6. Dimensional Analysis**\n[K_bulk] = Pa = N/m² = kg/(m·s²)\n[∇Δ] = 1/m\n[K∇Δ] = kg/(m²·s²) = pressure gradient\n∇·[K∇Δ] = kg/(m³·s²) = pressure density\n\nAll dimensions check. No fudge factors."
+      },
+      "simulation": {
+        "title": "🔬 Interactive: Equation Term Explorer",
+        "content": "Click on each term of the Master Equation to see what it represents and how it contributes to the pressure field.",
+        "simulationId": "master-equation-terms"
+      }
+    }
+  },
+  "narration": {
+    "script": "Now let's derive the Master Equation. Step by step.\n\nWe start with the four axioms. From Axiom 1, we know pressure exists throughout space. The pressure field relates to displacement through the bulk modulus K.\n\nFrom Axiom 2, matter creates displacement. The displacement density rho-disp tells us how much spation is pushed aside at each point.\n\nFrom Axiom 3, occlusion reduces the effective displacement. The function E tells us how much pressure is blocked.\n\nFrom Axiom 4, force comes from pressure gradients. This creates dynamics.\n\nPut it together. Conservation of spation—it's incompressible—gives us a continuity equation. The source term is displaced volume, reduced by occlusion.\n\nAnd we arrive at:\n\nNabla dot K-bulk nabla delta equals negative kappa rho-disp times one minus E.\n\nThis is it. This single equation replaces all the separate laws of physics. Same equation. Different limits. All of physics.",
+    "duration": 100,
+    "timing": [0, 10, 20, 32, 42, 52, 65, 78, 90]
+  },
+  "visualizations": {
+    "animation3d": "derivation-steps",
+    "formulas": [
+      "\\nabla \\cdot [K_{bulk} \\nabla \\Delta(\\mathbf{x})] = -\\kappa \\rho_{disp}(\\mathbf{x})(1 - E(\\mathbf{x}, \\hat{\\mathbf{n}}))"
+    ]
+  },
+  "position": [5, 0, -3],
+  "cameraTarget": [5, 0, -6],
+  "previousNodeId": "path2-node1",
+  "nextNodeId": "path2-node3"
+}
+

@@ -6,7 +6,7 @@ import path from 'path';
 export default defineConfig({
   site: 'https://sdt-theory.org',
   server: {
-    port: 3000,
+    port: 3001,
     host: true,
   },
   integrations: [

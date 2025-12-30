@@ -69,11 +69,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
+          <a href="/paths" class="nav-link group flex items-center gap-1">
+            <span class="text-amber-500 group-hover:text-amber-400">●</span>
+            <span>Experience</span>
+          </a>
           <a href="/theory" class="nav-link">Theory</a>
           <a href="/papers" class="nav-link">Papers</a>
           <a href="/tools" class="nav-link">Tools</a>
           <a href="/atomicus" class="nav-link">ATOMICUS</a>
-          <a href="/code" class="nav-link">Code</a>
           <a href="/about" class="nav-link">About</a>
         </div>
 
@@ -96,11 +99,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <!-- Mobile Navigation -->
       <div id="mobile-menu" class="hidden md:hidden pb-4">
         <div class="flex flex-col space-y-2">
+          <a href="/paths" class="nav-link py-2 flex items-center gap-2">
+            <span class="text-amber-500">●</span>
+            <span>3D Experience</span>
+            <span class="text-xs bg-amber-500/20 text-amber-600 px-2 py-0.5 rounded-full">NEW</span>
+          </a>
           <a href="/theory" class="nav-link py-2">Theory</a>
           <a href="/papers" class="nav-link py-2">Papers</a>
           <a href="/tools" class="nav-link py-2">Tools</a>
           <a href="/atomicus" class="nav-link py-2">ATOMICUS</a>
-          <a href="/code" class="nav-link py-2">Code</a>
           <a href="/about" class="nav-link py-2">About</a>
           <a href="/tools/orbital-calculator" class="btn-primary text-sm text-center mt-4">Try Calculator</a>
         </div>
@@ -135,6 +142,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <div>
           <h4 class="font-display font-semibold text-white mb-4">Explore</h4>
           <ul class="space-y-2 text-sm">
+            <li><a href="/paths" class="hover:text-amber-400 transition-colors flex items-center gap-1">
+              <span class="text-amber-500">●</span> 3D Experience
+            </a></li>
             <li><a href="/theory/overview" class="hover:text-white transition-colors">Theory Overview</a></li>
             <li><a href="/papers/de-rerum" class="hover:text-white transition-colors">Complete Treatise</a></li>
             <li><a href="/tools" class="hover:text-white transition-colors">Calculators</a></li>

@@ -11,6 +11,7 @@ import { OrbitControls, PerspectiveCamera, Environment } from '@react-three/drei
 import * as THREE from 'three';
 import CameraChoreography from './CameraChoreography';
 import AtmosphericEffects from './AtmosphericEffects';
+import SacredGeometryBackground from './SacredGeometryBackground';
 
 export interface Scene3DProps {
   children: React.ReactNode;
@@ -62,6 +63,14 @@ export default function Scene3D({
           castShadow
         />
         <pointLight position={[0, 0, 0]} intensity={0.4} color="#d69e2e" /> {/* Gold center glow */}
+        
+        {/* Sacred Geometry Background - subtle pattern in the deep */}
+        <SacredGeometryBackground
+          variant="both"
+          opacity={0.12}
+          scale={8}
+          animated={true}
+        />
         
         {/* Atmospheric Effects */}
         <AtmosphericEffects

@@ -11,14 +11,15 @@
  * - The obviousness, effortlessly revealed
  */
 
-import React, { useRef, useEffect, useState, useMemo } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Mesh, MeshStandardMaterial, Color, Vector3, PointLight, AmbientLight, DirectionalLight } from 'three';
+import { Mesh, MeshStandardMaterial, Color, PointLight, AmbientLight, DirectionalLight } from 'three';
 import { Text } from '@react-three/drei';
 import { gsap } from 'gsap';
 import { NodeContent } from '../../types/content';
 import { useGeometry, useAnimation, EasingFunctions } from '../../framework/hooks';
 import { ErrorBoundary } from '../../framework';
+import { PHI, PHI_INVERSE, GOLDEN_ANGLE } from '../../utils/sacred-geometry';
 
 // Design system colors - Creative Agent
 const COLORS = {
@@ -69,13 +70,14 @@ export default function NodeRoomChamber({
   const materialRef = useRef<MeshStandardMaterial>(null);
   const pressureMaterialRef = useRef<MeshStandardMaterial>(null);
 
-  // Generate toroidal chamber geometry using framework
+  // Generate toroidal chamber geometry using GOLDEN RATIO proportions
+  // The torus dimensions follow sacred geometry principles
   const { geometry: chamberGeometry } = useGeometry({
     generator: 'toroidal-chamber',
     params: {
-      innerRadius: 2,      // Concept core
-      outerRadius: 4,       // Concept boundary
-      height: 3,            // Conceptual depth
+      innerRadius: PHI,           // 1.618... - Golden ratio
+      outerRadius: PHI * PHI,     // 2.618... - Phi squared
+      height: PHI + 1,            // 2.618... - Also phi squared
       radialSegments: 32,
       tubularSegments: 64,
     },
@@ -113,21 +115,24 @@ export default function NodeRoomChamber({
     autoPlay: visible,
   });
 
-  // Idle breathing animation - Pressure field pulses
+  // Idle breathing animation - Golden ratio frequencies
   useFrame((state) => {
     if (!mounted || !isEntered) return;
 
     const time = state.clock.elapsedTime;
     
-    // Breathing effect: scale 1 ± 0.03, 4s cycle
+    // Breathing effect using golden ratio frequency
+    // PHI_INVERSE Hz (~0.618 Hz) creates natural, pleasing rhythm
     if (pressureFieldRef.current) {
-      const breath = Math.sin(time * (Math.PI / 2)) * 0.03;
+      const breath = Math.sin(time * PHI_INVERSE) * 0.03;
       pressureFieldRef.current.scale.setScalar(1 + breath);
     }
 
-    // Subtle chamber rotation
+    // Subtle chamber rotation at golden frequency
     if (chamberRef.current) {
-      chamberRef.current.rotation.y = Math.sin(time * 0.1) * 0.05;
+      chamberRef.current.rotation.y = Math.sin(time * PHI_INVERSE * 0.2) * 0.05;
+      // Secondary rotation for organic feel
+      chamberRef.current.rotation.x = Math.sin(time * PHI_INVERSE * PHI_INVERSE) * 0.02;
     }
   });
 

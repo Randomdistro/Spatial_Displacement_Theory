@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-20T00:00:00Z",
+  "ids": [
+    "paper-core-engine",
+    "rule-four-primitives",
+    "rule-shunt-dynamics",
+    "b07"
+  ],
+  "categories": {
+    "papers": ["paper-core-engine"],
+    "phases": [],
+    "benchmarks": ["b07"],
+    "formulas": [],
+    "rules": ["rule-four-primitives", "rule-shunt-dynamics"],
+    "elements": []
+  },
+  "domains": {
+    "foundational": ["paper-core-engine", "rule-four-primitives", "rule-shunt-dynamics"],
+    "atomic": [],
+    "electromagnetic": [],
+    "gravitational": [],
+    "cosmological": [],
+    "thermodynamic": [],
+    "chemistry": [],
+    "nuclear": [],
+    "condensed-matter": [],
+    "fluid-dynamics": [],
+    "universal": ["b07"]
+  }
+}

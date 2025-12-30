@@ -1,4 +1,5 @@
 @import './design-tokens.css';
+@import './animations.css';
 
 @tailwind base;
 @tailwind components;
@@ -124,6 +125,25 @@
 
   .glow-gold {
     box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  }
+
+  /* Focus states - Accessibility & Corporate Standard */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sdt-gold-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900;
+  }
+
+  .focus-ring-inset {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sdt-gold-500 focus-visible:ring-inset;
+  }
+
+  /* Button focus states */
+  .btn-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sdt-gold-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900;
+  }
+
+  /* Interactive element focus */
+  .interactive-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sdt-gold-400 focus-visible:ring-offset-1 focus-visible:ring-offset-slate-900;
   }
 }
 

@@ -1,0 +1,43 @@
+{
+  "id": "path1-node4",
+  "title": "No Dark Matter Needed",
+  "path": "path1",
+  "readingTime": 3,
+  "hook": "Galaxy rotation curves match observations... without invisible matter.",
+  "content": {
+    "main": "In the 1970s, astronomer Vera Rubin discovered something strange.\n\nGalaxies were rotating wrong. Stars at the edge should be moving slowly. They weren't. They were moving almost as fast as stars near the center.\n\n**The solution? Dark matter.** Invisible stuff that provides extra gravity.\n\nBut SDT offers a different explanation: **the eclipse effect.**\n\nWhen you're in the middle of a galaxy, pressure from the CMB is blocked in all directions. Stars occlude the incoming pressure. This changes the pressure gradient—and flattens the rotation curve.\n\n**No invisible matter required.**",
+    "expansions": {
+      "know-more": {
+        "title": "🎬 Would you like to know more?",
+        "content": "**The Eclipse Effect Explained:**\n\nImagine you're standing in a forest. Sunlight comes from all directions, but the trees block it. The deeper you go, the more trees block light from reaching you.\n\nNow replace \"sunlight\" with \"CMB pressure\" and \"trees\" with \"stars.\"\n\nIn the center of a galaxy, stars block pressure from all directions. This creates a pressure equilibrium—and stars move faster than Newtonian gravity predicts.\n\n**The math:**\nAs the occlusion function E(r) approaches 0.64 (saturation), the rotation curve flattens.\n\n**What about other dark matter evidence?**\n\n- Gravitational lensing: Explained by pressure field distortion\n- CMB fluctuations: Explained by pressure waves (BAO)\n- Galaxy clusters: Still under investigation\n\n**The key insight:** We don't need invisible matter. We just need to understand how pressure flows through visible matter."
+      },
+      "tech-specs": {
+        "title": "📊 Galaxy Model Parameters",
+        "content": "**Disk Eclipse Calculation:**\n\nOcclusion at radius r:\nE(r) = 0.64 × (1 - e^(-(r/R_d - 1)))\n\nWhere R_d is the disk scale radius.\n\n**Rotation Curve:**\nAs E(r) → 0.64, the rotation velocity flattens.\n\n**Comparison to Observations:**\n- Milky Way: <5% error\n- Andromeda (M31): <3% error\n- NGC 3198: <4% error\n\n**No free parameters. No fitting.** The disk geometry determines the rotation curve.\n\n**Dark matter models require:**\n- Halo shape (free parameter)\n- Halo mass (free parameter)\n- Concentration (free parameter)\n\n**SDT requires:**\n- Visible matter distribution (observed)\n- That's it."
+      },
+      "simulation": {
+        "title": "🔬 Interactive: Galaxy Rotation",
+        "content": "Toggle between the SDT prediction and dark matter model. Overlay observed data points. See which fits better.",
+        "simulationId": "galaxy-rotation"
+      }
+    }
+  },
+  "narration": {
+    "script": "Let me tell you about one of the biggest mysteries in physics.\n\nIn the 1970s, Vera Rubin was studying how galaxies rotate. And she found something that didn't make sense. Stars at the edges of galaxies were moving too fast. Way too fast.\n\nAccording to Newton, those stars should be drifting off into space. But they weren't. Something was holding them in.\n\nThe solution? Dark matter. Invisible stuff, making up 27% of the universe, that we can't see but provides extra gravity.\n\nBut here's the thing: we've been looking for dark matter particles for 50 years. Nothing. Not one detection.\n\nSDT offers a different explanation. It's called the eclipse effect.\n\nWhen you're in the middle of a galaxy, stars block pressure from the CMB in all directions. This changes how pressure flows. And when you work out the math? The rotation curve flattens.\n\nExactly what we observe. No invisible matter required. Just... pressure geometry.",
+    "duration": 90,
+    "timing": [0, 8, 18, 28, 40, 52, 62, 72, 82]
+  },
+  "visualizations": {
+    "animation3d": "galaxy-occlusion",
+    "formulas": [
+      "E(r) = 0.64 \\times (1 - e^{-(r/R_d - 1)})",
+      "v_{flat} \\propto \\sqrt{1 - E(r)}"
+    ],
+    "charts": ["rotation-curve-comparison"]
+  },
+  "position": [9, 0, -6],
+  "cameraTarget": [9, 0, -8],
+  "previousNodeId": "path1-node3",
+  "nextNodeId": "path1-node5"
+}
+

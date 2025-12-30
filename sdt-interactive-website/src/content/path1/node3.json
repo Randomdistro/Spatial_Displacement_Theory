@@ -1,0 +1,42 @@
+{
+  "id": "path1-node3",
+  "title": "From Atoms to Galaxies",
+  "path": "path1",
+  "readingTime": 4,
+  "hook": "The same law works across 53 orders of magnitude...",
+  "content": {
+    "main": "In conventional physics, we need different laws for atoms and galaxies.\n\nQuantum mechanics for the small. General relativity for the large. And they don't mix.\n\nBut SDT shows that the **same principle—pressure balance—works everywhere.**\n\nThe universal velocity law:\n\n**v(r) = (c/k) √(R/r)**\n\nThis single equation describes:\n- Electrons orbiting nuclei\n- Planets orbiting stars\n- Stars orbiting galaxies\n\nThe only difference is **k**—a scale factor that changes with context.",
+    "expansions": {
+      "know-more": {
+        "title": "🎬 Would you like to know more?",
+        "content": "**The k-values across scales:**\n\n| System | k value | Scale |\n|--------|---------|-------|\n| Hydrogen electron | 137.036 | 10⁻¹¹ m |\n| Planetary orbits | ~59,000 | 10¹¹ m |\n| Stellar systems | ~10⁴ | 10¹³ m |\n| Galactic orbits | ~10⁵ | 10²¹ m |\n\n**What IS k?**\n\nk isn't arbitrary. It emerges from the geometry of the system:\n- The ratio of orbital radius to the effective pressure source\n- Different scales have different effective pressure configurations\n- But the FORM of the law is identical\n\n**The 137 Mystery:**\nIn atoms, k = 137.036, which is exactly 1/α (the fine structure constant). This isn't a coincidence—it emerges naturally from the pressure geometry.\n\n**No fine-tuning. No adjustable parameters. Just geometry.**"
+      },
+      "tech-specs": {
+        "title": "📊 The Universal k-Law",
+        "content": "**Derivation:**\n\nStarting from pressure balance:\nF_pressure = F_centripetal\n\nThis gives:\n(c/k)² × (R/r) = v²\n\nTherefore:\nv(r) = (c/k) √(R/r)\n\n**Key relationship:**\nz · k² = 1\n\nWhere z is the gravitational compactness (pressure concentration).\n\n**This means:**\n- Compact objects (high z) → fast orbits (low k)\n- Diffuse objects (low z) → slow orbits (high k)\n- The product is ALWAYS 1\n\n**No mass. No G. Just geometry.**"
+      },
+      "simulation": {
+        "title": "🔬 Interactive: Scale Slider",
+        "content": "Drag the slider from atomic to galactic scale. Watch how the same law applies everywhere, just with different k values.",
+        "simulationId": "k-law-scale-slider"
+      }
+    }
+  },
+  "narration": {
+    "script": "Here's something that really surprised me when I first learned it.\n\nIn conventional physics, we need different laws for different scales. Quantum mechanics for atoms. General relativity for galaxies. And famously, they don't play nice together.\n\nBut in SDT? One law. Everywhere.\n\nv equals c over k, times the square root of R over r.\n\nThis describes the electron orbiting a proton. It describes Earth orbiting the Sun. It describes our Sun orbiting the galaxy.\n\nSame law. Fifty-three orders of magnitude. The only thing that changes is k—a dimensionless number that depends on the scale.\n\nFor hydrogen atoms? k equals 137.036. Sound familiar? That's exactly one over alpha, the fine structure constant. It's not a coincidence. It emerges naturally from the pressure geometry.\n\nFor planets? k is about 59,000.\n\nFor galaxies? k approaches 100,000.\n\nBut the form of the law? Identical. From the smallest to the largest scales we can measure.",
+    "duration": 85,
+    "timing": [0, 8, 20, 30, 40, 50, 60, 70, 80]
+  },
+  "visualizations": {
+    "animation3d": "scale-comparison",
+    "formulas": [
+      "v(r) = \\frac{c}{k} \\sqrt{\\frac{R}{r}}",
+      "z \\cdot k^2 = 1"
+    ]
+  },
+  "position": [6, 0, -4],
+  "cameraTarget": [6, 0, -6],
+  "previousNodeId": "path1-node2",
+  "nextNodeId": "path1-node4"
+}
+

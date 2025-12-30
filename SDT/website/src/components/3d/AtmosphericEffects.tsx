@@ -9,11 +9,17 @@
  * - Fog, particles, and glow ARE the medium's presence
  * - Subtle, not distracting
  * - Creates immersion
+ * 
+ * Enhanced with Sacred Geometry:
+ * - Fibonacci sphere distribution (golden angle)
+ * - Golden ratio proportions
+ * - Harmonic pulsing frequencies
  */
 
 import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Mesh, SphereGeometry, MeshStandardMaterial, Color, Points, BufferGeometry, BufferAttribute, PointsMaterial } from 'three';
+import { Mesh, MeshStandardMaterial, Color, Points, BufferGeometry, BufferAttribute, PointsMaterial } from 'three';
+import { fibonacciSphere, PHI, GOLDEN_ANGLE, harmonicSeries } from '../../utils/sacred-geometry';
 
 // Design system colors
 const COLORS = {
@@ -33,8 +39,9 @@ export interface AtmosphericEffectsProps {
  * AtmosphericEffects - Depth fog, particles, and glow
  * 
  * Features:
- * - Depth fog (exponential, distance-based)
- * - Spation particles (slow drift, gold glow)
+ * - Fibonacci sphere particle distribution (perfect uniformity)
+ * - Golden ratio animation frequencies
+ * - Harmonic pulsing (natural, organic)
  * - Ambient glow (bloom effect simulation)
  */
 export default function AtmosphericEffects({
@@ -45,20 +52,31 @@ export default function AtmosphericEffects({
   const particlesRef = useRef<Points>(null);
   const glowRef = useRef<Mesh>(null);
 
-  // Generate spation particles
+  // Generate spation particles using Fibonacci sphere distribution
+  // This creates perfectly uniform distribution - the beauty of geometry
   const particlesGeometry = useMemo(() => {
     const geometry = new BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const sizes = new Float32Array(particleCount);
     
+    // Use Fibonacci sphere for perfect distribution
+    const fibPoints = fibonacciSphere(particleCount, 10, 0);
+    
     for (let i = 0; i < particleCount; i++) {
-      // Random position in space
-      positions[i * 3] = (Math.random() - 0.5) * 20;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
+      // Fibonacci-distributed positions (organic, natural)
+      positions[i * 3] = fibPoints[i][0];
+      positions[i * 3 + 1] = fibPoints[i][1];
+      positions[i * 3 + 2] = fibPoints[i][2];
       
-      // Random size
-      sizes[i] = Math.random() * 0.01 + 0.005;
+      // Size varies by golden ratio harmonics
+      // Larger particles near center, smaller at edges
+      const distFromCenter = Math.sqrt(
+        fibPoints[i][0] ** 2 + 
+        fibPoints[i][1] ** 2 + 
+        fibPoints[i][2] ** 2
+      );
+      const sizeScale = 1 - (distFromCenter / 12); // 0-1 based on distance
+      sizes[i] = (sizeScale * 0.015 + 0.005) * (1 + (i % 8 === 0 ? PHI - 1 : 0));
     }
     
     geometry.setAttribute('position', new BufferAttribute(positions, 3));
@@ -67,33 +85,55 @@ export default function AtmosphericEffects({
     return geometry;
   }, [particleCount]);
 
-  // Particle animation - slow drift (pressure flow)
+  // Harmonic frequencies for pulsing (based on golden ratio)
+  const harmonics = useMemo(() => harmonicSeries(1, 5), []);
+
+  // Particle animation - golden ratio orbital flow
   useFrame((state) => {
     if (!particlesRef.current || !particlesRef.current.geometry) return;
     
     const time = state.clock.elapsedTime;
     const positions = particlesRef.current.geometry.getAttribute('position') as BufferAttribute;
     
-    // Slow drift animation
+    // Golden ratio orbital flow - particles orbit using golden angle
     for (let i = 0; i < particleCount; i++) {
       const i3 = i * 3;
-      // Drift in pressure flow direction
-      positions.array[i3] += Math.sin(time * 0.1 + i * 0.01) * 0.001;
-      positions.array[i3 + 1] += Math.cos(time * 0.15 + i * 0.01) * 0.001;
-      positions.array[i3 + 2] += Math.sin(time * 0.12 + i * 0.01) * 0.001;
       
-      // Wrap around if out of bounds
-      if (Math.abs(positions.array[i3]) > 10) positions.array[i3] *= -1;
-      if (Math.abs(positions.array[i3 + 1]) > 10) positions.array[i3 + 1] *= -1;
-      if (Math.abs(positions.array[i3 + 2]) > 10) positions.array[i3 + 2] *= -1;
+      // Each particle orbits at its Fibonacci-derived angle
+      const orbitalAngle = (i * GOLDEN_ANGLE) + time * 0.05 * (1 + (i % 5) * 0.1);
+      const orbitalRadius = 0.002;
+      
+      // Drift in golden spiral pattern (organic, natural)
+      positions.array[i3] += Math.cos(orbitalAngle) * orbitalRadius;
+      positions.array[i3 + 1] += Math.sin(orbitalAngle * PHI) * orbitalRadius * 0.5;
+      positions.array[i3 + 2] += Math.sin(orbitalAngle) * orbitalRadius;
+      
+      // Soft boundary - particles slow near edges, reverse gently
+      const dist = Math.sqrt(
+        positions.array[i3] ** 2 +
+        positions.array[i3 + 1] ** 2 +
+        positions.array[i3 + 2] ** 2
+      );
+      
+      if (dist > 11) {
+        // Gently push back toward center
+        const factor = -0.001;
+        positions.array[i3] += positions.array[i3] * factor;
+        positions.array[i3 + 1] += positions.array[i3 + 1] * factor;
+        positions.array[i3 + 2] += positions.array[i3 + 2] * factor;
+      }
     }
     
     positions.needsUpdate = true;
     
-    // Subtle twinkle (random emissive variation)
+    // Harmonic pulsing (golden ratio frequencies)
     if (particlesRef.current.material instanceof PointsMaterial) {
-      const twinkle = Math.sin(time * 2 + Math.random() * Math.PI) * 0.1 + 0.9;
-      particlesRef.current.material.opacity = twinkle * 0.6;
+      // Sum of harmonics creates organic pulsing
+      const pulse = harmonics.reduce((sum, h, idx) => {
+        return sum + Math.sin(time * h * PHI) * (1 / (idx + 1));
+      }, 0) / harmonics.length;
+      
+      particlesRef.current.material.opacity = 0.5 + pulse * 0.2;
     }
   });
 

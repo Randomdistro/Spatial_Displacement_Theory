@@ -1,132 +1,261 @@
 /**
  * NodeRoom - Displays individual node content with 3D visualization
+ * 
+ * Features:
+ * - Dynamic content loading from JSON files
+ * - Veritasium-style narration integration
+ * - "Would you like to know more?" expansion pattern
+ * - Simulation embedding
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigationStore } from '../../store/navigationStore';
+import { loadNodeContent } from '../../utils/content-loader';
+import type { NodeContent, PathType } from '../../types/content';
+import NarrationPlayer from '../ui/NarrationPlayer';
+import ExpansionCard, { ExpansionCardList, ExpansionData } from '../ui/ExpansionCard';
+import { PressureFieldSim, ToroidalElectronSim, GalaxyRotationSim, KLawScaleSim } from '../simulations';
 
 interface NodeRoomProps {
   onReturn: () => void;
 }
 
+// Simulation component registry
+const SIMULATION_COMPONENTS: Record<string, React.FC<any>> = {
+  'pressure-field': PressureFieldSim,
+  'toroidal-electron': ToroidalElectronSim,
+  'galaxy-rotation': GalaxyRotationSim,
+  'k-law-scale-slider': KLawScaleSim,
+};
+
 export default function NodeRoom({ onReturn }: NodeRoomProps) {
-  const { currentNode } = useNavigationStore();
-  const [expandedSection, setExpandedSection] = useState<string | null>(null);
+  const { currentNode, currentPath } = useNavigationStore();
+  const [content, setContent] = useState<NodeContent | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [activeSimulation, setActiveSimulation] = useState<string | null>(null);
 
-  // Placeholder content - will be loaded from content files
-  const nodeContent = {
-    title: 'What if Space Isn\'t Empty?',
-    readingTime: 2,
-    mainContent: `
-For a century, we've described atoms with probability waves and gravity as curved spacetime. 
-But what if there's a simpler explanation?
+  // Load content
+  useEffect(() => {
+    if (!currentNode || !currentPath) return;
 
-**What if space itself is a pressurized medium, and particles are stable structures within it?**
+    setIsLoading(true);
+    loadNodeContent(currentPath as PathType, currentNode)
+      .then((data) => {
+        setContent(data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.error('Failed to load content:', err);
+        setIsLoading(false);
+      });
+  }, [currentNode, currentPath]);
 
-Instead of starting with quantum postulates, SDT derives atomic structure, orbital mechanics, 
-and gravitational phenomena from a single geometric principle:
+  // Convert content expansions to ExpansionData format
+  const expansions: ExpansionData[] = useMemo(() => {
+    if (!content?.content.expansions) return [];
 
-**Particles are stable toroidal vortices in an incompressible medium ("spation"), and all forces 
-arise from pressure gradients—not from fields, curvature, or probability amplitudes.**
-    `,
-    expansions: {
-      'know-more': {
-        title: 'Do you want to know more?',
-        content: `
-**Why does this matter?**
-If SDT is correct, it unifies all of physics under a single geometric principle. No more 
-incompatibility between quantum mechanics and general relativity.
+    return Object.entries(content.content.expansions).map(([id, expansion]) => {
+      // Determine category from id
+      let category: ExpansionData['category'] = 'know-more';
+      if (id.includes('tech') || id.includes('spec')) category = 'tech-specs';
+      if (id.includes('sim')) category = 'simulation';
+      if (id.includes('example')) category = 'example';
+      if (id.includes('history')) category = 'history';
 
-**How is this different from other theories?**
-SDT doesn't require quantum postulates, curved spacetime, or dark matter. Everything emerges 
-from pressure dynamics in a single medium.
+      if (typeof expansion === 'string') {
+        return { id, title: id, content: expansion, category };
+      }
+      return {
+        id,
+        title: expansion.title || id,
+        content: expansion.content,
+        simulationId: expansion.simulationId,
+        category,
+      };
+    });
+  }, [content]);
 
-**What evidence supports this?**
-16 out of 24 benchmarks have been validated with errors less than 1%, spanning 53 orders of 
-magnitude from atoms to galaxies.
-        `,
-      },
-      'tech-specs': {
-        title: 'Technical Specifications',
-        content: `
-**Spation Density:** ρ_s = 5.2×10⁹⁶ kg/m³
-
-**Bulk Modulus:** K_bulk = 4.6×10¹¹³ Pa
-
-**Master Equation:**
-∇·[K_bulk ∇Δ(x)] = -κ ρ_disp(x) (1 - E(x,n̂))
-
-Where:
-- K_bulk: Spation stiffness
-- ρ_disp: Displacement density (matter)
-- E(x,n̂): Directional occlusion function
-        `,
-      },
-      'simulation': {
-        title: 'Interactive Simulation',
-        content: '3D pressure field visualization will appear here',
-        simulationId: 'pressure-field',
-      },
-    },
+  // Handle simulation request
+  const handleSimulationRequest = (simulationId: string) => {
+    setActiveSimulation(simulationId);
   };
+
+  // Render simulation
+  const renderSimulation = () => {
+    if (!activeSimulation) return null;
+
+    const SimComponent = SIMULATION_COMPONENTS[activeSimulation];
+    if (!SimComponent) {
+      return (
+        <div className="bg-slate-800 rounded-xl p-8 text-center">
+          <p className="text-slate-400">Simulation "{activeSimulation}" coming soon!</p>
+        </div>
+      );
+    }
+
+    return (
+      <div className="relative">
+        <button
+          onClick={() => setActiveSimulation(null)}
+          className="absolute top-4 right-4 z-10 bg-slate-800/80 hover:bg-slate-700 text-white px-3 py-1 rounded-lg text-sm"
+        >
+          ✕ Close
+        </button>
+        <div className="h-[500px] rounded-xl overflow-hidden">
+          <SimComponent />
+        </div>
+      </div>
+    );
+  };
+
+  // Parse markdown-like content
+  const renderMainContent = (text: string) => {
+    const paragraphs = text.split('\n\n');
+    return paragraphs.map((para, i) => {
+      // Bold
+      let html = para.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>');
+      // Italics
+      html = html.replace(/\*(.*?)\*/g, '<em class="text-amber-300">$1</em>');
+      // Code
+      html = html.replace(/`(.*?)`/g, '<code class="bg-slate-700 px-1 rounded text-amber-300 font-mono text-sm">$1</code>');
+
+      return (
+        <p
+          key={i}
+          className="mb-4 text-lg leading-relaxed text-slate-200"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      );
+    });
+  };
+
+  if (isLoading) {
+    return (
+      <div className="absolute inset-0 bg-slate-900/95 flex items-center justify-center">
+        <div className="text-white text-xl">Loading content...</div>
+      </div>
+    );
+  }
+
+  if (!content) {
+    return (
+      <div className="absolute inset-0 bg-slate-900/95 flex flex-col items-center justify-center text-white">
+        <p className="text-xl mb-4">Content not found</p>
+        <button
+          onClick={onReturn}
+          className="text-amber-400 hover:text-amber-300"
+        >
+          ← Return to path
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="absolute inset-0 bg-slate-900/95 backdrop-blur-sm text-white overflow-y-auto">
-      <div className="max-w-6xl mx-auto p-8">
+      <div className="max-w-4xl mx-auto p-8">
         {/* Header */}
         <div className="mb-8">
           <button
             onClick={onReturn}
-            className="mb-4 text-slate-400 hover:text-white transition-colors flex items-center gap-2"
+            className="mb-4 text-slate-400 hover:text-white transition-colors flex items-center gap-2 group"
           >
-            ← Back to Path
+            <span className="group-hover:-translate-x-1 transition-transform">←</span>
+            Back to Path
           </button>
-          <h1 className="text-4xl font-display font-bold mb-2">{nodeContent.title}</h1>
-          <div className="text-sm text-slate-400">{nodeContent.readingTime} min read</div>
-        </div>
 
-        {/* Main Content */}
-        <div className="prose prose-invert max-w-none mb-8">
-          <div className="whitespace-pre-line text-lg leading-relaxed">
-            {nodeContent.mainContent}
+          {/* Hook (Starship Troopers style) */}
+          {(content as any).hook && (
+            <div className="mb-4 text-amber-400 text-lg font-bold tracking-wide uppercase">
+              {(content as any).hook}
+            </div>
+          )}
+
+          <h1 className="text-4xl font-display font-bold mb-3 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+            {content.title}
+          </h1>
+          <div className="flex items-center gap-4 text-sm text-slate-400">
+            <span>📖 {content.readingTime} min read</span>
+            {content.narration && (
+              <span>🎧 Narration available</span>
+            )}
           </div>
         </div>
 
-        {/* Expansion Points */}
-        <div className="space-y-4">
-          {Object.entries(nodeContent.expansions).map(([key, expansion]) => (
-            <div
-              key={key}
-              className="bg-white/5 border border-white/10 rounded-xl p-6"
-            >
-              <button
-                onClick={() => setExpandedSection(expandedSection === key ? null : key)}
-                className="w-full text-left flex items-center justify-between mb-2"
-              >
-                <h3 className="text-xl font-display font-semibold text-amber-400">
-                  {expansion.title}
-                </h3>
-                <span className="text-2xl">
-                  {expandedSection === key ? '▼' : '▶'}
-                </span>
-              </button>
-              {expandedSection === key && (
-                <div className="mt-4 prose prose-invert max-w-none">
-                  <div className="whitespace-pre-line">{expansion.content}</div>
-                  {expansion.simulationId && (
-                    <div className="mt-4 p-4 bg-slate-800 rounded-lg">
-                      <div className="text-slate-400">Simulation: {expansion.simulationId}</div>
-                      {/* Simulation component will be rendered here */}
-                    </div>
-                  )}
+        {/* Narration Player */}
+        {content.narration && (
+          <div className="mb-8">
+            <NarrationPlayer narration={content.narration} showTranscript={true} />
+          </div>
+        )}
+
+        {/* Active Simulation */}
+        {activeSimulation && (
+          <div className="mb-8">
+            {renderSimulation()}
+          </div>
+        )}
+
+        {/* Main Content */}
+        <div className="mb-12 prose prose-invert max-w-none">
+          {renderMainContent(content.content.main)}
+        </div>
+
+        {/* Expansion Cards - "Would you like to know more?" */}
+        {expansions.length > 0 && (
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+              <span className="text-3xl">🎬</span>
+              Would you like to know more?
+            </h2>
+            <ExpansionCardList
+              expansions={expansions}
+              onSimulationRequest={handleSimulationRequest}
+            />
+          </div>
+        )}
+
+        {/* Formulas */}
+        {content.visualizations?.formulas && content.visualizations.formulas.length > 0 && (
+          <div className="mb-8 p-6 bg-slate-800/50 rounded-xl border border-slate-700">
+            <h3 className="text-lg font-bold mb-4 text-amber-400">Key Formulas</h3>
+            <div className="space-y-3">
+              {content.visualizations.formulas.map((formula, i) => (
+                <div key={i} className="font-mono text-lg text-center p-3 bg-slate-900/50 rounded-lg">
+                  {formula}
                 </div>
-              )}
+              ))}
             </div>
-          ))}
+          </div>
+        )}
+
+        {/* Navigation */}
+        <div className="border-t border-slate-700 pt-8 flex justify-between">
+          <button
+            onClick={onReturn}
+            className="px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors"
+          >
+            ← Back to Path
+          </button>
+          
+          {content.nextNodeId && (
+            <button
+              onClick={() => {
+                const { navigateToNode } = useNavigationStore.getState();
+                navigateToNode(content.nextNodeId!);
+              }}
+              className="px-6 py-3 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-900 font-bold transition-colors"
+            >
+              Continue →
+            </button>
+          )}
         </div>
       </div>
     </div>
   );
 }
+
+
+
 
 

@@ -1,8 +1,15 @@
 import React, { useRef, useMemo, useState, useEffect } from 'react';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import { Mesh, TorusGeometry, MeshStandardMaterial, Color, Vector3 } from 'three';
 import * as THREE from 'three';
 import { gsap } from 'gsap';
+import { 
+  flowerOfLifeCircles, 
+  seedOfLife, 
+  PHI, 
+  PHI_INVERSE,
+  GOLDEN_ANGLE 
+} from '../../utils/sacred-geometry';
 
 // Design system colors - Creative Agent
 const COLORS = {
@@ -46,6 +53,11 @@ export default function FlowerOfLife({
   const [hoveredRing, setHoveredRing] = useState<number | null>(null);
   const [selectedPath, setSelectedPath] = useState<'path1' | 'path2' | 'path3' | null>(null);
   const ringsRef = useRef<(Mesh | null)[]>([]);
+  const { camera, gl } = useThree();
+
+  // Touch gesture handling for mobile
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   // Flower of Life ring configuration
   // Path 1: rings 0-2 (3 rings, lighter blue, faster rotation)
@@ -145,7 +157,70 @@ export default function FlowerOfLife({
     });
   }, [ringConfig]);
 
-  // Enhanced animation loop - Creative Agent: Organic, flowing motion
+  // Touch gesture handling for mobile
+  useEffect(() => {
+    const canvas = gl.domElement;
+    let touchStartPos: { x: number; y: number } | null = null;
+    let isDragging = false;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      if (e.touches.length === 1) {
+        isDragging = true;
+        touchStartPos = {
+          x: e.touches[0].clientX,
+          y: e.touches[0].clientY
+        };
+      }
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging || !touchStartPos) return;
+      e.preventDefault();
+
+      if (e.touches.length === 1) {
+        // Single finger: rotate camera
+        const deltaX = e.touches[0].clientX - touchStartPos.x;
+        const deltaY = e.touches[0].clientY - touchStartPos.y;
+
+        camera.rotation.y -= deltaX * 0.005;
+        camera.rotation.x -= deltaY * 0.005;
+
+        touchStartPos = {
+          x: e.touches[0].clientX,
+          y: e.touches[0].clientY
+        };
+      } else if (e.touches.length === 2) {
+        // Two fingers: pinch to zoom
+        const touch1 = e.touches[0];
+        const touch2 = e.touches[1];
+        const currentDistance = Math.sqrt(
+          Math.pow(touch2.clientX - touch1.clientX, 2) +
+          Math.pow(touch2.clientY - touch1.clientY, 2)
+        );
+
+        // Simple zoom
+        const zoomSpeed = 0.02;
+        camera.position.z = Math.max(2, Math.min(10, camera.position.z + (300 - currentDistance) * zoomSpeed));
+      }
+    };
+
+    const handleTouchEnd = () => {
+      isDragging = false;
+      touchStartPos = null;
+    };
+
+    canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+    canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+    canvas.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      canvas.removeEventListener('touchstart', handleTouchStart);
+      canvas.removeEventListener('touchmove', handleTouchMove);
+      canvas.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [camera, gl]);
+
+  // Enhanced animation loop - Sacred Geometry: Golden Ratio Motion
   useFrame((state, delta) => {
     rings.forEach((ring, index) => {
       const mesh = ringsRef.current[index];
@@ -155,18 +230,23 @@ export default function FlowerOfLife({
       const material = mesh.material as MeshStandardMaterial;
       const time = state.clock.elapsedTime;
 
-      // Idle rotation - organic, flowing
+      // Idle rotation - golden ratio frequencies
       if (!isTransitioning && selectedPath === null) {
-        // Smooth rotation with slight variation
-        mesh.rotation.y += (config.rotationSpeed * delta) / 10;
+        // Rotation speed based on golden ratio harmonics
+        const goldenFreq = config.rotationSpeed * PHI_INVERSE;
+        mesh.rotation.y += (goldenFreq * delta) / 8;
         
-        // Subtle breathing/pulsing effect - visceral
-        const breath = Math.sin(time * 0.3 + index * 0.5) * 0.05;
-        mesh.rotation.x = Math.sin(time * 0.5 + index) * 0.1 + breath;
-        mesh.rotation.z = Math.cos(time * 0.4 + index * 0.7) * 0.05;
+        // Breathing uses golden ratio phase offset
+        // Each ring breathes at slightly different phase for organic feel
+        const phase = index * GOLDEN_ANGLE;
+        const breath = Math.sin(time * PHI_INVERSE + phase) * 0.04;
         
-        // Subtle scale breathing
-        const scaleBreath = 1 + Math.sin(time * 0.4 + index) * 0.02;
+        // Rotation axes use golden ratio proportions
+        mesh.rotation.x = Math.sin(time * PHI_INVERSE * 0.5 + phase) * 0.08 + breath;
+        mesh.rotation.z = Math.cos(time * PHI_INVERSE * 0.4 + phase * PHI) * 0.04;
+        
+        // Scale breathing with golden ratio amplitude
+        const scaleBreath = 1 + Math.sin(time * PHI_INVERSE * 0.6 + phase) * PHI_INVERSE * 0.03;
         mesh.scale.setScalar(scaleBreath);
       }
 
@@ -252,16 +332,29 @@ export default function FlowerOfLife({
     });
   });
 
+  const getPathDescription = (pathId: 'path1' | 'path2' | 'path3'): string => {
+    switch (pathId) {
+      case 'path1':
+        return 'Quick Tour: 5-minute overview of Spatial Displacement Theory';
+      case 'path2':
+        return 'Deep Dive: Comprehensive exploration of all concepts';
+      case 'path3':
+        return 'Scientific Framework: Rigorous physics and mathematics';
+      default:
+        return 'Navigation path';
+    }
+  };
+
   const handleClick = (pathId: 'path1' | 'path2' | 'path3') => {
     if (isTransitioning) return;
     setSelectedPath(pathId);
-    
+
     // Smooth transition trigger
     rings.forEach((ring, index) => {
       const mesh = ringsRef.current[index];
       if (!mesh) return;
       const config = ringConfig[index];
-      
+
       if (config.path === pathId) {
         // Selected rings get gold treatment immediately
         const material = mesh.material as MeshStandardMaterial;
@@ -274,7 +367,7 @@ export default function FlowerOfLife({
         });
       }
     });
-    
+
     onPathSelect(pathId);
   };
 
@@ -294,6 +387,16 @@ export default function FlowerOfLife({
             onPointerOver={() => setHoveredRing(index)}
             onPointerOut={() => setHoveredRing(null)}
             onClick={() => handleClick(config.path)}
+            role="button"
+            aria-label={`Navigate to ${getPathDescription(config.path)}`}
+            aria-describedby={`path-${config.path}-description`}
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleClick(config.path);
+              }
+            }}
           />
         );
       })}

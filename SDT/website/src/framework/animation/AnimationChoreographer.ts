@@ -16,8 +16,13 @@ export interface AnimationSequence {
 
 export type EasingFunction = (t: number) => number;
 
+// Golden Ratio constants for easing functions
+const PHI = (1 + Math.sqrt(5)) / 2; // 1.618033988749895
+const PHI_INVERSE = 1 / PHI; // 0.618033988749895
+
 /**
  * Custom easing functions (all original)
+ * Enhanced with golden ratio-based easing curves
  */
 export const EasingFunctions = {
   /**
@@ -75,6 +80,83 @@ export const EasingFunctions = {
    */
   easeOutCubic: (t: number): number => {
     return 1 - Math.pow(1 - t, 3);
+  },
+
+  /**
+   * Golden ratio easing - natural, harmonious motion
+   * Based on the golden ratio power curve
+   * Creates motion that feels "right" to the human eye
+   */
+  golden: (t: number): number => {
+    return Math.pow(t, PHI_INVERSE);
+  },
+
+  /**
+   * Golden ease-out - quick start, gentle finish
+   * Uses golden ratio exponent for natural deceleration
+   */
+  goldenEaseOut: (t: number): number => {
+    return 1 - Math.pow(1 - t, PHI);
+  },
+
+  /**
+   * Golden ease-in - gentle start, accelerating
+   * Uses golden ratio exponent for natural acceleration
+   */
+  goldenEaseIn: (t: number): number => {
+    return Math.pow(t, PHI);
+  },
+
+  /**
+   * Golden ease-in-out - symmetric golden motion
+   * Divides at golden section point (0.382)
+   */
+  goldenEaseInOut: (t: number): number => {
+    const midpoint = PHI_INVERSE * PHI_INVERSE; // ~0.382
+    if (t < midpoint) {
+      // Ease in until golden point
+      return Math.pow(t / midpoint, PHI) * 0.5;
+    } else {
+      // Ease out from golden point
+      return 0.5 + (1 - Math.pow(1 - (t - midpoint) / (1 - midpoint), PHI)) * 0.5;
+    }
+  },
+
+  /**
+   * Golden bounce - natural bounce using Fibonacci-like damping
+   * Creates bounces that decay at golden ratio
+   */
+  goldenBounce: (t: number): number => {
+    const bounceDecay = PHI_INVERSE;
+    
+    if (t < 1 / 2.75) {
+      return 7.5625 * t * t;
+    } else if (t < 2 / 2.75) {
+      t -= 1.5 / 2.75;
+      return 7.5625 * t * t + 0.75 * bounceDecay;
+    } else if (t < 2.5 / 2.75) {
+      t -= 2.25 / 2.75;
+      return 7.5625 * t * t + 0.9375 * bounceDecay * bounceDecay;
+    } else {
+      t -= 2.625 / 2.75;
+      return 7.5625 * t * t + 0.984375 * Math.pow(bounceDecay, 3);
+    }
+  },
+
+  /**
+   * Fibonacci step - discrete steps at Fibonacci intervals
+   * Useful for staged reveals
+   */
+  fibonacciStep: (t: number): number => {
+    // Fibonacci sequence normalized to 0-1
+    const steps = [0, 0.034, 0.055, 0.089, 0.144, 0.233, 0.377, 0.610, 1.0];
+    
+    for (let i = 0; i < steps.length - 1; i++) {
+      if (t >= steps[i] && t < steps[i + 1]) {
+        return steps[i];
+      }
+    }
+    return 1;
   },
 };
 

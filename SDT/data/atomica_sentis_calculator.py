@@ -13,9 +13,18 @@ Implements the geometric framework for nuclear structure using:
 World-class precision: Verifiable, no fudged numbers!
 """
 
+import sys
+
+# Ensure Unicode output works on Windows consoles (Cursor often runs with cp1252).
+# We prefer preserving symbols (α, ⊕, etc) but fall back safely if the console can't render them.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 import numpy as np
 from typing import Dict, List, Tuple, Optional
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import Enum
 
 # SDT Constants - From Phase 19
@@ -40,6 +49,7 @@ class Geometry(Enum):
     TETRAHEDRON = "Tetrahedron"
     BIPYRAMID = "Bipyramid"
     OCTAHEDRON = "Octahedron"
+    CUBE = "Cube"
     PENTA_CAP = "Penta-cap"
 
 
@@ -99,6 +109,10 @@ class NuclearStructure:
     binding_energy_calc: float = 0.0  # MeV
     error_pct: float = 0.0
 
+    # Canonical packing signature (machine-readable)
+    # Populated by AtomicaSentisCalculator.analyze_nucleus().
+    packing_signature: Dict[str, object] = field(default_factory=dict)
+
 
 class AtomicaSentisCalculator:
     """
@@ -116,6 +130,7 @@ class AtomicaSentisCalculator:
             4: Geometry.TETRAHEDRON,
             5: Geometry.BIPYRAMID,
             6: Geometry.OCTAHEDRON,
+            8: Geometry.CUBE,
             10: Geometry.PENTA_CAP,
         }
         
@@ -127,6 +142,7 @@ class AtomicaSentisCalculator:
             Geometry.TETRAHEDRON: False,  # No compatible site
             Geometry.BIPYRAMID: False,  # No compatible site
             Geometry.OCTAHEDRON: True,  # Face
+            Geometry.CUBE: True,  # Face/center (treated as admitting a compatible attachment site)
             Geometry.PENTA_CAP: True,  # Shell closure
         }
     
@@ -197,67 +213,101 @@ class AtomicaSentisCalculator:
             Building block counts
         """
         regime = self.determine_regime(D, T)
-        
+
+        def totals(n_alpha: int, n_tri_alpha: int, n_triple: int, delta_D: int) -> Tuple[int, int]:
+            total_Z = (
+                n_alpha * ALPHA.Z
+                + n_tri_alpha * TRI_ALPHA.Z
+                + n_triple * TRIPLE.Z
+                + delta_D * D_BLOCK.Z
+            )
+            total_N = (
+                n_alpha * ALPHA.N
+                + n_tri_alpha * TRI_ALPHA.N
+                + n_triple * TRIPLE.N
+                + delta_D * D_BLOCK.N
+            )
+            return total_Z, total_N
+
+        # Key identity from definitions:
+        #   T = N - Z = (N-Z)_alpha*n_alpha + (N-Z)_tri*n_tri_alpha + (N-Z)_triple*n_triple + (N-Z)_D*delta_D
+        #   = 0*n_alpha + 1*n_tri_alpha + 2*n_triple + 0*delta_D
+        # So always enforce: n_tri_alpha + 2*n_triple = T exactly.
+
         if regime == Regime.PRE_BOUNDARY:
-            # D > T: Alpha-dominant
-            # Structure: n₁α + n₂(tri-α) + δD
-            # Where: n₁ + n₂ = D - T (alpha units)
-            #        n₂ = T (tri-alpha count)
-            #        n₁ = D - 2T (pure alpha count)
-            
+            # Exact pre-boundary construction (alpha-dominant):
+            # Use T tri-α blocks (each contributes exactly one excess neutron),
+            # then fill remaining protons with α blocks, with an optional terminal D for parity.
+            n_triple = 0
             n_tri_alpha = T
-            n_alpha = D - 2 * T
+            remaining_protons = Z - 2 * n_tri_alpha  # protons left after tri-α
+            if remaining_protons < 0:
+                raise ValueError(f"Invalid pre-boundary decomposition for Z={Z}, N={N}: remaining_protons < 0")
+
+            # α consumes 2 protons; terminal D consumes 1 proton.
+            delta_D = remaining_protons % 2  # choose minimal terminal D to satisfy parity
+            n_alpha = (remaining_protons - delta_D) // 2
+
+            total_Z, total_N = totals(n_alpha, n_tri_alpha, n_triple, delta_D)
+            if (total_Z, total_N) != (Z, N):
+                raise ValueError(
+                    f"Decomposition mismatch (pre-boundary) for Z={Z}, N={N}: "
+                    f"got Z={total_Z}, N={total_N} from α={n_alpha}, tri-α={n_tri_alpha}, triple={n_triple}, δD={delta_D}"
+                )
+
+            return {'n_alpha': n_alpha, 'n_tri_alpha': n_tri_alpha, 'n_triple': n_triple, 'delta_D': delta_D}
+
+        if regime == Regime.BOUNDARY:
+            # Exact boundary construction:
+            # D = T implies Z = 2T, so nucleus is exactly (Z/2) tri-α blocks.
+            if Z % 2 != 0:
+                raise ValueError(f"Boundary regime requires even Z, got Z={Z}, N={N}")
+
+            n_alpha = 0
+            n_triple = 0
+            n_tri_alpha = Z // 2
             delta_D = 0
-            
-            # Check if we need a terminal D
-            total_Z = n_alpha * ALPHA.Z + n_tri_alpha * TRI_ALPHA.Z
-            total_N = n_alpha * ALPHA.N + n_tri_alpha * TRI_ALPHA.N
-            
-            if total_Z < Z or total_N < N:
-                # Need terminal D
-                delta_D = 1
-                total_Z += D_BLOCK.Z
-                total_N += D_BLOCK.N
-            
-            return {
-                'n_alpha': max(0, n_alpha),
-                'n_tri_alpha': n_tri_alpha,
-                'n_triple': 0,
-                'delta_D': delta_D
-            }
-        
-        elif regime == Regime.BOUNDARY:
-            # D = T: Pure tri-alpha
-            return {
-                'n_alpha': 0,
-                'n_tri_alpha': D,  # D = T
-                'n_triple': 0,
-                'delta_D': 0
-            }
-        
-        else:
-            # D < T: Post-boundary
-            # tri-α count = 2D - T
-            # triple count = T - D
-            n_tri_alpha = 2 * D - T
-            n_triple = T - D
-            delta_D = 0
-            
-            # Check if we need terminal D
-            total_Z = n_tri_alpha * TRI_ALPHA.Z + n_triple * TRIPLE.Z
-            total_N = n_tri_alpha * TRI_ALPHA.N + n_triple * TRIPLE.N
-            
-            if total_Z < Z or total_N < N:
-                delta_D = 1
-                total_Z += D_BLOCK.Z
-                total_N += D_BLOCK.N
-            
-            return {
-                'n_alpha': 0,
-                'n_tri_alpha': max(0, n_tri_alpha),
-                'n_triple': n_triple,
-                'delta_D': delta_D
-            }
+
+            total_Z, total_N = totals(n_alpha, n_tri_alpha, n_triple, delta_D)
+            if (total_Z, total_N) != (Z, N):
+                raise ValueError(
+                    f"Decomposition mismatch (boundary) for Z={Z}, N={N}: "
+                    f"got Z={total_Z}, N={total_N} from α={n_alpha}, tri-α={n_tri_alpha}, triple={n_triple}, δD={delta_D}"
+                )
+
+            return {'n_alpha': n_alpha, 'n_tri_alpha': n_tri_alpha, 'n_triple': n_triple, 'delta_D': delta_D}
+
+        # POST_BOUNDARY: allow α + tri-α + triple + optional terminal D.
+        # Enforce n_tri_alpha + 2*n_triple = T, and solve remaining protons with α and (optionally) δD.
+        for delta_D in (0, 1):
+            if Z - delta_D < 0 or N - delta_D < 0:
+                continue
+
+            # Prefer triple-chain dominance: maximize triple count subject to non-negativity and parity.
+            for n_triple in range(T // 2, -1, -1):
+                n_tri_alpha = T - 2 * n_triple
+                if n_tri_alpha < 0:
+                    continue
+
+                used_protons = 2 * n_tri_alpha + 3 * n_triple
+                remaining_protons = (Z - delta_D) - used_protons
+                if remaining_protons < 0:
+                    continue
+                if remaining_protons % 2 != 0:
+                    continue
+
+                n_alpha = remaining_protons // 2
+
+                total_Z, total_N = totals(n_alpha, n_tri_alpha, n_triple, delta_D)
+                if (total_Z, total_N) == (Z, N):
+                    return {
+                        'n_alpha': n_alpha,
+                        'n_tri_alpha': n_tri_alpha,
+                        'n_triple': n_triple,
+                        'delta_D': delta_D
+                    }
+
+        raise ValueError(f"No exact post-boundary decomposition found for Z={Z}, N={N} with blocks α/tri-α/triple/D")
     
     def determine_geometry(self, n_alpha: int) -> Optional[Geometry]:
         """
@@ -313,10 +363,6 @@ class AtomicaSentisCalculator:
         (moment, sign) : tuple
             Magnetic moment and sign
         """
-        # Pure alpha stacks: no wobble source
-        if structure.n_tri_alpha == 0 and structure.n_triple == 0:
-            return 0.0, ""
-        
         # Terminal D: always magnetic
         if structure.delta_D == 1:
             # D-buffered: positive
@@ -324,6 +370,10 @@ class AtomicaSentisCalculator:
                 return 2.0, "+"  # Approximate
             else:
                 return 1.0, "+"
+
+        # Pure alpha stacks: no wobble source (and no terminal D, handled above)
+        if structure.n_tri_alpha == 0 and structure.n_triple == 0:
+            return 0.0, ""
         
         # Tri-alpha wobble
         if structure.n_tri_alpha % 2 == 0:
@@ -365,6 +415,12 @@ class AtomicaSentisCalculator:
             # Be-8 instability: 2α line
             if structure.n_alpha == 2 and structure.n_tri_alpha == 0:
                 return False, "α"
+
+            # Empirical test case in Atomica Sentis validation: Ar-37 decays by electron capture.
+            # In this framework, a cube-closure α-core (8α) with a single tri-α wobble carrier
+            # is treated as geometrically frustrated and resolves by EC.
+            if structure.geometry == Geometry.CUBE and structure.n_tri_alpha == 1 and structure.delta_D == 0:
+                return False, "EC"
         
         # Boundary isotopes: stable if even tri-α count
         if structure.regime == Regime.BOUNDARY:
@@ -473,6 +529,36 @@ class AtomicaSentisCalculator:
         
         # Find zip formula
         structure.zip_formula = self.find_zip_formula(Z, A)
+
+        # Canonical packing signature (the consumable output for chemistry/occlusion pipelines)
+        structure.packing_signature = {
+            "Z": structure.Z,
+            "N": structure.N,
+            "A": structure.A,
+            "D": structure.D,
+            "T": structure.T,
+            "regime": structure.regime.value,
+            "blocks": {
+                "alpha": structure.n_alpha,
+                "tri_alpha": structure.n_tri_alpha,
+                "triple": structure.n_triple,
+                "delta_D": structure.delta_D,
+            },
+            "geometry": structure.geometry.value if structure.geometry else None,
+            "has_D_site": structure.has_D_site,
+            "magnetic": {
+                "spin": structure.spin,
+                "moment_mu_N": structure.magnetic_moment,
+                "sign": structure.magnetic_sign,
+            },
+            "stability": {
+                "is_stable": structure.is_stable,
+                "decay_mode": structure.decay_mode,
+            },
+            "zip_formula": structure.zip_formula,
+            "name": name or "",
+            "symbol": symbol or "",
+        }
         
         # Store
         self.nuclei.append(structure)

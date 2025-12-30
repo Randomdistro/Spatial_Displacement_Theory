@@ -20,6 +20,7 @@ export class PressureFieldVisualization {
   private pressureField: THREE.Points | null = null;
   private waveGeometry: THREE.BufferGeometry | null = null;
   private waveMaterial: THREE.ShaderMaterial | null = null;
+  private waveMesh: THREE.Mesh | null = null;
   private boundarySphere: THREE.Mesh | null = null;
   private time: number = 0;
 
@@ -104,6 +105,19 @@ export class PressureFieldVisualization {
   }
 
   private createPressureWaves(scale: ScalePoint, intensity: number): void {
+    // FIX #2: Remove old wave mesh before creating new one
+    if (this.waveMesh) {
+      this.scene.remove(this.waveMesh);
+      if (this.waveMesh.geometry !== this.waveGeometry) {
+        // Only dispose if it's a different geometry
+        this.waveMesh.geometry.dispose();
+      }
+      if (this.waveMesh.material instanceof THREE.Material && this.waveMesh.material !== this.waveMaterial) {
+        this.waveMesh.material.dispose();
+      }
+      this.waveMesh = null;
+    }
+
     // Create animated pressure waves using shader
     if (!this.waveGeometry) {
       this.waveGeometry = new THREE.PlaneGeometry(20, 20, 64, 64);
@@ -151,10 +165,11 @@ export class PressureFieldVisualization {
     this.waveMaterial.uniforms.scale.value = this.getGridSize(scale);
     this.waveMaterial.uniforms.intensity.value = intensity;
 
-    const waveMesh = new THREE.Mesh(this.waveGeometry, this.waveMaterial);
-    waveMesh.rotation.x = -Math.PI / 2;
-    waveMesh.position.y = -2;
-    this.scene.add(waveMesh);
+    // FIX #2: Store reference to wave mesh for cleanup
+    this.waveMesh = new THREE.Mesh(this.waveGeometry, this.waveMaterial);
+    this.waveMesh.rotation.x = -Math.PI / 2;
+    this.waveMesh.position.y = -2;
+    this.scene.add(this.waveMesh);
   }
 
   private createCMBBoundary(scale: ScalePoint): void {
@@ -212,23 +227,39 @@ export class PressureFieldVisualization {
   }
 
   dispose(): void {
+    // Remove from scene
     if (this.pressureField) {
+      this.scene.remove(this.pressureField);
       this.pressureField.geometry.dispose();
       if (this.pressureField.material instanceof THREE.Material) {
         this.pressureField.material.dispose();
       }
+      this.pressureField = null;
     }
+    
+    // FIX #2: Cleanup wave mesh
+    if (this.waveMesh) {
+      this.scene.remove(this.waveMesh);
+      // Geometry and material are shared, dispose separately
+      this.waveMesh = null;
+    }
+    
     if (this.waveGeometry) {
       this.waveGeometry.dispose();
+      this.waveGeometry = null;
     }
     if (this.waveMaterial) {
       this.waveMaterial.dispose();
+      this.waveMaterial = null;
     }
+    
     if (this.boundarySphere) {
+      this.scene.remove(this.boundarySphere);
       this.boundarySphere.geometry.dispose();
       if (this.boundarySphere.material instanceof THREE.Material) {
         this.boundarySphere.material.dispose();
       }
+      this.boundarySphere = null;
     }
   }
 }

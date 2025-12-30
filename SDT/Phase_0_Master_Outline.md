@@ -34,10 +34,10 @@ All subsequent phases build directly on these primitives.
 
 ---
 
-# **PART I — FOUR INGREDIENTS & FOUNDATIONAL ONTOLOGY**
+# **PART I — FOUR IRREDUCIBLE PRIMITIVES & FOUNDATIONAL ONTOLOGY**
 ## **[Agent A Deliverable]**
 
-### **1.1 The Four Ingredients**
+### **1.1 The Four Irreducible Primitives**
 
 #### **1.1.1 Space (Spation Medium)**
 - [ ] Definition: continuous, compressible, contact-only medium

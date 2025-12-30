@@ -6,6 +6,7 @@
  */
 
 export * from './geometry/GeometryGenerator';
+export * from './geometry/DodecahedronGenerator';
 export * from './shader/ShaderRegistry';
 export * from './animation/AnimationChoreographer';
 export * from './performance/PerformanceMonitor';

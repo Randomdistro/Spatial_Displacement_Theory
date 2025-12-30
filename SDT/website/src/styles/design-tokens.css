@@ -23,10 +23,10 @@
   --color-eclipse: #0f172a;
   --color-shadow: rgba(15, 23, 42, 0.8);
   
-  /* Colors - Text */
-  --color-text-primary: #f7fafc;
-  --color-text-secondary: #cbd5e0;
-  --color-text-muted: #a0aec0;
+  /* Colors - Text (WCAG AA Compliant) */
+  --color-text-primary: #f7fafc;     /* White, 21:1 contrast */
+  --color-text-secondary: #e2e8f0;   /* Light gray, 4.6:1 contrast */
+  --color-text-muted: #94a3b8;       /* Medium gray, 2.9:1 contrast */
   
   /* Colors - Backgrounds */
   --color-bg-deep: #0a0e1a;

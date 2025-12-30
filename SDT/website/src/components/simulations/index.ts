@@ -11,12 +11,17 @@ export { OrbitalSim, type OrbitalSimProps } from './OrbitalSim';
 export { AtomicStructureSim, type AtomicStructureSimProps } from './AtomicStructureSim';
 export { GalaxyRotationSim, type GalaxyRotationSimProps } from './GalaxyRotationSim';
 export { BenchmarkVisualizer, type BenchmarkVisualizerProps, type BenchmarkData } from './BenchmarkVisualizer';
-export { 
-  FormulaRenderer, 
+export {
+  FormulaRenderer,
   AnimatedFormula,
   MasterEquation,
   KLawFormula,
   type FormulaRendererProps,
   type AnimatedFormulaProps,
 } from './FormulaRenderer';
+
+export { default as TheClearingSim, type TheClearingSimProps } from './TheClearingSim';
+export { SpationLatticeSim, type SpationLatticeSimProps } from './SpationLatticeSim';
+export { ForceHierarchySim, type ForceHierarchySimProps } from './ForceHierarchySim';
+export { ChemicalBondingSim, type ChemicalBondingSimProps } from './ChemicalBondingSim';
 

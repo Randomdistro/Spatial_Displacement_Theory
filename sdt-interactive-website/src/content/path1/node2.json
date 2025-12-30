@@ -1,0 +1,43 @@
+{
+  "id": "path1-node2",
+  "title": "The Master Equation",
+  "path": "path1",
+  "readingTime": 3,
+  "hook": "One equation to rule them all...",
+  "content": {
+    "main": "What if one equation could replace Newton, Coulomb, Schrödinger, and Einstein?\n\nIn SDT, it does:\n\n**∇·[K_bulk ∇Δ(x)] = -κ ρ_disp(x) (1 - E(x,n̂))**\n\nDon't let the symbols intimidate you. This equation simply says:\n\n*The divergence of the pressure gradient equals the displacement density, reduced by occlusion.*\n\nOr in plain English: **pressure flows around matter, and matter blocks pressure.**\n\nThat's it. That's the whole of physics.",
+    "expansions": {
+      "know-more": {
+        "title": "🎬 Would you like to know more?",
+        "content": "**Let's break down each term:**\n\n**K_bulk** — The stiffness of spation (4.6×10¹¹³ Pa). This isn't something we invented—it's derived from the CMB.\n\n**∇Δ(x)** — The pressure gradient. Where does pressure \"want\" to go?\n\n**ρ_disp(x)** — How much matter is here? Not \"mass\"—just how much spation is displaced.\n\n**E(x,n̂)** — The occlusion function. This is the key. It measures how much incoming pressure is blocked by other matter.\n\n**The Magic of E:**\n- When E → 0 (no occlusion): You get Coulomb's law\n- When E → 1-η (full occlusion): You get gravity\n- Same equation, different limits\n\nCoulomb and gravity aren't different forces. They're the same force at different occlusion levels."
+      },
+      "tech-specs": {
+        "title": "📊 What This Replaces",
+        "content": "**The Master Equation replaces:**\n\n❌ Newton's Law of Gravitation: F = GMm/r²\n❌ Coulomb's Law: F = kQq/r²\n❌ Schrödinger Equation: iℏ∂ψ/∂t = Ĥψ\n❌ Einstein Field Equations: Gμν = 8πTμν\n\n**With pure geometry.**\n\nNote what's MISSING:\n- No mass (m) as fundamental\n- No gravitational constant (G)\n- No electric charge (q) as fundamental\n- No Planck's constant (ℏ)\n- No stress-energy tensor\n\nAll these emerge from pressure geometry."
+      },
+      "simulation": {
+        "title": "🔬 Interactive: Equation Explorer",
+        "content": "Adjust the parameters and watch how the pressure field changes. See how changing occlusion (E) transforms the force from electromagnetic to gravitational.",
+        "simulationId": "master-equation-explorer"
+      }
+    }
+  },
+  "narration": {
+    "script": "Okay, here's where it gets interesting.\n\nIn physics, we have different laws for different forces. Newton for gravity. Coulomb for electricity. Schrödinger for atoms. Einstein for spacetime.\n\nBut what if I told you... all of these are the same thing?\n\nIn Spatial Displacement Theory, there's one master equation. Just one. And it looks like this:\n\n∇·[K_bulk ∇Δ] equals negative κ times ρ_disp times one minus E.\n\nNow, before your eyes glaze over, let me tell you what this means in English.\n\nPressure flows around matter. Matter blocks pressure. That's it.\n\nThe difference between gravity and electromagnetism? It's not that they're different forces. It's that they operate in different occlusion regimes. When nothing's blocking the pressure, you get Coulomb's law. When everything's blocking everything, you get gravity.\n\nSame equation. Same physics. Just different viewing angles.",
+    "duration": 80,
+    "timing": [0, 5, 15, 25, 35, 45, 55, 65, 75]
+  },
+  "visualizations": {
+    "animation3d": "master-equation-terms",
+    "formulas": [
+      "\\nabla \\cdot [K_{bulk} \\nabla \\Delta(\\mathbf{x})] = -\\kappa \\rho_{disp}(\\mathbf{x})(1 - E(\\mathbf{x}, \\hat{\\mathbf{n}}))",
+      "E \\to 0 \\implies F_{Coulomb}",
+      "E \\to 1-\\eta \\implies F_{gravity}"
+    ]
+  },
+  "position": [3, 0, -2],
+  "cameraTarget": [3, 0, -4],
+  "previousNodeId": "path1-node1",
+  "nextNodeId": "path1-node3"
+}
+

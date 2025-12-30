@@ -1,0 +1,244 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { TheClearingSim } from '../../components/simulations';
+
+const title = "The Clearing - Recombination Era | SDT";
+const description = "Visualize the moment when the universe became transparent - the recombination era from Spatial Displacement Theory perspective";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <div class="container mx-auto px-4 py-8">
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-6xl font-display font-bold text-white mb-4 bg-gradient-to-r from-amber-400 to-gold-500 bg-clip-text text-transparent">
+          The Clearing
+        </h1>
+        <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+          The moment when the universe became transparent. From opaque red-hot plasma to clear space, revealing the structure of reality.
+        </p>
+      </div>
+
+      <!-- Simulation Container -->
+      <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-slate-700/50">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Simulation -->
+          <div class="lg:col-span-2">
+            <div class="aspect-video bg-slate-900 rounded-xl overflow-hidden">
+              <TheClearingSim
+                id="the-clearing-main"
+                parameters={{
+                  temperature: 2970,
+                  opacity: 0.8,
+                  particleCount: 1500,
+                  transitionSpeed: 0.3,
+                  showPressureFields: true
+                }}
+                showFormulas={true}
+                client:load
+              />
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="space-y-6">
+            <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-600/50">
+              <h3 class="text-lg font-semibold text-amber-400 mb-4">Phase Controls</h3>
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm text-slate-300 mb-2">Temperature (K)</label>
+                  <input
+                    type="range"
+                    min="2500"
+                    max="10000"
+                    value="2970"
+                    class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
+                    id="temp-slider"
+                  />
+                  <div class="flex justify-between text-xs text-slate-400 mt-1">
+                    <span>2,500K</span>
+                    <span id="temp-value" class="font-mono">2,970K</span>
+                    <span>10,000K</span>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm text-slate-300 mb-2">Plasma Opacity</label>
+                  <input
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.1"
+                    value="0.8"
+                    class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
+                    id="opacity-slider"
+                  />
+                  <div class="flex justify-between text-xs text-slate-400 mt-1">
+                    <span>Clear</span>
+                    <span id="opacity-value" class="font-mono">80%</span>
+                    <span>Opaque</span>
+                  </div>
+                </div>
+
+                <div class="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id="pressure-fields"
+                    class="w-4 h-4 text-amber-500 bg-slate-700 border-slate-600 rounded focus:ring-amber-500 focus:ring-2"
+                    checked
+                  />
+                  <label for="pressure-fields" class="text-sm text-slate-300">
+                    Show SDT Pressure Fields
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase Information -->
+            <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-600/50">
+              <h3 class="text-lg font-semibold text-amber-400 mb-4">Current Phase</h3>
+              <div id="phase-info" class="space-y-2 text-sm text-slate-300">
+                <div class="flex justify-between">
+                  <span>Phase:</span>
+                  <span id="phase-name" class="font-semibold text-blue-400">Recombination</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Status:</span>
+                  <span id="phase-desc" class="text-xs">Electrons binding to nuclei</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explanation -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <!-- Standard Cosmology -->
+        <div class="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50">
+          <h2 class="text-2xl font-semibold text-blue-400 mb-4">Standard Cosmology</h2>
+          <div class="space-y-4 text-slate-300">
+            <p>
+              After the Big Bang, the universe was filled with a hot, dense plasma of protons, neutrons, and electrons.
+              Photons were constantly scattering off free electrons, making the universe opaque.
+            </p>
+            <p>
+              As the universe expanded and cooled to about 3,000K, electrons began binding to nuclei, forming neutral atoms.
+              This "recombination" allowed photons to travel freely, creating the Cosmic Microwave Background.
+            </p>
+          </div>
+        </div>
+
+        <!-- SDT Perspective -->
+        <div class="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-amber-500/30 border-l-4">
+          <h2 class="text-2xl font-semibold text-amber-400 mb-4">SDT Perspective</h2>
+          <div class="space-y-4 text-slate-300">
+            <p>
+              The "clearing" reveals the true nature of space. Before recombination, the pressure field was opaque - compressed and turbulent around ionized matter.
+            </p>
+            <p>
+              When electrons bind to nuclei, matter exclusion zones become sharply defined. The pressure field becomes transparent, revealing the underlying spation lattice structure that generates all forces.
+            </p>
+            <p class="text-amber-300 font-semibold">
+              The universe doesn't just cool down - it becomes clear, revealing the geometric foundation of reality.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Details -->
+      <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50">
+        <h2 class="text-2xl font-semibold text-slate-200 mb-6">Technical Implementation</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center">
+            <div class="text-3xl mb-2">🌡️</div>
+            <h3 class="font-semibold text-slate-200 mb-2">Temperature-Driven Phases</h3>
+            <p class="text-sm text-slate-400">
+              Four distinct phases based on temperature: Plasma Opaque → Cooling Transition → Recombination → Clear Transparent
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl mb-2">⚛️</div>
+            <h3 class="font-semibold text-slate-200 mb-2">Particle Dynamics</h3>
+            <p class="text-sm text-slate-400">
+              1,500+ particles simulate baryons, electrons, and photons with realistic scattering and binding behaviors
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl mb-2">💫</div>
+            <h3 class="font-semibold text-slate-200 mb-2">Pressure Field Emergence</h3>
+            <p class="text-sm text-slate-400">
+              SDT pressure fields become visible during recombination, showing the lattice structure that generates forces
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .slider::-webkit-slider-thumb {
+      appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #f59e0b;
+      cursor: pointer;
+      border: 2px solid #1f2937;
+    }
+
+    .slider::-moz-range-thumb {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #f59e0b;
+      cursor: pointer;
+      border: 2px solid #1f2937;
+    }
+  </style>
+
+  <script>
+    // Interactive controls
+    document.addEventListener('DOMContentLoaded', () => {
+      const tempSlider = document.getElementById('temp-slider') as HTMLInputElement;
+      const opacitySlider = document.getElementById('opacity-slider') as HTMLInputElement;
+      const pressureFieldsCheckbox = document.getElementById('pressure-fields') as HTMLInputElement;
+      const tempValue = document.getElementById('temp-value');
+      const opacityValue = document.getElementById('opacity-value');
+      const phaseName = document.getElementById('phase-name');
+      const phaseDesc = document.getElementById('phase-desc');
+
+      function updatePhaseInfo(temp: number) {
+        if (temp > 8000) {
+          phaseName.textContent = 'Plasma Opaque';
+          phaseDesc.textContent = 'Red-hot plasma, photons trapped';
+        } else if (temp > 2970) {
+          phaseName.textContent = 'Cooling Transition';
+          phaseDesc.textContent = 'Temperature dropping, particles pairing';
+        } else if (temp > 2500) {
+          phaseName.textContent = 'Recombination';
+          phaseDesc.textContent = 'Electrons binding to nuclei';
+        } else {
+          phaseName.textContent = 'Clear Transparent';
+          phaseDesc.textContent = 'Universe becomes transparent';
+        }
+      }
+
+      tempSlider.addEventListener('input', (e) => {
+        const temp = parseInt((e.target as HTMLInputElement).value);
+        tempValue.textContent = temp.toLocaleString() + 'K';
+        updatePhaseInfo(temp);
+        // Update simulation parameters (would need to connect to React component)
+      });
+
+      opacitySlider.addEventListener('input', (e) => {
+        const opacity = parseFloat((e.target as HTMLInputElement).value);
+        opacityValue.textContent = Math.round(opacity * 100) + '%';
+        // Update simulation parameters
+      });
+
+      // Initialize
+      updatePhaseInfo(2970);
+    });
+  </script>
+</BaseLayout>

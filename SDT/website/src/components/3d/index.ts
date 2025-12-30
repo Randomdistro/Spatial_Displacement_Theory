@@ -17,4 +17,8 @@ export { default as NodeIndicator } from './NodeIndicator';
 export { default as PressureFieldVisualization } from './PressureFieldVisualization';
 export { default as VolumetricPressureField } from './VolumetricPressureField';
 export { default as AtmosphericEffects } from './AtmosphericEffects';
+export { default as SimulationIntegration } from './SimulationIntegration';
+export { default as SacredGeometryBackground } from './SacredGeometryBackground';
+export { default as GeometricTransition } from './GeometricTransition';
+export { default as ContentRenderer3D } from './ContentRenderer3D';
 

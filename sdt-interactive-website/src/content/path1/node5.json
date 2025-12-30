@@ -1,0 +1,39 @@
+{
+  "id": "path1-node5",
+  "title": "Validated Predictions",
+  "path": "path1",
+  "readingTime": 5,
+  "hook": "16 out of 24 benchmarks. Less than 1% error. From atoms to galaxies.",
+  "content": {
+    "main": "A theory is only as good as its predictions.\n\nSDT makes **specific, testable predictions**. No adjustable parameters. No fitting to data.\n\n**Certified Benchmarks (< 1% error):**\n\n✅ Hydrogen Rydberg spectrum: 0.1% error\n✅ Fine structure constant: Exact match\n✅ Hyperfine structure: 0.8% error\n✅ Planetary orbits: 0.5% error\n✅ Galaxy rotation: Matches without dark matter\n✅ CMB redshift: Exact match (z = 1089)\n\n**Across 53 orders of magnitude.**\n\nFrom 10⁻¹⁵ meters (nuclear) to 10³⁸ meters (cosmological).",
+    "expansions": {
+      "know-more": {
+        "title": "🎬 Would you like to know more?",
+        "content": "**What ARE the benchmarks?**\n\nThe 24 benchmarks span:\n\n**Atomic Physics (6 benchmarks)**\n- Hydrogen spectrum\n- Fine structure\n- Hyperfine structure\n- Multi-electron atoms\n- Ionization energies\n- Lamb shift\n\n**Gravitational Physics (6 benchmarks)**\n- Planetary orbits\n- Mercury perihelion precession\n- Light bending\n- Gravitational redshift\n- Binary pulsars\n- Frame dragging\n\n**Cosmology (6 benchmarks)**\n- CMB temperature\n- CMB redshift\n- BAO scale\n- Galaxy rotation curves\n- Hubble constant\n- Age of universe\n\n**Remaining (6 benchmarks)**\n- Still under investigation\n- Nuclear physics, chemistry, thermodynamics\n\n**What's the validation process?**\n\nEach benchmark compares SDT predictions to authoritative experimental data. No curve fitting. No free parameters. Just geometry → prediction → comparison."
+      },
+      "tech-specs": {
+        "title": "📊 Benchmark Data",
+        "content": "**Error Analysis Summary:**\n\n| Benchmark | SDT Prediction | Observed | Error |\n|-----------|---------------|----------|-------|\n| Rydberg constant | 1.0973732×10⁷ m⁻¹ | 1.0973732×10⁷ m⁻¹ | <0.01% |\n| Fine structure (α) | 1/137.036 | 1/137.036 | <0.001% |\n| Hydrogen ionization | 13.606 eV | 13.606 eV | <0.01% |\n| Earth orbital speed | 29.78 km/s | 29.78 km/s | <0.1% |\n| Galaxy rotation | Flat | Flat | ✓ |\n\n**Key insight:**\nThese aren't fits. SDT derives these from first principles using only:\n- CMB pressure: 2.036×10⁻² Pa\n- Spation bulk modulus: 4.6×10¹¹³ Pa\n- Speed of light: c\n\nNo G. No m. No ℏ. Just geometry."
+      },
+      "simulation": {
+        "title": "🔬 Interactive: Benchmark Explorer",
+        "content": "Select any benchmark to see the full derivation, comparison to observation, and error analysis.",
+        "simulationId": "benchmark-visualizer"
+      }
+    }
+  },
+  "narration": {
+    "script": "So we've talked about the theory. But does it actually work?\n\nThis is where it gets really interesting.\n\nSDT makes 24 specific predictions. No adjustable parameters. No fitting to data. Just geometry in, prediction out.\n\nSo far? 16 benchmarks certified. Less than 1% error.\n\nHydrogen spectrum? 0.1% error. Fine structure constant? Exact match. Planetary orbits? 0.5% error. Galaxy rotation curves? Match perfectly—without dark matter.\n\nAnd here's what's remarkable: these benchmarks span 53 orders of magnitude. From nuclear physics at 10 to the minus 15 meters, all the way to cosmology at 10 to the 38 meters.\n\nOne theory. One equation. Fifty-three orders of magnitude. Errors under 1%.\n\nThat's not a coincidence. That's a pattern. And patterns demand explanation.\n\nWould you like to know more? Click any expansion below, or continue to explore the interactive visualizations.",
+    "duration": 85,
+    "timing": [0, 8, 15, 25, 38, 50, 62, 72, 80]
+  },
+  "visualizations": {
+    "animation3d": "benchmark-grid",
+    "formulas": [],
+    "charts": ["benchmark-comparison", "error-distribution"]
+  },
+  "position": [12, 0, -8],
+  "cameraTarget": [12, 0, -10],
+  "previousNodeId": "path1-node4"
+}
+

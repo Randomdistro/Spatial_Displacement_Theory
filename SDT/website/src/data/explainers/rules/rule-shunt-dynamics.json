@@ -1,0 +1,112 @@
+{
+  "id": "rule-shunt-dynamics",
+  "title": "Shunt Dynamics",
+  "description": "The universal mechanism of interaction in SDT: RESISTANCE → RECOIL → TRANSFERENCE. All forces and motion emerge from shunt events.",
+  "category": "rule",
+  "domain": "foundational",
+  "content": {
+    "markdown": "# Shunt Dynamics\n\nShunt dynamics is the universal mechanism that drives all interactions in SDT.\n\n## The Three Stages\n\n### 1. RESISTANCE\n\nWhen spations encounter matter (displacement), they resist compression.\n\n- Pressure builds up\n- Energy accumulates\n- System prepares for transfer\n\n### 2. RECOIL\n\nThe accumulated energy causes a recoil motion.\n\n- Energy releases\n- Motion begins\n- Direction determined by geometry\n\n### 3. TRANSFERENCE\n\nEnergy and momentum transfer to the next spation.\n\n- Energy flows\n- Motion propagates\n- Cycle repeats\n\n## Physical Significance\n\nShunt dynamics explains:\n\n- How forces emerge from pressure gradients\n- How energy transfers through the system\n- How motion propagates through space\n- How time emerges from counting events\n\n## Mathematical Formulation\n\nThe circulation $\\Gamma$ emerges from shunt dynamics:\n\n$$\\Gamma = \\frac{\\text{shunt events}}{\\text{unit time}}$$\n\nThis circulation drives energy transfer in the master equation.",
+    "formulas": [
+      {
+        "id": "formula-circulation",
+        "latex": "\\Gamma = \\frac{N_{\\text{shunts}}}{\\Delta t}",
+        "displayMode": "block",
+        "label": "Circulation",
+        "description": "Circulation coefficient from shunt dynamics",
+        "dimensionalAnalysis": "[dimensionless] = [dimensionless] / [s]",
+        "variables": [
+          {
+            "symbol": "\\Gamma",
+            "name": "Circulation",
+            "description": "Circulation coefficient",
+            "units": "dimensionless"
+          },
+          {
+            "symbol": "N_{\\text{shunts}}",
+            "name": "Number of Shunts",
+            "description": "Count of shunt events",
+            "units": "dimensionless"
+          },
+          {
+            "symbol": "\\Delta t",
+            "name": "Time Interval",
+            "description": "Time over which shunts are counted",
+            "units": "s"
+          }
+        ]
+      }
+    ],
+    "visualizations": [
+      {
+        "id": "viz-shunt-sequence",
+        "type": "animation",
+        "component": "ShuntDynamics",
+        "props": {
+          "showSteps": true,
+          "showPressure": true,
+          "showFlow": true
+        },
+        "position": "inline",
+        "interactive": true,
+        "parameters": [
+          {
+            "name": "speed",
+            "type": "slider",
+            "min": 0.5,
+            "max": 3.0,
+            "step": 0.1,
+            "defaultValue": 1.0,
+            "label": "Animation Speed",
+            "description": "Speed of shunt animation"
+          }
+        ],
+        "caption": "Animated sequence showing RESISTANCE → RECOIL → TRANSFERENCE",
+        "alt": "Shunt dynamics animation"
+      }
+    ],
+    "sections": [
+      {
+        "id": "section-resistance",
+        "title": "RESISTANCE",
+        "content": "Spations resist compression when encountering matter, building up pressure.",
+        "order": 1
+      },
+      {
+        "id": "section-recoil",
+        "title": "RECOIL",
+        "content": "Accumulated energy causes recoil motion, releasing stored energy.",
+        "order": 2
+      },
+      {
+        "id": "section-transference",
+        "title": "TRANSFERENCE",
+        "content": "Energy and momentum transfer to the next spation, propagating motion.",
+        "order": 3
+      },
+      {
+        "id": "section-mathematics",
+        "title": "Mathematical Formulation",
+        "content": "Circulation emerges from shunt dynamics and drives energy transfer.",
+        "order": 4,
+        "formulas": ["formula-circulation"],
+        "visualizations": ["viz-shunt-sequence"]
+      }
+    ]
+  },
+  "references": {
+    "papers": ["paper-core-engine"],
+    "phases": ["phase-0"],
+    "benchmarks": [],
+    "formulas": ["formula-master-equation", "formula-circulation"],
+    "rules": ["rule-four-primitives"]
+  },
+  "dateCreated": "2025-12-01T00:00:00Z",
+  "dateUpdated": "2025-12-20T00:00:00Z",
+  "version": "1.0.0",
+  "status": "published",
+  "tags": ["foundational", "shunt-dynamics", "mechanics"],
+  "difficulty": "intermediate",
+  "estimatedReadTime": 8,
+  "prerequisites": ["rule-four-primitives"]
+}
+

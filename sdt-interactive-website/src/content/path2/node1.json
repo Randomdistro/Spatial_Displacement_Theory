@@ -1,0 +1,41 @@
+{
+  "id": "path2-node1",
+  "title": "Complete Axiomatic Foundation",
+  "path": "path2",
+  "readingTime": 15,
+  "hook": "Four axioms. One medium. All of physics.",
+  "content": {
+    "main": "# The Four Axioms of Spatial Displacement Theory\n\nSDT rests on exactly four axioms. From these, all physical phenomena emerge.\n\n## Axiom 1: Space is a Pressurized Spation Lattice\n\nSpace is not empty. It is filled with an incompressible, deformable medium called **spation**. The Cosmic Microwave Background boundary at redshift z = 1089 represents the densest region and produces inward isotropic pressure.\n\n**P_CMB = 2.036 × 10⁻² Pa** (constant at local scales)\n\nThis pressure is the origin of all forces in the observable universe.\n\n## Axiom 2: Matter Excludes Spations\n\nEvery particle has a physical radius and forms an exclusion shell. Particles are **toroidal displacement vortices**—stable topological structures that exclude spation from their volume.\n\n- Proton: R_p = 0.84 × 10⁻¹⁵ m (6π trefoil torus)\n- Electron: r_e ≈ 10⁻²² m (compressed vortex)\n\nWhat we call \"mass\" is not fundamental—it's the geometric parameter describing how much spation is displaced.\n\n## Axiom 3: Occlusion Creates Pressure Imbalance\n\nAny object blocks a solid angle of incoming pressure from the CMB field. This creates local pressure deficits. When two objects exist near each other, each shadows the other, creating asymmetric pressure.\n\nThis asymmetry IS force.\n\n## Axiom 4: Force Equals Pressure Imbalance Times Cross-Sectional Area\n\nForce is deterministic. No fields, potentials, or probability amplitudes are invoked.\n\n**F = ΔP × A_eff**\n\nFrom these four axioms, everything follows.",
+    "expansions": {
+      "know-more": {
+        "title": "🎬 Would you like to know more?",
+        "content": "**Why these four axioms?**\n\nThey correspond to four irreducible primitives:\n\n1. **SPACE** → Axiom 1 (pressurized medium)\n2. **MATTER** → Axiom 2 (displacement vortices)\n3. **MOVEMENT** → Axiom 3 (pressure imbalance → force)\n4. **NOW** → Axiom 4 (time emerges from oscillation counting)\n\n**What's NOT assumed:**\n\n- ❌ Point particles\n- ❌ Probability amplitudes\n- ❌ Curved spacetime\n- ❌ Virtual particles\n- ❌ Quantum fields\n- ❌ Dark matter/energy\n\n**Everything emerges from geometry.**\n\n**Sufficiency proof:**\n\nThese four axioms generate:\n- Newton's laws (limit case)\n- Coulomb's law (low occlusion limit)\n- Gravity (high occlusion limit)\n- Quantum effects (helical wave mechanics)\n- Relativistic effects (pressure distortion at high velocity)"
+      },
+      "tech-specs": {
+        "title": "📊 Formal Mathematical Statements",
+        "content": "**Axiom 1 (Formal):**\n\nThe pressure field at any point x:\nΠ(x) = ∫₄π I_∞(n̂)[1 - E(x, n̂)] dΩ\n\nWhere I_∞(n̂) is incoming CMB pressure intensity.\n\n**Axiom 2 (Formal):**\n\nDisplacement density: ρ_disp(x) = V_excluded / V_reference\n\nFor a proton trefoil:\nV_proton = 2π²R_p(R_p/3)² ≈ 0.41 fm³\n\n**Axiom 3 (Formal):**\n\nOcclusion function:\nE(x, n̂) = ∫ σ(x') × G(x, x', n̂) dx'\n\nWhere σ is the cross-section and G is the geometric visibility function.\n\n**Axiom 4 (Formal):**\n\nForce:\nF = -V_disp ∇Π = -V_disp ∇·(K_bulk ∇Δ)"
+      },
+      "simulation": {
+        "title": "🔬 Interactive: Axiom Visualizations",
+        "content": "See each axiom demonstrated with interactive 3D visualizations.",
+        "simulationId": "axiom-visualizer"
+      }
+    }
+  },
+  "narration": {
+    "script": "Welcome to the Deep Dive. We're going to build SDT from the ground up.\n\nEverything rests on four axioms. Just four. From these, we'll derive all of physics.\n\nAxiom one: Space is filled with an incompressible medium called spation. The CMB boundary—that's the cosmic microwave background at redshift 1089—produces inward pressure. All pressure in the universe originates from this boundary.\n\nAxiom two: Matter excludes spation. Particles aren't points—they're toroidal vortices. The proton is a trefoil knot, wound six-pi times around itself. It pushes spation aside, creating a hole in the medium.\n\nAxiom three: Occlusion creates pressure imbalance. When two objects exist near each other, each blocks incoming pressure on the other. This asymmetric pressure IS what we call force.\n\nAxiom four: Force equals pressure imbalance times cross-sectional area. Deterministic. No probability. No fields. Just pressure geometry.\n\nFrom these four axioms? Everything. Gravity. Electromagnetism. Quantum mechanics. Cosmology. All of it.",
+    "duration": 120,
+    "timing": [0, 10, 22, 40, 58, 78, 95, 110]
+  },
+  "visualizations": {
+    "animation3d": "four-axioms",
+    "formulas": [
+      "\\Pi(\\mathbf{x}) = \\int_{4\\pi} I_\\infty(\\hat{\\mathbf{n}})[1 - E(\\mathbf{x}, \\hat{\\mathbf{n}})] \\, d\\Omega",
+      "F = -V_{disp} \\nabla \\Pi"
+    ]
+  },
+  "position": [0, 0, 0],
+  "cameraTarget": [0, 0, -3],
+  "nextNodeId": "path2-node2"
+}
+

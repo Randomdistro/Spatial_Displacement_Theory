@@ -13,7 +13,8 @@
 
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Mesh, SphereGeometry, MeshStandardMaterial, Color } from 'three';
+import { Mesh, MeshStandardMaterial, Color } from 'three';
+import { PHI, PHI_INVERSE, GOLDEN_ANGLE } from '../../utils/sacred-geometry';
 
 // Design system colors
 const COLORS = {
@@ -66,16 +67,23 @@ export default function NodeIndicator({
     ? COLORS.goldPrimary.clone().multiplyScalar(0.5)
     : COLORS.spaceLight.clone().multiplyScalar(0.2);
 
-  // Pulsing animation - scale: 1 ± 0.1, 2s cycle
-  useFrame((state) => {
+  // Pulsing animation - golden ratio frequency
+  // PHI_INVERSE Hz (~0.618 Hz) creates organic, natural rhythm
+  useFrame((frameState) => {
     if (!indicatorRef.current || !materialRef.current) return;
     
-    const time = state.clock.elapsedTime;
-    const pulse = Math.sin(time * Math.PI) * 0.1 + 1.0; // 1 ± 0.1
+    const time = frameState.clock.elapsedTime;
+    
+    // Golden ratio pulse: frequency = PHI_INVERSE (natural, organic)
+    // Amplitude = 0.1 (1 ± 0.1)
+    const pulse = Math.sin(time * Math.PI * PHI_INVERSE) * 0.1 + 1.0;
     indicatorRef.current.scale.setScalar(pulse);
     
-    // Emissive intensity pulses with scale
-    materialRef.current.emissiveIntensity = (pulse - 1) * 2 + 0.3;
+    // Secondary micro-rotation for depth (using golden angle)
+    indicatorRef.current.rotation.y = time * PHI_INVERSE * 0.5;
+    
+    // Emissive intensity pulses with golden ratio amplitude
+    materialRef.current.emissiveIntensity = (pulse - 1) * PHI + 0.3;
   });
 
   return (

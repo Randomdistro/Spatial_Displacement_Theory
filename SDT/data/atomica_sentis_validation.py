@@ -6,6 +6,15 @@ Tests predictions against experimental data
 World-class validation: No fudged numbers!
 """
 
+import sys
+
+# Ensure Unicode output works on Windows consoles (Cursor often runs with cp1252).
+# We prefer preserving symbols (✓, ✗, α, ⊕, β⁺) but fall back safely if the console can't render them.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 from atomica_sentis_calculator import AtomicaSentisCalculator, Regime
 import numpy as np
 

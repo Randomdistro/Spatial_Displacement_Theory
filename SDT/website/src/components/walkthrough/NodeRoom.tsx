@@ -200,13 +200,23 @@ export default function NodeRoom({
   return (
     <group position={position}>
       {/* Main toroidal chamber */}
-      <mesh
-        ref={roomRef}
-        geometry={chamberGeometry}
-        onClick={handleClick}
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
-      >
+        <mesh
+          ref={roomRef}
+          geometry={chamberGeometry}
+          onClick={handleClick}
+          onPointerOver={() => setHovered(true)}
+          onPointerOut={() => setHovered(false)}
+          role="button"
+          aria-label={`Navigate to ${content.title} - ${content.readingTime} minute read`}
+          aria-describedby={`node-${nodeId}-description`}
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              handleClick();
+            }
+          }}
+        >
         <meshStandardMaterial
           ref={materialRef}
           color={selected ? new Color(0xd69e2e) : baseColor}

@@ -1,0 +1,64 @@
+{
+  "id": "path3",
+  "name": "Scientific Framework",
+  "tagline": "90+ minutes of rigorous derivation",
+  "targetAudience": "Physicists, serious students, peer review",
+  "tone": "Rigorous, precise, formula-heavy, no hand-waving",
+  "voStyle": "Academic but engaging - \"The derivation proceeds as follows...\"",
+  "headlines": [
+    {
+      "text": "MASTER EQUATION DERIVATION",
+      "subtext": "From four axioms",
+      "nodeId": "node1"
+    },
+    {
+      "text": "BENCHMARK VALIDATION",
+      "subtext": "15/24 certified, <1% error",
+      "nodeId": "node2"
+    },
+    {
+      "text": "NO G, NO M",
+      "subtext": "Pure geometric formulation",
+      "nodeId": "node3"
+    },
+    {
+      "text": "DIMENSIONAL ANALYSIS",
+      "subtext": "Complete unit derivation",
+      "nodeId": "node4"
+    },
+    {
+      "text": "FALSIFICATION CRITERIA",
+      "subtext": "What would disprove SDT?",
+      "nodeId": "node5"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node1",
+      "title": "Mathematical Foundation",
+      "readingTime": 20,
+      "headline": "FORMAL AXIOMATIC SYSTEM"
+    },
+    {
+      "id": "node2",
+      "title": "Derivation Tree (Complete)",
+      "readingTime": 30,
+      "headline": "EVERY DERIVATION. EVERY STEP."
+    },
+    {
+      "id": "node3",
+      "title": "Validation Protocol",
+      "readingTime": 20,
+      "headline": "HOW WE TEST. HOW WE FAIL."
+    }
+  ],
+  "simulations": [
+    "spation-lattice",
+    "pressure-field",
+    "force-hierarchy",
+    "toroidal-electron",
+    "cmb-boundary",
+    "k-law-scale-slider"
+  ]
+}
+

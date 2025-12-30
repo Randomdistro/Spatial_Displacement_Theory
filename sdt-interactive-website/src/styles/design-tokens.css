@@ -1,0 +1,277 @@
+/**
+ * SDT Design Tokens
+ * 
+ * TEKNE-inspired design system:
+ * Form is function. Function drives form.
+ * 
+ * Colors, typography, spacing, and animations
+ * that embody the theory's geometric principles.
+ */
+
+:root {
+  /* ===========================
+     COLOR PALETTE
+     =========================== */
+  
+  /* Deep Space - Background colors */
+  --color-space-darkest: #0a0a0f;
+  --color-space-dark: #0f1419;
+  --color-space-medium: #1a202c;
+  --color-space-light: #2d3748;
+  
+  /* Metallic Gold - Primary accent (SDT discovery/revelation) */
+  --color-gold-light: #fbbf24;
+  --color-gold-medium: #d69e2e;
+  --color-gold-dark: #b7791f;
+  --color-gold-glow: rgba(251, 191, 36, 0.3);
+  
+  /* Pressure Blue - Secondary (spation field) */
+  --color-pressure-light: #93c5fd;
+  --color-pressure-medium: #60a5fa;
+  --color-pressure-dark: #3b82f6;
+  --color-pressure-glow: rgba(96, 165, 250, 0.3);
+  
+  /* CMB Red - Boundary/source */
+  --color-cmb-light: #fca5a5;
+  --color-cmb-medium: #f87171;
+  --color-cmb-dark: #ef4444;
+  --color-cmb-glow: rgba(239, 68, 68, 0.2);
+  
+  /* Success Green - Validated predictions */
+  --color-valid-light: #86efac;
+  --color-valid-medium: #4ade80;
+  --color-valid-dark: #22c55e;
+  
+  /* Text colors */
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  
+  /* ===========================
+     TYPOGRAPHY
+     =========================== */
+  
+  /* Font families - distinctive, not generic */
+  --font-display: 'Space Grotesk', 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', 'Source Sans Pro', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Font sizes - Golden Ratio scaled (1.618) */
+  --text-xs: 0.618rem;    /* ~10px */
+  --text-sm: 0.75rem;     /* 12px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.618rem;    /* ~26px - Golden Ratio */
+  --text-2xl: 2.618rem;   /* ~42px - φ² */
+  --text-3xl: 4.236rem;   /* ~68px - φ³ */
+  --text-4xl: 6.854rem;   /* ~110px - φ⁴ */
+  
+  /* Line heights */
+  --leading-tight: 1.2;
+  --leading-normal: 1.618; /* Golden Ratio! */
+  --leading-relaxed: 1.8;
+  
+  /* ===========================
+     SPACING (Fibonacci-based)
+     =========================== */
+  
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px - Fib 1 */
+  --space-2: 0.5rem;    /* 8px - Fib 2 */
+  --space-3: 0.75rem;   /* 12px */
+  --space-5: 1.25rem;   /* 20px - ~Fib 5 */
+  --space-8: 2rem;      /* 32px - Fib 8 */
+  --space-13: 3.25rem;  /* 52px - ~Fib 13 */
+  --space-21: 5.25rem;  /* 84px - ~Fib 21 */
+  --space-34: 8.5rem;   /* 136px - ~Fib 34 */
+  
+  /* ===========================
+     BORDERS & RADII
+     =========================== */
+  
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.618rem;
+  --radius-full: 9999px;
+  
+  --border-thin: 1px;
+  --border-medium: 2px;
+  --border-thick: 3px;
+  
+  /* ===========================
+     SHADOWS & GLOWS
+     =========================== */
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.25);
+  
+  --glow-gold: 0 0 20px var(--color-gold-glow),
+               0 0 40px var(--color-gold-glow);
+  --glow-blue: 0 0 20px var(--color-pressure-glow),
+               0 0 40px var(--color-pressure-glow);
+  --glow-cmb: 0 0 30px var(--color-cmb-glow);
+  
+  /* ===========================
+     TRANSITIONS & ANIMATIONS
+     =========================== */
+  
+  /* Durations (Golden Ratio based) */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --duration-phi: 618ms; /* φ × 1000 */
+  --duration-phi2: 1000ms;
+  
+  /* Easings */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-golden: cubic-bezier(0.382, 0, 0.618, 1); /* φ inverse points */
+  
+  /* ===========================
+     Z-INDEX SCALE
+     =========================== */
+  
+  --z-base: 0;
+  --z-above: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-overlay: 400;
+  --z-toast: 500;
+}
+
+/* ===========================
+   DARK MODE (default)
+   =========================== */
+
+body {
+  background-color: var(--color-space-darkest);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  line-height: var(--leading-normal);
+}
+
+/* ===========================
+   TYPOGRAPHY CLASSES
+   =========================== */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--color-pressure-light), var(--color-pressure-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===========================
+   GLOW EFFECTS
+   =========================== */
+
+.glow-gold {
+  box-shadow: var(--glow-gold);
+}
+
+.glow-blue {
+  box-shadow: var(--glow-blue);
+}
+
+.glow-gold-text {
+  text-shadow: 0 0 10px var(--color-gold-glow),
+               0 0 20px var(--color-gold-glow);
+}
+
+/* ===========================
+   GLASS MORPHISM
+   =========================== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--color-gold-glow);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--color-gold-glow),
+                0 0 40px var(--color-gold-glow);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 60s linear infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s var(--ease-out) forwards;
+}
+

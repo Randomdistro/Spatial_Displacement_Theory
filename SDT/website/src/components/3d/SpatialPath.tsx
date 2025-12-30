@@ -15,6 +15,7 @@ import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Mesh, TubeGeometry, MeshStandardMaterial, Color, Vector3, CatmullRomCurve3 } from 'three';
 import { useAnimation, EasingFunctions } from '../../framework/hooks';
+import { PHI, PHI_INVERSE, GOLDEN_ANGLE } from '../../utils/sacred-geometry';
 
 // Design system colors
 const COLORS = {
@@ -53,17 +54,31 @@ export default function SpatialPath({
   const materialRef = useRef<MeshStandardMaterial>(null);
   const progressMaterialRef = useRef<MeshStandardMaterial>(null);
 
-  // Create smooth curve between points
+  // Create smooth curve between points using GOLDEN RATIO proportions
   const curve = useMemo(() => {
     const start = new Vector3(...from);
     const end = new Vector3(...to);
     
-    // Create control points for smooth arc
-    const mid = new Vector3().addVectors(start, end).multiplyScalar(0.5);
-    mid.y += 0.5; // Arc upward
+    // Calculate distance for proportional arc height
+    const distance = start.distanceTo(end);
     
-    // Catmull-Rom curve for smooth path
-    const points = [start, mid, end];
+    // Golden ratio arc: height = distance * PHI_INVERSE (0.618...)
+    // This creates naturally beautiful, harmonious curves
+    const arcHeight = distance * PHI_INVERSE * 0.5;
+    
+    // Create control points using golden section
+    // First control point at 1/PHI of the way
+    const t1 = PHI_INVERSE; // 0.382...
+    const t2 = 1 - PHI_INVERSE; // 0.618...
+    
+    const ctrl1 = new Vector3().lerpVectors(start, end, t1);
+    ctrl1.y += arcHeight;
+    
+    const ctrl2 = new Vector3().lerpVectors(start, end, t2);
+    ctrl2.y += arcHeight * PHI; // Slightly higher at golden point
+    
+    // Catmull-Rom curve with golden-proportioned control points
+    const points = [start, ctrl1, ctrl2, end];
     return new CatmullRomCurve3(points);
   }, [from, to]);
 
@@ -91,18 +106,20 @@ export default function SpatialPath({
     return new TubeGeometry(progressCurve, segments, 0.06, 8, false);
   }, [curve, progress]);
 
-  // Flow animation - particles moving along path
+  // Flow animation - golden ratio frequencies
   useFrame((state) => {
     if (!tubeRef.current || !materialRef.current) return;
     
     const time = state.clock.elapsedTime;
     
-    // Animate emissive intensity for flow effect
-    const flow = Math.sin(time * 2 + progress * Math.PI * 2) * 0.3 + 0.7;
+    // Golden ratio frequency for flow animation
+    // Creates naturally pleasing pulsing rhythm
+    const goldenFreq = PHI_INVERSE * 2; // ~1.236 Hz
+    const flow = Math.sin(time * goldenFreq + progress * Math.PI * PHI) * 0.3 + 0.7;
     materialRef.current.emissiveIntensity = flow;
     
-    // Rotate tube slightly for visual interest
-    tubeRef.current.rotation.z = Math.sin(time * 0.5) * 0.1;
+    // Subtle rotation using golden angle for organic feel
+    tubeRef.current.rotation.z = Math.sin(time * PHI_INVERSE * 0.5) * 0.08;
   });
 
   // Color based on state

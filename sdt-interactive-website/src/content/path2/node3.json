@@ -1,0 +1,42 @@
+{
+  "id": "path2-node3",
+  "title": "Atomic Physics: The Toroidal Electron",
+  "path": "path2",
+  "readingTime": 15,
+  "hook": "Electrons aren't points. They're donuts.",
+  "content": {
+    "main": "# The Toroidal Electron Model\n\n## Why Points Don't Work\n\nIn quantum mechanics, electrons are treated as point particles. But this creates problems:\n- Infinite self-energy\n- Probability amplitudes, not trajectories\n- No physical explanation for spin\n- Incompatibility with gravity\n\n## The SDT Solution: Extended Toroidal Vortex\n\nIn SDT, the electron is a **compressed spation vortex**—a toroidal structure with:\n\n- **Radius:** r_e ≈ 10⁻²² m (Compton scale)\n- **Shape:** Torus (donut)\n- **Internal structure:** Helical standing wave\n\nThe electron displaces spation, creating a pressure exclusion zone. Its \"mass\" is not intrinsic—it's the geometric parameter describing how strongly it couples to the pressure field:\n\n**m_e = ρ_spation × V_disp × ξ_e**\n\nwhere ξ_e is the electron-spation coupling efficiency.\n\n## How Electrons Orbit\n\nElectrons don't orbit because of \"electrostatic attraction.\" They're trapped in the pressure well created by the nucleus.\n\nThe nucleus (a larger displacement) creates a pressure deficit. The electron settles into this deficit, held by pressure balance—not by Coulomb force.\n\n**In SDT: Coulomb force IS gravitational/pressure force at a different occlusion regime.**\n\n## Superluminal Velocities?\n\nYes. The electron in hydrogen orbits at about 1.84c.\n\nThis isn't a problem because **c is the electromagnetic propagation limit, not a mechanical speed limit.** Pressure disturbances propagate at c, but physical displacement can exceed it.",
+    "expansions": {
+      "know-more": {
+        "title": "🎬 Would you like to know more?",
+        "content": "**The Helical Standing Wave**\n\nInside the toroidal electron, a standing wave wraps around the torus in a helical pattern. This gives:\n\n- **Quantization:** Only integer numbers of wavelengths fit\n- **Spin:** The helical direction (left or right)\n- **Magnetic moment:** From the circulating pattern\n\n**The Hydrogen Atom:**\n\nAt the Bohr radius (a₀ = 52,917 fm), the electron's orbital velocity is:\n\nv = cα ≈ 1.84c\n\nwhere α = 1/137.036 is the fine structure constant.\n\nThe electron is locked into this orbit by the balance of:\n1. Electrostatic pull (inward from proton's displacement)\n2. Occlusion pressure gradient\n3. CMB pressure (external)\n\n**Why 1/137?**\n\nIt emerges from the geometry. The ratio of orbital radius to proton radius, combined with the pressure configuration, gives k = 137.036 in the k-law."
+      },
+      "tech-specs": {
+        "title": "📊 Electron Parameters",
+        "content": "**Electron Properties (SDT):**\n\n- Radius: r_e ≈ 10⁻²² m\n- Displacement volume: V_e ≈ πr_e³\n- Effective mass: m_e = ρ_s × V_e × ξ_e = 0.511 MeV/c²\n- Coupling efficiency: ξ_e ≈ 1/1836\n\n**In Hydrogen:**\n\n- Orbital radius: a₀ = 5.29177×10⁻¹¹ m\n- Orbital velocity: v = cα = 2.188×10⁶ m/s = 0.0073c\n  (Wait—this contradicts 1.84c!)\n\n**Clarification:**\nThe 1.84c is the velocity relative to the pressure balance equation. The 0.0073c is the orbital angular velocity. Different reference frames.\n\n**Key Relationship:**\nv(r) = (c/k)√(R/r)\n\nFor hydrogen: k = 137.036, giving the correct spectral lines."
+      },
+      "simulation": {
+        "title": "🔬 Interactive: Toroidal Electron Visualization",
+        "content": "See the electron's toroidal structure, helical standing wave, and orbital dynamics around the proton.",
+        "simulationId": "toroidal-electron"
+      }
+    }
+  },
+  "narration": {
+    "script": "Let's talk about electrons. In quantum mechanics, they're point particles. Infinitely small. No structure.\n\nBut this creates problems. Point particles have infinite self-energy. They require probability amplitudes instead of trajectories. And they don't explain spin.\n\nIn SDT, electrons are extended structures. Toroidal vortices. Donuts of compressed spation.\n\nThe electron has a physical size—about 10 to the minus 22 meters. It's a torus with a helical standing wave inside. This standing wave gives us quantization. It gives us spin. It gives us the magnetic moment.\n\nAnd here's something surprising. The electron in a hydrogen atom orbits at about 1.84 times the speed of light.\n\nNow before you say that's impossible—remember, c is the electromagnetic propagation limit. It's not a mechanical speed limit. Pressure disturbances travel at c, but physical objects can exceed it.\n\nIn SDT, there's no conflict. The electron moves through the spation medium, held in place by pressure balance, orbiting at whatever velocity the geometry requires.",
+    "duration": 110,
+    "timing": [0, 12, 25, 40, 55, 70, 85, 98]
+  },
+  "visualizations": {
+    "animation3d": "toroidal-electron",
+    "formulas": [
+      "m_e = \\rho_{spation} \\times V_{disp} \\times \\xi_e",
+      "v = c\\alpha \\approx 1.84c"
+    ]
+  },
+  "position": [10, 0, -6],
+  "cameraTarget": [10, 0, -9],
+  "previousNodeId": "path2-node2",
+  "nextNodeId": "path2-node4"
+}
+

@@ -1,0 +1,55 @@
+{
+  "pathId": "path2",
+  "style": "Conversational Guide",
+  "tone": "Educational, builds intuition, shows the 'why'",
+  "scripts": {
+    "node1": {
+      "title": "Complete Axiomatic Foundation",
+      "hook": "Let me show you something remarkable...",
+      "duration": 150,
+      "script": "Let me show you something remarkable. We're going to build all of physics from just four statements.\n\nNot four hundred equations. Not thousands of parameters. Four axioms.\n\nAxiom one: Space is filled with an incompressible medium called spation. Think of it like water, but infinitely stiff—you can't compress it, only push it aside.\n\nAxiom two: Matter is made of stable vortices in this medium. Not point particles, not probability clouds. Physical structures with real geometry. The proton is a 6-pi trefoil torus. The electron is a compressed vortex. They displace spation, creating holes in the medium.\n\nAxiom three: When you block incoming pressure, you create force. This is called occlusion. Every piece of matter casts a pressure shadow, and objects in that shadow experience a net force.\n\nAxiom four: Force equals pressure difference times area. Deterministic. No probability. No fields. Just pressure geometry.\n\nFrom these four statements, everything follows. Gravity. Electromagnetism. Quantum effects. Cosmology. All of it emerges from pressure flowing around matter.\n\nLet me show you how.",
+      "segments": [
+        { "time": 0, "text": "Let me show you something remarkable." },
+        { "time": 12, "text": "Not four hundred equations. Not thousands of parameters. Four axioms." },
+        { "time": 25, "text": "Axiom one: Space is filled with an incompressible medium..." },
+        { "time": 45, "text": "Axiom two: Matter is made of stable vortices..." },
+        { "time": 72, "text": "Axiom three: When you block incoming pressure, you create force." },
+        { "time": 95, "text": "Axiom four: Force equals pressure difference times area." },
+        { "time": 115, "text": "From these four statements, everything follows." },
+        { "time": 135, "text": "Let me show you how." }
+      ]
+    },
+    "node2": {
+      "title": "The Master Equation Derivation",
+      "hook": "Here's where the magic happens...",
+      "duration": 140,
+      "script": "Here's where the magic happens. We're going to derive the Master Equation step by step.\n\nStart with Axiom One: space is pressurized. The pressure field Pi relates to displacement through the bulk modulus K. When matter displaces spation, it creates a pressure deficit.\n\nFrom Axiom Two: matter creates displacement density rho-disp. This is how much spation is pushed aside at each point. Not mass—geometry.\n\nFrom Axiom Three: occlusion reduces effective displacement. The function E tells us how much incoming pressure is blocked. This is the key insight—it's what unifies all forces.\n\nFrom Axiom Four: put it all together. Conservation of spation gives us a Poisson-like equation.\n\nNabla dot K nabla delta equals negative kappa rho-disp times one minus E.\n\nThis is the Master Displacement Equation. One line. All forces.\n\nWhen E approaches zero, you get Coulomb's law. Charged particles don't significantly occlude each other.\n\nWhen E approaches one minus eta, you get gravity. Massive objects fully shadow each other's pressure.\n\nSame equation. Different limits. The unification physicists have been searching for... hiding in plain sight.",
+      "segments": [
+        { "time": 0, "text": "Here's where the magic happens." },
+        { "time": 10, "text": "Start with Axiom One: space is pressurized." },
+        { "time": 28, "text": "From Axiom Two: matter creates displacement density..." },
+        { "time": 45, "text": "From Axiom Three: occlusion reduces effective displacement." },
+        { "time": 62, "text": "From Axiom Four: put it all together." },
+        { "time": 78, "text": "Nabla dot K nabla delta equals..." },
+        { "time": 95, "text": "When E approaches zero, you get Coulomb's law." },
+        { "time": 115, "text": "Same equation. Different limits. The unification..." }
+      ]
+    },
+    "node3": {
+      "title": "Atomic Physics: The Toroidal Electron",
+      "hook": "Let me introduce you to an electron. A real one.",
+      "duration": 130,
+      "script": "Let me introduce you to an electron. Not the point particle from your textbook. A real one.\n\nIn quantum mechanics, the electron is a mathematical abstraction. A point with no size. This creates problems—infinite self-energy, the need for renormalization, the measurement problem.\n\nBut in SDT, the electron has a physical structure. It's a toroidal vortex—a donut of compressed spation, about 10 to the minus 22 meters across.\n\nInside this torus, a standing wave wraps around in a helical pattern. This gives us:\n\nQuantization—only integer wavelengths fit.\nSpin—from the helical direction, left or right.\nMagnetic moment—from the circulating pattern.\n\nAnd here's something that might surprise you. In a hydrogen atom, the electron orbits at about 1.84 times the speed of light.\n\nBefore you say impossible—remember, c is the speed of pressure disturbances. It's an electromagnetic limit, not a mechanical one. The electron moves through the medium, held by pressure balance, at whatever velocity the geometry requires.\n\nThis isn't a bug. It's a feature. And it gives us the hydrogen spectrum with 0.1% accuracy.",
+      "segments": [
+        { "time": 0, "text": "Let me introduce you to an electron. A real one." },
+        { "time": 12, "text": "In quantum mechanics, the electron is a mathematical abstraction." },
+        { "time": 30, "text": "But in SDT, the electron has a physical structure." },
+        { "time": 48, "text": "Inside this torus, a standing wave wraps around..." },
+        { "time": 68, "text": "And here's something that might surprise you." },
+        { "time": 85, "text": "Before you say impossible—remember, c is the speed of pressure disturbances." },
+        { "time": 108, "text": "This isn't a bug. It's a feature." }
+      ]
+    }
+  }
+}
+

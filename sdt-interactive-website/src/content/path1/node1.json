@@ -1,0 +1,40 @@
+{
+  "id": "path1-node1",
+  "title": "What if Space Isn't Empty?",
+  "path": "path1",
+  "readingTime": 2,
+  "hook": "CALAMITY IN PHYSICS! The biggest theory in science has a fatal flaw...",
+  "content": {
+    "main": "For a century, we've described atoms with probability waves and gravity as curved spacetime. These theories work spectacularly well—but they don't connect. Quantum mechanics and general relativity are fundamentally incompatible.\n\n**What if there's a simpler explanation?**\n\nImagine space not as emptiness, but as an ocean—an incompressible medium called *spation*. When matter exists, it pushes this medium aside, creating pressure gradients.\n\nThese pressure gradients are what we experience as forces.\n\nNot gravity. Not electromagnetism. Just pressure.",
+    "expansions": {
+      "know-more": {
+        "title": "🎬 Would you like to know more?",
+        "content": "**Wait, but doesn't this sound like the old ether theory?**\n\nGreat question! The 19th century ether was supposed to be the medium for light waves. But experiments like Michelson-Morley couldn't detect it.\n\nSpation is different:\n- It's **incompressible**—you can't compress it, only displace it\n- It doesn't slow things down—there's no drag\n- Light isn't a wave IN spation—it's a pressure disturbance OF spation\n\n**So what's the evidence?**\n\nSDT makes specific predictions that match observations:\n- Hydrogen spectrum: <0.1% error\n- Planetary orbits: <0.5% error  \n- Galaxy rotation: matches without dark matter\n\n16 out of 24 benchmarks validated with errors under 1%."
+      },
+      "tech-specs": {
+        "title": "📊 Technical Details",
+        "content": "**The Numbers Behind Spation**\n\nSpation has only two intrinsic properties:\n\n• **Bulk Modulus:** K_bulk = 4.6×10¹¹³ Pa\n  (How stiff is space? VERY stiff.)\n\n• **Density:** ρ_s = 5.2×10⁹⁶ kg/m³\n  (But this isn't \"mass\"—it's displacement density)\n\n**Critical Insight:**\nThere is no gravitational constant G in SDT.\nThere is no \"mass\" as a fundamental property.\n\nWhat we call \"mass\" is actually a geometric parameter—the amount of spation a particle displaces.\n\n**The Pressure Source:**\nAll pressure originates from the Cosmic Microwave Background (CMB) boundary at z = 1089. This isn't just background radiation—it's the structural boundary of the observable universe, pressing inward."
+      },
+      "simulation": {
+        "title": "🔬 Interactive: See the Pressure Field",
+        "content": "Explore how matter creates \"holes\" in the spation field, and how pressure flows around these exclusion zones.",
+        "simulationId": "pressure-field"
+      }
+    }
+  },
+  "narration": {
+    "script": "Here's something that might surprise you. The two greatest theories in physics—quantum mechanics and general relativity—they don't work together. At all. They're fundamentally incompatible.\n\nFor over a century, physicists have been trying to unify them. String theory, loop quantum gravity, countless attempts. But what if the problem isn't that we haven't found the right combination? What if the problem is the starting point?\n\nWhat if space... isn't empty?\n\nImagine space as an ocean. Not of water, but of an incompressible medium. When matter exists in this medium, it pushes it aside. It creates a hole. And around that hole? Pressure gradients.\n\nThose pressure gradients? That's what we call forces. Gravity isn't a curve in spacetime. Electromagnetism isn't a field. They're both just... pressure. Flowing around matter.\n\nSounds crazy, right? But here's the thing: it works. 16 out of 24 physics benchmarks validated, with errors under 1%.",
+    "duration": 75,
+    "timing": [0, 8, 18, 28, 40, 52, 62, 70]
+  },
+  "visualizations": {
+    "animation3d": "spation-medium-fill",
+    "formulas": [
+      "\\Pi(\\mathbf{r}) = \\int_{\\Omega} P_{CMB}[1 - E(\\mathbf{r}, \\hat{\\mathbf{n}})] \\, d\\Omega"
+    ]
+  },
+  "position": [0, 0, 0],
+  "cameraTarget": [0, 0, -2],
+  "nextNodeId": "path1-node2"
+}
+

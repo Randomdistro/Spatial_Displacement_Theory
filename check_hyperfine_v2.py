@@ -1,9 +1,9 @@
 
 import math
 
-# Constants from code
-g_I = 5.5856946893
-g_e = 2.00231930436
+# Constants from code (CODATA 2018, full precision)
+g_I = 5.5856946893  # proton g-factor
+g_e = 2.00231930436256  # electron g-factor (absolute value, full precision)
 m_e_over_m_p = 5.44617021487e-4
 m_e_c2_eV = 510998.9502
 alpha = 1.0 / 137.035999084

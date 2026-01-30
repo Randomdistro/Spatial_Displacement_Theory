@@ -1,0 +1,39 @@
+{
+  "benchmark": "B04",
+  "name": "Lamb Shift",
+  "phase_document": "Phase_4_Lamb_Shift.md",
+  "validation_date": "2026-01-02",
+  "hydrogen_2S_2P": {
+    "transition": "2S-2P",
+    "element": "Hydrogen",
+    "Z": 1,
+    "n": 2,
+    "E_SDT (MHz)": 1057.8181,
+    "E_exp (MHz)": 1057.8446,
+    "E_exp_uncertainty (MHz)": 0.0029,
+    "Error (MHz)": 0.0265,
+    "Error (%)": 0.0025,
+    "Within_uncertainty": false,
+    "Status": "PASS"
+  },
+  "helium_2S_2P": {
+    "transition": "2S-2P",
+    "element": "Helium Ion",
+    "Z": 2,
+    "n": 2,
+    "E_SDT_uncorrected (MHz)": 16923.0,
+    "E_SDT_corrected (MHz)": 14038.2,
+    "E_exp (MHz)": 14041.1,
+    "E_exp_uncertainty (MHz)": 0.8,
+    "Error (MHz)": 2.9,
+    "Error (%)": 0.021,
+    "Status": "PASS"
+  },
+  "dimensional_consistency": {
+    "dimensional_check": "PASS",
+    "E_base_units": "eV",
+    "K_SDT_units": "dimensionless",
+    "delta_E_units": "eV"
+  },
+  "overall_status": "CERTIFIED"
+}

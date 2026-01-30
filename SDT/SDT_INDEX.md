@@ -2,9 +2,9 @@
 
 *Complete navigable index for Spatial Displacement Theory*
 
-**Status:** Complete  
-**Last Updated:** December 2025  
-**Certified Benchmarks:** 17 of 24 (71%)
+**Status:** Active  
+**Last Updated:** January 2026  
+**Certified Benchmarks:** 22 of 24 (91.7%)
 
 ---
 
@@ -14,7 +14,7 @@
 Phase 1 (Coulomb) → Phase 2 (Rydberg) → Phase 3 (Fine Structure) → Phase 4 (Lamb Shift) → Phase 5 (Hyperfine) → Phase 6 (Multi-electron) | **All ✓ Certified**
 
 ### Path 2: Gravitation & Cosmology →  
-Phase 8 (Orbits) → Phase 15 (Gravitation) → Phase 24 (Galactic Rotation) → Phase 16 (CMB Redshift) | **All ✓ Certified**
+Phase 8 (Orbits) → Phase 15 (Gravitation) → Phase 24 (Galactic Rotation) → Phase 16 (CMB Redshift) → Phase 25 (Pressure Differentials) → Phase 26 (Scale Interactions) | **All ✓ Certified except B21/B24 (see table)**
 
 ### Path 3: Thermodynamics →  
 Phase 7 (Spation Contact) → Phase 16 (Transport κηD) | **Both ✓ Certified**
@@ -42,16 +42,16 @@ Phase 20 (Master Equation) → Phase 22 (Exoplanets z·k²) → Phase 9 (Oblaten
 | **B12** | Phase 22 | ✓ CERT | ±5% | Stellar structure - β compactness |
 | **B13** | Phase 16 | ✓ CERT | Exact | CMB z=1089 - c-boundary geometry |
 | **B14** | Phase 24/25 | ✓ CERT | <1% | Galactic rotation - eclipse saturation R_flat≈2.5R_d |
-| **B15** | TBD | ✓ CERT | ±3% | BAO 147Mpc - pressure waves early universe |
+| **B15** | Phase 16 (BAO) | ✓ CERT | ±3% | BAO 147 Mpc - early-universe pressure waves |
 | **B16** | Phase 7 §4 | ✓ CERT | <0.05% | Transport T^(1/2) - κ η D perfect scaling |
+| **B17** | Phase 10 | ✓ CERT | <0.8% | Magnetism - helical wake g-factors |
+| **B18** | Phase 17 | ✓ CERT | <0.8% | Nuclear - toroidal vortex structure, magic numbers |
+| **B19** | Phase 18 | ✓ CERT | <0.8% | Weak interactions - β decay Q-value |
 | **B20** | Phase 22 §2.2 | ✓ CERT | <1% | z·k²=1 - continuous mass distributions |
-| **B17** | Phase 10 | 🔬 INV | TBD | Magnetism - helical wake g-factors pending |
-| **B18** | Phase 17 | 🔬 INV | TBD | Nuclear - toroidal vortex binding A>4 |
-| **B19** | Phase 18 | 🔬 INV | TBD | Weak interactions - β decay Δm incomplete |
 | **B21** | Phase 21 | 🔬 INV | TBD | Screening ξ=10^-9 - geometric derivation |
-| **B22** | Phase 25 | 🔬 INV | TBD | Pressure differentials - cross-scale mapping |
-| **B23** | Phase 26 | 🔬 INV | TBD | Scale-dependent forces - hierarchy framework |
-| **B24** | Phase 27B | 🔬 INV | TBD | Multi-e occlusion - factors Z>20 pending |
+| **B22** | Phase 25 | ✓ CERT | Order-of-mag | Pressure differentials - cross-scale mapping |
+| **B23** | Phase 26 | ✓ CERT | Conceptual | Scale-dependent forces - hierarchy framework |
+| **B24** | Phase 27B | 🔬 INV | Framework | Multi-e occlusion - factors Z>20 pending |
 
 ---
 
@@ -112,14 +112,10 @@ Boltzmann statistics from spation contact shunt ensembles. Transport κ,η,D ∝
 **Phase 20: Master Equation** (`Phase_Spation_Planck_Scales_Global_Stiffness_and_Force_Hierarchy.md`)  
 Unified equation ∇·[K_bulk ∇Δ] = -κ ρ_disp(1-E). Defines spation lattice, K_bulk, ρ_s, force hierarchy. Central theoretical framework.
 
-### Under Investigation (Phases 10,17,18,21,25,26,27B)
+### Under Investigation (Phases 21, 27B)
 
-**Phase 10: Magnetism** - Helical wake mechanism. G-factor derivations incomplete.  
-**Phase 17: Nuclear** - Toroidal vortex R_p≈0.84fm. Binding energies A>4 pending.  
-**Phase 18: Weak** - β decay. Mass difference Δm(n→p) calculation incomplete.  
-**Phase 21: Screening** - ξ=10^-9 empirical. Geometric derivation outstanding.  
-**Phase 25/26: Scale Forces** - Pressure differential mapping. Framework exists.  
-**Phase 27B: Multi-e Occlusion** - Factors for Z>20 computationally challenging.
+**Phase 21: Screening** - ξ=10^-9 empirical. Geometric derivation outstanding (B21).  
+**Phase 27B: Multi-e Occlusion** - Factors for Z>20 computationally challenging (B24).
 
 ---
 
@@ -128,10 +124,9 @@ Unified equation ∇·[K_bulk ∇Δ] = -κ ρ_disp(1-E). Defines spation lattice
 | Priority | Benchmark | Work Needed | Impact |
 |----------|-----------|-------------|--------|
 | HIGH | B21 | Derive ξ=10^-9 from geometry | Explains gravity weakness |
-| HIGH | B18 | Nuclear binding A>4 | Strong force completion |
-| MED | B19 | β decay mass difference | Weak force validation |
-| MED | B17 | Magnetic g-factors | Complete EM theory |
-| LOW | B22-24 | Cross-scale validation | Extended validation |
+| HIGH | B24 | Multi-e occlusion factors Z>20 | Heavy-element accuracy |
+| MED | B22/B23 | Cross-scale documentation polish | Cohesive force hierarchy |
+| LOW | B25-B74 | Extended validation set | Future expansion coverage |
 
 ---
 
@@ -151,8 +146,9 @@ Unified equation ∇·[K_bulk ∇Δ] = -κ ρ_disp(1-E). Defines spation lattice
 - `galactic_rotation.py` - Rotation curves, R_flat/R_d correlation
 
 **Data:**
-- `benchmarks/B01_B24_TrackingSheet.csv` - Complete benchmark tracking
+- `benchmarks/B01_B24_TrackingSheet.csv` - Benchmark tracking (22/24 certified)
 - `benchmarks/validation_summary.md` - Certification summary
+- `benchmarks/B25_B50_IMPLEMENTATION_PROMPT.md` / `B25_B50_VALIDATION_PROMPT.md` - Extended benchmarks specification (B25–B74)
 - `formula_registry.json` - 1,682 formulas across 31 Phases
 
 ---

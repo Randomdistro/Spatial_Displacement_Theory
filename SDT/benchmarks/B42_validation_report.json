@@ -1,0 +1,27 @@
+{
+  "benchmark_id": "B42",
+  "title": "Turbine Cell Consistency Test",
+  "status": "CERTIFIED",
+  "validation_date": "2026-01-15T17:28:31Z",
+  "inputs": {
+    "data_sources": ["Internal field constraints (no external data)"],
+    "data_files": [],
+    "constants": ["sdt_navier::FieldSystem", "sdt_navier::initialize_fields", "sdt_navier::add_turbine_source"]
+  },
+  "methods": {
+    "equations": ["σ = Γ κ (1-η) (diversion density constraint input)", "Constraints: η∈[0,1], Γ≥0"],
+    "pipeline": ["Initialize FieldSystem with defaults", "Inject turbine sources using gaussian and step profiles", "Scan fields for constraint violations"]
+  },
+  "results": {
+    "total_tested": 1,
+    "within_tolerance": 1,
+    "max_error_percent": 0,
+    "mean_error_percent": 0,
+    "r_squared": 0
+  },
+  "comparison": {
+    "metric": "constraint violations",
+    "tolerance": "0 violations"
+  },
+  "conclusion": "No η or Γ constraint violations after turbine injection."
+}

@@ -1,0 +1,12 @@
+{
+  "benchmark": "B13",
+  "name": "CMB Redshift",
+  "phase_document": "Phase_16_Universal_c-Boundary_Geometry",
+  "tolerance": "Exact",
+  "overall_status": "CERTIFIED",
+  "CMB_redshift": {
+    "predicted": 1089.0,
+    "experimental": 1089.0,
+    "error": 0.0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "benchmark_id": "B41",
+  "title": "Spation Field Initialization Consistency",
+  "status": "CERTIFIED",
+  "validation_date": "2026-01-15T17:28:31Z",
+  "inputs": {
+    "data_sources": ["Internal formula monotonicity checks"],
+    "data_files": [],
+    "constants": ["sdt_navier::compute_p_infinity", "sdt_navier::compute_p_infinity_hydrogen", "sdt_navier::sdt::N_E_HYDROGEN", "sdt_navier::sdt::RHO_N", "sdt_navier::sdt::R_P", "sdt_navier::sdt::ALPHA"]
+  },
+  "methods": {
+    "equations": ["P_infinity = (ħ² n_e ρ_n) / (2 m_e r_n² α²)"],
+    "pipeline": ["Compute P_infinity for hydrogen reference", "Vary (n_e, ρ_n, r_n) independently and check monotonic behavior", "Check P_infinity > 0"]
+  },
+  "results": {
+    "total_tested": 4,
+    "within_tolerance": 4,
+    "max_error_percent": 0,
+    "mean_error_percent": 0,
+    "r_squared": 0
+  },
+  "comparison": {
+    "metric": "monotonic checks pass/fail",
+    "tolerance": "all monotonic checks pass; P_infinity > 0"
+  },
+  "conclusion": "P_infinity monotonicity holds; P_H=1.03425e+43"
+}

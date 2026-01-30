@@ -1,0 +1,147 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 03: Atomic Physics (Summary Only; Full Canon in ATOMICUS) \\ Book 01: Atomic Structure Overview}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Atomic Structure in SDT: Structural Summary}
+
+\section*{Abstract}
+This book provides a structural summary of atomic physics within SDT. It does not replicate the full
+element-by-element canon, which resides in \texttt{SDT/ATOMICUS}. Instead, it establishes the geometric
+grammar of atomic structure, the matrix--flux coupling that binds electrons, and the role of occlusion
+and circulation in defining discrete shells.
+
+\section{Scope and Canon Boundary}
+Atomic physics is complete in \texttt{SDT/ATOMICUS}. This book defines the structural frame: how an atom
+is represented in SDT and how discrete behavior follows from geometry and flux.
+
+\section{Atomic Binding as Flux Balance}
+At the Bohr scale, binding is the balance of flux pressure and boundary curvature. The effective coupling
+is a geometric occlusion limit:
+\begin{equation}
+F_{\text{atomic}} = \frac{\kappa_1 \kappa_2}{4\pi K_{\text{bulk}} r^2},
+\end{equation}
+with $\kappa$ determined by boundary curvature and $r$ set by orbital geometry.
+
+\section{Shells as Helical Path Closure}
+Discrete shells are helical path closures where matrix flux and boundary circulation are phase-locked.
+The orbital period is
+\begin{equation}
+T = \frac{2\pi r}{v},
+\end{equation}
+and stable shells occur when this period matches the boundary’s internal oscillation mode.
+
+\section{Occlusion and Discrete States}
+Occlusion is the state selector. The occlusion function
+\begin{equation}
+E(\mathbf{r},\hat{\mathbf{n}}) = \frac{\Omega_{\text{blocked}}(\mathbf{r},\hat{\mathbf{n}})}{4\pi}
+\end{equation}
+determines whether the interaction is in a Coulomb-like regime ($E \to 0$) or a screened regime ($E \to 1$).
+Discrete states are stabilized by occlusion symmetry and circulation lock.
+
+\section{Helical Wakes and Magnetic Structure}
+The helical wake is the magnetic signature of circulation. The magnetic moment is proportional to
+circulation and curvature:
+\begin{equation}
+\mu \propto \Gamma \kappa (1-\eta).
+\end{equation}
+This governs hyperfine interactions and the spectral structure addressed in the atomic canon.
+
+\section{Numerical Template for Moments}
+For atomic-scale boundaries, the moment is evaluated using the conversion constant $C_\mu$:
+\begin{equation}
+\mu = C_\mu \Gamma \kappa (1-\eta).
+\end{equation}
+All atomic evaluations in \texttt{SDT/ATOMICUS} use this template with geometry-derived $\Gamma$, $\kappa$,
+and $\eta$.
+
+\section{ATOMICUS Cross-Reference}
+All element-specific geometry, isotopic structure, and atomic properties are defined in \texttt{SDT/ATOMICUS}.
+This book is the structural frame; the canon is the full atlas.
+
+\chapter{Geometric Grammar of the Atom}
+
+\section*{Abstract}
+Atomic structure in SDT is a geometric grammar: the nucleus is a compact boundary core, electrons are
+toroidal vortex structures, and shells are flux-locked helices. This chapter provides the grammar without
+repeating the element-by-element atlas.
+
+\section{Electron as Toroidal Vortex}
+Electrons are modeled as toroidal vortices with circulation $\Gamma$ and curvature $\kappa$:
+\begin{equation}
+\mu_e = C_\mu\, \Gamma \kappa (1-\eta),
+\end{equation}
+where $C_\mu$ is the geometric conversion from circulation to moment. The helical wake is the observable
+magnetic imprint of this circulation.
+
+\section{Nuclear Core as Compact Boundary}
+The nucleus is a compact boundary region where occlusion is high and curvature is extreme. The binding
+condition is the matching of flux capture to internal circulation:
+\begin{equation}
+\dot{E}_{\text{bind}} = P_{\text{CMB}} A_{\text{eff}} \Gamma \kappa (1-\eta).
+\end{equation}
+
+\section{Shell Quantization as Phase Lock}
+Quantization is the closure of helical paths:
+\begin{equation}
+n \lambda_{\text{flux}} = 2\pi r,
+\end{equation}
+where $\lambda_{\text{flux}}$ is the effective flux wavelength imposed by internal oscillation. This
+expression is a geometric phase condition rather than an external postulate.
+
+\section{Quantization Derivative}
+Differentiating the closure condition yields the discrete spacing rule:
+\begin{equation}
+\Delta r = \frac{\lambda_{\text{flux}}}{2\pi}\Delta n.
+\end{equation}
+This relation encodes shell spacing in terms of the internal flux wavelength.
+
+\chapter{Isotopes, Spin, and Hyperfine Structure}
+
+\section*{Abstract}
+Isotopic variation is a change in boundary packing; hyperfine structure is a change in circulation
+coupling. This chapter summarizes these mechanisms and points to the canonical atlas.
+
+\section{Isotopic Variation}
+Isotopes are changes in nuclear boundary topology that alter occlusion symmetry:
+\begin{equation}
+\Delta E_{\text{iso}} \propto \Delta \kappa \cdot \Gamma.
+\end{equation}
+The detailed structures and values are cataloged in \texttt{SDT/ATOMICUS}.
+
+\section{Hyperfine Coupling}
+Hyperfine splitting follows from coupling between electron circulation and nuclear boundary oscillation:
+\begin{equation}
+\Delta f_{\text{hf}} \propto \Gamma_e \kappa_n (1-\eta).
+\end{equation}
+
+\section{Scaling with Curvature}
+Holding $\Gamma_e$ constant, the hyperfine shift scales linearly with nuclear curvature:
+\begin{equation}
+\frac{\Delta f_{\text{hf,2}}}{\Delta f_{\text{hf,1}}} = \frac{\kappa_{n,2}}{\kappa_{n,1}}.
+\end{equation}
+
+\chapter{Reading the Atomic Canon}
+
+\section*{Abstract}
+This chapter explains how to use the atomic canon. The treatise provides structure; the atlas provides
+detail.
+
+\section{Canonical Index}
+Each element in \texttt{SDT/ATOMICUS} defines its geometry, circulation, occlusion, and derived moments.
+The treatise does not replicate those values; it supplies the framework that makes them intelligible.
+
+\section{Scope Boundary}
+If a quantity is element-specific, it belongs in \texttt{SDT/ATOMICUS}. If it is structural and general,
+it belongs in this volume. This boundary preserves clarity and prevents duplication.
+
+\end{document}

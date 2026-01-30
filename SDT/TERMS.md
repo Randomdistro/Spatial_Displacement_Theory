@@ -2,9 +2,9 @@
 
 *Comprehensive glossary of Spatial Displacement Theory terminology*
 
-**Status:** Complete  
-**Last Updated:** December 2025  
-**Entries:** 45+ terms
+**Status:** Active  
+**Last Updated:** January 2026  
+**Entries:** 65+ terms
 
 ---
 
@@ -198,6 +198,90 @@ Self-confinement force holding electrons together: F_confine ≈ 2.00×10⁶ N. 
 Total kinetic energy available for organized motion vs thermal randomization. Determines phase transitions and thermodynamic limits.
 
 **Cross-reference:** Phase 7
+
+---
+
+## 2026 Additions (Benchmarks B21–B50)
+
+### P_∞ (Pressure at Infinity)
+Boundary pressure of the ambient spation field. Used as reference in ionization, nuclear surface pressure, and occlusion calculations.  
+**Cross-reference:** Phase 20; Benchmarks B29, B40, B45.
+
+### A_eff (Effective Occlusion Area)
+Projected area used in occlusion and screening integrals; incorporates curvature and overlap corrections.  
+**Cross-reference:** Phase 21; Benchmarks B26, B37, B38.
+
+### Γ_wake (Helical Wake Amplification)
+Amplification factor for helical pressure wakes (magnetism, hyperfine, g-factors).  
+**Cross-reference:** Phase 10; Benchmarks B17, B35.
+
+### η_slip (Slip Factor)
+Dimensionless slip factor 0–1 describing viscous drag of the spation medium in Navier-style updates.  
+**Cross-reference:** `sdt_navier_cpp`; Benchmark B42.
+
+### Overlap-Corrected Occlusion
+Occlusion integral that subtracts double-counted shadow regions via stochastic or Fibonacci sampling.  
+**Cross-reference:** Benchmarks B26, B37, B38.
+
+### Xi_val (Valence Occlusion Factor)
+Directional transmission factor governing valence Z_eff and bonding strength.  
+**Cross-reference:** Phase 6; Benchmark B28.
+
+### Xi_ion (Ionization Occlusion Factor)
+Transmission factor specific to ionization shells; correlates with first ionization energy trends.  
+**Cross-reference:** Phase 6; Benchmarks B29, B43.
+
+### Z_eff_heavy
+Heavy-atom effective nuclear charge including multi-shell occlusion for Z>20.  
+**Cross-reference:** Phase 27B; Benchmarks B38, B50.
+
+### ξ_screen (10⁻⁹ Screening Factor)
+Force-hierarchy screening factor bridging Coulomb and gravity via geometric occlusion. Target ξ ≈ 10⁻⁹.  
+**Cross-reference:** Phase 21; Benchmarks B21, B37.
+
+### R_sat (Occlusion Saturation Radius)
+Radius where additional mass adds negligible new shadowing; drives flat rotation curves.  
+**Cross-reference:** Phases 24/25; Benchmark B14.
+
+### k_breakpoint
+Transition in k-law scaling from atomic (k≈137) to stellar/galactic (k≈10⁵) regimes.  
+**Cross-reference:** Phase 20; Benchmarks B7, B20.
+
+### β_compactness (Stellar)
+β = c²R_c/k² compactness parameter linking luminosity, radius, and orbital dynamics.  
+**Cross-reference:** Phase 22; Benchmarks B12, B20.
+
+### Pressure Horizon (z = 1089)
+Cosmic boundary where spation pressure horizon sets CMB redshift.  
+**Cross-reference:** Phase 16; Benchmark B13.
+
+### Multi-Electron Occlusion Map
+Angular map of shell-by-shell occlusion for heavy elements; feeds Z_eff and ionization ladders.  
+**Cross-reference:** Phase 27B; Benchmarks B38, B50.
+
+### Fast Multipole Occlusion (FMM)
+Acceleration scheme (octree/FMM) for evaluating occlusion integrals beyond O(N²).  
+**Cross-reference:** Simulation optimization notes; Benchmarks B37, B38.
+
+### Pressure Differential Scaling
+Cross-scale pressure drop mapping from nuclear to cosmological scales.  
+**Cross-reference:** Phase 25; Benchmark B22.
+
+### Scale-Dependent Interaction Window
+Dominant interaction regime (strong/EM/weak/grav) as a function of scale and occlusion.  
+**Cross-reference:** Phase 26; Benchmark B23.
+
+### Phase-Velocity Constraint (Trefoil)
+Consistency condition linking phase velocity and bulk spation flow; rejects unphysical trefoil solutions.  
+**Cross-reference:** Benchmark B47.
+
+### Occlusion Transmission–Ionization Correlation
+Empirical correlation between Xi_ion and first ionization energy across Z.  
+**Cross-reference:** Benchmark B43.
+
+### Packing Closure Transition
+Packing-layer closure events that define shell completion points and periodic table groups.  
+**Cross-reference:** Benchmarks B32, B44.
 
 ### k-Law Universality
 The relationship v(r) = (c/k)√(R/r) holds across 20 orders of magnitude in scale, from atoms (k ≈ 137) to galaxies (k ≈ 10⁵).

@@ -1,0 +1,8 @@
+{
+  "benchmark": "B21",
+  "name": "Screening Factors",
+  "phase_document": "Phase_21_Screening_Factors_and_the_10^-9_vs_10^-123_Hierarchy",
+  "tolerance": "TBD",
+  "overall_status": "UNDER_INVESTIGATION",
+  "note": "Geometric derivation of \u03be=10^-9 pending. Currently empirical from F_grav/F_Coulomb ratio"
+}

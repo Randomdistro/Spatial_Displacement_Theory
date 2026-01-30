@@ -1,0 +1,183 @@
+{
+  "benchmark": "B01",
+  "name": "Atomic Structure",
+  "phase_document": "Phase_27A_Foundation_and_Single_Electron_Systems",
+  "tolerance": "<0.8%",
+  "overall_status": "CERTIFIED",
+  "max_error_pct": 0.048105964948104415,
+  "energy_levels": {
+    "tested": 4,
+    "max_error_pct": 0.048105964948104415,
+    "all_pass": true
+  },
+  "spectral_lines": {
+    "total": 13,
+    "passed": 13,
+    "max_error_pct": 0.02965314194277792,
+    "all_pass": true
+  },
+  "details": {
+    "energy_levels": [
+      {
+        "n": 1,
+        "E_SDT (eV)": -13.598287264286832,
+        "E_exp (eV)": -13.59843449,
+        "Error (eV)": 0.00014722571316916344,
+        "Error (%)": 0.0010826666354677083
+      },
+      {
+        "n": 2,
+        "E_SDT (eV)": -3.399571816071708,
+        "E_exp (eV)": -3.399699,
+        "Error (eV)": 0.00012718392829214054,
+        "Error (%)": 0.003741034964923087
+      },
+      {
+        "n": 3,
+        "E_SDT (eV)": -1.5109208071429814,
+        "E_exp (eV)": -1.510934,
+        "Error (eV)": 1.3192857018617943e-05,
+        "Error (%)": 0.0008731590538447043
+      },
+      {
+        "n": 4,
+        "E_SDT (eV)": -0.849892954017927,
+        "E_exp (eV)": -0.850302,
+        "Error (eV)": 0.0004090459820730308,
+        "Error (%)": 0.048105964948104415
+      }
+    ],
+    "spectral_lines": [
+      {
+        "Transition": "Lyman a",
+        "n_i \u2192 n_f": "2\u21921",
+        "Series": "Lyman",
+        "\u03bb_SDT (nm)": 121.5684455846824,
+        "\u03bb_exp (nm)": 121.567,
+        "Error (nm)": 0.0014455846824006358,
+        "Error (%)": 0.001189125899627889,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Lyman b",
+        "n_i \u2192 n_f": "3\u21921",
+        "Series": "Lyman",
+        "\u03bb_SDT (nm)": 102.57337596207576,
+        "\u03bb_exp (nm)": 102.572,
+        "Error (nm)": 0.0013759620757554103,
+        "Error (%)": 0.0013414597314622024,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Lyman g",
+        "n_i \u2192 n_f": "4\u21921",
+        "Series": "Lyman",
+        "\u03bb_SDT (nm)": 97.2547564677459,
+        "\u03bb_exp (nm)": 97.254,
+        "Error (nm)": 0.0007564677459015456,
+        "Error (%)": 0.0007778268718012068,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Lyman d",
+        "n_i \u2192 n_f": "5\u21921",
+        "Series": "Lyman",
+        "\u03bb_SDT (nm)": 94.97534811303312,
+        "\u03bb_exp (nm)": 94.974,
+        "Error (nm)": 0.0013481130331172153,
+        "Error (%)": 0.0014194548330250547,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Balmer a (Ha)",
+        "n_i \u2192 n_f": "3\u21922",
+        "Series": "Balmer",
+        "\u03bb_SDT (nm)": 656.4696061572849,
+        "\u03bb_exp (nm)": 656.279,
+        "Error (nm)": 0.19060615728494668,
+        "Error (%)": 0.029043464332234717,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Balmer b (Hb)",
+        "n_i \u2192 n_f": "4\u21922",
+        "Series": "Balmer",
+        "\u03bb_SDT (nm)": 486.2737823387296,
+        "\u03bb_exp (nm)": 486.133,
+        "Error (nm)": 0.14078233872959345,
+        "Error (%)": 0.028959634241985926,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Balmer g (Hg)",
+        "n_i \u2192 n_f": "5\u21922",
+        "Series": "Balmer",
+        "\u03bb_SDT (nm)": 434.17301994529424,
+        "\u03bb_exp (nm)": 434.047,
+        "Error (nm)": 0.12601994529421745,
+        "Error (%)": 0.02903370955085911,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Balmer d (Hd)",
+        "n_i \u2192 n_f": "6\u21922",
+        "Series": "Balmer",
+        "\u03bb_SDT (nm)": 410.29350384830303,
+        "\u03bb_exp (nm)": 410.174,
+        "Error (nm)": 0.11950384830305438,
+        "Error (%)": 0.029134915500020574,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Paschen a",
+        "n_i \u2192 n_f": "4\u21923",
+        "Series": "Paschen",
+        "\u03bb_SDT (nm)": 1875.6274461636708,
+        "\u03bb_exp (nm)": 1875.1,
+        "Error (nm)": 0.527446163670902,
+        "Error (%)": 0.02812896185114938,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Paschen b",
+        "n_i \u2192 n_f": "5\u21923",
+        "Series": "Paschen",
+        "\u03bb_SDT (nm)": 1282.167199525947,
+        "\u03bb_exp (nm)": 1281.8,
+        "Error (nm)": 0.36719952594694405,
+        "Error (%)": 0.0286471778707243,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Paschen g",
+        "n_i \u2192 n_f": "6\u21923",
+        "Series": "Paschen",
+        "\u03bb_SDT (nm)": 1094.1160102621413,
+        "\u03bb_exp (nm)": 1093.8,
+        "Error (nm)": 0.31601026214138983,
+        "Error (%)": 0.028891046090820063,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Brackett a",
+        "n_i \u2192 n_f": "5\u21924",
+        "Series": "Brackett",
+        "\u03bb_SDT (nm)": 4052.2815194894133,
+        "\u03bb_exp (nm)": 4051.2,
+        "Error (nm)": 1.0815194894134947,
+        "Error (%)": 0.026696274916407352,
+        "Status": "PASS"
+      },
+      {
+        "Transition": "Brackett b",
+        "n_i \u2192 n_f": "6\u21924",
+        "Series": "Brackett",
+        "\u03bb_SDT (nm)": 2625.8784246291398,
+        "\u03bb_exp (nm)": 2625.1,
+        "Error (nm)": 0.7784246291398631,
+        "Error (%)": 0.02965314194277792,
+        "Status": "PASS"
+      }
+    ]
+  }
+}

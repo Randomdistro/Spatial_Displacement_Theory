@@ -15,7 +15,7 @@ def calculate_fine_structure(n: int, l: int, j: float, Z: int = 1) -> float:
     """
     Calculate fine structure energy correction.
     
-    From Phase 3: ΔE_fs = (α² Z⁴)/(n⁴) × [n/(j+½) - 3/4] × m_e c² / 2
+    From Phase 3: ΔE_fs = (m_e c² α⁴ Z⁴)/(2n⁴) × [n/(j+½) - 3/4]
     
     Parameters:
     -----------

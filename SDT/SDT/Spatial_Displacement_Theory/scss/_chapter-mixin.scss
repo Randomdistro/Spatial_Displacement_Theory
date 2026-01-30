@@ -1,0 +1,30 @@
+// Chapter styling mixin
+// Influences: cyberpunk navigation, greek ruins, holographic projections, smooth transitions, z-axis movement
+
+@mixin chapter-styles($chapter-id) {
+  ##{$chapter-id} {
+    background: linear-gradient(180deg, rgba(10,10,20,0.9), rgba(20,10,10,0.9));
+    border: 1px solid rgba(120,180,255,0.25);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+  }
+
+  ##{$chapter-id}:hover {
+    transform: translateZ(20px) scale(1.01);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.8);
+  }
+
+  ##{$chapter-id} .nav {
+    background: rgba(5,15,25,0.85);
+    border-bottom: 1px solid rgba(120,180,255,0.35);
+  }
+
+  ##{$chapter-id} .marble {
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.1), rgba(20,20,30,0.8));
+  }
+
+  ##{$chapter-id} .holo {
+    color: #9fe7ff;
+    text-shadow: 0 0 8px rgba(100,200,255,0.6);
+  }
+}

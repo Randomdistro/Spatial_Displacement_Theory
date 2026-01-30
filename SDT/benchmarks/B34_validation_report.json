@@ -1,0 +1,27 @@
+{
+  "benchmark_id": "B34",
+  "title": "Binding Energy from Occlusion Constant",
+  "status": "UNDER_INVESTIGATION",
+  "validation_date": "2026-01-15T17:28:31Z",
+  "inputs": {
+    "data_sources": ["NIST binding energies for D, He-4, C-12, O-16 (encoded in SDT headers)"],
+    "data_files": ["SDT/Code/sdt_navier_cpp/include/nuclear_geometry_occlusion.hpp"],
+    "constants": ["sdt::nuclear::occlusion::constants::k_binding_MeV_per_sr", "sdt::nuclear::occlusion::constants::dist_deuteron_fm", "sdt::nuclear::occlusion::constants::dist_alpha_fm", "sdt::nuclear::occlusion::constants::dist_inter_alpha_fm"]
+  },
+  "methods": {
+    "equations": ["E_bind = Ω_total · k_binding", "Ω_sphere(d) = 2π(1 - cosθ), sinθ=R/d"],
+    "pipeline": ["Use deuteron-calibrated k_binding", "Compute occlusion-based binding energies for He-4, C-12, O-16", "Compare to embedded experimental references"]
+  },
+  "results": {
+    "total_tested": 3,
+    "within_tolerance": 0,
+    "max_error_percent": 263.7781109,
+    "mean_error_percent": 246.3464685,
+    "r_squared": 0
+  },
+  "comparison": {
+    "metric": "percent error",
+    "tolerance": "He-4 ≤ 10%; C-12/O-16 ≤ 15%"
+  },
+  "conclusion": "One or more light-nuclei binding energies exceeded tolerance. max_error_pct=263.778. Consider revising effective alpha radius or inter-alpha overlap correction."
+}

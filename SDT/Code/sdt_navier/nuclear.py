@@ -207,54 +207,86 @@ class DeuteronSystem:
     
     def compute_binding_energy(self) -> float:
         """
-        Compute binding energy from energy balance.
+        Compute binding energy from field energy functional.
         
-        B = Σ_i P_∞ Γ_i κ_i (1-η_i)|bound - Σ_i P_∞ Γ_i κ_i (1-η_i)|free
+        PREDICTIVE VERSION: Computes energy as integral of energy density over space.
+        No free parameters - uses field values and grid spacing.
+        
+        B = E_bound - E_free
+        where E = ∫ e(r) d³r = ∫ P(r) · σ(r) d³r
         
         Returns
         -------
         B : float
             Binding energy (J)
         """
-        # Energy per unit volume from master equation
-        # For bound state: use current field values
-        sigma_bound = (
-            self.proton.Gamma * self.proton.kappa * (1 - self.proton.eta) +
-            self.neutron.Gamma * self.neutron.kappa * (1 - self.neutron.eta)
+        # Compute energy from field energy density: e = P · σ
+        # where σ = Γ · κ · (1-η) is the diversion density
+        
+        # Energy density at each grid point
+        sigma = self.fields.Gamma * self.fields.kappa * (1 - self.fields.eta)
+        e_bound = self.fields.P * sigma  # Energy density (J/m³)
+        
+        # Integrate over space
+        dV = self.fields.dx * self.fields.dy * self.fields.dz
+        E_bound = np.sum(e_bound) * dV
+        
+        # For free state: need to compute energy of separated turbines
+        # Create temporary fields with free slip values
+        # (This is a simplified approach - full version would run separate simulation)
+        
+        # Extract turbine regions
+        i_p, j_p, k_p = self.proton.position
+        i_n, j_n, k_n = self.neutron.position
+        radius_cells = self.proton.radius_cells
+        
+        # Create mask for turbine regions
+        i = np.arange(self.fields.nx)
+        j = np.arange(self.fields.ny)
+        k = np.arange(self.fields.nz)
+        I, J, K = np.meshgrid(i, j, k, indexing='ij')
+        
+        # Distance from proton
+        r_p = np.sqrt(
+            ((I - i_p) * self.fields.dx)**2 +
+            ((J - j_p) * self.fields.dy)**2 +
+            ((K - k_p) * self.fields.dz)**2
+        )
+        mask_p = r_p <= (radius_cells * self.fields.dx)
+        
+        # Distance from neutron
+        r_n = np.sqrt(
+            ((I - i_n) * self.fields.dx)**2 +
+            ((J - j_n) * self.fields.dy)**2 +
+            ((K - k_n) * self.fields.dz)**2
+        )
+        mask_n = r_n <= (radius_cells * self.fields.dx)
+        
+        # Compute free state energy (with free slip values)
+        # In free state, slip is higher → lower energy
+        sigma_free = sigma.copy()
+        
+        # In proton region: use free slip
+        eta_p_free = ProtonTurbine.ETA_P_FREE
+        sigma_free[mask_p] = (
+            self.fields.Gamma[mask_p] * 
+            self.fields.kappa[mask_p] * 
+            (1 - eta_p_free)
         )
         
-        # For free state: use free slip values
-        proton_free = ProtonTurbine(
-            self.proton.position,
-            self.proton.radius_cells,
-            bound=False,
-        )
-        neutron_free = NeutronTurbine(
-            self.neutron.position,
-            self.neutron.radius_cells,
-            bound=False,
+        # In neutron region: use free slip
+        eta_n_free = NeutronTurbine.ETA_N_FREE
+        sigma_free[mask_n] = (
+            self.fields.Gamma[mask_n] * 
+            self.fields.kappa[mask_n] * 
+            (1 - eta_n_free)
         )
         
-        sigma_free = (
-            proton_free.Gamma * proton_free.kappa * (1 - proton_free.eta) +
-            neutron_free.Gamma * neutron_free.kappa * (1 - neutron_free.eta)
-        )
-        
-        # Energy difference per unit volume
-        P_infinity = 1.65e31  # Pa (nuclear scale)
-        delta_sigma = sigma_bound - sigma_free
-        
-        # Convert to total energy
-        # Approximate volume: 4π/3 * (separation/2)^3 for each turbine
-        volume_per_turbine = (4.0 * np.pi / 3.0) * (self.SEPARATION / 2.0)**3
-        total_volume = 2.0 * volume_per_turbine
+        e_free = self.fields.P * sigma_free
+        E_free = np.sum(e_free) * dV
         
         # Binding energy
-        B = P_infinity * delta_sigma * total_volume
-        
-        # Characteristic time
-        tau_char = 8.4e-16 / 2.998e8  # ~2.8e-24 s
-        B = B * tau_char
+        B = E_bound - E_free
         
         return B
     

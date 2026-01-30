@@ -1,0 +1,8 @@
+{
+  "benchmark": "B24",
+  "name": "Multi-Electron Occlusion",
+  "phase_document": "Phase_27B_Multi_Electron_Occlusion_Mechanics",
+  "tolerance": "TBD",
+  "overall_status": "UNDER_INVESTIGATION",
+  "note": "Precise occlusion factors for Z>20. Computational complexity challenge"
+}

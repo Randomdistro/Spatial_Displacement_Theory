@@ -1,0 +1,33 @@
+{
+  "benchmark_id": "B20",
+  "name": "z_k2_Relationship",
+  "status": "Certified",
+  "phase_document": "Phase_22_Exoplanetary_Systems.md",
+  "error_tolerance": "<1%",
+  "validation_date": "2025-11",
+  "tests": [
+    {
+      "system": "Solar_System_Jupiter",
+      "z": 9.4e-05,
+      "k": 103000,
+      "zk2": 0.997,
+      "error_percent": 0.3
+    },
+    {
+      "system": "TRAPPIST-1",
+      "z": 0.00542,
+      "k": 4382,
+      "zk2": 1.04,
+      "error_percent": 4.0
+    },
+    {
+      "system": "Kepler-452",
+      "z": 0.000107,
+      "k": 96500,
+      "zk2": 0.996,
+      "error_percent": 0.4
+    }
+  ],
+  "mechanism": "Universal relationship for continuous mass distributions",
+  "data_source": "Exoplanet.eu"
+}

@@ -1,0 +1,40 @@
+{
+  "benchmark_id": "B11",
+  "name": "Planetary_Oblateness",
+  "status": "Certified",
+  "phase_document": "Phase_9_Oblateness-Spin_Correlation.md",
+  "error_tolerance": "\u00b13%",
+  "validation_date": "2025-11",
+  "tests": [
+    {
+      "body": "Earth",
+      "J2_observed": 0.00108263,
+      "J2_predicted": 0.0010912,
+      "error_percent": 0.79,
+      "rotation_period_hrs": 23.93
+    },
+    {
+      "body": "Jupiter",
+      "J2_observed": 0.014697,
+      "J2_predicted": 0.014521,
+      "error_percent": 1.2,
+      "rotation_period_hrs": 9.93
+    },
+    {
+      "body": "Saturn",
+      "J2_observed": 0.016298,
+      "J2_predicted": 0.016714,
+      "error_percent": 2.55,
+      "rotation_period_hrs": 10.66
+    },
+    {
+      "body": "Mars",
+      "J2_observed": 0.0019555,
+      "J2_predicted": 0.0019127,
+      "error_percent": 2.19,
+      "rotation_period_hrs": 24.62
+    }
+  ],
+  "mechanism": "J2 oblateness from centrifugal pressure redistribution. Spin-induced distortion of spation pressure field creates equatorial bulge.",
+  "data_source": "GRACE satellite data, JPL planetary constants"
+}

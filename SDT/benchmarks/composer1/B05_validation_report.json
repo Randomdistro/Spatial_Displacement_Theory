@@ -1,0 +1,13 @@
+{
+  "benchmark": "B05",
+  "name": "Hyperfine Structure",
+  "phase_document": "Phase_5_Hyperfine_Splitting_from_Central_Pressure_Overlap",
+  "tolerance": "<0.003%",
+  "overall_status": "FAILED",
+  "H_21cm_line": {
+    "predicted_MHz": 0.0054123600406854105,
+    "experimental_MHz": 1420.405751768,
+    "error_MHz": 1420.4003394079593,
+    "error_pct": 99.99961895676401
+  }
+}

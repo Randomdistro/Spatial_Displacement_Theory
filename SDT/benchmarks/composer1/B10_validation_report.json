@@ -1,0 +1,18 @@
+{
+  "benchmark": "B10",
+  "name": "Strong Field Tests",
+  "phase_document": "Phase_15_Gravitation_from_Spation_Pressure_Gradients",
+  "tolerance": "<0.1%",
+  "overall_status": "CERTIFIED",
+  "mercury_precession": {
+    "predicted_arcsec_per_century": 42.95834183022182,
+    "experimental_arcsec_per_century": 42.98,
+    "error_pct": 0.050391274495527445
+  },
+  "light_deflection": {
+    "predicted_arcsec": 1.7504313429313116,
+    "experimental_arcsec": 1.7517,
+    "error_pct": 0.07242433457146741
+  },
+  "max_error_pct": 0.07242433457146741
+}

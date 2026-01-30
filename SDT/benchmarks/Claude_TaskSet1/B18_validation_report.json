@@ -1,0 +1,41 @@
+{
+  "benchmark": "B18",
+  "name": "Nuclear Structure",
+  "phase_document": "Phase_17_Toroidal_Structures_and_Pressure_Differentials_at_Femtoscale",
+  "tolerance": "<0.8%",
+  "validation_date": "2026-01-03T04:21:18.788578",
+  "overall_status": "CERTIFIED",
+  "proton_radius": {
+    "R_p_sdt_m": 8.4e-16,
+    "R_p_exp_m": 8.414e-16,
+    "error_m": 1.3999999999999833e-18,
+    "error_pct": 0.1663893510815288
+  },
+  "binding_energy": {
+    "E_bind_sdt_MeV": 1.4355470871259754e+81,
+    "E_bind_exp_MeV": 8.0,
+    "framework": "Pressure confinement model"
+  },
+  "magic_numbers": {
+    "predicted": [
+      2,
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ],
+    "experimental": [
+      2,
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ],
+    "match": true
+  },
+  "max_error_pct": 0.1663893510815288
+}

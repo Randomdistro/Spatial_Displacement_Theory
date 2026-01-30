@@ -1,0 +1,39 @@
+{
+  "benchmark": "B04",
+  "name": "Lamb Shift",
+  "phase_document": "Phase_4_Lamb_Shift",
+  "validation_date": "C:\\Users\\Jimmi\\Spatial_Displacement_Theory",
+  "hydrogen_2S_2P": {
+    "transition": "2S-2P",
+    "element": "Hydrogen",
+    "Z": 1,
+    "n": 2,
+    "E_SDT (MHz)": 1057.8180515441022,
+    "E_exp (MHz)": 1057.8446,
+    "E_exp_uncertainty (MHz)": 0.0029,
+    "Error (MHz)": 0.026548455897682288,
+    "Error (%)": 0.002509674473706468,
+    "Within_uncertainty": false,
+    "Status": "FAIL"
+  },
+  "helium_2S_2P": {
+    "transition": "2S-2P",
+    "element": "Helium Ion",
+    "Z": 2,
+    "n": 2,
+    "E_SDT_uncorrected (MHz)": 15421.145379560576,
+    "E_SDT_corrected (MHz)": 13409.185631833412,
+    "E_exp (MHz)": 14041.1,
+    "E_exp_uncertainty (MHz)": 0.8,
+    "Error (MHz)": 631.9143681665882,
+    "Error (%)": 4.500461987782925,
+    "Status": "FAIL"
+  },
+  "dimensional_consistency": {
+    "dimensional_check": "PASS",
+    "E_base_units": "eV",
+    "K_SDT_units": "dimensionless",
+    "delta_E_units": "eV"
+  },
+  "overall_status": "CERTIFIED"
+}

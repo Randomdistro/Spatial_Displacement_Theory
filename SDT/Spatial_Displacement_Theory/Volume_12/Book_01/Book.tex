@@ -1,0 +1,58 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 12: Computation, Code, and Simulation Systems \\ Book 01: Computational Core}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Code as Formalization}
+
+\section*{Abstract}
+The computational core of SDT is a formalization of the geometric equations. This book documents how
+constants, operators, and solvers implement the master equation and state-space operators.
+
+\section{Constants and Units}
+The constant set used across implementations anchors the numerical representation of SDT geometry.
+
+\section{Operator Implementation}
+State operators are encoded to preserve geometric meaning: curvature, circulation, slip, and occlusion
+are evaluated numerically but remain SDT-native quantities.
+
+\chapter{State Vector Implementation}
+
+\section*{Abstract}
+The 28D state vector is implemented explicitly so that each component maps to a geometric quantity. This
+chapter describes the numerical representation and its usage.
+
+\section{Component Mapping}
+Each $\xi$, $T$, $\Phi$, and $\epsilon$ component is stored with unit metadata to preserve dimensional
+clarity during computation.
+
+\chapter{Units and Dimensional Checks}
+
+\section*{Abstract}
+Dimensional checks are mandatory for every operator. This chapter documents the internal unit discipline.
+
+\section{Unit Assertions}
+Each function asserts dimensional validity:
+\begin{equation}
+[\dot{E}] = [P] [A] [\Gamma] [\kappa],
+\end{equation}
+ensuring the master equation is consistent in code.
+
+\chapter{Testing and Validation Harness}
+
+\section*{Abstract}
+Code correctness is enforced through tests that reproduce canonical benchmark values.
+
+\section{Harness Structure}
+The harness loads constants, constructs state vectors, evaluates operators, and compares outputs to
+reference artifacts.
+\end{document}

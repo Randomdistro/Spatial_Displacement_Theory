@@ -1,0 +1,29 @@
+{
+  "benchmark": "B22",
+  "name": "Pressure Differentials",
+  "phase_document": "Phase_25_Pressure_Differentials_Across_Scales.md",
+  "tolerance": "TBD",
+  "validation_date": "2026-01-02",
+  "status": "Under_Investigation",
+  "current_findings": {
+    "mechanism": "Cross-scale pressure gradient mapping",
+    "outstanding_issues": [
+      "Femtoscale to cosmological pressure mapping incomplete",
+      "Scale transition mechanisms unclear",
+      "Pressure hierarchy calculations pending"
+    ],
+    "known_predictions": {
+      "nuclear_pressure": "From toroidal confinement",
+      "stellar_pressure": "From gravitational equilibrium",
+      "cosmological_pressure": "From universal expansion"
+    },
+    "investigation_results": {
+      "pressure_hierarchy": "P_nuclear:1e31, P_atomic:1e5, P_cosmic:2e-2 Pa",
+      "cmb_scaling": "P(r) = P_CMB * (R_CMB/r)^2",
+      "field_topology": "Toroidal(nuclear), spherical(atomic), hydrostatic(large)",
+      "scale_transitions": "Pressure field topology determines interaction type"
+    }
+  },
+  "overall_status": "UNDER_INVESTIGATION",
+  "max_error_percent": null
+}

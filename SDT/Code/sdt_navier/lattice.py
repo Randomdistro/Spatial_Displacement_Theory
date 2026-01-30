@@ -65,15 +65,52 @@ class DodecahedralLattice:
         norms = np.linalg.norm(self.DIRECTIONS, axis=1)
         self.DIRECTIONS = self.DIRECTIONS / norms[:, np.newaxis]
         
-        # Precompute neighbor offsets in grid coordinates
-        # For each direction, find the nearest grid neighbor
+        # Precompute neighbor offsets using proper interpolation
+        # Instead of rounding to -1/0/+1, we'll use the 12 directions
+        # with interpolation weights for flux calculations
         self.neighbor_offsets = []
+        self.interpolation_weights = []
+        
         for direction in self.DIRECTIONS:
-            # Convert direction to grid offsets (rounded to nearest integer)
-            di = int(np.round(direction[0] * dx / dx))
-            dj = int(np.round(direction[1] * dy / dy))
-            dk = int(np.round(direction[2] * dz / dz))
+            # For each direction, find the grid cell that this direction points to
+            # Use a small step size to find the target cell
+            step_size = 1.0  # One grid cell
+            target = np.array([
+                direction[0] * step_size,
+                direction[1] * step_size,
+                direction[2] * step_size
+            ])
+            
+            # Find nearest integer grid offset
+            di = int(np.round(target[0] / dx))
+            dj = int(np.round(target[1] / dy))
+            dk = int(np.round(target[2] / dz))
+            
+            # Store offset
             self.neighbor_offsets.append((di, dj, dk))
+            
+            # Compute interpolation weights for semi-Lagrangian method
+            # Weight based on distance from exact direction to grid point
+            exact_target = target
+            grid_target = np.array([di * dx, dj * dy, dk * dz])
+            distance = np.linalg.norm(exact_target - grid_target)
+            # Weight inversely proportional to distance (closer = higher weight)
+            weight = 1.0 / (1.0 + distance / dx) if distance > 0 else 1.0
+            self.interpolation_weights.append(weight)
+        
+        # Remove duplicate offsets (if any directions map to same grid point)
+        # Keep the direction with highest weight
+        unique_offsets = {}
+        for idx, (offset, weight) in enumerate(zip(self.neighbor_offsets, self.interpolation_weights)):
+            if offset not in unique_offsets or weight > unique_offsets[offset][1]:
+                unique_offsets[offset] = (idx, weight)
+        
+        # Rebuild lists with unique offsets only
+        self.neighbor_offsets = [self.neighbor_offsets[idx] for idx, _ in unique_offsets.values()]
+        self.interpolation_weights = [w for _, w in unique_offsets.values()]
+        
+        # Store direction indices for reference
+        self.direction_indices = [idx for idx, _ in unique_offsets.values()]
     
     def get_neighbor_indices(self, i: int, j: int, k: int) -> List[Tuple[int, int, int]]:
         """

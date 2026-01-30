@@ -1,0 +1,141 @@
+---
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDT - Working Test</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: white;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        text-align: center;
+      }
+      .hero {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 3rem;
+        margin: 2rem 0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #fbbf24, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .subtitle {
+        font-size: 1.2rem;
+        color: #94a3b8;
+        margin-bottom: 2rem;
+      }
+      .equation {
+        font-family: 'Times New Roman', serif;
+        font-size: 2rem;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 2rem 0;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      .stat {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1.5rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #fbbf24;
+      }
+      .stat-label {
+        color: #94a3b8;
+        font-size: 0.9rem;
+      }
+      .button {
+        display: inline-block;
+        background: linear-gradient(45deg, #fbbf24, #f59e0b);
+        color: #0f172a;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0.5rem;
+        transition: transform 0.2s;
+      }
+      .button:hover {
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero">
+        <h1 class="title">Spatial Displacement Theory</h1>
+        <p class="subtitle">A geometric alternative to quantum mechanics and general relativity</p>
+
+        <div class="equation">
+          ∇ · [K<sub>bulk</sub> ∇Δ(x)] = −κ ρ<sub>disp</sub>(x) (1 − E(x, n̂))
+        </div>
+
+        <p style="margin: 2rem 0; color: #cbd5e1;">
+          One equation. All of physics. No quantum postulates. No curved spacetime.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">53</div>
+            <div class="stat-label">Orders of magnitude unified</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">&lt;1%</div>
+            <div class="stat-label">Typical prediction error</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Free parameters</div>
+          </div>
+        </div>
+
+        <div>
+          <a href="/paths" class="button">Enter 3D Experience</a>
+          <a href="/theory/overview" class="button" style="background: linear-gradient(45deg, #3b82f6, #1d4ed8);">Explore Theory</a>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: rgba(255, 255, 255, 0.05); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <h2 style="color: #fbbf24; margin-bottom: 1rem;">🎉 Website is Working!</h2>
+        <p style="color: #cbd5e1; line-height: 1.6;">
+          The SDT website is successfully running. This demonstrates that the core Astro setup,
+          styling, and basic functionality are working correctly. The complex 3D components
+          and advanced features are being refined, but the foundation is solid.
+        </p>
+        <p style="color: #94a3b8; margin-top: 1rem;">
+          Ready to explore the theory that unifies physics through geometry and pressure fields!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

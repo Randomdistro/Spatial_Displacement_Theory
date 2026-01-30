@@ -1,0 +1,59 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 12: Computation, Code, and Simulation Systems \\ Book 02: Simulations and Visualizations}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Simulation as Geometric Experiment}
+
+\section*{Abstract}
+Simulations in SDT are geometric experiments. They propagate flux and boundary constraints through
+numerical forms of the master equation and state operators.
+
+\section{Solar System and Galactic Models}
+Orbital and galactic simulations test the pressure-gradient framework at large scales and validate
+occlusion-driven rotation curves.
+
+\section{Visualization Systems}
+Visualization is not aesthetic garnish; it is an explicit rendering of flux topology and boundary
+geometry. Rendered images are therefore computational theorems.
+
+\chapter{Numerical Methods}
+
+\section*{Abstract}
+Simulations use numerical integration of pressure gradients and occlusion operators. This chapter
+describes the method classes.
+
+\section{Integrator Classes}
+Matrix flow is advanced with explicit and semi-implicit schemes that preserve gradient structure:
+\begin{equation}
+\mathbf{v}_{t+\Delta t} = \mathbf{v}_t + \Delta t\, \mathcal{F}(\nabla \Pi, \nu).
+\end{equation}
+
+\chapter{Simulation Pipelines}
+
+\section*{Abstract}
+Simulations follow a pipeline from geometry input to rendered output. Each stage is documented for
+reproducibility.
+
+\section{Pipeline Stages}
+Input geometry $\rightarrow$ state vector construction $\rightarrow$ operator evaluation $\rightarrow$
+integration $\rightarrow$ visualization.
+
+\chapter{Validation Outputs}
+
+\section*{Abstract}
+Simulation outputs are validated against benchmark artifacts. This chapter explains the comparison
+protocol.
+
+\section{Output Comparison}
+Numeric outputs are compared to benchmark tables without adjustment to constants or geometry.
+\end{document}

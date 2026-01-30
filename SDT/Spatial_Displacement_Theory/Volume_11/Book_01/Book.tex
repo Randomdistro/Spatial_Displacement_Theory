@@ -1,0 +1,49 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 11: Validation, Benchmarks, and Empirical Tests \\ Book 01: Benchmark Architecture}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Validation as Geometric Consistency}
+
+\section*{Abstract}
+SDT validation is the confirmation of geometric derivations against observed values. This book defines
+the benchmark structure and documents the validation philosophy: no fitted constants, only derived
+geometry.
+
+\section{Benchmark Pathway}
+Each benchmark follows the sequence: definition $\rightarrow$ derivation $\rightarrow$ numerical
+evaluation $\rightarrow$ comparison.
+
+\section{Error Structure}
+Error is measured relative to derived constants, not adjusted by parameter fitting.
+
+\chapter{Benchmark Taxonomy}
+
+\section*{Abstract}
+Benchmarks are grouped by regime: atomic, nuclear, molecular, and cosmological. Each group has distinct
+geometry inputs but identical derivation chains.
+
+\section{Regime Groups}
+\begin{equation}
+\mathcal{B} = \{\mathcal{B}_{\text{atomic}}, \mathcal{B}_{\text{nuclear}}, \mathcal{B}_{\text{molecular}}, \mathcal{B}_{\text{cosmic}}\}.
+\end{equation}
+
+\chapter{Reproducibility Protocol}
+
+\section*{Abstract}
+Reproducibility is enforced by code and data artifacts. All benchmarks are re-runnable with fixed
+constants and documented inputs.
+
+\section{Protocol Steps}
+Each benchmark provides: constant set, geometry inputs, derivation sequence, numeric output, and
+comparison table.
+\end{document}

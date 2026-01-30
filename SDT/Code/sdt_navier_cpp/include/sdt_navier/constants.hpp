@@ -37,8 +37,20 @@ namespace sdt {
     // Spation density
     constexpr double RHO_S = 5.2e96;  // kg/m³
 
+    // Nuclear density (from SDT compendium)
+    constexpr double RHO_N = 2.342e17;  // kg/m³
+
+    // Fine structure constant (dimensionless)
+    constexpr double ALPHA = 7.2973525693e-3;
+
+    // Atomic-scale CMB pressure (Pa)
+    constexpr double P_CMB_ATOMIC = 2.036e-2;
+
     // Nuclear scale pressure
     constexpr double P_INFINITY_NUCLEAR = 1.65e31;  // Pa
+
+    // Hydrogen reference electron density (m^-3)
+    constexpr double N_E_HYDROGEN = 2.718281828e29;
 
     // Proton parameters
     constexpr double R_P = 8.40e-16;  // m
@@ -61,13 +73,13 @@ namespace sdt {
     constexpr double B_HELION = 7.718;
     constexpr double B_ALPHA = 28.296;
 
-    // Experimental magnetic moments (μ_N)
-    constexpr double MU_P = 2.793;
-    constexpr double MU_N = -1.913;
-    constexpr double MU_D = 0.857;
-    constexpr double MU_T = 2.979;
-    constexpr double MU_H = -2.128;
-    constexpr double MU_ALPHA = 0.0;
+    // Experimental magnetic moments (μ_N, CODATA 2018 / benchmark data)
+    constexpr double MU_P = 2.79284734462;   // Proton
+    constexpr double MU_N = -1.91304272;     // Neutron (negative from reversed circulation)
+    constexpr double MU_D = 0.857421;        // Deuteron (p+n with damping)
+    constexpr double MU_T = 2.979;           // Triton
+    constexpr double MU_H = -2.128;          // Helion
+    constexpr double MU_ALPHA = 0.0;         // Alpha (spin-0)
 }
 
 }  // namespace sdt_navier

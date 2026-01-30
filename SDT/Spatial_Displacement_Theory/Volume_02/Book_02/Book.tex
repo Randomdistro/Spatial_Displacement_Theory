@@ -1,0 +1,261 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 02: Field Theory, Mechanics, and Mathematical Structure \\ Book 02: Mathematical Operators and State Space}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{The 28-Dimensional State Space}
+
+\section*{Abstract}
+This book formalizes the SDT state space as a 28-dimensional operator manifold. It provides a narrative
+derivation of each level of the state vector, expresses the occlusion operator as a geometric functional,
+and demonstrates how force hierarchy emerges from the same state variables through regime selection.
+All formulas are embedded in-line and mapped to the codebase definitions.
+
+\section{From Space to State}
+The state space is not an abstract convenience; it is a direct encoding of SDT’s physical grammar:
+space, matter, movement, now. The matrix provides the substrate, flux provides the directional flow,
+the medium defines collective behavior, and spations define the discrete lattice units. The 28-dimensional
+state vector $\Xi \in \mathbb{R}^{28}$ is the minimal representation that captures geometry, dynamics,
+and energetic manifestation.
+
+\section{Hierarchical Structure of the 28 Components}
+The state vector is built by levels:
+\begin{itemize}
+\item Level 1 (1): Existence
+\item Level 2 (2): Line — position and relocation
+\item Level 3 (3): Plane — boundary existence, planar relocation, rotation
+\item Level 4 (4): Sphere — shell existence, shell relocation, rotation, orientation
+\item Level 5 (5): Torus — matter structure topology
+\item Level 6 (6): Dynamism — movement and ordering parameters
+\item Level 7 (7): Energy — force manifestation modes
+\end{itemize}
+
+\section{State Vector Definition}
+The 28 components are:
+\begin{align}
+\Xi =&\ (\xi_0; \xi_{10}, \xi_{11}; \xi_{p0}, \xi_{p1}, \xi_{p2}; \xi_{s0}, \xi_{s1}, \xi_{s2}, \xi_{s3}; \\
+&\ T_1, T_2, T_3, T_4, T_5; \Phi_0, \Phi_1, \Phi_2, \Phi_3, \Phi_4, \Phi_5; \epsilon_0, \epsilon_1, \epsilon_2, \epsilon_3, \epsilon_b, \epsilon_4, \epsilon_5).
+\end{align}
+These values encode boundary scale, topology, movement, ordering, and energy configuration.
+
+\section{Level-by-Level Meaning}
+Each level is a closure of geometric intent:
+\begin{itemize}
+\item \textbf{Level 1} establishes existence as a boundary condition.
+\item \textbf{Level 2} establishes location and relocation as flux-driven movement.
+\item \textbf{Level 3} introduces planar boundary structure and rotational potential.
+\item \textbf{Level 4} introduces shell structure and orientation of boundary massing.
+\item \textbf{Level 5} encodes toroidal matter geometry.
+\item \textbf{Level 6} encodes ordering, oscillation, and dynamical change.
+\item \textbf{Level 7} encodes energetic manifestation as observable force modes.
+\end{itemize}
+
+\section{State as Narrative}
+The state vector is the narrative of SDT written in numbers. It is not merely a coordinate system; it is
+the algebra of space, matter, movement, and now.
+
+\chapter{The Toroidal Layer: Matter Structure}
+
+\section*{Abstract}
+The toroidal layer ($T_1$–$T_5$) is the physical encoding of matter boundary geometry. This chapter
+derives the role of each component and shows how they enter occlusion and coupling expressions.
+
+\section{Component Definitions}
+\begin{align}
+T_1 &: \text{central ring scale},\\
+T_2 &: \text{tube scale},\\
+T_3 &: \text{topological surface area},\\
+T_4 &: \text{polarized volume},\\
+T_5 &: \text{aspect gradation (pressure slope)}.
+\end{align}
+
+\section{Boundary Scaling}
+From $T_3$ we define the effective radius:
+\begin{equation}
+r_{\text{eff}} = \sqrt{\frac{T_3}{4\pi}},
+\end{equation}
+which governs solid-angle occlusion and therefore coupling strength.
+
+\chapter{The Dynamical Layer: Ordering and Change}
+
+\section*{Abstract}
+The $\Phi$ components encode ordering and change. This layer is the mathematical representation of
+movement and now.
+
+\section{Ordering Parameters}
+\begin{align}
+\Phi_0 &: \text{omnidirectionality},\\
+\Phi_1 &: \text{dynamic translocation},\\
+\Phi_2 &: \text{oscillation frequency},\\
+\Phi_3 &: \text{chirality indicator},\\
+\Phi_4 &: \text{state variance},\\
+\Phi_5 &: \text{transition potential}.
+\end{align}
+These parameters are the numerical grammar of change.
+
+\chapter{State Operators and Conservation}
+
+\section*{Abstract}
+Operators define how the state vector evolves under flux. Conservation laws are expressed as invariances
+of operator structure.
+
+\section{Operator Form}
+Let $\mathcal{L}$ be the state operator. Evolution is
+\begin{equation}
+\frac{d\Xi}{d\mathcal{N}} = \mathcal{L}(\Xi),
+\end{equation}
+where $\mathcal{N}$ is the ordering parameter of now.
+
+\section{Linearized Evolution}
+For small perturbations $\delta\Xi$ about a state $\Xi_0$,
+\begin{equation}
+\frac{d(\delta\Xi)}{d\mathcal{N}} = \mathbf{J}_{\mathcal{L}}(\Xi_0)\, \delta\Xi,
+\end{equation}
+where $\mathbf{J}_{\mathcal{L}}$ is the Jacobian of $\mathcal{L}$. Stability is determined by the
+eigenvalues of $\mathbf{J}_{\mathcal{L}}$.
+
+\section{Conservation}
+Conservation appears when $\mathcal{L}$ leaves specific invariants unchanged. These invariants correspond
+to stable boundary configurations and preserved flux pathways.
+
+\chapter{Mapping to Implementation}
+
+\section*{Abstract}
+The state vector is not purely theoretical. It is implemented in code for investigation and validation.
+
+\section{Implementation Mapping}
+The 28 components are represented explicitly in code, ensuring that each geometric term is accessible for
+numerical evaluation.
+
+\chapter{Regime Selection as State Filtering}
+
+\section*{Abstract}
+Regime selection is state filtering. The same state vector yields different observed forces depending on
+occlusion and curvature values.
+
+\section{Filtering Rule}
+Define regime selector:
+\begin{equation}
+\mathcal{R}(\Xi) = \text{argmax}\{\text{coupling weight}\},
+\end{equation}
+which chooses the effective regime by occlusion weighting.
+
+\chapter{Toroidal Geometry Operators}
+
+\section*{Abstract}
+The torus components ($T_1$–$T_5$) encode boundary geometry, flux interception, and aspect gradation.
+These quantities are directly used to compute occlusion, coupling strength, and regime classification.
+
+\section{Effective Radius from Surface}
+From the topological surface $T_3$, define the effective radius:
+\begin{equation}
+r_{\text{eff}} = \sqrt{\frac{T_3}{4\pi}}.
+\end{equation}
+
+\section{Occlusion Operator}
+For two state vectors separated by distance $d$, the occlusion operator is:
+\begin{equation}
+E = \frac{\Omega_1 + \Omega_2}{4\pi}\left(1 + \tanh\left(\frac{|T_5|}{10^{10}}\right)\right),
+\end{equation}
+with
+\begin{equation}
+\Omega_i = \frac{r_{\text{eff},i}^2}{d^2}.
+\end{equation}
+This $E \in [0,1]$ directly determines coupling regime.
+
+\section{Occlusion Scaling}
+For $|T_5| \ll 10^{10}$, the hyperbolic tangent admits the linear approximation
+\begin{equation}
+\tanh\left(\frac{|T_5|}{10^{10}}\right) \approx \frac{|T_5|}{10^{10}},
+\end{equation}
+so the occlusion operator reduces to
+\begin{equation}
+E \approx \frac{\Omega_1 + \Omega_2}{4\pi}\left(1 + \frac{|T_5|}{10^{10}}\right).
+\end{equation}
+This is the low-slope geometric regime used in weakly graded boundaries.
+
+\chapter{Force Hierarchy from State Operators}
+
+\section*{Abstract}
+The force hierarchy is a state-space consequence. By selecting different occlusion and curvature regimes,
+the same interaction equation yields electromagnetic or gravitational limits.
+
+\section{Coulomb and Gravity Regimes}
+Let $E_C \approx 0$ and $E_G$ be the screened value. The effective coupling ratio is:
+\begin{equation}
+\frac{F_C}{F_G} = \frac{1 - E_C}{(1 - E_G)\kappa_{\text{screen}}}\cdot A_{\text{CMB}},
+\end{equation}
+where $\kappa_{\text{screen}} \approx 10^{-9}$ and $A_{\text{CMB}} \approx 10^{30}$ encode geometric screening
+and flux amplification. This yields the observed hierarchy without introducing separate forces.
+
+\chapter{Phase Space and Ordering Parameters}
+
+\section*{Abstract}
+The $\Phi$ components encode ordering and accessible state volume. This chapter defines accessible phase
+space volume in terms of toroidal geometry and external influences.
+
+\section{Accessible Phase Space}
+Define the accessible phase space volume:
+\begin{equation}
+\mathcal{V}_{\Phi} = \ln\left(T_1 T_2^2\right) + \ln(1+|\Phi_4|) + \ln\left(1+\frac{|\Phi_5|}{10^{-20}}\right) + \ln(N_{\epsilon}),
+\end{equation}
+where $N_{\epsilon}$ counts active energy modes. Larger $\Phi_4$ implies greater external influence and
+broader configuration accessibility.
+
+\section{Differential Sensitivity}
+The sensitivity to ordering parameters follows by differentiation:
+\begin{equation}
+\frac{\partial \mathcal{V}_{\Phi}}{\partial \Phi_4} = \frac{1}{1+|\Phi_4|},\quad
+\frac{\partial \mathcal{V}_{\Phi}}{\partial \Phi_5} = \frac{1}{10^{-20} + |\Phi_5|}.
+\end{equation}
+These relations quantify how external influence and transition potential expand accessible state volume.
+
+\chapter{Energy Mode Encoding}
+
+\section*{Abstract}
+The energy components $\epsilon_0$–$\epsilon_5$ encode potential, kinetic, rotational, field, binding,
+flux, and transmission. These are not independent substances; they are structured modes of matrix flux.
+
+\section{Mode Definitions}
+\begin{align}
+\epsilon_0 &: \text{Potential}, &
+\epsilon_1 &: \text{Kinetic}, &
+\epsilon_2 &: \text{Rotational},\\
+\epsilon_3 &: \text{Field}, &
+\epsilon_b &: \text{Binding}, &
+\epsilon_4 &: \text{Flux}, &
+\epsilon_5 &: \text{Transmission}.
+\end{align}
+The state vector therefore encodes both geometry and energetic manifestation.
+
+\chapter{Operator Use in Investigations}
+
+\section*{Abstract}
+The 28D operators are not theoretical ornaments; they are embedded in investigation workflows. This
+chapter demonstrates their application to orbital speed tests and empirical investigation templates.
+
+\section{Operator Application}
+The investigation pipeline constructs a state vector, computes occlusion $E$, evaluates hierarchy, and
+maps predictions onto observed regimes.
+
+\chapter{Narrative Closure}
+
+\section*{Abstract}
+State space is the mathematical spine of SDT. It encodes geometry, movement, ordering, and energy in a
+single object. The narrative of SDT can therefore be read as the unfolding of $\Xi$ under matrix flux.
+
+\section{From State to World}
+All physical structure is the matrix expressed through state. The equations are not separate laws but
+projections of one state onto different regimes. That is why the theory is one book: the state vector is
+the condensed form of the world.
+
+\end{document}

@@ -1,0 +1,831 @@
+0\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 01: Foundations and Spation Primitives \\ Book 01: Foundational Axioms and Core Principles}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\chapter{Foundational Principles}
+
+\section*{Abstract}
+This chapter establishes the four irreducible, unique primitives of Spatial Displacement Theory (SDT): space, matter, movement, and now. We formalise the pressure field sourced by the Cosmic Microwave Background (CMB), quantify the occlusion formulation of that field h, and define the geometric parameters that appear throughout SDT: curvature $\kappa$, circulation factor $\Gamma$, and slip $\eta$. All quantities are derived without assuming fundamental mass or a fundamental gravitational constant.
+
+
+\section{Spation as the Physical Medium}
+SDT begins by rejecting the fiction of a law-governed emptiness. If rules are present, if distance is
+measurable, then a substrate exists. SDT names that substrate the \textit{matrix}: a continuous,
+incompressible, inviscid medium that supports pressure propagation at speed $c$. The matrix pressure
+field at a point $\mathbf{r}$ is sourced by the CMB and reduced by occlusion from displacement structures:
+\begin{equation}
+\Pi(\mathbf{r}) = \int_{\Omega} I_{\text{CMB}}(\hat{\mathbf{n}})\left[1 - E(\mathbf{r}, \hat{\mathbf{n}})\right]\, d\Omega
+\quad \text{[Pa]}
+\end{equation}
+where $E(\mathbf{r}, \hat{\mathbf{n}})$ is the occlusion fraction along direction $\hat{\mathbf{n}}$.
+The CMB pressure is the fundamental influx:
+\begin{equation}
+P_{\text{CMB}} = 2.036 \times 10^{-2} \ \text{Pa}
+\end{equation}
+and the bulk modulus of the matrix is
+\begin{equation}
+K_{\text{bulk}} = 4.6 \times 10^{113} \ \text{Pa}.
+\end{equation}
+The \textit{spation} is the discrete unit of this matrix. As the minimal geometric carrier of the
+medium, SDT assigns the Planck length to its diameter, so that the lattice spacing is
+\begin{equation}
+d_P = 1.616255 \times 10^{-35}\ \text{m}.
+\end{equation}
+In this framing, every non-boundary phenomenon—pressure propagation, magnetic wake formation, and flux
+transport—is expressed as structured behavior of the matrix itself. The hierarchy of forces follows
+directly from mutual occlusion and curvature, not from separate postulates.
+
+\section{Incompressibility and Wave Speed}
+Incompressibility is expressed as
+\begin{equation}
+\nabla \cdot \mathbf{v} = 0,
+\end{equation}
+and the pressure propagation speed is tied to the matrix stiffness and density:
+\begin{equation}
+c = \sqrt{\frac{K_{\text{bulk}}}{\rho_s}}.
+\end{equation}
+This relation defines the effective matrix density $\rho_s$ and anchors every dynamic derivation that
+invokes propagation at $c$.
+
+\section{Pressure Integral as First Principle}
+The occlusion integral is not a tool of convenience; it is the defining mechanism of interaction:
+\begin{equation}
+\Pi(\mathbf{r}) = \int_{4\pi} I_{\text{CMB}}(\hat{\mathbf{n}})\left[1 - E(\mathbf{r},\hat{\mathbf{n}})\right]\, d\Omega.
+\end{equation}
+Every interaction is a gradient of this field, and every gradient is an encoded record of boundary
+geometry in the matrix.
+\section{Spation Lattice Geometry}
+The matrix is modeled as a close-packed lattice of spations. The stable packing requires twelve neighbors per spation to preserve isotropy. The resulting coordination yields a dodecahedral Voronoi
+cell and an icosahedral neighbor arrangement. The packing density is
+\begin{equation}
+\eta_{\text{pack}} \approx 0.755,
+\end{equation}
+and the spation number density is
+\begin{equation}
+n_P = \frac{\eta_{\text{pack}}}{V_{\text{sp}}},\quad V_{\text{sp}} = \frac{4\pi r_P^3}{3}.
+\end{equation}
+Using $r_P = 1.616255 \times 10^{-35}\ \text{m}$ gives
+\begin{equation}
+n_P \approx 3.1 \times 10^{102}\ \text{m}^{-3}.
+\end{equation}
+
+\section{Energy per Spation}
+The energy per spation associated with CMB pressure is
+\begin{equation}
+E_{\text{sp}} = P_{\text{CMB}} V_{\text{cell}},
+\end{equation}
+where $V_{\text{cell}} = V_{\text{sp}}/\eta_{\text{pack}}$ is the Voronoi cell volume. This assigns a
+numerical energy scale to the lattice and anchors all higher-scale derivations.
+
+\section{Diameter Convention}
+Define the spation diameter as the fundamental lattice spacing:
+\begin{equation}
+d_P = 2 r_P.
+\end{equation}
+The center-to-center spacing is therefore $d_P$, ensuring direct contact between neighboring spations and
+uniform propagation of pressure disturbances through the lattice.
+
+\section{Matter}
+Matter is the bounded structure that excludes matrix volume and establishes pressure deficits. The
+boundary defines geometric constraints that generate gradients and thereby drive interaction.
+
+\section{Movement}
+Movement is the total class of dynamical change in SDT. It includes shunt dynamics, circulation, drift,
+and flux rearrangement across boundaries.
+
+\section{Now}
+Now is the ordering of physical change as it is realized. It is not a separate dimension appended to
+motion; it is the presentness of interaction. In SDT, the only accessible reality is the current
+configuration of the matrix and its boundaries. Memory and projection are models constructed within the
+present configuration, not parallel timelines.
+
+\section{Occlusion and Interaction Strength}
+The central interaction control is occlusion. A displacement masks incoming flux, reducing
+local pressure and creating gradients that induce motion. The occlusion function $E(\mathbf{r}, \hat{\mathbf{n}})$
+is dimensionless and bounded by $0 \le E \le 1$.
+
+\section{Geometric Parameters}
+Three geometric control parameters appear in all SDT derivations:
+\begin{itemize}
+\item Curvature $\kappa$ (m$^{-1}$): inverse of the minor radius of a toroidal boundary.
+\item Circulation factor $\Gamma$: ratio of poloidal circulation to the speed of light.
+\item Slip $\eta$: coupling inefficiency, $0 \le \eta < 1$.
+\end{itemize}
+
+\chapter{SDT-Navier Field Theory}
+
+\section*{Abstract}
+This chapter derives the SDT-Navier field formulation: a local field theory governing matrix pressure,
+velocity, curvature, slip, and energy density. It converts the SDT master equation into field dynamics
+suited for numerical simulation and multi-body interaction analysis.
+
+\section{Field State Definition}
+The SDT-Navier field state is represented by
+\begin{equation}
+\mathbf{U}(\mathbf{x},t) = \left(P, \mathbf{v}, \kappa, \eta, e\right)^T,
+\end{equation}
+where $P$ is pressure, $\mathbf{v}$ is flow velocity, $\kappa$ is curvature density, $\eta$ is slip,
+and $e$ is energy density.
+
+\section{Field Variable Dimensions}
+Each field carries explicit units:
+\begin{align}
+[P] &= \text{Pa}, &
+[\mathbf{v}] &= \text{m}\cdot\text{s}^{-1}, \\
+[\kappa] &= \text{m}^{-1}, &
+[\eta] &= 1, \\
+[e] &= \text{J}\cdot\text{m}^{-3}. &
+\end{align}
+This dimensional bookkeeping is not cosmetic; it is the guardrail that keeps the field theory locked to
+geometry rather than abstraction.
+
+\section{Local Energy Transfer}
+The local energy density rate is
+\begin{equation}
+\dot{e}(\mathbf{x},t) = P(\mathbf{x},t)\,\sigma(\mathbf{x},t),
+\end{equation}
+where the diversion density is
+\begin{equation}
+\sigma(\mathbf{x},t) = \Gamma(\mathbf{x},t)\,\kappa(\mathbf{x},t)\,(1-\eta(\mathbf{x},t)).
+\end{equation}
+
+\section{Dimensional Closure}
+The local throughput closes dimensionally:
+\begin{equation}
+[\dot{e}] = [P][\sigma] = \text{Pa}\cdot\text{m}^{-1} = \text{W}\cdot\text{m}^{-3},
+\end{equation}
+so the local field form is the master equation per unit volume.
+
+\section{Incompressibility Constraint}
+Spation is incompressible, thus
+\begin{equation}
+\nabla \cdot \mathbf{v} = 0.
+\end{equation}
+
+\section{Continuity}
+The incompressibility condition is the constant-density limit of the continuity equation:
+\begin{equation}
+\frac{\partial \rho_s}{\partial t} + \nabla \cdot (\rho_s \mathbf{v}) = 0,
+\end{equation}
+so $\rho_s = \text{constant}$ implies $\nabla\cdot\mathbf{v}=0$.
+
+\section{Flow Equation}
+Momentum conservation in the medium yields
+\begin{equation}
+\rho_s\left(\frac{\partial \mathbf{v}}{\partial t} + (\mathbf{v}\cdot\nabla)\mathbf{v}\right)
+  = -\nabla P - \alpha\nabla\kappa - \beta \eta \mathbf{v},
+\end{equation}
+where $\alpha$ is the curvature coupling constant and $\beta$ is the slip coupling constant.
+
+\section{Curvature and Slip Forces}
+The curvature term $-\alpha\nabla\kappa$ is the geometric drive toward tighter or looser boundary
+structure. The slip term $-\beta \eta \mathbf{v}$ is the local dissipation that resists flow through
+inefficient coupling. Together they encode the only two non-pressure corrections required by SDT.
+
+\section{Curvature and Slip Evolution}
+Curvature evolves through creation and destruction terms:
+\begin{equation}
+\frac{\partial \kappa}{\partial t} + (\mathbf{v}\cdot\nabla)\kappa
+  = \mathcal{C}(\kappa,\mathbf{v}) - \mathcal{D}(\kappa,\eta),
+\end{equation}
+and slip evolves as
+\begin{equation}
+\frac{\partial \eta}{\partial t} + (\mathbf{v}\cdot\nabla)\eta
+  = \mathcal{S}_{\text{strain}}(\kappa,\mathbf{v}) - \mathcal{S}_{\text{healing}}(\kappa).
+\end{equation}
+
+\section{Steady-State Balance}
+Stable structures satisfy
+\begin{equation}
+\mathcal{C}(\kappa,\mathbf{v}) = \mathcal{D}(\kappa,\eta), \quad
+\mathcal{S}_{\text{strain}}(\kappa,\mathbf{v}) = \mathcal{S}_{\text{healing}}(\kappa),
+\end{equation}
+so curvature and slip remain bounded under persistent flux.
+
+\chapter{Core Engine Mathematical Proof}
+
+\section*{Abstract}
+We derive the SDT master energy transfer equation directly from the irreducible primitives, demonstrating
+the CMB as the universal energy influx and establishing circulation, curvature, and slip as multiplicative
+geometric constraints.
+
+\section{The Master Equation}
+The SDT master equation is
+\begin{equation}
+\boxed{\dot{E} = P_{\text{CMB}} A_{\text{eff}} \Gamma \kappa (1-\eta)}.
+\end{equation}
+Each term has a geometric origin:
+\begin{itemize}
+\item $P_{\text{CMB}}$ is the CMB pressure field.
+\item $A_{\text{eff}}$ is the effective capture area of the displacement boundary.
+\item $\Gamma$ is the circulation factor.
+\item $\kappa$ is curvature.
+\item $(1-\eta)$ is coupling efficiency.
+\end{itemize}
+
+\section{Geometric Definitions}
+The effective capture area is the flux-weighted projection of boundary surface:
+\begin{equation}
+A_{\text{eff}} = \int_{\partial \mathcal{B}} \cos\theta(\mathbf{r},\hat{\mathbf{n}})\, dA,
+\end{equation}
+where $\theta$ is the local incidence angle between the incoming flux direction and the boundary normal.
+The circulation factor is the ratio of poloidal circulation speed to $c$:
+\begin{equation}
+\Gamma = \frac{v_{\text{poloidal}}}{c}.
+\end{equation}
+Curvature is the inverse of minor radius for toroidal boundaries:
+\begin{equation}
+\kappa = \frac{1}{r_{\text{minor}}}.
+\end{equation}
+Slip is the fractional coupling loss:
+\begin{equation}
+\eta = 1 - \frac{\text{coupled flux}}{\text{incident flux}}.
+\end{equation}
+
+\section{Derivation Outline}
+\begin{align}
+F_{\text{pressure}} &= P_{\text{CMB}} A_{\text{eff}}, \\
+P_{\text{flow}} &= P_{\text{CMB}} \Gamma, \\
+P_{\text{curved}} &= P_{\text{flow}} \kappa = P_{\text{CMB}} \Gamma \kappa, \\
+P_{\text{effective}} &= P_{\text{curved}}(1-\eta), \\
+\dot{E} &= P_{\text{effective}} A_{\text{eff}} v_{\text{char}}.
+\end{align}
+For toroidal systems, the characteristic velocity is $v_{\text{char}} = c$, yielding the final expression.
+
+\section{Dimensional Verification}
+\begin{align}
+[P_{\text{CMB}}] &= \text{Pa}, &
+[A_{\text{eff}}] &= \text{m}^2, \\
+[\Gamma] &= 1, &
+[\kappa] &= \text{m}^{-1}, \\
+[(1-\eta)] &= 1, &
+[v_{\text{char}}] &= \text{m}\cdot\text{s}^{-1}.
+\end{align}
+Therefore
+\begin{equation}
+[\dot{E}] = \text{Pa}\cdot\text{m}^2\cdot\text{m}^{-1}\cdot\text{m}\cdot\text{s}^{-1}
+          = \text{kg}\cdot\text{m}^2\cdot\text{s}^{-3}.
+\end{equation}
+
+\section{Numerical Template}
+Substituting canonical constants yields a direct evaluation template:
+\begin{equation}
+\dot{E} = (2.036\times 10^{-2})\,A_{\text{eff}}\,\Gamma\,\kappa\,(1-\eta)\ \text{W},
+\end{equation}
+with $A_{\text{eff}}$ in $\text{m}^2$ and $\kappa$ in $\text{m}^{-1}$.
+
+\chapter{Unified Physics from the Master Equation}
+
+\section*{Abstract}
+This chapter shows that the master equation, combined with geometric constraints, reproduces classical
+force laws and derives macroscopic behaviors without introducing fundamental mass or $G$.
+
+\section{Force Hierarchy from Steradian Distribution}
+The force ratio between electromagnetic and gravitational regimes arises from the degree of occlusion
+and the scaling of effective area with compactness. The same pressure field produces different limits:
+small, highly curved displacements appear as electromagnetic interaction; large, weakly curved displacements
+appear as gravitation.
+
+\section{Inverse-Square Limit}
+For isolated boundaries with spherical symmetry, the occlusion-weighted pressure field reduces to
+\begin{equation}
+\Pi(r) \approx \Pi_0 - \frac{\beta}{r},
+\end{equation}
+and the force is
+\begin{equation}
+F(r) = -\frac{d}{dr}\left(\int \dot{E}\, dt\right) \propto \frac{1}{r^2},
+\end{equation}
+so inverse-square behavior is a geometric consequence of radial flux dilution.
+
+\section{Charge as Geometric Proxy}
+In SDT, charge is not fundamental but a geometric proxy for compactness in the small-displacement limit:
+\begin{equation}
+\frac{\kappa^2}{4\pi K_{\text{bulk}}} = k_e q^2.
+\end{equation}
+
+\section{Occlusion Screening}
+The hierarchy between strong short-range coupling and weak long-range coupling arises from screening:
+\begin{equation}
+F_{\text{screened}} = (1-\xi)\,F_{\text{occlusion}},
+\end{equation}
+where $\xi$ is the internal occlusion screening factor. Small boundaries have low screening; large composite
+boundaries have high screening, yielding the force hierarchy.
+
+\section{Gravitation as Pressure Geometry}
+In the large-displacement limit, gravitational coupling emerges as
+\begin{equation}
+G = \frac{c^4}{4\pi K_{\text{bulk}}^2},
+\end{equation}
+showing that $G$ is derived rather than fundamental.
+
+\section{Acceleration from Pressure Deficit}
+With pressure deficit $\Delta \Pi$, acceleration follows as
+\begin{equation}
+\mathbf{a} = -\frac{\nabla \Delta \Pi}{\rho_s}.
+\end{equation}
+For a radial deficit $\Delta \Pi \propto 1/r$, this yields $a \propto 1/r^2$ without invoking fundamental mass.
+
+\chapter{Topology from Spation Structure}
+
+\section*{Abstract}
+The SDT lattice is a close-packed matrix topology that enforces isotropic propagation and stability.
+This chapter formalizes the lattice symmetry requirements and their consequences for circulation.
+
+\section{Icosa-Dodecahedral Close Packing}
+The stable lattice requires 12-neighbor coordination to preserve isotropy. This structure ensures
+uniform propagation of pressure waves and consistent shunt dynamics.
+
+\section{Circulation and Winding}
+Topological winding numbers relate directly to circulation modes. For a loop integral of phase $\phi$:
+\begin{equation}
+w = \frac{1}{2\pi}\oint \nabla \phi \cdot d\mathbf{l}.
+\end{equation}
+
+\section{Surface Invariants}
+Topological invariants are stable under continuous deformation of the matrix without cutting or tearing.
+For a flux surface $\mathcal{S}$, an invariant measure is
+\begin{equation}
+C = \frac{1}{2\pi}\int_{\mathcal{S}} \mathbf{F}\cdot d\mathbf{S},
+\end{equation}
+where $\mathbf{F}$ is the geometric field derived from pressure topology. Distinct invariant values label
+distinct topological phases of the matrix.
+
+\section{Phase Transitions as Topology Change}
+When pressure topology changes discontinuously, the invariant jumps:
+\begin{equation}
+\Delta C \neq 0,
+\end{equation}
+signaling a topological phase transition in the matrix structure.
+
+\chapter{Symmetry Breaking from Geometric Instability}
+
+\section*{Abstract}
+Symmetry breaking in SDT arises from instability in geometric configurations rather than from
+external fields. This chapter shows how unstable curvature distributions lead to bifurcation of
+stable displacement structures.
+
+\section{Instability Criterion}
+An energy functional $E(\phi)$ exhibits instability when
+\begin{equation}
+\frac{\partial^2 E}{\partial \phi^2} < 0.
+\end{equation}
+The resulting bifurcation selects new geometric minima, defining emergent structure.
+
+\section{Pressure-Modulated Massing}
+When a symmetric configuration destabilizes, the matrix forms preferred curvature channels. These
+channels behave as mass-like stabilizers for vortical structures:
+\begin{equation}
+m_{\text{eff}} \propto \frac{\partial^2 \Pi}{\partial \phi^2},
+\end{equation}
+so massing is a pressure-modulated geometric effect rather than an independent primitive.
+
+\section{Broken-Symmetry Modes}
+The lowest-cost excitations are the modes that slide along the new minima:
+\begin{equation}
+\delta E \approx 0 \quad \text{along broken-symmetry directions}.
+\end{equation}
+These modes are the geometric signatures of broken symmetry in SDT terms.
+
+\chapter{Information Theory from Spation States}
+
+\section*{Abstract}
+Information content is expressed as a function of medium state multiplicity. The number of accessible
+states is constrained by occlusion geometry and circulation modes, providing a deterministic origin for
+entropy and informational measures.
+
+\section{State Counting}
+Let $\Omega$ be the number of accessible medium microstates for a displacement configuration. The
+informational measure is
+\begin{equation}
+S = k_B \ln \Omega.
+\end{equation}
+
+\section{Information Content}
+For a spation configuration with probability $P$, the information content is
+\begin{equation}
+I = -\log_2 P.
+\end{equation}
+This connects geometric likelihood to informational magnitude.
+
+\section{Channel Capacity}
+Pressure propagation defines a channel. The capacity is
+\begin{equation}
+C = \max_{P(X)} I(X;Y),
+\end{equation}
+with the maximization constrained by matrix propagation limits and occlusion noise.
+In SDT, $\Omega$ is computed from geometric occlusion patterns and allowed circulation modes.
+
+\chapter{Renormalization from Scale Hierarchy}
+
+\section*{Abstract}
+Renormalization is interpreted as a geometric scale hierarchy rather than a field-theoretic artifact.
+Effective constants emerge from averaging occlusion and curvature across scales.
+
+\section{Scale-Dependent Coupling}
+Let $\kappa(r)$ denote compactness at scale $r$. The effective coupling is
+\begin{equation}
+g_{\text{eff}}(r) = g_0\, f(\kappa(r), E(r)),
+\end{equation}
+where $f$ encodes occlusion and curvature geometry. This formulation recovers the observed scale
+dependencies without introducing divergent counterterms.
+
+\section{Running Couplings}
+Coupling parameters evolve with scale:
+\begin{equation}
+\alpha(\mu) = \alpha(\mu_0) + \beta \ln\left(\frac{\mu}{\mu_0}\right),
+\end{equation}
+where $\mu$ is the scale parameter and $\beta$ encodes the geometric response of the matrix to scale
+transition. This is the scale-expression of pressure field attenuation across the hierarchy.
+
+\section{Effective Descriptions}
+Coarse-graining replaces fine lattice detail with effective fields:
+\begin{equation}
+\mathcal{L}_{\text{eff}} = \langle \mathcal{L}_{\text{micro}} \rangle_{\mu},
+\end{equation}
+so scale transitions are explicit averaging operations across the spation hierarchy.
+
+\section{Geometric Cutoffs}
+Natural cutoffs arise from lattice spacing and boundary curvature limits:
+\begin{equation}
+\Lambda_{\text{min}} \sim \frac{1}{r_P}, \quad \Lambda_{\text{max}} \sim \frac{1}{R_{\text{cosmic}}}.
+\end{equation}
+These cutoffs remove divergences by construction.
+
+\chapter{The Force Hierarchy}
+
+\section*{Abstract}
+This chapter derives the hierarchy of observed interaction strengths from the angular distribution of
+flux and from geometric occlusion. The hierarchy is not a list of unrelated forces; it is a continuous
+sequence of coupling regimes produced by the same matrix.
+
+\section{Steradian Dilution}
+The CMB supplies an isotropic flux across $4\pi$ steradians. Any local interaction is a deficit in this
+flux, therefore the magnitude of interaction is governed by the solid-angle fraction that is occluded.
+Define occlusion fraction $E(\mathbf{r},\hat{\mathbf{n}})$ and coupling efficiency
+\begin{equation}
+\mathcal{C}(\mathbf{r},\hat{\mathbf{n}}) = 1 - E(\mathbf{r},\hat{\mathbf{n}}).
+\end{equation}
+
+\section{Hierarchy Expression}
+The interaction magnitude between two displacement boundaries at separation $r$ is
+\begin{equation}
+F(\kappa_1,\kappa_2,r) = \frac{\kappa_1 \kappa_2}{4\pi K_{\text{bulk}} r^2}\,\mathcal{C}(\mathbf{r},\hat{\mathbf{n}}).
+\end{equation}
+Small, highly curved boundaries (large $\kappa$) yield strong coupling (electromagnetic regime). Large,
+weakly curved boundaries yield weak coupling (gravitational regime). The hierarchy is geometric:
+occlusion controls coupling.
+
+\chapter{Occlusion Geometry and Interaction}
+
+\section*{Abstract}
+Occlusion is the central control parameter of SDT. This chapter formalizes the occlusion function,
+constructs its geometric interpretation, and shows how it drives the transition between regimes.
+
+\section{Occlusion Function}
+\begin{equation}
+E(\mathbf{r},\hat{\mathbf{n}}) = \frac{\Omega_{\text{blocked}}(\mathbf{r},\hat{\mathbf{n}})}{4\pi}.
+\end{equation}
+Occlusion depends on boundary shape, orientation, and separation. The integral of occlusion over solid
+angle yields total coupling:
+\begin{equation}
+\mathcal{C}_{\text{eff}}(\mathbf{r}) = \int_{\Omega}\left[1 - E(\mathbf{r},\hat{\mathbf{n}})\right] d\Omega.
+\end{equation}
+
+\chapter{CMB as the Universal Flux Source}
+
+\section*{Abstract}
+The Cosmic Microwave Background is the universal flux source. This chapter derives the pressure field,
+shows how flux becomes pressure, and establishes the directional balance that defines equilibrium.
+
+\section{CMB Pressure Field}
+\begin{equation}
+P_{\text{CMB}} = 4\pi I_{\text{CMB}}.
+\end{equation}
+The local pressure field is the integral of directional flux minus occlusion:
+\begin{equation}
+\Pi(\mathbf{r}) = \int_{\Omega} I_{\text{CMB}}(\hat{\mathbf{n}})\left[1 - E(\mathbf{r},\hat{\mathbf{n}})\right]\, d\Omega.
+\end{equation}
+Equilibrium arises when occlusion geometry produces zero net gradient.
+
+\chapter{The Matrix and the Spation}
+
+\section*{Abstract}
+The matrix is the collective medium; the spation is its discrete unit. This chapter defines the lattice
+requirements and the resulting isotropy constraints.
+
+\section{Lattice Requirement}
+The matrix must support isotropic propagation of flux. Close-packing with 12-fold coordination is
+required for isotropic support. The spation lattice therefore satisfies a maximal kissing number.
+
+\section{Spation Scale}
+The characteristic spation scale is anchored near the Planck length $r_P$, a boundary where curvature,
+flux, and geometry converge. This scale sets the minimum stable boundary radius.
+
+\chapter{Movement: Taxonomy and Mechanisms}
+
+\section*{Abstract}
+Movement is not a single process; it is a class of dynamical changes. This chapter introduces the SDT
+taxonomy of movement and isolates shunt dynamics as one specific mechanism.
+
+\section{Movement Categories}
+\begin{itemize}
+\item \textbf{Shunt movement}: boundary exchanges between matrix and displacement.
+\item \textbf{Circulation movement}: toroidal motion around closed boundary loops.
+\item \textbf{Flux drift}: gradient-driven transport through the matrix.
+\end{itemize}
+
+\section{Shunt Dynamics}
+Shunt dynamics are periodic exchanges that define oscillatory stability. The shunt rate $\nu$ sets the
+effective ordering of change in a system.
+
+\chapter{Now: Ordering of Change}
+
+\section*{Abstract}
+Now is the ordering of change as realized. This chapter formalizes the role of now in SDT and relates it
+to oscillatory counting without invoking emergent time rhetoric.
+
+\section{Ordering by Oscillation}
+Let $N$ be the count of shunt cycles. Then the ordering parameter is
+\begin{equation}
+\mathcal{N} = N \Delta \nu^{-1}
+\end{equation}
+which provides a sequence of physical states without positing time as a fundamental axis.
+
+\chapter{Curvature and Circulation}
+
+\section*{Abstract}
+Curvature and circulation form the geometric core of displacement interaction. This chapter derives
+their relation to flux capture and to magnetic wake generation.
+
+\section{Curvature}
+\begin{equation}
+\kappa = \frac{1}{r_{\text{minor}}}.
+\end{equation}
+Higher curvature implies greater flux interception and stronger coupling.
+
+\section{Circulation}
+\begin{equation}
+\Gamma = \frac{v_{\text{poloidal}}}{c}.
+\end{equation}
+Circulation defines helical wake structure and is directly tied to magnetic effects.
+
+\chapter{Slip and Coupling Efficiency}
+
+\section*{Abstract}
+Slip is the efficiency loss in coupling between a boundary and the matrix. This chapter defines slip and
+shows how $(1-\eta)$ scales interaction strength.
+
+\section{Slip Definition}
+\begin{equation}
+0 \le \eta < 1.
+\end{equation}
+The effective coupling is reduced by $(1-\eta)$ in every master equation form.
+
+\chapter{Mass as Geometric Compression}
+
+\section*{Abstract}
+Mass is not fundamental. It is a geometric consequence of matrix compression by displacement boundaries.
+
+\section{Compression Relation}
+\begin{equation}
+m = \rho_{\text{matrix}} V_{\text{disp}}.
+\end{equation}
+The mass of an object is therefore the effective volume of matrix excluded by its boundary geometry.
+
+\chapter{Energy and Power Throughput}
+
+\section*{Abstract}
+Energy is flux throughput; power is its rate. This chapter reconstructs these quantities from the
+master equation and boundary geometry.
+
+\section{Master Equation}
+\begin{equation}
+\dot{E} = P_{\text{CMB}} A_{\text{eff}} \Gamma \kappa (1-\eta).
+\end{equation}
+This equation is the root from which all energetic descriptions derive.
+
+\chapter{Pressure, Force, and Stress}
+
+\section*{Abstract}
+Force is pressure gradient in the matrix. This chapter derives force as the directional imbalance of
+flux and stress as distributed pressure.
+
+\section{Pressure Gradient Force}
+\begin{equation}
+\mathbf{F} = -\nabla P.
+\end{equation}
+
+\section{Stress Tensor}
+Stress is the spatial distribution of pressure gradients across boundary surfaces.
+
+\chapter{Electromagnetic Regime as High Curvature}
+
+\section*{Abstract}
+Electromagnetism is the high-curvature limit of coupling within the same matrix. This chapter derives
+the small-scale limit of the interaction equation.
+
+\section{Small-Scale Limit}
+\begin{equation}
+F_{\text{EM}} = \frac{\kappa_1 \kappa_2}{4\pi K_{\text{bulk}} r^2}.
+\end{equation}
+Charge is a proxy for compactness under this limit.
+
+\chapter{Gravitational Regime as Low Curvature}
+
+\section*{Abstract}
+Gravitation is the low-curvature limit of coupling across large separations. This chapter derives $G$
+as a composite constant.
+
+\section{Large-Scale Limit}
+\begin{equation}
+G = \frac{c^4}{4\pi K_{\text{bulk}}^2}.
+\end{equation}
+Thus gravitation is not a fundamental interaction but a geometric regime.
+
+\chapter{Magnetic Wakes and Helical Flux}
+
+\section*{Abstract}
+Magnetism is the helical wake pattern of circulation. This chapter defines the wake and its directionality.
+
+\section{Helical Wake}
+The wake is the matrix flux pattern induced by toroidal circulation:
+\begin{equation}
+\mathbf{B} \leftrightarrow \text{helical wake of circulation}.
+\end{equation}
+
+\chapter{Dimensional Consistency}
+
+\section*{Abstract}
+All SDT equations are dimensionally grounded. This chapter compiles key dimensional identities.
+
+\section{Core Units}
+\begin{align}
+[P] &= \text{Pa} = \text{kg}\cdot \text{m}^{-1}\cdot \text{s}^{-2},\\
+[\kappa] &= \text{m}^{-1}, \quad [\Gamma] = 1, \quad [\eta] = 1.
+\end{align}
+
+\chapter{Boundary Geometry and Effective Area}
+
+\section*{Abstract}
+The effective area $A_{\text{eff}}$ is the boundary projection that captures flux. This chapter defines
+how boundary topology governs $A_{\text{eff}}$.
+
+\section{Area Definition}
+\begin{equation}
+A_{\text{eff}} = \int_{\partial V} \cos\theta \, dA.
+\end{equation}
+
+\chapter{Validation Principles}
+
+\section*{Abstract}
+Validation in SDT is geometric. This chapter defines the validation pathway for derived quantities.
+
+\section{Benchmark Alignment}
+Predicted values must align with benchmarks derived from SDT constants and verified calculations.
+
+\chapter{Experimental Proposals}
+
+\section*{Abstract}
+This chapter enumerates experimental tests of SDT’s foundational claims.
+
+\section{Occlusion Tests}
+Measure directional flux deficits around controlled boundaries.
+
+\section{Matrix Response}
+Observe stress response in controlled oscillatory geometries.
+
+\chapter{The Matrix Lattice and Spation Packing}
+
+\section*{Abstract}
+The matrix is not a vague background. It is a concrete lattice of spations whose packing enforces
+isotropic flux propagation. This chapter derives the lattice requirement, defines spation as the discrete
+unit, and connects packing geometry to macroscopic stability.
+
+\section{Spation as the Discrete Unit}
+A \textit{spation} is the discrete unit of the matrix. The matrix is the collective behavior of spations,
+and the medium is the emergent continuum of their coordinated interaction. The spation scale anchors the
+minimum stable boundary radius and sets the base unit of geometric discretization.
+
+\section{Isotropy and Coordination}
+Isotropic propagation of flux requires uniform angular coverage. The maximal kissing number in three
+dimensions is 12, so stable packing must be 12‑coordinated. This ensures that flux spreads evenly and
+that no axis is privileged.
+
+\section{Packing Density and Stability}
+Let $r_P$ be the spation radius. The volume per spation in a close‑packed lattice is
+\begin{equation}
+V_{\text{cell}} = \frac{4\pi r_P^3}{3\eta},
+\end{equation}
+where $\eta$ is the packing density. Stability is achieved by minimizing $V_{\text{cell}}$, thereby
+minimizing energy per spation at fixed CMB pressure.
+
+\chapter{Occlusion Integral: Derivation and Meaning}
+
+\section*{Abstract}
+Occlusion is the master control of interaction. This chapter derives the occlusion integral, explains its
+directional structure, and shows how it collapses to regime‑specific coupling laws.
+
+\section{Directional Flux}
+Flux arrives from all directions. Each boundary removes a fraction of directional flux. The local pressure
+is therefore the angular integral of flux weighted by occlusion:
+\begin{equation}
+\Pi(\mathbf{r}) = \int_{\Omega} I_{\text{CMB}}(\hat{\mathbf{n}})\left[1 - E(\mathbf{r},\hat{\mathbf{n}})\right]\, d\Omega.
+\end{equation}
+When $E = 0$, flux is unblocked; when $E = 1$, flux is fully occluded.
+
+\section{Coupling Efficiency}
+Define the effective coupling:
+\begin{equation}
+\mathcal{C}(\mathbf{r}) = \int_{\Omega}\left[1 - E(\mathbf{r},\hat{\mathbf{n}})\right] d\Omega.
+\end{equation}
+This quantity governs the strength of interaction for any boundary configuration.
+
+\chapter{The Force Hierarchy as Geometry}
+
+\section*{Abstract}
+The hierarchy of observed forces is an ordering of occlusion and curvature regimes. This chapter derives
+the hierarchy from the same flux equation without introducing new forces.
+
+\section{Unified Interaction Law}
+For two boundaries at separation $r$:
+\begin{equation}
+F(\kappa_1,\kappa_2,r) = \frac{\kappa_1 \kappa_2}{4\pi K_{\text{bulk}} r^2}\,\mathcal{C}(\mathbf{r}).
+\end{equation}
+Small, highly curved boundaries generate strong coupling (electromagnetic regime). Large, weakly curved
+boundaries generate weak coupling (gravitational regime).
+
+\section{Regime Transition}
+The transition between regimes is controlled by $E$ and $\kappa$. The hierarchy is thus not a list of
+fundamental forces but a map of geometry.
+
+\chapter{Mass as Matrix Exclusion}
+
+\section*{Abstract}
+Mass is the measure of matrix exclusion by matter. This chapter derives the mass relation directly from
+geometry and density.
+
+\section{Mass Relation}
+Let $\rho_m$ be the matrix density and $V_{\text{disp}}$ the excluded volume:
+\begin{equation}
+m = \rho_m V_{\text{disp}}.
+\end{equation}
+Mass therefore tracks boundary geometry, not a fundamental substance.
+
+\chapter{Gravitational Constant as Composite}
+
+\section*{Abstract}
+The gravitational constant is not fundamental. It is a composite of matrix stiffness and flux geometry.
+
+\section{Composite Form}
+From the large‑boundary regime,
+\begin{equation}
+G = \frac{c^4}{4\pi K_{\text{bulk}}^2}.
+\end{equation}
+This formula anchors gravitation in the same matrix that produces electromagnetic coupling.
+
+\chapter{Magnetic Wakes and Helical Flux}
+
+\section*{Abstract}
+Magnetism is the helical wake of circulation. This chapter ties wake formation to circulation and shows
+how sign emerges from chirality.
+
+\section{Wake Formation}
+Let $\Gamma$ be circulation and $\kappa$ curvature:
+\begin{equation}
+\mu \propto \Gamma \kappa (1-\eta).
+\end{equation}
+The sign is determined by circulation orientation relative to the chosen axis.
+
+\chapter{Dimensional Bookkeeping}
+
+\section*{Abstract}
+Every SDT equation is dimensionally consistent. This chapter compiles the core dimensional identities.
+
+\section{Core Units}
+\begin{align}
+[P] &= \text{Pa} = \text{kg}\cdot \text{m}^{-1}\cdot \text{s}^{-2},\\
+[\kappa] &= \text{m}^{-1},\quad [\Gamma]=1,\quad [\eta]=1.
+\end{align}
+
+\chapter{Closure: The Four Primitives as a Single Grammar}
+
+\section*{Abstract}
+This closing chapter ties space, matter, movement, and now into one grammar and shows how every formula
+in this book is a projection of that grammar into geometry.
+
+\section{One Grammar}
+Space is the matrix, matter is the boundary, movement is the change induced by flux, and now is the
+ordering of that change. The SDT equations are the algebra of this grammar.
+
+\end{document}

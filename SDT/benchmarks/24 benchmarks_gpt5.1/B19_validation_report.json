@@ -1,0 +1,8 @@
+{
+  "benchmark": "B19",
+  "name": "Weak Interactions",
+  "phase_document": "Phase_18_Alpha_Particles_and_Beta_Decay",
+  "tolerance": "TBD",
+  "overall_status": "UNDER_INVESTIGATION",
+  "note": "Mass difference \u0394m(n\u2192p) calculation incomplete. Q-value predictions pending"
+}

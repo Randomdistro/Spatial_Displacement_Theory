@@ -1,0 +1,129 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 04: Electromagnetism and Magnetic Phenomena \\ Book 01: Electricity from Matrix Pressure}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Electricity as Pressure Geometry}
+
+\section*{Abstract}
+This book derives electric phenomena as consequences of pressure geometry in the matrix. Electric field,
+potential, and charge are geometric proxies for occlusion and curvature in the small-boundary regime.
+Equations are expressed in SDT-native form with explicit constants.
+
+\section{Electric Field from Pressure Gradient}
+The electric field is the local pressure gradient expressed in force per unit proxy charge:
+\begin{equation}
+\mathbf{E} = -\nabla \Phi,
+\end{equation}
+with potential defined by
+\begin{equation}
+\Phi(\mathbf{r}) = -\int_{\infty}^{\mathbf{r}} \mathbf{E}\cdot d\mathbf{l}.
+\end{equation}
+In SDT, $\Phi$ is a pressure-normalized potential and therefore a flux geometry measure.
+
+\section{Charge as Geometric Proxy}
+Charge is not primitive. It is the small-boundary proxy for curvature:
+\begin{equation}
+\frac{\kappa^2}{4\pi K_{\text{bulk}}} = k_e q^2.
+\end{equation}
+This mapping recovers Coulomb’s law without introducing charge as a fundamental substance.
+
+\section{Proxy Conversion}
+Solving for $q$ yields the explicit conversion:
+\begin{equation}
+q = \frac{\kappa}{\sqrt{4\pi K_{\text{bulk}} k_e}}.
+\end{equation}
+This relation is the bridge between curvature geometry and charge-like bookkeeping.
+
+\section{Coulomb Regime}
+For occlusion $E \to 0$,
+\begin{equation}
+F_{\text{C}} = \frac{\kappa_1 \kappa_2}{4\pi K_{\text{bulk}} r^2}.
+\end{equation}
+Thus electric interaction is a regime of the same flux-driven coupling used everywhere in SDT.
+
+\chapter{Electric Potential and Work}
+
+\section*{Abstract}
+Electric potential is the work per unit curvature proxy required to move a boundary in the matrix. This
+chapter formalizes potential as pressure geometry and relates it to energy transfer.
+
+\section{Potential as Pressure Integral}
+\begin{equation}
+\Phi(\mathbf{r}) = \frac{1}{\kappa_{\text{ref}}}\int_{\infty}^{\mathbf{r}} \nabla P \cdot d\mathbf{l}.
+\end{equation}
+The reference curvature $\kappa_{\text{ref}}$ sets the proxy conversion and is fixed by geometry.
+
+\section{Work in the Matrix}
+The work to move a boundary element through the matrix is
+\begin{equation}
+W = \int \mathbf{F}\cdot d\mathbf{l} = \kappa_{\text{ref}} \Delta \Phi.
+\end{equation}
+
+\chapter{Flux Continuity and Gauss Structure}
+
+\section*{Abstract}
+Gauss-like relations arise from flux conservation. Charge is a proxy for curvature, so enclosed curvature
+determines flux divergence.
+
+\section{Divergence Relation}
+Define effective enclosed curvature $\kappa_{\text{enc}}$:
+\begin{equation}
+\nabla \cdot \mathbf{E} = \frac{\kappa_{\text{enc}}}{\epsilon_{\text{eff}}},
+\end{equation}
+where $\epsilon_{\text{eff}}$ encodes matrix compliance.
+
+\chapter{Current as Flux Drift}
+
+\section*{Abstract}
+Current is flux drift along a boundary lattice. It is the macroscopic transport of matrix momentum
+through constrained channels.
+
+\section{Current Density}
+\begin{equation}
+\mathbf{J} = \rho_{\kappa} \mathbf{v}_d,
+\end{equation}
+where $\rho_{\kappa}$ is curvature proxy density and $\mathbf{v}_d$ is drift velocity along the boundary.
+
+\section{Ohmic Behavior}
+Ohmic behavior is the linear regime of drift under pressure gradient:
+\begin{equation}
+\mathbf{J} = \sigma \mathbf{E},
+\end{equation}
+with conductivity $\sigma$ determined by boundary smoothness and locking efficiency.
+
+\section{Conductivity Scaling}
+An SDT scaling for conductivity is
+\begin{equation}
+\sigma \sim \frac{\rho_{\kappa} \ell_c}{\lambda},
+\end{equation}
+where $\ell_c$ is a characteristic contact length. Higher locking efficiency lowers conductivity.
+
+\chapter{Dielectric Response}
+
+\section*{Abstract}
+Dielectrics are media where boundaries polarize without sustained drift. This polarization is a local
+rearrangement of occlusion and curvature.
+
+\section{Polarization}
+\begin{equation}
+\mathbf{P} = \chi_e \mathbf{E},
+\end{equation}
+where $\chi_e$ is the SDT susceptibility defined by boundary response to pressure gradients.
+
+\section{Energy Density}
+The energy density stored in polarization is
+\begin{equation}
+u = \frac{1}{2}\mathbf{E}\cdot\mathbf{P} = \frac{1}{2}\chi_e E^2,
+\end{equation}
+which is the geometric work required to reconfigure boundary orientations.
+\end{document}

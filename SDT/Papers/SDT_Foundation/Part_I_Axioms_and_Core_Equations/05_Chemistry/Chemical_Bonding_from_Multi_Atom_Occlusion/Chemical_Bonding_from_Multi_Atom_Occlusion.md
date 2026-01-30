@@ -49,7 +49,27 @@ For chemical bonding, we extend this to neutral atoms with multiple electrons. T
 
 **Axiom 1.3 (CMB as Multi-Atom Source).** The Cosmic Microwave Background (CMB) radiation, originating from the last scattering surface at redshift $z = 1089.9$, provides the continuous energy influx that maintains all multi-atom occlusion and enables all chemical bonding. Without CMB pressure, there would be no occlusion, no pressure gradients, and no chemical bonds.
 
-### 1.2 Bond Formation Mechanism
+### 1.2 Nuclei per Nucleus (Developed Structures)
+
+The following packing structures are the *developed* SDT nuclei used in the bonding framework (Phase 1/2 nuclear packing). These define the occlusion geometry inputs for multi-atom interactions.
+
+| Nucleus | Block Decomposition | Geometry | Key Distances | Notes |
+|:--|:--|:--|:--|:--|
+| H-1 | p | Single point | - | Baseline reference nucleus |
+| H-2 (Deuteron) | D = (p+n) | Dumbbell | p-n = 2.10 fm | First octahedral space (Phase 1) |
+| H-3 (Triton) | T = (p+n+n) | Linear chain | two p-n bonds @ 2.10 fm | Odd-A linear triad |
+| He-3 (Helion) | (p+n+p) | Linear chain | two p-n bonds @ 2.10 fm | Odd-A linear triad |
+| He-4 (Alpha) | α = (2p+2n) | Tetrahedron | internal bonds @ 1.45 fm | 6 inter-nucleon bonds |
+| Be-8 | 2α | Dumbbell | inter-α = 2.9 fm | Unstable (no bridge) |
+| Be-9 | 2α + n | Neutron bridge | inter-α = 2.9 fm | Stabilized dumbbell |
+| Li-6 | α + D | Alpha + deuteron | attachment to α surface | Mixed block |
+| Li-7 | α + T | Alpha + triton | triton caps α face | Prolate nucleus |
+| C-12 | 3α | Triangle | inter-α = 2.9 fm | Planar tri-alpha |
+| O-16 | 4α | Tetrahedron | inter-α = 2.9 fm | Double-magic core |
+| Mg-24 | 6α | Octahedron | inter-α = 2.9 fm | Phase 1 alpha-cluster extension |
+| S-32 | 8α | Cube | inter-α = 2.9 fm | Geometric closure |
+
+### 1.3 Bond Formation Mechanism
 
 **Theorem 1.1 (Bond Formation).** A chemical bond forms when:
 

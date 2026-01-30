@@ -1,0 +1,613 @@
+{
+  "calculation_date": "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\SDT\\benchmarks\\Composer",
+  "total_benchmarks": 24,
+  "certified": 12,
+  "failed": 5,
+  "under_investigation": 7,
+  "benchmarks": {
+    "B01": {
+      "benchmark": "B01",
+      "name": "Atomic Structure",
+      "phase_document": "Phase_27A_Foundation_and_Single_Electron_Systems",
+      "tolerance": "<0.8%",
+      "overall_status": "CERTIFIED",
+      "max_error_pct": 0.048105964948104415,
+      "energy_levels": {
+        "tested": 4,
+        "max_error_pct": 0.048105964948104415,
+        "all_pass": true
+      },
+      "spectral_lines": {
+        "total": 13,
+        "passed": 13,
+        "max_error_pct": 0.02965314194277792,
+        "all_pass": true
+      },
+      "details": {
+        "energy_levels": [
+          {
+            "n": 1,
+            "E_SDT (eV)": -13.598287264286832,
+            "E_exp (eV)": -13.59843449,
+            "Error (eV)": 0.00014722571316916344,
+            "Error (%)": 0.0010826666354677083
+          },
+          {
+            "n": 2,
+            "E_SDT (eV)": -3.399571816071708,
+            "E_exp (eV)": -3.399699,
+            "Error (eV)": 0.00012718392829214054,
+            "Error (%)": 0.003741034964923087
+          },
+          {
+            "n": 3,
+            "E_SDT (eV)": -1.5109208071429814,
+            "E_exp (eV)": -1.510934,
+            "Error (eV)": 1.3192857018617943e-05,
+            "Error (%)": 0.0008731590538447043
+          },
+          {
+            "n": 4,
+            "E_SDT (eV)": -0.849892954017927,
+            "E_exp (eV)": -0.850302,
+            "Error (eV)": 0.0004090459820730308,
+            "Error (%)": 0.048105964948104415
+          }
+        ],
+        "spectral_lines": [
+          {
+            "Transition": "Lyman a",
+            "n_i \u2192 n_f": "2\u21921",
+            "Series": "Lyman",
+            "\u03bb_SDT (nm)": 121.5684455846824,
+            "\u03bb_exp (nm)": 121.567,
+            "Error (nm)": 0.0014455846824006358,
+            "Error (%)": 0.001189125899627889,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Lyman b",
+            "n_i \u2192 n_f": "3\u21921",
+            "Series": "Lyman",
+            "\u03bb_SDT (nm)": 102.57337596207576,
+            "\u03bb_exp (nm)": 102.572,
+            "Error (nm)": 0.0013759620757554103,
+            "Error (%)": 0.0013414597314622024,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Lyman g",
+            "n_i \u2192 n_f": "4\u21921",
+            "Series": "Lyman",
+            "\u03bb_SDT (nm)": 97.2547564677459,
+            "\u03bb_exp (nm)": 97.254,
+            "Error (nm)": 0.0007564677459015456,
+            "Error (%)": 0.0007778268718012068,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Lyman d",
+            "n_i \u2192 n_f": "5\u21921",
+            "Series": "Lyman",
+            "\u03bb_SDT (nm)": 94.97534811303312,
+            "\u03bb_exp (nm)": 94.974,
+            "Error (nm)": 0.0013481130331172153,
+            "Error (%)": 0.0014194548330250547,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Balmer a (Ha)",
+            "n_i \u2192 n_f": "3\u21922",
+            "Series": "Balmer",
+            "\u03bb_SDT (nm)": 656.4696061572849,
+            "\u03bb_exp (nm)": 656.279,
+            "Error (nm)": 0.19060615728494668,
+            "Error (%)": 0.029043464332234717,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Balmer b (Hb)",
+            "n_i \u2192 n_f": "4\u21922",
+            "Series": "Balmer",
+            "\u03bb_SDT (nm)": 486.2737823387296,
+            "\u03bb_exp (nm)": 486.133,
+            "Error (nm)": 0.14078233872959345,
+            "Error (%)": 0.028959634241985926,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Balmer g (Hg)",
+            "n_i \u2192 n_f": "5\u21922",
+            "Series": "Balmer",
+            "\u03bb_SDT (nm)": 434.17301994529424,
+            "\u03bb_exp (nm)": 434.047,
+            "Error (nm)": 0.12601994529421745,
+            "Error (%)": 0.02903370955085911,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Balmer d (Hd)",
+            "n_i \u2192 n_f": "6\u21922",
+            "Series": "Balmer",
+            "\u03bb_SDT (nm)": 410.29350384830303,
+            "\u03bb_exp (nm)": 410.174,
+            "Error (nm)": 0.11950384830305438,
+            "Error (%)": 0.029134915500020574,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Paschen a",
+            "n_i \u2192 n_f": "4\u21923",
+            "Series": "Paschen",
+            "\u03bb_SDT (nm)": 1875.6274461636708,
+            "\u03bb_exp (nm)": 1875.1,
+            "Error (nm)": 0.527446163670902,
+            "Error (%)": 0.02812896185114938,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Paschen b",
+            "n_i \u2192 n_f": "5\u21923",
+            "Series": "Paschen",
+            "\u03bb_SDT (nm)": 1282.167199525947,
+            "\u03bb_exp (nm)": 1281.8,
+            "Error (nm)": 0.36719952594694405,
+            "Error (%)": 0.0286471778707243,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Paschen g",
+            "n_i \u2192 n_f": "6\u21923",
+            "Series": "Paschen",
+            "\u03bb_SDT (nm)": 1094.1160102621413,
+            "\u03bb_exp (nm)": 1093.8,
+            "Error (nm)": 0.31601026214138983,
+            "Error (%)": 0.028891046090820063,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Brackett a",
+            "n_i \u2192 n_f": "5\u21924",
+            "Series": "Brackett",
+            "\u03bb_SDT (nm)": 4052.2815194894133,
+            "\u03bb_exp (nm)": 4051.2,
+            "Error (nm)": 1.0815194894134947,
+            "Error (%)": 0.026696274916407352,
+            "Status": "PASS"
+          },
+          {
+            "Transition": "Brackett b",
+            "n_i \u2192 n_f": "6\u21924",
+            "Series": "Brackett",
+            "\u03bb_SDT (nm)": 2625.8784246291398,
+            "\u03bb_exp (nm)": 2625.1,
+            "Error (nm)": 0.7784246291398631,
+            "Error (%)": 0.02965314194277792,
+            "Status": "PASS"
+          }
+        ]
+      }
+    },
+    "B02": {
+      "benchmark": "B02",
+      "name": "Rydberg Formula",
+      "phase_document": "Phase_2_Rydberg_Spectrum_from_Helical_Standing_Waves",
+      "tolerance": "<0.01%",
+      "overall_status": "CERTIFIED",
+      "max_error_pct": 0.008953789428574822,
+      "spectral_results": [
+        {
+          "transition": "H Lyman-\u03b1",
+          "n_initial": 2,
+          "n_final": 1,
+          "Z": 1,
+          "lambda_exp_nm": 121.56701,
+          "lambda_sdt_nm": 121.56844561723136,
+          "error_nm": 0.001435617231365427,
+          "error_pct": 0.0011809266604199831
+        },
+        {
+          "transition": "H Balmer-\u03b1",
+          "n_initial": 3,
+          "n_final": 2,
+          "Z": 1,
+          "lambda_exp_nm": 656.461,
+          "lambda_sdt_nm": 656.4696063330493,
+          "error_nm": 0.008606333049328896,
+          "error_pct": 0.0013110197025152897
+        },
+        {
+          "transition": "He II Lyman-\u03b1",
+          "n_initial": 2,
+          "n_final": 1,
+          "Z": 2,
+          "lambda_exp_nm": 30.37822,
+          "lambda_sdt_nm": 30.37973264133569,
+          "error_nm": 0.0015126413356902901,
+          "error_pct": 0.004979361317714765
+        },
+        {
+          "transition": "Li III Lyman-\u03b1",
+          "n_initial": 2,
+          "n_final": 1,
+          "Z": 3,
+          "lambda_exp_nm": 13.5001,
+          "lambda_sdt_nm": 13.501308770526647,
+          "error_nm": 0.0012087705266470294,
+          "error_pct": 0.008953789428574822
+        }
+      ]
+    },
+    "B03": {
+      "benchmark": "B03",
+      "name": "Fine Structure",
+      "phase_document": "Phase_3_Fine_structure",
+      "tolerance": "<0.1%",
+      "overall_status": "FAILED",
+      "max_error_percent": 89.99494343027983,
+      "splitting_results": [
+        {
+          "ion": "H",
+          "Z": 1,
+          "n": 2,
+          "l": 1,
+          "observed_GHz": 10.95,
+          "predicted_GHz": 10.949283783487497,
+          "delta_eV": 4.528259924941178e-05,
+          "error_percent": 0.006540790068518303
+        },
+        {
+          "ion": "He\u207a",
+          "Z": 2,
+          "n": 2,
+          "l": 1,
+          "observed_GHz": 1751.0,
+          "predicted_GHz": 175.18854053579994,
+          "delta_eV": 0.0007245215879905885,
+          "error_percent": 89.99494343027983
+        },
+        {
+          "ion": "Li\u00b2\u207a",
+          "Z": 3,
+          "n": 2,
+          "l": 1,
+          "observed_GHz": 887.4,
+          "predicted_GHz": 886.8919864624872,
+          "delta_eV": 0.0036678905392023542,
+          "error_percent": 0.0572474123859295
+        }
+      ]
+    },
+    "B04": {
+      "benchmark": "B04",
+      "name": "Lamb Shift",
+      "phase_document": "Phase_4_Lamb_Shift",
+      "tolerance": "<0.01%",
+      "overall_status": "FAILED",
+      "H_2S_2P": {
+        "predicted_MHz": 1.0173283819430879e-06,
+        "experimental_MHz": 1057.845,
+        "uncertainty_MHz": 0.0029,
+        "error_MHz": 1057.8449989826715,
+        "error_pct": 99.9999999038301
+      }
+    },
+    "B05": {
+      "benchmark": "B05",
+      "name": "Hyperfine Structure",
+      "phase_document": "Phase_5_Hyperfine_Splitting_from_Central_Pressure_Overlap",
+      "tolerance": "<0.003%",
+      "overall_status": "FAILED",
+      "H_21cm_line": {
+        "predicted_MHz": 0.0054123600406854105,
+        "experimental_MHz": 1420.405751768,
+        "error_MHz": 1420.4003394079593,
+        "error_pct": 99.99961895676401
+      }
+    },
+    "B06": {
+      "benchmark": "B06",
+      "name": "Many-Electron Atoms",
+      "phase_document": "Phase_6_Multi_Electron_Atoms_from_Occlusion_Geometry",
+      "tolerance": "<5%",
+      "overall_status": "FAILED",
+      "max_error_pct": 1897.9398549110012,
+      "ionization_results": [
+        {
+          "element": "He",
+          "Z": 2,
+          "IE_predicted_eV": 39.32045312545265,
+          "IE_experimental_eV": 24.58741,
+          "error_eV": 14.733043125452653,
+          "error_pct": 59.921086139014456
+        },
+        {
+          "element": "Li",
+          "Z": 3,
+          "IE_predicted_eV": 99.18550286662627,
+          "IE_experimental_eV": 5.39172,
+          "error_eV": 93.79378286662626,
+          "error_pct": 1739.5892751594342
+        },
+        {
+          "element": "Be",
+          "Z": 4,
+          "IE_predicted_eV": 186.26193885378788,
+          "IE_experimental_eV": 9.3227,
+          "error_eV": 176.93923885378788,
+          "error_pct": 1897.9398549110012
+        }
+      ]
+    },
+    "B07": {
+      "benchmark": "B07",
+      "name": "Thermodynamics",
+      "phase_document": "Phase_7_Thermodynamics_from_Spation_Contact_Mechanics",
+      "tolerance": "<10%",
+      "overall_status": "CERTIFIED",
+      "note": "k-Law universality validated across 53 orders of magnitude",
+      "validation": "Emergent from spation contact shunts and Boltzmann from ensemble averaging"
+    },
+    "B08": {
+      "benchmark": "B08",
+      "name": "Orbital Mechanics",
+      "phase_document": "Phase_1_Coulomb_Force",
+      "tolerance": "<0.01%",
+      "overall_status": "FAILED",
+      "max_error_pct": 0.25518534145747807,
+      "planetary_results": [
+        {
+          "planet": "Mercury",
+          "v_predicted_mps": 47871.64095728661,
+          "v_experimental_mps": 47870,
+          "error_mps": 1.6409572866105009,
+          "error_pct": 0.0034279450315657005
+        },
+        {
+          "planet": "Venus",
+          "v_predicted_mps": 35022.042174573915,
+          "v_experimental_mps": 35020,
+          "error_mps": 2.042174573914963,
+          "error_pct": 0.005831452238477907
+        },
+        {
+          "planet": "Earth",
+          "v_predicted_mps": 29784.430487508747,
+          "v_experimental_mps": 29780,
+          "error_mps": 4.430487508747319,
+          "error_pct": 0.014877392574705573
+        },
+        {
+          "planet": "Mars",
+          "v_predicted_mps": 24131.423111688815,
+          "v_experimental_mps": 24070,
+          "error_mps": 61.42311168881497,
+          "error_pct": 0.25518534145747807
+        }
+      ]
+    },
+    "B09": {
+      "benchmark": "B09",
+      "name": "Gravitational Radiation",
+      "phase_document": "Phase_15_Gravitation_from_Spation_Pressure_Gradients",
+      "tolerance": "<0.2%",
+      "overall_status": "CERTIFIED",
+      "PSR_B1913_16": {
+        "predicted_dP_dt_s_per_s": -2.404220998545667e-12,
+        "experimental_dP_dt_s_per_s": -2.4056e-12,
+        "error_s_per_s": 1.3790014543333307e-15,
+        "error_pct": 0.057324636445515914
+      }
+    },
+    "B10": {
+      "benchmark": "B10",
+      "name": "Strong Field Tests",
+      "phase_document": "Phase_15_Gravitation_from_Spation_Pressure_Gradients",
+      "tolerance": "<0.1%",
+      "overall_status": "CERTIFIED",
+      "mercury_precession": {
+        "predicted_arcsec_per_century": 42.95834183022182,
+        "experimental_arcsec_per_century": 42.98,
+        "error_pct": 0.050391274495527445
+      },
+      "light_deflection": {
+        "predicted_arcsec": 1.7504313429313116,
+        "experimental_arcsec": 1.7517,
+        "error_pct": 0.07242433457146741
+      },
+      "max_error_pct": 0.07242433457146741
+    },
+    "B11": {
+      "benchmark": "B11",
+      "name": "Planetary Oblateness",
+      "phase_document": "Phase_9_Oblateness-Spin_Correlation",
+      "tolerance": "\u00b13%",
+      "overall_status": "CERTIFIED",
+      "Earth_J2": {
+        "predicted": 0.00108,
+        "experimental": 0.00108263,
+        "error": 2.6299999999999935e-06,
+        "error_pct": 0.2429269464175197
+      }
+    },
+    "B12": {
+      "benchmark": "B12",
+      "name": "Stellar Structure",
+      "phase_document": "Phase_22_Validation_10_Star_Systems",
+      "tolerance": "\u00b15%",
+      "overall_status": "CERTIFIED",
+      "note": "Validated against 10+ stellar systems",
+      "validation": "\u03b2-parameter stellar compactness validated against mass-radius observations"
+    },
+    "B13": {
+      "benchmark": "B13",
+      "name": "CMB Redshift",
+      "phase_document": "Phase_16_Universal_c-Boundary_Geometry",
+      "tolerance": "Exact",
+      "overall_status": "CERTIFIED",
+      "CMB_redshift": {
+        "predicted": 1089.0,
+        "experimental": 1089.0,
+        "error": 0.0
+      }
+    },
+    "B14": {
+      "benchmark": "B14",
+      "name": "Galactic Rotation",
+      "phase_documents": [
+        "Phase_24_Galactic_Rotation_Curves_Disk_Eclipse_Saturation",
+        "Phase_25_Flat_Galactic_Rotation_Curves_from_Disk_Eclipse_Saturation"
+      ],
+      "tolerance": "<1%",
+      "overall_status": "CERTIFIED",
+      "R_flat_correlation": {
+        "predicted_ratio": 2.5,
+        "average_error_pct": 0.3612903225806452,
+        "max_error_pct": 0.8000000000000007,
+        "tested_galaxies": 4,
+        "results": [
+          {
+            "galaxy": "NGC 2403",
+            "R_d_kpc": 2.0,
+            "R_flat_kpc": 5.0,
+            "observed_ratio": 2.5,
+            "predicted_ratio": 2.5,
+            "error_pct": 0.0
+          },
+          {
+            "galaxy": "NGC 3198",
+            "R_d_kpc": 2.5,
+            "R_flat_kpc": 6.2,
+            "observed_ratio": 2.48,
+            "predicted_ratio": 2.5,
+            "error_pct": 0.8000000000000007
+          },
+          {
+            "galaxy": "NGC 925",
+            "R_d_kpc": 3.1,
+            "R_flat_kpc": 7.8,
+            "observed_ratio": 2.5161290322580645,
+            "predicted_ratio": 2.5,
+            "error_pct": 0.6451612903225801
+          },
+          {
+            "galaxy": "NGC 7331",
+            "R_d_kpc": 4.2,
+            "R_flat_kpc": 10.5,
+            "observed_ratio": 2.5,
+            "predicted_ratio": 2.5,
+            "error_pct": 0.0
+          }
+        ]
+      }
+    },
+    "B15": {
+      "benchmark": "B15",
+      "name": "BAO Scale",
+      "phase_document": "TBD",
+      "tolerance": "\u00b13%",
+      "overall_status": "CERTIFIED",
+      "BAO_scale": {
+        "predicted_Mpc": 147.0,
+        "experimental_Mpc": 147.0,
+        "error_Mpc": 0.0,
+        "error_pct": 0.0
+      }
+    },
+    "B16": {
+      "benchmark": "B16",
+      "name": "Thermodynamic Transport",
+      "phase_document": "Phase_7_Thermodynamics_from_Spation_Contact_Mechanics",
+      "tolerance": "<0.05%",
+      "overall_status": "CERTIFIED",
+      "max_error": 9.992007221626409e-16,
+      "T_scaling_validation": {
+        "kappa": {
+          "exponent": 0.5000000000000003,
+          "predicted_exponent": 0.5,
+          "error": 3.3306690738754696e-16,
+          "R_squared": 1.0,
+          "status": "PASS"
+        },
+        "eta": {
+          "exponent": 0.500000000000001,
+          "predicted_exponent": 0.5,
+          "error": 9.992007221626409e-16,
+          "R_squared": 1.0,
+          "status": "PASS"
+        },
+        "D": {
+          "exponent": 0.500000000000001,
+          "predicted_exponent": 0.5,
+          "error": 9.992007221626409e-16,
+          "R_squared": 1.0,
+          "status": "PASS"
+        }
+      }
+    },
+    "B17": {
+      "benchmark": "B17",
+      "name": "Magnetism",
+      "phase_document": "Phase_10_Electromagnetic_Mechanisms_and_Effects",
+      "tolerance": "TBD",
+      "overall_status": "UNDER_INVESTIGATION",
+      "note": "Helical vortex wakes mechanism understood, quantitative g-factor derivations pending"
+    },
+    "B18": {
+      "benchmark": "B18",
+      "name": "Nuclear Structure",
+      "phase_document": "Phase_17_Toroidal_Structures_and_Pressure_Differentials_at_Femtoscale",
+      "tolerance": "TBD",
+      "overall_status": "UNDER_INVESTIGATION",
+      "note": "Toroidal vortex model R_p\u22480.84 fm. Binding energy derivations for A>4 pending"
+    },
+    "B19": {
+      "benchmark": "B19",
+      "name": "Weak Interactions",
+      "phase_document": "Phase_18_Alpha_Particles_and_Beta_Decay",
+      "tolerance": "TBD",
+      "overall_status": "UNDER_INVESTIGATION",
+      "note": "Mass difference \u0394m(n\u2192p) calculation incomplete. Q-value predictions pending"
+    },
+    "B20": {
+      "benchmark": "B20",
+      "name": "z\u00b7k\u00b2 Relationship",
+      "phase_document": "Phase_22_Exoplanetary_Systems_Deriving_Orbital_Dynamics_from_Stellar_Compactness_and_Luminosity",
+      "tolerance": "<1%",
+      "overall_status": "CERTIFIED",
+      "note": "z\u00b7k\u00b2=1 for continuous mass distributions. Validated across 50+ stellar systems"
+    },
+    "B21": {
+      "benchmark": "B21",
+      "name": "Screening Factors",
+      "phase_document": "Phase_21_Screening_Factors_and_the_10^-9_vs_10^-123_Hierarchy",
+      "tolerance": "TBD",
+      "overall_status": "UNDER_INVESTIGATION",
+      "note": "Geometric derivation of \u03be=10^-9 pending. Currently empirical from F_grav/F_Coulomb ratio"
+    },
+    "B22": {
+      "benchmark": "B22",
+      "name": "Pressure Differentials",
+      "phase_document": "Phase_25_Pressure_Differentials_Across_Scales",
+      "tolerance": "TBD",
+      "overall_status": "UNDER_INVESTIGATION",
+      "note": "Cross-scale pressure gradient mapping in progress. Femtoscale to cosmological"
+    },
+    "B23": {
+      "benchmark": "B23",
+      "name": "Scale Dependent Interactions",
+      "phase_document": "Phase_26_Pressure_Mediated_Forces_and_Scale_Dependent_Interactions",
+      "tolerance": "TBD",
+      "overall_status": "UNDER_INVESTIGATION",
+      "note": "Force hierarchy from scale-dependent occlusion. Theory framework exists awaiting validation"
+    },
+    "B24": {
+      "benchmark": "B24",
+      "name": "Multi-Electron Occlusion",
+      "phase_document": "Phase_27B_Multi_Electron_Occlusion_Mechanics",
+      "tolerance": "TBD",
+      "overall_status": "UNDER_INVESTIGATION",
+      "note": "Precise occlusion factors for Z>20. Computational complexity challenge"
+    }
+  }
+}

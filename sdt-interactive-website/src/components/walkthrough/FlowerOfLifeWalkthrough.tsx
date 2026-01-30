@@ -176,18 +176,29 @@ export default function FlowerOfLifeWalkthrough() {
                 Choose your journey through the complete structural outline
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-400">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                  <div className="font-semibold text-white mb-1">Quick Tour</div>
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-400">
+                <button 
+                  onClick={() => handlePathSelect('path1')}
+                  className="bg-white/10 hover:bg-white/20 hover:scale-105 transition-all backdrop-blur-sm rounded-lg px-4 py-2 text-left cursor-pointer border border-transparent hover:border-amber-500/50"
+                >
+                  <div className="font-semibold text-white mb-1">Quick Tour ⚡</div>
                   <div>15-minute introduction</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                  <div className="font-semibold text-white mb-1">Deep Dive</div>
+                </button>
+                <button 
+                  onClick={() => handlePathSelect('path2')}
+                  className="bg-white/10 hover:bg-white/20 hover:scale-105 transition-all backdrop-blur-sm rounded-lg px-4 py-2 text-left cursor-pointer border border-transparent hover:border-blue-500/50"
+                >
+                  <div className="font-semibold text-white mb-1">Deep Dive 🔬</div>
                   <div>Comprehensive exploration</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                  <div className="font-semibold text-white mb-1">Scientific Framework</div>
+                </button>
+                <button 
+                  onClick={() => handlePathSelect('path3')}
+                  className="bg-white/10 hover:bg-white/20 hover:scale-105 transition-all backdrop-blur-sm rounded-lg px-4 py-2 text-left cursor-pointer border border-transparent hover:border-purple-500/50"
+                >
+                  <div className="font-semibold text-white mb-1">Scientific Framework 📐</div>
                   <div>Rigorous physics language</div>
-                </div>
+                </button>
+              </div>
               </div>
             </div>
           </div>
@@ -217,6 +228,9 @@ export default function FlowerOfLifeWalkthrough() {
     </div>
   );
 }
+
+
+
 
 
 

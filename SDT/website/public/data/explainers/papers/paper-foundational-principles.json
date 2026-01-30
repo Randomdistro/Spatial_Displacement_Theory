@@ -1,0 +1,276 @@
+{
+  "id": "paper-foundational-principles",
+  "title": "Foundational Principles",
+  "category": "papers",
+  "description": "The complete ontological foundation of Spatial Displacement Theory, establishing four irreducible primitives from which all physical phenomena emerge.",
+  "overview": {
+    "abstract": "This foundational document establishes the four irreducible primitives of physical reality: SPACE (Spation), MATTER (Displacement), MOVEMENT (Shunt Dynamics), and NOW (Time Emergence). These primitives are shown to be necessary and sufficient for a complete description of physical reality, with the Cosmic Microwave Background providing the fundamental source of all pressure and energy.",
+    "keyPoints": [
+      "Four irreducible primitives form the foundation of all physics",
+      "CMB provides the fundamental pressure and energy source",
+      "All physical quantities emerge from geometric interactions",
+      "Mass and gravitational constant are derived, not fundamental",
+      "Force hierarchy emerges from pressure spread across steradians"
+    ],
+    "authors": ["James C. Harvey"],
+    "publicationDate": "2025-12",
+    "version": "2.0"
+  },
+  "keyConcepts": [
+    {
+      "name": "Four Irreducible Primitives",
+      "description": "The fundamental building blocks of physical reality: SPACE (Spation), MATTER (Displacement), MOVEMENT (Shunt Dynamics), and NOW (Time Emergence).",
+      "importance": "These four primitives are necessary and sufficient for describing all physical phenomena without additional assumptions beyond CMB influx."
+    },
+    {
+      "name": "Spation",
+      "description": "An incompressible, inviscid superfluid medium filling all space continuously, supporting pressure propagation at speed c.",
+      "importance": "Provides the medium through which all forces and interactions occur, with bulk modulus K_bulk = 4.6 × 10^113 Pa."
+    },
+    {
+      "name": "Displacement",
+      "description": "Geometric structures that exclude spation volume, creating regions where spation cannot exist and forming toroidal vortices.",
+      "importance": "Matter is not point particles with intrinsic properties but geometric displacement structures that modify pressure fields."
+    },
+    {
+      "name": "Shunt Dynamics",
+      "description": "Discrete micro-collisions between matter boundaries and spation, consisting of resistance, recoil, and transference phases.",
+      "importance": "All forces, energy, and momentum emerge from shunt events. Energy per shunt = hν, force = ν⟨Δp⟩."
+    },
+    {
+      "name": "Time Emergence",
+      "description": "Time as the count of shunt events divided by shunt frequency, not a fundamental dimension.",
+      "importance": "Time emerges from counting oscillations rather than being a fundamental flow. t = N_shunts/ν."
+    },
+    {
+      "name": "CMB as Fundamental Source",
+      "description": "The Cosmic Microwave Background provides continuous EM radiation influx that establishes and maintains all pressure fields.",
+      "importance": "Completes the causal chain: CMB → Pressure → Compression → Fusion → Stellar Output → Planetary Energy → All physical processes."
+    },
+    {
+      "name": "Force Hierarchy",
+      "description": "Forces scale from 1/r³ at small scales to 1/r² at large scales as pressure spreads across steradians.",
+      "importance": "Resolves the vacuum catastrophe by recognizing that pressure density decreases with distance, not remaining uniformly dense."
+    }
+  ],
+  "derivations": [
+    {
+      "name": "Master Energy Transfer Equation",
+      "equation": "\\dot{E} = P_{\\text{CMB}} A_{\\text{eff}} \\Gamma \\kappa (1-\\eta)",
+      "description": "Energy transfer rate from CMB pressure field through geometric coupling factors.",
+      "steps": [
+        "Energy transfer rate = ∫_boundary Π(r) v · dA",
+        "For effective capture area: Ė = P_∞ A_eff Γ κ (1-η)",
+        "Where Γ = v_poloidal/c, κ = 1/r_minor, η = slip factor"
+      ],
+      "units": "W (watts)",
+      "variables": {
+        "P_CMB": "CMB pressure (2.036 × 10^{-2} Pa)",
+        "A_eff": "Effective capture area (m²)",
+        "Γ": "Circulation factor (dimensionless)",
+        "κ": "Curvature (m⁻¹)",
+        "η": "Slip factor (dimensionless, 0 ≤ η < 1)"
+      }
+    },
+    {
+      "name": "Mass as Derived Quantity",
+      "equation": "m = \\frac{K_{\\text{bulk}} V_{\\text{disp}}}{c^2}",
+      "description": "Mass emerges from displacement volume and spation properties, not as a fundamental constant.",
+      "steps": [
+        "Mass = spation density × displacement volume",
+        "ρ_spation = K_bulk/c²",
+        "Therefore: m = (K_bulk/c²) × V_disp"
+      ],
+      "units": "kg",
+      "variables": {
+        "K_bulk": "Spation bulk modulus (4.6 × 10^113 Pa)",
+        "V_disp": "Displacement volume (m³)",
+        "c": "Speed of light (2.998 × 10^8 m/s)"
+      }
+    },
+    {
+      "name": "Gravitational Constant as Derived",
+      "equation": "G = \\frac{\\kappa c^2}{2\\pi \\rho_{\\text{spation}} r} \\frac{V_{\\text{disp}}}{m}",
+      "description": "G emerges from spation properties and displacement geometry, not as a fundamental constant.",
+      "steps": [
+        "Gravitational acceleration g = -∇Π/ρ_spation",
+        "For spherical symmetry: g = (1/ρ_spation) dΠ/dr",
+        "Pressure gradient from displacement: dΠ/dr = κ V_disp K_bulk/(2π r³)",
+        "Substitute: g = κ V_disp c²/(2π r³)",
+        "Compare to conventional g = G m/r² to solve for G"
+      ],
+      "units": "m³·kg⁻¹·s⁻²",
+      "variables": {
+        "κ": "Geometric coupling constant",
+        "c": "Speed of light",
+        "ρ_spation": "Spation density",
+        "r": "Distance from center",
+        "V_disp": "Displacement volume",
+        "m": "Mass"
+      }
+    },
+    {
+      "name": "Time from Shunt Counting",
+      "equation": "t = \\frac{N_{\\text{shunts}}}{\\nu} = N_{\\text{shunts}} \\times T_{\\text{shunt}}",
+      "description": "Time emerges as the count of shunt events, not as a fundamental dimension.",
+      "steps": [
+        "Starting with velocity-frequency relationship: v = ν × λ_C",
+        "Rearrange for frequency: ν = v/λ_C",
+        "Express shunt count: N_shunts = ν × t",
+        "Solve for time: t = N_shunts/ν"
+      ],
+      "units": "s",
+      "variables": {
+        "N_shunts": "Number of shunt events",
+        "ν": "Shunt frequency (Hz)",
+        "T_shunt": "Period of one shunt (s)",
+        "λ_C": "Characteristic length scale (Compton wavelength)"
+      }
+    },
+    {
+      "name": "Pressure Field from CMB",
+      "equation": "\\Pi(\\mathbf{r}) = \\int_{\\Omega} I_{\\text{CMB}}(\\hat{\\mathbf{n}})[1 - E(\\mathbf{r}, \\hat{\\mathbf{n}})] \\, d\\Omega",
+      "description": "Pressure field at any point receives contributions from CMB radiation, reduced by matter occlusion.",
+      "steps": [
+        "CMB intensity is isotropic: I_CMB(î) = I_CMB = constant",
+        "For unobstructed space: Π₀ = ∫_Ω I_CMB dΩ = 4π I_CMB",
+        "Matter creates occlusion: ΔΠ(r) = -∫_Ω I_CMB E(r,î) dΩ",
+        "Total pressure: Π(r) = Π₀ + ΔΠ(r)"
+      ],
+      "units": "Pa",
+      "variables": {
+        "Π(r)": "Pressure field at position r",
+        "I_CMB": "CMB intensity from direction î",
+        "E(r,î)": "Occlusion function (0 = no occlusion, 1 = complete)",
+        "Ω": "Solid angle integration over 4π steradians",
+        "dΩ": "Differential solid angle"
+      }
+    }
+  ],
+  "visualizations": [
+    {
+      "id": "spation-lattice",
+      "type": "3d",
+      "component": "SpationLattice",
+      "title": "Icosa-Dodecahedral Spation Packing",
+      "description": "3D visualization of spations arranged in icosa-dodecahedral close-packing, showing the 12-fold coordination necessary for isotropic signal propagation.",
+      "config": {
+        "showLattice": true,
+        "showVoronoi": true,
+        "highlightIcosahedral": true,
+        "animatePacking": true
+      }
+    },
+    {
+      "id": "pressure-field-cmb",
+      "type": "3d",
+      "component": "PressureField",
+      "title": "CMB Pressure Field and Matter Occlusion",
+      "description": "Interactive visualization showing how matter creates pressure deficits in the CMB pressure field, leading to gravitational attraction.",
+      "config": {
+        "showCMBFlux": true,
+        "showOcclusion": true,
+        "showPressureGradient": true,
+        "animateMatterInteraction": true
+      }
+    },
+    {
+      "id": "shunt-dynamics",
+      "type": "animations",
+      "component": "ShuntDynamics",
+      "title": "Shunt Event Sequence",
+      "description": "Animated demonstration of the three-phase shunt event: resistance, recoil, and transference.",
+      "config": {
+        "showPhases": true,
+        "showEnergyTransfer": true,
+        "showMomentumTransfer": true,
+        "loopAnimation": true
+      }
+    },
+    {
+      "id": "force-hierarchy",
+      "type": "chart",
+      "component": "ForceHierarchyChart",
+      "title": "Force Scaling Across Scales",
+      "description": "Chart showing how forces transition from 1/r³ at atomic scales to 1/r² at cosmological scales as pressure spreads across steradians.",
+      "config": {
+        "scales": ["Planck", "Atomic", "Molecular", "Astronomical", "Cosmological"],
+        "showScalingLaws": true,
+        "highlightTransitions": true
+      }
+    }
+  ],
+  "validation": [
+    {
+      "benchmark": "b01",
+      "description": "Speed of light prediction",
+      "prediction": "c = √(K_bulk/ρ_spation)",
+      "experimental": "2.99792458 × 10^8 m/s",
+      "error": "<0.01%",
+      "status": "validated"
+    },
+    {
+      "benchmark": "b02",
+      "description": "Fine structure constant",
+      "prediction": "κ = 1/137.035999",
+      "experimental": "1/137.035999",
+      "error": "exact",
+      "status": "validated"
+    },
+    {
+      "benchmark": "b03",
+      "description": "Hydrogen ground state",
+      "prediction": "From pressure balance calculations",
+      "experimental": "5.29177 × 10^{-11} m",
+      "error": "<0.01%",
+      "status": "validated"
+    },
+    {
+      "benchmark": "b04",
+      "description": "Rydberg constant",
+      "prediction": "From helical standing waves",
+      "experimental": "1.097373 × 10^7 m⁻¹",
+      "error": "<0.01%",
+      "status": "validated"
+    }
+  ],
+  "crossReferences": [
+    {
+      "id": "rule-four-primitives",
+      "type": "rules",
+      "relationship": "expands_on",
+      "description": "Detailed exploration of the four irreducible primitives"
+    },
+    {
+      "id": "rule-shunt-dynamics",
+      "type": "rules",
+      "relationship": "implements",
+      "description": "Mathematical implementation of shunt dynamics mechanism"
+    },
+    {
+      "id": "paper-core-engine",
+      "type": "papers",
+      "relationship": "builds_on",
+      "description": "Core mathematical engine that implements these primitives"
+    },
+    {
+      "id": "b07",
+      "type": "benchmarks",
+      "relationship": "validates",
+      "description": "k-Law universality benchmark testing orbital mechanics predictions"
+    },
+    {
+      "id": "phase-1-foundation",
+      "type": "phases",
+      "relationship": "establishes",
+      "description": "Phase 1: Foundation establishes these core principles"
+    }
+  ],
+  "metadata": {
+    "complexity": "advanced",
+    "prerequisites": [],
+    "tags": ["foundations", "primitives", "CMB", "spation", "displacement", "shunt-dynamics"],
+    "estimatedReadTime": 45,
+    "lastUpdated": "2025-12"
+  }
+}

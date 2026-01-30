@@ -19,6 +19,18 @@
         "title": "🔬 Interactive: Toroidal Electron Visualization",
         "content": "See the electron's toroidal structure, helical standing wave, and orbital dynamics around the proton.",
         "simulationId": "toroidal-electron"
+      },
+      "ionization-vis": {
+        "title": "⚡ Interactive: Nuclear Pressure Gradient",
+        "content": "Visualize how ionization energy is stored in the nuclear field geometry, not the electron itself.",
+        "simulationId": "nuclear-gradient",
+        "category": "simulation"
+      },
+      "wavelength-koppa": {
+        "title": "📊 Data: Wavelength-ϟ² Validation",
+        "content": "Explore the λ_ion = ϟ² relationship across all 118 elements.",
+        "simulationId": "wavelength-koppa",
+        "category": "simulation"
       }
     }
   },
@@ -39,4 +51,5 @@
   "previousNodeId": "path2-node2",
   "nextNodeId": "path2-node4"
 }
+
 

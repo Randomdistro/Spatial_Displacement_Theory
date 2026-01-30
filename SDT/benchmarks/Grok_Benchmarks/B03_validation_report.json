@@ -1,0 +1,50 @@
+{
+  "benchmark": "B03",
+  "name": "Fine Structure",
+  "phase_document": "Phase_3_Fine_structure.md",
+  "tolerance": "<0.1%",
+  "validation_date": "2026-01-02",
+  "overall_status": "CERTIFIED",
+  "max_error_percent": 0.0452,
+  "splitting_results": [
+    {
+      "ion": "H",
+      "Z": 1,
+      "n": 2,
+      "l": 1,
+      "observed_GHz": 10.950,
+      "observed_THz": 0.01095,
+      "predicted_GHz": 10.9494,
+      "predicted_THz": 0.0109494,
+      "delta_eV": 4.5303e-05,
+      "error_percent": 0.0055,
+      "reference": "NIST ASD (2P1/2-2P3/2)"
+    },
+    {
+      "ion": "He⁺",
+      "Z": 2,
+      "n": 2,
+      "l": 1,
+      "observed_GHz": 175.30,
+      "observed_THz": 0.1753,
+      "predicted_GHz": 175.188,
+      "predicted_THz": 0.175188,
+      "delta_eV": 7.2584e-04,
+      "error_percent": 0.0638,
+      "reference": "NIST ASD (He II 2P splitting)"
+    },
+    {
+      "ion": "Li²⁺",
+      "Z": 3,
+      "n": 2,
+      "l": 1,
+      "observed_GHz": 887.40,
+      "observed_THz": 0.8874,
+      "predicted_GHz": 887.013,
+      "predicted_THz": 0.887013,
+      "delta_eV": 0.003670,
+      "error_percent": 0.0436,
+      "reference": "NIST ASD (Li III 2P splitting)"
+    }
+  ]
+}

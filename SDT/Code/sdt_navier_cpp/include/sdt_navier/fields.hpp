@@ -111,6 +111,22 @@ void initialize_fields(
 );
 
 /**
+ * @brief Compute asymptotic pressure P_infinity from SDT formula
+ * P_infinity = (ħ^2 * n_e * rho_n) / (2 * m_e * r_n^2 * alpha^2)
+ */
+double compute_p_infinity(
+    double n_e,
+    double rho_n,
+    double r_n,
+    double alpha = sdt::ALPHA
+);
+
+/**
+ * @brief Hydrogen reference P_infinity (using SDT compendium constants)
+ */
+double compute_p_infinity_hydrogen();
+
+/**
  * @brief Add turbine source to fields
  * @param fields Field system to modify
  * @param position Grid indices (i, j, k)

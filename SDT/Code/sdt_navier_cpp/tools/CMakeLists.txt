@@ -7,18 +7,24 @@ add_executable(stellar_calculator stellar_calculator.cpp)
 add_executable(atomic_calculator atomic_calculator.cpp)
 add_executable(galactic_rotation galactic_rotation.cpp)
 add_executable(validate_lk2_relation validate_lk2_relation.cpp)
+add_executable(benchmarks_b25_b50 benchmarks_b25_b50.cpp)
 
 # Set C++20 with std::format support
 target_compile_features(stellar_calculator PRIVATE cxx_std_20)
 target_compile_features(atomic_calculator PRIVATE cxx_std_20)
 target_compile_features(galactic_rotation PRIVATE cxx_std_20)
 target_compile_features(validate_lk2_relation PRIVATE cxx_std_20)
+target_compile_features(benchmarks_b25_b50 PRIVATE cxx_std_20)
 
 # Include header directories
 target_include_directories(stellar_calculator PRIVATE ${CMAKE_SOURCE_DIR}/include)
 target_include_directories(atomic_calculator PRIVATE ${CMAKE_SOURCE_DIR}/include)
 target_include_directories(galactic_rotation PRIVATE ${CMAKE_SOURCE_DIR}/include)
 target_include_directories(validate_lk2_relation PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(benchmarks_b25_b50 PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
+# Link core library (needed for FieldSystem + compute_p_infinity)
+target_link_libraries(benchmarks_b25_b50 PRIVATE sdt_navier)
 
 # Compiler-specific options for optimal performance
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
@@ -26,15 +32,17 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     target_compile_options(atomic_calculator PRIVATE /W4 /O2)
     target_compile_options(galactic_rotation PRIVATE /W4 /O2)
     target_compile_options(validate_lk2_relation PRIVATE /W4 /O2)
+    target_compile_options(benchmarks_b25_b50 PRIVATE /W4 /O2)
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(stellar_calculator PRIVATE -Wall -Wextra -O3 -march=native)
     target_compile_options(atomic_calculator PRIVATE -Wall -Wextra -O3 -march=native)
     target_compile_options(galactic_rotation PRIVATE -Wall -Wextra -O3 -march=native)
     target_compile_options(validate_lk2_relation PRIVATE -Wall -Wextra -O3 -march=native)
+    target_compile_options(benchmarks_b25_b50 PRIVATE -Wall -Wextra -O3 -march=native)
 endif()
 
 # Install executables
-install(TARGETS stellar_calculator atomic_calculator galactic_rotation validate_lk2_relation
+install(TARGETS stellar_calculator atomic_calculator galactic_rotation validate_lk2_relation benchmarks_b25_b50
     RUNTIME DESTINATION bin
 )
 

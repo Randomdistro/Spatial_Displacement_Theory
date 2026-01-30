@@ -1,0 +1,27 @@
+{
+  "benchmark_id": "B26",
+  "title": "Inter-Alpha Occlusion Overlap Correction",
+  "status": "CERTIFIED",
+  "validation_date": "2026-01-15T17:28:31Z",
+  "inputs": {
+    "data_sources": ["Internal occlusion sampling (no external data)"],
+    "data_files": [],
+    "constants": ["sdt::nuclear::packing::occlusion_solid_angle_sampled", "sdt::nuclear::occlusion::math::spherical_occlusion"]
+  },
+  "methods": {
+    "equations": ["analytic_sum = Σ_i Ω_i (no overlap correction)", "sampled = 4π·(occluded_rays / total_rays)", "relative_difference = |sampled - analytic_sum| / analytic_sum"],
+    "pipeline": ["Build alpha-cluster arrangement (tetrahedron)", "Compute analytic per-node Σ occlusion(neighbor) without overlap correction", "Compute overlap-corrected per-node union occlusion via Fibonacci ray sampling (2k and 10k)"]
+  },
+  "results": {
+    "total_tested": 2,
+    "within_tolerance": 2,
+    "max_error_percent": 0.1113499697,
+    "mean_error_percent": 0.07247177551,
+    "r_squared": 0
+  },
+  "comparison": {
+    "metric": "relative difference",
+    "tolerance": "≤10% at 2k samples; ≤5% at 10k samples"
+  },
+  "conclusion": "Overlap-corrected occlusion converges: rel_diff(2k)=0.0011135, rel_diff(10k)=0.000335936"
+}

@@ -1,0 +1,42 @@
+{
+  "proton": {
+    "mu_sdt": 2.79284734462,
+    "gamma": 0.546,
+    "kappa": 1190000000000000.0,
+    "eta": 0.0003,
+    "coupling_efficiency": 0.9997,
+    "f_trefoil": 3.0,
+    "geom_scale": 1.433232498258317e-15
+  },
+  "neutron": {
+    "mu_sdt": -1.91304272,
+    "gamma_e_n": 0.531,
+    "kappa_e_n": 333300000000000.0,
+    "eta_n_bound": 0.0019,
+    "coupling_efficiency": 0.9981,
+    "nesting_factor": 7.56,
+    "mu_from_geometry": -1.9140017608173236,
+    "reversed_circulation": true
+  },
+  "hydrogen": {
+    "mu_p": 2.79284734462,
+    "mu_e_mu_b": -1.001159652,
+    "mu_e_mu_n": -1838.2819715600613,
+    "mu_total": -1835.4891242154413,
+    "note": "Depends on measurement method (NMR vs EPR)"
+  },
+  "deuterium": {
+    "mu_sdt": 0.8569297043798801,
+    "mu_p": 2.79284734462,
+    "mu_n": -1.91304272,
+    "f_damp": 0.974,
+    "structure": "Coaxial p-n stack with shared electron"
+  },
+  "deuteron_core": {
+    "mu_sdt": 0.8798046246200002,
+    "mu_p": 2.79284734462,
+    "mu_n": -1.91304272,
+    "structure": "Bare p-n (no electron)",
+    "difference_from_deuterium": 0.022874920240120056
+  }
+}

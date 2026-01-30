@@ -1,0 +1,50 @@
+{
+  "benchmark": "B02",
+  "name": "Rydberg Formula",
+  "phase_document": "Phase_2_Rydberg_Spectrum_from_Helical_Standing_Waves",
+  "tolerance": "<0.01%",
+  "overall_status": "CERTIFIED",
+  "max_error_pct": 0.008953789428574822,
+  "spectral_results": [
+    {
+      "transition": "H Lyman-\u03b1",
+      "n_initial": 2,
+      "n_final": 1,
+      "Z": 1,
+      "lambda_exp_nm": 121.56701,
+      "lambda_sdt_nm": 121.56844561723136,
+      "error_nm": 0.001435617231365427,
+      "error_pct": 0.0011809266604199831
+    },
+    {
+      "transition": "H Balmer-\u03b1",
+      "n_initial": 3,
+      "n_final": 2,
+      "Z": 1,
+      "lambda_exp_nm": 656.461,
+      "lambda_sdt_nm": 656.4696063330493,
+      "error_nm": 0.008606333049328896,
+      "error_pct": 0.0013110197025152897
+    },
+    {
+      "transition": "He II Lyman-\u03b1",
+      "n_initial": 2,
+      "n_final": 1,
+      "Z": 2,
+      "lambda_exp_nm": 30.37822,
+      "lambda_sdt_nm": 30.37973264133569,
+      "error_nm": 0.0015126413356902901,
+      "error_pct": 0.004979361317714765
+    },
+    {
+      "transition": "Li III Lyman-\u03b1",
+      "n_initial": 2,
+      "n_final": 1,
+      "Z": 3,
+      "lambda_exp_nm": 13.5001,
+      "lambda_sdt_nm": 13.501308770526647,
+      "error_nm": 0.0012087705266470294,
+      "error_pct": 0.008953789428574822
+    }
+  ]
+}

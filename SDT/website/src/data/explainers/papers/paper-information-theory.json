@@ -1,0 +1,194 @@
+{
+  "id": "paper-information-theory",
+  "title": "Information Theory from Spation States",
+  "category": "papers",
+  "description": "Complete derivation of information, entropy, and channel capacity from SDT spation configurations.",
+  "overview": {
+    "abstract": "We derive information theory (information content, entropy, channel capacity, quantum information) from Spatial Displacement Theory using spation state configurations. Information is encoded in spation configurations. Entropy comes from geometric counting. Channel capacity arises from pressure propagation. Quantum information reflects spation state superpositions. All information theory emerges from pressure-mediated spation states, ultimately driven by CMB energy influx.",
+    "keyPoints": [
+      "Information encoded in spation configuration states",
+      "Entropy arises from geometric counting of accessible states",
+      "Channel capacity determined by pressure propagation through spation",
+      "Quantum information reflects spation state superpositions",
+      "CMB provides continuous energy influx maintaining information encoding"
+    ],
+    "authors": ["James C. Harvey"],
+    "publicationDate": "2025-12",
+    "version": "1.0"
+  },
+  "keyConcepts": [
+    {
+      "name": "Information Content",
+      "description": "Information content is encoded in spation configuration states, measured as I = -log₂ P(state) where P is the probability of spation configuration.",
+      "importance": "Connects Shannon information theory directly to physical spation states rather than abstract mathematical constructs."
+    },
+    {
+      "name": "Entropy from Geometry",
+      "description": "Entropy S = -k_B Σᵢ Pᵢ ln Pᵢ emerges from geometric counting of accessible spation configurations.",
+      "importance": "Thermodynamic entropy is shown to be fundamentally geometric, arising from counting possible spation arrangements."
+    },
+    {
+      "name": "Channel Capacity",
+      "description": "Channel capacity C = max_{P(X)} I(X;Y) is determined by pressure propagation through the spation medium.",
+      "importance": "Information transmission limits are set by physical properties of pressure wave propagation in spation."
+    },
+    {
+      "name": "Quantum Information",
+      "description": "Quantum information processing reflects spation state superpositions, where quantum bits correspond to spation configuration superpositions.",
+      "importance": "Quantum computing and information processing emerge naturally from spation superposition states."
+    },
+    {
+      "name": "CMB-Driven Information",
+      "description": "The Cosmic Microwave Background provides continuous energy influx that maintains information encoding in spation states.",
+      "importance": "Information processing is ultimately powered by the same CMB energy source that drives all physical processes."
+    }
+  ],
+  "derivations": [
+    {
+      "name": "Information Content",
+      "equation": "I = -\\log_2 P(\\text{state})",
+      "description": "Information content of a spation configuration state.",
+      "steps": [
+        "Each spation can exist in different configuration states",
+        "Probability P(state) of each configuration determines its likelihood",
+        "Information content I measures how surprising/unlikely the state is",
+        "Logarithmic measure ensures additivity for independent configurations"
+      ],
+      "units": "bits",
+      "variables": {
+        "I": "Information content",
+        "P(state)": "Probability of spation configuration state",
+        "log₂": "Base-2 logarithm for bit measurement"
+      }
+    },
+    {
+      "name": "Geometric Entropy",
+      "equation": "S = -k_B \\sum_i P_i \\ln P_i",
+      "description": "Entropy from geometric counting of spation configuration states.",
+      "steps": [
+        "Count total number of accessible spation configurations Ω",
+        "Each configuration i has probability P_i = 1/Ω (for uniform distribution)",
+        "Boltzmann entropy S = k_B ln Ω",
+        "Shannon entropy generalizes to non-uniform distributions"
+      ],
+      "units": "J/K",
+      "variables": {
+        "S": "Entropy",
+        "k_B": "Boltzmann constant (1.381 × 10^{-23} J/K)",
+        "P_i": "Probability of configuration i",
+        "Ω": "Total number of accessible configurations"
+      }
+    },
+    {
+      "name": "Channel Capacity",
+      "equation": "C = \\max_{P(X)} I(X;Y)",
+      "description": "Maximum information transmission rate through pressure-mediated spation channels.",
+      "steps": [
+        "Information propagates through pressure waves in spation",
+        "Channel capacity limited by pressure wave propagation speed c",
+        "Mutual information I(X;Y) between input X and output Y configurations",
+        "Maximum over input distributions gives fundamental channel limit"
+      ],
+      "units": "bits/s",
+      "variables": {
+        "C": "Channel capacity",
+        "I(X;Y)": "Mutual information between input and output",
+        "P(X)": "Input probability distribution",
+        "c": "Speed of light (pressure wave propagation speed)"
+      }
+    }
+  ],
+  "visualizations": [
+    {
+      "id": "spation-configurations",
+      "type": "3d",
+      "component": "SpationLattice",
+      "title": "Spation Configuration States",
+      "description": "3D visualization showing different spation configuration states that encode information.",
+      "config": {
+        "showConfigurations": true,
+        "highlightStates": true,
+        "animateTransitions": true,
+        "showProbabilityDistribution": true
+      }
+    },
+    {
+      "id": "pressure-channels",
+      "type": "3d",
+      "component": "PressureField",
+      "title": "Pressure-Mediated Information Channels",
+      "description": "Visualization of how information propagates through pressure waves in the spation medium.",
+      "config": {
+        "showPressureWaves": true,
+        "showInformationFlow": true,
+        "animatePropagation": true,
+        "showChannelCapacity": true
+      }
+    },
+    {
+      "id": "entropy-landscape",
+      "type": "chart",
+      "component": "EntropyLandscape",
+      "title": "Geometric Entropy Landscape",
+      "description": "Interactive visualization showing how entropy varies with spation configuration probabilities.",
+      "config": {
+        "dimensions": 3,
+        "showPhaseSpace": true,
+        "animateTransitions": true,
+        "highlightMaxEntropy": true
+      }
+    }
+  ],
+  "validation": [
+    {
+      "benchmark": "b01",
+      "description": "Channel capacity limit",
+      "prediction": "Limited by pressure wave propagation speed c",
+      "experimental": "Information transmission limited by c",
+      "error": "consistent",
+      "status": "validated"
+    },
+    {
+      "benchmark": "b02",
+      "description": "Boltzmann entropy",
+      "prediction": "S = k_B ln Ω from geometric counting",
+      "experimental": "S = k_B ln Ω (thermodynamic entropy)",
+      "error": "exact",
+      "status": "validated"
+    }
+  ],
+  "crossReferences": [
+    {
+      "id": "paper-foundational-principles",
+      "type": "papers",
+      "relationship": "builds_on",
+      "description": "Applies spation primitives to information theory"
+    },
+    {
+      "id": "rule-four-primitives",
+      "type": "rules",
+      "relationship": "uses",
+      "description": "Information encoded in spation state primitives"
+    },
+    {
+      "id": "rule-shunt-dynamics",
+      "type": "rules",
+      "relationship": "related_to",
+      "description": "Information processing through shunt events"
+    },
+    {
+      "id": "b07",
+      "type": "benchmarks",
+      "relationship": "validates",
+      "description": "Information theory predictions validated by benchmarks"
+    }
+  ],
+  "metadata": {
+    "complexity": "intermediate",
+    "prerequisites": ["paper-foundational-principles"],
+    "tags": ["information-theory", "entropy", "channel-capacity", "quantum-information", "spation-states"],
+    "estimatedReadTime": 25,
+    "lastUpdated": "2025-12"
+  }
+}
+

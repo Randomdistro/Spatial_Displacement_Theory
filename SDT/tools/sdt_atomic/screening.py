@@ -7,7 +7,7 @@ From Phase 6 and Phase 27B.
 
 import numpy as np
 from typing import List, Tuple, Dict, Optional
-from .constants import *
+from . import constants
 from . import occlusion
 
 
@@ -81,7 +81,7 @@ def slater_equivalent_screening(Z: int, n: int, l: int, config: List[Tuple[int, 
     return calculate_screening_factor(Z, n, l, config)
 
 
-def directional_occlusion_fraction(n: int, l: int, core_config: List[Tuple[int, int]]) -> float:
+def directional_occlusion_fraction(n: int, l: int, core_config: List[Tuple[int, int]], Z: int = None) -> float:
     """
     Calculate directional occlusion fraction Ξ_nℓ.
     
@@ -98,12 +98,18 @@ def directional_occlusion_fraction(n: int, l: int, core_config: List[Tuple[int, 
         Angular momentum quantum number
     core_config : List[Tuple[int, int]]
         Core electron configuration
+    Z : int, optional
+        Atomic number. If None, estimates from core_config length.
     
     Returns:
     --------
     Xi : float
         Unoccluded fraction (dimensionless, 0-1)
     """
+    # Estimate Z if not provided
+    if Z is None:
+        Z = len(core_config) + 1  # Approximate
+    
     # Get directions for orbital
     directions = occlusion.dodecardinal_frame_directions(n, l)
     
@@ -118,8 +124,8 @@ def directional_occlusion_fraction(n: int, l: int, core_config: List[Tuple[int, 
         for n_core, l_core in core_config:
             if n_core < n:  # Only inner electrons screen
                 # Approximate radius for core electron
-                r_core = A_0 * n_core**2 / Z
-                r_outer = A_0 * n**2 / Z
+                r_core = constants.A_0 * n_core**2 / Z
+                r_outer = constants.A_0 * n**2 / Z
                 
                 # Directional occlusion
                 core_directions = occlusion.dodecardinal_frame_directions(n_core, l_core)

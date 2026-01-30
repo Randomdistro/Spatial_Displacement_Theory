@@ -1,0 +1,21 @@
+{
+  "benchmark": "B21",
+  "name": "Screening Factors",
+  "phase_document": "Phase_21_Screening_Factors_and_the_10^-9_vs_10^-123_Hierarchy",
+  "tolerance": "<0.8%",
+  "validation_date": "2026-01-03T04:21:18.802867",
+  "overall_status": "UNDER_INVESTIGATION",
+  "screening_factor": {
+    "xi_geometric": 4.725897920604916e-72,
+    "xi_target": 1e-09,
+    "error": 1e-09,
+    "error_pct": 100.0,
+    "derivation": "xi = (R_atomic / R_cosmic)^2"
+  },
+  "force_hierarchy": {
+    "alpha_em": 0.0072973525693,
+    "alpha_grav": 5.906149417423905e-39,
+    "ratio_em_grav": 1.2355516350080588e+36
+  },
+  "max_error_pct": 100.0
+}

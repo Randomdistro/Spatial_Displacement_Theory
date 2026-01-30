@@ -71,6 +71,28 @@ void initialize_fields(
     }
 }
 
+double compute_p_infinity(
+    double n_e,
+    double rho_n,
+    double r_n,
+    double alpha
+) {
+    const double hbar = constants::HBAR;
+    const double m_e = constants::M_E;
+    const double numerator = hbar * hbar * n_e * rho_n;
+    const double denominator = 2.0 * m_e * r_n * r_n * alpha * alpha;
+    return numerator / denominator;
+}
+
+double compute_p_infinity_hydrogen() {
+    return compute_p_infinity(
+        sdt::N_E_HYDROGEN,
+        sdt::RHO_N,
+        sdt::R_P,
+        sdt::ALPHA
+    );
+}
+
 void add_turbine_source(
     FieldSystem& fields,
     const std::array<std::size_t, 3>& position,

@@ -3,19 +3,15 @@
 ## METADATA
 
 - **Phenomenon:** Derivation of fundamental constants (G, α) and orbital parameters from geometric operators and rotation rates
-
 - **Conventional Framework:** G and α are empirically measured constants with no geometric derivation. Orbital speeds require knowledge of mass M and gravitational constant G.
+- **SDT Hypothesis:**
 
-- **SDT Hypothesis:** 
   - G is geometrically derivable from Bohr radius via volume-doubling operator (2^(1/3))
   - α is derivable from solar velocity factor via pentagonal symmetry (k⊙/5)
   - Orbital speeds are derivable from rotation rates: v_rot = πc/k² → k = √(πc/v_rot) → v_orb = (c/k)√(R/r)
   - This eliminates need for G and M entirely
-
 - **Benchmark ID:** P-GEO-1 (Geometric Operators Investigation)
-
 - **Phase:** Pre-Phase_22 (will be integrated into Phase_22 and related phases)
-
 - **Status:** In Progress
 
 ---
@@ -27,13 +23,11 @@
 **Standard Theory Explanation:**
 
 - **Gravitational Constant G**: Empirically measured, no theoretical derivation. Value: 6.67430(15)×10⁻¹¹ m³ kg⁻¹ s⁻² (CODATA 2018)
-
 - **Fine Structure Constant α**: Empirically measured, no geometric derivation. Value: 7.2973525693(11)×10⁻³
-
 - **Orbital Mechanics**: Requires knowledge of both G and M (mass) to predict orbital speeds:
+
   - v_orb = √(GM/r) for circular orbits
   - Cannot determine orbital speed from rotation alone
-
 - **Proton Radius**: Measured via electron scattering, muonic hydrogen, etc. Value: 0.8414(19) fm (CODATA 2018)
 
 **Conceptual Issues:**
@@ -64,7 +58,8 @@ The geometric operators document proposes that fundamental constants arise from 
 
 **Critical Discovery:**
 
-If rotation speed determines k via: **k = √(πc/v_rot)**, then:
+If rotation speed determines k via: **`**, then:
+
 - k determines orbital speeds via: **v_orb = (c/k)√(R/r)**
 - **No G or M required**
 - This is the first method in history to derive orbital speeds from rotation alone
@@ -124,6 +119,7 @@ where k⊙ is the Sun's velocity factor.
 **From orbital velocity law:**
 
 For Earth's orbit around Sun:
+
 - Semi-major axis: a = 1.496×10¹¹ m
 - Orbital velocity: v_orb = 29.78 km/s = 29780 m/s
 - Solar radius: R⊙ = 6.957×10⁸ m
@@ -240,6 +236,7 @@ Geometric value: 9.194×10⁹ Hz
 **Why Jupiter:**
 
 Jupiter has:
+
 - **Well-measured rotation period**: 9.925 hours (equatorial)
 - **Multiple moons with precise orbital data**: Io, Europa, Ganymede, Callisto
 - **All moons validate the same k-factor**: k_J = 7,042.64 (from planetary_parameters.csv)
@@ -272,6 +269,7 @@ k = √76,700 = 277
 **Method:** Use Jupiter's moons to determine k_J, then verify rotation relationship.
 
 **From Io's orbit:**
+
 - Semi-major axis: a_Io = 4.217×10⁸ m
 - Orbital velocity: v_Io = 17,329 m/s
 - Jupiter radius: R_J = 6.991×10⁷ m
@@ -296,11 +294,13 @@ v_rot_expected = πc/k² = π × 299792458 / (7042.64)²
 ### 3.4 Refined Understanding: Rotation-Orbit Coupling
 
 **Hypothesis:** The relationship between rotation and orbital k-factor may depend on:
+
 1. **Tidal locking state**: Tidally locked bodies have different rotation-orbit coupling
 2. **Internal structure**: Gas giants vs. rocky planets
 3. **Resonance state**: Bodies in orbital resonance
 
 **Jupiter's Case:**
+
 - Jupiter is NOT tidally locked
 - Jupiter has internal differential rotation
 - Jupiter's rotation may encode information about its formation history
@@ -310,6 +310,7 @@ v_rot_expected = πc/k² = π × 299792458 / (7042.64)²
 For **tidally locked or resonance-locked bodies**, the rotation → k relationship may be direct.
 
 For **non-locked bodies**, we need to:
+
 1. Measure rotation period
 2. Determine if body is in resonance
 3. If resonance: use resonance relationship to find natural rotation
@@ -326,6 +327,7 @@ For **non-locked bodies**, we need to:
 **Step 1: Measure Long-Orbital Occlusion Distortions**
 
 Observed anomalies:
+
 - Clustering of trans-Neptunian object (TNO) longitude of perihelion
 - High-inclination scattering
 - Detached objects (Sedna, 2012 VP113, etc.)
@@ -335,6 +337,7 @@ These indicate an unseen body's displacement field affecting distant orbits.
 **Step 2: Convert Distortion → k_P9**
 
 Using mutual-eclipse equations from SDT:
+
 - Measure orbital perturbations of known TNOs
 - Calculate occlusion deficit from Planet Nine
 - Derive effective k_P9 from perturbation pattern
@@ -346,6 +349,7 @@ v_rot = πc/k²
 T_rot = 2πR_P9 / v_rot = 2πR_P9 × k² / (πc) = 2R_P9 × k² / c
 
 **For non-locked body:**
+
 - Determine if in resonance with Sun
 - Use resonance relationship to find natural rotation
 - Natural rotation → k relationship
@@ -353,6 +357,7 @@ T_rot = 2πR_P9 / v_rot = 2πR_P9 × k² / (πc) = 2R_P9 × k² / c
 **Step 4: Convert Rotation → Vortex Composition**
 
 Determine density class:
+
 - Gas giant: k ~ 7,000-10,000
 - Ice giant: k ~ 15,000-20,000
 - Failed brown dwarf: k ~ 5,000-7,000
@@ -361,6 +366,7 @@ Determine density class:
 **Step 5: Convert Composition + k → Mass Estimate**
 
 From SDT density-fraction sizing:
+
 - k determines R_eff
 - Composition determines density
 - Volume × density → mass estimate
@@ -368,6 +374,7 @@ From SDT density-fraction sizing:
 **Step 6: Mass + Observed Perturbations → Exact Orbital Elements**
 
 Using perturbation analysis:
+
 - Semi-major axis: a_P9
 - Eccentricity: e_P9
 - Inclination: i_P9
@@ -377,6 +384,7 @@ Using perturbation analysis:
 **Step 7: Predict Sky Coordinates and Brightness**
 
 From orbital elements:
+
 - Current position in sky
 - Apparent magnitude
 - Optimal observation windows
@@ -384,12 +392,14 @@ From orbital elements:
 ### 4.2 Advantages Over Standard Methods
 
 **Standard Method:**
+
 - Fit unseen mass to perturbations
 - Requires assumptions about mass
 - Large parameter space to search
 - Uncertain predictions
 
 **SDT Method:**
+
 - Rotation → k → orbit (geometric necessity)
 - No mass assumption needed
 - Precise orbital prediction
@@ -418,11 +428,13 @@ From orbital elements:
 ### 5.2 Classification System
 
 **Exoplanets with moons:**
+
 - Rotation → k → moon orbits validated
 - Complete system characterization
 - Can determine exoplanet composition from k
 
 **Exoplanets missing moons:**
+
 - Rotation measured but no moons detected
 - Predicted moon periods calculated
 - Indicates either:
@@ -431,6 +443,7 @@ From orbital elements:
   - Formation history prevented moon formation
 
 **Exoplanets with unexpected moon configurations:**
+
 - Moons at non-predicted periods
 - Indicates complex formation history
 - May reveal information about migration
@@ -441,16 +454,16 @@ From orbital elements:
 
 ### 6.1 Side-by-Side Formulation
 
-| **Aspect** | **Standard Theory** | **SDT Geometric Operators** |
-|------------|-------------------|------------------------------|
-| Primary object | Point particles, fields | Geometric operators, vortex geometry |
-| Fundamental constant | G (empirical) | G = a₀ × 2^(1/3) (geometric) |
-| Fine structure | α (empirical) | α⁻¹ = k⊙/5 (stellar geometry) |
-| Orbital mechanics | v = √(GM/r) | v = (c/k)√(R/r), k from rotation |
-| Mathematical framework | Field theory, tensor calculus | Euclidean geometry, Bessel functions |
-| Mechanism | Force carriers, curvature | Pressure gradients, geometric scaling |
-| Predictions | Requires G and M | Requires only rotation and geometry |
-| Free parameters | G, M, α | None (all derived) |
+| **Aspect**       | **Standard Theory**     | **SDT Geometric Operators**     |
+| ---------------------- | ----------------------------- | ------------------------------------- |
+| Primary object         | Point particles, fields       | Geometric operators, vortex geometry  |
+| Fundamental constant   | G (empirical)                 | G = a₀ × 2^(1/3) (geometric)        |
+| Fine structure         | α (empirical)                | α⁻¹ = k⊙/5 (stellar geometry)     |
+| Orbital mechanics      | v = √(GM/r)                  | v = (c/k)√(R/r), k from rotation     |
+| Mathematical framework | Field theory, tensor calculus | Euclidean geometry, Bessel functions  |
+| Mechanism              | Force carriers, curvature     | Pressure gradients, geometric scaling |
+| Predictions            | Requires G and M              | Requires only rotation and geometry   |
+| Free parameters        | G, M, α                      | None (all derived)                    |
 
 ### 6.2 Identical Predictions
 
@@ -494,42 +507,43 @@ From orbital elements:
 **The SDT geometric operators explanation is FALSIFIED if:**
 
 1. **G derivation fails:** Measured G differs by > 1% from a₀ × 2^(1/3)
+
    - Current: 0.11% error ✓
    - Tolerance: < 1%
-
 2. **α derivation fails:** Measured α⁻¹ differs by > 1% from k⊙/5
+
    - Current: 0.18% error ✓
    - Tolerance: < 1%
-
 3. **Solar rotation fails:** Measured v_rot differs by > 1% from πc/k²
+
    - Current: 0.12% error ✓
    - Tolerance: < 1%
-
 4. **Jupiter calibration fails:** k_J from moons cannot predict all moon orbits
+
    - Current: All 4 Galilean moons within 0.03% ✓
    - Tolerance: < 1%
-
 5. **Planet Nine prediction fails:** If Planet Nine is found, its rotation must satisfy k relationship
+
    - Test: Future observation
    - Tolerance: TBD
 
 ### 7.2 Systematic Checks
 
-- [x] **Internal consistency:** All derived quantities use same geometric operators
-- [x] **Cross-phase compatibility:** Connects to Phase_1 (CMB), Phase_15 (Gravitation), Phase_22 (Exoplanets)
-- [x] **Limiting behavior:** All limits recover expected classical results
-- [x] **Dimensional integrity:** Every equation verified ✓
+- [X] **Internal consistency:** All derived quantities use same geometric operators
+- [X] **Cross-phase compatibility:** Connects to Phase_1 (CMB), Phase_15 (Gravitation), Phase_22 (Exoplanets)
+- [X] **Limiting behavior:** All limits recover expected classical results
+- [X] **Dimensional integrity:** Every equation verified ✓
 
 ### 7.3 Benchmark Certification Criteria
 
 **For this investigation to be CERTIFIED:**
 
-- [x] Derived from geometric operators (no empirical fits)
-- [x] Numerical predictions match experiment within 1%
-- [x] Jupiter moons validate k-factor approach
-- [x] No free parameters beyond fundamental (a₀, c, k⊙)
-- [x] Limiting cases verified
-- [x] Independent cross-checks performed (multiple moons, multiple planets)
+- [X] Derived from geometric operators (no empirical fits)
+- [X] Numerical predictions match experiment within 1%
+- [X] Jupiter moons validate k-factor approach
+- [X] No free parameters beyond fundamental (a₀, c, k⊙)
+- [X] Limiting cases verified
+- [X] Independent cross-checks performed (multiple moons, multiple planets)
 
 **Status:** **PARTIALLY CERTIFIED** - Core relationships verified, Planet Nine prediction pending
 
@@ -563,19 +577,20 @@ From orbital elements:
 ### 8.4 Open Questions
 
 1. **Why does v_rot = πc/k² work for Sun but not Jupiter?**
+
    - Is it specific to main-sequence stars?
    - Does it depend on internal structure?
    - Is there a modified formula for gas giants?
-
 2. **What determines if a body is tidally locked?**
+
    - Can we predict tidal locking from k-factor?
    - How does tidal locking affect rotation-orbit relationship?
-
 3. **How does resonance affect rotation-orbit coupling?**
+
    - Mercury's 3:2 resonance: what does this tell us about k?
    - Can we predict resonances from geometric operators?
-
 4. **What is the complete Planet Nine orbital solution?**
+
    - Can we determine all 6 orbital elements from TNO perturbations?
    - What is the predicted brightness and current position?
 
@@ -630,7 +645,8 @@ The spation lattice has inherent geometric structure (dodecahedral packing) that
 
 **Integration Point:** Gravitational acceleration from CMB pressure gradients
 
-**Addition:** 
+**Addition:**
+
 - Rotation → k relationship: v_rot = πc/k² (for certain cases)
 - Orbital speeds derivable from rotation: k = √(πc/v_rot) → v_orb = (c/k)√(R/r)
 - No G or M required
@@ -640,6 +656,7 @@ The spation lattice has inherent geometric structure (dodecahedral packing) that
 **Integration Point:** Deriving orbital dynamics from stellar compactness
 
 **Major Addition:**
+
 - Complete rotation → orbit pipeline
 - Jupiter calibration standard
 - Planet Nine detection method
@@ -648,6 +665,7 @@ The spation lattice has inherent geometric structure (dodecahedral packing) that
 ### 10.4 New Phase: Geometric Operators and Fundamental Constants
 
 **Consideration:** May need standalone phase for:
+
 - Complete derivation of G from a₀
 - Complete derivation of α from k⊙
 - Bessel resonance and proton radius
@@ -661,6 +679,7 @@ The spation lattice has inherent geometric structure (dodecahedral packing) that
 ### 11.1 Complete Jupiter System Validation
 
 **Jupiter Parameters:**
+
 - Radius: R_J = 6.991×10⁷ m
 - Rotation period: T_rot = 9.925 hours = 35,730 s
 - Rotation speed: v_rot = 12,280 m/s (equatorial)
@@ -668,12 +687,12 @@ The spation lattice has inherent geometric structure (dodecahedral packing) that
 
 **Galilean Moons Validation:**
 
-| Moon | Semi-major axis (m) | Orbital velocity (m/s) | Predicted T (s) | Observed T (s) | Error |
-|------|---------------------|------------------------|------------------|----------------|-------|
-| Io | 4.217×10⁸ | 17,329 | 1.529×10⁵ | 1.529×10⁵ | 0.02% |
-| Europa | 6.711×10⁸ | 13,744 | 3.069×10⁵ | 3.068×10⁵ | 0.03% |
-| Ganymede | 1.070×10⁹ | 10,879 | 6.179×10⁵ | 6.180×10⁵ | 0.02% |
-| Callisto | 1.883×10⁹ | 8,205 | 1.442×10⁶ | 1.442×10⁶ | 0.03% |
+| Moon     | Semi-major axis (m) | Orbital velocity (m/s) | Predicted T (s) | Observed T (s) | Error |
+| -------- | ------------------- | ---------------------- | --------------- | -------------- | ----- |
+| Io       | 4.217×10⁸         | 17,329                 | 1.529×10⁵     | 1.529×10⁵    | 0.02% |
+| Europa   | 6.711×10⁸         | 13,744                 | 3.069×10⁵     | 3.068×10⁵    | 0.03% |
+| Ganymede | 1.070×10⁹         | 10,879                 | 6.179×10⁵     | 6.180×10⁵    | 0.02% |
+| Callisto | 1.883×10⁹         | 8,205                  | 1.442×10⁶     | 1.442×10⁶    | 0.03% |
 
 **All moons validate k_J = 7,042.64 with <0.03% error.**
 
@@ -687,10 +706,12 @@ The spation lattice has inherent geometric structure (dodecahedral packing) that
 ### 11.3 Application to Other Systems
 
 **For any system with:**
+
 - Measured rotation period
 - At least one moon with known orbit
 
 **We can:**
+
 1. Calculate k from moon orbit
 2. Verify rotation-orbit relationship
 3. Predict all other moon orbits
@@ -705,16 +726,19 @@ The spation lattice has inherent geometric structure (dodecahedral packing) that
 ### 12.1 Current Observational Constraints
 
 **TNO Anomalies:**
+
 - 6 TNOs with clustered longitude of perihelion (ω ≈ 0°)
 - High-inclination objects (i > 20°)
 - Detached objects (Sedna, 2012 VP113) with large perihelion distances
 
 **Standard Interpretation:**
+
 - Unseen planet with M ~ 5-10 M_Earth
 - Semi-major axis a ~ 400-800 AU
 - Eccentricity e ~ 0.2-0.5
 
 **SDT Interpretation:**
+
 - Displacement field perturbation from unseen body
 - k_P9 determines all orbital properties
 - Rotation → k → exact orbital prediction
@@ -724,6 +748,7 @@ The spation lattice has inherent geometric structure (dodecahedral packing) that
 **Step 1: Analyze TNO Perturbations**
 
 From orbital clustering and scattering:
+
 - Calculate required perturbation magnitude
 - Determine effective k_P9 from perturbation pattern
 - Estimate: k_P9 ~ 15,000-25,000 (ice giant range)
@@ -731,14 +756,17 @@ From orbital clustering and scattering:
 **Step 2: Determine Rotation**
 
 **If tidally locked to Sun:**
+
 - Use tidal locking relationship
 - T_rot = T_orb (synchronous)
 
 **If in resonance:**
+
 - Determine resonance ratio
 - Calculate natural rotation from resonance
 
 **If non-locked:**
+
 - Use composition estimate (from k)
 - Estimate rotation from similar bodies
 
@@ -750,6 +778,7 @@ From orbital clustering and scattering:
 **Step 4: Calculate Orbital Elements**
 
 From k_P9 and perturbation analysis:
+
 - Semi-major axis: a_P9
 - Eccentricity: e_P9
 - Inclination: i_P9
@@ -758,6 +787,7 @@ From k_P9 and perturbation analysis:
 **Step 5: Predict Position**
 
 From orbital elements:
+
 - Current sky coordinates (RA, Dec)
 - Apparent magnitude
 - Optimal observation windows
@@ -777,18 +807,21 @@ From orbital elements:
 ### 13.1 Classification System
 
 **Category A: Exoplanets with Detected Moons**
+
 - Rotation measured (light curve)
 - Moon orbits measured (transit timing)
 - k-factor validated
 - Complete system characterization
 
 **Category B: Exoplanets Missing Moons**
+
 - Rotation measured
 - No moons detected
 - Predicted moon periods calculated
 - Indicates detection limits or formation history
 
 **Category C: Exoplanets with Unexpected Moons**
+
 - Moons at non-predicted periods
 - Indicates complex formation
 - May reveal migration history
@@ -813,22 +846,24 @@ From orbital elements:
 **Investigation Complete:** Partially (core verified, applications pending)
 
 **Certifications:**
-- [x] Derived from geometric operators
-- [x] Dimensionally verified
-- [x] Numerically validated (G: 0.11%, α: 0.18%, Solar rotation: 0.12%)
-- [x] Jupiter moons validated (all 4 within 0.03%)
-- [x] Scaling laws confirmed
-- [x] Limiting cases checked
-- [x] Compared to standard theory
-- [x] Falsification criteria stated
-- [x] All constants from CODATA
-- [x] Cross-references complete
+
+- [X] Derived from geometric operators
+- [X] Dimensionally verified
+- [X] Numerically validated (G: 0.11%, α: 0.18%, Solar rotation: 0.12%)
+- [X] Jupiter moons validated (all 4 within 0.03%)
+- [X] Scaling laws confirmed
+- [X] Limiting cases checked
+- [X] Compared to standard theory
+- [X] Falsification criteria stated
+- [X] All constants from CODATA
+- [X] Cross-references complete
 - [ ] Planet Nine prediction (pending observation)
 - [ ] Exoplanet moon analysis (pending data)
 
 **Benchmark Status:** **PARTIALLY CERTIFIED** - Core relationships verified, applications in progress
 
 **Next Steps:**
+
 1. Refine Jupiter rotation-orbit relationship
 2. Calculate Planet Nine orbital elements from TNO data
 3. Analyze exoplanet rotation data for moon predictions
@@ -842,6 +877,7 @@ From orbital elements:
 ### Example 1: Jupiter System Validation
 
 **Given:**
+
 - Jupiter radius: R_J = 6.991×10⁷ m
 - Io semi-major axis: a_Io = 4.217×10⁸ m
 - Io orbital period: T_Io = 1.529×10⁵ s
@@ -869,6 +905,7 @@ All predictions within 0.03% of observed ✓
 ### Example 2: Solar Rotation Prediction
 
 **Given:**
+
 - Solar k-factor: k⊙ = 686.4 (from Earth's orbit)
 - Speed of light: c = 299792458 m/s
 
@@ -896,4 +933,3 @@ v_rot = πc/k² = π × 299792458 / (686.4)²
 ---
 
 **END OF INVESTIGATION**
-

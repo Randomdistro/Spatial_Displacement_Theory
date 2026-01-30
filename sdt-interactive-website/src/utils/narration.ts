@@ -397,3 +397,4 @@ export function createHighlightedScript(
 
 export default NarrationController;
 
+

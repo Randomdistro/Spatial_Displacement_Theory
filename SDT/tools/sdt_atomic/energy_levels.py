@@ -60,7 +60,7 @@ def calculate_total_energy(n: int, l: int, j: float, F: Optional[float] = None,
         Total energy level (eV)
     """
     # Base hydrogenic energy
-    if electron_config is None or len(electron_config) == 1:
+    if electron_config is None or len(electron_config) <= 1:
         # Single-electron (hydrogenic) atom
         E_base = hydrogenic.calculate_energy_level(n, Z, use_reduced_mass)
     else:

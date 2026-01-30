@@ -1,0 +1,27 @@
+{
+  "benchmark_id": "B29",
+  "title": "First Ionization Energy from SDT Pressure",
+  "status": "DRAFT",
+  "validation_date": "2026-01-15T17:28:31Z",
+  "inputs": {
+    "data_sources": ["TBD"],
+    "data_files": [],
+    "constants": []
+  },
+  "methods": {
+    "equations": [],
+    "pipeline": ["Not implemented yet"]
+  },
+  "results": {
+    "total_tested": 0,
+    "within_tolerance": 0,
+    "max_error_percent": 0,
+    "mean_error_percent": 0,
+    "r_squared": 0
+  },
+  "comparison": {
+    "metric": "TBD",
+    "tolerance": "TBD"
+  },
+  "conclusion": "Missing: NIST I1 dataset (Z=1–36) + explicit SDT I1 formula implementation (currently only screening is implemented)."
+}

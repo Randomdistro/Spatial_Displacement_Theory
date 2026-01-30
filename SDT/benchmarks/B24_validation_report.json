@@ -1,0 +1,30 @@
+{
+  "benchmark": "B24",
+  "name": "Multi-Electron Occlusion",
+  "phase_document": "Phase_27B_Multi_Electron_Occlusion_Mechanics",
+  "tolerance": "Framework validation",
+  "validation_date": "2026-01-03T04:21:18.824492",
+  "overall_status": "UNDER_INVESTIGATION",
+  "lanthanide_contraction": {
+    "Z_range": [
+      57,
+      71
+    ],
+    "mechanism": "f-electron poor shielding increases Z_eff",
+    "result": "Atomic radius decreases despite added electrons"
+  },
+  "transition_metals": {
+    "Z_range": [
+      21,
+      30
+    ],
+    "mechanism": "d-orbital directional occlusion",
+    "properties": "Variable oxidation states, color, magnetism"
+  },
+  "computational_status": {
+    "Z_less_than_20": "Implemented",
+    "Z_greater_than_20": "Requires advanced many-body algorithms",
+    "note": "Framework established, implementation pending"
+  },
+  "max_error_pct": null
+}

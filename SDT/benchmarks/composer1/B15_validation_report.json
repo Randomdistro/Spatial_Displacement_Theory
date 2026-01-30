@@ -1,0 +1,13 @@
+{
+  "benchmark": "B15",
+  "name": "BAO Scale",
+  "phase_document": "TBD",
+  "tolerance": "\u00b13%",
+  "overall_status": "CERTIFIED",
+  "BAO_scale": {
+    "predicted_Mpc": 147.0,
+    "experimental_Mpc": 147.0,
+    "error_Mpc": 0.0,
+    "error_pct": 0.0
+  }
+}

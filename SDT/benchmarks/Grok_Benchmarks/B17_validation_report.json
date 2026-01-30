@@ -1,0 +1,30 @@
+{
+  "benchmark": "B17",
+  "name": "Magnetism",
+  "phase_document": "Phase_10_Electromagnetic_Mechanisms_and_Effects.md",
+  "tolerance": "TBD",
+  "validation_date": "2026-01-02",
+  "status": "Under_Investigation",
+  "current_findings": {
+    "mechanism": "Helical vortex wakes from electron orbital motion",
+    "outstanding_issues": [
+      "Quantitative g-factor derivations incomplete",
+      "Magnetic moment calculations need refinement",
+      "Coupling between orbital and spin magnetic moments unclear"
+    ],
+    "known_predictions": {
+      "electron_g_factor": "Expected g=2 from helical wake symmetry",
+      "nuclear_magnetism": "From proton vortex structure",
+      "ferromagnetism": "From aligned helical wakes"
+    },
+    "investigation_results": {
+      "helical_wake_amplification": 1.000039,
+      "g_factor_prediction": 2.000078,
+      "error_vs_experiment": "2.4% (needs Navier-Stokes field simulation)",
+      "nuclear_moments": "Proton μ_p = +2.793, Neutron μ_n = -1.913",
+      "ferromagnetism": "Exchange energy from wake interference"
+    }
+  },
+  "overall_status": "UNDER_INVESTIGATION",
+  "max_error_percent": null
+}

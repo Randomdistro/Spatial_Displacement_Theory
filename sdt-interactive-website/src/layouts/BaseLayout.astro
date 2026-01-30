@@ -5,6 +5,8 @@ interface Props {
 }
 
 const { title, description = "Spatial Displacement Theory: A geometric alternative to quantum mechanics and general relativity" } = Astro.props;
+
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -24,6 +26,9 @@ const { title, description = "Spatial Displacement Theory: A geometric alternati
     <slot />
   </body>
 </html>
+
+
+
 
 
 

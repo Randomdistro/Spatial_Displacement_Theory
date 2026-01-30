@@ -12,6 +12,8 @@ export { default as KLawScaleSim } from './KLawScaleSim';
 export { default as SpationLatticeSim } from './SpationLatticeSim';
 export { default as ForceHierarchySim } from './ForceHierarchySim';
 export { default as CMBBoundarySim } from './CMBBoundarySim';
+export { default as WavelengthKoppaVisualizer } from './WavelengthKoppaVisualizer';
+export { default as NuclearGradientSim } from './NuclearGradientSim';
 
 // Simulation registry for dynamic loading
 export const SIMULATION_REGISTRY = {
@@ -56,6 +58,18 @@ export const SIMULATION_REGISTRY = {
     name: 'Universal k-Law',
     description: 'Same velocity law from atoms to galaxies with different k values',
     path: ['path1', 'path2', 'path3'],
+  },
+  'wavelength-koppa': {
+    component: 'WavelengthKoppaVisualizer',
+    name: 'Wavelength-ϟ² Relationship',
+    description: 'Interactive 118-element validation of SDT ionization theory',
+    path: ['path2', 'path3'],
+  },
+  'nuclear-gradient': {
+    component: 'NuclearGradientSim',
+    name: 'Nuclear Pressure Gradient',
+    description: '3D visualization of ionization energy as nuclear field geometry',
+    path: ['path2', 'path3'],
   },
 } as const;
 

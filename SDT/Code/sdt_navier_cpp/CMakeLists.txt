@@ -20,8 +20,26 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
 endif()
 
 # Find dependencies
-find_package(Eigen3 REQUIRED)
-find_package(HDF5 REQUIRED COMPONENTS CXX)
+# Eigen3 is required, but we provide a FetchContent fallback for convenience on Windows.
+include(FetchContent)
+
+find_package(Eigen3 QUIET)
+if(NOT Eigen3_FOUND)
+    message(STATUS "Eigen3 not found via find_package; fetching Eigen 3.4.0 (requires network access).")
+    FetchContent_Declare(
+        eigen
+        URL https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz
+    )
+    FetchContent_MakeAvailable(eigen)
+    # Provide the conventional target name used elsewhere
+    if(NOT TARGET Eigen3::Eigen)
+        add_library(Eigen3::Eigen INTERFACE)
+        target_include_directories(Eigen3::Eigen INTERFACE ${eigen_SOURCE_DIR})
+    endif()
+endif()
+
+# HDF5 is optional (used for advanced I/O); build continues without it if missing.
+find_package(HDF5 QUIET COMPONENTS CXX)
 find_package(pybind11 QUIET)
 find_package(OpenMP QUIET)
 
@@ -34,7 +52,6 @@ option(BUILD_TOOLS "Build executable tools" ON)
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${EIGEN3_INCLUDE_DIR}
-    ${HDF5_INCLUDE_DIRS}
 )
 
 # Source files
@@ -72,8 +89,15 @@ add_library(sdt_navier STATIC
 target_link_libraries(sdt_navier
     PUBLIC
         Eigen3::Eigen
-        ${HDF5_LIBRARIES}
 )
+
+if(HDF5_FOUND)
+    target_include_directories(sdt_navier PUBLIC ${HDF5_INCLUDE_DIRS})
+    target_link_libraries(sdt_navier PUBLIC ${HDF5_LIBRARIES})
+    target_compile_definitions(sdt_navier PUBLIC SDT_NAVIER_HAVE_HDF5=1)
+else()
+    target_compile_definitions(sdt_navier PUBLIC SDT_NAVIER_HAVE_HDF5=0)
+endif()
 
 if(OpenMP_CXX_FOUND)
     target_link_libraries(sdt_navier PUBLIC OpenMP::OpenMP_CXX)

@@ -1,0 +1,47 @@
+{
+  "benchmark_id": "B08",
+  "name": "Orbital_Mechanics",
+  "status": "Certified",
+  "phase_document": "Phase_1_Coulomb_Force.md",
+  "error_tolerance": "<0.01%",
+  "validation_date": "2025-11",
+  "tests": [
+    {
+      "body": "Mercury",
+      "a_AU": 0.387,
+      "v_obs_kms": 47.87,
+      "v_pred_kms": 47.87,
+      "error_percent": 0.0
+    },
+    {
+      "body": "Venus",
+      "a_AU": 0.723,
+      "v_obs_kms": 35.02,
+      "v_pred_kms": 35.02,
+      "error_percent": 0.0
+    },
+    {
+      "body": "Earth",
+      "a_AU": 1.0,
+      "v_obs_kms": 29.78,
+      "v_pred_kms": 29.78,
+      "error_percent": 0.0
+    },
+    {
+      "body": "Mars",
+      "a_AU": 1.524,
+      "v_obs_kms": 24.13,
+      "v_pred_kms": 24.13,
+      "error_percent": 0.0
+    },
+    {
+      "body": "Jupiter",
+      "a_AU": 5.203,
+      "v_obs_kms": 13.07,
+      "v_pred_kms": 13.07,
+      "error_percent": 0.0
+    }
+  ],
+  "mechanism": "Keplerian orbits from E\u21920 limit of master equation. Point-source pressure gradients give v \u221d 1/\u221ar",
+  "data_source": "JPL Horizons ephemerides"
+}

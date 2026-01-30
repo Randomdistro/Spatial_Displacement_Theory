@@ -3689,4 +3689,3 @@ This table provides systematic comparison of SDT predictions (nuclear-driven fra
 **Progress:** 31 molecules analyzed (~8% of total), 8 exotic examples with full occlusion analysis, comprehensive corroboration worksheet completed
 
 **Total Remaining:** ~269-369 molecules
-

@@ -1,0 +1,29 @@
+{
+  "benchmark": "B24",
+  "name": "Multi Electron Occlusion",
+  "phase_document": "Phase_27B_Multi_Electron_Occlusion_Mechanics.md",
+  "tolerance": "TBD",
+  "validation_date": "2026-01-02",
+  "status": "Under_Investigation",
+  "current_findings": {
+    "mechanism": "Precise occlusion factors for Z>20",
+    "outstanding_issues": [
+      "Computational complexity for Z>20 elements",
+      "Multi-electron occlusion factor calculations pending",
+      "Heavy element chemistry predictions incomplete"
+    ],
+    "known_predictions": {
+      "lanthanide_contraction": "From increasing nuclear occlusion",
+      "transition_metals": "From d-orbital occlusion effects",
+      "heavy_element_stability": "From pressure confinement limits"
+    },
+    "investigation_results": {
+      "lanthanide_contraction": "f-electron poor shielding causes radius decrease",
+      "transition_metals": "d-orbital directional occlusion, variable oxidation states",
+      "heavy_elements": "Z_max from pressure confinement limits",
+      "computational_barrier": "Multi-shell many-body calculations required"
+    }
+  },
+  "overall_status": "UNDER_INVESTIGATION",
+  "max_error_percent": null
+}

@@ -1,0 +1,40 @@
+{
+  "benchmark": "B03",
+  "name": "Fine Structure",
+  "phase_document": "Phase_3_Fine_structure",
+  "tolerance": "<0.1%",
+  "overall_status": "FAILED",
+  "max_error_percent": 89.99494343027983,
+  "splitting_results": [
+    {
+      "ion": "H",
+      "Z": 1,
+      "n": 2,
+      "l": 1,
+      "observed_GHz": 10.95,
+      "predicted_GHz": 10.949283783487497,
+      "delta_eV": 4.528259924941178e-05,
+      "error_percent": 0.006540790068518303
+    },
+    {
+      "ion": "He\u207a",
+      "Z": 2,
+      "n": 2,
+      "l": 1,
+      "observed_GHz": 1751.0,
+      "predicted_GHz": 175.18854053579994,
+      "delta_eV": 0.0007245215879905885,
+      "error_percent": 89.99494343027983
+    },
+    {
+      "ion": "Li\u00b2\u207a",
+      "Z": 3,
+      "n": 2,
+      "l": 1,
+      "observed_GHz": 887.4,
+      "predicted_GHz": 886.8919864624872,
+      "delta_eV": 0.0036678905392023542,
+      "error_percent": 0.0572474123859295
+    }
+  ]
+}

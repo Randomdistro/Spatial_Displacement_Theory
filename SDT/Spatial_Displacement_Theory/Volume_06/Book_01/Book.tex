@@ -1,0 +1,94 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 06: Thermodynamics and Statistical Mechanics \\ Book 01: Thermodynamics from Matrix Contact}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Heat as Flux Transfer}
+
+\section*{Abstract}
+Thermodynamics in SDT is the accounting of flux transfer through contact locking. Heat is momentum flux;
+temperature is a measure of flux intensity.
+
+\section{Heat Flux}
+\begin{equation}
+q = -\kappa_T \nabla T,
+\end{equation}
+where $\kappa_T$ is a transport coefficient derived from matrix contact mechanics.
+
+\section{Conductivity Scaling}
+Write
+\begin{equation}
+\kappa_T = c_m \ell_c \rho_m,
+\end{equation}
+where $c_m$ is matrix transport speed, $\ell_c$ is contact length, and $\rho_m$ is local matrix density.
+
+\section{Entropy as Accessible Flux States}
+Entropy counts accessible flux configurations:
+\begin{equation}
+S = k_B \ln \Omega.
+\end{equation}
+
+\section{Entropy Change}
+For two configurations $\Omega_1$ and $\Omega_2$,
+\begin{equation}
+\Delta S = k_B \ln\left(\frac{\Omega_2}{\Omega_1}\right).
+\end{equation}
+
+\chapter{First and Second Laws}
+
+\section*{Abstract}
+The thermodynamic laws are statements about flux balance and ordering. Energy conservation is flux
+throughput conservation; entropy increase is the growth of accessible flux configurations.
+
+\section{First Law}
+\begin{equation}
+dU = \delta Q - \delta W,
+\end{equation}
+where $U$ is internal flux energy, $\delta Q$ is flux transfer by contact, and $\delta W$ is boundary work.
+
+\section{Second Law}
+\begin{equation}
+dS \ge \frac{\delta Q}{T},
+\end{equation}
+which encodes the geometric increase of accessible flux states during contact exchange.
+
+\chapter{Temperature as Flux Intensity}
+
+\section*{Abstract}
+Temperature is a measure of flux intensity in the matrix-contact regime. It is not a primitive, but a
+statistical descriptor of matrix interaction intensity.
+
+\section{Intensity Definition}
+\begin{equation}
+T \propto \langle \epsilon_1 \rangle,
+\end{equation}
+with $\epsilon_1$ the kinetic energy mode in the SDT state vector.
+
+\section{Specific Heat}
+Define specific heat as
+\begin{equation}
+C = \frac{dU}{dT}.
+\end{equation}
+In SDT, $U$ is the total flux energy stored in boundary and matrix motion.
+
+\chapter{Phase Transitions}
+
+\section*{Abstract}
+Phase transitions are boundary topology reorganizations under flux constraints. They correspond to
+discrete shifts in accessible configuration space.
+
+\section{Latent Flux}
+\begin{equation}
+L = T \Delta S,
+\end{equation}
+where $L$ is the flux energy associated with reconfiguration.
+\end{document}

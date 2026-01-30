@@ -1,0 +1,88 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 05: Nuclear Physics and Particle Architecture \\ Book 01: Nucleon Structures}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Proton Geometry}
+
+\section*{Abstract}
+The proton is a stable toroidal boundary with trefoil topology. Its magnetic moment and coupling behavior
+follow from curvature, circulation, and coupling efficiency.
+
+\section{Trefoil Structure}
+The proton is a $6\pi$ trefoil torus. Its curvature is
+\begin{equation}
+\kappa_P = \frac{1}{R_P}.
+\end{equation}
+The circulation factor $\Gamma_P$ and slip $\eta_P$ determine coupling.
+
+\section{Curvature Scaling}
+If $R_P$ changes by $\Delta R_P$, then
+\begin{equation}
+\Delta \kappa_P = -\frac{\Delta R_P}{R_P^2},
+\end{equation}
+so curvature increases with compaction and directly enhances coupling.
+
+\section{Proton Moment}
+\begin{equation}
+\mu_P \propto \Gamma_P \kappa_P (1-\eta_P).
+\end{equation}
+
+\chapter{Proton Stability}
+
+\section*{Abstract}
+Stability is the alignment of circulation with boundary curvature. This chapter formalizes the stability
+condition in SDT terms.
+
+\section{Stability Condition}
+For a stable proton,
+\begin{equation}
+\dot{E}_P = P_{\text{CMB}} A_{\text{eff}} \Gamma_P \kappa_P (1-\eta_P)
+\end{equation}
+is constant over time. Deviations correspond to excitation or decay regimes.
+
+\chapter{Neutron Genesis}
+
+\section*{Abstract}
+The neutron is a composite structure: a proton boundary with a nested electron. Its negative magnetic
+moment is the signature of reversed circulation.
+
+\section{Nested Electron}
+The nested electron occupies the central region of the proton torus. Its circulation is reversed,
+producing negative magnetic moment:
+\begin{equation}
+\mu_N \propto -\Gamma_{E} \kappa_{E} (1-\eta_N).
+\end{equation}
+
+\chapter{Deuteron and Light Nuclei}
+
+\section*{Abstract}
+Light nuclei are coaxial packings of toroidal boundaries. This chapter summarizes the SDT geometry of
+deuteron and related structures.
+
+\section{Deuteron Structure}
+The deuteron is a coupled proton--neutron pair with shared flux:
+\begin{equation}
+\mu_D = f_{\text{damp}}(\mu_P + \mu_N),
+\end{equation}
+where $f_{\text{damp}}$ is the geometry-based damping factor.
+
+\section{Damping Interpretation}
+The damping factor is a coupling efficiency:
+\begin{equation}
+f_{\text{damp}} = 1 - \eta_D,
+\end{equation}
+so deuteron coupling reduces to a single slip-controlled reduction of the combined moments.
+
+\section{Cross-Reference}
+Full derivations and numeric values are provided in the benchmark documents and calculation scripts.
+\end{document}

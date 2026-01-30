@@ -3,6 +3,7 @@
 #include "sdt_navier/constants.hpp"
 #include <cmath>
 #include <algorithm>
+#include <numbers>
 
 namespace sdt_navier {
 
@@ -36,7 +37,23 @@ DeuteronSystem::DeuteronSystem(
     FieldSystem& fields,
     const std::array<std::size_t, 3>& center,
     double separation_cells
-) : fields_(fields)
+) : fields_(fields),
+    proton_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        std::size_t i_p = static_cast<std::size_t>(i0 - separation_cells / 2.0);
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return ProtonTurbine({i_p, j0, k0}, radius_cells, true);
+    }()),
+    neutron_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        std::size_t i_n = static_cast<std::size_t>(i0 + separation_cells / 2.0);
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return NeutronTurbine({i_n, j0, k0}, radius_cells, true);
+    }())
 {
     std::size_t i0 = center[0];
     std::size_t j0 = center[1];
@@ -45,11 +62,6 @@ DeuteronSystem::DeuteronSystem(
     // Place proton and neutron along x-axis
     std::size_t i_p = static_cast<std::size_t>(i0 - separation_cells / 2.0);
     std::size_t i_n = static_cast<std::size_t>(i0 + separation_cells / 2.0);
-
-    double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
-
-    proton_ = ProtonTurbine({i_p, j0, k0}, radius_cells, true);
-    neutron_ = NeutronTurbine({i_n, j0, k0}, radius_cells, true);
 
     // Add turbines to fields
     add_turbine_source(fields_, proton_.position, proton_.radius_cells,
@@ -74,7 +86,7 @@ double DeuteronSystem::compute_binding_energy() const {
 
     // Approximate volume
     constexpr double SEPARATION = 2.0e-15;  // m
-    double volume_per_turbine = (4.0 * M_PI / 3.0) * std::pow(SEPARATION / 2.0, 3);
+    double volume_per_turbine = (4.0 * std::numbers::pi / 3.0) * std::pow(SEPARATION / 2.0, 3);
     double total_volume = 2.0 * volume_per_turbine;
 
     double B = P_infinity * delta_sigma * total_volume;
@@ -93,19 +105,32 @@ TritonSystem::TritonSystem(
     FieldSystem& fields,
     const std::array<std::size_t, 3>& center,
     double separation_cells
-) : fields_(fields)
+) : fields_(fields),
+    neutron1_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return NeutronTurbine({i0 - static_cast<std::size_t>(separation_cells), j0, k0}, radius_cells, true);
+    }()),
+    proton_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return ProtonTurbine({i0, j0, k0}, radius_cells, true);
+    }()),
+    neutron2_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return NeutronTurbine({i0 + static_cast<std::size_t>(separation_cells), j0, k0}, radius_cells, true);
+    }())
 {
     std::size_t i0 = center[0];
     std::size_t j0 = center[1];
     std::size_t k0 = center[2];
-
-    double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
-
-    neutron1_ = NeutronTurbine({i0 - static_cast<std::size_t>(separation_cells), j0, k0},
-                              radius_cells, true);
-    proton_ = ProtonTurbine({i0, j0, k0}, radius_cells, true);
-    neutron2_ = NeutronTurbine({i0 + static_cast<std::size_t>(separation_cells), j0, k0},
-                              radius_cells, true);
 
     add_turbine_source(fields_, neutron1_.position, neutron1_.radius_cells,
                       neutron1_.kappa, neutron1_.Gamma, neutron1_.eta, "gaussian");
@@ -119,19 +144,32 @@ HelionSystem::HelionSystem(
     FieldSystem& fields,
     const std::array<std::size_t, 3>& center,
     double separation_cells
-) : fields_(fields)
+) : fields_(fields),
+    proton1_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return ProtonTurbine({i0 - static_cast<std::size_t>(separation_cells), j0, k0}, radius_cells, true);
+    }()),
+    neutron_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return NeutronTurbine({i0, j0, k0}, radius_cells, true);
+    }()),
+    proton2_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return ProtonTurbine({i0 + static_cast<std::size_t>(separation_cells), j0, k0}, radius_cells, true);
+    }())
 {
     std::size_t i0 = center[0];
     std::size_t j0 = center[1];
     std::size_t k0 = center[2];
-
-    double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
-
-    proton1_ = ProtonTurbine({i0 - static_cast<std::size_t>(separation_cells), j0, k0},
-                            radius_cells, true);
-    neutron_ = NeutronTurbine({i0, j0, k0}, radius_cells, true);
-    proton2_ = ProtonTurbine({i0 + static_cast<std::size_t>(separation_cells), j0, k0},
-                            radius_cells, true);
 
     add_turbine_source(fields_, proton1_.position, proton1_.radius_cells,
                       proton1_.kappa, proton1_.Gamma, proton1_.eta, "gaussian");
@@ -145,23 +183,39 @@ AlphaSystem::AlphaSystem(
     FieldSystem& fields,
     const std::array<std::size_t, 3>& center,
     double separation_cells
-) : fields_(fields)
+) : fields_(fields),
+    proton1_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return ProtonTurbine({i0 - static_cast<std::size_t>(separation_cells), j0, k0}, radius_cells, true);
+    }()),
+    proton2_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return ProtonTurbine({i0 + static_cast<std::size_t>(separation_cells), j0, k0}, radius_cells, true);
+    }()),
+    neutron1_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return NeutronTurbine({i0, j0 - static_cast<std::size_t>(separation_cells), k0}, radius_cells, true);
+    }()),
+    neutron2_([&]() {
+        std::size_t i0 = center[0];
+        std::size_t j0 = center[1];
+        std::size_t k0 = center[2];
+        double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
+        return NeutronTurbine({i0, j0 + static_cast<std::size_t>(separation_cells), k0}, radius_cells, true);
+    }())
 {
     std::size_t i0 = center[0];
     std::size_t j0 = center[1];
     std::size_t k0 = center[2];
-
-    double radius_cells = std::max(1.0, sdt::R_P / fields.dx());
-
-    // Simplified: place in plane (full 3D would use tetrahedral coordinates)
-    proton1_ = ProtonTurbine({i0 - static_cast<std::size_t>(separation_cells), j0, k0},
-                            radius_cells, true);
-    proton2_ = ProtonTurbine({i0 + static_cast<std::size_t>(separation_cells), j0, k0},
-                            radius_cells, true);
-    neutron1_ = NeutronTurbine({i0, j0 - static_cast<std::size_t>(separation_cells), k0},
-                              radius_cells, true);
-    neutron2_ = NeutronTurbine({i0, j0 + static_cast<std::size_t>(separation_cells), k0},
-                              radius_cells, true);
 
     add_turbine_source(fields_, proton1_.position, proton1_.radius_cells,
                       proton1_.kappa, proton1_.Gamma, proton1_.eta, "gaussian");

@@ -1,0 +1,8 @@
+{
+  "benchmark": "B23",
+  "name": "Scale Dependent Interactions",
+  "phase_document": "Phase_26_Pressure_Mediated_Forces_and_Scale_Dependent_Interactions",
+  "tolerance": "TBD",
+  "overall_status": "UNDER_INVESTIGATION",
+  "note": "Force hierarchy from scale-dependent occlusion. Theory framework exists awaiting validation"
+}

@@ -1,0 +1,235 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 02: Field Theory, Mechanics, and Mathematical Structure \\ Book 01: Continuum Mechanics from Matrix Flow}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Continuum Mechanics from Matrix Flow}
+
+\section*{Abstract}
+This book derives continuum mechanics from SDT by treating fluids as matrix-flow phenomena that transport
+matter through flux coupling. Navier--Stokes emerges from momentum transfer through boundary locking,
+viscosity is a geometric consequence of matrix contact friction, and turbulence is deterministic chaos
+in flux topology. Every equation is written in SDT terms, with explicit constants and dimensional checks.
+
+\section{Foundational Framing}
+Continuum mechanics in SDT does not begin with mass and viscosity as primitives. It begins with space,
+matter, movement, and now. Space is the matrix, flux is its directional propagation, and the medium is
+the collective behavior of matrix units (spations). Fluid motion is a macroscopic expression of flux
+transport coupled to matter boundaries.
+
+\section{Matrix Flux and Momentum Transfer}
+Define the matrix momentum flux:
+\begin{equation}
+\mathbf{j}_m = \rho_m \mathbf{v}_m,
+\end{equation}
+where $\rho_m$ is the matrix density and $\mathbf{v}_m$ is the matrix flow velocity. Matter boundaries
+exchange momentum with the matrix through locking contacts. The momentum transfer rate is
+\begin{equation}
+\frac{d\mathbf{p}}{dt} = \lambda \mathbf{j}_m \cdot \mathbf{n}\, A,
+\end{equation}
+where $\lambda$ is the locking efficiency, $\mathbf{n}$ is the surface normal, and $A$ is the contact
+area.
+
+\section{Pressure Field from CMB Flux}
+The pressure field in the matrix is sourced by the CMB flux:
+\begin{equation}
+P(\mathbf{r}) = P_{\text{CMB}} + \Delta P(\mathbf{r}),
+\end{equation}
+with $P_{\text{CMB}} = 2.036 \times 10^{-2}\ \text{Pa}$ at atomic/molecular scale. The pressure gradient
+is the driver of macroscopic flow:
+\begin{equation}
+\mathbf{f}_{\text{pressure}} = -\nabla P = -\nabla(\Delta P).
+\end{equation}
+
+\section{Navier--Stokes from Matrix Mechanics}
+The standard Navier--Stokes form emerges from SDT momentum transfer:
+\begin{equation}
+\rho \frac{D\mathbf{v}}{Dt} = -\nabla P + \mu \nabla^2 \mathbf{v} + \mathbf{f},
+\end{equation}
+where $\rho$ is the matter density, $\mathbf{v}$ is the matrix flow velocity, and $\mathbf{f}$ represents
+body forces from pressure gradients. The dynamic viscosity $\mu$ is not a primitive; it arises from
+matrix contact friction:
+\begin{equation}
+\mu = \lambda \frac{K_{\text{bulk}} \ell_P^2}{c}.
+\end{equation}
+Dimensional check:
+\begin{equation}
+[\mu] = [K_{\text{bulk}} \ell_P^2 / c] = \text{Pa}\cdot \text{s} = \text{kg/(m·s)}.
+\end{equation}
+
+\section{Numerical Form of Viscosity}
+With canonical constants,
+\begin{equation}
+\mu = \lambda \frac{(4.6 \times 10^{113}) (1.616255 \times 10^{-35})^2}{2.99792458 \times 10^8},
+\end{equation}
+which makes the viscosity an explicit numeric function of locking efficiency $\lambda$.
+
+\section{Incompressibility Constraint}
+The matrix is incompressible at the macroscopic scale of flow:
+\begin{equation}
+\nabla \cdot \mathbf{v} = 0.
+\end{equation}
+This condition is a geometric constraint on flux distribution, not a separate physical law.
+
+\chapter{Vorticity and Flux Rotation}
+
+\section*{Abstract}
+Vorticity is the rotational content of matrix flow. It is the local measure of circulation density and
+sets the topology of eddies, wakes, and shear layers.
+
+\section{Vorticity Definition}
+Define vorticity as
+\begin{equation}
+\boldsymbol{\omega} = \nabla \times \mathbf{v}.
+\end{equation}
+When $\boldsymbol{\omega} \neq 0$, the matrix flow contains rotational structure, which is stabilized
+by occlusion geometry and boundary proximity.
+
+\section{Vorticity Transport}
+Taking the curl of the flow equation yields the vorticity transport form:
+\begin{equation}
+\frac{D\boldsymbol{\omega}}{Dt} = (\boldsymbol{\omega}\cdot\nabla)\mathbf{v} + \nu \nabla^2 \boldsymbol{\omega},
+\end{equation}
+where $\nu = \mu/\rho$ is the kinematic viscosity. In SDT, $\nu$ inherits geometric meaning through
+$\mu = \lambda K_{\text{bulk}}\ell_P^2/c$.
+
+\chapter{Dimensionless Structure and Flow Regimes}
+
+\section*{Abstract}
+Regime classification is a geometric ratio of inertial flux to locking dissipation. This chapter derives
+the SDT analogs of Reynolds and Mach numbers.
+
+\section{Flux Reynolds Number}
+Define the Reynolds-like ratio:
+\begin{equation}
+\mathrm{Re}_m = \frac{\rho v L}{\mu} = \frac{\rho v L c}{\lambda K_{\text{bulk}}\ell_P^2}.
+\end{equation}
+Large $\mathrm{Re}_m$ indicates inertial dominance and turbulence; small $\mathrm{Re}_m$ indicates
+locking-dominated laminar flow.
+
+\section{Regime Threshold Estimation}
+For a characteristic scale $L$ and velocity $v$, the transition condition
+\begin{equation}
+\mathrm{Re}_m \approx 10^3
+\end{equation}
+provides a geometric boundary between laminar and turbulent flux regimes.
+
+\section{Flux Mach Number}
+The compressibility ratio is
+\begin{equation}
+\mathrm{Ma}_m = \frac{v}{c}.
+\end{equation}
+Because the matrix supports propagation at $c$, $\mathrm{Ma}_m$ measures the proximity to compressible
+behavior.
+
+\chapter{Boundary Layer Scaling}
+
+\section*{Abstract}
+Boundary layers are the spatial record of locking gradients. This chapter derives their thickness from
+balance between inertial transport and matrix contact dissipation.
+
+\section{Thickness Estimate}
+Let $U$ be free-stream speed and $x$ the downstream coordinate. The characteristic thickness is
+\begin{equation}
+\delta(x) \sim \sqrt{\frac{\nu x}{U}}.
+\end{equation}
+In SDT, $\nu$ is geometric; therefore $\delta$ is a geometric consequence of matrix locking length scales.
+
+\chapter{Turbulence as Deterministic Chaos}
+
+\section*{Abstract}
+Turbulence is deterministic chaos in matrix flux. It emerges from nonlinear coupling in the flow equation
+and is therefore not random.
+
+\section{Nonlinear Flux Coupling}
+The convective term $(\mathbf{v}\cdot\nabla)\mathbf{v}$ produces sensitive dependence on initial conditions.
+The turbulent cascade is a hierarchy of flux structures arising from geometric instability of flow paths.
+
+\section{Eddies as Flux Topology}
+Eddies are not separate entities; they are closed flux loops stabilized by local occlusion geometry and
+boundary proximity.
+
+\section{Energy Cascade}
+The kinetic energy per unit mass is $k = \frac{1}{2}\langle v^2\rangle$. The cascade rate $\varepsilon$ is
+the flux of kinetic energy through scales:
+\begin{equation}
+\varepsilon \sim \frac{u_\ell^3}{\ell},
+\end{equation}
+where $u_\ell$ is characteristic velocity at scale $\ell$. In SDT, this cascade is a deterministic
+redistribution of matrix flux guided by occlusion topology.
+
+\chapter{Boundary Layers from Locking Gradients}
+
+\section*{Abstract}
+Boundary layers arise where locking efficiency varies with distance from matter boundaries. Velocity
+gradients are therefore a direct map of $\lambda$ gradients in the matrix.
+
+\section{Locking Efficiency Gradient}
+\begin{equation}
+\nabla \lambda \neq 0 \quad \Rightarrow \quad \nabla \mathbf{v} \neq 0.
+\end{equation}
+The thickness of the boundary layer is the scale over which locking transitions from high to low.
+
+\chapter{Compressible Flow from Density Variations}
+
+\section*{Abstract}
+Compressibility is permitted when local matrix density varies with pressure. These variations are not
+fundamental compressions of the matrix, but local redistribution of flux density.
+
+\section{Density Variation}
+\begin{equation}
+\rho_m = \rho_m(P),
+\end{equation}
+so that changes in $P$ induce local variations in effective density and allow compressible behavior in
+macroscopic flow.
+
+\section{Flux Equation of State}
+For matrix-supported flow, pressure and density are linked through stiffness:
+\begin{equation}
+\Delta P = K_{\text{bulk}} \frac{\Delta \rho_m}{\rho_m}.
+\end{equation}
+This relation governs compressible wave behavior and shock formation.
+
+\chapter{Plasma as Charged Vortex Interaction}
+
+\section*{Abstract}
+Plasma is a regime of charged vortex interaction where flux geometry organizes large-scale collective
+behavior. This chapter positions plasma physics as a special case of matrix flow with strong coupling to
+boundary circulation.
+
+\section{Charged Vortex Coupling}
+The coupling between charged vortices modifies the effective pressure gradient:
+\begin{equation}
+\nabla P_{\text{eff}} = \nabla P + \nabla P_{\text{wake}},
+\end{equation}
+where $P_{\text{wake}}$ is the helical wake contribution from circulation.
+
+\chapter{The Narrative of Continuum Mechanics}
+
+\section*{Abstract}
+This chapter ties the derivation into a single narrative: flux produces pressure; pressure produces
+gradients; gradients produce movement; movement produces structure.
+
+\section{Flux $\rightarrow$ Pressure}
+\begin{equation}
+\Pi(\mathbf{r}) = \int_{\Omega} I_{\text{CMB}}(\hat{\mathbf{n}})\left[1 - E(\mathbf{r},\hat{\mathbf{n}})\right]\, d\Omega.
+\end{equation}
+
+\section{Pressure $\rightarrow$ Movement}
+\begin{equation}
+\mathbf{F} = -\nabla \Pi(\mathbf{r}).
+\end{equation}
+
+\section{Movement $\rightarrow$ Flow Law}
+The Navier--Stokes equation is the macroscopic form of this chain.
+
+\end{document}

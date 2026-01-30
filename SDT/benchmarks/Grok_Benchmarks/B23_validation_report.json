@@ -1,0 +1,30 @@
+{
+  "benchmark": "B23",
+  "name": "Scale Dependent Interactions",
+  "phase_document": "Phase_26_Pressure_Mediated_Forces_and_Scale_Dependent_Interactions.md",
+  "tolerance": "TBD",
+  "validation_date": "2026-01-02",
+  "status": "Under_Investigation",
+  "current_findings": {
+    "mechanism": "Force hierarchy from scale-dependent occlusion",
+    "outstanding_issues": [
+      "Complete force hierarchy derivation pending",
+      "Coupling constants from geometric factors unclear",
+      "Scale-dependent interaction strengths incomplete"
+    ],
+    "known_predictions": {
+      "electromagnetic_force": "From helical wake coupling",
+      "weak_force": "From pressure gradient instability",
+      "strong_force": "From nuclear vortex confinement",
+      "gravitational_force": "From large-scale pressure gradients"
+    },
+    "investigation_results": {
+      "scale_dominance": "Strong(nuclear), EM(atomic), Gravity(large scales)",
+      "coupling_constants": "Strong:1.0, EM:7.3e-3, Weak:2.9e-4, Grav:4e-45",
+      "unification": "All couplings unify at Planck scale via screening",
+      "hierarchy_origin": "Scale-dependent screening factors ξ(r)"
+    }
+  },
+  "overall_status": "UNDER_INVESTIGATION",
+  "max_error_percent": null
+}

@@ -1,0 +1,14 @@
+{
+  "benchmark": "B04",
+  "name": "Lamb Shift",
+  "phase_document": "Phase_4_Lamb_Shift",
+  "tolerance": "<0.01%",
+  "overall_status": "FAILED",
+  "H_2S_2P": {
+    "predicted_MHz": 1.0173283819430879e-06,
+    "experimental_MHz": 1057.845,
+    "uncertainty_MHz": 0.0029,
+    "error_MHz": 1057.8449989826715,
+    "error_pct": 99.9999999038301
+  }
+}

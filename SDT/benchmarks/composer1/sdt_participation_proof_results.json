@@ -1,0 +1,24 @@
+{
+  "method": "Pure Phi-overlap (no E_b imports)",
+  "threshold": 0.45,
+  "results": {
+    "Al": {
+      "name": "Aluminum",
+      "Z": 13,
+      "r_WS": 1.5822662204460957e-10,
+      "n_atom": 6.026604911786509e+28,
+      "Z_eff": 13,
+      "n_e": 7.834586385322461e+29,
+      "omega_p": 4.993436917141311e+16,
+      "E_p": 32.86739883128636,
+      "T_p": 1.2582887120513864e-16,
+      "delta": 6.00372975516887e-09,
+      "electrons": {
+        "1s": {
+          "O_i": 7392909174.7150955,
+          "a_n": 5.29177210903e-11,
+          "lambda_nl": 5.29177210903e-11,
+          "boundary_flux": 2.9895492313747857e-10,
+          "volume_integral": 4.0438062482892545e-20,
+          "angular_factor": 1.0,
+          "participates": 

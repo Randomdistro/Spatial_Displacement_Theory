@@ -1,0 +1,325 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 01: Foundations and Spation Primitives \\ Book 02: Treatise Integration and Foundational Compendium}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\chapter{Treatise Core: The Foundational Compendium}
+
+\section*{Abstract}
+This book integrates the SDT treatise corpus into a single narrative line. It establishes the matrix,
+flux, medium, and spation as the concrete language of mechanism. The objective is synthesis: a longform
+articulation that carries the reader from definitions to consequences with explicit equations embedded
+at each step.
+
+\section{Why a Treatise}
+SDT is not a collection of disconnected papers; it is a single framework whose equations must be read as
+a unified chain. The treatise exists to make that chain explicit. Each derivation is threaded into the next,
+so that no statement is free-floating and no formula appears without context or geometry.
+
+\section{The Matrix, Flux, and the Spation}
+Space is not empty. The matrix is the continuous collective that supports flux. A spation is the discrete
+unit of that matrix; the lattice they form is the medium through which all interaction propagates.
+The pressure at a point is not a background constant, but an integral of directional flux reduced by
+occlusion:
+\begin{equation}
+\Pi(\mathbf{r}) = \int_{\Omega} I_{\text{CMB}}(\hat{\mathbf{n}})\left[1 - E(\mathbf{r},\hat{\mathbf{n}})\right]\, d\Omega.
+\end{equation}
+Here $E$ is occlusion and the integration spans $4\pi$ steradians, establishing that interaction strength
+is geometric and directional rather than arbitrary.
+
+\section{Matter as Boundary}
+Matter is the bounded geometry that excludes matrix volume. It is not a synonym for displacement, nor a
+second substance. It is a boundary condition placed into the matrix that induces flux deficit and creates
+gradient-driven movement.
+
+\section{Movement and Now}
+Movement is the total class of change in SDT. Shunt dynamics are one facet of movement; circulation,
+drift, and flux rearrangement are others. Now is the ordering of change as realized. It is not a new
+dimension, but the presentness that accompanies boundary interaction and flux exchange.
+
+\section{The Master Equation as Narrative Spine}
+All SDT chapters converge on the master equation for throughput:
+\begin{equation}
+\dot{E} = P_{\text{CMB}} A_{\text{eff}} \Gamma \kappa (1-\eta).
+\end{equation}
+Each term is geometric:
+\begin{itemize}
+\item $P_{\text{CMB}}$ is the universal influx.
+\item $A_{\text{eff}}$ is the boundary capture area.
+\item $\Gamma$ is circulation ratio.
+\item $\kappa$ is curvature.
+\item $(1-\eta)$ is coupling efficiency.
+\end{itemize}
+This equation is the narrative spine of SDT; every phenomenon is a regime of this expression.
+
+\section{Expanded Throughput Derivation}
+Write the effective capture area as a geometric projection of boundary surface:
+\begin{equation}
+A_{\text{eff}} = \int_{\partial \mathcal{B}} \cos\theta(\mathbf{r},\hat{\mathbf{n}})\, dA,
+\end{equation}
+where $\theta$ is the local incidence angle between flux direction and surface normal. Substituting into
+the master equation yields the explicit flux-weighted form:
+\begin{equation}
+\dot{E} = P_{\text{CMB}} \Gamma \kappa (1-\eta)\int_{\partial \mathcal{B}} \cos\theta\, dA.
+\end{equation}
+This makes the throughput a direct integral of boundary geometry.
+
+\section{Numerical Substitution Template}
+Using canonical constants, the master equation can be written as
+\begin{equation}
+\dot{E} = (2.036 \times 10^{-2})\ A_{\text{eff}}\ \Gamma\ \kappa\ (1-\eta)\ \text{W},
+\end{equation}
+where $A_{\text{eff}}$ is in $\text{m}^2$ and $\kappa$ in $\text{m}^{-1}$. This expression is the
+numerical template applied in benchmarks.
+
+\section{Derivation Tree}
+The master equation unfolds into a derivation tree:
+\begin{align}
+\Pi(\mathbf{r}) &\rightarrow \nabla \Pi(\mathbf{r}) \rightarrow \mathbf{F},\\
+\mathbf{F} &\rightarrow \text{movement} \rightarrow \text{structure},\\
+\Gamma,\kappa,\eta &\rightarrow \mu,\, E_{\text{bind}},\, \Delta E_{\text{spec}}.
+\end{align}
+Each arrow is a geometric constraint, not a hypothesis.
+
+\section{Data Compendium Integration}
+The treatise integrates derived tables and numeric compendia as direct projections of the master
+equation. For a given boundary class $\mathcal{B}$, each entry records
+\begin{equation}
+\left\{A_{\text{eff}}, \Gamma, \kappa, \eta, \dot{E}\right\},
+\end{equation}
+so that every numeric value can be traced to geometric inputs.
+
+\section{Calculator Suite Consistency}
+The computational suite implements the same derivation chain:
+\begin{equation}
+\dot{E}(\mathcal{B}) \rightarrow E_{\text{bind}} \rightarrow \Delta E_{\text{spec}} \rightarrow \text{observable}.
+\end{equation}
+Each step is documented and reproducible without parameter tuning.
+
+\section{Constants as Geometric Anchors}
+The constants are anchors, not arbitrary fittings:
+\begin{align}
+P_{\text{CMB}} &= 2.036 \times 10^{-2}\ \text{Pa},\\
+K_{\text{bulk}} &= 4.6 \times 10^{113}\ \text{Pa},\\
+c &= 2.99792458 \times 10^8\ \text{m/s}.
+\end{align}
+
+\section{Dimensional Closure}
+Every formula closes dimensionally:
+\begin{align}
+[\dot{E}] &= \text{W} = \text{kg}\cdot \text{m}^2\cdot \text{s}^{-3},\\
+[P] &= \text{Pa} = \text{kg}\cdot \text{m}^{-1}\cdot \text{s}^{-2},\\
+[\kappa] &= \text{m}^{-1},\quad [\Gamma]=1,\quad [\eta]=1.
+\end{align}
+
+\chapter{CMB as the Universal Source}
+
+\section*{Abstract}
+The CMB is not a background relic; it is the active flux reservoir. This chapter derives how isotropic
+flux becomes local pressure and how occlusion converts that pressure into interaction.
+
+\section{Pressure from Flux}
+The pressure corresponding to isotropic flux is
+\begin{equation}
+P_{\text{CMB}} = 4\pi I_{\text{CMB}}.
+\end{equation}
+Local pressure is the occlusion-modulated integral in Equation (1.1). Therefore the existence of matter
+is the existence of occlusion, and the existence of occlusion is the existence of gradients.
+
+\section{Radial Deficit Field}
+A bounded displacement induces a radial pressure deficit. In the far field, the pressure profile takes
+the form
+\begin{equation}
+\Pi(r) = \Pi_0 - \frac{\beta \rho_s}{r},
+\end{equation}
+where $\Pi_0$ is the ambient matrix pressure, $\rho_s$ is the matrix density, and $\beta$ is the
+geometric potential parameter derived from displacement volume.
+
+\section{Acceleration from Pressure Gradient}
+The gradient of the deficit produces acceleration:
+\begin{equation}
+\frac{d\Pi}{dr} = \frac{\beta \rho_s}{r^2},\quad
+a(r) = -\frac{1}{\rho_s}\frac{d\Pi}{dr} = -\frac{\beta}{r^2}.
+\end{equation}
+The inverse-square behavior is therefore a pressure-gradient consequence, not a separate postulate.
+
+\section{Geometric Potential Parameter}
+The parameter $\beta$ is defined by displacement geometry:
+\begin{equation}
+\beta = \frac{\kappa V_{\text{disp}} K_{\text{bulk}}}{4\pi \rho_s} = \frac{\kappa V_{\text{disp}} c^2}{4\pi}.
+\end{equation}
+This replaces mass and gravitational constant with a single geometric displacement parameter.
+
+\section{Screening and Force Hierarchy}
+Composite boundaries screen their own displacement fields. Define the effective displacement fraction
+$\xi$ by
+\begin{equation}
+\xi = \frac{V_{\text{disp,eff}}}{V_{\text{disp,total}}},
+\end{equation}
+with $\xi \ll 1$ for large composite bodies. This screening accounts for the disparity between
+short-range coupling and long-range coupling within a single pressure field.
+
+\section{Refractive Index Gradient}
+Pressure gradients alter propagation as a refractive index field:
+\begin{equation}
+n(r) = 1 - \frac{\beta}{c^2 r}.
+\end{equation}
+This yields deflection of flux paths in the presence of large displacement boundaries.
+
+\section{Orbital Precession Term}
+Higher-order pressure terms yield an effective correction
+\begin{equation}
+\Phi_{\text{eff}}(r) = -\frac{\beta}{r} - \frac{3\beta^2}{2c^2 r^2},
+\end{equation}
+which produces a measurable precession in long-term orbital motion without invoking external curvature
+postulates.
+
+\section{Hierarchy of Regimes}
+Small boundaries with high curvature intercept more flux and yield strong coupling; large boundaries with
+low curvature yield weak coupling. The hierarchy of forces is therefore the hierarchy of geometry.
+\begin{equation}
+F(\kappa_1,\kappa_2,r) = \frac{\kappa_1 \kappa_2}{4\pi K_{\text{bulk}} r^2}\,\mathcal{C}(\mathbf{r},\hat{\mathbf{n}}).
+\end{equation}
+No new forces are introduced—only new regimes of the same equation.
+
+\section{Flux Balance and Equilibrium}
+Equilibrium is the condition of zero net gradient:
+\begin{equation}
+\nabla \Pi(\mathbf{r}) = 0.
+\end{equation}
+Stable structures are those that minimize net gradient while preserving internal circulation.
+
+\chapter{Historical Foundations and Consolidations}
+
+\section*{Abstract}
+The historical archive is not discarded; it is consolidated. This chapter describes how prior phases map
+into the current SDT grammar and where older terminology is translated into current terms.
+
+\section{Translation Rules}
+\begin{itemize}
+\item ``Spation'' denotes a discrete unit; the ``matrix'' denotes the collective medium.
+\item ``Flux'' refers to directional propagation; ``medium'' refers to the collective substrate.
+\item ``Movement'' is the class; ``shunt'' is a mechanism within the class.
+\end{itemize}
+
+\section{Continuity of Equations}
+All archived derivations that express pressure gradients and curvature coupling are preserved, but the
+notation is unified so that every formula aligns with the master equation and occlusion integral.
+
+\section{Phase Mapping}
+Historical phases are re-indexed against the four primitives and the master equation. A prior result is
+canonical only if it can be written in the form
+\begin{equation}
+\mathcal{R}_i: \dot{E} = P_{\text{CMB}} A_{\text{eff}} \Gamma \kappa (1-\eta),
+\end{equation}
+with explicit definitions for each geometric factor.
+
+\section{Canonicalization}
+Canonicalization means that every statement is mapped to one of the four primitives. If a formula does
+not transparently reduce to space, matter, movement, and now, it is re-expressed until it does.
+
+\chapter{A Compendium of Constants}
+
+\section*{Abstract}
+SDT constants are not arbitrary; they are the numeric anchors of geometry. This chapter lists and uses
+them in-line with formulae to maintain dimensional clarity.
+
+\section{Core Constants}
+\begin{align}
+P_{\text{CMB}} &= 2.036 \times 10^{-2}\ \text{Pa},\\
+K_{\text{bulk}} &= 4.6 \times 10^{113}\ \text{Pa},\\
+c &= 2.99792458 \times 10^8\ \text{m/s}.
+\end{align}
+These constants are used in all subsequent derivations.
+
+\section{Derived Measures}
+From $K_{\text{bulk}}$ and $c$, the effective matrix density is
+\begin{equation}
+\rho_s = \frac{K_{\text{bulk}}}{c^2}.
+\end{equation}
+This quantity anchors all pressure-gradient acceleration expressions in the treatise.
+
+\section{Derived Constants}
+Derived constants emerge from geometry:
+\begin{equation}
+G = \frac{c^4}{4\pi K_{\text{bulk}}^2}.
+\end{equation}
+These expressions are not assumptions; they are consequences.
+
+\section{Explicit Substitution}
+Substituting the canonical values gives the numerical construction:
+\begin{equation}
+G = \frac{(2.99792458 \times 10^8)^4}{4\pi (4.6 \times 10^{113})^2}.
+\end{equation}
+The expression shows that $G$ is a consequence of matrix stiffness and wave speed.
+
+\chapter{The Narrative of Derivation}
+
+\section*{Abstract}
+This chapter is a continuous derivation narrative, meant to be read as a single mathematical argument.
+It moves from flux to pressure, from pressure to gradient, from gradient to movement, and from movement
+to structure.
+
+\section{Flux to Pressure}
+\begin{equation}
+\Pi(\mathbf{r}) = \int_{\Omega} I_{\text{CMB}}(\hat{\mathbf{n}})\left[1 - E(\mathbf{r},\hat{\mathbf{n}})\right]\, d\Omega.
+\end{equation}
+
+\section{Pressure to Movement}
+\begin{equation}
+\mathbf{F} = -\nabla \Pi(\mathbf{r}),
+\end{equation}
+and movement follows as the reconfiguration of boundaries under the gradient.
+
+\section{Movement to Structure}
+The stable configuration is the one that minimizes net gradients while maximizing consistent flux
+throughput, yielding the observed lattices and boundary geometries.
+
+\section{Structure to Spectrum}
+Spectral spacing follows from structured circulation:
+\begin{equation}
+\Delta E \propto \Gamma \kappa (1-\eta),
+\end{equation}
+so line spacing is the geometric signature of boundary topology.
+
+\chapter{Methodological Discipline}
+
+\section*{Abstract}
+Method in SDT is geometric discipline. Every claim is anchored by a boundary, every equation by a
+dimension, every derivation by a primitive.
+
+\section{No Fitted Parameters}
+Parameters are derived, not tuned. If a quantity cannot be derived, it is not canonical.
+
+\section{Validation Path}
+Validation proceeds by tracing symbolic expressions into numeric predictions and comparing them with
+observed values without adjustment.
+
+\section{Dimensional Audit}
+Every derivation is verified by unit propagation:
+\begin{equation}
+[P][A][\Gamma][\kappa] \rightarrow \text{W},
+\end{equation}
+ensuring the master equation remains dimensionally closed at every stage.
+
+\chapter{Closing Synthesis}
+
+\section*{Abstract}
+The treatise is not an appendix; it is the spine. This closing chapter ties the narrative thread into a
+single statement.
+
+\section{One Sentence}
+Space is the matrix, matter is boundary, movement is flux-driven change, now is the ordering of change—
+and every equation in SDT is the algebra of that sentence.
+
+\end{document}

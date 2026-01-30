@@ -246,27 +246,62 @@ class SDTNavierSolver:
     
     def _project_pressure(self) -> None:
         """
-        Enforce incompressibility ∇·v = 0 via pressure projection.
+        Enforce incompressibility ∇·v = 0 via proper pressure projection.
         
-        This is a simplified projection: we adjust pressure to minimize divergence.
-        Full projection would solve a Poisson equation, but for now we use
-        a simple correction.
+        Standard projection method:
+        1. Compute divergence of intermediate velocity: div_v = ∇·v*
+        2. Solve Poisson equation: ∇²φ = (1/Δt) ∇·v*
+        3. Correct velocity: v^{n+1} = v* - ∇φ
+        
+        This ensures ∇·v^{n+1} = 0 exactly (up to numerical error).
         """
-        # Compute divergence
+        # Step 1: Compute divergence of current velocity
         div_v = compute_divergence(self.fields.v, self.fields, boundary="extrapolate")
         
-        # Adjust pressure to counteract divergence
-        # Simple correction: P += α * div_v
-        # This is a simplified approach; full projection would solve ∇²P = ∇·(divergence source)
-        alpha_p = 1.0e10  # Pressure correction coefficient
-        self.fields.P += alpha_p * div_v * self.dt
+        # Step 2: Solve Poisson equation ∇²φ = (1/Δt) div_v
+        # For periodic BCs, use FFT; for Dirichlet, use sparse solver
+        # For now, implement a simple iterative solver (Jacobi) for Dirichlet BCs
         
-        # Correct velocity to reduce divergence
-        # v_corrected = v - ∇φ where ∇²φ = ∇·v
-        # Simplified: v -= β * ∇(div_v)
-        grad_div = compute_gradient(div_v, self.fields, boundary="extrapolate")
-        beta_v = 0.1 * self.dt  # Velocity correction coefficient
-        self.fields.v -= beta_v * grad_div
+        # Initialize potential
+        phi = np.zeros_like(div_v)
+        
+        # Jacobi iteration for Poisson: ∇²φ = f
+        # φ^{n+1} = (1/6) * (φ_neighbors + h² * f)
+        # where h = dx (assuming cubic grid)
+        h = self.fields.dx  # Grid spacing
+        f = div_v / self.dt  # Source term: (1/Δt) div_v
+        
+        # Iterate until convergence (or fixed number of iterations)
+        max_iter = 50
+        tolerance = 1e-6
+        
+        for iteration in range(max_iter):
+            phi_new = phi.copy()
+            
+            # Interior points: Jacobi update
+            if self.fields.nx > 2 and self.fields.ny > 2 and self.fields.nz > 2:
+                # 6-point stencil for 3D Laplacian
+                phi_new[1:-1, 1:-1, 1:-1] = (
+                    phi[2:, 1:-1, 1:-1] + phi[:-2, 1:-1, 1:-1] +  # x neighbors
+                    phi[1:-1, 2:, 1:-1] + phi[1:-1, :-2, 1:-1] +  # y neighbors
+                    phi[1:-1, 1:-1, 2:] + phi[1:-1, 1:-1, :-2] +  # z neighbors
+                    h**2 * f[1:-1, 1:-1, 1:-1]
+                ) / 6.0
+            
+            # Check convergence
+            error = np.max(np.abs(phi_new - phi))
+            phi = phi_new
+            
+            if error < tolerance:
+                break
+        
+        # Step 3: Correct velocity: v^{n+1} = v* - ∇φ
+        grad_phi = compute_gradient(phi, self.fields, boundary="extrapolate")
+        self.fields.v -= grad_phi
+        
+        # Optional: Also update pressure field
+        # P^{n+1} = P^n + φ (pressure increment)
+        self.fields.P += phi
     
     def run_until(self, t_end: float, callback: Optional[Callable] = None) -> None:
         """

@@ -1,0 +1,112 @@
+{
+  "id": "rule-four-primitives",
+  "title": "Four Irreducible Primitives",
+  "description": "The four fundamental ingredients of physical reality in SDT: Space (Spation), Matter (Displacement), Movement (Shunt Dynamics), and Now (Time Emergence).",
+  "category": "rule",
+  "domain": "foundational",
+  "content": {
+    "markdown": "# Four Irreducible Primitives\n\nSDT is built on four irreducible primitives that cannot be reduced further:\n\n## 1. SPACE (Spation)\n\nThe spation lattice is the fundamental structure of space. It consists of Planck-scale particles arranged in a dodecahedral packing structure.\n\n- Bulk modulus: $K_{\\text{bulk}} = 4.6 \\times 10^{113}$ Pa\n- Provides the pressure field from CMB\n- Incompressible medium\n\n## 2. MATTER (Displacement)\n\nMatter is definitive hard shapes that displace spations, creating pressure deficits.\n\n- Creates exclusion zones\n- Generates pressure gradients\n- Determines effective interaction areas\n\n## 3. MOVEMENT (Shunt Dynamics)\n\nMovement emerges from shunt events: RESISTANCE → RECOIL → TRANSFERENCE.\n\n- Shunt events drive all motion\n- Creates circulation $\\Gamma$\n- Establishes frequency $\\nu$\n\n## 4. NOW (Time Emergence)\n\nTime is not fundamental but emerges from counting shunt events.\n\n$$t = \\frac{N_{\\text{shunts}}}{\\nu}$$\n\n- No fundamental time dimension\n- Causality from contact propagation\n- Time emerges from counting\n\n## Significance\n\nAll physical phenomena can be described as combinations of these four primitives. No additional assumptions are needed.",
+    "formulas": [
+      {
+        "id": "formula-time-emergence",
+        "latex": "t = \\frac{N_{\\text{shunts}}}{\\nu}",
+        "displayMode": "block",
+        "label": "Time Emergence",
+        "description": "Time emerges from counting shunt events",
+        "dimensionalAnalysis": "[s] = [dimensionless] / [s⁻¹] = [s]",
+        "variables": [
+          {
+            "symbol": "t",
+            "name": "Time",
+            "description": "Emergent time",
+            "units": "s"
+          },
+          {
+            "symbol": "N_{\\text{shunts}}",
+            "name": "Number of Shunts",
+            "description": "Count of shunt events",
+            "units": "dimensionless"
+          },
+          {
+            "symbol": "\\nu",
+            "name": "Frequency",
+            "description": "Shunt frequency",
+            "units": "s⁻¹"
+          }
+        ]
+      }
+    ],
+    "visualizations": [
+      {
+        "id": "viz-spation-lattice",
+        "type": "3d",
+        "component": "SpationLattice",
+        "props": {
+          "showPacking": true,
+          "showPressure": true
+        },
+        "position": "inline",
+        "interactive": true,
+        "caption": "3D visualization of dodecahedral spation lattice",
+        "alt": "Spation lattice structure"
+      },
+      {
+        "id": "viz-shunt-dynamics",
+        "type": "animation",
+        "component": "ShuntDynamics",
+        "props": {
+          "showSteps": true
+        },
+        "position": "inline",
+        "interactive": true,
+        "caption": "Animation of shunt dynamics: RESISTANCE → RECOIL → TRANSFERENCE",
+        "alt": "Shunt dynamics animation"
+      }
+    ],
+    "sections": [
+      {
+        "id": "section-space",
+        "title": "SPACE (Spation)",
+        "content": "The spation lattice provides the fundamental structure of space and the pressure field.",
+        "order": 1,
+        "visualizations": ["viz-spation-lattice"]
+      },
+      {
+        "id": "section-matter",
+        "title": "MATTER (Displacement)",
+        "content": "Matter creates displacement zones that generate pressure gradients.",
+        "order": 2
+      },
+      {
+        "id": "section-movement",
+        "title": "MOVEMENT (Shunt Dynamics)",
+        "content": "All movement emerges from shunt events in the spation medium.",
+        "order": 3,
+        "visualizations": ["viz-shunt-dynamics"]
+      },
+      {
+        "id": "section-time",
+        "title": "NOW (Time Emergence)",
+        "content": "Time is not fundamental but emerges from counting shunt events.",
+        "order": 4,
+        "formulas": ["formula-time-emergence"]
+      }
+    ]
+  },
+  "references": {
+    "papers": ["paper-core-engine", "paper-foundational-principles"],
+    "phases": ["phase-0"],
+    "benchmarks": [],
+    "formulas": ["formula-master-equation", "formula-time-emergence"],
+    "rules": []
+  },
+  "dateCreated": "2025-12-01T00:00:00Z",
+  "dateUpdated": "2025-12-20T00:00:00Z",
+  "version": "1.0.0",
+  "status": "published",
+  "tags": ["foundational", "primitives", "ontology"],
+  "difficulty": "beginner",
+  "estimatedReadTime": 10,
+  "prerequisites": []
+}
+

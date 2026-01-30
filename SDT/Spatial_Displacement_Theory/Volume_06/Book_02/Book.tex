@@ -1,0 +1,86 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 06: Thermodynamics and Statistical Mechanics \\ Book 02: Transport and Statistical Structure}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Transport Coefficients}
+
+\section*{Abstract}
+Transport coefficients are derived from matrix contact length scales and flux locking. Viscosity and
+diffusivity are geometric consequences rather than empirical primitives.
+
+\section{Viscosity}
+\begin{equation}
+\mu = \lambda \frac{K_{\text{bulk}} \ell_P^2}{c}.
+\end{equation}
+
+\section{Kinematic Viscosity}
+Define kinematic viscosity:
+\begin{equation}
+\nu = \frac{\mu}{\rho}.
+\end{equation}
+This expresses transport in terms of matrix coupling and density.
+
+\section{Diffusion}
+Diffusion arises from flux redistribution across occlusion gradients.
+
+\section{Diffusion Equation}
+The diffusion equation is
+\begin{equation}
+\frac{\partial \rho}{\partial t} = D \nabla^2 \rho,
+\end{equation}
+where $D$ is the diffusion coefficient derived from matrix contact length scales.
+
+\section{Diffusion Scaling}
+An SDT scaling is
+\begin{equation}
+D \sim c_m \ell_c,
+\end{equation}
+with $c_m$ the matrix transport speed and $\ell_c$ the contact length.
+
+\chapter{Statistical Structure}
+
+\section*{Abstract}
+Statistical structure emerges from the multiplicity of flux configurations. This chapter links
+configurational counting to observable transport.
+
+\section{Configuration Counting}
+\begin{equation}
+\Omega = \exp\left(\frac{S}{k_B}\right),
+\end{equation}
+which defines the number of accessible flux states.
+
+\section{Fluctuations}
+Fluctuations are deviations in local flux occupancy:
+\begin{equation}
+\langle (\Delta X)^2 \rangle \propto \frac{1}{N_{\text{cells}}},
+\end{equation}
+where $N_{\text{cells}}$ is the number of participating spations.
+
+\chapter{Thermal Conductivity}
+
+\section*{Abstract}
+Thermal conductivity is the macroscopic expression of matrix contact transport.
+
+\section{Conductivity Relation}
+\begin{equation}
+\kappa_T \sim c_m \ell_c,
+\end{equation}
+where $c_m$ is matrix transport speed and $\ell_c$ is contact length scale.
+
+\section{Transport Coefficient Link}
+The transport coefficients share a common geometric scale:
+\begin{equation}
+\kappa_T \sim D \sim c_m \ell_c,
+\end{equation}
+so thermal diffusion and mass diffusion arise from the same matrix-contact mechanism.
+\end{document}

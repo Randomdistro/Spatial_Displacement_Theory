@@ -1,0 +1,283 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Explainer Metadata Schema",
+  "description": "JSON schema for SDT visual explainer metadata",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "description",
+    "category",
+    "domain",
+    "content",
+    "references",
+    "dateCreated",
+    "dateUpdated",
+    "version",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique identifier (lowercase, hyphens only)"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 500
+    },
+    "category": {
+      "type": "string",
+      "enum": ["paper", "phase", "benchmark", "formula", "rule", "element"]
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "foundational",
+        "atomic",
+        "electromagnetic",
+        "gravitational",
+        "cosmological",
+        "thermodynamic",
+        "chemistry",
+        "nuclear",
+        "condensed-matter",
+        "fluid-dynamics",
+        "universal"
+      ]
+    },
+    "content": {
+      "type": "object",
+      "required": ["markdown", "formulas", "visualizations"],
+      "properties": {
+        "markdown": {
+          "type": "string"
+        },
+        "formulas": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/formulaReference" }
+        },
+        "visualizations": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/visualizationConfig" }
+        },
+        "sections": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/contentSection" }
+        }
+      }
+    },
+    "references": {
+      "type": "object",
+      "properties": {
+        "papers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "phases": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "benchmarks": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "formulas": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "rules": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "elements": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "dateCreated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dateUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "review", "published", "deprecated"]
+    },
+    "validation": {
+      "$ref": "#/definitions/validationMetadata"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced"]
+    },
+    "estimatedReadTime": {
+      "type": "number",
+      "minimum": 1
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "definitions": {
+    "formulaReference": {
+      "type": "object",
+      "required": ["id", "latex", "displayMode", "description", "dimensionalAnalysis"],
+      "properties": {
+        "id": { "type": "string" },
+        "latex": { "type": "string" },
+        "displayMode": { "type": "string", "enum": ["inline", "block"] },
+        "label": { "type": "string" },
+        "description": { "type": "string" },
+        "dimensionalAnalysis": { "type": "string" },
+        "numericalExample": {
+          "type": "object",
+          "properties": {
+            "values": { "type": "object" },
+            "result": { "type": "number" },
+            "units": { "type": "string" }
+          }
+        },
+        "derivation": {
+          "type": "object",
+          "properties": {
+            "steps": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "step": { "type": "number" },
+                  "latex": { "type": "string" },
+                  "description": { "type": "string" },
+                  "justification": { "type": "string" }
+                }
+              }
+            },
+            "sourcePaper": { "type": "string" },
+            "sourcePhase": { "type": "string" }
+          }
+        },
+        "variables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "symbol": { "type": "string" },
+              "name": { "type": "string" },
+              "description": { "type": "string" },
+              "units": { "type": "string" },
+              "value": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "visualizationConfig": {
+      "type": "object",
+      "required": ["id", "type", "component", "props", "position", "interactive"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": ["3d", "2d", "animation", "formula", "chart"]
+        },
+        "component": { "type": "string" },
+        "props": { "type": "object" },
+        "position": {
+          "type": "string",
+          "enum": ["inline", "sidebar", "fullscreen"]
+        },
+        "interactive": { "type": "boolean" },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "type": {
+                "type": "string",
+                "enum": ["slider", "input", "dropdown", "checkbox"]
+              },
+              "min": { "type": "number" },
+              "max": { "type": "number" },
+              "step": { "type": "number" },
+              "defaultValue": {},
+              "label": { "type": "string" },
+              "description": { "type": "string" },
+              "unit": { "type": "string" },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {},
+                    "label": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "caption": { "type": "string" },
+        "alt": { "type": "string" }
+      }
+    },
+    "contentSection": {
+      "type": "object",
+      "required": ["id", "title", "content", "order"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "order": { "type": "number" },
+        "visualizations": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "formulas": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "validationMetadata": {
+      "type": "object",
+      "properties": {
+        "validatedBy": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "errorRate": { "type": "number" },
+        "tolerance": { "type": "number" },
+        "experimentalValue": { "type": "number" },
+        "predictedValue": { "type": "number" },
+        "units": { "type": "string" },
+        "source": { "type": "string" }
+      }
+    }
+  }
+}
+

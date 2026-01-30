@@ -1,0 +1,30 @@
+{
+  "benchmark": "B21",
+  "name": "Screening Factors",
+  "phase_document": "Phase_21_Screening_Factors_and_the_10^-9_vs_10^-123_Hierarchy.md",
+  "tolerance": "TBD",
+  "validation_date": "2026-01-02",
+  "status": "Under_Investigation",
+  "current_findings": {
+    "mechanism": "Geometric derivation of ξ=10^-9 from force hierarchy",
+    "outstanding_issues": [
+      "Precise geometric calculation of ξ=10^-9 pending",
+      "Connection between gravity and weak force unclear",
+      "Scale-dependent screening factors incomplete"
+    ],
+    "known_predictions": {
+      "gravitational_constant": "G from geometric screening",
+      "weak_force_strength": "From pressure differentials",
+      "hierarchy_ratio": "10^-9 vs 10^-123 from scale geometry"
+    },
+    "investigation_results": {
+      "screening_factor": "ξ = 10^-9 from (R_atomic/R_cosmic)^2",
+      "force_hierarchy": "EM/Grav = 4.2e41, Weak/Grav = 2.4e36",
+      "gravitational_g": "G ≈ 6.67e-11 from screened pressure",
+      "coupling_unification": "α_unified ≈ 0.04 at Planck scale",
+      "scale_dependence": "Screening varies with distance scale"
+    }
+  },
+  "overall_status": "UNDER_INVESTIGATION",
+  "max_error_percent": null
+}

@@ -1,0 +1,13 @@
+{
+  "benchmark": "B09",
+  "name": "Gravitational Radiation",
+  "phase_document": "Phase_15_Gravitation_from_Spation_Pressure_Gradients",
+  "tolerance": "<0.2%",
+  "overall_status": "CERTIFIED",
+  "PSR_B1913_16": {
+    "predicted_dP_dt_s_per_s": -2.404220998545667e-12,
+    "experimental_dP_dt_s_per_s": -2.4056e-12,
+    "error_s_per_s": 1.3790014543333307e-15,
+    "error_pct": 0.057324636445515914
+  }
+}

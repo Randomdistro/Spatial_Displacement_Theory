@@ -12,8 +12,8 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import {
   NarrationController,
-  NarrationData,
-  NarrationState,
+  type NarrationData,
+  type NarrationState,
   createHighlightedScript,
 } from '../../utils/narration';
 
@@ -305,4 +305,5 @@ export default function NarrationPlayer({
     </div>
   );
 }
+
 

@@ -4,7 +4,6 @@ A consolidated reference of the kinematic and geometric properties of the elemen
 
 | Z | Element | Symbol | Ionization Energy (eV) | Velocity Ratio (v/c) | Geometric k-factor |
 |:--|:--------|:-------|:-----------------------|:---------------------|:-------------------|
-| 1 | Deuterium | H | - | - | - |
 | 1 | Hydrogen | H | - | - | - |
 | 2 | Helium | He | - | - | - |
 | 3 | Lithium | Li | - | - | - |
@@ -61,6 +60,21 @@ A consolidated reference of the kinematic and geometric properties of the elemen
 | 54 | Xenon | Xe | - | 0.00689 | 145.13 |
 | 55 | Cesium | Cs | - | 0.00390 | 256.15 |
 | 56 | Barium | Ba | - | 0.00452 | 221.41 |
+| 57 | Lanthanum | La | - | - | - |
+| 58 | Cerium | Ce | - | - | - |
+| 59 | Praseodymium | Pr | - | - | - |
+| 60 | Neodymium | Nd | - | - | - |
+| 61 | Promethium | Pm | - | - | - |
+| 62 | Samarium | Sm | - | - | - |
+| 63 | Europium | Eu | - | - | - |
+| 64 | Gadolinium | Gd | - | - | - |
+| 65 | Terbium | Tb | - | - | - |
+| 66 | Dysprosium | Dy | - | - | - |
+| 67 | Holmium | Ho | - | - | - |
+| 68 | Erbium | Er | - | - | - |
+| 69 | Thulium | Tm | - | - | - |
+| 70 | Ytterbium | Yb | - | - | - |
+| 71 | Lutetium | Lu | - | - | - |
 | 72 | Hafnium | Hf | - | 0.00517 | 193.48 |
 | 73 | Tantalum | Ta | - | 0.00544 | 183.96 |
 | 74 | Tungsten | W | - | 0.00555 | 180.25 |
@@ -76,3 +90,35 @@ A consolidated reference of the kinematic and geometric properties of the elemen
 | 84 | Polonium | Po | - | 0.00574 | 174.23 |
 | 85 | Astatine | At | - | 0.00603 | 165.75 |
 | 86 | Radon | Rn | - | 0.00649 | 154.18 |
+| 87 | Francium | Fr | - | - | - |
+| 88 | Radium | Ra | - | - | - |
+| 89 | Actinium | Ac | - | - | - |
+| 90 | Thorium | Th | - | - | - |
+| 91 | Protactinium | Pa | - | - | - |
+| 92 | Uranium | U | - | - | - |
+| 93 | Neptunium | Np | - | - | - |
+| 94 | Plutonium | Pu | - | - | - |
+| 95 | Americium | Am | - | - | - |
+| 96 | Curium | Cm | - | - | - |
+| 97 | Berkelium | Bk | - | - | - |
+| 98 | Californium | Cf | - | - | - |
+| 99 | Einsteinium | Es | - | - | - |
+| 100 | Fermium | Fm | - | - | - |
+| 101 | Mendelevium | Md | - | - | - |
+| 102 | Nobelium | No | - | - | - |
+| 103 | Lawrencium | Lr | - | - | - |
+| 104 | Rutherfordium | Rf | - | - | - |
+| 105 | Dubnium | Db | - | - | - |
+| 106 | Seaborgium | Sg | - | - | - |
+| 107 | Bohrium | Bh | - | - | - |
+| 108 | Hassium | Hs | - | - | - |
+| 109 | Meitnerium | Mt | - | - | - |
+| 110 | Darmstadtium | Ds | - | - | - |
+| 111 | Roentgenium | Rg | - | - | - |
+| 112 | Copernicium | Cn | - | - | - |
+| 113 | Nihonium | Nh | - | - | - |
+| 114 | Flerovium | Fl | - | - | - |
+| 115 | Moscovium | Mc | - | - | - |
+| 116 | Livermorium | Lv | - | - | - |
+| 117 | Tennessine | Ts | - | - | - |
+| 118 | Oganesson | Og | - | - | - |

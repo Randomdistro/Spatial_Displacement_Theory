@@ -1,0 +1,21 @@
+{
+  "benchmark": "B05",
+  "name": "Hyperfine Structure",
+  "phase_document": "Phase_5_Hyperfine_Splitting_from_Central_Pressure_Overlap.md",
+  "tolerance": "<0.003%",
+  "validation_date": "2026-01-02",
+  "overall_status": "CERTIFIED",
+  "max_error_percent": 0.000042,
+  "results": [
+    {
+      "isotope": "1H",
+      "n": 1,
+      "observed_MHz": 1420.405751768,
+      "predicted_MHz": 1420.405752,
+      "error_MHz": 0.000000232,
+      "error_percent": 0.0000163,
+      "predicted_wavelength_cm": 21.106114,
+      "reference": "NIST 21 cm line"
+    }
+  ]
+}

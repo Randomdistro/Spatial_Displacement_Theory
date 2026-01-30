@@ -338,7 +338,7 @@ class NucleiCalculator:
         print(f"\nD-T Decomposition:")
         print(f"  D (deuterium pairs): {nucleus.D}")
         print(f"  T (tritium units): {nucleus.T}")
-        print(f"  Stability (D ≥ T): {'✓ Stable' if nucleus.is_stable else '✗ Unstable'}")
+        print(f"  Stability (D >= T): {'Stable' if nucleus.is_stable else 'Unstable'}")
         print(f"\nNeutrino Flux:")
         print(f"  Internal (alpha cores): {nucleus.n_nu_internal}")
         print(f"  Bridges: {nucleus.n_nu_bridge}")

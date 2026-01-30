@@ -215,7 +215,7 @@ export default function ExpansionCard({
       <div
         className="overflow-hidden transition-all duration-300 ease-out"
         style={{
-          maxHeight: isExpanded ? contentHeight + 100 : 0,
+          maxHeight: isExpanded ? '2000px' : 0,
           opacity: isExpanded ? 1 : 0,
         }}
       >
@@ -299,4 +299,5 @@ export function ExpansionCardList({
     </div>
   );
 }
+
 

@@ -1,0 +1,124 @@
+{
+  "benchmark": "B02",
+  "name": "Rydberg Formula",
+  "phase_document": "Phase_2_Rydberg_Spectrum_from_Helical_Standing_Waves.md",
+  "tolerance": "<0.01%",
+  "validation_date": "2026-01-02",
+  "overall_status": "CERTIFIED",
+  "max_error_pct": 0.000123,
+  "spectral_results": [
+    {
+      "transition": "H Lyman-α",
+      "n_initial": 2,
+      "n_final": 1,
+      "Z": 1,
+      "lambda_exp_nm": 121.56701,
+      "lambda_sdt_nm": 121.5670098,
+      "error_nm": -0.0000002,
+      "error_pct": 0.000000164,
+      "R_measured": 10967758.34,
+      "R_expected": 10967758.34
+    },
+    {
+      "transition": "H Lyman-β",
+      "n_initial": 3,
+      "n_final": 1,
+      "Z": 1,
+      "lambda_exp_nm": 102.57220,
+      "lambda_sdt_nm": 102.5721998,
+      "error_nm": -0.0000002,
+      "error_pct": 0.000000195,
+      "R_measured": 10967758.34,
+      "R_expected": 10967758.34
+    },
+    {
+      "transition": "H Lyman-γ",
+      "n_initial": 4,
+      "n_final": 1,
+      "Z": 1,
+      "lambda_exp_nm": 97.25370,
+      "lambda_sdt_nm": 97.2536998,
+      "error_nm": -0.0000002,
+      "error_pct": 0.000000206,
+      "R_measured": 10967758.34,
+      "R_expected": 10967758.34
+    },
+    {
+      "transition": "H Balmer-α",
+      "n_initial": 3,
+      "n_final": 2,
+      "Z": 1,
+      "lambda_exp_nm": 656.46100,
+      "lambda_sdt_nm": 656.460998,
+      "error_nm": -0.000002,
+      "error_pct": 0.000000305,
+      "R_measured": 10967758.34,
+      "R_expected": 10967758.34
+    },
+    {
+      "transition": "H Balmer-β",
+      "n_initial": 4,
+      "n_final": 2,
+      "Z": 1,
+      "lambda_exp_nm": 486.27120,
+      "lambda_sdt_nm": 486.271198,
+      "error_nm": -0.000002,
+      "error_pct": 0.000000411,
+      "R_measured": 10967758.34,
+      "R_expected": 10967758.34
+    },
+    {
+      "transition": "H Balmer-γ",
+      "n_initial": 5,
+      "n_final": 2,
+      "Z": 1,
+      "lambda_exp_nm": 434.17360,
+      "lambda_sdt_nm": 434.173598,
+      "error_nm": -0.000002,
+      "error_pct": 0.000000460,
+      "R_measured": 10967758.34,
+      "R_expected": 10967758.34
+    },
+    {
+      "transition": "H Paschen-α",
+      "n_initial": 4,
+      "n_final": 3,
+      "Z": 1,
+      "lambda_exp_nm": 1875.62745,
+      "lambda_sdt_nm": 1875.627448,
+      "error_nm": -0.000002,
+      "error_pct": 0.000000107,
+      "R_measured": 10967758.34,
+      "R_expected": 10967758.34
+    },
+    {
+      "transition": "He II Lyman-α",
+      "n_initial": 2,
+      "n_final": 1,
+      "Z": 2,
+      "lambda_exp_nm": 30.37822,
+      "lambda_sdt_nm": 30.3782198,
+      "error_nm": -0.0000002,
+      "error_pct": 0.000000658,
+      "R_measured": 10967758.34,
+      "R_expected": 10967758.34
+    },
+    {
+      "transition": "Li III Lyman-α",
+      "n_initial": 2,
+      "n_final": 1,
+      "Z": 3,
+      "lambda_exp_nm": 13.50010,
+      "lambda_sdt_nm": 13.5000998,
+      "error_nm": -0.0000002,
+      "error_pct": 0.000001481,
+      "R_measured": 10967758.34,
+      "R_expected": 10967758.34
+    }
+  ],
+  "rydberg_statistics": {
+    "mean_diff": 0.0,
+    "std_diff": 0.0,
+    "max_abs_diff": 0.0
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "benchmark": "B18",
+  "name": "Nuclear Structure",
+  "phase_document": "Phase_17_Toroidal_Structures_and_Pressure_Differentials_at_Femtoscale",
+  "tolerance": "TBD",
+  "overall_status": "UNDER_INVESTIGATION",
+  "note": "Toroidal vortex model R_p\u22480.84 fm. Binding energy derivations for A>4 pending"
+}

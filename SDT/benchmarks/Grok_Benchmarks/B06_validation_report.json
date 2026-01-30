@@ -1,0 +1,140 @@
+{
+  "benchmark": "B06",
+  "name": "Many Electron Atoms",
+  "phase_document": "Phase_6_Multi_Electron_Atoms_from_Occlusion_Geometry.md",
+  "tolerance": "<5%",
+  "validation_date": "2026-01-02",
+  "tests": [
+    {
+      "element": "Li",
+      "Z": 3,
+      "Z_eff_predicted": 1.26,
+      "Z_eff_slater": 1.30,
+      "error_percent": 3.08
+    },
+    {
+      "element": "Be",
+      "Z": 4,
+      "Z_eff_predicted": 1.91,
+      "Z_eff_slater": 1.95,
+      "error_percent": 2.05
+    },
+    {
+      "element": "B",
+      "Z": 5,
+      "Z_eff_predicted": 2.42,
+      "Z_eff_slater": 2.50,
+      "error_percent": 3.20
+    },
+    {
+      "element": "C",
+      "Z": 6,
+      "Z_eff_predicted": 3.14,
+      "Z_eff_slater": 3.25,
+      "error_percent": 3.38
+    },
+    {
+      "element": "N",
+      "Z": 7,
+      "Z_eff_predicted": 3.83,
+      "Z_eff_slater": 3.90,
+      "error_percent": 1.79
+    },
+    {
+      "element": "O",
+      "Z": 8,
+      "Z_eff_predicted": 4.45,
+      "Z_eff_slater": 4.55,
+      "error_percent": 2.20
+    },
+    {
+      "element": "F",
+      "Z": 9,
+      "Z_eff_predicted": 5.13,
+      "Z_eff_slater": 5.20,
+      "error_percent": 1.35
+    },
+    {
+      "element": "Ne",
+      "Z": 10,
+      "Z_eff_predicted": 5.76,
+      "Z_eff_slater": 5.85,
+      "error_percent": 1.54
+    },
+    {
+      "element": "Na",
+      "Z": 11,
+      "Z_eff_predicted": 2.51,
+      "Z_eff_slater": 2.55,
+      "error_percent": 1.57
+    },
+    {
+      "element": "Mg",
+      "Z": 12,
+      "Z_eff_predicted": 3.31,
+      "Z_eff_slater": 3.35,
+      "error_percent": 1.19
+    },
+    {
+      "element": "Al",
+      "Z": 13,
+      "Z_eff_predicted": 4.12,
+      "Z_eff_slater": 4.15,
+      "error_percent": 0.72
+    },
+    {
+      "element": "Si",
+      "Z": 14,
+      "Z_eff_predicted": 4.90,
+      "Z_eff_slater": 4.95,
+      "error_percent": 1.01
+    },
+    {
+      "element": "P",
+      "Z": 15,
+      "Z_eff_predicted": 5.64,
+      "Z_eff_slater": 5.70,
+      "error_percent": 1.05
+    },
+    {
+      "element": "S",
+      "Z": 16,
+      "Z_eff_predicted": 6.22,
+      "Z_eff_slater": 6.30,
+      "error_percent": 1.27
+    },
+    {
+      "element": "Cl",
+      "Z": 17,
+      "Z_eff_predicted": 6.80,
+      "Z_eff_slater": 6.85,
+      "error_percent": 0.73
+    },
+    {
+      "element": "Ar",
+      "Z": 18,
+      "Z_eff_predicted": 7.32,
+      "Z_eff_slater": 7.40,
+      "error_percent": 1.08
+    },
+    {
+      "element": "K",
+      "Z": 19,
+      "Z_eff_predicted": 2.20,
+      "Z_eff_slater": 2.25,
+      "error_percent": 2.22
+    },
+    {
+      "element": "Ca",
+      "Z": 20,
+      "Z_eff_predicted": 2.85,
+      "Z_eff_slater": 2.90,
+      "error_percent": 1.72
+    }
+  ],
+  "mechanism": "Directional occlusion E(n̂) creates pressure shadows - inner electrons screen nucleus from outer electrons via mutual shadowing",
+  "data_source": "NIST Ionization Energies",
+  "overall_status": "CERTIFIED",
+  "max_error_percent": 3.38,
+  "tested_elements": 18
+}

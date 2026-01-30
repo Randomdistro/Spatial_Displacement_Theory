@@ -1,0 +1,24 @@
+{
+  "method": "Pure Phi-overlap (no E_b imports)",
+  "threshold": 0.45,
+  "elements": {
+    "Li": {
+      "symbol": "Li",
+      "Z": 3,
+      "r_WS": 1.7272177478405093e-10,
+      "n_atom": 4.633083368160206e+28,
+      "Z_eff": 3,
+      "n_e": 1.389925010448062e+29,
+      "omega_p": 2.1032321697234224e+16,
+      "E_p": 13.843725615075234,
+      "T_p": 2.9873950187847463e-16,
+      "delta": 1.4253892761607153e-08,
+      "electrons": {
+        "1s": {
+          "O_i": 6077673290.2396965,
+          "a_n": 5.29177210903e-11,
+          "lambda_nl": 5.29177210903e-11,
+          "boundary_flux": 2.70881537479921e-10,
+          "volume_integral": 4.4569940591399863e-20,
+          "angular_factor": 1.0,
+          "participates": 

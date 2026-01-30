@@ -36,6 +36,10 @@ M_N = 1.67492749804e-27  # kg
 ALPHA = 7.2973525693e-3  # dimensionless
 ALPHA_INV = 137.035999084  # 1/α
 
+# Thermodynamic constants (CODATA 2018)
+K_B = 1.380649e-23  # J/K (Boltzmann constant)
+R_GAS = 8.314462618  # J/(mol·K) (Ideal gas constant, molar gas constant)
+
 # ============================================================================
 # Derived Constants
 # ============================================================================
@@ -92,8 +96,10 @@ EPSILON = 2.0  # toroidal aspect ratio (typical value, Phase 27A)
 GAMMA_CIRC = 0.0  # vortex circulation coupling (typically 0 for single electron)
 L_WAKE = LAMBDA_C  # wake persistence length (Phase 27A)
 
-# Nuclear g-factors (CODATA 2018)
-G_E = 2.00231930436  # electron g-factor
+# Nuclear g-factors (CODATA 2018, full precision)
+# Note: Using absolute value of electron g-factor (standard in hyperfine calculations)
+# CODATA value is -2.00231930436256(35), but sign is handled by spin-spin interaction term
+G_E = 2.00231930436256  # electron g-factor (absolute value, full precision)
 G_P = 5.5856946893  # proton g-factor
 G_N = -3.82608545  # neutron g-factor
 

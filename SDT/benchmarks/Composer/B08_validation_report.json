@@ -1,0 +1,38 @@
+{
+  "benchmark": "B08",
+  "name": "Orbital Mechanics",
+  "phase_document": "Phase_1_Coulomb_Force",
+  "tolerance": "<0.01%",
+  "overall_status": "FAILED",
+  "max_error_pct": 0.25518534145747807,
+  "planetary_results": [
+    {
+      "planet": "Mercury",
+      "v_predicted_mps": 47871.64095728661,
+      "v_experimental_mps": 47870,
+      "error_mps": 1.6409572866105009,
+      "error_pct": 0.0034279450315657005
+    },
+    {
+      "planet": "Venus",
+      "v_predicted_mps": 35022.042174573915,
+      "v_experimental_mps": 35020,
+      "error_mps": 2.042174573914963,
+      "error_pct": 0.005831452238477907
+    },
+    {
+      "planet": "Earth",
+      "v_predicted_mps": 29784.430487508747,
+      "v_experimental_mps": 29780,
+      "error_mps": 4.430487508747319,
+      "error_pct": 0.014877392574705573
+    },
+    {
+      "planet": "Mars",
+      "v_predicted_mps": 24131.423111688815,
+      "v_experimental_mps": 24070,
+      "error_mps": 61.42311168881497,
+      "error_pct": 0.25518534145747807
+    }
+  ]
+}

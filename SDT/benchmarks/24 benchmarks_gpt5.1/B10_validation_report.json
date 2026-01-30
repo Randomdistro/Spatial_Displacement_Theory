@@ -1,0 +1,25 @@
+{
+  "benchmark": "B10",
+  "name": "Strong Field Tests",
+  "phase_document": "Phase_15_Gravitation_from_Spation_Pressure_Gradients",
+  "validation_date": "C:\\Users\\Jimmi\\Spatial_Displacement_Theory",
+  "mercury_precession": {
+    "test": "Mercury Precession",
+    "predicted (arcsec/century)": 42.95834183022182,
+    "experimental (arcsec/century)": 42.98,
+    "uncertainty": 0.04,
+    "error (arcsec/century)": 0.021658169778177694,
+    "error (%)": 0.050391274495527445,
+    "status": "PASS"
+  },
+  "gravitational_lensing": {
+    "test": "Solar Light Deflection",
+    "predicted (arcsec)": 1.7504313429313116,
+    "experimental (arcsec)": 1.7517,
+    "uncertainty": 0.0005,
+    "error (arcsec)": 0.0012686570686883947,
+    "error (%)": 0.07242433457146741,
+    "status": "PASS"
+  },
+  "overall_status": "CERTIFIED"
+}

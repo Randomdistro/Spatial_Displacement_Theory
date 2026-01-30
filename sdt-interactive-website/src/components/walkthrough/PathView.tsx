@@ -9,8 +9,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useNavigationStore } from '../../store/navigationStore';
-import { PathType } from '../../types/content';
-import { getPathNodeSummaries, PATH_METADATA, NodeSummary } from '../../utils/content-loader';
+import type { PathType } from '../../types/content';
+import { getPathNodeSummaries, PATH_METADATA, type NodeSummary } from '../../utils/content-loader';
 
 interface PathViewProps {
   pathId: PathType;

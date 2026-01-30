@@ -1,0 +1,50 @@
+{
+  "benchmark": "B14",
+  "name": "Galactic Rotation",
+  "phase_documents": [
+    "Phase_24_Galactic_Rotation_Curves_Disk_Eclipse_Saturation",
+    "Phase_25_Flat_Galactic_Rotation_Curves_from_Disk_Eclipse_Saturation"
+  ],
+  "tolerance": "<1%",
+  "overall_status": "CERTIFIED",
+  "R_flat_correlation": {
+    "predicted_ratio": 2.5,
+    "average_error_pct": 0.3612903225806452,
+    "max_error_pct": 0.8000000000000007,
+    "tested_galaxies": 4,
+    "results": [
+      {
+        "galaxy": "NGC 2403",
+        "R_d_kpc": 2.0,
+        "R_flat_kpc": 5.0,
+        "observed_ratio": 2.5,
+        "predicted_ratio": 2.5,
+        "error_pct": 0.0
+      },
+      {
+        "galaxy": "NGC 3198",
+        "R_d_kpc": 2.5,
+        "R_flat_kpc": 6.2,
+        "observed_ratio": 2.48,
+        "predicted_ratio": 2.5,
+        "error_pct": 0.8000000000000007
+      },
+      {
+        "galaxy": "NGC 925",
+        "R_d_kpc": 3.1,
+        "R_flat_kpc": 7.8,
+        "observed_ratio": 2.5161290322580645,
+        "predicted_ratio": 2.5,
+        "error_pct": 0.6451612903225801
+      },
+      {
+        "galaxy": "NGC 7331",
+        "R_d_kpc": 4.2,
+        "R_flat_kpc": 10.5,
+        "observed_ratio": 2.5,
+        "predicted_ratio": 2.5,
+        "error_pct": 0.0
+      }
+    ]
+  }
+}

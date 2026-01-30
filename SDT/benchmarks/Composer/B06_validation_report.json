@@ -1,0 +1,34 @@
+{
+  "benchmark": "B06",
+  "name": "Many-Electron Atoms",
+  "phase_document": "Phase_6_Multi_Electron_Atoms_from_Occlusion_Geometry",
+  "tolerance": "<5%",
+  "overall_status": "FAILED",
+  "max_error_pct": 1897.9398549110012,
+  "ionization_results": [
+    {
+      "element": "He",
+      "Z": 2,
+      "IE_predicted_eV": 39.32045312545265,
+      "IE_experimental_eV": 24.58741,
+      "error_eV": 14.733043125452653,
+      "error_pct": 59.921086139014456
+    },
+    {
+      "element": "Li",
+      "Z": 3,
+      "IE_predicted_eV": 99.18550286662627,
+      "IE_experimental_eV": 5.39172,
+      "error_eV": 93.79378286662626,
+      "error_pct": 1739.5892751594342
+    },
+    {
+      "element": "Be",
+      "Z": 4,
+      "IE_predicted_eV": 186.26193885378788,
+      "IE_experimental_eV": 9.3227,
+      "error_eV": 176.93923885378788,
+      "error_pct": 1897.9398549110012
+    }
+  ]
+}

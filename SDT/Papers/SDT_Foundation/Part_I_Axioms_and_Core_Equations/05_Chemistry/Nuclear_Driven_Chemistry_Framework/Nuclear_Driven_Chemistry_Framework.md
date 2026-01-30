@@ -63,7 +63,27 @@ This derivation emerges from:
 - **Nitrogen-14:** 3 alpha particles + 1 proton (triangular + p)
 - **Oxygen-16:** 4 alpha particles (tetrahedral arrangement)
 
-### 1.3 Nuclear Field Strength
+### 1.3 Nuclei per Nucleus (Developed Structures)
+
+The following packing structures are the *developed* SDT nuclei used in the chemistry framework (Phase 1/2 nuclear packing). These are the nuclei that define the occlusion geometry used to compute bond-scale forces.
+
+| Nucleus | Block Decomposition | Geometry | Key Distances | Notes |
+|:--|:--|:--|:--|:--|
+| H-1 | p | Single point | - | Baseline reference nucleus |
+| H-2 (Deuteron) | D = (p+n) | Dumbbell | p-n = 2.10 fm | First octahedral space (Phase 1) |
+| H-3 (Triton) | T = (p+n+n) | Linear chain | two p-n bonds @ 2.10 fm | Odd-A linear triad |
+| He-3 (Helion) | (p+n+p) | Linear chain | two p-n bonds @ 2.10 fm | Odd-A linear triad |
+| He-4 (Alpha) | α = (2p+2n) | Tetrahedron | internal bonds @ 1.45 fm | 6 inter-nucleon bonds |
+| Be-8 | 2α | Dumbbell | inter-α = 2.9 fm | Unstable (no bridge) |
+| Be-9 | 2α + n | Neutron bridge | inter-α = 2.9 fm | Stabilized dumbbell |
+| Li-6 | α + D | Alpha + deuteron | attachment to α surface | Mixed block |
+| Li-7 | α + T | Alpha + triton | triton caps α face | Prolate nucleus |
+| C-12 | 3α | Triangle | inter-α = 2.9 fm | Planar tri-alpha |
+| O-16 | 4α | Tetrahedron | inter-α = 2.9 fm | Double-magic core |
+| Mg-24 | 6α | Octahedron | inter-α = 2.9 fm | Phase 1 alpha-cluster extension |
+| S-32 | 8α | Cube | inter-α = 2.9 fm | Geometric closure |
+
+### 1.4 Nuclear Field Strength
 
 **Definition 1.2 (Nuclear Field Strength).** Nuclear field strength scales with nucleon count:
 

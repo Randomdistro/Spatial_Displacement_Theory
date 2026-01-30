@@ -1,0 +1,744 @@
+{
+  "H": {
+    "Z": 1,
+    "symbol": "H",
+    "name": "Hydrogen",
+    "A": 1,
+    "num_nucleons": 4,
+    "num_electrons": 1,
+    "total_energy_J": -2.179872361098928e-18,
+    "total_energy_eV": -13.60569312296517,
+    "electron_details": [
+      {
+        "id": 0,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": null,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          5.29177210903e-11
+        ]
+      }
+    ],
+    "pairing_details": []
+  },
+  "He": {
+    "Z": 2,
+    "symbol": "He",
+    "name": "Helium",
+    "A": 4,
+    "num_nucleons": 4,
+    "num_electrons": 2,
+    "total_energy_J": -4.359744722197856e-18,
+    "total_energy_eV": -27.21138624593034,
+    "electron_details": [
+      {
+        "id": 0,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": 1,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          5.29177210903e-11
+        ]
+      },
+      {
+        "id": 1,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 1,
+        "paired_electron_id": 0,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          -5.29177210903e-11
+        ]
+      }
+    ],
+    "pairing_details": [
+      {
+        "electron_1_id": 0,
+        "electron_2_id": 1,
+        "diametrically_opposite": true
+      },
+      {
+        "electron_1_id": 1,
+        "electron_2_id": 0,
+        "diametrically_opposite": true
+      }
+    ]
+  },
+  "Li": {
+    "Z": 3,
+    "symbol": "Li",
+    "name": "Lithium",
+    "A": 7,
+    "num_nucleons": 4,
+    "num_electrons": 3,
+    "total_energy_J": -4.9047128124725884e-18,
+    "total_energy_eV": -30.612809526671633,
+    "electron_details": [
+      {
+        "id": 0,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": 1,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          5.29177210903e-11
+        ]
+      },
+      {
+        "id": 1,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 1,
+        "paired_electron_id": 0,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          -5.29177210903e-11
+        ]
+      },
+      {
+        "id": 2,
+        "shell": "2s",
+        "n": 2,
+        "l": 0,
+        "m": 0,
+        "r_A": 2.116708843612,
+        "v_c": 0.0036486762846496532,
+        "energy_eV": -3.4014232807412923,
+        "L_mag": 2.1091436352861643e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": null,
+        "screening_factor": 0.33333333333333337,
+        "position": [
+          0.0,
+          0.0,
+          2.116708843612e-10
+        ]
+      }
+    ],
+    "pairing_details": [
+      {
+        "electron_1_id": 0,
+        "electron_2_id": 1,
+        "diametrically_opposite": true
+      },
+      {
+        "electron_1_id": 1,
+        "electron_2_id": 0,
+        "diametrically_opposite": true
+      }
+    ]
+  },
+  "Be": {
+    "Z": 4,
+    "symbol": "Be",
+    "name": "Beryllium",
+    "A": 9,
+    "num_nucleons": 4,
+    "num_electrons": 3,
+    "total_energy_J": -4.9047128124725884e-18,
+    "total_energy_eV": -30.612809526671633,
+    "electron_details": [
+      {
+        "id": 0,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": 1,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          5.29177210903e-11
+        ]
+      },
+      {
+        "id": 1,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 1,
+        "paired_electron_id": 0,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          -5.29177210903e-11
+        ]
+      },
+      {
+        "id": 2,
+        "shell": "2s",
+        "n": 2,
+        "l": 0,
+        "m": 0,
+        "r_A": 2.116708843612,
+        "v_c": 0.0036486762846496532,
+        "energy_eV": -3.4014232807412923,
+        "L_mag": 2.1091436352861643e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": null,
+        "screening_factor": 0.33333333333333337,
+        "position": [
+          0.0,
+          0.0,
+          2.116708843612e-10
+        ]
+      }
+    ],
+    "pairing_details": [
+      {
+        "electron_1_id": 0,
+        "electron_2_id": 1,
+        "diametrically_opposite": true
+      },
+      {
+        "electron_1_id": 1,
+        "electron_2_id": 0,
+        "diametrically_opposite": true
+      }
+    ]
+  },
+  "B": {
+    "Z": 5,
+    "symbol": "B",
+    "name": "Boron",
+    "A": 11,
+    "num_nucleons": 4,
+    "num_electrons": 3,
+    "total_energy_J": -4.9047128124725884e-18,
+    "total_energy_eV": -30.612809526671633,
+    "electron_details": [
+      {
+        "id": 0,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": 1,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          5.29177210903e-11
+        ]
+      },
+      {
+        "id": 1,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 1,
+        "paired_electron_id": 0,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          -5.29177210903e-11
+        ]
+      },
+      {
+        "id": 2,
+        "shell": "2s",
+        "n": 2,
+        "l": 0,
+        "m": 0,
+        "r_A": 2.116708843612,
+        "v_c": 0.0036486762846496532,
+        "energy_eV": -3.4014232807412923,
+        "L_mag": 2.1091436352861643e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": null,
+        "screening_factor": 0.33333333333333337,
+        "position": [
+          0.0,
+          0.0,
+          2.116708843612e-10
+        ]
+      }
+    ],
+    "pairing_details": [
+      {
+        "electron_1_id": 0,
+        "electron_2_id": 1,
+        "diametrically_opposite": true
+      },
+      {
+        "electron_1_id": 1,
+        "electron_2_id": 0,
+        "diametrically_opposite": true
+      }
+    ]
+  },
+  "C": {
+    "Z": 6,
+    "symbol": "C",
+    "name": "Carbon",
+    "A": 12,
+    "num_nucleons": 4,
+    "num_electrons": 3,
+    "total_energy_J": -4.9047128124725884e-18,
+    "total_energy_eV": -30.612809526671633,
+    "electron_details": [
+      {
+        "id": 0,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": 1,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          5.29177210903e-11
+        ]
+      },
+      {
+        "id": 1,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 1,
+        "paired_electron_id": 0,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          -5.29177210903e-11
+        ]
+      },
+      {
+        "id": 2,
+        "shell": "2s",
+        "n": 2,
+        "l": 0,
+        "m": 0,
+        "r_A": 2.116708843612,
+        "v_c": 0.0036486762846496532,
+        "energy_eV": -3.4014232807412923,
+        "L_mag": 2.1091436352861643e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": null,
+        "screening_factor": 0.33333333333333337,
+        "position": [
+          0.0,
+          0.0,
+          2.116708843612e-10
+        ]
+      }
+    ],
+    "pairing_details": [
+      {
+        "electron_1_id": 0,
+        "electron_2_id": 1,
+        "diametrically_opposite": true
+      },
+      {
+        "electron_1_id": 1,
+        "electron_2_id": 0,
+        "diametrically_opposite": true
+      }
+    ]
+  },
+  "N": {
+    "Z": 7,
+    "symbol": "N",
+    "name": "Nitrogen",
+    "A": 14,
+    "num_nucleons": 4,
+    "num_electrons": 3,
+    "total_energy_J": -4.9047128124725884e-18,
+    "total_energy_eV": -30.612809526671633,
+    "electron_details": [
+      {
+        "id": 0,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": 1,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          5.29177210903e-11
+        ]
+      },
+      {
+        "id": 1,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 1,
+        "paired_electron_id": 0,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          -5.29177210903e-11
+        ]
+      },
+      {
+        "id": 2,
+        "shell": "2s",
+        "n": 2,
+        "l": 0,
+        "m": 0,
+        "r_A": 2.116708843612,
+        "v_c": 0.0036486762846496532,
+        "energy_eV": -3.4014232807412923,
+        "L_mag": 2.1091436352861643e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": null,
+        "screening_factor": 0.33333333333333337,
+        "position": [
+          0.0,
+          0.0,
+          2.116708843612e-10
+        ]
+      }
+    ],
+    "pairing_details": [
+      {
+        "electron_1_id": 0,
+        "electron_2_id": 1,
+        "diametrically_opposite": true
+      },
+      {
+        "electron_1_id": 1,
+        "electron_2_id": 0,
+        "diametrically_opposite": true
+      }
+    ]
+  },
+  "O": {
+    "Z": 8,
+    "symbol": "O",
+    "name": "Oxygen",
+    "A": 16,
+    "num_nucleons": 4,
+    "num_electrons": 3,
+    "total_energy_J": -4.9047128124725884e-18,
+    "total_energy_eV": -30.612809526671633,
+    "electron_details": [
+      {
+        "id": 0,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": 1,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          5.29177210903e-11
+        ]
+      },
+      {
+        "id": 1,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 1,
+        "paired_electron_id": 0,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          -5.29177210903e-11
+        ]
+      },
+      {
+        "id": 2,
+        "shell": "2s",
+        "n": 2,
+        "l": 0,
+        "m": 0,
+        "r_A": 2.116708843612,
+        "v_c": 0.0036486762846496532,
+        "energy_eV": -3.4014232807412923,
+        "L_mag": 2.1091436352861643e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": null,
+        "screening_factor": 0.33333333333333337,
+        "position": [
+          0.0,
+          0.0,
+          2.116708843612e-10
+        ]
+      }
+    ],
+    "pairing_details": [
+      {
+        "electron_1_id": 0,
+        "electron_2_id": 1,
+        "diametrically_opposite": true
+      },
+      {
+        "electron_1_id": 1,
+        "electron_2_id": 0,
+        "diametrically_opposite": true
+      }
+    ]
+  },
+  "F": {
+    "Z": 9,
+    "symbol": "F",
+    "name": "Fluorine",
+    "A": 19,
+    "num_nucleons": 4,
+    "num_electrons": 3,
+    "total_energy_J": -4.9047128124725884e-18,
+    "total_energy_eV": -30.612809526671633,
+    "electron_details": [
+      {
+        "id": 0,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": 1,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          5.29177210903e-11
+        ]
+      },
+      {
+        "id": 1,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 1,
+        "paired_electron_id": 0,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          -5.29177210903e-11
+        ]
+      },
+      {
+        "id": 2,
+        "shell": "2s",
+        "n": 2,
+        "l": 0,
+        "m": 0,
+        "r_A": 2.116708843612,
+        "v_c": 0.0036486762846496532,
+        "energy_eV": -3.4014232807412923,
+        "L_mag": 2.1091436352861643e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": null,
+        "screening_factor": 0.33333333333333337,
+        "position": [
+          0.0,
+          0.0,
+          2.116708843612e-10
+        ]
+      }
+    ],
+    "pairing_details": [
+      {
+        "electron_1_id": 0,
+        "electron_2_id": 1,
+        "diametrically_opposite": true
+      },
+      {
+        "electron_1_id": 1,
+        "electron_2_id": 0,
+        "diametrically_opposite": true
+      }
+    ]
+  },
+  "Ne": {
+    "Z": 10,
+    "symbol": "Ne",
+    "name": "Neon",
+    "A": 20,
+    "num_nucleons": 4,
+    "num_electrons": 3,
+    "total_energy_J": -4.9047128124725884e-18,
+    "total_energy_eV": -30.612809526671633,
+    "electron_details": [
+      {
+        "id": 0,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": 1,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          5.29177210903e-11
+        ]
+      },
+      {
+        "id": 1,
+        "shell": "1s",
+        "n": 1,
+        "l": 0,
+        "m": 0,
+        "r_A": 0.529177210903,
+        "v_c": 0.0072973525692993065,
+        "energy_eV": -13.60569312296517,
+        "L_mag": 1.0545718176430822e-34,
+        "linked_proton_id": 1,
+        "paired_electron_id": 0,
+        "screening_factor": 1.0,
+        "position": [
+          0.0,
+          0.0,
+          -5.29177210903e-11
+        ]
+      },
+      {
+        "id": 2,
+        "shell": "2s",
+        "n": 2,
+        "l": 0,
+        "m": 0,
+        "r_A": 2.116708843612,
+        "v_c": 0.0036486762846496532,
+        "energy_eV": -3.4014232807412923,
+        "L_mag": 2.1091436352861643e-34,
+        "linked_proton_id": 0,
+        "paired_electron_id": null,
+        "screening_factor": 0.33333333333333337,
+        "position": [
+          0.0,
+          0.0,
+          2.116708843612e-10
+        ]
+      }
+    ],
+    "pairing_details": [
+      {
+        "electron_1_id": 0,
+        "electron_2_id": 1,
+        "diametrically_opposite": true
+      },
+      {
+        "electron_1_id": 1,
+        "electron_2_id": 0,
+        "diametrically_opposite": true
+      }
+    ]
+  }
+}

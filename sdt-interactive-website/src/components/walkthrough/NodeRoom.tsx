@@ -13,8 +13,8 @@ import { useNavigationStore } from '../../store/navigationStore';
 import { loadNodeContent } from '../../utils/content-loader';
 import type { NodeContent, PathType } from '../../types/content';
 import NarrationPlayer from '../ui/NarrationPlayer';
-import ExpansionCard, { ExpansionCardList, ExpansionData } from '../ui/ExpansionCard';
-import { PressureFieldSim, ToroidalElectronSim, GalaxyRotationSim, KLawScaleSim } from '../simulations';
+import ExpansionCard, { ExpansionCardList, type ExpansionData } from '../ui/ExpansionCard';
+import { PressureFieldSim, ToroidalElectronSim, GalaxyRotationSim, KLawScaleSim, WavelengthKoppaVisualizer, NuclearGradientSim } from '../simulations';
 
 interface NodeRoomProps {
   onReturn: () => void;
@@ -26,6 +26,8 @@ const SIMULATION_COMPONENTS: Record<string, React.FC<any>> = {
   'toroidal-electron': ToroidalElectronSim,
   'galaxy-rotation': GalaxyRotationSim,
   'k-law-scale-slider': KLawScaleSim,
+  'wavelength-koppa': WavelengthKoppaVisualizer,
+  'nuclear-gradient': NuclearGradientSim,
 };
 
 export default function NodeRoom({ onReturn }: NodeRoomProps) {

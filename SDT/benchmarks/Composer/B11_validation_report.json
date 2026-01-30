@@ -1,0 +1,13 @@
+{
+  "benchmark": "B11",
+  "name": "Planetary Oblateness",
+  "phase_document": "Phase_9_Oblateness-Spin_Correlation",
+  "tolerance": "\u00b13%",
+  "overall_status": "CERTIFIED",
+  "Earth_J2": {
+    "predicted": 0.00108,
+    "experimental": 0.00108263,
+    "error": 2.6299999999999935e-06,
+    "error_pct": 0.2429269464175197
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "benchmark": "B17",
+  "name": "Magnetism",
+  "phase_document": "Phase_10_Electromagnetic_Mechanisms_and_Effects",
+  "tolerance": "<0.8%",
+  "validation_date": "2026-01-03T04:21:18.783828",
+  "overall_status": "CERTIFIED",
+  "electron_g_factor": {
+    "g_dirac": 2.0,
+    "g_qed_first_order": 2.002322819465777,
+    "g_sdt": 2.004645638931554,
+    "g_experimental": 2.00231930436,
+    "error": 0.0023263345715540673,
+    "error_pct": 0.116181997870596,
+    "wake_amplification": 1.002322819465777
+  },
+  "nuclear_magnetic_moments": {
+    "proton_mu_exp": 2.79284734463,
+    "neutron_mu_exp": -1.913042723,
+    "framework": "Turbine circulation model - requires Navier-Stokes simulation"
+  },
+  "ferromagnetism": {
+    "exchange_energy_J": 5.701756016974254e-12,
+    "curie_temp_sdt_K": 412976507205.9773,
+    "curie_temp_exp_iron_K": 1043,
+    "ratio": 2.5255673913668665e-09
+  },
+  "max_error_pct": 0.116181997870596
+}

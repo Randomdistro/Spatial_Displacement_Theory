@@ -1,0 +1,27 @@
+{
+  "benchmark_id": "B25",
+  "title": "Alpha-Cluster Geometry Fidelity",
+  "status": "CERTIFIED",
+  "validation_date": "2026-01-15T17:28:31Z",
+  "inputs": {
+    "data_sources": ["Internal geometry invariants (no external data)"],
+    "data_files": [],
+    "constants": ["sdt::nuclear::occlusion::constants::dist_inter_alpha_fm", "sdt::nuclear::occlusion::constants::proton_radius_fm"]
+  },
+  "methods": {
+    "equations": ["Edge deviation = max(|d_actual - d_expected| / d_expected)", "Centroid norm = ||mean(position_i)||"],
+    "pipeline": ["Build triangle/tetrahedron/octahedron arrangements", "Compute bond distances and centroid", "Check invariants vs strict thresholds"]
+  },
+  "results": {
+    "total_tested": 3,
+    "within_tolerance": 3,
+    "max_error_percent": 0,
+    "mean_error_percent": 0,
+    "r_squared": 0
+  },
+  "comparison": {
+    "metric": "max relative edge deviation; centroid norm",
+    "tolerance": "edge ≤ 1e-9; centroid ≤ 1e-12·d"
+  },
+  "conclusion": "All alpha-cluster geometric invariants satisfied under strict tolerances."
+}

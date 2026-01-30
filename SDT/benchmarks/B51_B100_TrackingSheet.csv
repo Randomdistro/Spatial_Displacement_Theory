@@ -1,0 +1,51 @@
+Benchmark,Title,Domain,Status,Priority,Standard_Physics_Issue,SDT_Mechanism
+B51,Double-Slit Interference,Wave Mechanics,CERTIFIED,Tier 1,Measurement problem/wave-particle duality,Helical standing wave superposition
+B52,Photoelectric Effect,Light-Matter,CERTIFIED,Tier 2,Photon postulate,Resonant spation energy transfer
+B53,Compton Scattering,Photon-Electron,CERTIFIED,Tier 2,Relativistic kinematics,Spation wave momentum transfer
+B54,Quantum Tunneling,Barrier Penetration,CERTIFIED,Tier 2,Instantaneous traversal,Spation wave evanescence
+B55,Stern-Gerlach Quantization,Spin,CERTIFIED,Tier 2,Intrinsic spin origin,Bistable vortex orientation
+B56,Bell Inequality Tests,Entanglement,CERTIFIED,Tier 2,Nonlocality required,Shared spation field correlations
+B57,Quantum Eraser,Measurement Theory,CERTIFIED,Tier 3,Retrocausality interpretation,Spation coherence selection
+B58,Electron g-Factor,QED Precision,CERTIFIED,Tier 1,Renormalization required,Vortex wake self-interaction
+B59,Muon g-2 Anomaly,Beyond SM,CERTIFIED,Tier 2,4.2σ tension with SM,Mass-dependent geometric correction
+B60,Lamb Shift Higher-Order,QED Radiative,CERTIFIED,Tier 3,Vacuum fluctuations,Spation pressure near nucleus
+B61,GPS Relativistic Corrections,Applied Relativity,DRAFT,Tier 1,Needs SR+GR separately,Unified pressure gradient effect
+B62,Muon Lifetime Dilation,Time Dilation,DRAFT,Tier 2,SR test,High-velocity vortex stabilization
+B63,Pound-Rebka Redshift,Gravitational TD,DRAFT,Tier 2,Equivalence principle,Photon in pressure gradient
+B64,Shapiro Time Delay,Light Bending,DRAFT,Tier 2,GR prediction,Curved spation path
+B65,Frame Dragging (GP-B),Gravitomagnetic,DRAFT,Tier 3,Lense-Thirring effect,Spation viscosity drag
+B66,Black Hole Shadow,Strong Gravity,DRAFT,Tier 2,Event horizon existence,Pressure saturation boundary
+B67,Gravitational Wave Chirp,GW Physics,DRAFT,Tier 2,Spacetime ripples,Propagating spation waves
+B68,Binary Pulsar Decay,GW Emission,DRAFT,Tier 2,Indirect GW detection,Spation wave energy loss
+B69,Neutron Star Mass-Radius,Dense Matter,DRAFT,Tier 3,Nuclear EOS uncertainty,Pressure saturation limit
+B70,CMB Spectrum,Cosmology,DRAFT,Tier 2,Perfect blackbody origin,Spation thermalization
+B71,Lepton Mass Ratios,Particle Physics,DRAFT,Tier 2,No mass hierarchy explanation,Vortex resonance modes
+B72,Pion Mass/Decay,Meson Physics,DRAFT,Tier 3,Chiral symmetry breaking,Quark vortex binding
+B73,Proton-Neutron Mass Diff,Hadron Physics,DRAFT,Tier 3,QCD+QED+quark masses,Three-vortex geometry
+B74,W/Z Boson Masses,Electroweak,DRAFT,Tier 3,Higgs mechanism,Spation wave modes
+B75,Neutron Lifetime Discrepancy,Beta Decay,DRAFT,Tier 2,4σ bottle/beam tension,Geometry-dependent decay
+B76,Proton Radius Puzzle,Hadron Structure,DRAFT,Tier 2,μH vs eH discrepancy,Probe vortex geometry
+B77,CP Violation (Kaons),Weak Interaction,DRAFT,Tier 3,Matter-antimatter asymmetry,Vortex chirality breaking
+B78,Neutrino Mixing Angles,Neutrino Physics,DRAFT,Tier 3,Large mixing unexplained,Vortex flavor oscillation
+B79,Dark Matter Non-Detection,Beyond SM,DRAFT,Tier 2,No WIMP after decades,DM unnecessary - pressure gradients
+B80,Dark Energy/Cosmo Constant,Cosmology,DRAFT,Tier 1,10^120 fine-tuning,Spation pressure baseline
+B81,BCS Superconductivity,Superconductors,DRAFT,Tier 3,Cooper pairing mechanism,Vortex phase locking
+B82,High-Tc Superconductors,Cuprate Physics,DRAFT,Tier 3,No accepted theory,Layered vortex coupling
+B83,Semiconductor Band Gaps,Electronic Structure,DRAFT,Tier 3,DFT underestimates,Vortex levels in periodic spation
+B84,Ferromagnetic Curie Temps,Magnetism,DRAFT,Tier 3,Mean-field qualitative,Vortex alignment transition
+B85,Quantum Hall Effect,2D Electrons,DRAFT,Tier 3,Topological quantization,Vortex winding number
+B86,Bose-Einstein Condensate,Ultracold Atoms,DRAFT,Tier 3,Macroscopic quantum state,Synchronized vortex phase
+B87,Thermal Conductivity,Heat Transport,DRAFT,Tier 3,Phonon scattering complexity,Spation wave transmission
+B88,Refractive Index,Optics,DRAFT,Tier 3,Electronic polarizability,Vortex response to EM wave
+B89,Stellar Mass-Luminosity,Stellar Structure,DRAFT,Tier 3,Nuclear burning rates,Pressure-driven fusion
+B90,White Dwarf Mass-Radius,Degenerate Matter,DRAFT,Tier 3,Electron degeneracy,Vortex packing limit
+B91,Pulsar Timing,Compact Objects,DRAFT,Tier 3,Clock stability,Rigid vortex rotation
+B92,Type Ia SN Luminosity,Cosmological Distance,DRAFT,Tier 3,Standard candle,Chandrasekhar fusion runaway
+B93,Solar Neutrino Flux,Nuclear Astrophysics,DRAFT,Tier 3,Historical neutrino problem,SDT fusion rates
+B94,Primordial Nucleosynthesis,Big Bang,DRAFT,Tier 3,Lithium problem,Early spation dynamics
+B95,Zeeman Effect,Atomic Spectroscopy,DRAFT,Tier 3,Anomalous Zeeman needs spin,Vortex magnetic response
+B96,Stark Effect,Atomic Response,DRAFT,Tier 3,Perturbation theory,Vortex distortion in E field
+B97,Faraday Rotation,Magneto-optics,DRAFT,Tier 3,Refractive index difference,Vortex handedness + B
+B98,Casimir Effect,Vacuum Energy,DRAFT,Tier 1,QFT vacuum fluctuations,Spation mode exclusion
+B99,Cherenkov Radiation,Superluminal in Medium,DRAFT,Tier 3,Medium light speed,Particle outruns spation wave
+B100,Anomalous Dispersion,Resonant Optics,DRAFT,Tier 3,Apparent FTL group velocity,Spation wave interference

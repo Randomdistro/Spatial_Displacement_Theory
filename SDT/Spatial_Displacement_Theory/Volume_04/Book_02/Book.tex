@@ -1,0 +1,98 @@
+\documentclass[12pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Volume 04: Electromagnetism and Magnetic Phenomena \\ Book 02: Magnetic Moments and Helical Wakes}
+\author{James C. Harvey}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Magnetism as Helical Wake}
+
+\section*{Abstract}
+Magnetism in SDT is the helical wake of circulation in the matrix. Magnetic moments arise from toroidal
+circulation and are proportional to curvature, circulation, and coupling efficiency. This book formalizes
+the magnetic moment expression and its sign.
+
+\section{Helical Wake Definition}
+The magnetic field is the helical wake pattern produced by circulation. Its handedness is the sign of
+the magnetic moment.
+
+\section{Magnetic Moment from Circulation}
+The moment scales with geometric factors:
+\begin{equation}
+\mu \propto \Gamma \kappa (1-\eta).
+\end{equation}
+The sign is determined by circulation chirality.
+
+\section{Negative Moments}
+A negative magnetic moment indicates reversed circulation relative to the chosen axis. This is a direct
+geometric signature, not a statistical artifact.
+
+\chapter{Magnetic Field Geometry}
+
+\section*{Abstract}
+The magnetic field is a spatial map of helical wake density. It is the directional curvature of matrix
+flux around circulating boundaries.
+
+\section{Field from Circulation}
+For a circulating boundary, the wake amplitude scales as
+\begin{equation}
+B \propto \Gamma \kappa \frac{(1-\eta)}{r^2}.
+\end{equation}
+This is the far-field decay of helical wake intensity.
+
+\section{Scaling Ratio}
+For two radii $r_1$ and $r_2$ with identical circulation and curvature,
+\begin{equation}
+\frac{B_1}{B_2} = \left(\frac{r_2}{r_1}\right)^2,
+\end{equation}
+which encodes the inverse-square decay in SDT geometry.
+
+\section{Dipole Form}
+At distances large compared to boundary scale, the field is dipolar:
+\begin{equation}
+\mathbf{B}(\mathbf{r}) = \frac{\mu_0}{4\pi}\frac{3(\boldsymbol{\mu}\cdot \hat{\mathbf{r}})\hat{\mathbf{r}} - \boldsymbol{\mu}}{r^3},
+\end{equation}
+with $\mu_0$ interpreted as a matrix compliance constant.
+
+\chapter{Induction as Wake Reconfiguration}
+
+\section*{Abstract}
+Induction is wake reconfiguration in the matrix. Changing circulation modifies local flux topology and
+drives opposing responses.
+
+\section{Induction Law}
+\begin{equation}
+\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}.
+\end{equation}
+This relation is a geometric necessity of wake continuity.
+
+\chapter{Magnetic Moments from Geometry}
+
+\section*{Abstract}
+Magnetic moments are not empirical constants in SDT; they are computable from geometry. This chapter
+summarizes the geometric formula and points to the benchmark derivations.
+
+\section{Moment Expression}
+\begin{equation}
+\mu = C_\mu \Gamma \kappa (1-\eta),
+\end{equation}
+where $C_\mu$ is the geometric conversion constant defined by matrix scaling.
+
+\section{Numerical Template}
+The moment can be evaluated numerically by substituting geometric parameters:
+\begin{equation}
+\mu = C_\mu \Gamma \kappa (1-\eta)\ \text{J/T}.
+\end{equation}
+All benchmark computations apply this template without fitted parameters.
+
+\section{Canonical Derivations}
+Full particle derivations are provided in \texttt{SDT/benchmarks/Grok\_Benchmarks/Magnetic\_Moments\_SDT\_Real\_Derivation.md}
+and the associated calculation scripts.
+\end{document}

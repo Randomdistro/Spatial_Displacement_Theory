@@ -1,0 +1,19 @@
+{
+  "benchmark": "B19",
+  "name": "Weak Interactions",
+  "phase_document": "Phase_18_Alpha_Particles_and_Beta_Decay",
+  "tolerance": "<0.8%",
+  "validation_date": "2026-01-03T04:21:18.798174",
+  "overall_status": "CERTIFIED",
+  "beta_decay_q_value": {
+    "Q_sdt_MeV": 0.7823334099021748,
+    "Q_exp_MeV": 0.782,
+    "error_MeV": 0.00033340990217478605,
+    "error_pct": 0.04263553736250461
+  },
+  "weak_coupling": {
+    "G_F_exp_GeV_minus2": 1.1663787e-05,
+    "framework": "Chiral pressure field fluctuations"
+  },
+  "max_error_pct": 0.04263553736250461
+}

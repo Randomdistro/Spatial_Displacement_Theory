@@ -6,7 +6,7 @@ This document provides comprehensive mapping of the trefoil nuclear structure mo
 
 - Proton and neutron positions (spatial coordinates)
 - Orientations (chirality: L/R, alignment angles)
-- Velocities (three-speed system: v₁=2.23c, v₂=1.84c, v₃=0.395c)
+- Velocities (three-speed system: v₁=2.23c, v₂=1.84c, v₃=c²/v₁≈0.4484c)
 - Relative velocities between nucleons
 - Rotation mechanisms (individual spin vs. nuclear rotation)
 
@@ -58,12 +58,13 @@ The trefoil undergoes **sinusoidal variation** in rim velocity due to Lorentz co
 |----------|----------|-------|--------|
 | v₁ | Perihelion (peak) | 2.23c | Fastest component (from memory) |
 | v₂ | Average (orbital) | 1.84c | Rim velocity (operational) |
-| v₃ | Aphelion (trough) | 0.395c | Slowest component |
+| v₃ | Aphelion (trough) | c²/v₁ ≈ 0.4484c | Slowest component (from v₁·v₃ = c²) |
 
 **Constraint**: v₁·v₃ = c² (energy conservation)
 
 **Verification:**
-- v₁·v₃ = 2.23c × 0.395c = 0.88085c² ≈ c² ✓
+- v₃ = c²/v₁ = 1/2.23 ≈ 0.4484c
+- v₁·v₃ = 2.23c × 0.4484c = 1.0c² ✓
 
 **Physical Interpretation:**
 
@@ -71,7 +72,7 @@ The three velocities create **differential contraction → poloidal flow**:
 
 1. **v₁ (2.23c)**: Maximum velocity at perihelion (closest approach to center)
 2. **v₂ (1.84c)**: Average operational velocity (rim velocity)
-3. **v₃ (0.395c)**: Minimum velocity at aphelion (farthest from center)
+3. **v₃ (≈0.4484c)**: Minimum velocity at aphelion (farthest from center)
 
 This velocity variation creates **standing wave interference patterns** that:
 - Determine binding energies in multi-nucleon systems
@@ -310,14 +311,14 @@ $$v(\theta) = v_2 + (v_1 - v_2)\cos(\theta) + (v_3 - v_2)\sin(\theta)$$
 Where:
 - v₁ = 2.23c (perihelion peak)
 - v₂ = 1.84c (average)
-- v₃ = 0.395c (aphelion trough)
+- v₃ = c²/v₁ ≈ 0.4484c (aphelion trough)
 
 **Energy Conservation:**
 
 $$v_1 \cdot v_3 = c^2$$
 
 **Verification:**
-- 2.23c × 0.395c = 0.88085c² ≈ c² ✓
+- 2.23c × 0.4484c = 1.0c² ✓
 
 ---
 
@@ -357,7 +358,7 @@ $$v_1 \cdot v_3 = c^2$$
    - Most of the trefoil surface
    - Standard binding regions
 
-3. **Aphelion Zone (v₃ = 0.395c)**:
+3. **Aphelion Zone (v₃ ≈ 0.4484c)**:
    - Minimum contraction
    - Lowest energy density
    - Weakest binding regions
@@ -541,7 +542,7 @@ Complete Structure:
 
 **Proton:**
 - R_p = 0.84 fm
-- v₁ = 2.23c, v₂ = 1.84c, v₃ = 0.395c
+- v₁ = 2.23c, v₂ = 1.84c, v₃ = c²/v₁ ≈ 0.4484c
 - ω = 6.57 × 10²³ rad/s
 - μ_p = 2.79 μ_N
 

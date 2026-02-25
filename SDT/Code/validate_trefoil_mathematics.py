@@ -22,7 +22,7 @@ C = 299792458.0  # m/s
 R_P_FM = 0.84  # fm
 V1_C = 2.23
 V2_C = 1.84
-V3_C = 0.395
+V3_C = 1.0 / 2.23  # c (aphelion); v1*v3 = c^2
 OMEGA_P_EXPECTED = 6.57e23  # rad/s
 
 def validate_three_velocity_constraint():

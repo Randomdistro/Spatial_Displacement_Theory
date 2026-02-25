@@ -27,9 +27,12 @@ A_0_REF = 1  # Reference nucleon count
 R_ATOMIC_REF = 50e-12  # m (reference atomic radius ~50 pm)
 
 # Nuclear structure data from chemistry papers
+# D-T decomposition: D = 2Z - N (deuterons), T = N - Z (overloaded neutrons)
+# Structure: nα for even-A; nα + T(p+2n) for odd-A
 NUCLEAR_STRUCTURE = {
     # Period 1-2
-    (1, 1): {"A": 1, "structure": "Single proton", "alpha": "-", "field": "1×"},
+    (1, 0): {"A": 1, "structure": "Single proton", "alpha": "-", "field": "1×"},
+    (1, 1): {"A": 2, "structure": "D = (p+n)", "alpha": "Deuteron", "field": "2×"},
     (2, 2): {"A": 4, "structure": "1α (2p+2n)", "alpha": "Single α", "field": "4×"},
     (3, 4): {"A": 7, "structure": "1α + 1p", "alpha": "α + p", "field": "7×"},
     (4, 5): {"A": 9, "structure": "1α + 1p + 1n", "alpha": "α + p + n", "field": "9×"},
@@ -49,6 +52,49 @@ NUCLEAR_STRUCTURE = {
     (16, 16): {"A": 32, "structure": "8α", "alpha": "Cubic (8α)", "field": "32×"},
     (17, 18): {"A": 35, "structure": "8α + 1p", "alpha": "Cubic (8α) + p", "field": "35×"},
     (18, 22): {"A": 40, "structure": "10α", "alpha": "Extended structure", "field": "40×"},
+
+    # Period 4 (Z=19–36): K through Kr
+    (19, 20): {"A": 39, "structure": "9α + 1p + 2n", "alpha": "9α + 1T", "field": "39×"},
+    (20, 20): {"A": 40, "structure": "10α", "alpha": "10α", "field": "40×"},
+    (21, 24): {"A": 45, "structure": "9α + 3p + 6n", "alpha": "9α + 3T", "field": "45×"},
+    (22, 26): {"A": 48, "structure": "12α", "alpha": "12α", "field": "48×"},
+    (23, 28): {"A": 51, "structure": "9α + 5p + 10n", "alpha": "9α + 5T", "field": "51×"},
+    (24, 28): {"A": 52, "structure": "13α", "alpha": "13α", "field": "52×"},
+    (25, 30): {"A": 55, "structure": "10α + 5p + 10n", "alpha": "10α + 5T", "field": "55×"},
+    (26, 30): {"A": 56, "structure": "14α", "alpha": "14α", "field": "56×"},
+    (27, 32): {"A": 59, "structure": "11α + 5p + 10n", "alpha": "11α + 5T", "field": "59×"},
+    (28, 30): {"A": 58, "structure": "13α + 2p + 4n", "alpha": "13α + 2T", "field": "58×"},
+    (29, 34): {"A": 63, "structure": "12α + 5p + 10n", "alpha": "12α + 5T", "field": "63×"},
+    (30, 34): {"A": 64, "structure": "16α", "alpha": "16α", "field": "64×"},
+    (31, 38): {"A": 69, "structure": "12α + 7p + 14n", "alpha": "12α + 7T", "field": "69×"},
+    (32, 42): {"A": 74, "structure": "11α + 10p + 20n", "alpha": "11α + 10T", "field": "74×"},
+    (33, 42): {"A": 75, "structure": "12α + 9p + 18n", "alpha": "12α + 9T", "field": "75×"},
+    (34, 46): {"A": 80, "structure": "20α", "alpha": "20α", "field": "80×"},
+    (35, 44): {"A": 79, "structure": "13α + 9p + 18n", "alpha": "13α + 9T", "field": "79×"},
+    (36, 48): {"A": 84, "structure": "21α", "alpha": "21α", "field": "84×"},
+
+    # Period 5 (Z=37–50): Rb through Sn
+    (37, 48): {"A": 85, "structure": "13α + 11p + 22n", "alpha": "13α + 11T", "field": "85×"},
+    (38, 50): {"A": 88, "structure": "22α", "alpha": "22α", "field": "88×"},
+    (39, 50): {"A": 89, "structure": "14α + 11p + 22n", "alpha": "14α + 11T", "field": "89×"},
+    (40, 50): {"A": 90, "structure": "15α + 10p + 20n", "alpha": "15α + 10T", "field": "90×"},
+    (41, 52): {"A": 93, "structure": "15α + 11p + 22n", "alpha": "15α + 11T", "field": "93×"},
+    (42, 56): {"A": 98, "structure": "14α + 14p + 28n", "alpha": "14α + 14T", "field": "98×"},
+    (43, 55): {"A": 98, "structure": "15α + 1D + 12T", "alpha": "15α + 1D + 12T", "field": "98×"},
+    (44, 58): {"A": 102, "structure": "15α + 14p + 28n", "alpha": "15α + 14T", "field": "102×"},
+    (45, 58): {"A": 103, "structure": "16α + 13p + 26n", "alpha": "16α + 13T", "field": "103×"},
+    (46, 60): {"A": 106, "structure": "16α + 14p + 28n", "alpha": "16α + 14T", "field": "106×"},
+    (47, 60): {"A": 107, "structure": "17α + 13p + 26n", "alpha": "17α + 13T", "field": "107×"},
+    (48, 66): {"A": 114, "structure": "15α + 18p + 36n", "alpha": "15α + 18T", "field": "114×"},
+    (49, 66): {"A": 115, "structure": "16α + 17p + 34n", "alpha": "16α + 17T", "field": "115×"},
+    (50, 68): {"A": 118, "structure": "16α + 18p + 36n", "alpha": "16α + 18T", "field": "118×"},
+}
+
+# Default stable isotope N for each Z when filename omits N (used for ATOMICUS files like 037_Rubidium_Rb_37.md)
+STABLE_ISOTOPE_N = {
+    1: 0, 2: 2, 3: 4, 4: 5, 5: 6, 6: 6, 7: 7, 8: 8, 9: 10, 10: 10, 11: 12, 12: 12, 13: 14, 14: 14, 15: 16, 16: 16, 17: 18, 18: 22,
+    19: 20, 20: 20, 21: 24, 22: 26, 23: 28, 24: 28, 25: 30, 26: 30, 27: 32, 28: 30, 29: 34, 30: 34, 31: 38, 32: 42, 33: 42, 34: 46,
+    35: 44, 36: 48, 37: 48, 38: 50, 39: 50, 40: 50, 41: 52, 42: 56, 43: 55, 44: 58, 45: 58, 46: 60, 47: 60, 48: 66, 49: 66, 50: 68,
 }
 
 # Experimental chemical property data (from chemistry papers)
@@ -139,9 +185,14 @@ def check_authorization(Z: int, chi: float, A: int) -> dict:
 def generate_chemistry_section(Z: int, N: int, symbol: str, name: str, I1_eV: Optional[float] = None) -> str:
     """Generate Part IV: SDT Chemistry Framework section."""
     
-    # Get nuclear structure
+    # Get nuclear structure: use (Z,N) from filename; if not found, fall back to stable isotope for Z
     nuc_key = (Z, N)
-    nuc_data = NUCLEAR_STRUCTURE.get(nuc_key, {})
+    nuc_data = NUCLEAR_STRUCTURE.get(nuc_key)
+    if nuc_data is None and Z in STABLE_ISOTOPE_N:
+        nuc_key = (Z, STABLE_ISOTOPE_N[Z])
+        nuc_data = NUCLEAR_STRUCTURE.get(nuc_key, {})
+    else:
+        nuc_data = nuc_data or {}
     A = nuc_data.get("A", Z + N if Z + N > 0 else Z)
     structure = nuc_data.get("structure", f"{A} nucleons")
     alpha_arr = nuc_data.get("alpha", "-")
@@ -302,30 +353,51 @@ def process_file(filepath: Path):
     I1_match = re.search(r'Ionization Energy.*?(\d+\.?\d*)\s*eV', content, re.IGNORECASE)
     I1_eV = float(I1_match.group(1)) if I1_match else None
     
-    # Check if chemistry section already exists
-    if "## Part IV: SDT Chemistry Framework" in content:
-        print(f"Skipping {name} - chemistry section already exists")
-        return
-    
-    # Generate chemistry section
+    has_part_iv = "## Part IV: SDT Chemistry Framework" in content
     chemistry_section = generate_chemistry_section(Z, N, symbol, name, I1_eV)
-    
-    # Append before final "*(End of Chapter)*" if present, otherwise append at end
-    if "*(End of Chapter" in content:
-        # Insert before end marker - find position manually to avoid regex escape issues
-        end_pos = content.rfind("*(End of Chapter")
-        if end_pos != -1:
-            # Find the closing *)
-            end_close = content.find("*)", end_pos)
-            if end_close != -1:
-                new_content = content[:end_pos] + chemistry_section + content[end_pos:]
+
+    if has_part_iv:
+        # Update existing Part IV section (e.g. after NUCLEAR_STRUCTURE extension)
+        import sys
+        if "--update" not in sys.argv:
+            print(f"Skipping {name} - chemistry section already exists (use --update to refresh)")
+            return
+        # Replace Part IV block: from "## Part IV" to next "## Part" or end
+        part_iv_start = content.find("## Part IV: SDT Chemistry Framework")
+        if part_iv_start == -1:
+            return
+        # Find start of next Part (V or VI) or major "---" section
+        part_iv_end = part_iv_start + len("## Part IV: SDT Chemistry Framework")
+        for marker in ["\n## Part V:", "\n## Part VI:", "\n## Part VII:"]:
+            idx = content.find(marker, part_iv_end)
+            if idx != -1:
+                part_iv_end = idx
+                break
+        else:
+            # No next Part; find "---" or end of file
+            dash = content.find("\n---\n", part_iv_end)
+            if dash != -1:
+                part_iv_end = dash + 1  # keep the ---
+            else:
+                part_iv_end = len(content)
+        new_content = content[:part_iv_start] + chemistry_section.rstrip() + "\n\n" + content[part_iv_end:]
+    else:
+        # Append before final "*(End of Chapter)*" if present, otherwise append at end
+        if "*(End of Chapter" in content:
+            # Insert before end marker - find position manually to avoid regex escape issues
+            end_pos = content.rfind("*(End of Chapter")
+            if end_pos != -1:
+                # Find the closing *)
+                end_close = content.find("*)", end_pos)
+                if end_close != -1:
+                    new_content = content[:end_pos] + chemistry_section + content[end_pos:]
+                else:
+                    new_content = content + chemistry_section
             else:
                 new_content = content + chemistry_section
         else:
+            # Append at end
             new_content = content + chemistry_section
-    else:
-        # Append at end
-        new_content = content + chemistry_section
     
     # Write back
     try:

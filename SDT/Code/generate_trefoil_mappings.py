@@ -6,7 +6,7 @@ Generate Trefoil Nuclear Structure Mappings
 Calculates for all 118 elements:
 - Proton and neutron positions (spatial coordinates)
 - Orientations (chirality: L/R, alignment angles)
-- Velocities (three-speed system: v₁=2.23c, v₂=1.84c, v₃=0.395c)
+- Velocities (three-speed system: v₁=2.23c, v₂=1.84c, v₃=c²/v₁≈0.4484c)
 - Relative velocities between nucleons
 - Rotation mechanisms (individual spin vs. nuclear rotation)
 
@@ -24,6 +24,16 @@ from typing import Dict, List, Tuple, Optional
 from dataclasses import dataclass, asdict
 import numpy as np
 
+# Import NUCLEAR_STRUCTURE and STABLE_ISOTOPE_N for Z=1-50 sync
+try:
+    from enrich_atomicus_chemistry import STABLE_ISOTOPE_N, NUCLEAR_STRUCTURE
+except ImportError:
+    # Fallback if run from different directory
+    _code_dir = Path(__file__).resolve().parent
+    if str(_code_dir) not in sys.path:
+        sys.path.insert(0, str(_code_dir))
+    from enrich_atomicus_chemistry import STABLE_ISOTOPE_N, NUCLEAR_STRUCTURE
+
 # Fix encoding for Windows
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -39,10 +49,10 @@ R_P_FM = 0.84  # fm (proton radius)
 R_N_FM = 0.87  # fm (neutron radius)
 R_NUCLEON_FM = 0.84  # fm (used for calculations)
 
-# Three-velocity system
+# Three-velocity system: v₁·v₃ = c² (energy conservation)
 V1_C = 2.23  # Fastest (perihelion)
 V2_C = 1.84  # Average (rim velocity)
-V3_C = 0.395  # Slowest (aphelion)
+V3_C = 1.0 / 2.23  # Slowest (aphelion), from v₃ = c²/v₁ ≈ 0.4484c
 C = 299792458.0  # m/s
 
 # Rotation
@@ -52,6 +62,16 @@ OMEGA_P = 6.57e23  # rad/s (proton rotation frequency)
 DIST_DEUTERON_FM = 2.10  # fm
 DIST_ALPHA_FM = 1.45  # fm (compressed)
 DIST_INTER_ALPHA_FM = 2.9  # fm
+
+# Shell 2 interstices (20 triangular interstices from icosahedral faces)
+# From NUCLEAR_PACKING_STRUCTURE_AND_DATA; R₂ ≈ 2.5r; (θ, φ) in radians
+R_SHELL2_FM = 2.5 * R_NUCLEON_FM  # fm
+SHELL2_INTERSTICES = [
+    (0.314, 0.802), (0.942, 0.802), (1.571, 0.802), (2.199, 0.802), (2.827, 0.802),
+    (0.314, 1.274), (0.942, 1.274), (1.571, 1.274), (2.199, 1.274), (2.827, 1.274),
+    (0.628, 0.524), (1.257, 0.524), (1.885, 0.524), (2.513, 0.524), (3.142, 0.524),
+    (0.628, 2.618), (1.257, 2.618), (1.885, 2.618), (2.513, 2.618), (3.142, 2.618),
+]
 
 # ============================================================================
 # DATA STRUCTURES
@@ -72,6 +92,14 @@ class NucleonPosition:
     phase_angle: float  # rad (for velocity calculation)
 
 @dataclass
+class InternalElectron:
+    """Internal electron mediating between protons (electron-sharing model)"""
+    x: float  # fm
+    y: float  # fm
+    z: float  # fm
+    shared_with: List[int]  # Nucleon indices this electron mediates between
+
+@dataclass
 class TrefoilStructure:
     """Complete trefoil structure for an element"""
     Z: int
@@ -81,9 +109,28 @@ class TrefoilStructure:
     element_symbol: str
     building_blocks: str  # e.g., "3α" for Carbon-12
     nucleons: List[NucleonPosition]
+    internal_electrons: List[InternalElectron]  # Electron-sharing mediation points
     nuclear_rotation_axis: Tuple[float, float, float]
     nuclear_rotation_frequency: float  # rad/s
     relative_velocities: Dict[str, float]  # Pairwise relative velocities
+
+# ============================================================================
+# GEOMETRY HELPERS
+# ============================================================================
+
+def spherical_to_cartesian(r: float, theta: float, phi: float) -> Tuple[float, float, float]:
+    """Convert spherical (r, θ, φ) to Cartesian. θ=azimuthal, φ=polar (math convention)."""
+    x = r * math.sin(phi) * math.cos(theta)
+    y = r * math.sin(phi) * math.sin(theta)
+    z = r * math.cos(phi)
+    return (x, y, z)
+
+def get_shell2_center(index: int) -> Tuple[float, float, float]:
+    """Get Cartesian center for Shell 2 interstice index (0-19)."""
+    if 0 <= index < len(SHELL2_INTERSTICES):
+        theta, phi = SHELL2_INTERSTICES[index]
+        return spherical_to_cartesian(R_SHELL2_FM, theta, phi)
+    return (0.0, 0.0, 0.0)
 
 # ============================================================================
 # BUILDING BLOCK GEOMETRY
@@ -204,6 +251,52 @@ def generate_tri_alpha_positions(center: Tuple[float, float, float]) -> List[Nuc
     
     return nucleons
 
+def generate_T_unit_positions(center: Tuple[float, float, float], 
+                             index: int = 0) -> List[NucleonPosition]:
+    """Generate positions for a T-unit (1p + 2n) - trefoil bridge unit."""
+    x0, y0, z0 = center
+    d = DIST_DEUTERON_FM * 0.8  # Slightly tighter than deuteron
+    
+    # Linear arrangement: p - n - n (proton, neutron, neutron)
+    chirality = "L" if index % 2 == 0 else "R"
+    proton = NucleonPosition(
+        type="proton",
+        x=x0 - d,
+        y=y0,
+        z=z0,
+        chirality=chirality,
+        velocity_v1=V1_C,
+        velocity_v2=V2_C,
+        velocity_v3=V3_C,
+        rotation_frequency=OMEGA_P,
+        phase_angle=index * math.pi / 3
+    )
+    n1 = NucleonPosition(
+        type="neutron",
+        x=x0,
+        y=y0,
+        z=z0,
+        chirality="R" if chirality == "L" else "L",
+        velocity_v1=V1_C,
+        velocity_v2=V2_C * 0.992,
+        velocity_v3=V3_C,
+        rotation_frequency=OMEGA_P * 0.995,
+        phase_angle=index * math.pi / 3 + math.pi / 2
+    )
+    n2 = NucleonPosition(
+        type="neutron",
+        x=x0 + d,
+        y=y0,
+        z=z0,
+        chirality=chirality,
+        velocity_v1=V1_C,
+        velocity_v2=V2_C * 0.992,
+        velocity_v3=V3_C,
+        rotation_frequency=OMEGA_P * 0.995,
+        phase_angle=index * math.pi / 3 + math.pi
+    )
+    return [proton, n1, n2]
+
 def generate_triple_positions(center: Tuple[float, float, float]) -> List[NucleonPosition]:
     """Generate positions for triple (3p+5n) = (np)n(np)n(np)"""
     # Extended chain structure
@@ -278,36 +371,40 @@ def calculate_nuclear_rotation_frequency(nucleons: List[NucleonPosition]) -> flo
     return avg_individual / 1e10
 
 def decompose_nucleus(Z: int, N: int) -> Dict[str, int]:
-    """Decompose nucleus into building blocks"""
+    """Decompose nucleus into building blocks using D-T decomposition when available.
+    D = 2Z - N (deuterons), T = N - Z (T-units); n_alpha = D//2, n_deuteron_extra = D%2.
+    """
     A = Z + N
     
-    # Simple decomposition (can be enhanced with actual building block logic)
+    # Base cases
     if A == 1:
         return {"proton": 1}
     elif A == 2:
         return {"deuteron": 1}
     elif A == 4:
         return {"alpha": 1}
-    elif A <= 8:
-        # Small nuclei: mostly alphas
-        n_alpha = A // 4
-        remainder = A % 4
-        result = {"alpha": n_alpha}
-        if remainder == 2:
-            result["deuteron"] = 1
-        elif remainder == 1:
-            result["proton"] = 1
-        return result
-    else:
-        # Heavier nuclei: alpha clusters
-        n_alpha = A // 4
-        remainder = A % 4
-        result = {"alpha": n_alpha}
-        if remainder >= 2:
-            result["deuteron"] = remainder // 2
-        if remainder % 2 == 1:
-            result["proton"] = 1
-        return result
+    
+    # D-T decomposition for (Z,N) in NUCLEAR_STRUCTURE (Z=1-50 stable isotopes)
+    if (Z, N) in NUCLEAR_STRUCTURE:
+        D = 2 * Z - N
+        T = N - Z
+        if D >= 0 and T >= 0:
+            n_alpha = D // 2
+            n_deuteron_extra = D % 2
+            result = {"alpha": n_alpha, "T_unit": T}
+            if n_deuteron_extra:
+                result["deuteron"] = 1
+            return result
+    
+    # Fallback: simple A//4 decomposition for Z>50 or unknown (Z,N)
+    n_alpha = A // 4
+    remainder = A % 4
+    result = {"alpha": n_alpha, "T_unit": 0}
+    if remainder >= 2:
+        result["deuteron"] = remainder // 2
+    if remainder % 2 == 1:
+        result["proton"] = 1
+    return result
 
 def generate_trefoil_structure(Z: int, N: int, element_name: str, 
                                element_symbol: str) -> TrefoilStructure:
@@ -317,8 +414,9 @@ def generate_trefoil_structure(Z: int, N: int, element_name: str,
     # Decompose into building blocks
     blocks = decompose_nucleus(Z, N)
     
-    # Generate nucleon positions
+    # Generate nucleon positions and internal electrons (electron-sharing model)
     nucleons = []
+    internal_electrons: List[InternalElectron] = []
     center = (0.0, 0.0, 0.0)
     
     if A == 1:
@@ -336,34 +434,135 @@ def generate_trefoil_structure(Z: int, N: int, element_name: str,
         nucleons.append(nucleon)
         building_blocks_str = "1p"
     elif "deuteron" in blocks and blocks["deuteron"] == 1 and A == 2:
-        # Deuteron
+        # Deuteron: 1 electron at gap center, shared between p and n
         p, n = generate_deuteron_positions(center)
         nucleons = [p, n]
+        x0, y0, z0 = center
+        internal_electrons = [InternalElectron(x0, y0, z0, [0, 1])]
         building_blocks_str = "1D"
     elif "alpha" in blocks:
         # Alpha particle or alpha clusters
         n_alpha = blocks.get("alpha", 0)
-        if n_alpha == 1:
+        n_T = blocks.get("T_unit", 0)
+        n_deuteron = blocks.get("deuteron", 0)
+        
+        if n_alpha == 1 and n_T == 0:
             nucleons = generate_alpha_positions(center)
+            x0, y0, z0 = center
+            # 2 electrons, four-way sharing among all 4 nucleons (indices 0-3)
+            internal_electrons = [
+                InternalElectron(x0, y0, z0, [0, 1, 2, 3]),
+                InternalElectron(x0 + 0.1, y0, z0, [0, 1, 2, 3])
+            ]
             building_blocks_str = "1alpha"
         else:
-            # Multiple alphas: arrange in cluster
-            # Simplified: linear arrangement
+            # Multiple alphas and/or T-units: arrange in cluster
+            # A ≤ 40: icosahedral/shell-based placement at Shell 2 interstices
+            # A > 40: linear stacking (approximation; document in 6PI_TREFOIL_INTERLEAVED_SPEC)
             nucleons = []
+            internal_electrons = []
             spacing = DIST_INTER_ALPHA_FM
-            for i in range(n_alpha):
-                offset = (i - (n_alpha - 1) / 2) * spacing
-                alpha_nucleons = generate_alpha_positions((offset, 0.0, 0.0))
-                nucleons.extend(alpha_nucleons)
-            building_blocks_str = f"{n_alpha}alpha"
-            
-            # Add extra nucleons if needed
-            if "deuteron" in blocks:
-                for i in range(blocks["deuteron"]):
-                    offset = (n_alpha / 2 + i + 1) * spacing
+            parts = []
+            idx = 0
+            use_icosahedral = A <= 40 and (n_alpha + n_T + n_deuteron) <= 20
+
+            if use_icosahedral:
+                # Place alphas at Shell 2 interstices (interleaved geometry)
+                for i in range(n_alpha):
+                    alpha_center = get_shell2_center(i)
+                    alpha_nucleons = generate_alpha_positions(alpha_center)
+                    nucleons.extend(alpha_nucleons)
+                    x0, y0, z0 = alpha_center
+                    internal_electrons.append(InternalElectron(x0, y0, z0, [idx, idx+1, idx+2, idx+3]))
+                    internal_electrons.append(InternalElectron(x0 + 0.1, y0, z0, [idx, idx+1, idx+2, idx+3]))
+                    idx += 4
+                if n_alpha:
+                    parts.append(f"{n_alpha}alpha")
+
+                # Place T-units at next Shell 2 interstices (inter-alpha bridges)
+                for i in range(n_T):
+                    t_center = get_shell2_center(n_alpha + i)
+                    t_nucleons = generate_T_unit_positions(t_center, index=i)
+                    nucleons.extend(t_nucleons)
+                    x0, y0, z0 = t_center
+                    internal_electrons.append(InternalElectron(x0, y0, z0, [idx, idx+1, idx+2]))
+                    idx += 3
+                if n_T:
+                    parts.append(f"{n_T}T")
+
+                # Add extra deuteron if D was odd
+                for i in range(n_deuteron):
+                    d_center = get_shell2_center(n_alpha + n_T + i)
+                    p, n = generate_deuteron_positions(d_center)
+                    nucleons.extend([p, n])
+                    x0, y0, z0 = d_center
+                    internal_electrons.append(InternalElectron(x0, y0, z0, [idx, idx+1]))
+                    idx += 2
+                    parts.append("1D")
+
+                # Add unpaired proton (fallback decomposition only)
+                n_proton = blocks.get("proton", 0)
+                if n_proton:
+                    p_center = get_shell2_center(n_alpha + n_T + n_deuteron)
+                    proton = NucleonPosition(
+                        type="proton",
+                        x=p_center[0], y=p_center[1], z=p_center[2],
+                        chirality="L",
+                        velocity_v1=V1_C, velocity_v2=V2_C, velocity_v3=V3_C,
+                        rotation_frequency=OMEGA_P, phase_angle=0.0
+                    )
+                    nucleons.append(proton)
+                    parts.append("1p")
+                    idx += 1
+            else:
+                # Linear stacking for A > 40 (approximation)
+                for i in range(n_alpha):
+                    offset = (i - (n_alpha - 1) / 2) * spacing
+                    alpha_center = (offset, 0.0, 0.0)
+                    alpha_nucleons = generate_alpha_positions(alpha_center)
+                    nucleons.extend(alpha_nucleons)
+                    x0, y0, z0 = alpha_center
+                    internal_electrons.append(InternalElectron(x0, y0, z0, [idx, idx+1, idx+2, idx+3]))
+                    internal_electrons.append(InternalElectron(x0 + 0.1, y0, z0, [idx, idx+1, idx+2, idx+3]))
+                    idx += 4
+                if n_alpha:
+                    parts.append(f"{n_alpha}alpha")
+
+                for i in range(n_T):
+                    offset = (n_alpha / 2 + i + 0.5) * spacing
+                    t_center = (offset, 0.0, 0.0)
+                    t_nucleons = generate_T_unit_positions(t_center, index=i)
+                    nucleons.extend(t_nucleons)
+                    x0, y0, z0 = t_center
+                    internal_electrons.append(InternalElectron(x0, y0, z0, [idx, idx+1, idx+2]))
+                    idx += 3
+                if n_T:
+                    parts.append(f"{n_T}T")
+
+                for i in range(n_deuteron):
+                    offset = (n_alpha / 2 + n_T + i + 1) * spacing
                     p, n = generate_deuteron_positions((offset, 0.0, 0.0))
                     nucleons.extend([p, n])
-                    building_blocks_str += "+1D"
+                    x0, y0, z0 = offset, 0.0, 0.0
+                    internal_electrons.append(InternalElectron(x0, y0, z0, [idx, idx+1]))
+                    idx += 2
+                    parts.append("1D")
+
+                n_proton = blocks.get("proton", 0)
+                if n_proton:
+                    offset = (n_alpha / 2 + n_T + n_deuteron + 1) * spacing
+                    proton = NucleonPosition(
+                        type="proton",
+                        x=offset, y=0.0, z=0.0,
+                        chirality="L",
+                        velocity_v1=V1_C, velocity_v2=V2_C, velocity_v3=V3_C,
+                        rotation_frequency=OMEGA_P, phase_angle=0.0
+                    )
+                    nucleons.append(proton)
+                    parts.append("1p")
+                    idx += 1
+
+            building_blocks_str = "+".join(parts)
     else:
         # Fallback: simple arrangement
         nucleons = []
@@ -412,6 +611,7 @@ def generate_trefoil_structure(Z: int, N: int, element_name: str,
         element_symbol=element_symbol,
         building_blocks=building_blocks_str,
         nucleons=nucleons,
+        internal_electrons=internal_electrons,
         nuclear_rotation_axis=rotation_axis,
         nuclear_rotation_frequency=rotation_frequency,
         relative_velocities=relative_velocities
@@ -459,34 +659,33 @@ ELEMENT_SYMBOLS = [
     "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"
 ]
 
-# Most common isotope neutron numbers (simplified - can be enhanced)
+# Most common isotope neutron numbers
+# For Z=1-50: use STABLE_ISOTOPE_N from enrich_atomicus_chemistry (NUCLEAR_STRUCTURE)
+# For Z>50: fallback to approximate ratios
 def get_most_common_N(Z: int) -> int:
     """Get most common neutron number for element Z"""
-    # Simplified: use stable isotope ratios
-    if Z == 1:
-        return 0  # H-1
-    elif Z == 2:
-        return 2  # He-4
-    elif Z <= 20:
-        # Light elements: roughly N ≈ Z
-        return Z
-    elif Z <= 50:
-        # Medium elements: N ≈ 1.2*Z
-        return int(Z * 1.2)
-    elif Z <= 82:
-        # Heavy elements: N ≈ 1.5*Z
+    if Z in STABLE_ISOTOPE_N:
+        return STABLE_ISOTOPE_N[Z]
+    # Fallback for Z > 50
+    if Z <= 82:
         return int(Z * 1.5)
-    else:
-        # Superheavy: N ≈ 1.6*Z
-        return int(Z * 1.6)
+    return int(Z * 1.6)
 
 # Generate complete element list
+# For Z=1-50: include all (Z,N) from NUCLEAR_STRUCTURE for correct ATOMICUS sync
+# For Z>50: use stable isotope per STABLE_ISOTOPE_N or fallback
 ELEMENTS = []
-for Z in range(1, 119):
+for (Z, N), _ in NUCLEAR_STRUCTURE.items():
+    if 1 <= Z <= 50:
+        name = ELEMENT_NAMES[Z - 1]
+        symbol = ELEMENT_SYMBOLS[Z - 1]
+        ELEMENTS.append((Z, N, name, symbol))
+for Z in range(51, 119):
     N = get_most_common_N(Z)
-    name = ELEMENT_NAMES[Z-1]
-    symbol = ELEMENT_SYMBOLS[Z-1]
+    name = ELEMENT_NAMES[Z - 1]
+    symbol = ELEMENT_SYMBOLS[Z - 1]
     ELEMENTS.append((Z, N, name, symbol))
+ELEMENTS.sort(key=lambda e: (e[0], e[1]))
 
 # ============================================================================
 # OUTPUT FUNCTIONS
@@ -504,6 +703,7 @@ def generate_json_output(structures: List[TrefoilStructure], output_path: Path):
             "element_symbol": structure.element_symbol,
             "building_blocks": structure.building_blocks,
             "nucleons": [asdict(n) for n in structure.nucleons],
+            "internal_electrons": [asdict(e) for e in structure.internal_electrons],
             "nuclear_rotation_axis": structure.nuclear_rotation_axis,
             "nuclear_rotation_frequency": structure.nuclear_rotation_frequency,
             "relative_velocities": structure.relative_velocities
@@ -532,6 +732,13 @@ def generate_typescript_output(structures: List[TrefoilStructure], output_path: 
         "  phase_angle: number;  // rad",
         "}",
         "",
+        "export interface InternalElectron {",
+        "  x: number;  // fm",
+        "  y: number;",
+        "  z: number;",
+        "  shared_with: number[];  // nucleon indices this electron mediates between",
+        "}",
+        "",
         "export interface TrefoilStructure {",
         "  Z: number;",
         "  N: number;",
@@ -540,6 +747,7 @@ def generate_typescript_output(structures: List[TrefoilStructure], output_path: 
         "  element_symbol: string;",
         "  building_blocks: string;",
         "  nucleons: NucleonPosition[];",
+        "  internal_electrons: InternalElectron[];",
         "  nuclear_rotation_axis: [number, number, number];",
         "  nuclear_rotation_frequency: number;  // rad/s",
         "  relative_velocities: Record<string, number>;",
@@ -556,6 +764,15 @@ def generate_typescript_output(structures: List[TrefoilStructure], output_path: 
         lines.append(f'    element_name: "{structure.element_name}",')
         lines.append(f'    element_symbol: "{structure.element_symbol}",')
         lines.append(f'    building_blocks: "{structure.building_blocks}",')
+        lines.append("    internal_electrons: [")
+        for e in structure.internal_electrons:
+            lines.append("      {")
+            lines.append(f"        x: {e.x:.6f},")
+            lines.append(f"        y: {e.y:.6f},")
+            lines.append(f"        z: {e.z:.6f},")
+            lines.append(f"        shared_with: [{', '.join(str(i) for i in e.shared_with)}],")
+            lines.append("      },")
+        lines.append("    ],")
         lines.append("    nucleons: [")
         for n in structure.nucleons:
             lines.append("      {")
@@ -598,11 +815,13 @@ def main():
         except Exception as e:
             print(f"Error generating {name}: {e}")
     
-    # Create output directories
-    data_dir = Path("SDT/data")
+    # Create output directories (resolve relative to script location)
+    _script_dir = Path(__file__).resolve().parent
+    _sdt_root = _script_dir.parent  # SDT/
+    data_dir = _sdt_root / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
     
-    website_data_dir = Path("SDT/website/src/data")
+    website_data_dir = _sdt_root / "website" / "src" / "data"
     website_data_dir.mkdir(parents=True, exist_ok=True)
     
     # Generate outputs

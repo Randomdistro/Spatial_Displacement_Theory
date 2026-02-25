@@ -9,3 +9,2544 @@ events:
     message: |
       The system is: Windows - 10.0.26220 - AMD64
 ...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt"
+    message: |
+      The system is: Windows - 10.0.26220 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\Python\\Python312\\Scripts"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files (x86)\\NoteBook FanControl\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Users\\Jimmi\\App Data\\Roaming\\Python\\Python313\\Scripts"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\HP\\HP One Agent"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\pnpm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Jimmi\\.dotnet\\tools"
+        - "\"C:\\Program Files\\nodejs"
+        - "\""
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\vcpkg"
+      ENV{INCLUDE}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Auxiliary\\VS\\include"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\um"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\shared"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\winrt"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\cppwinrt"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.23+b0019275e for .NET Framework
+      Build started 25/02/2026 11:42:08 AM.
+      
+      Project "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      VcpkgTripletSelection:
+        Using triplet "x86-windows" from "C:\\vcpkg\\installed\\x86-windows\\"
+        Using normalized configuration "Release"
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86\\CL.exe /c /I"C:\\vcpkg\\installed\\x86-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /analyze- /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\vcpkg\\installed\\x86-windows\\lib" /LIBPATH:"C:\\vcpkg\\installed\\x86-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\vcpkg\\installed\\x86-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X86 /SAFESEH Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdC\\CompilerIdC.exe
+      AppLocalFromInstalled:
+        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdC\\CompilerIdC.exe" "C:\\vcpkg\\installed\\x86-windows\\bin" "Debug\\CompilerIdC.tlog\\CompilerIdC.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+        'pwsh.exe' is not recognized as an internal or external command,
+        operable program or batch file.
+        The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdC\\CompilerIdC.exe" "C:\\vcpkg\\installed\\x86-windows\\bin" "Debug\\CompilerIdC.tlog\\CompilerIdC.write.1u.tlog" "Debug\\vcpkg.applocal.log"" exited with code 9009.
+        "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdC\\CompilerIdC.exe" "C:\\vcpkg\\installed\\x86-windows\\bin" "Debug\\CompilerIdC.tlog\\CompilerIdC.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:03.70
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/4.1.1/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files (x86)/NoteBook FanControl/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/HP/HP One Agent/"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/"
+      - "C:/Users/Jimmi/.dotnet/tools/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\Python\\Python312\\Scripts"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files (x86)\\NoteBook FanControl\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Users\\Jimmi\\App Data\\Roaming\\Python\\Python313\\Scripts"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\HP\\HP One Agent"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\pnpm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Jimmi\\.dotnet\\tools"
+        - "\"C:\\Program Files\\nodejs"
+        - "\""
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\vcpkg"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files (x86)/NoteBook FanControl/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/HP/HP One Agent/"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/"
+      - "C:/Users/Jimmi/.dotnet/tools/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link.com"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link.exe"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files (x86)/NoteBook FanControl/lld-link.com"
+      - "C:/Program Files (x86)/NoteBook FanControl/lld-link.exe"
+      - "C:/Program Files (x86)/NoteBook FanControl/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/lld-link.com"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/lld-link.exe"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
+      - "C:/Program Files/GitHub CLI/lld-link.com"
+      - "C:/Program Files/GitHub CLI/lld-link.exe"
+      - "C:/Program Files/GitHub CLI/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Program Files/HP/HP One Agent/lld-link.com"
+      - "C:/Program Files/HP/HP One Agent/lld-link.exe"
+      - "C:/Program Files/HP/HP One Agent/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/lld-link"
+      - "C:/Users/Jimmi/.dotnet/tools/lld-link.com"
+      - "C:/Users/Jimmi/.dotnet/tools/lld-link.exe"
+      - "C:/Users/Jimmi/.dotnet/tools/lld-link"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/lld-link.com"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/lld-link"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/lld-link.com"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/lld-link.exe"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/lld-link"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\Python\\Python312\\Scripts"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files (x86)\\NoteBook FanControl\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Users\\Jimmi\\App Data\\Roaming\\Python\\Python313\\Scripts"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\HP\\HP One Agent"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\pnpm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Jimmi\\.dotnet\\tools"
+        - "\"C:\\Program Files\\nodejs"
+        - "\""
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\vcpkg"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files (x86)/NoteBook FanControl/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/HP/HP One Agent/"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/"
+      - "C:/Users/Jimmi/.dotnet/tools/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\Python\\Python312\\Scripts"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files (x86)\\NoteBook FanControl\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Users\\Jimmi\\App Data\\Roaming\\Python\\Python313\\Scripts"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\HP\\HP One Agent"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\pnpm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Jimmi\\.dotnet\\tools"
+        - "\"C:\\Program Files\\nodejs"
+        - "\""
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\vcpkg"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_MT"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "mt"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files (x86)/NoteBook FanControl/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/HP/HP One Agent/"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/"
+      - "C:/Users/Jimmi/.dotnet/tools/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/mt"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/mt"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/mt"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/mt"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/mt"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/mt"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/mt.com"
+    found: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/mt.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\Python\\Python312\\Scripts"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files (x86)\\NoteBook FanControl\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Users\\Jimmi\\App Data\\Roaming\\Python\\Python313\\Scripts"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\HP\\HP One Agent"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\pnpm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Jimmi\\.dotnet\\tools"
+        - "\"C:\\Program Files\\nodejs"
+        - "\""
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\vcpkg"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lib"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files (x86)/NoteBook FanControl/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/HP/HP One Agent/"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/"
+      - "C:/Users/Jimmi/.dotnet/tools/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/lib.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/lib.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\Python\\Python312\\Scripts"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files (x86)\\NoteBook FanControl\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Users\\Jimmi\\App Data\\Roaming\\Python\\Python313\\Scripts"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\HP\\HP One Agent"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\pnpm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Jimmi\\.dotnet\\tools"
+        - "\"C:\\Program Files\\nodejs"
+        - "\""
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\vcpkg"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\Python\\Python312\\Scripts"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files (x86)\\NoteBook FanControl\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Users\\Jimmi\\App Data\\Roaming\\Python\\Python313\\Scripts"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\HP\\HP One Agent"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\pnpm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Jimmi\\.dotnet\\tools"
+        - "\"C:\\Program Files\\nodejs"
+        - "\""
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\vcpkg"
+      ENV{INCLUDE}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Auxiliary\\VS\\include"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\um"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\shared"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\winrt"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\cppwinrt"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.23+b0019275e for .NET Framework
+      Build started 25/02/2026 11:42:13 AM.
+      
+      Project "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      VcpkgTripletSelection:
+        Using triplet "x86-windows" from "C:\\vcpkg\\installed\\x86-windows\\"
+        Using normalized configuration "Release"
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86\\CL.exe /c /I"C:\\vcpkg\\installed\\x86-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /analyze- /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\vcpkg\\installed\\x86-windows\\lib" /LIBPATH:"C:\\vcpkg\\installed\\x86-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\vcpkg\\installed\\x86-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X86 /SAFESEH Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdCXX\\CompilerIdCXX.exe
+      AppLocalFromInstalled:
+        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\vcpkg\\installed\\x86-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+        'pwsh.exe' is not recognized as an internal or external command,
+        operable program or batch file.
+        The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\vcpkg\\installed\\x86-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"" exited with code 9009.
+        "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\vcpkg\\installed\\x86-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x86\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\4.1.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:02.15
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/4.1.1/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files (x86)/NoteBook FanControl/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/HP/HP One Agent/"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/"
+      - "C:/Users/Jimmi/.dotnet/tools/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/lld-link"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link.com"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link.exe"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/lld-link"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files (x86)/NoteBook FanControl/lld-link.com"
+      - "C:/Program Files (x86)/NoteBook FanControl/lld-link.exe"
+      - "C:/Program Files (x86)/NoteBook FanControl/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/lld-link.com"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/lld-link.exe"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
+      - "C:/Program Files/GitHub CLI/lld-link.com"
+      - "C:/Program Files/GitHub CLI/lld-link.exe"
+      - "C:/Program Files/GitHub CLI/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Program Files/HP/HP One Agent/lld-link.com"
+      - "C:/Program Files/HP/HP One Agent/lld-link.exe"
+      - "C:/Program Files/HP/HP One Agent/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/lld-link"
+      - "C:/Users/Jimmi/.dotnet/tools/lld-link.com"
+      - "C:/Users/Jimmi/.dotnet/tools/lld-link.exe"
+      - "C:/Users/Jimmi/.dotnet/tools/lld-link"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/lld-link.com"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/lld-link"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/lld-link.com"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/lld-link.exe"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/lld-link"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/lld-link.com"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/lld-link.exe"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/lld-link"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\Python\\Python312\\Scripts"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files (x86)\\NoteBook FanControl\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Users\\Jimmi\\App Data\\Roaming\\Python\\Python313\\Scripts"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\HP\\HP One Agent"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\pnpm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Jimmi\\.dotnet\\tools"
+        - "\"C:\\Program Files\\nodejs"
+        - "\""
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\vcpkg"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/Platform/Windows-MSVC.cmake:574 (enable_language)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/Platform/Windows-MSVC.cmake:547 (__windows_compiler_msvc_enable_rc)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/Platform/Windows-MSVC-C.cmake:5 (__windows_compiler_msvc)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCInformation.cmake:48 (include)"
+      - "CMakeLists.txt"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rc"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/"
+      - "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files (x86)/NoteBook FanControl/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Users/Jimmi/App Data/Roaming/Python/Python313/Scripts/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/HP/HP One Agent/"
+      - "C:/Users/Jimmi/AppData/Local/pnpm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0/LocalCache/local-packages/Python311/Scripts/"
+      - "C:/Users/Jimmi/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/bin/"
+      - "C:/Users/Jimmi/.dotnet/tools/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"C:/Program Files/nodejs/"
+      - "C:/Users/Jimmi/Spatial_Displacement_Theory/build/\"/"
+      - "C:/Users/Jimmi/AppData/Roaming/npm/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/"
+      - "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/Project/bin/"
+      - "C:/Program Files (x86)/Project/sbin/"
+      - "C:/Program Files (x86)/Project/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/rc.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/rc.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/rc"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/rc.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/rc.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/rc"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/rc.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/rc.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/rc"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/rc.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/rc.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/rc"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/rc.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/rc.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/rc"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/rc.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/rc.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/rc"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/rc.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/rc.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/rc"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/rc.com"
+    found: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/rc.exe"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\Python\\Python312\\Scripts"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files (x86)\\NoteBook FanControl\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Users\\Jimmi\\App Data\\Roaming\\Python\\Python313\\Scripts"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\HP\\HP One Agent"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\pnpm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Jimmi\\.dotnet\\tools"
+        - "\"C:\\Program Files\\nodejs"
+        - "\""
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\vcpkg"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Project"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/Project"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/CMakeScratch/TryCompile-fdqa1x"
+      binary: "C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/CMakeScratch/TryCompile-fdqa1x"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/CMakeScratch/TryCompile-fdqa1x'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_3b43e.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 25/02/2026 11:42:16 AM.
+        
+        Project "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fdqa1x\\cmTC_3b43e.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_3b43e.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fdqa1x\\Debug\\".
+          Creating directory "cmTC_3b43e.dir\\Debug\\cmTC_3b43e.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_3b43e.dir\\Debug\\cmTC_3b43e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_3b43e.dir\\Debug\\cmTC_3b43e.tlog\\unsuccessfulbuild".
+        VcpkgTripletSelection:
+          Using triplet "x86-windows" from "C:\\vcpkg\\installed\\x86-windows\\"
+          Using normalized configuration "Debug"
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86\\CL.exe /c /I"C:\\vcpkg\\installed\\x86-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_3b43e.dir\\Debug\\\\" /Fd"cmTC_3b43e.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35222 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /I"C:\\vcpkg\\installed\\x86-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_3b43e.dir\\Debug\\\\" /Fd"cmTC_3b43e.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86\\link.exe /OUT:"C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fdqa1x\\Debug\\cmTC_3b43e.exe" /INCREMENTAL /ILK:"cmTC_3b43e.dir\\Debug\\cmTC_3b43e.ilk" /NOLOGO /LIBPATH:"C:\\vcpkg\\installed\\x86-windows\\debug\\lib" /LIBPATH:"C:\\vcpkg\\installed\\x86-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\vcpkg\\installed\\x86-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/CMakeScratch/TryCompile-fdqa1x/Debug/cmTC_3b43e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/CMakeScratch/TryCompile-fdqa1x/Debug/cmTC_3b43e.lib" /MACHINE:X86  /machine:X86 cmTC_3b43e.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_3b43e.vcxproj -> C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fdqa1x\\Debug\\cmTC_3b43e.exe
+        AppLocalFromInstalled:
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fdqa1x\\Debug\\cmTC_3b43e.exe" "C:\\vcpkg\\installed\\x86-windows\\debug\\bin" "cmTC_3b43e.dir\\Debug\\cmTC_3b43e.tlog\\cmTC_3b43e.write.1u.tlog" "cmTC_3b43e.dir\\Debug\\vcpkg.applocal.log"
+          'pwsh.exe' is not recognized as an internal or external command,
+          operable program or batch file.
+          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fdqa1x\\Debug\\cmTC_3b43e.exe" "C:\\vcpkg\\installed\\x86-windows\\debug\\bin" "cmTC_3b43e.dir\\Debug\\cmTC_3b43e.tlog\\cmTC_3b43e.write.1u.tlog" "cmTC_3b43e.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
+          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fdqa1x\\Debug\\cmTC_3b43e.exe" "C:\\vcpkg\\installed\\x86-windows\\debug\\bin" "cmTC_3b43e.dir\\Debug\\cmTC_3b43e.tlog\\cmTC_3b43e.write.1u.tlog" "cmTC_3b43e.dir\\Debug\\vcpkg.applocal.log"
+        FinalizeBuildStatus:
+          Deleting file "cmTC_3b43e.dir\\Debug\\cmTC_3b43e.tlog\\unsuccessfulbuild".
+          Touching "cmTC_3b43e.dir\\Debug\\cmTC_3b43e.tlog\\cmTC_3b43e.lastbuildstate".
+        Done Building Project "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fdqa1x\\cmTC_3b43e.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.98
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x86/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    message: |
+      Running the C compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x86/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35222.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/CMakeScratch/TryCompile-99x5ws"
+      binary: "C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/CMakeScratch/TryCompile-99x5ws"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/CMakeScratch/TryCompile-99x5ws'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2ab17.vcxproj /p:Configuration=Debug /p:Platform=win32 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 25/02/2026 11:42:19 AM.
+        
+        Project "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-99x5ws\\cmTC_2ab17.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_2ab17.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-99x5ws\\Debug\\".
+          Creating directory "cmTC_2ab17.dir\\Debug\\cmTC_2ab17.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_2ab17.dir\\Debug\\cmTC_2ab17.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_2ab17.dir\\Debug\\cmTC_2ab17.tlog\\unsuccessfulbuild".
+        VcpkgTripletSelection:
+          Using triplet "x86-windows" from "C:\\vcpkg\\installed\\x86-windows\\"
+          Using normalized configuration "Debug"
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86\\CL.exe /c /I"C:\\vcpkg\\installed\\x86-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_2ab17.dir\\Debug\\\\" /Fd"cmTC_2ab17.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35222 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /I"C:\\vcpkg\\installed\\x86-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_2ab17.dir\\Debug\\\\" /Fd"cmTC_2ab17.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86\\link.exe /OUT:"C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-99x5ws\\Debug\\cmTC_2ab17.exe" /INCREMENTAL /ILK:"cmTC_2ab17.dir\\Debug\\cmTC_2ab17.ilk" /NOLOGO /LIBPATH:"C:\\vcpkg\\installed\\x86-windows\\debug\\lib" /LIBPATH:"C:\\vcpkg\\installed\\x86-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\vcpkg\\installed\\x86-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/CMakeScratch/TryCompile-99x5ws/Debug/cmTC_2ab17.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/CMakeScratch/TryCompile-99x5ws/Debug/cmTC_2ab17.lib" /MACHINE:X86  /machine:X86 cmTC_2ab17.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_2ab17.vcxproj -> C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-99x5ws\\Debug\\cmTC_2ab17.exe
+        AppLocalFromInstalled:
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-99x5ws\\Debug\\cmTC_2ab17.exe" "C:\\vcpkg\\installed\\x86-windows\\debug\\bin" "cmTC_2ab17.dir\\Debug\\cmTC_2ab17.tlog\\cmTC_2ab17.write.1u.tlog" "cmTC_2ab17.dir\\Debug\\vcpkg.applocal.log"
+          'pwsh.exe' is not recognized as an internal or external command,
+          operable program or batch file.
+          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-99x5ws\\Debug\\cmTC_2ab17.exe" "C:\\vcpkg\\installed\\x86-windows\\debug\\bin" "cmTC_2ab17.dir\\Debug\\cmTC_2ab17.tlog\\cmTC_2ab17.write.1u.tlog" "cmTC_2ab17.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
+          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-99x5ws\\Debug\\cmTC_2ab17.exe" "C:\\vcpkg\\installed\\x86-windows\\debug\\bin" "cmTC_2ab17.dir\\Debug\\cmTC_2ab17.tlog\\cmTC_2ab17.write.1u.tlog" "cmTC_2ab17.dir\\Debug\\vcpkg.applocal.log"
+        FinalizeBuildStatus:
+          Deleting file "cmTC_2ab17.dir\\Debug\\cmTC_2ab17.tlog\\unsuccessfulbuild".
+          Touching "cmTC_2ab17.dir\\Debug\\cmTC_2ab17.tlog\\cmTC_2ab17.lastbuildstate".
+        Done Building Project "C:\\Users\\Jimmi\\Spatial_Displacement_Theory\\build\\CMakeFiles\\CMakeScratch\\TryCompile-99x5ws\\cmTC_2ab17.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.86
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x86/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x86/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35222.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:13 (find_package)"
+    name: "Eigen3"
+    configs:
+      -
+        filename: "Eigen3Config.cmake"
+        kind: "cmake"
+      -
+        filename: "eigen3-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Eigen3"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/pkgRedirects/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/pkgRedirects/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/bin/x64/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/bin/x64/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NoteBook FanControl/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NoteBook FanControl/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/nodejs/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/nodejs/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/GitHub CLI/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/GitHub CLI/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/HP/HP One Agent/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/HP/HP One Agent/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/pnpm/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/pnpm/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/GitHubDesktop/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/GitHubDesktop/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/.dotnet/tools/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/.dotnet/tools/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Roaming/npm/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Roaming/npm/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/Eigen3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/eigen3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "C:/Users/Jimmi/Spatial_Displacement_Theory/SDT/Code/sdt_navier_cpp/build/_deps/eigen-build/Eigen3Config.cmake"
+      mode: "config"
+      version: "3.4.0"
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\Python\\Python312\\Scripts"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files (x86)\\NoteBook FanControl\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Users\\Jimmi\\App Data\\Roaming\\Python\\Python313\\Scripts"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\HP\\HP One Agent"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\pnpm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Jimmi\\.dotnet\\tools"
+        - "\"C:\\Program Files\\nodejs"
+        - "\""
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\vcpkg"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Project"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/Project"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:14 (find_package)"
+    name: "fmt"
+    configs:
+      -
+        filename: "fmtConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "fmt-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "fmt"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/pkgRedirects/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/Spatial_Displacement_Theory/build/CMakeFiles/pkgRedirects/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/vcpackages/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/TestWindow/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/Roslyn/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Team Tools/DiagnosticsHub/Collector/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/bin/x64/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/bin/x64/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/Tools/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Roaming/Python/Python312/Scripts/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NoteBook FanControl/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/NoteBook FanControl/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/nodejs/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/nodejs/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/GitHub CLI/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/GitHub CLI/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/HP/HP One Agent/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/HP/HP One Agent/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/pnpm/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/pnpm/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/Scripts/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Python/Python313/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Microsoft/WindowsApps/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Microsoft VS Code/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/GitHubDesktop/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/GitHubDesktop/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/cursor/resources/app/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/.dotnet/tools/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/.dotnet/tools/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Roaming/npm/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Roaming/npm/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/MiKTeX/miktex/bin/x64/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Microsoft/WinGet/Packages/Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Jimmi/AppData/Local/Programs/Antigravity/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/vcpkg/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/CMake/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/fmtConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/fmt-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x86"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\"
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\Python\\Python312\\Scripts"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files (x86)\\NoteBook FanControl\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Users\\Jimmi\\App Data\\Roaming\\Python\\Python313\\Scripts"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files\\HP\\HP One Agent"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\pnpm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Jimmi\\.dotnet\\tools"
+        - "\"C:\\Program Files\\nodejs"
+        - "\""
+        - "C:\\Users\\Jimmi\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\Jimmi\\AppData\\Local\\Programs\\Antigravity\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\vcpkg"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Project"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/Project"
+...

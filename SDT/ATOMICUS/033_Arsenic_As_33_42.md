@@ -94,6 +94,15 @@ The following table lists **every** observed excitation level available in our d
 
 ---
 
+
+---
+
+
+---
+
+
+---
+
 ## Part IV: SDT Chemistry Framework
 
 ### Nuclear Structure → Chemical Properties
@@ -101,8 +110,8 @@ The following table lists **every** observed excitation level available in our d
 **A. Nuclear Packing Geometry**
 
 - **Mass Number (A):** 75
-- **Nuclear Structure:** 75 nucleons
-- **Alpha Arrangement:** -
+- **Nuclear Structure:** 12α + 9p + 18n
+- **Alpha Arrangement:** 12α + 9T
 - **Nuclear Field Strength:** 75×
 - **Nuclear Radius:** $R_\text{nuc} = 5.061e-15$ m = 5.06 fm
 
@@ -131,7 +140,22 @@ The following table lists **every** observed excitation level available in our d
 - **Criterion (iii) Compression:** $|\Delta\chi_Z| < 50$ per proton → ✓
 - **Criterion (iv) Occlusion:** $\Xi_{n\ell} > 0.1$ → ✓
 
+**E. Connection to CMB Pressure Field**
+
+All chemical properties ultimately trace to the Cosmic Microwave Background (CMB) radiation, which provides the continuous influx of electromagnetic energy that establishes and maintains all pressure fields:
+
+$$\Pi(\mathbf{r}) = \int_{4\pi} I_\text{CMB}(\hat{\mathbf{n}}) \left[1 - E(\mathbf{r}, \hat{\mathbf{n}})\right] d\Omega$$
+
+where $I_\text{CMB}(\hat{\mathbf{n}})$ originates from the last scattering surface at redshift $z = 1089.9$.
+
+**Physical Mechanism:**
+1. CMB radiation propagates through spation, establishing pressure field
+2. Nuclei create occlusion $E(\mathbf{r}, \hat{\mathbf{n}})$
+3. Nuclear field strength determines electron binding
+4. All chemical properties emerge from nuclear structure and CMB pressure
+
 ---
+
 
 ## Part V: Atomic Technical Specifications
 

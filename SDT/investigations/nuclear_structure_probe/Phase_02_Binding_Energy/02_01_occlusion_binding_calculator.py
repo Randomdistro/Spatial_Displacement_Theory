@@ -60,6 +60,13 @@ def spherical_occlusion(radius: float, distance: float) -> float:
     Calculate solid angle occlusion of a sphere at a given distance.
     
     Formula: Omega = 2*pi*(1 - cos theta) where sin theta = R/d
+    Geometric interpretation: observer at distance d from sphere center;
+    sphere of radius R subtends solid angle Omega.
+    
+    Edge cases (physically correct):
+    - d < R: observer inside sphere → full sky subtended → 4π sr
+    - d = R: observer on sphere surface → hemisphere → 2π sr
+    - d > R: standard formula
     
     Parameters:
     -----------
@@ -73,14 +80,18 @@ def spherical_occlusion(radius: float, distance: float) -> float:
     float
         Solid angle occlusion (steradians)
     """
-    if distance <= radius:
-        return 2.0 * math.pi  # Full immersion
+    if distance <= 0.0:
+        return 0.0
+    if distance < radius:
+        return 4.0 * math.pi  # Observer inside sphere: full sky
+    if distance == radius:
+        return 2.0 * math.pi  # Observer on surface: hemisphere
     
     sin_theta = radius / distance
     if sin_theta >= 1.0:
         return 2.0 * math.pi
     
-    cos_theta = math.sqrt(1.0 - sin_theta*sin_theta)
+    cos_theta = math.sqrt(1.0 - sin_theta * sin_theta)
     return 2.0 * math.pi * (1.0 - cos_theta)
 
 

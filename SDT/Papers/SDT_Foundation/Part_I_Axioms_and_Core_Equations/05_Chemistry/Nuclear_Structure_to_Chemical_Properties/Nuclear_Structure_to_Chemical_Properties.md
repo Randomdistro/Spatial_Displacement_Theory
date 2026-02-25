@@ -77,6 +77,38 @@ The following packing structures are the *developed* SDT nuclei used in the curr
 | O-16 | 4α | Tetrahedron | inter-α = 2.9 fm | Double-magic core |
 | Mg-24 | 6α | Octahedron | inter-α = 2.9 fm | Phase 1 alpha-cluster extension |
 | S-32 | 8α | Cube | inter-α = 2.9 fm | Geometric closure |
+| K-39 | 9α + 1T | Extended beyond cube | inter-α = 2.9 fm | D=18, T=1 |
+| Ca-40 | 10α | Extended beyond cube | inter-α = 2.9 fm | D=20, T=0 |
+| Sc-45 | 9α + 3T | Extended | inter-α = 2.9 fm | D=18, T=3 |
+| Ti-48 | 12α | Extended | inter-α = 2.9 fm | D=18, T=4 |
+| V-51 | 9α + 5T | Extended | inter-α = 2.9 fm | D=18, T=5 |
+| Cr-52 | 13α | Extended | inter-α = 2.9 fm | D=20, T=4 |
+| Mn-55 | 10α + 5T | Extended | inter-α = 2.9 fm | D=20, T=5 |
+| Fe-56 | 14α | Extended | inter-α = 2.9 fm | D=22, T=4 |
+| Co-59 | 11α + 5T | Extended | inter-α = 2.9 fm | D=22, T=5 |
+| Ni-58 | 13α + 2T | Extended | inter-α = 2.9 fm | D=26, T=2 |
+| Cu-63 | 12α + 5T | Extended | inter-α = 2.9 fm | D=24, T=5 |
+| Zn-64 | 16α | Extended | inter-α = 2.9 fm | D=26, T=4 |
+| Ga-69 | 12α + 7T | Period 4 completion | inter-α = 2.9 fm | D=24, T=7 |
+| Ge-74 | 11α + 10T | Period 4 completion | inter-α = 2.9 fm | D=22, T=10 |
+| As-75 | 12α + 9T | Period 4 completion | inter-α = 2.9 fm | D=24, T=9 |
+| Se-80 | 20α | Period 4 completion | inter-α = 2.9 fm | D=22, T=12 |
+| Br-79 | 13α + 9T | Period 4 completion | inter-α = 2.9 fm | D=26, T=9 |
+| Kr-84 | 21α | Period 4 completion | inter-α = 2.9 fm | D=24, T=12 |
+| Rb-85 | 13α + 11T | Period 5 | inter-α = 2.9 fm | D=26, T=11 |
+| Sr-88 | 22α | Period 5 | inter-α = 2.9 fm | D=26, T=12 |
+| Y-89 | 14α + 11T | Period 5 | inter-α = 2.9 fm | D=28, T=11 |
+| Zr-90 | 15α + 10T | Period 5 | inter-α = 2.9 fm | D=30, T=10 |
+| Nb-93 | 15α + 11T | Period 5 | inter-α = 2.9 fm | D=30, T=11 |
+| Mo-98 | 14α + 14T | Period 5 | inter-α = 2.9 fm | D=28, T=14 |
+| Tc-98 | 15α + 1D + 12T | Period 5 | inter-α = 2.9 fm | Longest-lived (no stable) |
+| Ru-102 | 15α + 14T | Period 5 | inter-α = 2.9 fm | D=30, T=14 |
+| Rh-103 | 16α + 13T | Period 5 | inter-α = 2.9 fm | D=32, T=13 |
+| Pd-106 | 16α + 14T | Period 5 | inter-α = 2.9 fm | D=32, T=14 |
+| Ag-107 | 17α + 13T | Period 5 | inter-α = 2.9 fm | D=34, T=13 |
+| Cd-114 | 15α + 18T | Period 5 | inter-α = 2.9 fm | D=30, T=18 |
+| In-115 | 16α + 17T | Period 5 | inter-α = 2.9 fm | D=32, T=17 |
+| Sn-118 | 16α + 18T | Period 5 | inter-α = 2.9 fm | D=32, T=18 |
 
 ---
 

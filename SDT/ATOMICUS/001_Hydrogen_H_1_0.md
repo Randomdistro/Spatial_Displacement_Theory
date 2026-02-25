@@ -72,6 +72,15 @@ When the single electron is removed ($E > 13.6$ eV), we are left with the **Prot
 
 ---
 
+
+---
+
+
+---
+
+
+---
+
 ## Part IV: SDT Chemistry Framework
 
 ### Nuclear Structure → Chemical Properties
@@ -79,7 +88,7 @@ When the single electron is removed ($E > 13.6$ eV), we are left with the **Prot
 **A. Nuclear Packing Geometry**
 
 - **Mass Number (A):** 1
-- **Nuclear Structure:** 1 nucleons
+- **Nuclear Structure:** Single proton
 - **Alpha Arrangement:** -
 - **Nuclear Field Strength:** 1×
 - **Nuclear Radius:** $R_\text{nuc} = 1.200e-15$ m = 1.20 fm
@@ -143,8 +152,6 @@ where $I_\text{CMB}(\hat{\mathbf{n}})$ originates from the last scattering surfa
 
 ---
 
-
----
 
 ## Part VI: Trefoil Nuclear Structure Mapping
 

@@ -86,6 +86,15 @@ Nitrogen-14 (99.6%) is an anomaly. It is one of the very few stable "Odd-Odd" nu
 
 ---
 
+
+---
+
+
+---
+
+
+---
+
 ## Part IV: SDT Chemistry Framework
 
 ### Nuclear Structure → Chemical Properties
@@ -142,7 +151,22 @@ Nitrogen-14 (99.6%) is an anomaly. It is one of the very few stable "Odd-Odd" nu
   - Bond angle: $\theta = 107.00°$
 
 
+**E. Connection to CMB Pressure Field**
+
+All chemical properties ultimately trace to the Cosmic Microwave Background (CMB) radiation, which provides the continuous influx of electromagnetic energy that establishes and maintains all pressure fields:
+
+$$\Pi(\mathbf{r}) = \int_{4\pi} I_\text{CMB}(\hat{\mathbf{n}}) \left[1 - E(\mathbf{r}, \hat{\mathbf{n}})\right] d\Omega$$
+
+where $I_\text{CMB}(\hat{\mathbf{n}})$ originates from the last scattering surface at redshift $z = 1089.9$.
+
+**Physical Mechanism:**
+1. CMB radiation propagates through spation, establishing pressure field
+2. Nuclei create occlusion $E(\mathbf{r}, \hat{\mathbf{n}})$
+3. Nuclear field strength determines electron binding
+4. All chemical properties emerge from nuclear structure and CMB pressure
+
 ---
+
 
 ## Part V: Atomic Technical Specifications
 

@@ -132,6 +132,15 @@ Scandium-45 (100% abundance) is the only stable isotope.
 
 ---
 
+
+---
+
+
+---
+
+
+---
+
 ## Part IV: SDT Chemistry Framework
 
 ### Nuclear Structure → Chemical Properties
@@ -139,8 +148,8 @@ Scandium-45 (100% abundance) is the only stable isotope.
 **A. Nuclear Packing Geometry**
 
 - **Mass Number (A):** 45
-- **Nuclear Structure:** 45 nucleons
-- **Alpha Arrangement:** -
+- **Nuclear Structure:** 9α + 3p + 6n
+- **Alpha Arrangement:** 9α + 3T
 - **Nuclear Field Strength:** 45×
 - **Nuclear Radius:** $R_\text{nuc} = 4.268e-15$ m = 4.27 fm
 
@@ -169,7 +178,22 @@ Scandium-45 (100% abundance) is the only stable isotope.
 - **Criterion (iii) Compression:** $|\Delta\chi_Z| < 50$ per proton → ✓
 - **Criterion (iv) Occlusion:** $\Xi_{n\ell} > 0.1$ → ✓
 
+**E. Connection to CMB Pressure Field**
+
+All chemical properties ultimately trace to the Cosmic Microwave Background (CMB) radiation, which provides the continuous influx of electromagnetic energy that establishes and maintains all pressure fields:
+
+$$\Pi(\mathbf{r}) = \int_{4\pi} I_\text{CMB}(\hat{\mathbf{n}}) \left[1 - E(\mathbf{r}, \hat{\mathbf{n}})\right] d\Omega$$
+
+where $I_\text{CMB}(\hat{\mathbf{n}})$ originates from the last scattering surface at redshift $z = 1089.9$.
+
+**Physical Mechanism:**
+1. CMB radiation propagates through spation, establishing pressure field
+2. Nuclei create occlusion $E(\mathbf{r}, \hat{\mathbf{n}})$
+3. Nuclear field strength determines electron binding
+4. All chemical properties emerge from nuclear structure and CMB pressure
+
 ---
+
 
 ## Part V: Atomic Technical Specifications
 

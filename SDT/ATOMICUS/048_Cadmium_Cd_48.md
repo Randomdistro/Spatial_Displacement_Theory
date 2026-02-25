@@ -68,24 +68,33 @@ The following table lists **every** observed excitation level available in our d
 
 ---
 
+
+---
+
+
+---
+
+
+---
+
 ## Part IV: SDT Chemistry Framework
 
 ### Nuclear Structure → Chemical Properties
 
 **A. Nuclear Packing Geometry**
 
-- **Mass Number (A):** 96
-- **Nuclear Structure:** 96 nucleons
-- **Alpha Arrangement:** -
-- **Nuclear Field Strength:** 96×
-- **Nuclear Radius:** $R_\text{nuc} = 5.495e-15$ m = 5.49 fm
+- **Mass Number (A):** 114
+- **Nuclear Structure:** 15α + 18p + 36n
+- **Alpha Arrangement:** 15α + 18T
+- **Nuclear Field Strength:** 114×
+- **Nuclear Radius:** $R_\text{nuc} = 5.819e-15$ m = 5.82 fm
 
 **B. Chemical Properties from Nuclear Field**
 
 
 - **First Ionization Energy:** $I_1 = 8.994$ eV
   - **SDT Scaling:** $I_1 \propto A \times \frac{1}{r_\text{atom}^2}$
-  - **Nuclear Field Contribution:** 96× nuclear field strength
+  - **Nuclear Field Contribution:** 114× nuclear field strength
 
   - **Kinematic Ratio:** $\chi = c/v = 168.55$
     - **Reference:** Hydrogen $\chi_H = 137.0$ (universal constant)
@@ -105,7 +114,22 @@ The following table lists **every** observed excitation level available in our d
 - **Criterion (iii) Compression:** $|\Delta\chi_Z| < 50$ per proton → ✓
 - **Criterion (iv) Occlusion:** $\Xi_{n\ell} > 0.1$ → ✓
 
+**E. Connection to CMB Pressure Field**
+
+All chemical properties ultimately trace to the Cosmic Microwave Background (CMB) radiation, which provides the continuous influx of electromagnetic energy that establishes and maintains all pressure fields:
+
+$$\Pi(\mathbf{r}) = \int_{4\pi} I_\text{CMB}(\hat{\mathbf{n}}) \left[1 - E(\mathbf{r}, \hat{\mathbf{n}})\right] d\Omega$$
+
+where $I_\text{CMB}(\hat{\mathbf{n}})$ originates from the last scattering surface at redshift $z = 1089.9$.
+
+**Physical Mechanism:**
+1. CMB radiation propagates through spation, establishing pressure field
+2. Nuclei create occlusion $E(\mathbf{r}, \hat{\mathbf{n}})$
+3. Nuclear field strength determines electron binding
+4. All chemical properties emerge from nuclear structure and CMB pressure
+
 ---
+
 
 ## Part V: Atomic Technical Specifications
 

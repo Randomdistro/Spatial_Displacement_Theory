@@ -125,21 +125,18 @@ export const WalkthroughApp: React.FC<WalkthroughAppProps> = ({
     cameraChoreographyRef.current = cameraChoreography;
 
     // Setup scale change callback
-    // FIX #1: Use functional updates to avoid stale closure
+    // FIX #1: Use functional updates to avoid stale closure. FIX #3: Compare by name/log10, update index in same callback.
     const unsubscribeScaleChange = scaleManager.onScaleChange((scale) => {
       setCurrentScale(prev => {
         setPreviousScale(prev); // Use previous value from state
-        
-        // Update index when scale changes
-        const newIndex = SCALE_POINTS.findIndex(s => 
-          s.name === scale.name && s.log10 === scale.log10
-        );
-        if (newIndex >= 0) {
-          setCurrentScaleIndex(newIndex);
-        }
-        
         return scale;
       });
+      const newIndex = SCALE_POINTS.findIndex(s =>
+        s.name === scale.name && s.log10 === scale.log10
+      );
+      if (newIndex >= 0) {
+        setCurrentScaleIndex(newIndex);
+      }
       
       // Update pressure field with new scale
       if (pressureFieldRef.current) {

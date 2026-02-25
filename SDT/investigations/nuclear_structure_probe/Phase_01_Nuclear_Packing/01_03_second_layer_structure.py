@@ -356,6 +356,45 @@ class Oxygen16Arrangement(AlphaClusterArrangement):
         return [pos1, pos2, pos3, pos4]
 
 
+class Nitrogen14Arrangement(AlphaClusterArrangement):
+    """
+    Nitrogen-14: 3 alphas + 1 proton (3α + p).
+    
+    Structure: same triangular alpha layout as Carbon-12, with one
+    additional proton at the geometric center of the triangle
+    (or in a nodal position). Nuclear field strength 14x.
+    """
+    
+    def __init__(self):
+        super().__init__(n_alphas=3, arrangement_type='triangle')
+        self.n_protons_extra = 1
+        # ¹⁴N = 7p + 7n. 3 alphas = 6p+6n; extra = 1p+1n (nodal proton + neutron).
+        self.total_nucleons = 14
+    
+    def get_alpha_positions(self) -> List[Tuple[float, float, float]]:
+        """Same triangle as Carbon-12."""
+        d = DIST_INTER_ALPHA_FM
+        pos1 = (0.0, 0.0, 0.0)
+        pos2 = (d, 0.0, 0.0)
+        pos3 = (d/2.0, d*math.sqrt(3)/2.0, 0.0)
+        return [pos1, pos2, pos3]
+    
+    def get_proton_position(self) -> Tuple[float, float, float]:
+        """Position of the extra proton: geometric center of the 3-alpha triangle."""
+        d = DIST_INTER_ALPHA_FM
+        cx = (0.0 + d + d/2.0) / 3.0
+        cy = (0.0 + 0.0 + d*math.sqrt(3)/2.0) / 3.0
+        cz = 0.0
+        return (cx, cy, cz)
+    
+    def calculate_inter_alpha_bonds(self) -> int:
+        return 3  # triangle
+    
+    def calculate_inter_alpha_occlusion(self) -> float:
+        """Inter-alpha occlusion (same as C-12) plus contribution from extra proton if needed."""
+        return super().calculate_inter_alpha_occlusion()
+
+
 # ============================================================================
 # TESTING AND VALIDATION
 # ============================================================================
@@ -416,6 +455,12 @@ def test_second_layer():
     print(f"\nOxygen-16 (4-alpha tetrahedron):")
     print(f"  Inter-alpha bonds: {o16.calculate_inter_alpha_bonds()}")
     print(f"  Inter-alpha occlusion: {o16.calculate_inter_alpha_occlusion():.3f} sr")
+    
+    n14 = Nitrogen14Arrangement()
+    print(f"\nNitrogen-14 (3-alpha triangle + 1p):")
+    print(f"  Inter-alpha bonds: {n14.calculate_inter_alpha_bonds()}")
+    print(f"  Inter-alpha occlusion: {n14.calculate_inter_alpha_occlusion():.3f} sr")
+    print(f"  Extra proton position: {n14.get_proton_position()}")
 
 
 if __name__ == "__main__":

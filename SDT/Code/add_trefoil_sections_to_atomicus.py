@@ -10,17 +10,29 @@ import json
 import re
 from pathlib import Path
 
-ATOMICUS_DIR = Path("SDT/ATOMICUS")
-DATA_FILE = Path("SDT/data/trefoil_mappings.json")
+try:
+    from enrich_atomicus_chemistry import STABLE_ISOTOPE_N
+except ImportError:
+    STABLE_ISOTOPE_N = {}
 
-# Constants
+_SCRIPT_DIR = Path(__file__).resolve().parent
+_SDT_ROOT = _SCRIPT_DIR.parent
+ATOMICUS_DIR = _SDT_ROOT / "ATOMICUS"
+DATA_FILE = _SDT_ROOT / "data" / "trefoil_mappings.json"
+
+# Constants: v₁·v₃ = c² (energy conservation)
 V1_C = 2.23
 V2_C = 1.84
-V3_C = 0.395
+V3_C = 1.0 / 2.23  # ≈ 0.4484c
 
-# Load trefoil data
-with open(DATA_FILE, 'r', encoding='utf-8') as f:
-    structures = {s['element_symbol']: s for s in json.load(f)}
+# Load trefoil data; build lookups by (Z,N) and by symbol (stable isotope preferred)
+_data = json.load(open(DATA_FILE, 'r', encoding='utf-8'))
+structures_by_zn = {(s['Z'], s['N']): s for s in _data}
+structures_by_symbol = {}  # symbol -> structure; first listed per symbol
+for s in _data:
+    key = s['element_symbol']
+    if key not in structures_by_symbol:
+        structures_by_symbol[key] = s
 
 def format_position(x, y, z):
     """Format position coordinates"""
@@ -117,6 +129,22 @@ def generate_trefoil_section(structure):
         
         section += "\n"
     
+    # Electron-sharing summary (from ELECTRON_SHARING_MODEL)
+    internal_electrons = structure.get('internal_electrons', [])
+    if internal_electrons:
+        section += "### Internal Electron Sharing\n\n"
+        section += "**Electron-sharing model:** Neutrons contribute internal electrons that mediate between protons. "
+        section += f"This nucleus has **{len(internal_electrons)} internal electron(s)** at mediation points.\n\n"
+        section += "| # | Position (fm) | Mediates (nucleon indices) |\n"
+        section += "|---|---------------|----------------------------|\n"
+        for i, e in enumerate(internal_electrons[:10], 1):
+            pos_str = format_position(e['x'], e['y'], e['z'])
+            shared = ", ".join(str(idx) for idx in e['shared_with'])
+            section += f"| {i} | {pos_str} | {shared} |\n"
+        if len(internal_electrons) > 10:
+            section += f"| ... | ({len(internal_electrons) - 10} more) | |\n"
+        section += "\n*See ELECTRON_SHARING_MODEL.md for deuteron (p-p-e), alpha (four-way), and T-unit rules.*\n\n"
+    
     section += "### Physical Interpretation\n\n"
     section += "- **Three-velocity system** creates differential contraction → poloidal flow\n"
     section += "- **Standing wave interference patterns** determine binding energies\n"
@@ -139,12 +167,13 @@ def process_file(filepath: Path):
     
     _, name, symbol, z_str, n_str = match.groups()
     Z = int(z_str)
+    N = int(n_str) if n_str else STABLE_ISOTOPE_N.get(Z, Z)
     
-    # Find structure
-    structure = structures.get(symbol)
+    # Find structure: (Z,N) when N in filename; else (Z, stable_N) or symbol
+    lookup_n = N
+    structure = structures_by_zn.get((Z, lookup_n)) or structures_by_symbol.get(symbol)
     if not structure:
-        # Try by Z
-        structure = next((s for s in structures.values() if s['Z'] == Z), None)
+        structure = next((s for s in _data if s['Z'] == Z), None)
     
     if not structure:
         print(f"No structure found for {symbol} (Z={Z})")

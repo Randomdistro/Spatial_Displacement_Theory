@@ -2,9 +2,11 @@
 """
 Phase 2.2: Deuteron Calibration
 
-Calibrates the binding constant k from the deuteron (simplest nucleus).
+Calibrates the nuclear binding constant κ_B (MeV/sr) from the deuteron (simplest nucleus).
+Symbol hygiene: κ_B is binding only; velocity uses v and κ_v ≡ v/c (SDT_COMPILER_SPEC_v0.9 §0).
+Code uses variable name `k` for κ_B.
 
-Key principle: Deuteron has a single p-n bond, so k = B_exp / Omega
+Key principle: Deuteron has a single p-n bond, so κ_B = B_exp / Omega.
 This provides the fundamental calibration point for all other nuclei.
 """
 
@@ -34,7 +36,7 @@ R_NUCLEON_FM = 0.84  # fm
 
 class DeuteronCalibration:
     """
-    Calibrates binding constant k from deuteron.
+    Calibrates binding constant κ_B (MeV/sr; variable `k`) from deuteron.
     
     Deuteron structure:
     - Single p-n bond

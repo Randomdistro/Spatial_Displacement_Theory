@@ -1,5 +1,7 @@
 # SDT Paper: Areas Requiring Embellishment/Explanation
 
+**Technical investigation plan:** [Section_VII_Current_Investigations/Investigation_Embellishment_Gaps.md](Section_VII_Current_Investigations/Investigation_Embellishment_Gaps.md) — full template-based sub-investigations for each gap below.
+
 ## Critical Gaps (High Priority)
 
 ### §2.1 - Spation Geometry Justification

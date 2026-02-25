@@ -334,3 +334,23 @@ if (initializationError) {
 
 **Status:** ✅ All Critical Issues Resolved - Ready for Production
 
+---
+
+## Integration verification (Implementing Integrator)
+
+**Date:** Integrated into codebase.  
+**Verified:** Reviewer fixes from `CODE_REVIEW_REPORT.md` are implemented in:
+
+| Issue | File | Status |
+|-------|------|--------|
+| #1 Stale closure | WalkthroughApp.tsx | ✅ Functional updates; setPreviousScale(prev) inside setCurrentScale; index updated in same callback |
+| #2 Memory leak (wave mesh) | PressureFieldRenderer.tsx | ✅ waveMesh tracked; old mesh removed before new one; dispose() cleans waveMesh |
+| #3 Object reference comparison | WalkthroughApp.tsx | ✅ currentScaleIndex state; findIndex by s.name === scale.name && s.log10 === scale.log10 |
+| #4 Animation loop cleanup | WalkthroughApp.tsx | ✅ isMounted flag; cancelAnimationFrame in cleanup; animationFrameRef.current = null |
+| #5 Non-null assertions | WalkthroughApp.tsx | ✅ sceneRef.current guarded; ForceHierarchyVisualization and ScaleTransitionEffectsComponent only render when sceneRef.current is truthy |
+| #6 Debug code | WalkthroughApp.tsx | ✅ Debug indicator wrapped in process.env.NODE_ENV === 'development' |
+| #7 Error handling | WalkthroughApp.tsx | ✅ try/catch in useEffect; initializationError state; error UI with Refresh |
+
+**Refinement:** setCurrentScaleIndex is called in the scale-change callback (after setCurrentScale) rather than inside the setState updater, to avoid setState-from-updater and keep batching predictable.
+
+**Files:** `website/src/components/walkthrough/WalkthroughApp.tsx`, `website/src/components/walkthrough/PressureFieldRenderer.tsx`.

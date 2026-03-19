@@ -111,9 +111,9 @@ int main() {
     std::cout << "  Calculated k:       " << static_cast<int>(k_mw) << "\n";
     std::cout << "  Predicted mass:     " << std::scientific << std::setprecision(2) 
               << M_predicted << " M☉\n";
-    std::cout << "  Observed mass:      " << mw.M_disk_solar << " M☉\n";
+    std::cout << "  Observed mass:      " << mw.M_disk_solar_nist_ref << " M☉\n";
     std::cout << "  Agreement:          " << std::fixed << std::setprecision(1)
-              << (M_predicted / mw.M_disk_solar * 100.0) << "%\n\n";
+              << (M_predicted / mw.M_disk_solar_nist_ref * 100.0) << "%\n\n";
     
     // Key insight
     std::cout << "\n" << std::string(80, '=') << "\n";

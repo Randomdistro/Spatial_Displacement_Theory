@@ -1,166 +1,19 @@
 {
   "benchmark_id": "B57",
-  "title": "Quantum Eraser / Delayed Choice",
-  "domain": "Measurement Theory",
-  "status": "CERTIFIED",
-  "priority": "Tier 3",
-  "agent": "Agent 1",
-  "completion_date": "2026-01-16",
-
-  "experimental_target": {
-    "phenomenon": "Erasing which-path information restores interference",
-    "delayed_choice": "Erasure decision can be made after signal detection",
-    "key_result": "Pattern only visible in coincidence counts",
-    "source": "Kim et al. PRL 84:1 (2000)"
-  },
-
-  "sdt_mathematical_derivation": {
-    "step_1_entangled_photon_state": {
-      "title": "Shared Spation Field for Signal-Idler Pair",
-      "source": "Parametric down-conversion creates entangled photon pairs",
-      "joint_wavefunction": {
-        "formal": "|Ψ⟩ = (1/√2)(|A⟩_s|A⟩_i + |B⟩_s|B⟩_i)",
-        "meaning": "Signal path correlated with idler path"
-      },
-      "sdt_interpretation": {
-        "shared_field": "ψ_joint(r_s, r_i) connects signal and idler",
-        "correlation": "Spation field encodes which-path correlation"
-      }
-    },
-
-    "step_2_signal_at_d0": {
-      "title": "Signal Photon Detection Pattern",
-      "without_idler_info": {
-        "density_matrix": "ρ_s = Tr_i(|Ψ⟩⟨Ψ|) = (1/2)(|A⟩⟨A| + |B⟩⟨B|)",
-        "result": "Mixed state - NO interference pattern"
-      },
-      "mathematical_proof": {
-        "intensity": "I_s(x) = |⟨x|A⟩|² + |⟨x|B⟩|² (no cross term)",
-        "no_fringes": "Pattern is sum of two single-slit patterns"
-      }
-    },
-
-    "step_3_which_path_detection": {
-      "title": "Idler at D3 or D4 (Which-Path)",
-      "measurement": "Detecting idler at D3 → signal came from A; D4 → from B",
-      "conditional_signal": {
-        "given_D3": "ρ_s|D3 = |A⟩⟨A| (pure state, from path A)",
-        "given_D4": "ρ_s|D4 = |B⟩⟨B| (pure state, from path B)"
-      },
-      "coincidence_pattern": {
-        "D0_D3": "Single-slit pattern from A",
-        "D0_D4": "Single-slit pattern from B",
-        "no_interference": "Sum = two displaced single-slit patterns"
-      },
-      "sdt_mechanism": {
-        "localization": "D3/D4 detection couples to specific spation mode",
-        "coherence_destroyed": "Phase relation between A and B paths lost"
-      }
-    },
-
-    "step_4_erasure_at_d1_d2": {
-      "title": "Idler at D1 or D2 (Erased)",
-      "beam_splitter_action": {
-        "input": "|A⟩_i and |B⟩_i enter beam splitter",
-        "output": "|D1⟩ = (1/√2)(|A⟩ + |B⟩), |D2⟩ = (1/√2)(|A⟩ - |B⟩)"
-      },
-      "conditional_signal": {
-        "given_D1": "ρ_s|D1 = (1/2)|A + B⟩⟨A + B|",
-        "given_D2": "ρ_s|D2 = (1/2)|A - B⟩⟨A - B|"
-      },
-      "interference_restored": {
-        "D0_D1_intensity": "I(x) = |⟨x|A⟩ + ⟨x|B⟩|² (constructive interference)",
-        "D0_D2_intensity": "I(x) = |⟨x|A⟩ - ⟨x|B⟩|² (destructive interference)",
-        "fringes": "Complementary interference patterns"
-      },
-      "sdt_mechanism": {
-        "no_localization": "D1/D2 detection doesn't couple to specific path",
-        "coherence_preserved": "Phase relation maintained in spation field"
-      }
-    },
-
-    "step_5_delayed_choice_analysis": {
-      "title": "Why Timing Doesn't Matter",
-      "key_insight": {
-        "signal_pattern_always": "D0 detections look random (no pattern)",
-        "pattern_in_subset": "Pattern only visible when selecting by idler outcome"
-      },
-      "mathematical_proof": {
-        "total_D0": "I_total(x) = I(D0∩D1) + I(D0∩D2) + I(D0∩D3) + I(D0∩D4)",
-        "D1_D2_sum": "I(D0∩D1) + I(D0∩D2) = |A+B|² + |A-B|² = 2(|A|² + |B|²)",
-        "D3_D4_sum": "I(D0∩D3) + I(D0∩D4) = |A|² + |B|²",
-        "total": "= 3(|A|² + |B|²) = uniform (no fringes)"
-      },
-      "no_retrocausality": {
-        "explanation": "We're not changing D0 detections - they're fixed",
-        "we_are": "Selecting which subset to examine",
-        "selection_vs_causation": "Post-selection reveals, doesn't create pattern"
-      }
-    },
-
-    "step_6_numerical_validation": {
-      "title": "Comparison with Kim et al. Data",
-      "fringe_visibility": {
-        "D0_D1": "V = (I_max - I_min)/(I_max + I_min) ≈ 0.9",
-        "D0_D2": "V ≈ 0.9 (complementary fringes)",
-        "D0_D3": "V ≈ 0 (no fringes)",
-        "D0_D4": "V ≈ 0 (no fringes)"
-      },
-      "sdt_prediction": {
-        "with_erasure": "V = 1 (perfect coherence)",
-        "without_erasure": "V = 0 (no coherence)",
-        "accounting_for_imperfections": "V ≈ 0.9 expected"
-      },
-      "agreement": "Quantitative match with experiment"
-    }
-  },
-
-  "key_equations_derived": {
-    "mixed_state": {
-      "equation": "ρ_s = (1/2)(|A⟩⟨A| + |B⟩⟨B|) - no cross terms",
-      "derived_from": "Tracing over idler",
-      "status": "DERIVED"
-    },
-    "erased_state": {
-      "equation": "ρ_s|D1 ∝ |A + B⟩⟨A + B| - has interference",
-      "derived_from": "Beam splitter transformation + post-selection",
-      "status": "DERIVED"
-    },
-    "total_pattern": {
-      "equation": "I_total = sum over all idler outcomes = no fringes",
-      "derived_from": "Sum of all conditional patterns",
-      "status": "DERIVED"
-    }
-  },
-
-  "validation_result": {
-    "interference_with_erasure": {
-      "predicted_visibility": 1.0,
-      "observed_visibility": 0.9,
-      "status": "PASS (imperfections explain difference)"
-    },
-    "no_interference_without": {
-      "predicted_visibility": 0,
-      "observed_visibility": 0,
-      "status": "PASS"
-    },
-    "delayed_choice_works": {
-      "predicted": "Same result regardless of timing",
-      "observed": "Confirmed",
-      "status": "PASS"
-    }
-  },
-
-  "conceptual_resolution": {
-    "retrocausality": "NOT required - selection not causation",
-    "past_fixed": "D0 outcomes fixed at detection - we choose which to examine",
-    "consciousness": "Not relevant - physical beam splitter does erasure",
-    "information": "Which-path info = spation field localization"
-  },
-
-  "references": [
-    "SDT Quantum Entanglement from Spation Connection (2025)",
-    "Kim YH et al., PRL 84:1 (2000)",
-    "Scully MO & Drühl K, PRA 25:2208 (1982)"
-  ]
+  "title": "Quantum Eraser from Coherence Selection",
+  "status": "DRAFT",
+  "timestamp": "2026-03-13T08:12:01",
+  "data_sources": ["TBD"],
+  "data_files": [],
+  "constants_used": [],
+  "equations": [],
+  "pipeline": [],
+  "total_tested": 0,
+  "within_tolerance": 0,
+  "max_error_percent": 0,
+  "mean_error_percent": 0,
+  "r_squared": 0,
+  "metric": "TBD",
+  "tolerance": "TBD",
+  "conclusion": "Framework: which-path information destroys pressure-field coherence. Erasing which-path restores interference. Needs coherence length model."
 }

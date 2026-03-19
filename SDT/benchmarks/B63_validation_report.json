@@ -1,0 +1,19 @@
+{
+  "benchmark_id": "B63",
+  "title": "Pound-Rebka Redshift from SDT Pressure Gradient",
+  "status": "CERTIFIED",
+  "timestamp": "2026-03-13T08:24:41",
+  "data_sources": ["Pound-Rebka (1959)", "Pound-Snider (1965)"],
+  "data_files": [],
+  "constants_used": ["c", "R_earth", "v_surf_earth"],
+  "equations": ["SDT: z = Delta_v^2 / c^2 (bridge law applied to height difference)", "For small h: z = v_surf^2 * h / (c^2 * R)", "Equivalently: z = g*h/c^2 where g = v_surf^2/R"],
+  "pipeline": ["1. Compute z for h = 22.5 m (Harvard tower)", "2. Compare to experimental 2.57e-15", "3. Verify scaling with height"],
+  "total_tested": 3,
+  "within_tolerance": 3,
+  "max_error_percent": 4.092902683,
+  "mean_error_percent": 2.245107017,
+  "r_squared": 0,
+  "metric": "Gravitational redshift error [%]",
+  "tolerance": "<5%",
+  "conclusion": "3/3 tests pass. g(SDT)=9.8456 m/s^2 (exp 9.8066, err 0.39731%). z(SDT)=2.46481e-15 (exp 2.57000e-15, err 4.09290%)."
+}

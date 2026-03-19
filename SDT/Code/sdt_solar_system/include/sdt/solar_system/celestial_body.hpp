@@ -16,9 +16,9 @@ namespace sdt::solar_system {
         scalar_t kappa = 0.0;      // Velocity factor Ϟ (dimensionless)
         scalar_t R_eff = 0.0;      // Effective radius (m)
         
-        // Calculate beta parameter (for compatibility with existing code)
-        // β = c² R_eff / Ϟ²
-        scalar_t beta() const {
+        // Calculate c²·R_c acceleration scale
+        // c²·R_c = c² R_eff / Ϟ²  where R_c is the c-boundary radius
+        scalar_t c2_R_c() const {
             if (kappa <= 0.0 || R_eff <= 0.0) {
                 return 0.0;
             }
@@ -69,7 +69,7 @@ namespace sdt::solar_system {
         
         // Physical properties
         scalar_t radius = 0.0;  // Physical radius (m)
-        scalar_t mass_conv = 0.0;  // Conventional mass (kg) - for comparison/energy calculations only
+        scalar_t mass_nist_ref = 0.0;  // NIST reference mass (kg) — validation target, not SDT input
         
         // SDT-native parameters
         SDTParameters sdt_params;

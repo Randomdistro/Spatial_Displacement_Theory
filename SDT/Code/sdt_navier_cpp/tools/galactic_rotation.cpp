@@ -259,7 +259,8 @@ int main(int argc, char* argv[]) {
             print_ascii_curve_viz(curve, R_d_kpc);
         }
         
-        // Dark matter comparison
+#ifdef SDT_ALLOW_LEGACY_COMPARISON
+        // Dark matter comparison (quarantined — NOT SDT)
         if (std::find(flags.begin(), flags.end(), "--compare-dm") != flags.end()) {
             print_section_header("Comparison with Dark Matter Halo Model");
             
@@ -272,6 +273,7 @@ int main(int argc, char* argv[]) {
             std::cout << "Note: SDT explains flat rotation via disk eclipse saturation.\n";
             std::cout << "      No dark matter halo required. (Phase 24)\n\n";
         }
+#endif
         
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << "\n";

@@ -1,0 +1,282 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fancyhdr}
+
+\newcommand{\kop}{\varkappa}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Atomicus}
+\fancyhead[R]{\thepage}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  urlcolor=blue!80!black,
+  pdftitle={Atomicus: Nucleii Per Nuclei},
+  pdfauthor={James Tyndall},
+}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{4cm}
+{\Huge\bfseries Atomicus\\[0.3cm]}
+{\LARGE Nucleii Per Nuclei\\[1cm]}
+{\Large\itshape A New Materials Science\\
+from Spatial Displacement Theory\\[2cm]}
+{\large Tier 4 Documentation\\[1cm]}
+{\Large James Tyndall\\[0.5cm]}
+{\large Sydney, Australia\\[0.5cm]}
+{\large March 2026\\[3cm]}
+{\normalsize\textit{``If you truly understand the atom,\\you can design its material.''}}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+
+% =============================================
+\chapter{The Premise}
+% =============================================
+
+\section{From Understanding to Prediction}
+
+Volumes I--III of \textit{De Rerum Todo Existens} establish that atomic structure is governed by:
+\begin{enumerate}
+  \item The universal koppa constant $\kop = 0.5464$, which sets all orbital velocities.
+  \item The screening function $\sigma(Z, N)$, which determines effective nuclear charge.
+  \item Three screening regimes (dyad, shell-layered, geometric lock), which divide the periodic table.
+  \item The $z \cdot k^2$ identity, which connects core compactness to shell geometry.
+\end{enumerate}
+
+If these are truly the governing parameters of atomic structure, then the \emph{bulk properties of materials} --- crystal structure, electronic band gaps, optical transparency, magnetic ordering, and superconductivity --- should be \emph{predictable} from the atomic-level screening parameters alone.
+
+Atomicus is the test of that proposition.
+
+\subsection{Epistemic Status}
+
+Atomicus is \textbf{exploratory}. The predictions herein are qualitative heuristics derived from the screening-regime phenomenology established in Volume~I. Quantitative predictions require the geometric derivation of $\sigma(Z, N)$ from first principles---a problem that remains open (Volume~V, Chapter~27).
+
+Results are presented as \textbf{testable hypotheses}, not established science. Atomicus earns its place only if its predictions can be confirmed experimentally or if they outperform existing models (e.g.\ DFT) in some quantitative domain.
+
+\section{The Approach}
+
+For each material property, we ask:
+\begin{enumerate}
+  \item What atomic-level parameter does SDT provide? (Usually $\sigma$, $\eta = \sigma/(N{-}1)$, or the screening regime.)
+  \item What is the known experimental correlation with that parameter?
+  \item Can SDT predict the property \emph{before} measurement, or merely explain it \emph{after}?
+\end{enumerate}
+
+Atomicus earns its place only if it achieves genuine \emph{prediction}. Post-hoc explanation, while useful, is not sufficient.
+
+
+% =============================================
+\chapter{Crystal Structure Prediction}
+\label{ch:crystal}
+% =============================================
+
+\section{The SDT Hypothesis}
+
+The preferred crystal structure of an element is determined by the geometric packing preferences of its valence electron vortices. Elements in the same screening regime should prefer similar crystal structures.
+
+\section{Screening Regime Correlations}
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+\textbf{Regime} & \textbf{$\eta$ range} & \textbf{Valence geometry} & \textbf{Predicted structure} \\
+\midrule
+I (s-block)  & $0.60$--$0.65$ & Spherical, non-directional & BCC or FCC \\
+II (p-block) & $0.78$--$0.82$ & Directional lobes & Covalent (diamond, layered) \\
+III (d-block) & $0.92$--$0.95$ & Multi-lobed, high coverage & HCP or FCC \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Predictions}
+
+\begin{center}
+\small
+\begin{tabular}{llllll}
+\toprule
+\textbf{Element} & $Z$ & \textbf{Regime} & \textbf{Predicted} & \textbf{Observed} & \textbf{Match?} \\
+\midrule
+Li &  3 & I  & BCC & BCC & $\checkmark$ \\
+Na & 11 & I  & BCC & BCC & $\checkmark$ \\
+K  & 19 & I  & BCC & BCC & $\checkmark$ \\
+Ca & 20 & I/II & FCC & FCC & $\checkmark$ \\
+Fe & 26 & III & BCC$^*$ & BCC & $\checkmark$ \\
+Co & 27 & III & HCP & HCP & $\checkmark$ \\
+Ni & 28 & III & FCC & FCC & $\checkmark$ \\
+Cu & 29 & III & FCC & FCC & $\checkmark$ \\
+Ti & 22 & III & HCP & HCP & $\checkmark$ \\
+Si & 14 & II  & Diamond & Diamond & $\checkmark$ \\
+C  &  6 & II  & Diamond/Graphite & Diamond/Graphite & $\checkmark$ \\
+Al & 13 & II  & FCC & FCC & $\checkmark$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+$^*$Iron is anomalous: a d-block element preferring BCC rather than HCP/FCC. This correlates with its half-filled d-shell ($3d^6\,4s^2$), placing it at the boundary of the geometric lock regime. Half-filled shells have reduced screening efficiency, mimicking Regime II behaviour.
+
+
+% =============================================
+\chapter{Band Gap Prediction}
+\label{ch:bandgap}
+% =============================================
+
+\section{The SDT Hypothesis}
+
+The electronic band gap of a semiconductor or insulator is determined by the energy difference between the highest occupied and lowest unoccupied electron vortex states. In SDT terms, this is the energy gap between the last filled geometric resonance and the first available resonance in the next shell or subshell.
+
+\section{Screening-Based Band Gap Estimator}
+
+The ionisation energy from koppa:
+\begin{equation}
+  E_I = \frac{1}{2} m_e \left(\frac{c}{\kop}\right)^2 \frac{Z_{\text{eff}} \cdot R_p}{r_n}
+\end{equation}
+
+The band gap correlates with the \emph{change} in screening when one electron is added or removed:
+\begin{equation}
+  E_g \propto \Delta\sigma \cdot \frac{c^2 R_p}{\kop^2 a_0}
+\end{equation}
+
+where $\Delta\sigma$ is the screening difference between the valence and conduction states.
+
+\subsection{Qualitative Predictions}
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Material} & \textbf{Regime} & $\Delta\sigma$ & $E_{g,\text{pred}}$ (eV) & $E_{g,\text{obs}}$ (eV) \\
+\midrule
+Diamond (C)  & II & large & $>4$ & 5.47 \\
+Silicon      & II & moderate & $1$--$2$ & 1.12 \\
+Germanium    & II/III & small & $0.5$--$1$ & 0.67 \\
+GaAs         & II & moderate & $1$--$2$ & 1.42 \\
+Metals (Fe, Cu) & III & $\sim 0$ & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The trend is correct: Regime II elements with large $\Delta\sigma$ are wide-gap insulators; elements at the II/III boundary have small gaps; Regime III elements with saturated screening have zero gap (metals).
+
+
+% =============================================
+\chapter{Optical Transparency}
+\label{ch:transparency}
+% =============================================
+
+\section{The SDT Hypothesis}
+
+A material is optically transparent when its electronic band gap exceeds the energy of visible photons ($1.65$--$3.26$~eV, i.e.\ $380$--$750$~nm). Transparency is therefore a prediction of the band gap analysis.
+
+\section{The Transparent Titanium Question}
+
+Titanium ($Z = 22$) is a Regime III element with $\eta \approx 0.89$ --- metallic, opaque, zero band gap. Under what conditions could titanium become transparent?
+
+\subsection{Requirements}
+
+\begin{enumerate}
+  \item \textbf{Open the band gap:} Force $\Delta\sigma > 0$ by breaking the d-shell geometric lock.
+  \item \textbf{Methods:}
+    \begin{itemize}
+      \item Extreme pressure (compress d-orbitals, altering overlap geometry)
+      \item Alloying (substitute atoms that disrupt the d-shell tiling)
+      \item Dimensionality reduction (thin films, nanostructures)
+      \item Oxidation (TiO$_2$ is already transparent --- the oxygen disrupts Ti's d-shell screening)
+    \end{itemize}
+  \item \textbf{SDT prediction:} The critical parameter is the screening efficiency $\eta$. Transparency requires $\eta$ to drop below $\sim 0.85$ (from Regime III back toward Regime II).
+\end{enumerate}
+
+\subsection{TiO$_2$: A Known Success}
+
+Titanium dioxide (TiO$_2$, rutile) is transparent, wide-gap ($E_g = 3.0$--$3.2$~eV), and one of the most important industrial materials. In SDT terms:
+\begin{itemize}
+  \item Oxygen's high electronegativity strips Ti's 3d electrons into Ti--O bonds.
+  \item The Ti$^{4+}$ ion has $N = 18$ (Ar-like), placing it firmly in Regime II.
+  \item $\eta$ drops from $\sim 0.89$ (metallic Ti) to $\sim 0.82$ (Regime II, insulating).
+  \item The band gap opens to $>3$~eV: transparency.
+\end{itemize}
+
+\textbf{SDT retrodiction:} The transparency of TiO$_2$ is predicted by the screening regime transition from III to II upon ionisation.
+
+
+% =============================================
+\chapter{Superconductivity}
+\label{ch:superconductivity}
+% =============================================
+
+\section{The SDT Hypothesis}
+
+Superconductivity occurs when electron vortices achieve macroscopic phase coherence. The critical temperature $T_c$ is determined by the geometric stability of the d-shell screening configuration.
+
+\subsection{Why d-Block Elements Dominate}
+
+The geometric lock of Regime III ($\eta \approx 0.92$--$0.95$) creates a nearly hermetic screening shell. Small perturbations (lattice vibrations/phonons) can transiently break and restore this lock, mediating attractive interactions between electron vortices --- the SDT analogue of Cooper pairing.
+
+\subsection{The $T_c$ Correlation}
+
+\begin{center}
+\begin{tabular}{llrrr}
+\toprule
+\textbf{Material} & \textbf{Type} & $\eta_{\text{val}}$ & $T_{c,\text{obs}}$ (K) & \textbf{d-Shell filling} \\
+\midrule
+Nb    & Elemental & 0.93 &  9.3 & $4d^4\,5s^1$ (partial) \\
+Pb    & Elemental & 0.94 &  7.2 & $6p^2$ (lone pair) \\
+Nb$_3$Sn & A15  & 0.93 & 18.3 & Shared d-shell \\
+YBCO  & Cuprate   & 0.91 & 92   & Cu 3d$^9$ (one hole) \\
+MgB$_2$ & Diboride & 0.82 & 39 & B 2p (Regime II) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Pattern:} The highest $T_c$ occurs in materials where the d-shell is \emph{almost} full (one or two holes), creating maximum geometric lock instability. A full d-shell ($\eta = 0.95$) is too stable to perturb; an empty one has no lock to exploit.
+
+\subsection{Predictions}
+
+\begin{enumerate}
+  \item Materials with d$^9$ or d$^8$ configurations should be the best candidates for high-$T_c$ superconductivity.
+  \item The geometric lock instability is maximised at $\eta \approx 0.91$--$0.93$.
+  \item Elements or compounds purely in Regime II ($\eta < 0.85$) can superconduct only via alternative mechanisms (e.g.\ MgB$_2$'s $\sigma$-bond phonon coupling).
+  \item \textbf{Novel prediction:} Compounds with engineered screening efficiency $\eta \approx 0.92$ and strong electron-phonon coupling should achieve $T_c > 100$~K at ambient pressure.
+\end{enumerate}
+
+
+% =============================================
+\chapter{Future Directions}
+\label{ch:future}
+% =============================================
+
+\section{Near-Term Goals}
+
+\begin{enumerate}
+  \item \textbf{Quantitative band gap predictor:} Derive $E_g$ from $\Delta\sigma$ with $<15\%$ accuracy for 20+ semiconductors.
+  \item \textbf{Crystal structure classifier:} Predict BCC/FCC/HCP/diamond from $\eta$ and valence configuration with $>80\%$ accuracy.
+  \item \textbf{Magnetic ordering temperatures:} Correlate Curie/N\'eel temperatures with d-shell filling and $\eta$.
+  \item \textbf{Thermal conductivity:} Extend B87 benchmark using the spation contact mechanics model.
+\end{enumerate}
+
+\section{Long-Term Vision}
+
+If the screening-based approach proves quantitatively successful, Atomicus becomes the foundation for:
+\begin{itemize}
+  \item \textbf{Computational materials design:} Predict material properties from atomic numbers alone, without DFT or empirical potentials.
+  \item \textbf{Novel superconductors:} Systematically search the $\eta$-space for optimal screening configurations.
+  \item \textbf{Metamaterials:} Engineer screening environments using nanostructured composites.
+  \item \textbf{Nuclear materials:} Predict radiation damage response from occlusion geometry changes.
+\end{itemize}
+
+\textbf{The ultimate test:} Can SDT predict a material property that DFT cannot?  That is the threshold for Atomicus to claim genuine utility.
+
+
+\end{document}

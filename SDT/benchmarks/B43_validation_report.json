@@ -2,7 +2,7 @@
   "benchmark_id": "B43",
   "title": "Occlusion Transmission vs Ionization",
   "status": "DRAFT",
-  "validation_date": "2026-01-15T17:28:31Z",
+  "validation_date": "2026-03-08T23:28:35Z",
   "inputs": {
     "data_sources": ["TBD"],
     "data_files": [],

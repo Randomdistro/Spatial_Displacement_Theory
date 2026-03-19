@@ -1,0 +1,19 @@
+{
+  "benchmark_id": "B69",
+  "title": "Neutron Star Mass-Radius from Vortex Exclusion Pressure",
+  "status": "DRAFT",
+  "timestamp": "2026-03-13T08:24:41",
+  "data_sources": ["TBD"],
+  "data_files": [],
+  "constants_used": [],
+  "equations": [],
+  "pipeline": [],
+  "total_tested": 0,
+  "within_tolerance": 0,
+  "max_error_percent": 0,
+  "mean_error_percent": 0,
+  "r_squared": 0,
+  "metric": "TBD",
+  "tolerance": "TBD",
+  "conclusion": "Framework: SDT vortex exclusion pressure balances spation infall. Predicts R ~ 10-13 km for 1.4 M_sun. Needs: full TOV-equivalent SDT structure equation implementation."
+}

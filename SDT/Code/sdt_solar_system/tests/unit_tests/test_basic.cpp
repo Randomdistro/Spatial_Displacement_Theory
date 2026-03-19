@@ -16,7 +16,7 @@ void test_sdt_parameters() {
     params.R_eff = 6.957e8;  // Sun's radius
     
     // Test beta calculation
-    const scalar_t beta = params.beta();
+    const scalar_t beta = params.c2_R_c();
     assert(beta > 0.0);
     std::cout << "  Beta: " << beta << "\n";
     

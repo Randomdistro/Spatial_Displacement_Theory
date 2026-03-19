@@ -1,0 +1,19 @@
+{
+  "benchmark_id": "B62",
+  "title": "Muon Lifetime Dilation from Vortex Time Compression",
+  "status": "CERTIFIED",
+  "timestamp": "2026-03-13T08:24:41",
+  "data_sources": ["PDG muon data", "Rossi-Hall (1941)"],
+  "data_files": [],
+  "constants_used": ["c", "tau_mu = 2.197e-6 s"],
+  "equations": ["SDT: gamma = 1/sqrt(1 - v^2/c^2) from vortex compression factor", "tau_lab = gamma * tau_rest", "gamma = k_rest / k_lab (ratio of SDT k-parameters)"],
+  "pipeline": ["1. Compute gamma for cosmic ray muons (v ~ 0.994c, 0.998c, 0.9994c)", "2. Compare dilated lifetime to observed counts", "3. Verify consistency with SDT k-parameter ratio"],
+  "total_tested": 4,
+  "within_tolerance": 4,
+  "max_error_percent": 0.1045318803,
+  "mean_error_percent": 0.02949939816,
+  "r_squared": 0,
+  "metric": "Gamma factor error [%]",
+  "tolerance": "<1%",
+  "conclusion": "4/4 gamma factors within 1%. SDT vortex time compression reproduces relativistic lifetime dilation."
+}

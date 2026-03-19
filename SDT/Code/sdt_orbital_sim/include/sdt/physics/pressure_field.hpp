@@ -32,8 +32,8 @@ namespace sdt::physics {
                 return Vec3d::Zero();
             }
             
-            // Pressure gradient: ∇Π = (β ρ_s / r³) * r_vec
-            const scalar_t gradient_magnitude = source.sdt_params.beta * constants::rho_s / (r * r * r);
+            // Pressure gradient: ∇Π = (c²·R_c · ρ_s / r³) * r_vec
+            const scalar_t gradient_magnitude = source.sdt_params.c2_R_c * constants::rho_s / (r * r * r);
             return gradient_magnitude * r_vec;
         }
         
@@ -58,9 +58,9 @@ namespace sdt::physics {
                 }
                 
                 // Acceleration from pressure gradient: a = -∇Π / ρ_s
-                // Simplified to: a = -β / r² * r_hat
+                // Simplified to: a = -c²·R_c / r² * r_hat
                 const Vec3d r_hat = r_vec.normalized();
-                const scalar_t accel_mag = sources[i].sdt_params.beta / (r * r);
+                const scalar_t accel_mag = sources[i].sdt_params.c2_R_c / (r * r);
                 total_accel -= accel_mag * r_hat;
             }
             
@@ -79,8 +79,8 @@ namespace sdt::physics {
                 const scalar_t r = r_vec.norm();
                 
                 if (r > 0.0) {
-                    // Pressure deficit: ΔP = -β ρ_s / r
-                    total_p -= source.sdt_params.beta * constants::rho_s / r;
+                    // Pressure deficit: ΔP = -c²·R_c · ρ_s / r
+                    total_p -= source.sdt_params.c2_R_c * constants::rho_s / r;
                 }
             }
             
@@ -159,12 +159,12 @@ namespace sdt::physics {
                 }
                 
                 // Acceleration from pressure gradient: a = -∇Π / ρ_s
-                // Simplified to: a = -β / r² * r_hat
+                // Simplified to: a = -c²·R_c / r² * r_hat
                 const Vec3d r_hat = r_vec.normalized();
                 
                 // Apply screening: effective acceleration is reduced
                 // a_eff = a_raw * (1 - screening_factor)
-                const scalar_t accel_mag = (sources[i].sdt_params.beta / (r * r)) * (1.0 - screening_factor);
+                const scalar_t accel_mag = (sources[i].sdt_params.c2_R_c / (r * r)) * (1.0 - screening_factor);
                 total_accel -= accel_mag * r_hat;
             }
             

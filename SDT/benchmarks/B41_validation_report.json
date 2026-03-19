@@ -2,7 +2,7 @@
   "benchmark_id": "B41",
   "title": "Spation Field Initialization Consistency",
   "status": "CERTIFIED",
-  "validation_date": "2026-01-15T17:28:31Z",
+  "validation_date": "2026-03-08T23:28:35Z",
   "inputs": {
     "data_sources": ["Internal formula monotonicity checks"],
     "data_files": [],

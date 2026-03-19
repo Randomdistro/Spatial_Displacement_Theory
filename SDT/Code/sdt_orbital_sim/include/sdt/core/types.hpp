@@ -37,7 +37,7 @@ namespace sdt {
     struct SDTParameters {
         scalar_t kappa = 0.0;      // Velocity factor Ϟ
         scalar_t R_eff = 0.0;      // Effective radius (m)
-        scalar_t beta = 0.0;       // Gravitational parameter β (m³/s²)
+        scalar_t c2_R_c = 0.0;     // Acceleration scale c²·R_c (m³/s²), derived from κ and R_eff
         scalar_t z = 0.0;          // Compactness parameter
         
         // Universal relationship: z * kappa² = 1
@@ -53,11 +53,11 @@ namespace sdt {
             }
         }
         
-        // Calculate beta from kappa and R_eff
-        // From: β = c² R_eff / κ²
-        void calculate_beta() {
+        // Calculate c2_R_c from kappa and R_eff
+        // c²·R_c = c²·R_eff / κ²  where R_c is the c-boundary radius
+        void calculate_c2_R_c() {
             if (kappa > 0.0 && R_eff > 0.0) {
-                beta = (constants::c * constants::c * R_eff) / (kappa * kappa);
+                c2_R_c = (constants::c * constants::c * R_eff) / (kappa * kappa);
             }
         }
         
@@ -80,23 +80,23 @@ namespace sdt {
         }
         
         // Calculate acceleration from pressure gradient
-        // From: a(r) = -β / r²
+        // a(r) = -c²·R_c / r²
         Vec3d acceleration(const Vec3d& position) const {
             const scalar_t r = position.norm();
-            if (r <= 0.0 || beta <= 0.0) {
+            if (r <= 0.0 || c2_R_c <= 0.0) {
                 return Vec3d::Zero();
             }
             const Vec3d r_hat = position.normalized();
-            return -beta / (r * r) * r_hat;
+            return -c2_R_c / (r * r) * r_hat;
         }
         
         // Calculate pressure field at position
-        // From: Π(r) = P_CMB - β ρ_s / r
+        // Π(r) = P_CMB - c²·R_c · ρ_s / r
         scalar_t pressure_field(scalar_t r) const {
             if (r <= 0.0) {
-                return constants::P_CMB;  // At origin, pressure equals CMB pressure
+                return constants::P_CMB;
             }
-            return constants::P_CMB - (beta * constants::rho_s) / r;
+            return constants::P_CMB - (c2_R_c * constants::rho_s) / r;
         }
     };
     
@@ -111,7 +111,7 @@ namespace sdt {
         
         // Physical properties
         scalar_t radius = 0.0;  // Physical radius (m)
-        scalar_t mass_conv = 0.0;  // Conventional mass (kg) - for comparison only
+        scalar_t mass_nist_ref = 0.0;  // NIST reference mass (kg) — validation target, not SDT input
         
         // SDT-native parameters
         SDTParameters sdt_params;
@@ -149,7 +149,7 @@ namespace sdt {
             
             // Kinetic energy
             for (const auto& body : bodies) {
-                E += 0.5 * body.mass_conv * body.velocity.squaredNorm();
+                E += 0.5 * body.mass_nist_ref * body.velocity.squaredNorm();
             }
             
             // Potential energy from pressure gradients
@@ -160,10 +160,10 @@ namespace sdt {
                     const scalar_t r = r_vec.norm();
                     if (r > 0.0) {
                         // Potential from pressure field difference
-                        const scalar_t beta_eff = std::sqrt(
-                            bodies[i].sdt_params.beta * bodies[j].sdt_params.beta
+                        const scalar_t c2_R_c_eff = std::sqrt(
+                            bodies[i].sdt_params.c2_R_c * bodies[j].sdt_params.c2_R_c
                         );
-                        E -= beta_eff * constants::rho_s / r;
+                        E -= c2_R_c_eff * constants::rho_s / r;
                     }
                 }
             }
@@ -175,7 +175,7 @@ namespace sdt {
         scalar_t calculate_angular_momentum() const {
             Vec3d L_total = Vec3d::Zero();
             for (const auto& body : bodies) {
-                L_total += body.mass_conv * body.position.cross(body.velocity);
+                L_total += body.mass_nist_ref * body.position.cross(body.velocity);
             }
             return L_total.norm();
         }

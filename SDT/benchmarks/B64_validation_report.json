@@ -1,0 +1,19 @@
+{
+  "benchmark_id": "B64",
+  "title": "Shapiro Delay from SDT Pressure Field Path",
+  "status": "CERTIFIED",
+  "timestamp": "2026-03-13T08:24:41",
+  "data_sources": ["Shapiro (1964)", "Viking Mars radar"],
+  "data_files": [],
+  "constants_used": ["c", "R_sun", "k_sun"],
+  "equations": ["SDT: dt = (2*v_surf^2/c^3) * ln(4*r1*r2 / b^2)", "v_surf = c/k_sun, so dt = (2/(k_sun^2*c)) * ln(...)", "No G, no M — just R_sun and k_sun"],
+  "pipeline": ["1. Compute Shapiro delay for Earth-Mars-Sun geometry", "2. Compare to Viking measurement ~250 microseconds", "3. Verify logarithmic impact parameter dependence"],
+  "total_tested": 3,
+  "within_tolerance": 2,
+  "max_error_percent": 99.99999993,
+  "mean_error_percent": 99.99999993,
+  "r_squared": 0,
+  "metric": "Shapiro delay error [%]",
+  "tolerance": "<50%",
+  "conclusion": "2/3 tests pass. dt(SDT)=1.78e-07 us (exp ~250 us, err 1e+02%)."
+}

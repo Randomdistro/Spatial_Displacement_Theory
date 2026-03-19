@@ -109,7 +109,7 @@ namespace sdt::core {
                 // SDT specific
                 star.sdt_params.R_eff = 3000.0; // Eff radius ~3km for Sun-like mass (placeholder)
                 star.sdt_params.k_factor = 686.34;
-                star.sdt_params.beta = (constants::c * constants::c * star.sdt_params.R_eff) / (star.sdt_params.k_factor * star.sdt_params.k_factor);
+                star.sdt_params.c2_R_c = (constants::c * constants::c * star.sdt_params.R_eff) / (star.sdt_params.k_factor * star.sdt_params.k_factor);
                 star.sdt_params.is_active_source = true;
 
                 bodies.push_back(star);

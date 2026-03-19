@@ -28,7 +28,7 @@ namespace sdt::solar_system {
             
             // Pressure deficit: ΔΠ = -β ρ_s / r
             // From Phase 15: β = c² R_eff / Ϟ²
-            const scalar_t beta = source.sdt_params.beta();
+            const scalar_t beta = source.sdt_params.c2_R_c();
             const scalar_t pressure_deficit = beta * constants::rho_s / r;
             
             return constants::P_CMB - pressure_deficit;
@@ -48,7 +48,7 @@ namespace sdt::solar_system {
             }
             
             // Pressure gradient magnitude: dΠ/dr = +β ρ_s / r²
-            const scalar_t beta = source.sdt_params.beta();
+            const scalar_t beta = source.sdt_params.c2_R_c();
             const scalar_t gradient_magnitude = beta * constants::rho_s / (r * r);
             
             const Vec3d r_hat = r_vec.normalized();
@@ -79,7 +79,7 @@ namespace sdt::solar_system {
                 // Acceleration from pressure gradient: a = -β / r² * r_hat
                 // From Phase 15: a(r) = -c² R_eff / (Ϟ² r²)
                 const Vec3d r_hat = r_vec.normalized();
-                const scalar_t beta = sources[i].sdt_params.beta();
+                const scalar_t beta = sources[i].sdt_params.c2_R_c();
                 const scalar_t accel_mag = beta / (r * r);
                 total_accel -= accel_mag * r_hat;
             }
@@ -100,7 +100,7 @@ namespace sdt::solar_system {
                 
                 if (r > 0.0) {
                     // Pressure deficit: ΔP = -β ρ_s / r
-                    const scalar_t beta = source.sdt_params.beta();
+                    const scalar_t beta = source.sdt_params.c2_R_c();
                     total_p -= beta * constants::rho_s / r;
                 }
             }

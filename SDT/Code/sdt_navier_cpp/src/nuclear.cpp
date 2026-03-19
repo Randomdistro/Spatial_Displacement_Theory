@@ -16,7 +16,7 @@ ProtonTurbine::ProtonTurbine(
     this->radius_cells = radius_cells;
     this->kappa = sdt::KAPPA_P;
     this->Gamma = sdt::GAMMA_P;
-    this->eta = bound ? sdt::ETA_P_BOUND : sdt::ETA_P_BOUND;  // Same for now
+    this->eta = bound ? sdt::ETA_P_BOUND : sdt::ETA_P_BOUND;  // Proton has same eta bound/free (no internal electron)
     this->cell_type = "proton";
 }
 

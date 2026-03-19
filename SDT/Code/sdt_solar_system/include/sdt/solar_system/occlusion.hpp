@@ -68,7 +68,7 @@ namespace sdt::solar_system {
                 const Vec3d r_vec = position - source.position;
                 const scalar_t r = r_vec.norm();
                 if (r > 0.0) {
-                    const scalar_t beta = source.sdt_params.beta();
+                    const scalar_t beta = source.sdt_params.c2_R_c();
                     const scalar_t pressure_deficit = beta * constants::rho_s / r;
                     pressure += occlusion * pressure_deficit * 0.1;  // Small correction factor
                 }
@@ -99,7 +99,7 @@ namespace sdt::solar_system {
                 
                 // Base acceleration
                 const Vec3d r_hat = r_vec.normalized();
-                const scalar_t beta = sources[i].sdt_params.beta();
+                const scalar_t beta = sources[i].sdt_params.c2_R_c();
                 scalar_t accel_mag = beta / (r * r);
                 
                 // Apply occlusion corrections from other bodies

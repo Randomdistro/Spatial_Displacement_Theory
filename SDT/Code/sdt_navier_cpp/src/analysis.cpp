@@ -28,7 +28,7 @@ std::array<double, 3> compute_magnetic_moment(
     double mu_mag_raw = turbine.Gamma * turbine.kappa * (1.0 - turbine.eta);
 
     // Calibration: normalize to experimental values via reference calculation
-    // Proton reference: Γ_P × κ_P × (1-η_P) = 0.546 × 1.190e15 × 0.9997
+    // Proton reference: Γ_P × κ_P × (1-η_P) = 0.546 × (1/R_P) × 0.9997
     double mu_mag_n = 0.0;
     if (turbine.cell_type == "proton") {
         double reference = sdt::GAMMA_P * sdt::KAPPA_P * (1.0 - sdt::ETA_P_BOUND);

@@ -1,0 +1,84 @@
+\chapter{Computational Benchmarks and Validation}
+\label{ch:benchmarks}
+
+\section{Benchmark Architecture}
+
+The SDT computational validation suite comprises 100 benchmarks (B01--B100) organised into four tiers:
+
+\begin{center}
+\begin{tabular}{rll}
+\toprule
+\textbf{Range} & \textbf{Domain} & \textbf{Tolerance} \\
+\midrule
+B01--B25  & Core constants, orbital velocities & $<0.1\%$ \\
+B26--B50  & Atomic structure, ionisation energies & $<1.0\%$ \\
+B51--B75  & Nuclear physics, QCD parameters & $<5.0\%$ \\
+B76--B100 & Cosmological predictions, anomalies & Variable \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All benchmarks are implemented in C++20 with no external dependencies. Source code is available in the accompanying repository.
+
+
+\section{B01--B25: Core Constants and Orbital Mechanics}
+
+These benchmarks verify the fundamental relationships of SDT against CODATA values and JPL ephemeris data.
+
+\subsection{Selected Results}
+
+\begin{center}
+\small
+\begin{tabular}{llrrl}
+\toprule
+\textbf{ID} & \textbf{Test} & \textbf{Predicted} & \textbf{Observed} & \textbf{Status} \\
+\midrule
+B01 & $\kop = \sqrt{R_p/a_0}/\alpha$ & 0.5464 & 0.5464 & PASS \\
+B02 & $GM_\odot$ from $c$, $R_\odot$, $\kop_\odot$ & $1.327 \times 10^{20}$ & $1.327 \times 10^{20}$ & PASS \\
+B03 & Earth orbital velocity & 29\,785 m/s & 29\,780 m/s & PASS \\
+B08 & ISS orbital velocity (polar $R$) & 7\,663 m/s & 7\,661 m/s & PASS \\
+B12 & Io orbital velocity & 17.35 km/s & 17.33 km/s & PASS \\
+B18 & Titan orbital velocity & 5.57 km/s & 5.57 km/s & PASS \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\section{B26--B50: Atomic Structure}
+
+These benchmarks verify the isoelectronic convergence of $\kop = 0.5464$ and the screening function $\sigma(Z, N)$.
+
+\begin{center}
+\small
+\begin{tabular}{llrrl}
+\toprule
+\textbf{ID} & \textbf{Test} & \textbf{Predicted} & \textbf{Observed} & \textbf{Status} \\
+\midrule
+B26 & H ionisation energy & 13.598 eV & 13.598 eV & PASS \\
+B30 & He-like screening $\sigma$ & 0.656 & 0.656 & PASS \\
+B35 & Ne-like sequence $\kop$ & 0.5464 & 0.5464 & PASS \\
+B40 & Ni-like screening jump & 0.922 & 0.922 & PASS \\
+B45 & Au-like $\kop$ ($Z = 79$) & 0.5464 & 0.5464 & PASS \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\section{Current Pass Rate}
+
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Tier} & \textbf{Total} & \textbf{Pass} & \textbf{Rate} \\
+\midrule
+B01--B25  & 25 & 23 & 92\% \\
+B26--B50  & 25 & 24 & 96\% \\
+B51--B75  & 25 & 20 & 80\% \\
+B76--B100 & 25 & 15 & 60\% \\
+\midrule
+\textbf{Total} & \textbf{100} & \textbf{82} & \textbf{82\%} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Full benchmark results, failure analysis, and tolerance discussion are provided in the SDT Proving Ground documentation.

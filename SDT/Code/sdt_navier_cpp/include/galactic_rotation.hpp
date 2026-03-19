@@ -11,15 +11,21 @@
 
 namespace sdt {
 
+// ============================================================================
+// SDT PURE — No G, no M as inputs. No dark matter.
+// ============================================================================
 // Galactic scale constants
 namespace galactic_constants {
     constexpr double C = 299792458.0;                    // Speed of light [m/s]
     constexpr double KPC_TO_M = 3.086e19;                // Kiloparsec to meters
     constexpr double L_SUN = 3.828e26;                   // Solar luminosity [W]
-    constexpr double M_SUN = 1.989e30;                   // Solar mass [kg]
     constexpr double EPSILON_BURN = 1e-15;               // Mass-to-light efficiency (nuclear burning)
     constexpr double R_FLAT_FACTOR = 2.5;                // Predicted R_flat/R_d ratio (Phase 24)
     constexpr double E_SATURATION = 0.64;                // Eclipse saturation value
+
+    // NIST reference values — validation targets only, never SDT input primitives.
+    // Mass is the resistance to change imparted by the spation matrix.
+    constexpr double M_SUN_NIST_REF = 1.989e30;          // Solar mass [kg] (NIST reference)
 }
 
 /// @brief Point on galactic rotation curve
@@ -46,7 +52,7 @@ struct GalaxyParameters {
     std::string name;                                    // Galaxy name
     double R_d_kpc;                                      // Disk scale length [kpc]
     double v_flat_kms;                                   // Flat rotation velocity [km/s]
-    double M_disk_solar;                                 // Total disk mass [solar masses]
+    double M_disk_solar_nist_ref;                        // Total disk mass [solar masses] — NIST validation target, not SDT input
     double R_flat_observed_kpc;                          // Observed R_flat [kpc]
     double luminosity_solar;                             // Total luminosity [L☉]
     
@@ -217,21 +223,21 @@ public:
         };
     }
     
-    /// @brief Calculate dark matter halo prediction for comparison
-    /// @param r_kpc Radius in kpc
-    /// @param v_halo_kms Halo circular velocity
-    /// @param r_s_kpc Scale radius of NFW profile
-    /// @return Predicted velocity from dark matter halo model
+#ifdef SDT_ALLOW_LEGACY_COMPARISON
+    /// @brief [QUARANTINED] Dark matter halo prediction — NOT SDT.
+    /// SDT explains flat rotation curves via cumulative stellar occlusion.
+    /// This function is retained only for comparison against legacy models.
     [[nodiscard]] static auto dark_matter_halo_velocity(
         double r_kpc,
         double v_halo_kms,
         double r_s_kpc
     ) noexcept -> double {
-        // NFW profile approximation for comparison
+        // NFW profile approximation for comparison only
         const double x = r_kpc / r_s_kpc;
         const double ln_factor = std::log(1.0 + x) - x / (1.0 + x);
         return v_halo_kms * std::sqrt(ln_factor / x);
     }
+#endif // SDT_ALLOW_LEGACY_COMPARISON
     
     /// @brief Calculate baryonic mass from luminosity using L × k² = ε Mc²
     /// @param luminosity_solar Galaxy luminosity in solar luminosities
@@ -249,7 +255,7 @@ public:
         const double Lk2 = L_watts * k_parameter * k_parameter;
         const double M_kg = Lk2 / (EPSILON_BURN * C * C);
         
-        return M_kg / M_SUN;  // Convert to solar masses
+        return M_kg / M_SUN_NIST_REF;  // Convert to solar masses (NIST reference)
     }
     
     /// @brief Validate L × k² = ε Mc² relationship
@@ -260,7 +266,7 @@ public:
     ) noexcept -> double {
         const double k = galaxy.k_parameter();
         const double M_predicted = calculate_mass_from_luminosity(galaxy.luminosity_solar, k);
-        return M_predicted / galaxy.M_disk_solar;
+        return M_predicted / galaxy.M_disk_solar_nist_ref;
     }
     
     /// @brief Calculate Lk²/(Mc²) diagnostic ratio
@@ -273,7 +279,7 @@ public:
         
         const double k = galaxy.k_parameter();
         const double L_watts = galaxy.luminosity_solar * L_SUN;
-        const double M_kg = galaxy.M_disk_solar * M_SUN;
+        const double M_kg = galaxy.M_disk_solar_nist_ref * M_SUN_NIST_REF;
         const double Lk2 = L_watts * k * k;
         const double Mc2 = M_kg * C * C;
         
@@ -288,7 +294,7 @@ public:
                 .name = "Milky Way",
                 .R_d_kpc = 2.5,
                 .v_flat_kms = 220.0,
-                .M_disk_solar = 6.0e10,
+                .M_disk_solar_nist_ref = 6.0e10,
                 .R_flat_observed_kpc = 6.0,
                 .luminosity_solar = 1.5e10
             },
@@ -296,7 +302,7 @@ public:
                 .name = "M31 (Andromeda)",
                 .R_d_kpc = 5.4,
                 .v_flat_kms = 250.0,
-                .M_disk_solar = 1.2e11,
+                .M_disk_solar_nist_ref = 1.2e11,
                 .R_flat_observed_kpc = 13.5,
                 .luminosity_solar = 2.6e10
             },
@@ -304,7 +310,7 @@ public:
                 .name = "NGC 3198",
                 .R_d_kpc = 2.8,
                 .v_flat_kms = 150.0,
-                .M_disk_solar = 3.5e10,
+                .M_disk_solar_nist_ref = 3.5e10,
                 .R_flat_observed_kpc = 7.2,
                 .luminosity_solar = 5.0e9
             },
@@ -312,7 +318,7 @@ public:
                 .name = "NGC 2403",
                 .R_d_kpc = 1.8,
                 .v_flat_kms = 135.0,  // Updated from paper
-                .M_disk_solar = 2.0e10,
+                .M_disk_solar_nist_ref = 2.0e10,
                 .R_flat_observed_kpc = 4.4,
                 .luminosity_solar = 3.0e9
             },
@@ -320,7 +326,7 @@ public:
                 .name = "Triangulum (M33)",
                 .R_d_kpc = 1.6,
                 .v_flat_kms = 130.0,
-                .M_disk_solar = 5.0e10,
+                .M_disk_solar_nist_ref = 5.0e10,
                 .R_flat_observed_kpc = 4.0,
                 .luminosity_solar = 5.0e9
             },
@@ -328,7 +334,7 @@ public:
                 .name = "DDO 154",
                 .R_d_kpc = 0.9,
                 .v_flat_kms = 45.0,
-                .M_disk_solar = 5.0e8,
+                .M_disk_solar_nist_ref = 5.0e8,
                 .R_flat_observed_kpc = 2.3,
                 .luminosity_solar = 1.0e7
             }

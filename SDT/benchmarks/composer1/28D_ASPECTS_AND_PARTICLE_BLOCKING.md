@@ -1,7 +1,7 @@
-# The 28-Dimensional Aspects and Particle Blocking
+# The 29-Dimensional Aspects and Particle Blocking
 
-**Date:** 2026-01-02  
-**Status:** Complete reference for 28D state space
+**Date:** 2027-01-02  
+**Status:** Complete reference for 29D state space
 
 ---
 

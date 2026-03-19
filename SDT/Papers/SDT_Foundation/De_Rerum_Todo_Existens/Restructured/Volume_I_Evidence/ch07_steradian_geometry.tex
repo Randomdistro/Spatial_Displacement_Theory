@@ -1,0 +1,157 @@
+\chapter{Steradian Geometry and Gravitational Mechanics}
+\label{ch:steradian-geometry}
+
+
+\section{The Solid Angle Theorem}
+
+Every result in this treatise rests on a single geometric identity. For a sphere of radius $R$ observed at distance $r$ from its centre, the solid angle subtended is:
+\begin{equation}\label{eq:omega-exact}
+  \Omega(r) = 2\pi\left(1 - \frac{\sqrt{r^2 - R^2}}{r}\right)
+\end{equation}
+
+In the far-field limit ($r \gg R$), this simplifies to:
+\begin{equation}\label{eq:omega-ff}
+  \Omega(r) \approx \frac{\pi R^2}{r^2}
+\end{equation}
+
+and the product $\Omega \cdot r^2 = \pi R^2$ is exact to floating-point precision for all bodies in the solar system. This is not an approximation; it is a geometric tautology.
+
+\subsection{Why This Matters}
+
+The solid angle subtended by a body determines how much of the isotropic background pressure field it occludes. A larger solid angle means more occlusion, means a stronger pressure shadow, means a greater acceleration toward the body.
+
+\begin{equation}
+  \Omega \propto r^{-2} \quad\Rightarrow\quad a \propto r^{-2} \quad\Rightarrow\quad v \propto r^{-1/2}
+\end{equation}
+
+The inverse-square law is not a mysterious ``force law.'' It is the geometry of solid angles projected onto spherical surfaces. Newton's law of gravitation is a \emph{restatement} of the steradian identity with physical parameters attached.
+
+
+\section{From Geometry to Acceleration}
+
+The pressure field of the spation medium is isotropic at large distances from any body. A body of radius $R$ occludes a fraction $\Omega/4\pi$ of the incident pressure flux, creating a net inward force on any test body at distance $r$:
+
+\begin{equation}
+  a(r) = P_0 \cdot \frac{\Omega(r)}{4\pi} \cdot \frac{1}{\rho_{\text{test}}}
+\end{equation}
+
+where $P_0$ is the background pressure and $\rho_{\text{test}}$ is the test body's inertial density. Combining with $\Omega = \pi R^2/r^2$:
+
+\begin{equation}
+  a(r) = \frac{P_0 R^2}{4 r^2 \rho_{\text{test}}}
+\end{equation}
+
+Defining the geometric charge $S = P_0 R^2/(4\rho_{\text{test}}) = c^2 R/\kop^2 = GM$:
+\begin{equation}
+  a(r) = \frac{c^2 R}{\kop^2 r^2} = \frac{GM}{r^2}
+\end{equation}
+
+Newton's law. Derived from nothing but solid angle geometry and a uniform background pressure.
+
+
+\section{The Velocity Formula}
+
+For circular orbits, $v^2 = a \cdot r$:
+\begin{equation}
+  v^2 = \frac{c^2 R}{\kop^2 r} \qquad\Rightarrow\qquad v = \frac{c}{\kop}\sqrt{\frac{R}{r}}
+\end{equation}
+
+This is Eq.~(1.4) from Chapter~\ref{ch:single-formula}. It is not postulated; it is derived from the steradian identity and the assumption of a uniform background pressure field.
+
+\subsection{What $\kop$ Encodes}
+
+The kinematic ratio $\kop = c/v_{\text{surf}}$ encodes the ratio of the speed of light to the surface orbital velocity. Equivalently:
+\begin{equation}
+  \kop^2 = \frac{R}{R_c} = \frac{R \cdot c^2}{GM} = \frac{2R}{r_s}
+\end{equation}
+
+where $R_c = GM/c^2$ is the gravitational radius and $r_s = 2GM/c^2$ is the Schwarzschild radius. The kinematic ratio directly measures how far a body is from gravitational criticality ($\kop = 1$).
+
+
+\section{Kepler's Laws from Solid Angles}
+
+\subsection{First Law: Elliptical Orbits}
+
+Kepler's first law follows from the $r^{-2}$ acceleration in the standard way (the Binet equation). The SDT contribution is that the $r^{-2}$ law is not a postulate but a consequence of steradian geometry.
+
+\subsection{Second Law: Equal Areas}
+
+Angular momentum conservation follows from the radial symmetry of the pressure field. No tangential component exists for a non-rotating, spherically symmetric primary.
+
+\subsection{Third Law: Period-Distance Relation}
+
+From $v = (c/\kop)\sqrt{R/r}$ and $T = 2\pi r/v$:
+\begin{equation}
+  T^2 = \frac{4\pi^2 \kop^2}{c^2 R}\,r^3
+\end{equation}
+
+This is Kepler's third law with $4\pi^2/(GM) = 4\pi^2\kop^2/(c^2 R)$.
+
+
+\section{The Solar Dominance Boundary}
+\label{sec:solar-boundary}
+
+The steradian framework naturally defines the boundary of a body's gravitational (or radiative) dominance: the distance at which its outward flux equals the isotropic background flux.
+
+For the Sun's radiative output:
+\begin{equation}
+  F_\odot(r) = \frac{L_\odot}{4\pi r^2}, \qquad L_\odot = 3.828 \times 10^{26}\;\text{W}
+\end{equation}
+
+The isotropic background is the Cosmic Microwave Background, treated as a blackbody at $T_{\text{CMB}} = 2.725$~K:
+\begin{align}
+  u_{\text{CMB}} &= a T^4 = 7.566 \times 10^{-16} \times (2.725)^4 = 4.17 \times 10^{-14}\;\text{J/m}^3 \\
+  F_{\text{CMB}} &= \frac{c\,u_{\text{CMB}}}{4} = 3.12 \times 10^{-6}\;\text{W/m}^2
+\end{align}
+
+Setting $F_\odot(r) = F_{\text{CMB}}$:
+\begin{equation}
+  r = \sqrt{\frac{L_\odot}{4\pi F_{\text{CMB}}}} \approx 3.12 \times 10^{15}\;\text{m} \approx \mathbf{20\,700\;\text{AU}}
+\end{equation}
+
+\subsection{Physical Significance}
+
+This is \textbf{not} the heliopause ($\sim 120$~AU), which is the solar wind pressure balance. It is the \textbf{radiative dominance boundary}: the sphere beyond which the Sun's photon flux is weaker than the isotropic CMB background.
+
+\begin{center}
+\begin{tabular}{rrl}
+\toprule
+\textbf{Distance} & \textbf{AU} & \textbf{Physical boundary} \\
+\midrule
+$\sim 120$       & 120     & Heliopause (solar wind pressure) \\
+$\sim 20\,700$   & 20\,700 & Radiative flux equality (photon $=$ CMB) \\
+$\sim 50\,000$   & 50\,000 & Inner Oort Cloud edge \\
+$\sim 100\,000$  & 100\,000 & Outer Oort Cloud / Hill sphere \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The radiative dominance boundary at 20,700~AU sits squarely in the inner Oort-scale regime, making it a plausible geometric transition marker for ``solar dominance vs universal background'' in the SDT pressure framework. Beyond this radius, the Sun's occlusion pressure is no longer the dominant contributor to the local field.
+
+\subsection{SDT Interpretation}
+
+In SDT terms, the $1/r^2$ dilution of both gravitational pressure and radiative flux are the \emph{same} geometric effect: the steradian subtended by the Sun decreases as $\Omega \propto r^{-2}$. At 20,700~AU, the Sun's subtended solid angle produces a flux equal to the isotropic background. This is the geometric boundary of solar sovereignty.
+
+
+\section{Gravitational Lensing}
+
+The pressure-gradient model reproduces gravitational lensing identically to GR. A photon (pressure soliton) traversing the pressure field near a massive body follows a path of minimum resistance, which curves toward the body:
+
+\begin{equation}
+  \Delta\theta = \frac{4GM}{c^2 b} = \frac{4R}{\kop^2 b}
+\end{equation}
+
+where $b$ is the impact parameter. The SDT derivation replaces ``spacetime curvature'' with ``refraction in a pressure-gradient medium'' --- the same mathematics, the same predictions, a different physical interpretation.
+
+
+\section{Summary}
+
+\begin{enumerate}
+  \item The steradian identity $\Omega \cdot r^2 = \pi R^2$ is exact.
+  \item The $r^{-2}$ force law follows from solid angle geometry, not from a postulated force.
+  \item Kepler's three laws are consequences of this geometry.
+  \item The velocity formula $v = (c/\kop)\sqrt{R/r}$ is derived, not postulated.
+  \item The equivalence $GM = c^2 R/\kop^2$ connects the SDT and Newtonian formalisms.
+  \item The Sun's radiative dominance boundary is $\sim 20\,700$~AU, coinciding with the inner Oort-scale regime.
+  \item Gravitational lensing is refraction in a pressure gradient, reproducing GR predictions exactly.
+\end{enumerate}

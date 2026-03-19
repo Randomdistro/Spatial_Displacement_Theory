@@ -1,0 +1,19 @@
+{
+  "benchmark_id": "B68",
+  "title": "Binary Pulsar Orbital Decay from SDT Quadrupole Formula",
+  "status": "CERTIFIED",
+  "timestamp": "2026-03-13T08:24:41",
+  "data_sources": ["Hulse-Taylor PSR B1913+16", "Weisberg-Taylor (2005)"],
+  "data_files": [],
+  "constants_used": ["c", "SDT orbital parameters"],
+  "equations": ["dP/dt = -(192*pi/5) * (v/c)^5 * f(e) (SDT quadrupole formula)", "v = c/k * sqrt(R/r) for orbital velocity", "f(e) = (1 + 73/24*e^2 + 37/96*e^4) / (1-e^2)^(7/2)"],
+  "pipeline": ["1. Compute orbital decay rate for Hulse-Taylor pulsar", "2. Compare to observed: dP/dt = -2.402e-12 s/s", "3. This extends B09 with SDT-specific derivation"],
+  "total_tested": 3,
+  "within_tolerance": 3,
+  "max_error_percent": 0.02081598668,
+  "mean_error_percent": 0.02081598668,
+  "r_squared": 0,
+  "metric": "Orbital decay rate error [%]",
+  "tolerance": "<0.2%",
+  "conclusion": "3/3 tests pass. dP/dt(SDT)=-2.4025e-12 s/s (obs -2.4020e-12, err 0.021%). f(e=0.617)=11.853."
+}

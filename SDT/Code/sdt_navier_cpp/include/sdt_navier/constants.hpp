@@ -54,7 +54,7 @@ namespace sdt {
 
     // Proton parameters
     constexpr double R_P = 8.40e-16;  // m
-    constexpr double KAPPA_P = 1.190e15;  // m⁻¹ (1/R_p)
+    constexpr double KAPPA_P = 1.0 / R_P;  // m⁻¹ (exact reciprocal)
     constexpr double GAMMA_P = 0.546;  // Circulation factor
     constexpr double ETA_P_BOUND = 0.0003;  // Slip (bound)
 
@@ -62,7 +62,7 @@ namespace sdt {
     constexpr double R_N = 8.70e-16;  // m
     constexpr double R_E_N = 3.00e-15;  // m (internal electron orbit)
     constexpr double KAPPA_N = 1.0 / R_N;  // m⁻¹
-    constexpr double KAPPA_E_N = 3.333e14;  // m⁻¹
+    constexpr double KAPPA_E_N = 1.0 / R_E_N;  // m⁻¹ (exact reciprocal)
     constexpr double GAMMA_E_N = 0.531;  // Internal electron circulation
     constexpr double ETA_N_BOUND = 0.0019;  // Slip (bound)
     constexpr double ETA_N_FREE = 0.9981;  // Slip (free, unstable)

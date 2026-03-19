@@ -113,7 +113,7 @@ namespace sdt::io {
                     body.sdt_params.kappa = k_factor;
                     body.sdt_params.R_eff = R;
                     body.sdt_params.z = 1.0 / (k_factor * k_factor);  // z * k² = 1
-                    body.sdt_params.calculate_beta();
+                    body.sdt_params.calculate_c2_R_c();
                     
                     system.bodies.push_back(body);
                     sun = &system.bodies.back();
@@ -148,7 +148,7 @@ namespace sdt::io {
                 body.sdt_params.kappa = sun->sdt_params.kappa;
                 body.sdt_params.R_eff = sun->radius;
                 body.sdt_params.z = sun->sdt_params.z;
-                body.sdt_params.beta = sun->sdt_params.beta;
+                body.sdt_params.c2_R_c = sun->sdt_params.c2_R_c;
                 
                 // Initialize orbit: circular orbit at semi-major axis
                 body.position = Vec3d(a, 0.0, 0.0);

@@ -1,0 +1,211 @@
+% =========================================================================
+%  CHAPTER 4: THE THREE SCREENING REGIMES
+%  Volume I: The Evidence — Part B
+% =========================================================================
+%  STATUS: COMPLETE
+%  SOURCE: Extracted from Book_3/Chapter_11 §6 (screening analysis)
+% =========================================================================
+
+\chapter{The Three Screening Regimes}
+\label{ch:screening-regimes}
+
+The previous chapter proved that $\kop = 0.5464$ is universal:\ it does not change with electron count, nuclear charge, or the complexity of the atomic system.  All multi-electron complexity lives in a single function: the \textbf{screening constant} $\sigma(Z, N)$.
+
+This chapter maps the structure of that function.
+
+
+% =============================================
+\section{The Per-Electron Screening Efficiency}
+\label{sec:per-electron}
+% =============================================
+
+The raw screening constants span a vast range --- from $\sigma = 0$ (hydrogen) to $\sigma = 74$ (gold).  To extract the physically meaningful signal, we normalise by the number of screening electrons:
+
+\begin{equation}\label{eq:efficiency}
+  \eta \equiv \frac{\sigma}{N - 1}
+\end{equation}
+
+This is the \textbf{per-electron screening efficiency}: the average fraction of the nuclear charge occluded by each inner electron.  Its evolution across the periodic table reveals the geometric structure of electron shells:
+
+\begin{center}
+\begin{tabular}{rlrcl}
+\toprule
+$N$ & \textbf{Sequence} & $\eta = \sigma/(N{-}1)$ & \textbf{Shell type} & \textbf{Regime} \\
+\midrule
+  2 & He-like  & 0.620 & 1s$^2$           & \textbf{I} \\
+  3 & Li-like  & 0.812 & [He]\,2s          & \textbf{II} \\
+ 10 & Ne-like  & 0.781 & [He]\,2s$^2$2p$^6$ & \textbf{II} \\
+ 18 & Ar-like  & 0.821 & [Ne]\,3s$^2$3p$^6$ & \textbf{II} \\
+ 28 & Ni-like  & 0.922 & [Ar]\,3d$^{10}$4s$^0$ & \textbf{III} \\
+ 46 & Pd-like  & 0.935 & [Kr]\,4d$^{10}$    & \textbf{III} \\
+ 79 & Au-like  & 0.931 & [Xe]\,4f$^{14}$5d$^{10}$6s$^1$ & \textbf{III} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Three distinct regimes emerge.  They are not arbitrary --- each corresponds to a qualitatively different geometric arrangement of inner electrons relative to the nucleus and the outermost electron.
+
+
+% =============================================
+\section{Regime I: Dyad Occlusion ($\eta \approx 0.62$)}
+\label{sec:regime1}
+% =============================================
+
+\textbf{System:} Helium-like ions ($N = 2$, both electrons in the 1s shell).
+
+In this regime, two electrons share the \emph{same} shell.  Neither is ``inside'' the other.  The screening is not radial (one shell shielding the next) but \textbf{angular}: each electron occludes a cone of the nuclear pressure field as seen from the position of the other.
+
+\subsection{The Geometry}
+
+Two 1s electrons are diametrically opposed on the nuclear surface (anti-parallel spins, maximum separation).  Each subtends a solid angle as seen from the other:
+\begin{equation}
+  \Omega_{\text{e}} = 2\pi\left(1 - \cos\theta_{\text{e}}\right)
+\end{equation}
+
+The screening efficiency $\eta = 0.62$ implies that each electron occludes $62\%$ of the nuclear field from its partner.  This is a \emph{geometric floor}: it is impossible for a same-shell electron to occlude more than $\sim 65\%$ of the nuclear field, because it subtends less than $2\pi$ steradians from the partner's viewpoint.
+
+\subsection{Z-Dependence}
+
+The screening in this regime shows a subtle $Z$-dependence, declining from $\sigma = 0.656$ (He) to $\sigma = 0.527$ (Fe$^{24+}$).  At high $Z$, both electrons are compressed closer to the nucleus, their angular separation decreases, and the occlusion cone narrows.
+
+\textbf{SDT interpretation:} Pressure shadow compression.  As the nuclear pressure increases, the electron vortices are squeezed into a tighter solid angle, reducing their mutual geometric occlusion.
+
+
+% =============================================
+\section{Regime II: Shell-Layered Occlusion ($\eta \approx 0.78\text{--}0.82$)}
+\label{sec:regime2}
+% =============================================
+
+\textbf{Systems:} Lithium-like through argon-like ($N = 3$ to $18$, shells $n = 2$ to $3$).
+
+In this regime, the outermost electron occupies a \emph{different shell} from the core electrons.  The inner electrons are \emph{between} the nucleus and the valence electron, creating radial shielding.
+
+\subsection{Why Screening Is More Efficient}
+
+Radial shielding is geometrically more efficient than angular shielding.  An inner-shell electron directly intercepts the nuclear pressure field that would otherwise reach the outer electron.  The $62\%$ of Regime~I rises to $78\text{--}82\%$.
+
+\subsection{The Saturation Effect}
+
+Within Regime~II, $\eta$ shows a characteristic pattern:
+\begin{itemize}
+  \item $N = 3$: $\eta = 0.812$ (2 core electrons shielding 1 valence)
+  \item $N = 10$: $\eta = 0.781$ (9 electrons shielding 1 valence)
+  \item $N = 18$: $\eta = 0.821$ (17 electrons shielding 1 valence)
+\end{itemize}
+
+The slight \emph{dip} at $N = 10$ is significant.  When the $n = 2$ shell is full (2s$^2$\,2p$^6$), the valence electron (2p$^6$) is at the \emph{outer edge} of its own shell.  Its peer electrons within the same shell provide angular screening (Regime~I-like), pulling $\eta$ down slightly.
+
+At $N = 18$, the valence electron is in $n = 3$, and the \emph{entire} $n = 2$ shell is now radially interior, restoring high radial screening efficiency.
+
+\subsection{Physical Mechanism}
+
+In SDT language: s and p electrons create \textbf{layered pressure shadows}.  Each shell is a concentric barrier that intercepts a fraction of the nuclear field.  The cumulative effect is multiplicative but with diminishing returns: each layer shields part of what the previous layer already shielded.
+
+The overlap of pressure shadows limits per-electron efficiency to $\sim 82\%$.  Breaking through this ceiling requires a different orbital geometry.
+
+
+% =============================================
+\section{Regime III: Geometric Lock Occlusion ($\eta \approx 0.92\text{--}0.95$)}
+\label{sec:regime3}
+% =============================================
+
+\textbf{Systems:} Nickel-like through gold-like ($N = 28$ to $79$, including d and f shells).
+
+The introduction of d-electrons produces a \textbf{discontinuous jump} in per-electron screening efficiency: from $\sim 0.82$ (Regime~II) to $\sim 0.92$ (Regime~III).  A $12\%$ increase that cannot be explained by gradual shell-layering.
+
+\subsection{Why d-Electrons Are Different}
+
+The d-orbitals have a fundamentally different geometry from s and p orbitals:
+\begin{itemize}
+  \item \textbf{s-orbitals:} spherically symmetric.  One lobe.
+  \item \textbf{p-orbitals:} two lobes, oriented along one axis.  Three per shell.
+  \item \textbf{d-orbitals:} four lobes, oriented between axes.  Five per shell.
+\end{itemize}
+
+Five d-orbitals together tile solid angle with far greater coverage than three p-orbitals.  A complete d$^{10}$ subshell (10 electrons in 5 orientations, each with 2 spin states) creates a nearly hermetic geometric enclosure around the nucleus.
+
+\subsection{The Two-Halves Principle}
+
+A half-filled d-shell (d$^5$) fills one geometric hemisphere.  A complete d-shell (d$^{10}$) fills both hemispheres, creating a \textbf{double-pentagon geometric lock}: a configuration where the five d-orbital orientations tile the sphere with minimal gaps.
+
+This geometric lock explains:
+\begin{enumerate}
+  \item The anomalous stability of d$^5$ (Cr, Mn) and d$^{10}$ (Cu, Zn) configurations.
+  \item The preference of palladium for [Kr]\,4d$^{10}$ with \emph{zero} 5s electrons.
+  \item The exceptional catalytic properties of transition metals (partially unlocked d-shells provide geometric access to the nuclear field).
+\end{enumerate}
+
+\subsection{The f-Electron Ceiling}
+
+Adding f-electrons ($N = 79$, gold-like) does \emph{not} significantly increase $\eta$ beyond the d-shell value:
+\begin{itemize}
+  \item $N = 28$ (Ni-like, first d$^{10}$): $\eta = 0.922$
+  \item $N = 46$ (Pd-like, second d$^{10}$): $\eta = 0.935$
+  \item $N = 79$ (Au-like, $+$ f$^{14}$): $\eta = 0.931$
+\end{itemize}
+
+The f-electrons are so deeply buried that their \emph{incremental} contribution to outer-shell screening is negligible.  They are already ``priced in'' to the inner shell compression.  The per-electron efficiency \textbf{saturates} near $0.93$, a geometric ceiling that no additional electrons can breach.
+
+
+% =============================================
+\section{The Discontinuity: Where Chemistry Changes}
+\label{sec:discontinuity}
+% =============================================
+
+The jump from Regime~II to Regime~III at $N \approx 28$ is not a gradual transition.  It is a \textbf{phase boundary} in screening efficiency:
+
+\begin{center}
+\begin{tabular}{rl}
+\toprule
+$N$ & $\eta$ \\
+\midrule
+18 (Ar-like, last s/p-only) & 0.821 \\
+28 (Ni-like, first d$^{10}$) & 0.922 \\
+\midrule
+\textbf{Jump:} & \textbf{+0.101 ($+12\%$)} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This jump coincides precisely with:
+\begin{itemize}
+  \item The onset of transition metals in the periodic table.
+  \item The dramatic change in chemical behaviour (variable oxidation states, coloured ions, catalytic activity).
+  \item The appearance of metallic bonding and band structure.
+\end{itemize}
+
+The screening discontinuity is not merely a curiosity of atomic structure.  It is the \textbf{geometric origin of the periodic table's division} between main-group and transition-metal chemistry.
+
+
+% =============================================
+\section{Summary: The Screening Landscape}
+\label{sec:screening-summary}
+% =============================================
+
+\begin{enumerate}
+  \item All multi-electron complexity in atomic structure resides in $\sigma(Z, N)$, not in $\kop$.
+  \item The per-electron efficiency $\eta = \sigma/(N{-}1)$ reveals three geometric regimes:
+    \begin{itemize}
+      \item \textbf{Regime I} ($\eta \approx 0.62$): Same-shell angular occlusion (the geometric floor).
+      \item \textbf{Regime II} ($\eta \approx 0.78\text{--}0.82$): Cross-shell radial occlusion (layered pressure shadows).
+      \item \textbf{Regime III} ($\eta \approx 0.92\text{--}0.95$): d/f-shell geometric lock (the geometric ceiling).
+    \end{itemize}
+  \item The $12\%$ jump at the d-shell boundary is the microscopic origin of the periodic table's division between s/p and d-block chemistry.
+  \item The ceiling at $\eta \approx 0.93$ represents maximum geometric solid-angle coverage by electron vortices.
+  \item These three regimes are the microscopic origin of the three coefficients ($k_{sp}$, $k_d$, $k_f$) in the Recursive Shell Compression Rule (next chapter).
+\end{enumerate}
+
+\subsection{Epistemic Status}
+
+The screening efficiency values $\eta \approx 0.62$, $0.80$, and $0.93$ are \textbf{empirically observed} from ionisation energy data (NIST Atomic Spectra Database).  They are not yet derived from first principles.
+
+The geometric narratives presented above---dyad occlusion, shell-layered pressure shadows, geometric lock---are \textbf{interpretive frameworks} consistent with SDT ontology.  They are plausible, physically motivated, and qualitatively correct.  But they are not derivations.
+
+A genuine geometric derivation would compute the solid-angle occlusion fraction of inner electrons on the nuclear pressure field for each shell configuration, and predict:
+\begin{equation}
+  \sigma(Z, N) = \mathcal{F}_{\text{occlusion}}(Z, N, \text{shell geometry})
+\end{equation}
+from first principles, without reference to $E_I$ data.  That derivation is an \textbf{open problem} (Chapter~\ref{ch:open-problems}).
+
+Until it is completed, the three regimes are best understood as \emph{robust empirical phenomenology with a compelling geometric interpretation}, not as closed derivations.
+

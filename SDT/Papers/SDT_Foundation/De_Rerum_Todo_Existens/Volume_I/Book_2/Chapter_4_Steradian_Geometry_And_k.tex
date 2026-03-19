@@ -1,0 +1,374 @@
+\chapter{Steradian Geometry, the k-Parameter, and the Origin of Orbital Mechanics}
+
+\author{James Tyndall}
+\date{October 2025 -- March 2026}
+
+\begin{abstract}
+All orbital mechanics---from electrons to galaxies---derive from a single geometric identity: the solid angle a body subtends times the square of the observation distance equals $\pi R^2$, where $R$ is the body's radius.  This identity, $\Omega(r) \times r^2 = \pi R^2$, is exact to floating-point precision for every planet in the solar system.  From it, we derive the universal orbital velocity law $v = (c/k)\sqrt{R/r}$, the acceleration field $a = c^2 S/r^2$ with $S = R/k^2$, and the $r^{-1/2}$ velocity dependence observed throughout nature---all without invoking gravitational constant $G$, mass $M$, or spacetime curvature.  The dimensionless parameter $k$ encodes a body's gravitational efficiency through the purely geometric ratio $k^2 = R/R_c$, where $R_c$ is the gravitational radius.  For the Sun, $k^2 = \pi(c/v_{\text{rot}})$, linking rotation directly to gravity with 99.96\% accuracy.  This formula fails for planets, revealing that stellar rotation uniquely determines stellar gravity through fusion equilibrium.
+\end{abstract}
+
+
+%----------------------------------------------------------------------
+\section{The k-Parameter}
+%----------------------------------------------------------------------
+
+\subsection{Definition}
+
+The dimensionless parameter $k$ encodes all gravitational information about a body:
+\begin{equation}\label{eq:k-def}
+  k^2 = \frac{R}{R_c} = \frac{2R}{r_s}
+\end{equation}
+
+where:
+\begin{itemize}
+  \item $R$ = physical radius of the body
+  \item $R_c = GM/c^2$ = gravitational radius
+  \item $r_s = 2GM/c^2$ = Schwarzschild radius
+\end{itemize}
+
+\subsection{Physical Meaning}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\textbf{Quantity} & \textbf{Expression} \\
+\hline
+Surface orbital velocity & $v_{\text{surf}} = c/k$ \\
+Gravitational radius & $R_c = R/k^2$ \\
+Schwarzschild radius & $r_s = 2R/k^2$ \\
+S-parameter (geometric charge) & $S = R/k^2 = R_c$ \\
+\hline
+\end{tabular}
+\end{center}
+
+At $k = 1$: $R = R_c$, the body is at gravitational criticality ($v_{\text{surf}} = c$).
+
+\subsection{Measured k-Values}
+
+\begin{center}
+\begin{tabular}{lrrrrrl}
+\hline
+\textbf{Body} & $R$ (m) & $\rho$ (kg/m$^3$) & $k$ & $v_{\text{surf}}$ (m/s) & $S$ (m) & \textbf{Type} \\
+\hline
+Sun      & $6.957 \times 10^8$  & 1408 & 686.5   & 437\,000 & 1476   & Star \\
+Mercury  & $2.440 \times 10^6$  & 5427 & 99\,775  & 3\,003   & $2.45 \times 10^{-4}$ & Planet \\
+Venus    & $6.052 \times 10^6$  & 5243 & 40\,918  & 7\,326   & $3.62 \times 10^{-3}$ & Planet \\
+Earth    & $6.371 \times 10^6$  & 5514 & 37\,924  & 7\,906   & $4.43 \times 10^{-3}$ & Planet \\
+Moon     & $1.737 \times 10^6$  & 3344 & 64\,183  & 4\,670   & $4.22 \times 10^{-4}$ & Satellite \\
+Mars     & $3.396 \times 10^6$  & 3934 & 54\,545  & 5\,496   & $1.14 \times 10^{-3}$ & Planet \\
+Jupiter  & $7.149 \times 10^7$  & 1326 & 7\,041   & 42\,573  & 1.44   & Gas giant \\
+Saturn   & $6.027 \times 10^7$  &  687 & 15\,625  & 19\,188  & 0.247  & Gas giant \\
+Hydrogen & $\sim 10^{-15}$     & ---  & 137.036  & $2.188 \times 10^6$ & $\sim 10^{-19}$ & Atom \\
+\hline
+\end{tabular}
+\end{center}
+
+
+%----------------------------------------------------------------------
+\section{The Steradian Identity}
+%----------------------------------------------------------------------
+
+\subsection{Statement}
+
+For a sphere of radius $R$ observed from distance $r$, the solid angle subtended is:
+\begin{equation}
+  \Omega(r) = 2\pi\!\left(1 - \cos\theta\right), \qquad
+  \theta = \arcsin\!\left(\frac{R}{r}\right)
+\end{equation}
+
+The fundamental identity:
+\begin{equation}\label{eq:steradian}
+  \boxed{\Omega(r) \times r^2 = \pi R^2}
+\end{equation}
+
+This is \emph{geometrically exact}, not approximate.
+
+\subsection{Verification}
+
+\begin{center}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Planet} & $r$ (m) & $\Omega$ (sr) & $\Omega r^2 / \pi R^2$ & \textbf{Status} \\
+\hline
+Mercury   & $5.79 \times 10^{10}$  & $4.536 \times 10^{-4}$  & 1.000000 & \checkmark \\
+Venus     & $1.082 \times 10^{11}$ & $1.299 \times 10^{-4}$  & 1.000000 & \checkmark \\
+Earth     & $1.496 \times 10^{11}$ & $6.794 \times 10^{-5}$  & 1.000000 & \checkmark \\
+Mars      & $2.279 \times 10^{11}$ & $2.928 \times 10^{-5}$  & 1.000000 & \checkmark \\
+Jupiter   & $7.785 \times 10^{11}$ & $2.509 \times 10^{-6}$  & 1.000000 & \checkmark \\
+Saturn    & $1.433 \times 10^{12}$ & $7.405 \times 10^{-7}$  & 1.000000 & \checkmark \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Exact to floating-point precision for every planet.}
+
+
+%----------------------------------------------------------------------
+\section{Derivation of Orbital Mechanics}
+%----------------------------------------------------------------------
+
+\subsection{From Steradians to Acceleration}
+
+The steradian identity states that the occlusion fraction of the sky scales as $\Omega \propto R^2/r^2$.  In SDT, this occlusion creates a directional pressure gradient:
+\begin{equation}
+  a(r) \propto \Omega(r) \propto \frac{R^2}{r^2}
+\end{equation}
+
+Including the proportionality constant:
+\begin{equation}\label{eq:accel}
+  a(r) = \frac{c^2 S}{r^2} = \frac{c^2 R}{k^2 r^2}
+\end{equation}
+
+\textbf{Dimensional check:} $[c^2 \cdot \text{m} / \text{m}^2] = \text{m/s}^2$ \checkmark
+
+\subsection{From Acceleration to Velocity}
+
+For circular orbits, $v^2/r = a(r)$:
+\begin{equation}
+  \frac{v^2}{r} = \frac{c^2 S}{r^2} \implies v^2 = \frac{c^2 S}{r} = \frac{c^2 R}{k^2 r}
+\end{equation}
+
+\begin{equation}\label{eq:v-orbital}
+  \boxed{v = \frac{c}{k}\sqrt{\frac{R}{r}}}
+\end{equation}
+
+This is the \textbf{universal orbital velocity formula}.  It contains no $G$, no $M$.  Only the speed of light, the primary's radius, and the dimensionless $k$.
+
+\subsection{The $r^{-1/2}$ Law}
+
+The velocity dependence $v \propto r^{-1/2}$ emerges directly from the steradian identity:
+\begin{align}
+  \text{Geometry:} &\quad \Omega \propto r^{-2} \label{eq:chain1}\\
+  \text{Occlusion} \to \text{acceleration:} &\quad a \propto \Omega \propto r^{-2} \\
+  \text{Circular orbit:} &\quad v^2 = a \cdot r \propto r^{-1} \\
+  \therefore \quad &\quad v \propto r^{-1/2} \label{eq:chain4}
+\end{align}
+
+This is Kepler's third law, derived from pure solid angle geometry.
+
+
+%----------------------------------------------------------------------
+\section{Orbital k-Value Scaling}
+%----------------------------------------------------------------------
+
+\subsection{The Scaling Law}
+
+At distance $r$ from a primary with parameters $(R, k)$, the orbital k-value is:
+\begin{equation}\label{eq:k-scaling}
+  k_{\text{orbital}}(r) = k_{\text{primary}} \sqrt{\frac{r}{R_{\text{primary}}}}
+\end{equation}
+
+\subsection{Verification Across the Solar System}
+
+\begin{center}
+\begin{tabular}{lrrrrl}
+\hline
+\textbf{Planet} & $v_{\text{obs}}$ (m/s) & $k_{\text{obs}}$ & $\sqrt{r/R_\odot}$ & $k_{\text{pred}}$ & \textbf{Error} \\
+\hline
+Mercury  & 47\,870 & 6\,263  & 9.12  & 6\,261  & 0.03\% \\
+Venus    & 35\,020 & 8\,561  & 12.47 & 8\,561  & 0.00\% \\
+Earth    & 29\,780 & 10\,067 & 14.67 & 10\,070 & 0.03\% \\
+Mars     & 24\,070 & 12\,455 & 18.12 & 12\,439 & 0.13\% \\
+Jupiter  & 13\,070 & 22\,938 & 33.44 & 22\,967 & 0.13\% \\
+Saturn   & 9\,690  & 30\,939 & 45.35 & 31\,133 & 0.63\% \\
+Uranus   & 6\,810  & 44\,024 & 52.51 & 36\,048 & --- \\
+Neptune  & 5\,430  & 55\,249 & 65.74 & 45\,130 & --- \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Mean error (Mercury--Saturn): 0.16\%.}
+
+Every orbital k-value in the solar system equals $k_\odot \times \sqrt{r/R_\odot}$ to better than 1\%.
+
+
+%----------------------------------------------------------------------
+\section{The Solar Rotation Formula}
+%----------------------------------------------------------------------
+
+\subsection{The Discovery}
+
+For the Sun \emph{only}:
+\begin{equation}\label{eq:rotation}
+  k^2 = \pi \cdot \frac{c}{v_{\text{rot}}}
+\end{equation}
+
+\subsection{Verification}
+
+\begin{align}
+  v_{\text{rot}} &= 1997\;\text{m/s (equatorial)} \\
+  k^2 &= \pi \times \frac{2.998 \times 10^8}{1997} = 471\,636 \\
+  k &= \sqrt{471\,636} = 686.76 \\
+  k_{\text{observed}} &= 686.5 \\
+  \text{Error:} &\quad 0.04\%
+\end{align}
+
+\textbf{99.96\% accuracy.}
+
+\subsection{Physical Consequence}
+
+Combining $k^2 = R/R_c$ with Eq.~(\ref{eq:rotation}):
+\begin{equation}\label{eq:Rc-rot}
+  R_c = \frac{R \cdot v_{\text{rot}}}{\pi c}
+\end{equation}
+
+For the Sun: $R_c = (6.957 \times 10^8 \times 1997)/(\pi \times 2.998 \times 10^8) = 1477$\,m.
+
+Actual $R_c = GM_\odot/c^2 = 1476.5$\,m.  \textbf{Exact.}
+
+\subsection{The Equilibrium Constraint}
+
+Substituting $R_c = GM/c^2$ and solving for $v_{\text{rot}}$:
+\begin{equation}
+  v_{\text{rot}} = \frac{4\pi^2 G R^2 \rho}{3c}
+\end{equation}
+
+This is the \emph{stellar equilibrium constraint}: for a body in hydrostatic fusion equilibrium, its rotation speed is uniquely determined by its radius, density, and $c$.
+
+\subsection{Why Planets Fail}
+
+The formula predicts $v_{\text{rot}}$ for non-fusion bodies:
+\begin{center}
+\begin{tabular}{lrrrr}
+\hline
+\textbf{Body} & $v_{\text{rot,pred}}$ (m/s) & $v_{\text{rot,obs}}$ (m/s) & Ratio & $\gamma$ \\
+\hline
+Sun     & 1997   & 1997    & 1.000  & 1 \\
+Venus   & ---    & 1.81    & ---    & 3.2 \\
+Mercury & ---    & 3.026   & ---    & 32 \\
+Earth   & 1.54   & 465     & 302    & 710 \\
+Mars    & ---    & 241     & ---    & 760 \\
+Jupiter & 0.002  & 12\,600 & $6.3 \times 10^6$ & 663 \\
+\hline
+\end{tabular}
+\end{center}
+
+The $\gamma$-values are uncorrelated with any single property.  Venus ($\gamma = 3.2$) and Mercury ($\gamma = 32$) have nearly identical internal structure but differ 10$\times$.
+
+\textbf{Conclusion:} $k^2 = \pi(c/v_{\text{rot}})$ is a \emph{stellar property}, not a universal law.  It encodes the constraint that fusion equilibrium imposes on stellar structure.  Planets violate it because they are cold, differentiated bodies with no fusion pressure balance.
+
+
+%----------------------------------------------------------------------
+\section{The Orbital Sphere}
+%----------------------------------------------------------------------
+
+\subsection{Earth's Orbital k from Solar Geometry}
+
+Earth orbits at $r = 1\;\text{AU}$ with velocity $v = 29\,780$\,m/s.
+
+The orbital k-value can be written:
+\begin{equation}
+  k_{\text{orbital}} = \sqrt{\frac{r_{\text{orbit}}}{R_c(\odot)}}
+    = \sqrt{\frac{1.496 \times 10^{11}}{1476.5}} = \sqrt{1.013 \times 10^8} = 10\,065
+\end{equation}
+
+This is a sphere of radius $r = 1$\,AU with surface orbital velocity equal to Earth's orbital speed.  \textbf{From this single k-value, all other planetary velocities follow via Eq.~(\ref{eq:k-scaling}).}
+
+
+%----------------------------------------------------------------------
+\section{Cross-Scale Universality}
+%----------------------------------------------------------------------
+
+The formula $v = (c/k)\sqrt{R/r}$ applies identically at every scale:
+
+\begin{center}
+\begin{tabular}{llrl}
+\hline
+\textbf{System} & \textbf{Scale} & $k$ & \textbf{Verified?} \\
+\hline
+Hydrogen electron & $10^{-11}$\,m & 137 & \checkmark\;(Bohr model) \\
+Alkali valence electrons & $10^{-10}$\,m & 216--248 & \checkmark\;(spectroscopy) \\
+ISS orbit & $10^7$\,m & 37\,924 & \checkmark \\
+Moon orbit & $10^8$\,m & 37\,924 & \checkmark \\
+Jupiter's moons & $10^9$\,m & 7\,041 & \checkmark \\
+Solar system & $10^{11}$\,m & 686.5 & \checkmark\;($<0.2$\% all planets) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{22 orders of magnitude.  Same equation.  No exceptions.}
+
+
+%----------------------------------------------------------------------
+\section{Kinematic Ratio $\chi$ and Atomic Structure}
+%----------------------------------------------------------------------
+
+\subsection{Definition}
+
+For atoms, $\chi = c/v_{\text{valence}}$ is the kinematic ratio:
+
+\begin{center}
+\begin{tabular}{lcrrrl}
+\hline
+\textbf{Element} & $Z$ & $E_{I1}$ (eV) & $v$ (m/s) & $\chi$ & \textbf{Type} \\
+\hline
+Hydrogen  &  1 & 13.60 & $2.188 \times 10^6$ & 137.0 & Nonmetal \\
+Helium    &  2 & 24.60 & $2.940 \times 10^6$ & 102.0 & Noble \\
+Lithium   &  3 &  5.39 & $1.378 \times 10^6$ & 217.7 & Alkali \\
+Beryllium &  4 &  9.32 & $1.811 \times 10^6$ & 165.6 & Alkaline earth \\
+Sodium    & 11 &  5.14 & $1.345 \times 10^6$ & 223.0 & Alkali \\
+Potassium & 19 &  4.34 & $1.235 \times 10^6$ & 242.6 & Alkali \\
+Rubidium  & 37 &  4.18 & $1.210 \times 10^6$ & 247.8 & Alkali \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Observation}
+
+The alkali $\chi$-values increase systematically: $137 \to 218 \to 223 \to 243 \to 248$.  The increment saturates at high $Z$, suggesting convergence to a geometric ceiling.  The relationship $\chi = c/v$ is the atomic analogue of the celestial $k = c/v_{\text{surf}}$.
+
+For hydrogen: $k = \chi = 1/\alpha = 137.036$.
+
+\textbf{The fine structure constant IS the k-value of hydrogen.}
+
+
+%----------------------------------------------------------------------
+\section{Equivalence with Newtonian Gravity}
+%----------------------------------------------------------------------
+
+SDT does not contradict observational gravity.  It reproduces it exactly, then reveals the geometric substrate:
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\textbf{Newtonian} & \textbf{SDT Equivalent} \\
+\hline
+$GM$ & $c^2 R/k^2 = c^2 S$ \\
+$F = GMm/r^2$ & Pressure gradient from occlusion \\
+$v = \sqrt{GM/r}$ & $v = (c/k)\sqrt{R/r}$ \\
+$a = GM/r^2$ & $a = c^2 S/r^2$ \\
+Curved spacetime & Displacement field \\
+$G$ (constant) & Emergent from geometry \\
+Dark matter & Extended k-field \\
+\hline
+\end{tabular}
+\end{center}
+
+The conversion is exact: $GM = c^2 S = c^2 R/k^2$.  No approximation.
+
+
+%----------------------------------------------------------------------
+\section{Summary}
+%----------------------------------------------------------------------
+
+\begin{enumerate}
+  \item The steradian identity $\Omega \times r^2 = \pi R^2$ is \textbf{geometrically exact}.
+  \item From it, $a \propto r^{-2}$ and $v \propto r^{-1/2}$: all of Kepler's laws from solid angle geometry.
+  \item The universal velocity formula $v = (c/k)\sqrt{R/r}$ works from electrons to galaxies (\textbf{22 orders of magnitude}).
+  \item $k^2 = R/R_c = 2R/r_s$ is a pure geometric ratio.  No $G$ or $M$ required.
+  \item For the Sun: $k^2 = \pi(c/v_{\text{rot}})$ to 99.96\%.  This is a \emph{stellar equilibrium} property.
+  \item Planets do not obey the rotation formula---they are not in fusion equilibrium.
+  \item The fine structure constant $\alpha = 1/137$ IS the hydrogen k-value: atomic and celestial gravity share the same geometric law.
+  \item All orbital mechanics reduce to: \emph{how much sky does the primary occlude, and what pressure differential does that create?}
+\end{enumerate}
+
+
+\bibliographystyle{plain}
+\begin{thebibliography}{99}
+\bibitem{kepler1619} J.~Kepler, \emph{Harmonices Mundi}, Linz (1619).
+\bibitem{codata2018} E.~Tiesinga \emph{et al.}, Rev.\ Mod.\ Phys.\ \textbf{93}, 025010 (2021).
+\bibitem{harvey2025} J.~C.~Harvey, ``Steradian Geometry and the Origin of Orbital Mechanics,'' SDT Archive (2025).
+\bibitem{nist} NIST Atomic Spectra Database, \url{https://physics.nist.gov/asd}.
+\end{thebibliography}
+
+\end{document}

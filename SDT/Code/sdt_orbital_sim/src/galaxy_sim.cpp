@@ -59,7 +59,7 @@ int main() {
     galaxy.screening_alpha = 1.0;       // Linear dependence region
 
     // Central SMBH (Sgr A*)
-    // SDT: R_eff ~ 4e9 m driven by enormous beta
+    // SDT: R_eff ~ 4e9 m driven by large c²·R_c acceleration scale
     // Conventional: 4e6 Solar Masses
     galaxy.central_black_hole.name = "Sgr_A_Star";
     galaxy.central_black_hole.position = Vec3d::Zero();
@@ -69,8 +69,8 @@ int main() {
     // SDT Params for SMBH
     galaxy.central_black_hole.sdt_params.R_eff = 1.0e7; // Placeholder R_eff for generating strong gravity
     galaxy.central_black_hole.sdt_params.k_factor = 20.0; // Low k_factor = high gravity
-    // beta = c^2 * R_eff / k^2
-    galaxy.central_black_hole.sdt_params.beta = (constants::c * constants::c * galaxy.central_black_hole.sdt_params.R_eff) / 
+    // c²·R_c = c² * R_eff / k²
+    galaxy.central_black_hole.sdt_params.c2_R_c = (constants::c * constants::c * galaxy.central_black_hole.sdt_params.R_eff) / 
                                                 (galaxy.central_black_hole.sdt_params.k_factor * galaxy.central_black_hole.sdt_params.k_factor);
     galaxy.central_black_hole.sdt_params.is_active_source = true;
 
@@ -118,7 +118,7 @@ int main() {
         // 1. Calculate v_SDT (with screening)
         scalar_t v_sdt = calculate_orbital_velocity(star, sources, galaxy);
         
-        // 2. Calculate v_Newtonian (without screening, raw SDT potential ~ Newtonian GM/r)
+        // 2. Calculate v_raw (without screening, raw SDT potential ~ c²R_c/r)
         // Just turn off screening in the call
         core::Galaxy raw_galaxy = galaxy;
         raw_galaxy.screening_strength = 0.0;

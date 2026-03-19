@@ -1,10 +1,10 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include "sdt/physics/electron_orbitals.hpp"
 #include "sdt/physics/spectral_transitions.hpp"
 #include "sdt/visualization/orbital_viewer.hpp"
 #include "sdt/io/atomic_data_loader.hpp"
-#include <fmt/core.h>
 
 int main(int argc, char* argv[]) {
     try {
@@ -25,8 +25,8 @@ int main(int argc, char* argv[]) {
         }
         
         if (mode == "orbital") {
-            fmt::print("=== SDT Atomic Orbital 3D Viewer ===\n");
-            fmt::print("Visualizing orbital: n={}, l={}, m={}\n", n, l, m);
+            std::cout << "=== SDT Atomic Orbital 3D Viewer ===\n";
+            std::cout << "Visualizing orbital: n=" << n << ", l=" << l << ", m=" << m << "\n";
             
             // Create orbital
             sdt::physics::atomic::HydrogenAtom hydrogen;
@@ -44,17 +44,17 @@ int main(int argc, char* argv[]) {
             // Visualize
             viewer.visualize_orbital(orbital);
             
-            fmt::print("Controls:\n");
-            fmt::print("  Mouse drag: Rotate\n");
-            fmt::print("  Mouse wheel: Zoom\n");
-            fmt::print("  'q' or close: Quit\n");
-            fmt::print("\nStarting viewer...\n");
+            std::cout << "Controls:\n";
+            std::cout << "  Mouse drag: Rotate\n";
+            std::cout << "  Mouse wheel: Zoom\n";
+            std::cout << "  'q' or close: Quit\n";
+            std::cout << "\nStarting viewer...\n";
             
             viewer.render();
             viewer.start_interactor();
             
         } else if (mode == "spectrum") {
-            fmt::print("=== SDT Atomic Spectrum Viewer ===\n");
+            std::cout << "=== SDT Atomic Spectrum Viewer ===\n";
             
             // Generate spectrum
             sdt::physics::atomic::AtomicSpectrum spectrum;
@@ -62,22 +62,23 @@ int main(int argc, char* argv[]) {
             
             // Load experimental data if provided
             if (!spectral_file.empty()) {
-                fmt::print("Loading experimental data from: {}\n", spectral_file);
+                std::cout << "Loading experimental data from: " << spectral_file << "\n";
                 auto nist_data = sdt::io::atomic::NISTLoader::load_csv(spectral_file);
-                fmt::print("Loaded {} experimental lines\n", nist_data.size());
+                std::cout << "Loaded " << nist_data.size() << " experimental lines\n";
             }
             
             // Show spectrum
-            fmt::print("\nHydrogen Spectrum:\n");
+            std::cout << "\nHydrogen Spectrum:\n";
             for (const auto& line : spectrum.lines) {
                 if (line.wavelength > 0) {
-                    fmt::print("  {}: λ = {:.2f} nm, E = {:.4f} eV\n",
-                              line.name, line.wavelength * 1e9, line.energy);
+                    std::cout << "  " << line.name << ": λ = "
+                              << std::fixed << std::setprecision(2) << line.wavelength * 1e9
+                              << " nm, E = " << std::setprecision(4) << line.energy << " eV\n";
                 }
             }
             
         } else if (mode == "atom") {
-            fmt::print("=== SDT Atomic System Viewer ===\n");
+            std::cout << "=== SDT Atomic System Viewer ===\n";
             
             sdt::physics::atomic::AtomicSystem atom;
             atom.Z = 1;
@@ -91,11 +92,11 @@ int main(int argc, char* argv[]) {
             viewer.start_interactor();
             
         } else {
-            fmt::print("Usage: {} <mode> [options]\n", argv[0]);
-            fmt::print("Modes:\n");
-            fmt::print("  orbital [n] [l] [m]  - Visualize specific orbital\n");
-            fmt::print("  spectrum [file.csv]  - Show spectrum\n");
-            fmt::print("  atom                 - Visualize atom\n");
+            std::cout << "Usage: " << argv[0] << " <mode> [options]\n";
+            std::cout << "Modes:\n";
+            std::cout << "  orbital [n] [l] [m]  - Visualize specific orbital\n";
+            std::cout << "  spectrum [file.csv]  - Show spectrum\n";
+            std::cout << "  atom                 - Visualize atom\n";
             return 1;
         }
         
@@ -106,4 +107,3 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 }
-

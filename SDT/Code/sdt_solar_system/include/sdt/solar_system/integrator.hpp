@@ -23,8 +23,8 @@ namespace sdt::solar_system {
             
             // Kinetic energy: E_k = ½ m v²
             for (const auto& body : bodies) {
-                if (body.mass_conv > 0.0) {
-                    E += 0.5 * body.mass_conv * body.velocity.squaredNorm();
+                if (body.mass_nist_ref > 0.0) {
+                    E += 0.5 * body.mass_nist_ref * body.velocity.squaredNorm();
                 }
             }
             
@@ -35,13 +35,13 @@ namespace sdt::solar_system {
                     const Vec3d r_vec = bodies[j].position - bodies[i].position;
                     const scalar_t r = r_vec.norm();
                     if (r > 0.0) {
-                        // Effective beta for pair interaction
-                        const scalar_t beta_i = bodies[i].sdt_params.beta();
-                        const scalar_t beta_j = bodies[j].sdt_params.beta();
-                        const scalar_t beta_eff = std::sqrt(beta_i * beta_j);
+                        // Effective c²·R_c for pair interaction
+                        const scalar_t c2rc_i = bodies[i].sdt_params.c2_R_c();
+                        const scalar_t c2rc_j = bodies[j].sdt_params.c2_R_c();
+                        const scalar_t c2rc_eff = std::sqrt(c2rc_i * c2rc_j);
                         
-                        // Potential energy: E_pot = -β_eff ρ_s / r
-                        E -= beta_eff * constants::rho_s / r;
+                        // Potential energy: E_pot = -c²·R_c_eff · ρ_s / r
+                        E -= c2rc_eff * constants::rho_s / r;
                     }
                 }
             }
@@ -53,8 +53,8 @@ namespace sdt::solar_system {
         Vec3d calculate_angular_momentum_vector() const {
             Vec3d L_total = Vec3d::Zero();
             for (const auto& body : bodies) {
-                if (body.mass_conv > 0.0) {
-                    L_total += body.mass_conv * body.position.cross(body.velocity);
+                if (body.mass_nist_ref > 0.0) {
+                    L_total += body.mass_nist_ref * body.position.cross(body.velocity);
                 }
             }
             return L_total;
@@ -189,11 +189,11 @@ namespace sdt::solar_system {
                 const scalar_t c = 299792458.0;
                 const scalar_t R_sun = 6.957e8;
                 const scalar_t kappa_sun = 686.42;
-                const scalar_t beta_sun = (c * c * R_sun) / (kappa_sun * kappa_sun);
+                const scalar_t c2_R_c_sun = (c * c * R_sun) / (kappa_sun * kappa_sun);
                 
-                // Estimate period: T ≈ 2π √(r³ / β)
+                // Estimate period: T ≈ 2π √(r³ / c²·R_c)
                 const scalar_t estimated_period = 2.0 * constants::pi * 
-                    std::sqrt(min_separation * min_separation * min_separation / beta_sun);
+                    std::sqrt(min_separation * min_separation * min_separation / c2_R_c_sun);
                 
                 // Use 1/1000 of period as time step
                 adaptive_dt = std::min(dt_attempt, estimated_period / 1000.0);

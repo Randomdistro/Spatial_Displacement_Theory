@@ -2,7 +2,7 @@
   "benchmark_id": "B34",
   "title": "Binding Energy from Occlusion Constant",
   "status": "UNDER_INVESTIGATION",
-  "validation_date": "2026-01-15T17:28:31Z",
+  "validation_date": "2026-03-08T23:28:35Z",
   "inputs": {
     "data_sources": ["NIST binding energies for D, He-4, C-12, O-16 (encoded in SDT headers)"],
     "data_files": ["SDT/Code/sdt_navier_cpp/include/nuclear_geometry_occlusion.hpp"],

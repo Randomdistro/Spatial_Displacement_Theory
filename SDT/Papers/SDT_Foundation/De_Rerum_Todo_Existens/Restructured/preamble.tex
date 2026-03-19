@@ -1,0 +1,84 @@
+% =========================================================================
+%  DE RERUM TODO EXISTENS — RESTRUCTURED EDITION
+%  Shared Preamble
+% =========================================================================
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{pifont}   % for \ding checkmark
+
+% =========================================================================
+%  NOTATION: THE KOPPA DESCRIPTOR FAMILY
+% =========================================================================
+%
+%  Three related but DISTINCT dimensionless quantities:
+%
+%  1.  K  ≡  c/v        — the KINEMATIC RATIO of any specific orbit
+%                          (a state variable; different for every orbit)
+%
+%  2.  K_body            — the kinematic ratio at a body's characteristic
+%                          surface velocity (a system parameter):
+%                            K_☉  = 686.5   (Sun)
+%                            K_J  = 7,124   (Jupiter)
+%                            K_⊕  = 37,848  (Earth)
+%
+%  3.  ϟ  ≡  (1/α)√(R_p/a_0) = 0.5464
+%                        — the UNIVERSAL ATOMIC BRIDGE CONSTANT
+%                          (a fundamental constant composed of R_p, a_0, α)
+%
+%  K is a measurement.  K_body is a property.  ϟ is a constant.
+%  They are cousins, not reincarnations.
+% =========================================================================
+
+% --- Koppa symbol (the universal constant ϟ = 0.5464) ---
+% U+03DF (ϟ) — using varkappa as closest standard LaTeX glyph
+\newcommand{\kop}{\varkappa}
+\newcommand{\kopfull}{koppa}
+
+% --- Kinematic ratio for specific bodies ---
+% Use these for body-specific values, NOT \kop
+\newcommand{\Ksun}{K_\odot}
+\newcommand{\Kjup}{K_J}
+\newcommand{\Ksat}{K_S}
+\newcommand{\Kearth}{K_\oplus}
+
+% --- Physical constants ---
+\newcommand{\Rp}{R_p}              % proton charge radius
+\newcommand{\abohr}{a_0}           % Bohr radius
+\newcommand{\fsc}{\alpha}          % fine structure constant
+\newcommand{\Zeff}{Z_{\text{eff}}} % effective nuclear charge
+
+% --- Formatting ---
+\newcommand{\SDT}{\textsc{sdt}}
+\renewcommand{\checkmark}{\ding{51}}
+
+% --- Chapter styling ---
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+% --- Headers ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+
+% --- Hyperref setup ---
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  citecolor=green!50!black,
+  urlcolor=blue!80!black,
+  pdftitle={De Rerum Todo Existens — Restructured Edition},
+  pdfauthor={James Tyndall},
+}
+

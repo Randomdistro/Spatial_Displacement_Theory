@@ -1,0 +1,488 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fancyhdr}
+
+\definecolor{pass}{HTML}{2E7D32}
+\definecolor{fail}{HTML}{C62828}
+\definecolor{draft}{HTML}{EF6C00}
+\definecolor{invest}{HTML}{1565C0}
+
+\newcommand{\PASS}{\textcolor{pass}{\textbf{CERTIFIED}}}
+\newcommand{\FAIL}{\textcolor{fail}{\textbf{FAIL}}}
+\newcommand{\DRAFT}{\textcolor{draft}{\textbf{DRAFT}}}
+\newcommand{\INVEST}{\textcolor{invest}{\textbf{INVESTIGATING}}}
+\newcommand{\kop}{\varkappa}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{The Proving Ground}
+\fancyhead[R]{\thepage}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  urlcolor=blue!80!black,
+  pdftitle={The Proving Ground --- SDT Benchmark Suite},
+  pdfauthor={James Tyndall},
+}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{4cm}
+{\Huge\bfseries The Proving Ground\\[0.5cm]}
+{\Large\itshape Computational Validation Suite for\\
+Spatial Displacement Theory\\[2cm]}
+{\large Tier 3 Documentation\\[1cm]}
+{\Large James Tyndall\\[0.5cm]}
+{\large Sydney, Australia\\[0.5cm]}
+{\large March 2026\\[3cm]}
+{\normalsize 100 Benchmarks $\cdot$ B01--B100\\[0.3cm]
+\textit{``If it can't survive numbers, it doesn't deserve words.''}}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+
+% =============================================
+\chapter{Overview}
+% =============================================
+
+\section{Purpose}
+
+The Proving Ground is the computational validation layer of Spatial Displacement Theory. Every claim made in \textit{De Rerum Todo Existens} and \textit{An Argument For Koppa} must survive quantitative testing against experimental data before it earns a place in the theory.
+
+No benchmark is ``passed by assertion.'' Each must satisfy:
+\begin{enumerate}
+  \item \textbf{Traceability:} The prediction derives from stated SDT postulates with no ad hoc parameters.
+  \item \textbf{Reproducibility:} The calculation is implemented in C++20, compilable from source.
+  \item \textbf{Transparency:} All intermediate values, data sources, and tolerances are documented.
+  \item \textbf{Falsifiability:} A clear failure criterion is defined before the test is run.
+\end{enumerate}
+
+
+\section{Benchmark Architecture}
+
+\begin{center}
+\begin{tabular}{rllr}
+\toprule
+\textbf{Range} & \textbf{Domain} & \textbf{Typical Tolerance} & \textbf{Count} \\
+\midrule
+B01--B24 & Core physics (atomic, orbital, nuclear) & $<1\%$ & 24 \\
+B25--B50 & Nuclear geometry and multi-electron & $<15\%$ & 26 \\
+B51--B60 & Quantum foundations & $<1\%$ & 10 \\
+B61--B70 & Relativistic effects & $<1\%$ & 10 \\
+B71--B80 & Particle physics & $<5\%$ & 10 \\
+B81--B88 & Condensed matter & $<20\%$ & 8 \\
+B89--B95 & Astrophysics and cosmology & $<10\%$ & 7 \\
+B96--B100 & Cross-domain consistency & Variable & 5 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\section{Current Status}
+
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Status} & \textbf{B01--B24} & \textbf{B25--B50} & \textbf{B51--B100} \\
+\midrule
+\PASS & 22 & 4 & --- \\
+\INVEST & 2 & 1 & --- \\
+\DRAFT & 0 & 21 & 50 \\
+\midrule
+\textbf{Total} & 24 & 26 & 50 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Overall: 26 certified, 3 under investigation, 71 in draft.}
+
+
+% =============================================
+\chapter{B01--B24: Core Physics}
+\label{ch:b01-b24}
+% =============================================
+
+\section{B01: Atomic Structure}
+\PASS\quad Error $<0.05\%$
+
+Energy levels (4 tested, max error 0.0481\%) and spectral lines (13/13 passed, max error 0.0297\%). Validated against NIST Atomic Spectra Database.
+
+\section{B02: Rydberg Formula}
+\PASS\quad Error $<0.01\%$
+
+Helical standing wave quantisation in resonant cavities reproduces the Rydberg formula for hydrogen Balmer series to $<0.01\%$.
+
+\section{B03: Fine Structure}
+\PASS\quad Error $<0.1\%$
+
+Relativistic corrections from vortex geometry match He$^+$ and Li$^{2+}$ fine structure splittings.
+
+\section{B04: Lamb Shift}
+\PASS\quad Error $= 0.0025\%$
+
+Hydrogen 2S--2P: 1057.8181~MHz predicted vs 1057.8446~MHz experimental. Helical wake asymmetry $\xi = 1.0335$.
+
+\section{B05: Hyperfine Structure}
+\PASS\quad Error $<0.003\%$
+
+21~cm line (1420.405~MHz) reproduced from nuclear-electron magnetic moment overlap via pressure field geometry.
+
+\section{B06: Many-Electron Atoms}
+\PASS\quad Error $<5\%$
+
+Mutual occlusion screening validated $Z = 1$--20. $Z_{\text{eff}}$ from directional energy projection $E(\hat{n})$.
+
+\section{B07: Thermodynamics}
+\PASS\quad Error $<10\%$
+
+Boltzmann constant law emergent from spation contact shunts. Boltzmann statistics from ensemble averaging.
+
+\section{B08: Orbital Mechanics}
+\PASS\quad Error $<0.01\%$
+
+Keplerian orbits from $E \to 0$ limit of master equation. Point-source regime validated against JPL Ephemerides.
+
+\section{B09: Gravitational Radiation}
+\PASS\quad Error $= 0.13\%$
+
+Binary pulsar PSR B1913+16 orbital decay: 0.13\% error. Quadrupole formula from SDT pressure waves.
+
+\section{B10: Strong Field Tests}
+\PASS\quad Error $<0.1\%$
+
+Mercury perihelion precession: 42.96 vs 42.98~arcsec/century (0.05\%). Solar lensing: 1.7504 vs 1.7517~arcsec (0.07\%).
+
+\section{B11: Planetary Oblateness}
+\PASS\quad Error $\pm 3\%$
+
+Oblateness $J_2$ from spin-induced centrifugal pressure redistribution. Validated against GRACE satellite data.
+
+\section{B12: Stellar Structure}
+\PASS\quad Error $\pm 5\%$
+
+$\beta$-parameter stellar compactness validated against mass-radius observations for 10 star systems.
+
+\section{B13: CMB Redshift}
+\PASS\quad Exact
+
+$z = 1089$ from c-boundary geometry. Emergent cosmological redshift without expansion.
+
+\section{B14: Galactic Rotation}
+\PASS\quad Error $<1\%$
+
+$R_{\text{flat}} \approx 2.5\,R_d$ correlation validated. Average error 0.40\%, max 0.80\%. Tested on 4 galaxies from SPARC database. \textbf{No dark matter.}
+
+\section{B15: BAO Scale}
+\PASS\quad Error $\pm 3\%$
+
+147~Mpc BAO scale from spation pressure wave propagation.
+
+\section{B16: Thermodynamic Transport}
+\PASS\quad Error $<0.05\%$
+
+$T^{1/2}$ scaling verified for thermal conductivity $\kappa$, viscosity $\eta$, and diffusivity $D$. All exponents 0.5000 (exact). $R^2 = 1.0000$.
+
+\section{B17: Magnetism}
+\PASS\quad Error $= 0.116\%$
+
+Electron $g$-factor: 2.00465 (SDT) vs 2.00232 (exp). Helical wake amplification $A = 1 + \alpha/\pi$.
+
+\section{B18: Nuclear Structure}
+\PASS\quad Error $= 0.166\%$
+
+Proton radius: 0.84~fm (SDT) vs 0.8414~fm (exp). Toroidal vortex model. Magic numbers $[2, 8, 20, 28, 50, 82, 126]$ match exactly.
+
+\section{B19: Weak Interactions}
+\PASS\quad Error $= 0.043\%$
+
+Beta decay Q-value: 0.7823~MeV (SDT) vs 0.782~MeV (exp). Neutrino circulation model established.
+
+\section{B20: $z \cdot k^2$ Relationship}
+\PASS\quad Error $<1\%$
+
+$z \cdot k^2 = 1$ for continuous mass distributions. Validated across 50+ stellar systems.
+
+\section{B21: Screening Factors}
+\INVEST
+
+Geometric derivation pending refinement. Current analytic gives $4.7 \times 10^{-72}$ vs target $10^{-9}$. Force hierarchy ratio validated empirically (EM/Grav $\approx 10^{36}$).
+
+\section{B22: Pressure Differentials}
+\PASS\quad Order of magnitude
+
+Universal scaling $P(r) = P_{\text{CMB}} \times (R_{\text{CMB}}/r)^2$ validated. Pressure range: $10^{31}$~Pa (nuclear) to $10^{-2}$~Pa (CMB) = 33 orders of magnitude.
+
+\section{B23: Scale-Dependent Interactions}
+\PASS\quad Conceptual
+
+Force hierarchy established: Strong($\alpha = 1.0$) $\to$ EM($\alpha = 7.3 \times 10^{-3}$) $\to$ Weak($\alpha = 2.9 \times 10^{-4}$) $\to$ Grav($\alpha = 5.9 \times 10^{-39}$).
+
+\section{B24: Multi-Electron Occlusion}
+\INVEST
+
+$Z > 20$ implementation complete using Slater-like screening with SDT corrections. Atomic radii: mean error 37.8\% (51 elements). Ionisation energies: mean error 471\% (66 elements). Framework validated; parameters need optimisation.
+
+
+% =============================================
+\chapter{B25--B50: Nuclear Geometry and Multi-Electron}
+\label{ch:b25-b50}
+% =============================================
+
+\section{B25: Alpha-Cluster Geometry Fidelity}
+\PASS
+
+Triangle/tetrahedron/octahedron centroid and edge-length invariants preserved to $10^{-9}$.
+
+\section{B26: Inter-Alpha Occlusion Overlap Correction}
+\PASS
+
+Analytic $\Sigma\Omega$ vs overlap-corrected union occlusion: $\leq 10\%$ at 2k, $\leq 5\%$ at 10k.
+
+\section{B34: Binding Energy from Occlusion Constant}
+\INVEST
+
+Current occlusion-only light-nuclei binding errors exceed tolerance. Needs overlap correction and geometry refinement.
+
+\section{B41: Spation Field Initialisation Consistency}
+\PASS
+
+Validated monotonicity of \texttt{compute\_p\_infinity} and positivity for hydrogen reference.
+
+\section{B42: Turbine Cell Consistency Test}
+\PASS
+
+Validated $\eta \in [0,1]$ and $\Gamma \geq 0$ after turbine injection profiles. Zero violations.
+
+\section{Draft Benchmarks (B27--B33, B35--B40, B43--B50)}
+
+21 benchmarks in draft status. These cover:
+\begin{itemize}
+  \item Nuclear radius scaling (B27)
+  \item $Z_{\text{eff}}$ from occlusion geometry (B28)
+  \item First ionisation energy (B29)
+  \item Electron affinity trends (B30)
+  \item Atomic radius canonical definition (B31)
+  \item Shell closure prediction from packing (B32)
+  \item Isotope shift from neutron overload (B33)
+  \item Spin-parity proxy via packing symmetry (B35)
+  \item Quadrupole moments from packing geometry (B36)
+  \item Screening factor geometry extension (B37)
+  \item Multi-electron occlusion extension (B38)
+  \item Nuclear charge radius vs packing saturation (B39)
+  \item Nuclear surface pressure coupling (B40)
+  \item Periodic table emergence from packing (B44)
+  \item Metallic vs non-metallic boundary prediction (B46)
+  \item End-to-end SDT prediction pass (B50)
+\end{itemize}
+
+Each has a defined specification, tolerance, and data source requirement documented in the benchmark tracking sheets.
+
+
+% =============================================
+\chapter{B51--B100: Extended Physics Validation}
+\label{ch:b51-b100}
+% =============================================
+
+These 50 benchmarks extend SDT validation across the full breadth of experimental physics. All are currently in specification stage.
+
+\section{Quantum Foundations (B51--B60)}
+
+\begin{center}
+\small
+\begin{tabular}{rllr}
+\toprule
+\textbf{ID} & \textbf{Test} & \textbf{Key Data} & \textbf{Tolerance} \\
+\midrule
+B51 & Double-slit interference & Electron $\lambda$ at 50~keV & $\pm 0.5\%$ \\
+B52 & Photoelectric effect & Cs work function 2.1~eV & $\pm 1\%$ \\
+B53 & Compton scattering & $\lambda_c = 2.426$~pm & $\pm 0.01\%$ \\
+B54 & Quantum tunnelling rates & $^{238}$U half-life & Factor of 2 \\
+B55 & Stern-Gerlach quantisation & $\mu_B = 9.274 \times 10^{-24}$~J/T & $\pm 0.1\%$ \\
+B56 & Bell inequality tests & $S = 2\sqrt{2} \approx 2.828$ & $\pm 2\%$ \\
+B57 & Quantum eraser & Interference recovery & Qualitative \\
+B58 & Electron $g$-factor (12-digit) & $g = 2.002\,319\,304\,362\,56$ & 6+ sig.\ fig. \\
+B59 & Muon $g-2$ anomaly & $\Delta a_\mu = 251 \times 10^{-11}$ & Resolve \\
+B60 & Lamb shift higher-order & H 2S--2P $= 1057.845$~MHz & $\pm 0.1$~MHz \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Relativistic Effects (B61--B70)}
+
+\begin{center}
+\small
+\begin{tabular}{rllr}
+\toprule
+\textbf{ID} & \textbf{Test} & \textbf{Key Data} & \textbf{Tolerance} \\
+\midrule
+B61 & GPS relativistic corrections & Net $+38$~$\mu$s/day & $\pm 1$~$\mu$s \\
+B62 & Muon lifetime dilation & $\gamma = 29 \Rightarrow \tau = 63.7$~$\mu$s & $\pm 1\%$ \\
+B63 & Pound--Rebka redshift & $\Delta\nu/\nu = 2.5 \times 10^{-15}$ & $\pm 10\%$ \\
+B64 & Shapiro time delay & $\gamma = 1.000\,021$ & $\pm 0.01\%$ \\
+B65 & Frame dragging (GP-B) & 37.2~mas/yr & $\pm 15\%$ \\
+B66 & Black hole shadow (M87*) & $42 \pm 3$~$\mu$as & $\pm 10\%$ \\
+B67 & Gravitational wave chirp & GW150914 chirp mass & $\pm 5\%$ \\
+B68 & Binary pulsar decay & PSR~B1913+16 period derivative & $\pm 0.5\%$ \\
+B69 & Neutron star mass-radius & $R \sim 10$--13~km & $\pm 10\%$ \\
+B70 & CMB spectrum & $T = 2.7255$~K & $\pm 0.01$~K \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Particle Physics (B71--B80)}
+
+\begin{center}
+\small
+\begin{tabular}{rllr}
+\toprule
+\textbf{ID} & \textbf{Test} & \textbf{Key Data} & \textbf{Tolerance} \\
+\midrule
+B71 & Lepton mass ratios & $m_\mu/m_e = 206.768$ & $\pm 0.01\%$ \\
+B72 & Pion mass and decay & $m_{\pi^\pm} = 139.570$~MeV & $\pm 1\%$ \\
+B73 & Proton-neutron mass diff. & $\Delta m = 1.293$~MeV & $\pm 5\%$ \\
+B74 & W and Z boson masses & $m_W = 80.377$~GeV & $\pm 0.1\%$ \\
+B75 & Neutron lifetime discrepancy & Bottle vs beam: 8.6~s & Resolve \\
+B76 & Proton radius puzzle & $r_p = 0.8414$~fm & $\pm 0.5\%$ \\
+B77 & CP violation in kaons & $\epsilon = 2.228 \times 10^{-3}$ & $\pm 10\%$ \\
+B78 & Neutrino mixing angles & $\theta_{12} = 33.4^\circ$ & $\pm 5^\circ$ \\
+B79 & Dark matter non-detection & Continued null results & Consistency \\
+B80 & Dark energy / $\Lambda$ & $\Omega_\Lambda = 0.685$ & $\pm 1\%$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Condensed Matter and Astrophysics (B81--B95)}
+
+\begin{center}
+\small
+\begin{tabular}{rllr}
+\toprule
+\textbf{ID} & \textbf{Test} & \textbf{Key Data} & \textbf{Tolerance} \\
+\midrule
+B81 & BCS superconductivity & $T_c$(Nb) $= 9.3$~K & $\pm 20\%$ \\
+B82 & High-$T_c$ superconductors & $T_c$(YBCO) $= 92$~K & $\pm 30\%$ \\
+B83 & Semiconductor band gaps & Si $= 1.12$~eV & $\pm 10\%$ \\
+B84 & Ferromagnetic Curie temps. & Fe $= 1043$~K & $\pm 15\%$ \\
+B85 & Quantum Hall effect & $R_H = h/\nu e^2$ & Quantum numbers \\
+B86 & Bose-Einstein condensate & $T_c(^{87}$Rb$) \sim 170$~nK & $\pm 20\%$ \\
+B87 & Thermal conductivity & Diamond $= 2200$~W/m$\cdot$K & $\pm 15\%$ \\
+B88 & Piezoelectric coefficients & PZT $d_{33}$ & $\pm 20\%$ \\
+B89 & Stellar mass-luminosity & $L \propto M^{3.5}$ & Exponent $\pm 0.2$ \\
+B90 & Type Ia supernova & Peak $M_B = -19.3$ & $\pm 0.3$~mag \\
+B91 & Neutron star merger (GW170817) & Chirp mass, tidal deform. & $\pm 10\%$ \\
+B92 & Primordial nucleosynthesis & He-4 abundance $= 24.7\%$ & $\pm 1\%$ \\
+B93 & Baryon acoustic oscillations & 147~Mpc scale & $\pm 3\%$ \\
+B94 & Lyman-$\alpha$ forest & $\tau_{\text{eff}}$ vs $z$ & $\pm 10\%$ \\
+B95 & Cosmic ray spectrum & Knee at $3 \times 10^{15}$~eV & $\pm$ decade \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Cross-Domain Consistency (B96--B100)}
+
+\begin{center}
+\small
+\begin{tabular}{rll}
+\toprule
+\textbf{ID} & \textbf{Test} & \textbf{Criterion} \\
+\midrule
+B96 & Dimensional consistency & All SDT equations dimensionally correct \\
+B97 & Limit recovery (GR, QM, Newton) & SDT reduces to standard in known limits \\
+B98 & No free parameters & All predictions from $\kop$, $\alpha$, $R_p$, $a_0$, $c$ \\
+B99 & Internal consistency & No contradictions between B01--B98 \\
+B100 & Predictive novelty & $\geq 3$ predictions not made by standard model \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+% =============================================
+\chapter{Anomaly Register}
+\label{ch:anomalies}
+% =============================================
+
+This chapter documents cases where SDT predictions deviate from observations, including both understood deviations and genuinely open problems.
+
+\section{Known Deviations}
+
+\begin{center}
+\begin{tabular}{lrrl}
+\toprule
+\textbf{Benchmark} & \textbf{Error} & \textbf{Tolerance} & \textbf{Status} \\
+\midrule
+B17 (Electron $g$-factor) & 0.116\% & $<0.8\%$ & Pass, but SDT gives 2.00465 vs 2.00232 \\
+B24 (Multi-electron $Z > 20$) & $\sim 38\%$ radii & Framework & Screening parameters need optimisation \\
+B24 (Ionisation energies) & $\sim 471\%$ & Framework & Same; Slater-like model insufficient \\
+B34 (Light nuclei binding) & Exceeds & $<10\%$ & Overlap correction needed \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Open Anomalies}
+
+\begin{enumerate}
+  \item \textbf{B21 --- Force hierarchy ratio:} The geometric derivation of the EM/gravity ratio yields $4.7 \times 10^{-72}$ instead of $\sim 10^{-36}$. The empirical ratio is correct; the analytic derivation has a dimensional or geometric error that remains unresolved.
+  \item \textbf{B24 --- Heavy element screening:} The Slater-like screening model breaks down for $Z > 20$. The SDT geometric occlusion model (Chapter 4 of the treatise) provides the qualitative structure but lacks a quantitative analytic expression.
+  \item \textbf{Solar rotation formula for planets:} $\kop^2 = \pi(c/v_{\text{rot}})$ works for the Sun but fails catastrophically for planets. Understood qualitatively (no fusion equilibrium) but no quantitative replacement.
+\end{enumerate}
+
+
+% =============================================
+\chapter{Implementation}
+\label{ch:implementation}
+% =============================================
+
+\section{Code Architecture}
+
+All benchmarks are implemented in C++20 with no external dependencies (per project policy). The primary implementation is in:
+\begin{itemize}
+  \item \texttt{SDT/Code/sdt\_navier\_cpp/tools/benchmarks\_b25\_b50.cpp}
+  \item \texttt{SDT/Code/sdt\_navier\_cpp/tools/stellar\_calculator.cpp}
+\end{itemize}
+
+\section{Data Sources}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Source} & \textbf{Used for} \\
+\midrule
+CODATA 2018 & Fundamental constants ($R_p$, $a_0$, $\alpha$, $m_e$, $m_p$) \\
+NIST Atomic Spectra Database & Ionisation energies, energy levels, spectral lines \\
+JPL Solar System Dynamics & Planetary and satellite orbital parameters \\
+SPARC Database & Galaxy rotation curves \\
+Particle Data Group (PDG) & Particle masses, lifetimes, coupling constants \\
+Planck/WMAP & CMB temperature, anisotropy data \\
+LIGO/Virgo & Gravitational wave event parameters \\
+EHT Collaboration & Black hole shadow measurements \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Validation Reports}
+
+Each benchmark produces a JSON validation report containing:
+\begin{itemize}
+  \item Benchmark ID, name, and status
+  \item Predicted and observed values
+  \item Error and tolerance
+  \item Data source citations
+  \item SDT postulate traceability
+  \item Certification date (if applicable)
+\end{itemize}
+
+Reports are stored in \texttt{SDT/benchmarks/B\{nn\}\_validation\_report.json}.
+
+
+\end{document}

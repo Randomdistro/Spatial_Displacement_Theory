@@ -218,6 +218,9 @@ Project_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=C:/Users/Jimmi/Spatial_Displacement_Theory/SDT/Code/sdt_atomic_sim
 
+//The directory containing a CMake configuration file for VTK.
+VTK_DIR:PATH=VTK_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for fmt.
 fmt_DIR:PATH=fmt_DIR-NOTFOUND
 

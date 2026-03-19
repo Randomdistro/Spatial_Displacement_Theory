@@ -111,7 +111,7 @@ class RedshiftCalculator:
             z,
             lambda zz: 1.0 / ((1.0 + zz) * self._H_of_z(zz)),
         )
-        seconds_arr = np.asarray(seconds if isinstance(seconds, np.ndarray) else np.array(seconds))
+        seconds_arr = np.atleast_1d(np.asarray(seconds, dtype=float))
         gyr = seconds_arr / SECONDS_PER_GYR
         scalar = np.isscalar(z)
         return float(gyr[0]) if scalar else gyr
@@ -121,7 +121,7 @@ class RedshiftCalculator:
         Convenience helper: μ = 5 log10(D_L / 10 pc), with D_L returned in Mpc.
         """
         D_L_mpc = self.luminosity_distance(z)
-        D_L_pc = np.asarray(D_L_mpc if isinstance(D_L_mpc, np.ndarray) else np.array(D_L_mpc)) * 1e6
+        D_L_pc = np.atleast_1d(np.asarray(D_L_mpc, dtype=float)) * 1e6
         mu = 5.0 * np.log10(D_L_pc / 10.0)
         scalar = np.isscalar(z)
         return float(mu[0]) if scalar else mu

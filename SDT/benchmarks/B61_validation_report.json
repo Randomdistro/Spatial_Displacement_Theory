@@ -1,0 +1,19 @@
+{
+  "benchmark_id": "B61",
+  "title": "GPS Relativistic Corrections from SDT Unified Mechanism [TIER 1]",
+  "status": "CERTIFIED",
+  "timestamp": "2026-03-13T08:24:41",
+  "data_sources": ["GPS ICD-200", "Ashby (2003) Rev. Mod. Phys."],
+  "data_files": [],
+  "constants_used": ["c", "R_earth", "k_earth"],
+  "equations": ["SDT: z = v^2/c^2 = 1/k^2 (bridge law)", "v_orbit(r) = c/k * sqrt(R/r)", "SR dilation: dt_SR = -v_sat^2 / (2*c^2) per tick", "GR blueshift: dt_GR = +v_surf^2/c^2 * (1 - R/r_sat) per tick", "Combined: dt = dt_GR + dt_SR"],
+  "pipeline": ["1. Compute satellite orbital velocity from SDT v = c/k*sqrt(R/r)", "2. Compute SR time dilation (slowing)", "3. Compute gravitational blueshift (speeding up on ground)", "4. Net correction should be ~+38 microseconds/day"],
+  "total_tested": 4,
+  "within_tolerance": 4,
+  "max_error_percent": 0.05836701542,
+  "mean_error_percent": 0.09315940722,
+  "r_squared": 0,
+  "metric": "GPS correction error [%]",
+  "tolerance": "<20%",
+  "conclusion": "4/4 tests pass. v_sat(SDT)=3879 m/s (exp 3874). SR=-7.214 us/day, GR=+45.84 us/day, Net=+38.62 us/day (exp +38.6)."
+}

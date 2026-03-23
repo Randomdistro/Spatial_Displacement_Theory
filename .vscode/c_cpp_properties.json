@@ -1,16 +1,22 @@
 {
     "configurations": [
         {
-            "name": "SDT C++",
-            "includePath": [
-                "${workspaceFolder}/Code/sdt_navier_cpp/include",
-                "${workspaceFolder}/Code/sdt_navier_cpp/include/sdt_navier"
-            ],
-            "defines": [],
-            "compilerPath": "",
+            "name": "MSVC 2022 x64",
+            "intelliSenseMode": "windows-msvc-x64",
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe",
             "cStandard": "c17",
             "cppStandard": "c++20",
-            "intelliSenseMode": "windows-msvc-x64"
+            "windowsSdkVersion": "10.0.26100.0",
+            "includePath": [
+                "${workspaceFolder}/SDT/Code/sdt_navier_cpp/include",
+                "${workspaceFolder}/SDT/Code/sdt_navier_cpp/include/sdt_navier",
+                "${workspaceFolder}/SDT/Code/sdt_orbital_sim/include",
+                "${workspaceFolder}/SDT/Code/sdt_solar_system/include",
+                "${workspaceFolder}/SDT/Code/sdt_chemistry/include",
+                "${workspaceFolder}/SDT/Code/sdt_atomic_sim/include",
+                "${workspaceFolder}/SDT/Code/shared/include"
+            ],
+            "defines": []
         }
     ],
     "version": 4

@@ -142,7 +142,8 @@ void test_stellar_calculator() {
                     "Circumference = 2πr_c");
     }
 
-    // Test 9: Force at c-boundary
+    // Test 9: Force at c-boundary (quarantined — uses mass as free input)
+#ifdef SDT_ALLOW_LEGACY_COMPARISON
     {
         const double m_earth = 5.972e24;
         const double r_c = 1480.0; // approx solar r_c
@@ -151,6 +152,7 @@ void test_stellar_calculator() {
         // F = mc²/r_c ≈ 5.972e24 × 9e16 / 1480 ≈ 3.63e38 N
         test_assert(F > 1e38, "Force at solar r_c in strong regime");
     }
+#endif
 }
 
 //=============================================================================

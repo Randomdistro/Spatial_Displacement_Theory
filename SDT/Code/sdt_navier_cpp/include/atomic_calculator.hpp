@@ -14,8 +14,9 @@ namespace atomic_constants {
     constexpr double C = 299792458.0;                    // Speed of light [m/s]
     constexpr double H = 6.62607015e-34;                  // Planck constant [J·s] (exact)
     constexpr double HBAR = 1.054571817e-34;              // Reduced Planck constant [J·s]
-    constexpr double M_E = 9.1093837015e-31;              // Electron mass [kg]
-    constexpr double M_P = 1.67262192369e-27;             // Proton mass [kg]
+    // SDT: mass = spation matrix resistance, measured via Compton wavelength m = h/(λ_C·c)
+    constexpr double m_e_nist_ref = 9.1093837015e-31;     // Electron mass [kg] — NIST validation target
+    constexpr double m_p_nist_ref = 1.67262192369e-27;    // Proton mass [kg] — NIST validation target
     constexpr double ALPHA = 1.0 / 137.035999084;         // Fine structure constant
     constexpr double A_0 = 5.29177210903e-11;             // Bohr radius [m]
     constexpr double RYDBERG_INF_EV = 13.605693122994;    // Rydberg energy (∞ mass) [eV]
@@ -25,8 +26,8 @@ namespace atomic_constants {
 
 /// @brief Atomic transition data from Rydberg formula (Phase 2)
 struct RydbergTransition {
-    int n_initial;                                       // Initial quantum number
-    int n_final;                                         // Final quantum number
+    int n_initial;                                       // Initial shell index
+    int n_final;                                         // Final shell index
     int Z;                                               // Nuclear charge
     double energy_eV;                                    // Transition energy [eV]
     double wavelength_nm;                                // Wavelength [nm]
@@ -43,7 +44,7 @@ struct RydbergTransition {
 
 /// @brief Fine structure splitting data (Phase 3)
 struct FineStructure {
-    int n;                                               // Principal quantum number
+    int n;                                               // Principal shell index
     int Z;                                               // Nuclear charge
     double splitting_eV;                                 // Energy splitting [eV]
     double splitting_MHz;                                // Frequency splitting [MHz]
@@ -81,8 +82,8 @@ struct ScreeningParameters {
 class AtomicCalculator {
 public:
     /// @brief Calculate Rydberg transition energy and wavelength
-    /// @param n_initial Initial quantum number (lower)
-    /// @param n_final Final quantum number (higher) 
+    /// @param n_initial Initial shell index (lower)
+    /// @param n_final Final shell index (higher) 
     /// @param Z Nuclear charge (default 1 for hydrogen)
     /// @return Transition parameters or nullopt if invalid
     [[nodiscard]] static auto calculate_rydberg_transition(
@@ -97,10 +98,11 @@ public:
         }
         
         // Reduced mass correction: R_Z = R_∞ × μ/m_e = R_∞ / (1 + m_e/M_nucleus)
-        // For hydrogen (Z=1): M_nucleus = M_P
+        // SDT: mass = spation matrix resistance measured via Compton wavelength
+        // For hydrogen (Z=1): M_nucleus ≈ m_p
         // For heavier atoms: nuclear mass → ∞, correction → 1
-        double M_nucleus = M_P * Z;  // Approximate: scale with Z
-        double reduced_mass_factor = 1.0 / (1.0 + M_E / M_nucleus);
+        double M_nucleus = m_p_nist_ref * Z;  // Approximate: scale with Z
+        double reduced_mass_factor = 1.0 / (1.0 + m_e_nist_ref / M_nucleus);
 
         // E = R_∞ × (μ/m_e) × Z² × (1/n₁² - 1/n₂²)
         const double energy_eV = RYDBERG_INF_EV * reduced_mass_factor * Z * Z *
@@ -121,7 +123,7 @@ public:
     }
     
     /// @brief Calculate fine structure splitting from vortex geometry
-    /// @param n Principal quantum number
+    /// @param n Principal shell index
     /// @param Z Nuclear charge (default 1)
     /// @return Fine structure parameters
     [[nodiscard]] static auto calculate_fine_structure(

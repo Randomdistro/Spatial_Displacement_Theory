@@ -4,7 +4,7 @@
   "phase_document": "Phase_10_Electromagnetic_Mechanisms_and_Effects",
   "tolerance": "<0.8%",
   "validation_date": "2026-01-02",
-  "overall_status": "CERTIFIED",
+  "overall_status": "PARTIAL_CERTIFIED",
   "author": "Claude Opus 4.5 (Anthropic AI)",
   "calculation_method": "SDT helical wake amplification from first principles",
   "electron_g_factor": {
@@ -71,9 +71,11 @@
       "k_B": 1.380649e-23,
       "curie_temp_calc": "T_c = 5.70×10⁻¹² / 1.380649×10⁻²³ = 4.13×10¹¹ K",
       "note": "Simple wake interference model gives order-of-magnitude agreement. Refined calculations accounting for multi-electron effects and crystal structure would improve precision."
-    }
+    },
+    "status": "BROKEN",
+    "status_note": "Curie temp 4.13e11 K vs 1043 K experimental = 8 orders of magnitude off. Exchange energy formula J = (hbar^2 alpha)/(m_e r^3) is dimensionally correct but physically wrong — does not account for electron pairing, band structure, or collective ordering. Corrected 2026-03-28."
   },
   "max_error_pct": 0.116181997870596,
-  "certification_status": "CERTIFIED",
-  "certification_note": "Electron g-factor validated with 0.116% error. Framework established for nuclear moments and ferromagnetism. Quantitative precision requires Navier-Stokes field simulations for nuclear moments."
+  "certification_status": "PARTIAL_CERTIFIED",
+  "certification_note": "Electron g-factor PASSES with 0.116% error. Ferromagnetism BROKEN: Curie temp off by 8 OoM (4.13e11 K vs 1043 K). Nuclear moments framework only (no quantitative prediction). Corrected 2026-03-28."
 }

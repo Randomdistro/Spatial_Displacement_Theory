@@ -8,24 +8,25 @@
 #include <format>
 #include <numeric>
 #include <algorithm>
+#include "sdt_laws.hpp"
 
 namespace sdt {
 
 // ============================================================================
 // SDT PURE — No G, no M as inputs. No dark matter.
 // ============================================================================
-// Galactic scale constants
+// Galactic scale constants — only galactic-specific values here.
+// Fundamental constants sourced from sdt::laws::measured.
 namespace galactic_constants {
-    constexpr double C = 299792458.0;                    // Speed of light [m/s]
-    constexpr double KPC_TO_M = 3.086e19;                // Kiloparsec to meters
-    constexpr double L_SUN = 3.828e26;                   // Solar luminosity [W]
-    constexpr double EPSILON_BURN = 1e-15;               // Mass-to-light efficiency (nuclear burning)
-    constexpr double R_FLAT_FACTOR = 2.5;                // Predicted R_flat/R_d ratio (Phase 24)
-    constexpr double E_SATURATION = 0.64;                // Eclipse saturation value
+    inline constexpr double C = sdt::laws::measured::c;    // Speed of light [m/s]
+    constexpr double KPC_TO_M = 3.086e19;                  // Kiloparsec to meters
+    inline constexpr double L_SUN = sdt::laws::law_II::L_Sun;  // Solar luminosity [W]
+    constexpr double EPSILON_BURN = 1e-15;                 // Mass-to-light efficiency (nuclear burning)
+    constexpr double R_FLAT_FACTOR = 2.5;                  // Predicted R_flat/R_d ratio (Phase 24)
+    constexpr double E_SATURATION = 0.64;                  // Eclipse saturation value
 
     // NIST reference values — validation targets only, never SDT input primitives.
-    // Mass is the resistance to change imparted by the spation matrix.
-    constexpr double M_SUN_NIST_REF = 1.989e30;          // Solar mass [kg] (NIST reference)
+    constexpr double M_SUN_NIST_REF = 1.989e30;            // Solar mass [kg] (NIST reference)
 }
 
 /// @brief Point on galactic rotation curve

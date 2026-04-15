@@ -1,0 +1,356 @@
+================================================================
+  KOPPA DEEP INVESTIGATION — Phases 2-7
+  All constants: CODATA 2018 / IAU 2015
+================================================================
+  c       = 299792458 m/s
+  1/alpha = 137.035999084
+  R_p     = 8.4140e-16 m
+  a_0     = 5.29177210903e-11 m
+  r_e     = 2.8179403262e-15 m
+  koppa_p = 0.5464310354
+  koppa_H = 137.035999084
+  mu_em   = 2.5326384616e+02 m^3/s^2
+
+
+################################################################
+  PHASE 2: HYDROGEN ORBITAL TRACK
+################################################################
+
+
+--- 2A. Excitation states n=1..10 ---
+
+Formula: v = (c/koppa_p) * sqrt(R_p / r_n)
+  where r_n = n^2 * a_0,  v_Bohr = alpha*c/n
+
+  n        r_n (m)   v_Bohr (m/s)  v_koppa (m/s)    v_kep (m/s)      error
+  1   5.291772e-11 2187691.263643 2187691.263643 2187691.263648  0.000000%
+  2   2.116709e-10 1093845.631822 1093845.631822 1093845.631824  0.000000%
+  3   4.762595e-10  729230.421214  729230.421214  729230.421216  0.000000%
+  4   8.466835e-10  546922.815911  546922.815911  546922.815912  0.000000%
+  5   1.322943e-09  437538.252729  437538.252729  437538.252730  0.000000%
+  6   1.905038e-09  364615.210607  364615.210607  364615.210608  0.000000%
+  7   2.592968e-09  312527.323378  312527.323378  312527.323378  0.000000%
+  8   3.386734e-09  273461.407955  273461.407955  273461.407956  0.000000%
+  9   4.286335e-09  243076.807071  243076.807071  243076.807072  0.000000%
+ 10   5.291772e-09  218769.126364  218769.126364  218769.126365  0.000000%
+
+--- 2B. Two koppa values for hydrogen ---
+
+koppa_H  = c/v_1 = 1/alpha           = 137.035999084
+koppa_p  = (1/alpha)*sqrt(R_p/a_0)    = 0.5464310354
+
+Relationship:
+  koppa_p = koppa_H * sqrt(R_p/a_0)
+  check:    0.5464310354 vs 0.5464310354  ratio=1.000000000000
+
+  koppa_H = koppa_p * sqrt(a_0/R_p)
+  check:    137.035999084 vs 137.035999084  ratio=1.000000000000
+
+  koppa_H / koppa_p = sqrt(a_0/R_p) = 250.783704
+  = 1/sqrt(R_p/a_0) = 250.783704
+
+--- 2C. k^2 identity — two levels ---
+
+Body-level (proton):
+  koppa_p^2 * r_Koppa = R_p
+  0.298587 * 2.8179403262e-15 = 8.4140000000e-16
+  R_p                         = 8.4140000000e-16
+  Match: 1.000000000000
+
+System-level (hydrogen):
+  koppa_H^2 * r_Koppa = a_0
+  18778.8650 * 2.8179403262e-15 = 5.2917721090e-11
+  a_0                         = 5.2917721090e-11
+  Match: 1.000000000000
+
+KEY INSIGHT: The same Koppa radius r_Koppa = 2.8179e-15 m
+  * squared by koppa_p^2 (0.298587) -> recovers R_p (proton radius)
+  * squared by koppa_H^2 (18778.8650) -> recovers a_0 (Bohr radius)
+  * r_Koppa is the classical electron radius
+  * It is the PIVOT between nuclear and atomic scales
+
+--- 2D. Continuum orbital track: r_e -> a_0 -> n=10 ---
+
+At r_e (v=c boundary), moving outward:
+
+         r (m)  v_koppa (m/s)            v/c    koppa_local
+  2.817940e-15   2.997925e+08   1.0000000000       1.000000
+  5.635881e-15   2.119853e+08   0.7071067812       1.414214
+  1.408970e-14   1.340713e+08   0.4472135955       2.236068
+  2.817940e-14   9.480270e+07   0.3162277660       3.162278
+  2.817940e-13   2.997925e+07   0.1000000000      10.000000
+  8.414000e-16   5.486373e+08   1.8300571074       0.546431
+  8.414000e-15   1.734944e+08   0.5787148707       1.727967
+  8.414000e-14   5.486373e+07   0.1830057107       5.464310
+  5.291772e-13   2.187691e+07   0.0729735257      13.703600
+  5.291772e-12   6.918087e+06   0.0230762550      43.334588
+  5.291772e-11   2.187691e+06   0.0072973526     137.035999
+  2.116709e-10   1.093846e+06   0.0036486763     274.071998
+  4.762595e-10   7.292304e+05   0.0024324509     411.107997
+  1.322943e-09   4.375383e+05   0.0014594705     685.179995
+  5.291772e-09   2.187691e+05   0.0007297353    1370.359991
+
+
+################################################################
+  PHASE 3: ENERGY-KOPPA CHAIN
+################################################################
+
+
+--- 3A. Rydberg energy from koppa ---
+
+E_1 = (1/2) m_e v_1^2 = m_e c^2 alpha^2 / 2
+    = m_e c^2 / (2 * koppa_H^2)
+  m_e c^2          = 8.1871057768e-14 J = 510998.949996 eV
+  koppa_H^2        = 18778.865045
+  E_1 (computed)   = 2.1798723611e-18 J = 13.6056931230 eV
+  E_1 (from kop_H) = 2.1798723611e-18 J = 13.6056931230 eV
+  E_Ry (CODATA)    = 13.6056931230 eV
+  Match: 0.999999999998
+
+--- 3B. Ionization energy for each n ---
+
+E_n = E_Ry / n^2 = m_e c^2 / (2 * n^2 * koppa_H^2)
+
+  n   E_koppa (eV)    E_Bohr (eV)  E_Ry/n^2 (eV)        err
+  1      13.605693      13.605693      13.605693  0.000000%
+  2       3.401423       3.401423       3.401423  0.000000%
+  3       1.511744       1.511744       1.511744  0.000000%
+  4       0.850356       0.850356       0.850356  0.000000%
+  5       0.544228       0.544228       0.544228  0.000000%
+  6       0.377936       0.377936       0.377936  0.000000%
+  7       0.277667       0.277667       0.277667  0.000000%
+
+--- 3C. Spectral lines from koppa ---
+
+Transition wavelength: 1/lambda = R_inf * (1/n1^2 - 1/n2^2)
+From koppa: E = m_e c^2 / (2 koppa_H^2) * (1/n1^2 - 1/n2^2)
+  lambda = h c / E
+
+  Transition n1-n2  lam_koppa(nm)    lam_Ryd(nm)        err
+    Ly-alpha  1- 2       121.5023       121.5023  0.000000%
+     Ly-beta  1- 3       102.5175       102.5175  0.000000%
+     H-alpha  2- 3       656.1123       656.1123  0.000000%
+      H-beta  2- 4       486.0091       486.0091  0.000000%
+     H-gamma  2- 5       433.9367       433.9367  0.000000%
+    Pa-alpha  3- 4      1874.6065      1874.6065  0.000000%
+
+--- 3D. Energy in terms of koppa_p ---
+
+Since koppa_p = koppa_H * sqrt(R_p/a_0):
+  koppa_H^2 = koppa_p^2 * (a_0/R_p)
+  E_Ry = m_e c^2 / (2 * koppa_p^2 * a_0/R_p)
+       = m_e c^2 R_p / (2 * koppa_p^2 * a_0)
+
+  E_Ry (from koppa_p) = 13.6056931230 eV
+  E_Ry (CODATA)       = 13.6056931230 eV
+  Match: 0.999999999998
+
+
+################################################################
+  PHASE 4: CROSS-SCALE UNIFICATION
+################################################################
+
+
+--- 4A. The electromagnetic mu decomposition ---
+
+mu_em = k_e * e^2 / m_e = 2.5326384616e+02 m^3/s^2
+mu_em = c^2 * R_p / koppa_p^2
+      = 2.5326384615e+02 m^3/s^2
+  Match: 0.999999999996
+
+Therefore: k_e * e^2 / m_e = c^2 * R_p / koppa_p^2
+Rearranging: koppa_p^2 = c^2 * R_p * m_e / (k_e * e^2)
+  koppa_p^2 (check) = 0.2985868764
+  koppa_p^2 (1/a^2 * Rp/a0) = 0.2985868764
+  Match: 0.999999999996
+
+--- 4B. The hierarchy ratio decomposition ---
+
+mu_em / mu_grav = (k_e e^2 / m_e) / (G m_p)
+  = k_e e^2 / (G m_e m_p)
+  = 2.2686614392e+39
+
+In terms of koppa:
+  mu_em / mu_grav = (c^2 R_p / koppa_p^2) / (G m_p)
+  = c^2 R_p / (koppa_p^2 * G * m_p)
+  = 2.2686614392e+39
+  Match: 0.999999999996
+
+Gravitational koppa of proton:
+  koppa_grav = c * sqrt(R_p / (G*m_p))
+  = 2.6026765700e+19
+  koppa_grav^2 / koppa_em^2 = 2.2686614392e+39
+  = hierarchy ratio? 2.2686614392e+39
+  Match: 0.999999999996
+
+--- 4C. Alpha from koppa and geometry alone ---
+
+alpha = sqrt(R_p/a_0) / koppa_p
+  = 7.2973525693e-03
+  alpha (CODATA) = 7.2973525693e-03
+  Match: 1.000000000000
+
+alpha^2 = R_p / (koppa_p^2 * a_0) = r_e / a_0
+  alpha^2 (from kp)   = 5.3251354521e-05
+  alpha^2 (from r_e)  = 5.3251354521e-05
+  alpha^2 (CODATA)    = 5.3251354521e-05
+  Match kp:  1.000000000000
+  Match r_e: 0.999999999998
+
+
+################################################################
+  PHASE 5: COMPACTNESS SPECTRUM
+################################################################
+
+
+--- 5A. All bodies sorted by koppa ---
+
+Body                    koppa          koppa^2      Compactness
+Proton               0.546431           0.2986     6.698218e+00
+H atom             137.035999       18778.8650     1.065027e-04
+Sun                686.397807      471141.9501     4.245005e-06
+Jupiter           6886.827012    47428386.2871     4.216884e-08
+Saturn           11349.538125   128812015.6557     1.552650e-08
+Earth            37859.027096  1433305932.6643     1.395376e-09
+Venus            40918.132809  1674293592.5424     1.194534e-09
+Mars             84172.264790  7084970159.8526     2.822877e-10
+Moon            178425.483812 31835653273.4938     6.282265e-11
+
+--- 5B. Koppa ratios between bodies ---
+
+Body A       / Body B       =  koppa_ratio koppa2_ratio
+Sun          / Jupiter      =     0.099668       0.0099
+Sun          / Earth        =     0.018130       0.0003
+Jupiter      / Saturn       =     0.606794       0.3682
+Earth        / Moon         =     0.212184       0.0450
+Sun          / Proton       =  1256.147186 1577905.7530
+H atom       / Proton       =   250.783704   62892.4662
+
+--- 5C. Black hole limit ---
+
+When R = r_s: koppa^2 = 2R/r_s = 2, koppa = sqrt(2) = 1.4142135624
+This is where v_surf = c/sqrt(2) = v_esc = c
+A black hole has koppa = sqrt(2). Below that, no stable orbit.
+
+Neutron star (typical R=10km, M=1.4 M_sun):
+  koppa = c/sqrt(GM/R) = 2.199383
+  Compactness = 2/koppa^2 = 0.413455
+  (For comparison, BH limit: compactness = 1.0)
+
+
+################################################################
+  PHASE 6: THE k^2 IDENTITY CHAIN
+################################################################
+
+
+--- 6A. koppa^2 * r_Koppa = R for all celestial bodies ---
+
+Body              koppa^2    r_Koppa (m)    kp2*r_K (m)        R (m)
+Sun           471141.9501   1.476625e+03   6.957000e+08 6.957000e+08
+Jupiter     47428386.2871   1.409578e+00   6.685400e+07 6.685400e+07
+Saturn     128812015.6557   4.220414e-01   5.436400e+07 5.436400e+07
+Earth      1433305932.6643   4.435028e-03   6.356752e+06 6.356752e+06
+Mars       7084970159.8526   4.765299e-04   3.376200e+06 3.376200e+06
+Venus      1674293592.5424   3.614539e-03   6.051800e+06 6.051800e+06
+Moon       31835653273.4938   5.457403e-05   1.737400e+06 1.737400e+06
+
+--- 6B. Nested identities for hydrogen ---
+
+Level 0 (Koppa radius / classical electron radius):
+  r_e = 2.8179403262e-15 m
+
+Level 1 (proton koppa): koppa_p^2 * r_e = R_p
+  0.298587 * 2.8179e-15 = 8.4140e-16 (R_p = 8.4140e-16) match=1.000000000000
+
+Level 2 (hydrogen koppa): koppa_H^2 * r_e = a_0
+  18778.8650 * 2.8179e-15 = 5.2918e-11 (a_0 = 5.2918e-11) match=1.000000000000
+
+Level 3: (koppa_H / koppa_p)^2 = a_0/R_p
+  (137.035999 / 0.546431)^2 = 62892.4662
+  a_0/R_p = 62892.4662
+  match = 1.000000000000
+
+CHAIN: r_e --[*kp^2]--> R_p --[*kH^2/kp^2]--> a_0
+  = r_e * kp^2 * (kH/kp)^2 = r_e * kH^2
+
+
+################################################################
+  PHASE 7: DERIVED QUANTITIES & NATURAL UNITS
+################################################################
+
+
+--- 7A. G expressed via koppa ---
+
+G = c^2 R / (koppa^2 M)  for any body
+
+From Earth: G = c^2 * R_polar / (koppa^2 * M_earth)
+  = 6.674301e-11 m^3 kg^-1 s^-2
+  G (CODATA) = 6.674300e-11 m^3 kg^-1 s^-2
+  Match: 1.0000000827
+
+
+--- 7B. Planck length from koppa ---
+
+Planck length l_P = sqrt(hbar G / c^3) = 1.6162550239e-35 m
+
+In terms of koppa (using Earth):
+  l_P = sqrt(hbar * c^2 R / (kop^2 M c^3))
+      = sqrt(hbar R / (kop^2 M c))
+      = 1.6162550908e-35 m
+  Match: 1.000000041365
+
+--- 7C. Dimensionless physics from koppa alone ---
+
+Given only koppa_p = 0.5464310354, we can derive:
+
+  alpha = sqrt(R_p/a_0) / koppa_p
+  But R_p/a_0 = koppa_p^2 * alpha^2 (circular)
+
+  However: alpha^2 = r_e/a_0 is INDEPENDENT of koppa
+  And koppa_p = alpha * sqrt(a_0/r_e) * sqrt(R_p/a_0)
+  = alpha * sqrt(R_p/r_e) = alpha * sqrt(R_p/(alpha^2 * a_0))
+  = sqrt(R_p/a_0) / alpha  ... (confirmed circular)
+
+KEY: koppa_p contains alpha and the geometry ratio R_p/a_0
+     They cannot be separated without external measurement.
+     koppa_p is the product: (1/alpha) * sqrt(R_p/a_0)
+     where both factors are independently measurable.
+
+--- 7D. The three fundamental lengths and koppa ---
+
+Three lengths define all of atomic physics:
+
+  r_e  = 2.8179403262e-15 m  (classical electron radius)
+  R_p  = 8.4140000000e-16 m  (proton charge radius)
+  a_0  = 5.2917721090e-11 m  (Bohr radius)
+
+Relationships:
+  R_p = koppa_p^2 * r_e   ==> R_p/r_e = koppa_p^2 = 0.298587
+  R_p/r_e (measured)      = 0.298587
+  Match: 1.0000000000
+
+  a_0 = koppa_H^2 * r_e   ==> a_0/r_e = koppa_H^2 = 18778.8650
+  a_0/r_e (measured)      = 18778.8650
+  Match: 1.0000000000
+
+  a_0 / R_p = (koppa_H / koppa_p)^2 = 62892.4662
+  a_0/R_p (measured)      = 62892.4662
+  Match: 1.0000000000
+
+RESULT: The classical electron radius r_e is the PIVOT.
+  It sits at the centre of a koppa-squared ladder:
+  r_e  --[*koppa_p^2]--> R_p   (upward to nuclear scale)
+  r_e  --[*koppa_H^2]--> a_0   (upward to atomic scale)
+  The ratio a_0/R_p = (koppa_H/koppa_p)^2 = 1/alpha^2 * (a_0/R_p)
+  Wait - that's circular. The CLEAN statement:
+
+  r_e is the Koppa radius (v=c boundary) of the proton.
+  Multiplying by koppa^2 scales it to the relevant radius.
+  proton koppa gives the proton radius.
+  hydrogen koppa gives the electron orbit radius.
+  These are different koppa values for the SAME Koppa radius.
+
+
+################################################################
+  INVESTIGATION COMPLETE
+################################################################

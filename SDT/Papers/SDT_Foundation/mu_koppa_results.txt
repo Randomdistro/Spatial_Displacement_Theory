@@ -1,0 +1,283 @@
+================================================================
+   INVESTIGATION: The µ-ϟ Relationship
+   All constants: CODATA 2018 / IAU 2015
+================================================================
+
+PART 1: Celestial Bodies — ϟ, µ verification, Koppa radius
+─────────────────────────────────────────────────────────────
+
+Sun       R = 6.957000e+08 m   GM = 1.3271244e+20 m³/s²
+  v_surf      = 436761.969132 m/s
+  ϟ           = 686.397807
+  ϟ²          = 471141.950104
+  z_grav      = 2.1225025701e-06
+  r_Koppa     = 1.476625e+03 m  (R/ϟ²)
+  r_Schwarz   = 2.953250e+03 m  (2GM/c²)
+  r_Koppa     = r_s/2 ?  ratio = 1.0000000000
+  µ from ϟ    = 1.3271244e+20  (c²R/ϟ²)
+  µ known     = 1.3271244e+20  (GM)
+  µ match     = 1.000000000000
+
+Jupiter   R = 6.685400e+07 m   GM = 1.2668653e+17 m³/s²
+  v_surf      = 43531.289155 m/s
+  ϟ           = 6886.827012
+  ϟ²          = 47428386.287110
+  z_grav      = 2.1084419654e-08
+  r_Koppa     = 1.409578e+00 m  (R/ϟ²)
+  r_Schwarz   = 2.819156e+00 m  (2GM/c²)
+  r_Koppa     = r_s/2 ?  ratio = 1.0000000000
+  µ from ϟ    = 1.2668653e+17  (c²R/ϟ²)
+  µ known     = 1.2668653e+17  (GM)
+  µ match     = 1.000000000000
+
+Saturn    R = 5.436400e+07 m   GM = 3.7931187e+16 m³/s²
+  v_surf      = 26414.507330 m/s
+  ϟ           = 11349.538125
+  ϟ²          = 128812015.655741
+  z_grav      = 7.7632509274e-09
+  r_Koppa     = 4.220414e-01 m  (R/ϟ²)
+  r_Schwarz   = 8.440827e-01 m  (2GM/c²)
+  r_Koppa     = r_s/2 ?  ratio = 1.0000000000
+  µ from ϟ    = 3.7931187e+16  (c²R/ϟ²)
+  µ known     = 3.7931187e+16  (GM)
+  µ match     = 1.000000000000
+
+Earth     R = 6.356752e+06 m   GM = 3.9860044e+14 m³/s²
+  v_surf      = 7918.651930 m/s
+  ϟ           = 37859.027096
+  ϟ²          = 1433305932.664329
+  z_grav      = 6.9768775612e-10
+  r_Koppa     = 4.435028e-03 m  (R/ϟ²)
+  r_Schwarz   = 8.870056e-03 m  (2GM/c²)
+  r_Koppa     = r_s/2 ?  ratio = 1.0000000000
+  µ from ϟ    = 3.9860044e+14  (c²R/ϟ²)
+  µ known     = 3.9860044e+14  (GM)
+  µ match     = 1.000000000000
+
+Mars      R = 3.376200e+06 m   GM = 4.2828370e+13 m³/s²
+  v_surf      = 3561.653696 m/s
+  ϟ           = 84172.264790
+  ϟ²          = 7084970159.852556
+  z_grav      = 1.4114385487e-10
+  r_Koppa     = 4.765299e-04 m  (R/ϟ²)
+  r_Schwarz   = 9.530598e-04 m  (2GM/c²)
+  r_Koppa     = r_s/2 ?  ratio = 1.0000000000
+  µ from ϟ    = 4.2828370e+13  (c²R/ϟ²)
+  µ known     = 4.2828370e+13  (GM)
+  µ match     = 1.000000000000
+
+Venus     R = 6.051800e+06 m   GM = 3.2485859e+14 m³/s²
+  v_surf      = 7326.640719 m/s
+  ϟ           = 40918.132809
+  ϟ²          = 1674293592.542405
+  z_grav      = 5.9726681417e-10
+  r_Koppa     = 3.614539e-03 m  (R/ϟ²)
+  r_Schwarz   = 7.229079e-03 m  (2GM/c²)
+  r_Koppa     = r_s/2 ?  ratio = 1.0000000000
+  µ from ϟ    = 3.2485859e+14  (c²R/ϟ²)
+  µ known     = 3.2485859e+14  (GM)
+  µ match     = 1.000000000000
+
+Moon      R = 1.737400e+06 m   GM = 4.9048695e+12 m³/s²
+  v_surf      = 1680.210986 m/s
+  ϟ           = 178425.483812
+  ϟ²          = 31835653273.493759
+  z_grav      = 3.1411323380e-11
+  r_Koppa     = 5.457403e-05 m  (R/ϟ²)
+  r_Schwarz   = 1.091481e-04 m  (2GM/c²)
+  r_Koppa     = r_s/2 ?  ratio = 1.0000000000
+  µ from ϟ    = 4.9048695e+12  (c²R/ϟ²)
+  µ known     = 4.9048695e+12  (GM)
+  µ match     = 1.000000000000
+
+
+================================================================
+PART 2: The Proton — Electromagnetic µ
+─────────────────────────────────────────────────────────────
+
+Proton koppa ϟ = (1/α) × √(Rₚ/a₀)
+  1/α         = 137.035999084
+  Rₚ          = 8.4140e-16 m
+  a₀          = 5.29177210903e-11 m
+  Rₚ/a₀       = 1.5900155613e-05
+  √(Rₚ/a₀)    = 3.9874999201e-03
+  ϟ           = 0.5464310354
+  ϟ²          = 0.2985868764
+
+µ_koppa(proton) = c²Rₚ/ϟ²
+  = 2.5326384615e+02 m³/s²
+
+µ_em = k_e × e² / m_e
+  k_e         = 8.9875517923e+09 N·m²/C²
+  e²          = 2.5669699665e-38 C²
+  m_e         = 9.1093837015e-31 kg
+  µ_em        = 2.5326384616e+02 m³/s²
+
+>>> µ_koppa / µ_em = 0.999999999996
+>>> MATCH: YES
+
+µ_grav(proton) = G × m_p = 1.116358e-37 m³/s²
+
+>>> F_em / F_grav = µ_em / µ_grav = 2.268661e+39
+>>> This is the electromagnetic-to-gravitational force ratio
+>>> (the 'hierarchy problem' number)
+
+================================================================
+PART 3: r_Koppa = r_Schwarzschild / 2
+─────────────────────────────────────────────────────────────
+
+r_Ϟ = R/ϟ²
+r_s = 2GM/c² = 2(c²R/ϟ²)/c² = 2R/ϟ²
+Therefore: r_Ϟ = r_s/2  (EXACT, algebraic)
+
+Numerical verification:
+Body           r_Koppa (m)       r_s/2 (m)           Ratio
+Sun           1.476625e+03    1.476625e+03  1.000000000000
+Jupiter       1.409578e+00    1.409578e+00  1.000000000000
+Saturn        4.220414e-01    4.220414e-01  1.000000000000
+Earth         4.435028e-03    4.435028e-03  1.000000000000
+Mars          4.765299e-04    4.765299e-04  1.000000000000
+Venus         3.614539e-03    3.614539e-03  1.000000000000
+Moon          5.457403e-05    5.457403e-05  1.000000000000
+
+Proton:
+  r_Koppa = Rₚ/ϟ² = 2.8179403262e-15 m
+  Classical electron radius r_e = 2.8179403262e-15 m
+  r_Koppa / r_e = 1.0000000000
+
+================================================================
+PART 4: Dimensional analysis of ϟ²
+─────────────────────────────────────────────────────────────
+
+ϟ² = c²R/µ = c²R/(GM)
+
+Since r_s = 2µ/c², we have µ/c² = r_s/2
+So ϟ² = R / (r_s/2) = 2R/r_s
+
+ϟ² is simply TWICE the ratio of the body's radius
+to its Schwarzschild radius.
+
+Body                  ϟ²          2R/r_s           Match
+Sun            471141.9501     471141.9501    1.0000000000
+Jupiter      47428386.2871   47428386.2871    1.0000000000
+Saturn      128812015.6557  128812015.6557    1.0000000000
+Earth      1433305932.6643 1433305932.6643    1.0000000000
+Mars       7084970159.8526 7084970159.8526    1.0000000000
+Venus      1674293592.5424 1674293592.5424    1.0000000000
+Moon       31835653273.4938 31835653273.4938    1.0000000000
+
+================================================================
+PART 5: Proton's Koppa radius and the classical electron radius
+─────────────────────────────────────────────────────────────
+
+Classical electron radius (derived):
+  r_e = k_e × e² / (m_e × c²) = 2.8179403262e-15 m
+  r_e (CODATA)                 = 2.8179403262e-15 m
+  Match: 1.000000000006
+
+Proton Koppa radius:
+  r_Ϟ = Rₚ/ϟ² = 8.4140e-16 / 0.298587 = 2.8179403262e-15 m
+  r_e (classical)              = 2.8179403262e-15 m
+  r_Ϟ / r_e = 1.0000000000
+
+Algebraic expansion: r_Ϟ = Rₚ/ϟ² = α² × a₀
+  α² × a₀ = 2.8179403262e-15 m
+  r_Ϟ      = 2.8179403262e-15 m
+  Match:   1.000000000000
+
+Classical electron radius = α² × a₀ ?
+  α² × a₀  = 2.8179403262e-15 m
+  r_e       = 2.8179403262e-15 m
+  Ratio     = 1.000000000002
+
+================================================================
+PART 6: Chain of identities
+─────────────────────────────────────────────────────────────
+
+For ANY body:
+  µ = c²R/ϟ²              (koppa defines µ)
+  z = 1/ϟ²                (redshift from koppa)
+  r_Ϟ = R/ϟ²              (c boundary from koppa)
+  r_s = 2R/ϟ²             (Schwarzschild from koppa)
+  r_Ϟ = r_s/2             (Koppa = half Schwarzschild)
+  ϟ² = 2R/r_s             (koppa² = compactness inverse)
+
+For the proton (electromagnetic):
+  µ_em = k_e e²/m_e = c²Rₚ/ϟ²
+  r_Ϟ  = Rₚ/ϟ² = α²a₀ = r_e  (classical electron radius)
+  ϟ_em = (1/α)√(Rₚ/a₀)  = 0.5464310354
+
+================================================================
+PART 7: µ × ϟ² = c²R for all bodies
+─────────────────────────────────────────────────────────────
+
+The identity µ = c²R/ϟ² means µ × ϟ² = c²R
+i.e. µ × ϟ² is the product of c² and the body's radius.
+
+Body            µ × ϟ²        c² × R           Match
+Sun           6.252640e+25    6.252640e+25    1.0000000000
+Jupiter       6.008538e+24    6.008538e+24    1.0000000000
+Saturn        4.885993e+24    4.885993e+24    1.0000000000
+Earth         5.713164e+23    5.713164e+23    1.0000000000
+Mars          3.034377e+23    3.034377e+23    1.0000000000
+Venus         5.439087e+23    5.439087e+23    1.0000000000
+Moon          1.561497e+23    1.561497e+23    1.0000000000
+Proton(EM)    7.562126e+01    7.562126e+01    1.0000000000
+
+================================================================
+PART 8: Physical meaning — ϟ² as compactness
+─────────────────────────────────────────────────────────────
+
+Compactness C = r_s / R = 2GM/(Rc²) = 2/ϟ²
+Therefore: ϟ = √(2/C)
+
+Body           Compactness              ϟ        √(2/C)
+Sun           4.245005e-06      686.397807      686.397807
+Jupiter       4.216884e-08     6886.827012     6886.827012
+Saturn        1.552650e-08    11349.538125    11349.538125
+Earth         1.395376e-09    37859.027096    37859.027096
+Mars          2.822877e-10    84172.264790    84172.264790
+Venus         1.194534e-09    40918.132809    40918.132809
+Moon          6.282265e-11   178425.483812   178425.483812
+
+================================================================
+PART 9: ϟ and the escape velocity
+─────────────────────────────────────────────────────────────
+
+v_esc = √(2GM/R) = v_surf × √2
+ϟ_esc = c / v_esc = ϟ / √2
+
+Body             v_surf        v_esc           ϟ      ϟ/√2
+Sun           436761.97    617674.70     686.3978     485.3565
+Jupiter        43531.29     61562.54    6886.8270    4869.7221
+Saturn         26414.51     37355.75   11349.5381    8025.3354
+Earth           7918.65     11198.66   37859.0271   26770.3748
+Mars            3561.65      5036.94   84172.2648   59518.7792
+Venus           7326.64     10361.43   40918.1328   28933.4892
+Moon            1680.21      2376.18  178425.4838  126165.8695
+
+================================================================
+FINAL SUMMARY OF FINDINGS
+================================================================
+
+1. µ = c²R/ϟ²  — exact for all bodies (algebraic identity)
+
+2. r_Koppa = R/ϟ² = r_Schwarzschild/2  — EXACT
+   The Koppa radius is precisely HALF the Schwarzschild radius
+
+3. ϟ² = 2R/r_s  — koppa squared is the inverse compactness
+
+4. For the proton: µ_koppa = c²Rₚ/ϟ² = k_e × e²/m_e
+   Koppa's µ for the proton IS the electromagnetic parameter
+   µ_koppa = 2.532638e+02  vs  µ_em = 2.532638e+02
+   Match: 1.00000000
+
+5. The EM/gravitational force ratio falls out as:
+   µ_em / µ_grav = 2.268661e+39
+   This IS the hierarchy problem number.
+
+6. Proton's Koppa radius = α² × a₀ = r_e (classical electron radius)
+   r_Koppa = 2.817940e-15 m
+   r_e     = 2.817940e-15 m
+   α²a₀    = 2.817940e-15 m
+

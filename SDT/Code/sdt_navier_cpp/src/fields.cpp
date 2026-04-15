@@ -78,7 +78,7 @@ double compute_p_infinity(
     double alpha
 ) {
     const double hbar = constants::HBAR;
-    const double m_e = constants::M_E;
+    const double m_e = constants::nist_ref::M_E;  // NIST reference — spation matrix resistance
     const double numerator = hbar * hbar * n_e * rho_n;
     const double denominator = 2.0 * m_e * r_n * r_n * alpha * alpha;
     return numerator / denominator;

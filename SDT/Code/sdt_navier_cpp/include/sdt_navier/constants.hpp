@@ -3,7 +3,12 @@
 /**
  * @file constants.hpp
  * @brief Physical constants for SDT-Navier simulations
+ *
+ * Fundamental SI constants retained here for backward compatibility.
+ * All SDT-specific constants now derive from the canonical sdt_laws.hpp.
  */
+
+#include "../sdt_laws.hpp"
 
 namespace sdt_navier {
 
@@ -39,58 +44,55 @@ namespace constants {
     }
 
     // Nuclear magneton — derived from NIST reference proton mass
-    constexpr double MU_N = E_CHARGE * HBAR / (2.0 * nist_ref::M_P);  // J/T
+    constexpr double NUCLEAR_MAGNETON = E_CHARGE * HBAR / (2.0 * nist_ref::M_P);  // J/T
 }
 
-// SDT-specific constants (from Phase 19)
+// ══════════════════════════════════════════════════════════════════════
+// SDT Five-Law Framework constants (canonical source: sdt_laws.hpp)
+// ══════════════════════════════════════════════════════════════════════
+// All SDT constants now derive from the formal 5-Law framework.
+// See sdt_laws.hpp for the complete derivation chain.
+// ══════════════════════════════════════════════════════════════════════
+
 namespace sdt {
-    // Spation density
-    constexpr double RHO_S = 5.2e96;  // kg/m³
-
-    // Nuclear density (from SDT compendium)
-    constexpr double RHO_N = 2.342e17;  // kg/m³
-
     // Fine structure constant (dimensionless)
-    constexpr double ALPHA = 7.2973525693e-3;
+    inline constexpr double ALPHA = sdt::laws::measured::alpha;
 
-    // Atomic-scale CMB pressure (Pa)
-    constexpr double P_CMB_ATOMIC = 2.036e-2;
+    // ── Law I: Convergence pressure replaces old ad-hoc pressure values ──
+    // OLD: RHO_S = 5.2e96 (Phase 19, no derivation)     → REMOVED
+    // OLD: P_CMB_ATOMIC = 2.036e-2 (ad-hoc)              → REPLACED by u_CMB/3
+    // OLD: P_INFINITY_NUCLEAR = 1.65e31 (Phase 19)        → REPLACED by P_eff
+    inline constexpr double P_CONV          = sdt::laws::law_I::P_conv;         // 2.459e48 Pa
+    inline constexpr double P_EFF           = sdt::laws::law_III::P_eff;        // 5.225e31 Pa
+    inline constexpr double F_TRANSFER      = sdt::laws::law_III::f_transfer;   // 2.125e-17
 
-    // Nuclear scale pressure
-    constexpr double P_INFINITY_NUCLEAR = 1.65e31;  // Pa
+    // ── Proton parameters ──
+    inline constexpr double R_P             = sdt::laws::measured::R_p;         // 8.414e-16 m
+    inline constexpr double R_CHARGE        = sdt::laws::law_III::R_charge;     // 1.540e-15 m
 
-    // Hydrogen reference electron density (m^-3)
-    constexpr double N_E_HYDROGEN = 2.718281828e29;
+    // ── Law IV: Exclusion volumes (computed, not fitted) ──
+    inline constexpr double V_DISP_E        = sdt::laws::law_IV::V_disp_e;     // 9.988e-62 m³
+    inline constexpr double V_DISP_P        = sdt::laws::law_IV::V_disp_p;     // 1.834e-58 m³
+    inline constexpr double R_EXCL_E        = sdt::laws::law_IV::R_excl_e;     // 2.878e-21 m
+    inline constexpr double R_EXCL_P        = sdt::laws::law_IV::R_excl_p;     // 3.525e-20 m
 
-    // Proton parameters
-    constexpr double R_P = 8.40e-16;  // m
-    constexpr double KAPPA_P = 1.0 / R_P;  // m⁻¹ (exact reciprocal)
-    constexpr double GAMMA_P = 0.546;  // Circulation factor
-    constexpr double ETA_P_BOUND = 0.0003;  // Slip (bound)
+    // ── Neutron parameters (topology: proton + captured electron) ──
+    inline constexpr double R_N = 8.70e-16;  // m
+    inline constexpr double R_E_N = 3.00e-15;  // m (internal electron orbit)
 
-    // Neutron parameters
-    constexpr double R_N = 8.70e-16;  // m
-    constexpr double R_E_N = 3.00e-15;  // m (internal electron orbit)
-    constexpr double KAPPA_N = 1.0 / R_N;  // m⁻¹
-    constexpr double KAPPA_E_N = 1.0 / R_E_N;  // m⁻¹ (exact reciprocal)
-    constexpr double GAMMA_E_N = 0.531;  // Internal electron circulation
-    constexpr double ETA_N_BOUND = 0.0019;  // Slip (bound)
-    constexpr double ETA_N_FREE = 0.9981;  // Slip (free, unstable)
+    // ── Experimental binding energies (MeV) ──
+    inline constexpr double B_DEUTERON  = sdt::laws::measured::B_deuteron;
+    inline constexpr double B_TRITON    = sdt::laws::measured::B_triton;
+    inline constexpr double B_HELION    = sdt::laws::measured::B_helion;
+    inline constexpr double B_ALPHA     = sdt::laws::measured::B_alpha;
 
-    // Experimental binding energies (MeV)
-    constexpr double B_DEUTERON = 2.224;
-    constexpr double B_TRITON = 8.482;
-    constexpr double B_HELION = 7.718;
-    constexpr double B_ALPHA = 28.296;
-
-    // Experimental magnetic moments (μ_N, CODATA 2018 / benchmark data)
-    constexpr double MU_P = 2.79284734462;   // Proton
-    constexpr double MU_N = -1.91304272;     // Neutron (negative from reversed circulation)
-    constexpr double MU_D = 0.857421;        // Deuteron (p+n with damping)
-    constexpr double MU_T = 2.979;           // Triton
-    constexpr double MU_H = -2.128;          // Helion
-    constexpr double MU_ALPHA = 0.0;         // Alpha (spin-0)
+    // ── Experimental magnetic moments (μ_N, CODATA 2018) ──
+    inline constexpr double MU_P        = sdt::laws::measured::mu_P;
+    inline constexpr double MU_N        = sdt::laws::measured::mu_N;
+    inline constexpr double MU_D        = sdt::laws::measured::mu_D;
+    inline constexpr double MU_T        = sdt::laws::measured::mu_T;
+    inline constexpr double MU_H        = sdt::laws::measured::mu_He3;
+    inline constexpr double MU_ALPHA    = sdt::laws::measured::mu_alpha;
 }
 
 }  // namespace sdt_navier
-

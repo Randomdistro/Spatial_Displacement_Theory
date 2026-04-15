@@ -1,2 +1,10 @@
 CompileFlags:
-  Add: [-std=c++20]
+  Add:
+    - -std=c++20
+    - -IC:/Users/Jimmi/Spatial_Displacement_Theory/SDT/Code/sdt_navier_cpp/include
+    - -IC:/Users/Jimmi/Spatial_Displacement_Theory/SDT/Code/sdt_navier_cpp/include/sdt_navier
+    - -IC:/Users/Jimmi/Spatial_Displacement_Theory/SDT/Code/sdt_orbital_sim/include
+    - -IC:/Users/Jimmi/Spatial_Displacement_Theory/SDT/Code/sdt_solar_system/include
+    - -IC:/Users/Jimmi/Spatial_Displacement_Theory/SDT/Code/sdt_chemistry/include
+    - -IC:/Users/Jimmi/Spatial_Displacement_Theory/SDT/Code/sdt_atomic_sim/include
+    - -IC:/Users/Jimmi/Spatial_Displacement_Theory/SDT/Code/shared/include

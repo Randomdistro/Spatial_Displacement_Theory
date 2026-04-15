@@ -489,9 +489,11 @@ $$\Delta E_{2P}(\text{He}^+) = 2^4 \times \Delta E_{2P}(\text{H}) = 16 \times 10
 
 **Comparison:**
 
-Experimental value: $1751$ GHz (for 2P splitting)
+Experimental value: $175.3$ GHz (NIST ASD, He II 2P splitting)
 
 **Error:** $0.06\%$ ✅
+
+> **Correction note (2026-03-28):** Previous versions erroneously listed the experimental value as 1751 GHz. The correct NIST value is 175.3 GHz = 0.1753 THz. The SDT prediction of 175.2 GHz agrees to 0.06%.
 
 **Physical Interpretation:**
 
@@ -581,7 +583,7 @@ We have derived the complete fine structure corrections from first principles us
 2. ✅ Three mechanisms all derived (relativistic, spin-orbit, Darwin)
 3. ✅ Fine structure formula exactly matches Dirac equation
 4. ✅ Hydrogen 2P splitting: $10.95$ GHz (0.00% error)
-5. ✅ Helium ion 2P splitting: $1751$ GHz (0.06% error)
+5. ✅ Helium ion 2P splitting: $175.2$ GHz vs $175.3$ GHz experimental (0.06% error)
 6. ✅ No $m$ or $G$ used as fundamental quantities
 7. ✅ CMB provides all binding energy
 

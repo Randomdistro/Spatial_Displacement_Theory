@@ -118,7 +118,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Project
+CMAKE_PROJECT_NAME:STATIC=sdt_atomic_sim
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=
@@ -223,6 +223,15 @@ VTK_DIR:PATH=VTK_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for fmt.
 fmt_DIR:PATH=fmt_DIR-NOTFOUND
+
+//Value Computed by CMake
+sdt_atomic_sim_BINARY_DIR:STATIC=C:/Users/Jimmi/Spatial_Displacement_Theory/build
+
+//Value Computed by CMake
+sdt_atomic_sim_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+sdt_atomic_sim_SOURCE_DIR:STATIC=C:/Users/Jimmi/Spatial_Displacement_Theory/SDT/Code/sdt_atomic_sim
 
 
 ########################

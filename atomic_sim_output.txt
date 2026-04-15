@@ -1,0 +1,75 @@
+﻿=== SDT Atomic Physics Simulator ===
+=== Pressure-Node Vortex Model   ===
+
+Example 1: Hydrogen Ground State (n=1 pressure node)
+===================================================
+  Pressure-node radius: 5.2918e-11 m (a_0 = 5.2918e-11 m)
+  Binding energy:       -13.605693 eV
+  Circulation velocity: 2187691.26 m/s
+  Velocity factor kappa: 137.04 (= 1/alpha = 137.04)
+  z parameter:          0.00
+  z * kappa^2:          1.00 (must = 1.0)
+
+Example 2: Lyman-Alpha Transition (2 -> 1)
+==========================================
+  Energy:     -10.2043 eV
+  Wavelength: 121.5023 nm (NIST: 121.567 nm)
+  Frequency:  2.4674e+15 Hz
+
+Example 3: Hydrogen Spectral Series
+====================================
+Lyman Series (n -> 1, pressure-node transitions):
+  2 ΓåÆ 1: lambda = 121.50 nm, E = -10.2043 eV
+  3 ΓåÆ 1: lambda = 102.52 nm, E = -12.0939 eV
+  4 ΓåÆ 1: lambda = 97.20 nm, E = -12.7553 eV
+  5 ΓåÆ 1: lambda = 94.92 nm, E = -13.0615 eV
+  6 ΓåÆ 1: lambda = 93.73 nm, E = -13.2278 eV
+  7 ΓåÆ 1: lambda = 93.03 nm, E = -13.3280 eV
+
+Balmer Series (n -> 2, pressure-node transitions):
+  3 ΓåÆ 2: lambda = 656.11 nm, E = -1.8897 eV
+  4 ΓåÆ 2: lambda = 486.01 nm, E = -2.5511 eV
+  5 ΓåÆ 2: lambda = 433.94 nm, E = -2.8572 eV
+  6 ΓåÆ 2: lambda = 410.07 nm, E = -3.0235 eV
+  7 ΓåÆ 2: lambda = 396.91 nm, E = -3.1238 eV
+
+Example 4: Fine Structure (vortex geometry corrections)
+=======================================================
+  n=1: delta_E = 3.8582e-08 eV (9.33 MHz)
+  n=2: delta_E = 4.8227e-09 eV (1.17 MHz)
+  n=3: delta_E = 1.4290e-09 eV (0.35 MHz)
+  n=4: delta_E = 6.0284e-10 eV (0.15 MHz)
+
+Example 5: Hyperfine 21cm Line
+==============================
+  Frequency:  1420.405752 MHz
+  Wavelength: 21.106114 cm
+  Energy:     5.87432604e-06 eV
+
+Example 6: Radial Admittance Profile (1s)
+==========================================
+SDT: Admittance = vortex occupation density at radius r
+(Replaces QM |psi|^2 probability density)
+
+  r = 0.50 a_0: A(r) = 0.091970
+  r = 1.00 a_0: A(r) = 0.135335
+  r = 1.50 a_0: A(r) = 0.112021
+  r = 2.00 a_0: A(r) = 0.073263
+  r = 2.50 a_0: A(r) = 0.042112
+  r = 3.00 a_0: A(r) = 0.022309
+  r = 3.50 a_0: A(r) = 0.011171
+  r = 4.00 a_0: A(r) = 0.005367
+  r = 4.50 a_0: A(r) = 0.002499
+  r = 5.00 a_0: A(r) = 0.001135
+
+Shell Comparison (n=1 to 5):
+===========================
+   n       r_n (m)    E_n (eV)     v_n (m/s)     kappa   z*kappa^2
+   1    5.2918e-11    -13.6057       2187691    137.04    1.000000
+   2    2.1167e-10     -3.4014       1093846    274.07    1.000000
+   3    4.7626e-10     -1.5117        729230    411.11    1.000000
+   4    8.4668e-10     -0.8504        546923    548.14    1.000000
+   5    1.3229e-09     -0.5442        437538    685.18    1.000000
+
+Simulation complete! No G, no M, no wave functions.
+Electrons = toroidal vortices at pressure-node minima.

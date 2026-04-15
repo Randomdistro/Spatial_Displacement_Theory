@@ -35,5 +35,6 @@
     "K_SDT_units": "dimensionless",
     "delta_E_units": "eV"
   },
-  "overall_status": "CERTIFIED"
+  "overall_status": "PARTIAL_CERTIFIED",
+  "audit_note": "H 2S-2P passes at 0.003%. He+ FAILS at 4.5%. Two fitted parameters (A0, beta) make this a calibrated fit, not first-principles prediction. Corrected 2026-03-28."
 }

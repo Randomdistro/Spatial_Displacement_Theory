@@ -17,7 +17,7 @@ PYBIND11_MODULE(sdt_navier_cpp, m) {
     // Constants
     py::module_ constants = m.def_submodule("constants", "Physical constants");
     constants.attr("C") = constants::C;
-    constants.attr("MU_N") = constants::MU_N;
+    constants.attr("NUCLEAR_MAGNETON") = constants::NUCLEAR_MAGNETON;
     constants.attr("B_DEUTERON") = sdt::B_DEUTERON;
     constants.attr("MU_D") = sdt::MU_D;
 
